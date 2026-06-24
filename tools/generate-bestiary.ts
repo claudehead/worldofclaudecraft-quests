@@ -22,6 +22,77 @@ const zones: ZoneSpec[] = [
 
 const itemName = (id: string) => ITEMS[id]?.name || id;
 
+const QNAME: Record<string, string> = {};
+for (const rec of [ZONE1_QUESTS, ZONE2_QUESTS, ZONE3_QUESTS, TEMPLE_QUESTS])
+  for (const q of Object.values(rec) as any[]) QNAME[q.id] = q.name;
+
+const SLOT_LABEL: Record<string, string> = {
+  helmet: 'Head', shoulder: 'Shoulder', chest: 'Chest', gloves: 'Hands', waist: 'Waist',
+  legs: 'Legs', feet: 'Feet', mainhand: 'Main hand',
+};
+
+function itemType(it: any): string {
+  if (!it) return '—';
+  switch (it.kind) {
+    case 'quest': return 'Quest item';
+    case 'junk': return 'Junk';
+    case 'food': return 'Food';
+    case 'drink': return 'Drink';
+    case 'potion': return 'Potion';
+    case 'elixir': return 'Elixir';
+    case 'tool': return 'Tool';
+    case 'armor': {
+      const base = it.armorType ? `${it.armorType[0].toUpperCase()}${it.armorType.slice(1)} armor` : 'Armor';
+      const sl = it.slot ? SLOT_LABEL[it.slot] || it.slot : '';
+      return sl ? `${base} — ${sl}` : base;
+    }
+    case 'weapon': {
+      const sl = it.slot ? SLOT_LABEL[it.slot] || it.slot : '';
+      return `Weapon${sl ? ` — ${sl}` : ''}`;
+    }
+    default: return it.kind || '—';
+  }
+}
+
+// Full drop table for a mob: coins line + an item table with chance, type, notes.
+function lootTable(m: any): string[] {
+  const loot = (m.loot || []) as any[];
+  if (!loot.length) return ['**Loot:** _nothing_', ''];
+  const out: string[] = ['**Loot:**', ''];
+  const coins = loot.filter(l => typeof l.copper === 'number');
+  if (coins.length) {
+    const parts = coins.map(l => `${l.copper} copper${l.chance < 1 ? ` (${Math.round(l.chance * 100)}%)` : ''}`);
+    out.push(`- Coins: ${parts.join(', ')}${coins.every(l => l.chance >= 1) ? ' (always drops)' : ''}`);
+    out.push('');
+  }
+  const items = loot.filter(l => l.itemId).sort((a, b) => b.chance - a.chance);
+  if (items.length) {
+    // number each exclusive set per mob (first-seen order) so the note is exact
+    const groupNo: Record<string, number> = {};
+    for (const l of loot) if (l.rollGroup && !(l.rollGroup in groupNo)) groupNo[l.rollGroup] = Object.keys(groupNo).length + 1;
+    const nGroups = Object.keys(groupNo).length;
+
+    out.push(`| Item | Type | Drop chance | Notes |`);
+    out.push(`|---|---|---:|---|`);
+    for (const l of items) {
+      const it = ITEMS[l.itemId];
+      const notes: string[] = [];
+      if (l.questId) notes.push(`quest item — only drops while on _${QNAME[l.questId] || l.questId}_`);
+      if (l.rollGroup) notes.push(nGroups > 1 ? `exclusive set ${groupNo[l.rollGroup]} †` : 'exclusive set †');
+      if (it?.kind === 'junk' && it.sellValue) notes.push(`sells for ${it.sellValue}c`);
+      out.push(`| ${itemName(l.itemId)} | ${itemType(it)} | ${Math.round(l.chance * 100)}% | ${notes.join('; ')} |`);
+    }
+    out.push('');
+    if (nGroups) {
+      out.push(nGroups > 1
+        ? '† Each exclusive set is rolled separately — at most one item from each set drops per kill.'
+        : '† The exclusive set is rolled once — at most one of these items drops per kill.');
+      out.push('');
+    }
+  }
+  return out;
+}
+
 // ---- stat math (mirrors createMob in entity.ts) ----
 function hpAt(m: any, lvl: number): number {
   const mult = m.elite ? 2.3 : 1;
@@ -173,13 +244,12 @@ function mobSection(m: any): string {
   const dps = dLo.dps === dHi.dps ? `${dLo.dps}` : `${dLo.dps}–${dHi.dps}`;
   L.push(`| Melee damage | ${dLo.min}–${dHi.max} per hit @ ${m.attackSpeed}s swing (~${dps} DPS) |`);
   if (m.ccImmune) L.push(`| Crowd control | Immune |`);
-  const drops = (m.loot || []).filter((l: any) => l.itemId).map((l: any) => `${itemName(l.itemId)} (${Math.round(l.chance * 100)}%)`);
-  if (drops.length) L.push(`| Notable drops | ${drops.join(', ')} |`);
   L.push('');
   L.push(`**Best way to kill:**`);
   L.push('');
   for (const t of tacticsFor(m)) L.push(`- ${t}`);
   L.push('');
+  for (const line of lootTable(m)) L.push(line);
   return L.join('\n');
 }
 

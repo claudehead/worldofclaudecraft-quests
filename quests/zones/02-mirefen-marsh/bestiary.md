@@ -19,11 +19,20 @@
 | Health | 160–179 HP |
 | Armor (physical mitigation) | 72–84 (~7% vs a same-level attacker) |
 | Melee damage | 16–27 per hit @ 2s swing (~10–11 DPS) |
-| Notable drops | Mire Prowler Pelt (60%), Soggy Moccasin (30%), Lesser Healing Potion (8%) |
 
 **Best way to kill:**
 
 - **Miring Pounce:** Slows your attack speed on hit — expect a longer fight.
+
+**Loot:**
+
+- Coins: 30 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Mire Prowler Pelt | Quest item | 60% | quest item — only drops while on _Pelts for the Causeway_ |
+| Soggy Moccasin | Junk | 30% | sells for 9c |
+| Lesser Healing Potion | Potion | 8% |  |
 
 <a id="mob-deepfen_murloc"></a>
 
@@ -38,12 +47,20 @@
 | Health | 181–200 HP |
 | Armor (physical mitigation) | 84–96 (~7–8% vs a same-level attacker) |
 | Melee damage | 18–31 per hit @ 1.9s swing (~12–13 DPS) |
-| Notable drops | Waterlogged Idol (50%), Slimy Murloc Scale (40%) |
 
 **Best way to kill:**
 
 - **Tide Cadence:** Hastes allies' swings — kill this one first.
 - **Acid Spit:** Corrodes your armor — physical mitigation drops; finish it quickly.
+
+**Loot:**
+
+- Coins: 35 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Waterlogged Idol | Quest item | 50% | quest item — only drops while on _Idols of the Deep_ |
+| Slimy Murloc Scale | Junk | 40% | sells for 5c |
 
 <a id="mob-mire_widow"></a>
 
@@ -58,11 +75,19 @@
 | Health | 181–219 HP |
 | Armor (physical mitigation) | 70–90 (~6–7% vs a same-level attacker) |
 | Melee damage | 19–35 per hit @ 1.8s swing (~13–16 DPS) |
-| Notable drops | Widow Venom Sac (65%), Twitching Spider Leg (40%) |
 
 **Best way to kill:**
 
 - **Exposed Wound:** Makes you take more crits — bursty fight; keep HP topped.
+
+**Loot:**
+
+- Coins: 38 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Widow Venom Sac | Quest item | 65% | quest item — only drops while on _Silk and Venom_ |
+| Twitching Spider Leg | Junk | 40% | sells for 4c |
 
 <a id="mob-bog_bloat"></a>
 
@@ -77,11 +102,18 @@
 | Health | 180–214 HP |
 | Armor (physical mitigation) | 72–90 (~6% vs a same-level attacker) |
 | Melee damage | 18–34 per hit @ 2.6s swing (~9–11 DPS) |
-| Notable drops | Tangled Weed (50%) |
 
 **Best way to kill:**
 
 - **Caustic Spores:** Explodes when it dies — clear its blast radius the moment it drops.
+
+**Loot:**
+
+- Coins: 40 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Tangled Weed | Junk | 50% | sells for 1c |
 
 <a id="mob-drowned_dead"></a>
 
@@ -96,12 +128,20 @@
 | Health | 212–252 HP |
 | Armor (physical mitigation) | 112–140 (~9% vs a same-level attacker) |
 | Melee damage | 21–39 per hit @ 2.3s swing (~12–14 DPS) |
-| Notable drops | Bone Fragments (50%), Cracked Fetish (30%) |
 
 **Best way to kill:**
 
 - **Drowning Grasp:** Heals from the damage it deals — out-DPS its self-healing.
 - **Bog Rot:** Disease DoT — cleanse disease or heal through.
+
+**Loot:**
+
+- Coins: 42 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Bone Fragments | Junk | 50% | sells for 7c |
+| Cracked Fetish | Junk | 30% | sells for 14c |
 
 <a id="mob-gravecaller_cultist"></a>
 
@@ -116,12 +156,20 @@
 | Health | 230–270 HP |
 | Armor (physical mitigation) | 180–220 (~13% vs a same-level attacker) |
 | Melee damage | 24–44 per hit @ 2s swing (~16–18 DPS) |
-| Notable drops | Linen Scrap (30%), Tallow Candle (30%) |
 
 **Best way to kill:**
 
 - **Weakening Hex:** Can hex/transform you — kill it fast or fight with a partner.
 - **Curse of Frailty:** Increases your damage taken — fight it with support.
+
+**Loot:**
+
+- Coins: 55 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Linen Scrap | Junk | 30% | sells for 3c |
+| Tallow Candle | Junk | 30% | sells for 5c |
 
 <a id="mob-fen_troll"></a>
 
@@ -136,11 +184,21 @@
 | Health | 245–287 HP |
 | Armor (physical mitigation) | 162–198 (~11–12% vs a same-level attacker) |
 | Melee damage | 24–44 per hit @ 2.2s swing (~14–16 DPS) |
-| Notable drops | Mirefen Troll Fetish (60%), Chipped Tusk (40%), Bogiron Nugget (30%), Elixir of the Bear (7%) |
 
 **Best way to kill:**
 
 - **Withering Rot:** Withers your stats over time — kill it before the debuff piles up.
+
+**Loot:**
+
+- Coins: 50 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Mirefen Troll Fetish | Quest item | 60% | quest item — only drops while on _Fetish and Bone_ |
+| Chipped Tusk | Junk | 40% | sells for 15c |
+| Bogiron Nugget | Junk | 30% | sells for 12c |
+| Elixir of the Bear | Elixir | 7% |  |
 
 <a id="mob-gravecaller_mender"></a>
 
@@ -155,12 +213,20 @@
 | Health | 224–242 HP |
 | Armor (physical mitigation) | 160–176 (~11% vs a same-level attacker) |
 | Melee damage | 24–40 per hit @ 2.1s swing (~15–16 DPS) |
-| Notable drops | Gravecaller Cipher (40%), Tallow Candle (30%) |
 
 **Best way to kill:**
 
 - **Grave Mending:** Heals its wounded allies on a timer — **kill it first** or burst the group together.
 - **Draining Litany:** Taxes your ability costs — don't let the fight drag.
+
+**Loot:**
+
+- Coins: 58 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Gravecaller Cipher | Quest item | 40% | quest item — only drops while on _Stopping the Summoning_ |
+| Tallow Candle | Junk | 30% | sells for 5c |
 
 <a id="mob-gravecaller_summoner"></a>
 
@@ -175,13 +241,20 @@
 | Health | 236–255 HP |
 | Armor (physical mitigation) | 160–176 (~11% vs a same-level attacker) |
 | Melee damage | 28–47 per hit @ 2s swing (~18–19 DPS) |
-| Notable drops | Gravecaller Cipher (60%) |
 
 **Best way to kill:**
 
 - **Grave Blight:** Can blanket you in a heal-absorb — burst-heal through it or wait it out.
 - **Silencing Shriek:** Silences casters — melee/wand it down, or LoS the cast.
 - **Wail of the Grave:** Stacks a fear/dread debuff — don't let the fight drag.
+
+**Loot:**
+
+- Coins: 60 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Gravecaller Cipher | Quest item | 60% | quest item — only drops while on _Stopping the Summoning_ |
 
 <a id="mob-grubjaw"></a>
 
@@ -196,12 +269,20 @@
 | Health | 416 HP |
 | Armor (physical mitigation) | 220 (~13% vs a same-level attacker) |
 | Melee damage | 30–47 per hit @ 2.2s swing (~18 DPS) |
-| Notable drops | Grubjaw's Tusk (100%), Chipped Tusk (100%) |
 
 **Best way to kill:**
 
 - **Rare** — a tougher roaming spawn; worth killing for loot, but pull it solo.
 - **Devour Magic:** Strips your buffs on hit — re-up key buffs or burst it down.
+
+**Loot:**
+
+- Coins: 200 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Grubjaw's Tusk | Quest item | 100% | quest item — only drops while on _The Glutton_ |
+| Chipped Tusk | Junk | 100% | sells for 15c |
 
 ## Elites
 
@@ -219,7 +300,6 @@
 | Armor (physical mitigation) | 234 (~16% vs a same-level attacker) |
 | Melee damage | 58–91 per hit @ 1.8s swing (~41 DPS) |
 | Crowd control | Immune |
-| Notable drops | Slimy Murloc Scale (100%), Mirejaw Biteblade (25%), Mirejaw Scale Vest (25%), Fen Reaver Glaive (25%), Mirejaw Oracle Staff (25%) |
 
 **Best way to kill:**
 
@@ -229,6 +309,20 @@
 - **Ravenous Frenzy:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - **Sapping Bite:** Saps your resources — keep fights short.
 - Will follow you into the water — no escaping by swimming.
+
+**Loot:**
+
+- Coins: 260 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Slimy Murloc Scale | Junk | 100% | sells for 5c |
+| Mirejaw Biteblade | Weapon — Main hand | 25% |  |
+| Mirejaw Scale Vest | Armor — Chest | 25% |  |
+| Fen Reaver Glaive | Weapon — Main hand | 25% | exclusive set † |
+| Mirejaw Oracle Staff | Weapon — Main hand | 25% | exclusive set † |
+
+† The exclusive set is rolled once — at most one of these items drops per kill.
 
 <a id="mob-sloomtooth_the_drowned"></a>
 
@@ -244,7 +338,6 @@
 | Armor (physical mitigation) | 280 (~17% vs a same-level attacker) |
 | Melee damage | 65–101 per hit @ 1.9s swing (~44 DPS) |
 | Crowd control | Immune |
-| Notable drops | Slimy Murloc Scale (100%), Tidereaver Gaff (25%), Sloomtooth's Tidefang (25%), Drowned Tide Scepter (25%) |
 
 **Best way to kill:**
 
@@ -253,6 +346,19 @@
 - Heals itself once when low — stun/interrupt the cast or burst straight past it.
 - **Tidal Sweep:** Cleaves its frontal arc — keep everyone but the tank out of its face.
 - Will follow you into the water — no escaping by swimming.
+
+**Loot:**
+
+- Coins: 280 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Slimy Murloc Scale | Junk | 100% | sells for 5c |
+| Tidereaver Gaff | Weapon — Main hand | 25% | exclusive set † |
+| Sloomtooth's Tidefang | Weapon — Main hand | 25% | exclusive set † |
+| Drowned Tide Scepter | Weapon — Main hand | 25% | exclusive set † |
+
+† The exclusive set is rolled once — at most one of these items drops per kill.
 
 <a id="mob-bastion_revenant"></a>
 
@@ -267,12 +373,22 @@
 | Health | 656–704 HP |
 | Armor (physical mitigation) | 198–216 (~12–13% vs a same-level attacker) |
 | Melee damage | 42–71 per hit @ 2.3s swing (~23–25 DPS) |
-| Notable drops | Bone Fragments (70%), Mistveil Cord (6%) |
 
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - **Mortal Strike:** Cuts the healing you receive — kill it before the debuff stacks matter.
+
+**Loot:**
+
+- Coins: 150 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Bone Fragments | Junk | 70% | sells for 7c |
+| Mistveil Cord | Armor — Waist | 6% | exclusive set † |
+
+† The exclusive set is rolled once — at most one of these items drops per kill.
 
 <a id="mob-sister_nhalia"></a>
 
@@ -288,7 +404,6 @@
 | Armor (physical mitigation) | 330 (~19% vs a same-level attacker) |
 | Melee damage | 69–108 per hit @ 2s swing (~44 DPS) |
 | Crowd control | Immune |
-| Notable drops | Tallow Candle (100%), Nhalia's Funeral Wraps (25%), Nhalia's Dirgeblade (25%) |
 
 **Best way to kill:**
 
@@ -299,6 +414,18 @@
 - **Banshee's Wail:** Fears nearby players — fight with your back to a wall or bring fear protection.
 - **Spirit Siphon:** Drains life to heal itself — burst it before it tops up.
 - Will follow you into the water — no escaping by swimming.
+
+**Loot:**
+
+- Coins: 350 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Tallow Candle | Junk | 100% | sells for 5c |
+| Nhalia's Funeral Wraps | Armor — Legs | 25% |  |
+| Nhalia's Dirgeblade | Weapon — Main hand | 25% | exclusive set † |
+
+† The exclusive set is rolled once — at most one of these items drops per kill.
 
 <a id="mob-tidebound_acolyte"></a>
 
@@ -313,12 +440,22 @@
 | Health | 621–667 HP |
 | Armor (physical mitigation) | 154–168 (~10% vs a same-level attacker) |
 | Melee damage | 45–75 per hit @ 2s swing (~29–31 DPS) |
-| Notable drops | Linen Scrap (50%), Mistveil Grips (6%) |
 
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - Heals itself once when low — stun/interrupt the cast or burst straight past it.
+
+**Loot:**
+
+- Coins: 170 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Linen Scrap | Junk | 50% | sells for 3c |
+| Mistveil Grips | Armor — Hands | 6% | exclusive set † |
+
+† The exclusive set is rolled once — at most one of these items drops per kill.
 
 <a id="mob-knight_commander_olen"></a>
 
@@ -333,12 +470,26 @@
 | Health | 994 HP |
 | Armor (physical mitigation) | 288 (~16% vs a same-level attacker) |
 | Melee damage | 51–79 per hit @ 2.2s swing (~30 DPS) |
-| Notable drops | Trollhide Leggings (50%), Marshstrider Boots (50%), Fenmist Robe (25%), Tideguard Greaves (10%), Tideguard Sabatons (10%), Eelscale Leggings (10%) |
 
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - **Cleave:** Cleaves its frontal arc — keep everyone but the tank out of its face.
+
+**Loot:**
+
+- Coins: 800 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Trollhide Leggings | Armor — Legs | 50% | exclusive set 1 † |
+| Marshstrider Boots | Armor — Feet | 50% | exclusive set 1 † |
+| Fenmist Robe | Armor — Chest | 25% | exclusive set 2 † |
+| Tideguard Greaves | Armor — Legs | 10% | exclusive set 2 † |
+| Tideguard Sabatons | Armor — Feet | 10% | exclusive set 2 † |
+| Eelscale Leggings | Armor — Legs | 10% | exclusive set 2 † |
+
+† Each exclusive set is rolled separately — at most one item from each set drops per kill.
 
 ## Bosses
 
@@ -355,12 +506,21 @@
 | Health | 384 HP |
 | Armor (physical mitigation) | 144 (~10% vs a same-level attacker) |
 | Melee damage | 24–38 per hit @ 1.8s swing (~17 DPS) |
-| Notable drops | Marshstrider Boots (40%), Broodmother's Silk Robe (25%), Twitching Spider Leg (100%) |
 
 **Best way to kill:**
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
 - **Brood Venom:** Stacking poison — the longer it's on you the harder it bites; kill it before stacks ramp.
+
+**Loot:**
+
+- Coins: 300 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Twitching Spider Leg | Junk | 100% | sells for 4c |
+| Marshstrider Boots | Armor — Feet | 40% |  |
+| Broodmother's Silk Robe | Armor — Chest | 25% |  |
 
 <a id="mob-deacon_voss"></a>
 
@@ -375,13 +535,21 @@
 | Health | 530 HP |
 | Armor (physical mitigation) | 286 (~17% vs a same-level attacker) |
 | Melee damage | 31–48 per hit @ 2.4s swing (~16 DPS) |
-| Notable drops | Tallow Candle (100%), Voss's Sanctified Mace (25%) |
 
 **Best way to kill:**
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
 - **Drowning Hymn:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - **Profane Rune:** Arcane DoT on hit — cleanse or heal through.
+
+**Loot:**
+
+- Coins: 600 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Tallow Candle | Junk | 100% | sells for 5c |
+| Voss's Sanctified Mace | Weapon — Main hand | 25% |  |
 
 <a id="mob-vael_the_mistcaller"></a>
 
@@ -396,13 +564,32 @@
 | Health | 1490 HP |
 | Armor (physical mitigation) | 312 (~17% vs a same-level attacker) |
 | Melee damage | 52–81 per hit @ 2.4s swing (~28 DPS) |
-| Notable drops | Trollhide Leggings (34%), Marshstrider Boots (33%), Fenmist Robe (33%), Deepfen Pearl (100%), Eelskin Tunic (20%), Tidescale Vest (10%), Drowned Prayer Leggings (10%), Drowned Prayer Sandals (10%), Eelscale Treads (10%), Mistveil Cord (12%), Mistveil Grips (12%) |
 
 **Best way to kill:**
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
 - Summons adds at HP thresholds — bring AoE or kill the adds fast; don't let them pile up.
 - **Mist Surge:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
+
+**Loot:**
+
+- Coins: 5000 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Deepfen Pearl | Junk | 100% | sells for 600c |
+| Trollhide Leggings | Armor — Legs | 34% | exclusive set 1 † |
+| Marshstrider Boots | Armor — Feet | 33% | exclusive set 1 † |
+| Fenmist Robe | Armor — Chest | 33% | exclusive set 1 † |
+| Eelskin Tunic | Armor — Chest | 20% | exclusive set 2 † |
+| Mistveil Cord | Armor — Waist | 12% | exclusive set 2 † |
+| Mistveil Grips | Armor — Hands | 12% | exclusive set 2 † |
+| Tidescale Vest | Armor — Chest | 10% | exclusive set 2 † |
+| Drowned Prayer Leggings | Armor — Legs | 10% | exclusive set 2 † |
+| Drowned Prayer Sandals | Armor — Feet | 10% | exclusive set 2 † |
+| Eelscale Treads | Armor — Feet | 10% | exclusive set 2 † |
+
+† Each exclusive set is rolled separately — at most one item from each set drops per kill.
 
 ---
 

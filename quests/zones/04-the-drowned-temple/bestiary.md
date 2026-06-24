@@ -19,11 +19,19 @@
 | Health | 382–404 HP |
 | Armor (physical mitigation) | 224–240 (~12% vs a same-level attacker) |
 | Melee damage | 36–59 per hit @ 2s swing (~23–24 DPS) |
-| Notable drops | Drowned Offering (60%), Briny Idol (30%) |
 
 **Best way to kill:**
 
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+**Loot:**
+
+- Coins: 80 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Drowned Offering | Quest item | 60% | quest item — only drops while on _The Drowned Choir_ |
+| Briny Idol | Junk | 30% | sells for 32c |
 
 <a id="mob-glimmermere_wader"></a>
 
@@ -38,11 +46,19 @@
 | Health | 378–400 HP |
 | Armor (physical mitigation) | 196–210 (~10–11% vs a same-level attacker) |
 | Melee damage | 36–59 per hit @ 1.9s swing (~24–26 DPS) |
-| Notable drops | Pale Pearl (40%), Moonpale Scale (30%) |
 
 **Best way to kill:**
 
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+**Loot:**
+
+- Coins: 70 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Pale Pearl | Junk | 40% | sells for 30c |
+| Moonpale Scale | Junk | 30% | sells for 26c |
 
 <a id="mob-sethrael_palecoil"></a>
 
@@ -57,12 +73,21 @@
 | Health | 595 HP |
 | Armor (physical mitigation) | 330 (~16% vs a same-level attacker) |
 | Melee damage | 44–69 per hit @ 2.2s swing (~26 DPS) |
-| Notable drops | Sethrael's Heartscale (100%), Moonpale Scale (100%), Pale Pearl (50%) |
 
 **Best way to kill:**
 
 - **Rare** — a tougher roaming spawn; worth killing for loot, but pull it solo.
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+**Loot:**
+
+- Coins: 500 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Sethrael's Heartscale | Quest item | 100% | quest item — only drops while on _Sethrael the Palecoil_ |
+| Moonpale Scale | Junk | 100% | sells for 26c |
+| Pale Pearl | Junk | 50% | sells for 30c |
 
 ## Elites
 
@@ -79,12 +104,20 @@
 | Health | 1362 HP |
 | Armor (physical mitigation) | 374 (~16% vs a same-level attacker) |
 | Melee damage | 69–109 per hit @ 2.2s swing (~40 DPS) |
-| Notable drops | Selthe's Sea-Striders (40%), Briny Idol (50%) |
 
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+**Loot:**
+
+- Coins: 700 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Briny Idol | Junk | 50% | sells for 32c |
+| Selthe's Sea-Striders | Armor — Feet | 40% |  |
 
 ## Bosses
 
@@ -101,7 +134,6 @@
 | Health | 2176 HP |
 | Armor (physical mitigation) | 476 (~20% vs a same-level attacker) |
 | Melee damage | 76–119 per hit @ 2.5s swing (~39 DPS) |
-| Notable drops | Ysolei's Pearl Greaves (50%), Moonshroud Breastplate (34%), Moonshroud Robe (33%), Moonshroud Tunic (33%) |
 
 **Best way to kill:**
 
@@ -109,6 +141,19 @@
 - Summons adds at HP thresholds — bring AoE or kill the adds fast; don't let them pile up.
 - **Lunar Tide:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
+
+**Loot:**
+
+- Coins: 6000 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Ysolei's Pearl Greaves | Armor — Legs | 50% |  |
+| Moonshroud Breastplate | Armor — Chest | 34% | exclusive set † |
+| Moonshroud Robe | Armor — Chest | 33% | exclusive set † |
+| Moonshroud Tunic | Armor — Chest | 33% | exclusive set † |
+
+† The exclusive set is rolled once — at most one of these items drops per kill.
 
 <a id="mob-nythraxis_scourge_of_thornpeak"></a>
 
@@ -124,12 +169,46 @@
 | Armor (physical mitigation) | 798 (~28% vs a same-level attacker) |
 | Melee damage | 325–507 per hit @ 2.6s swing (~160 DPS) |
 | Crowd control | Immune |
-| Notable drops | Heartwood of the Deathless Crown (3%), Crownforged Dreadhelm (17%), Nighttalon Crown (16%), Soulflame Cowl (16%), Stormcaller's Crown (16%), Nighttalon Shoulderguards (16%), Soulflame Mantle (16%), Kingsbane, Last Oath of Thornpeak (3%), Crownforged Warspaulders (17%), Nighttalon Shoulderguards (16%), Soulflame Mantle (16%), Crownforged Dreadhelm (16%), Nighttalon Crown (16%), Stormcaller's Spaulders (16%), Crownforged Dreadhelm (17%), Nighttalon Crown (17%), Soulflame Cowl (17%), Stormcaller's Crown (17%), Nighttalon Shoulderguards (16%), Soulflame Mantle (16%), Soulflame Mantle (17%), Crownforged Warspaulders (17%), Nighttalon Shoulderguards (17%), Stormcaller's Spaulders (17%), Crownforged Dreadhelm (16%), Nighttalon Crown (16%) |
 
 **Best way to kill:**
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
 - Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
+
+**Loot:**
+
+- Coins: 150000 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| Crownforged Dreadhelm | Armor — Head | 17% | exclusive set 1 † |
+| Crownforged Warspaulders | Armor — Shoulder | 17% | exclusive set 2 † |
+| Crownforged Dreadhelm | Armor — Head | 17% | exclusive set 3 † |
+| Nighttalon Crown | Armor — Head | 17% | exclusive set 3 † |
+| Soulflame Cowl | Armor — Head | 17% | exclusive set 3 † |
+| Stormcaller's Crown | Armor — Head | 17% | exclusive set 3 † |
+| Soulflame Mantle | Armor — Shoulder | 17% | exclusive set 4 † |
+| Crownforged Warspaulders | Armor — Shoulder | 17% | exclusive set 4 † |
+| Nighttalon Shoulderguards | Armor — Shoulder | 17% | exclusive set 4 † |
+| Stormcaller's Spaulders | Armor — Shoulder | 17% | exclusive set 4 † |
+| Nighttalon Crown | Armor — Head | 16% | exclusive set 1 † |
+| Soulflame Cowl | Armor — Head | 16% | exclusive set 1 † |
+| Stormcaller's Crown | Armor — Head | 16% | exclusive set 1 † |
+| Nighttalon Shoulderguards | Armor — Shoulder | 16% | exclusive set 1 † |
+| Soulflame Mantle | Armor — Shoulder | 16% | exclusive set 1 † |
+| Nighttalon Shoulderguards | Armor — Shoulder | 16% | exclusive set 2 † |
+| Soulflame Mantle | Armor — Shoulder | 16% | exclusive set 2 † |
+| Crownforged Dreadhelm | Armor — Head | 16% | exclusive set 2 † |
+| Nighttalon Crown | Armor — Head | 16% | exclusive set 2 † |
+| Stormcaller's Spaulders | Armor — Shoulder | 16% | exclusive set 2 † |
+| Nighttalon Shoulderguards | Armor — Shoulder | 16% | exclusive set 3 † |
+| Soulflame Mantle | Armor — Shoulder | 16% | exclusive set 3 † |
+| Crownforged Dreadhelm | Armor — Head | 16% | exclusive set 4 † |
+| Nighttalon Crown | Armor — Head | 16% | exclusive set 4 † |
+| Heartwood of the Deathless Crown | Weapon — Main hand | 3% | exclusive set 1 † |
+| Kingsbane, Last Oath of Thornpeak | Weapon — Main hand | 3% | exclusive set 2 † |
+
+† Each exclusive set is rolled separately — at most one item from each set drops per kill.
 
 ---
 
