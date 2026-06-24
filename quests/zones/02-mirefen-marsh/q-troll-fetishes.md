@@ -16,7 +16,7 @@
 ## How to complete
 
 - **Collect 8× Mirefen Troll Fetish**
-  - Drops from **Mirefen Troll** (60% chance) — Found in the open world at ~x:-80, z:420 (7 mobs, radius 22); Found in the open world at ~x:-105, z:455 (6 mobs, radius 18)
+  - Drops from [**Mirefen Troll**](bestiary.md#mob-fen_troll) (60% chance) — Found in the open world at ~x:-80, z:420 (7 mobs, radius 22); Found in the open world at ~x:-105, z:455 (6 mobs, radius 18)
   - _Tracker: Mirefen Troll Fetish_
 
 Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.

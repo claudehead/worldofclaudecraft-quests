@@ -15,11 +15,11 @@
 
 ## How to complete
 
-- **Kill 8× Mirefen Widow** (level 8–10)
+- **Kill 8× [Mirefen Widow](bestiary.md#mob-mire_widow)** (level 8–10)
   - Found in the open world at ~x:70, z:300 (7 mobs, radius 20)
   - Found in the open world at ~x:95, z:340 (6 mobs, radius 16)
   - _Tracker: Mirefen Widow slain_
-- **Kill 1× The Broodmother** (level 10–10, **Boss**)
+- **Kill 1× [The Broodmother](bestiary.md#mob-mirefen_broodmother)** (level 10–10, **Boss**)
   - Found in the open world at ~x:98, z:348 (1 mob, radius 3)
   - _Tracker: The Broodmother slain_
 

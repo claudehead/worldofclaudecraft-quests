@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 8× Mudfin Skulker** (level 3–5)
+- **Kill 8× [Mudfin Skulker](bestiary.md#mob-mudfin_murloc)** (level 3–5)
   - Found in the open world at ~x:-75, z:57 (8 mobs, radius 14)
   - _Tracker: Mudfin Skulker slain_
 

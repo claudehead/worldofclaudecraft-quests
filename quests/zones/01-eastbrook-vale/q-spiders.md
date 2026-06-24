@@ -14,11 +14,11 @@
 
 ## How to complete
 
-- **Kill 6× Webwood Lurker** (level 2–4)
+- **Kill 6× [Webwood Lurker](bestiary.md#mob-webwood_spider)** (level 2–4)
   - Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
   - _Tracker: Webwood Lurker slain_
 - **Collect 4× Webwood Silk Gland**
-  - Drops from **Webwood Lurker** (55% chance) — Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
+  - Drops from [**Webwood Lurker**](bestiary.md#mob-webwood_spider) (55% chance) — Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
   - _Tracker: Webwood Silk Gland_
 
 Then return to **Apothecary Lin**, Herbalist _(at ~x:11, z:-3)_ to turn in.

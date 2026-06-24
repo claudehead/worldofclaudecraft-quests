@@ -16,7 +16,7 @@
 ## How to complete
 
 - **Collect 5× Waterlogged Idol**
-  - Drops from **Deepfen Snapper** (50% chance) — Found in the open world at ~x:-82, z:273 (8 mobs, radius 15); Found in the open world at ~x:-120, z:350 (6 mobs, radius 13)
+  - Drops from [**Deepfen Snapper**](bestiary.md#mob-deepfen_murloc) (50% chance) — Found in the open world at ~x:-82, z:273 (8 mobs, radius 15); Found in the open world at ~x:-120, z:350 (6 mobs, radius 13)
   - _Tracker: Waterlogged Idol_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.

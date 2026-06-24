@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Mogger** (level 6–6, **Elite**, Rare)
+- **Kill 1× [Mogger](bestiary.md#mob-mogger)** (level 6–6, **Elite**, Rare)
   - Found in the open world at ~x:118, z:-26 (1 mob, radius 5)
   - _Tracker: Mogger slain_
 

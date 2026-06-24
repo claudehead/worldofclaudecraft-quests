@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 12× Stormcrag Elemental** (level 17–18)
+- **Kill 12× [Stormcrag Elemental](bestiary.md#mob-stormcrag_elemental)** (level 17–18)
   - Found in the open world at ~x:110, z:760 (8 mobs, radius 20)
   - Found in the open world at ~x:135, z:795 (6 mobs, radius 16)
   - _Tracker: Stormcrag Elemental slain_

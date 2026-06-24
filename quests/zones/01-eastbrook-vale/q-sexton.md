@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Sexton Marrow** (level 9–9, **Elite**)
+- **Kill 1× [Sexton Marrow](bestiary.md#mob-sexton_marrow)** (level 9–9, **Elite**)
   - Inside dungeon **The Hollow Crypt** (entrance portal ~x:80, z:90)
   - _Tracker: Sexton Marrow laid to rest_
 

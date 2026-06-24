@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Ysolei, Avatar of the Drowned Moon** (level 18–18, **Boss**, **Elite**)
+- **Kill 1× [Ysolei, Avatar of the Drowned Moon](bestiary.md#mob-ysolei)** (level 18–18, **Boss**, **Elite**)
   - _Spawns as part of a scripted encounter_
   - _Tracker: Ysolei, Avatar of the Drowned Moon, slain_
 

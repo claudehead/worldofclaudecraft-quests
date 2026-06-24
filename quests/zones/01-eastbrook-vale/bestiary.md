@@ -6,6 +6,8 @@
 
 ## Common creatures
 
+<a id="mob-forest_wolf"></a>
+
 ### Forest Wolf
 
 <img src="../_mob-renders/forest_wolf.png" width="150" align="right" alt="Forest Wolf">
@@ -22,6 +24,8 @@
 **Best way to kill:**
 
 - Frenzies nearby kin (faster swings) when one dies — pull them one at a time.
+
+<a id="mob-webwood_spider"></a>
 
 ### Webwood Lurker
 
@@ -41,6 +45,8 @@
 - **Sticky Web:** Roots/snares you — bring a movement break or fight in place.
 - **Spider Venom:** Poison DoT on hit — cleanse it or keep heals ticking.
 
+<a id="mob-wild_boar"></a>
+
 ### Wild Boar
 
 <img src="../_mob-renders/wild_boar.png" width="150" align="right" alt="Wild Boar">
@@ -57,6 +63,8 @@
 **Best way to kill:**
 
 - **Bristled Hide:** Reflects melee damage back at attackers — prefer ranged/spell damage.
+
+<a id="mob-mudfin_murloc"></a>
 
 ### Mudfin Skulker
 
@@ -75,6 +83,8 @@
 
 - **Mudfin Hex:** Can polymorph you — avoid fighting it alongside other mobs.
 
+<a id="mob-vale_bandit"></a>
+
 ### Vale Bandit
 
 <img src="../_mob-renders/vale_bandit.png" width="150" align="right" alt="Vale Bandit">
@@ -91,6 +101,8 @@
 **Best way to kill:**
 
 - **Blinding Powder:** Can blind you — pull singles so a blind isn't fatal.
+
+<a id="mob-old_greyjaw"></a>
 
 ### Old Greyjaw — _Rare_
 
@@ -110,6 +122,8 @@
 - **Rare** — a tougher roaming spawn; worth killing for loot, but pull it solo.
 - **Blood Frenzy:** Frenzies when hit/hurt — expect rising damage; burst it.
 
+<a id="mob-tunnel_rat"></a>
+
 ### Tunnel Rat Digger
 
 <img src="../_mob-renders/tunnel_rat.png" width="150" align="right" alt="Tunnel Rat Digger">
@@ -126,6 +140,8 @@
 **Best way to kill:**
 
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+<a id="mob-restless_bones"></a>
 
 ### Restless Bones
 
@@ -146,6 +162,8 @@
 - **Withering Wail:** Lowers your attack power — expect a slower kill.
 
 ## Elites
+
+<a id="mob-mogger"></a>
 
 ### Mogger — _Elite · Rare_
 
@@ -171,6 +189,8 @@
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
 - Will follow you into the water — no escaping by swimming.
 
+<a id="mob-captain_verlan"></a>
+
 ### Captain Verlan — _Elite · Rare_
 
 <img src="../_mob-renders/captain_verlan.png" width="150" align="right" alt="Captain Verlan">
@@ -192,6 +212,8 @@
 - **Hollow Nova:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
 
+<a id="mob-crypt_shambler"></a>
+
 ### Crypt Shambler — _Elite_
 
 <img src="../_mob-renders/crypt_shambler.png" width="150" align="right" alt="Crypt Shambler">
@@ -209,6 +231,8 @@
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+<a id="mob-bonechill_widow"></a>
 
 ### Bonechill Widow — _Elite_
 
@@ -228,6 +252,8 @@
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
 
+<a id="mob-hollow_acolyte"></a>
+
 ### Hollow Acolyte — _Elite_
 
 <img src="../_mob-renders/hollow_acolyte.png" width="150" align="right" alt="Hollow Acolyte">
@@ -245,6 +271,8 @@
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+<a id="mob-sexton_marrow"></a>
 
 ### Sexton Marrow — _Elite_
 
@@ -266,6 +294,8 @@
 
 ## Bosses
 
+<a id="mob-gorrak"></a>
+
 ### Gorrak the Ruthless — _Boss_
 
 <img src="../_mob-renders/gorrak.png" width="150" align="right" alt="Gorrak the Ruthless">
@@ -283,6 +313,8 @@
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+<a id="mob-morthen"></a>
 
 ### Morthen the Gravecaller — _Boss · Elite_
 

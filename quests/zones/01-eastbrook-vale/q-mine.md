@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 10× Tunnel Rat Digger** (level 4–6)
+- **Kill 10× [Tunnel Rat Digger](bestiary.md#mob-tunnel_rat)** (level 4–6)
   - Found in the open world at ~x:-82, z:-62 (9 mobs, radius 20)
   - _Tracker: Tunnel Rat Digger slain_
 

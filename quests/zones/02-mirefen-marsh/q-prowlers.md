@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 12× Mire Prowler** (level 7–8)
+- **Kill 12× [Mire Prowler](bestiary.md#mob-mire_prowler)** (level 7–8)
   - Found in the open world at ~x:-40, z:230 (7 mobs, radius 22)
   - Found in the open world at ~x:35, z:225 (6 mobs, radius 20)
   - _Tracker: Mire Prowler slain_

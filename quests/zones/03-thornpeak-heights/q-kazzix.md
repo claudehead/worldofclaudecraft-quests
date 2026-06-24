@@ -15,7 +15,7 @@
 ## How to complete
 
 - **Collect 1× Kazzix's Heartshard**
-  - Drops from **Shardlord Kazzix** (100% chance) — Found in the open world at ~x:145, z:815 (1 mob, radius 8)
+  - Drops from [**Shardlord Kazzix**](bestiary.md#mob-shardlord_kazzix) (100% chance) — Found in the open world at ~x:145, z:815 (1 mob, radius 8)
   - _Tracker: Kazzix's Heartshard_
 
 Then return to **Loremaster Caddis**, Loremaster _(at ~x:12, z:655)_ to turn in.

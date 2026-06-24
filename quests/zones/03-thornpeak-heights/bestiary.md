@@ -6,6 +6,8 @@
 
 ## Common creatures
 
+<a id="mob-ridge_stalker"></a>
+
 ### Ridge Stalker
 
 <img src="../_mob-renders/ridge_stalker.png" width="150" align="right" alt="Ridge Stalker">
@@ -22,6 +24,8 @@
 **Best way to kill:**
 
 - **Rending Claws:** Physical bleed DoT — bandages won't work while it ticks; heal through it.
+
+<a id="mob-deeprock_kobold"></a>
 
 ### Deeprock Tunneler
 
@@ -40,6 +44,8 @@
 
 - **Off-Balance:** Lowers your dodge on hit — tanks lose avoidance; rely on a healer.
 
+<a id="mob-thornpeak_ogre"></a>
+
 ### Thornpeak Ogre
 
 <img src="../_mob-renders/thornpeak_ogre.png" width="150" align="right" alt="Thornpeak Ogre">
@@ -56,6 +62,8 @@
 **Best way to kill:**
 
 - **Concussive Blow:** Concusses (brief stun/daze) on hit — avoid multi-pulls.
+
+<a id="mob-stormcrag_elemental"></a>
 
 ### Stormcrag Elemental
 
@@ -75,6 +83,8 @@
 - **Numbing Chill:** Chills/slows you on hit — don't rely on kiting once you're hit; just kill it.
 - **Static Charge:** Raises your spell damage taken — don't face-tank casters alongside it.
 
+<a id="mob-wyrmcult_zealot"></a>
+
 ### Wyrmcult Zealot
 
 <img src="../_mob-renders/wyrmcult_zealot.png" width="150" align="right" alt="Wyrmcult Zealot">
@@ -93,6 +103,8 @@
 - **Wyrmward Sigil:** Locks out a spell school — swap schools or finish it fast.
 - **Maddening Whisper:** Weakens you — keep the fight short.
 
+<a id="mob-boneclad_revenant"></a>
+
 ### Boneclad Revenant
 
 <img src="../_mob-renders/boneclad_revenant.png" width="150" align="right" alt="Boneclad Revenant">
@@ -109,6 +121,8 @@
 **Best way to kill:**
 
 - **Soul Siphon:** Drains your energy/mana — burst it down.
+
+<a id="mob-shardlord_kazzix"></a>
 
 ### Shardlord Kazzix — _Rare_
 
@@ -127,6 +141,8 @@
 
 - **Rare** — a tougher roaming spawn; worth killing for loot, but pull it solo.
 - **Frostbite:** Frost DoT that slows — cleanse or push through quickly.
+
+<a id="mob-wyrmcult_necromancer"></a>
 
 ### Wyrmcult Necromancer
 
@@ -147,6 +163,8 @@
 - **Mana Sear:** Burns your mana — kill it quickly before casters run dry.
 
 ## Elites
+
+<a id="mob-old_cragmaw"></a>
 
 ### Old Cragmaw — _Elite · Rare_
 
@@ -169,6 +187,8 @@
 - **Savage Pounce:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
 - Will follow you into the water — no escaping by swimming.
+
+<a id="mob-ironvein_foreman"></a>
 
 ### Ironvein Foreman — _Elite · Rare_
 
@@ -194,6 +214,8 @@
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
 - Will follow you into the water — no escaping by swimming.
 
+<a id="mob-ogre_crusher"></a>
+
 ### Thornpeak Crusher — _Elite_
 
 <img src="../_mob-renders/ogre_crusher.png" width="150" align="right" alt="Thornpeak Crusher">
@@ -211,6 +233,8 @@
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - **Disarming Smash:** Can disarm your weapon — casters are unaffected; melee just wait it out.
+
+<a id="mob-brutok_skullsmasher"></a>
 
 ### Brutok Skullsmasher — _Elite · Rare_
 
@@ -232,6 +256,8 @@
 - Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 - **Skull Smash:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
+
+<a id="mob-marrowlord_varkas"></a>
 
 ### Marrowlord Varkas — _Elite · Rare_
 
@@ -257,6 +283,8 @@
 - **Bone Carapace:** Periodically hardens against physical hits — time burst between windows or switch to spell damage.
 - Will follow you into the water — no escaping by swimming.
 
+<a id="mob-sanctum_boneguard"></a>
+
 ### Sanctum Boneguard — _Elite_
 
 <img src="../_mob-renders/sanctum_boneguard.png" width="150" align="right" alt="Sanctum Boneguard">
@@ -275,6 +303,8 @@
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
 
+<a id="mob-sanctum_drakonid"></a>
+
 ### Sanctum Drakonid — _Elite_
 
 <img src="../_mob-renders/sanctum_drakonid.png" width="150" align="right" alt="Sanctum Drakonid">
@@ -292,6 +322,8 @@
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+<a id="mob-voskar_emberwing"></a>
 
 ### Voskar the Emberwing — _Elite · Rare_
 
@@ -316,6 +348,8 @@
 - **Searing Maw:** Cuts the healing you receive — kill it before the debuff stacks matter.
 - Will follow you into the water — no escaping by swimming.
 
+<a id="mob-grand_necromancer_velkhar"></a>
+
 ### Grand Necromancer Velkhar — _Elite_
 
 <img src="../_mob-renders/grand_necromancer_velkhar.png" width="150" align="right" alt="Grand Necromancer Velkhar">
@@ -333,6 +367,8 @@
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - Summons adds at HP thresholds — bring AoE or kill the adds fast; don't let them pile up.
+
+<a id="mob-korgath_the_bound"></a>
 
 ### Korgath the Bound — _Elite_
 
@@ -355,6 +391,8 @@
 
 ## Bosses
 
+<a id="mob-warlord_drogmar"></a>
+
 ### Warlord Drogmar — _Boss · Elite_
 
 <img src="../_mob-renders/warlord_drogmar.png" width="150" align="right" alt="Warlord Drogmar">
@@ -373,6 +411,8 @@
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
 - **Ground Slam:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - **Battle Fury:** Builds escalating fury the longer it swings — burst it down, or break melee to drop the stacks.
+
+<a id="mob-korzul_the_gravewyrm"></a>
 
 ### Korzul the Gravewyrm — _Boss · Elite_
 
@@ -393,6 +433,8 @@
 - **Necrotic Shockwave:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
 
+<a id="mob-nythraxis_scourge_of_thornpeak"></a>
+
 ### Nythraxis, Scourge of Thornpeak — _Boss · Elite_
 
 <img src="../_mob-renders/nythraxis_scourge_of_thornpeak.png" width="150" align="right" alt="Nythraxis, Scourge of Thornpeak">
@@ -411,6 +453,8 @@
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
 - Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
+
+<a id="mob-bound_guardian"></a>
 
 ### The Bound Guardian — _Boss · Elite_
 

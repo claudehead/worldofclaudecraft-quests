@@ -16,7 +16,7 @@
 ## How to complete
 
 - **Collect 1× Sethrael's Heartscale**
-  - Drops from **Sethrael the Palecoil** (100% chance) — Found in the open world at ~x:-96, z:814 (1 mob, radius 3)
+  - Drops from [**Sethrael the Palecoil**](bestiary.md#mob-sethrael_palecoil) (100% chance) — Found in the open world at ~x:-96, z:814 (1 mob, radius 3)
   - _Tracker: Sethrael's Heartscale_
 
 Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.

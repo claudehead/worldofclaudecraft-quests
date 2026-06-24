@@ -15,7 +15,7 @@
 
 ## How to complete
 
-- **Kill 14× Thornpeak Ogre** (level 15–16)
+- **Kill 14× [Thornpeak Ogre](bestiary.md#mob-thornpeak_ogre)** (level 15–16)
   - Found in the open world at ~x:-90, z:700 (7 mobs, radius 22)
   - Found in the open world at ~x:-60, z:730 (6 mobs, radius 18)
   - _Tracker: Thornpeak Ogre slain_

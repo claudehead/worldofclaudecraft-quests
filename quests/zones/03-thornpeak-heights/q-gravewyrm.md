@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Korzul the Gravewyrm** (level 20–20, **Boss**, **Elite**)
+- **Kill 1× [Korzul the Gravewyrm](bestiary.md#mob-korzul_the_gravewyrm)** (level 20–20, **Boss**, **Elite**)
   - Inside dungeon **Gravewyrm Sanctum** (entrance portal ~x:0, z:880)
   - _Tracker: Korzul the Gravewyrm slain_
 

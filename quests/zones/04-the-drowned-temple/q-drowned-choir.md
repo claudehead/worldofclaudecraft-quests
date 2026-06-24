@@ -15,12 +15,12 @@
 
 ## How to complete
 
-- **Kill 8× Drowned Votary** (level 15–16)
+- **Kill 8× [Drowned Votary](bestiary.md#mob-drowned_votary)** (level 15–16)
   - Found in the open world at ~x:-90, z:802 (7 mobs, radius 16)
   - Found in the open world at ~x:-64, z:814 (5 mobs, radius 12)
   - _Tracker: Drowned Votary silenced_
 - **Collect 6× Drowned Offering**
-  - Drops from **Drowned Votary** (60% chance) — Found in the open world at ~x:-90, z:802 (7 mobs, radius 16); Found in the open world at ~x:-64, z:814 (5 mobs, radius 12)
+  - Drops from [**Drowned Votary**](bestiary.md#mob-drowned_votary) (60% chance) — Found in the open world at ~x:-90, z:802 (7 mobs, radius 16); Found in the open world at ~x:-64, z:814 (5 mobs, radius 12)
   - _Tracker: Drowned Offering_
 
 Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.

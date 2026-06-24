@@ -14,12 +14,12 @@
 
 ## How to complete
 
-- **Kill 10× Mirefen Widow** (level 8–10)
+- **Kill 10× [Mirefen Widow](bestiary.md#mob-mire_widow)** (level 8–10)
   - Found in the open world at ~x:70, z:300 (7 mobs, radius 20)
   - Found in the open world at ~x:95, z:340 (6 mobs, radius 16)
   - _Tracker: Mirefen Widow slain_
 - **Collect 6× Widow Venom Sac**
-  - Drops from **Mirefen Widow** (65% chance) — Found in the open world at ~x:70, z:300 (7 mobs, radius 20); Found in the open world at ~x:95, z:340 (6 mobs, radius 16)
+  - Drops from [**Mirefen Widow**](bestiary.md#mob-mire_widow) (65% chance) — Found in the open world at ~x:70, z:300 (7 mobs, radius 20); Found in the open world at ~x:95, z:340 (6 mobs, radius 16)
   - _Tracker: Widow Venom Sac_
 
 Then return to **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ to turn in.

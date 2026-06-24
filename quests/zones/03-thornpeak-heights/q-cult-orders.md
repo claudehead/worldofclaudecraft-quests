@@ -15,13 +15,13 @@
 
 ## How to complete
 
-- **Kill 8× Wyrmcult Zealot** (level 17–19)
+- **Kill 8× [Wyrmcult Zealot](bestiary.md#mob-wyrmcult_zealot)** (level 17–19)
   - Found in the open world at ~x:55, z:820 (8 mobs, radius 20)
   - Found in the open world at ~x:25, z:845 (6 mobs, radius 16)
   - Found in the open world at ~x:80, z:845 (2 mobs, radius 7)
   - _Tracker: Wyrmcult Zealot slain_
 - **Collect 4× Wyrmcult Orders**
-  - Drops from **Wyrmcult Zealot** (50% chance) — Found in the open world at ~x:55, z:820 (8 mobs, radius 20); Found in the open world at ~x:25, z:845 (6 mobs, radius 16); Found in the open world at ~x:80, z:845 (2 mobs, radius 7)
+  - Drops from [**Wyrmcult Zealot**](bestiary.md#mob-wyrmcult_zealot) (50% chance) — Found in the open world at ~x:55, z:820 (8 mobs, radius 20); Found in the open world at ~x:25, z:845 (6 mobs, radius 16); Found in the open world at ~x:80, z:845 (2 mobs, radius 7)
   - _Tracker: Wyrmcult Orders_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to turn in.

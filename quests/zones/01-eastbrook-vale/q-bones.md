@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 8× Restless Bones** (level 5–7)
+- **Kill 8× [Restless Bones](bestiary.md#mob-restless_bones)** (level 5–7)
   - Found in the open world at ~x:80, z:78 (8 mobs, radius 18)
   - Found in the open world at ~x:88, z:90 (2 mobs, radius 6)
   - _Tracker: Restless Bones laid to rest_

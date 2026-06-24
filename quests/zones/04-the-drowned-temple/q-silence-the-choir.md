@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Choirmother Selthe** (level 18–18, **Elite**)
+- **Kill 1× [Choirmother Selthe](bestiary.md#mob-choirmother_selthe)** (level 18–18, **Elite**)
   - _Spawns as part of a scripted encounter_
   - _Tracker: Choirmother Selthe slain_
 

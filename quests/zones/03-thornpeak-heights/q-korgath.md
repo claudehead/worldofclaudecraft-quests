@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Korgath the Bound** (level 20–20, **Elite**)
+- **Kill 1× [Korgath the Bound](bestiary.md#mob-korgath_the_bound)** (level 20–20, **Elite**)
   - Inside dungeon **Gravewyrm Sanctum** (entrance portal ~x:0, z:880)
   - _Tracker: Korgath the Bound slain_
 

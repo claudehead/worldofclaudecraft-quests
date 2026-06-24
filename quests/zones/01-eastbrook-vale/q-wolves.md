@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 8× Forest Wolf** (level 1–2)
+- **Kill 8× [Forest Wolf](bestiary.md#mob-forest_wolf)** (level 1–2)
   - Found in the open world at ~x:-15, z:55 (7 mobs, radius 22)
   - Found in the open world at ~x:20, z:70 (6 mobs, radius 20)
   - _Tracker: Forest Wolf slain_

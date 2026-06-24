@@ -16,7 +16,7 @@
 ## How to complete
 
 - **Collect 5× Blessed Embers**
-  - Drops from **Stormcrag Elemental** (55% chance) — Found in the open world at ~x:110, z:760 (8 mobs, radius 20); Found in the open world at ~x:135, z:795 (6 mobs, radius 16)
+  - Drops from [**Stormcrag Elemental**](bestiary.md#mob-stormcrag_elemental) (55% chance) — Found in the open world at ~x:110, z:760 (8 mobs, radius 20); Found in the open world at ~x:135, z:795 (6 mobs, radius 16)
   - _Tracker: Blessed Embers_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to turn in.

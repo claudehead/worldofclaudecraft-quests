@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Knight-Commander Olen** (level 13–13, **Elite**)
+- **Kill 1× [Knight-Commander Olen](bestiary.md#mob-knight_commander_olen)** (level 13–13, **Elite**)
   - Inside dungeon **The Sunken Bastion** (entrance portal ~x:45, z:515)
   - _Tracker: Knight-Commander Olen laid to rest_
 

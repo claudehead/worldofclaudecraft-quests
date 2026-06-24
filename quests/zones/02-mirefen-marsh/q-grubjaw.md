@@ -15,7 +15,7 @@
 ## How to complete
 
 - **Collect 1× Grubjaw's Tusk**
-  - Drops from **Grubjaw the Glutton** (100% chance) — Found in the open world at ~x:-120, z:480 (1 mob, radius 8)
+  - Drops from [**Grubjaw the Glutton**](bestiary.md#mob-grubjaw) (100% chance) — Found in the open world at ~x:-120, z:480 (1 mob, radius 8)
   - _Tracker: Grubjaw's Tusk_
 
 Then return to **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ to turn in.

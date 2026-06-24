@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 12× Gravecaller Cultist** (level 10–12)
+- **Kill 12× [Gravecaller Cultist](bestiary.md#mob-gravecaller_cultist)** (level 10–12)
   - Found in the open world at ~x:15, z:470 (7 mobs, radius 20)
   - Found in the open world at ~x:-25, z:490 (6 mobs, radius 16)
   - _Tracker: Gravecaller Cultist slain_

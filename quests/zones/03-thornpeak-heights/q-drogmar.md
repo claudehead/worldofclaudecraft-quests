@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Warlord Drogmar** (level 17–17, **Boss**, **Elite**)
+- **Kill 1× [Warlord Drogmar](bestiary.md#mob-warlord_drogmar)** (level 17–17, **Boss**, **Elite**)
   - Found in the open world at ~x:-132, z:748 (1 mob, radius 2)
   - _Tracker: Warlord Drogmar slain_
 

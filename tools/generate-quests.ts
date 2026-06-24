@@ -1,8 +1,8 @@
 import { QUESTS, MOBS, ITEMS, NPCS, CAMPS, GROUND_OBJECTS, ZONES } from '../woc/src/sim/data.ts';
-import { ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { ZONE1_QUESTS, ZONE1_CAMPS } from '../woc/src/sim/content/zone1.ts';
+import { ZONE2_QUESTS, ZONE2_CAMPS } from '../woc/src/sim/content/zone2.ts';
+import { ZONE3_QUESTS, ZONE3_CAMPS } from '../woc/src/sim/content/zone3.ts';
+import { TEMPLE_QUESTS, TEMPLE_CAMPS } from '../woc/src/sim/content/temple.ts';
 import { ZONE1_ZONE } from '../woc/src/sim/content/zone1.ts';
 import { ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
@@ -22,6 +22,30 @@ const zoneBuckets: { key: string; dir: string; title: string; quests: Record<str
   { key: 'zone3', dir: '03-' + slug(ZONE3_ZONE.name), title: 'Zone 3 — ' + ZONE3_ZONE.name, quests: ZONE3_QUESTS, levelRange: ZONE3_ZONE.levelRange, hub: ZONE3_ZONE.hub?.name },
   { key: 'temple', dir: '04-the-drowned-temple', title: 'Zone 4 — The Drowned Temple (Endgame)', quests: TEMPLE_QUESTS, levelRange: templeRange(TEMPLE_QUESTS) },
 ];
+
+// The exact set of mob ids that appear in each zone's bestiary.md (camps +
+// quest kill targets + dungeon spawns for the zone). A mob mention in a quest
+// is only linked when its id is in this set, so links never dangle.
+const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
+const ZONE_BAND: Record<string, [number, number] | null> = {
+  zone1: [-180, 180], zone2: [180, 540], zone3: [540, 900], temple: null,
+};
+const ZONE_CAMPS: Record<string, any[]> = {
+  zone1: ZONE1_CAMPS, zone2: ZONE2_CAMPS, zone3: ZONE3_CAMPS, temple: TEMPLE_CAMPS,
+};
+function bestiaryIdsFor(bucket: { key: string; quests: Record<string, Q> }): Set<string> {
+  const ids = new Set<string>();
+  for (const c of ZONE_CAMPS[bucket.key] || []) ids.add(c.mobId);
+  for (const q of Object.values(bucket.quests))
+    for (const o of q.objectives || []) if (o.type === 'kill' && o.targetMobId) ids.add(o.targetMobId);
+  const band = ZONE_BAND[bucket.key];
+  for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) {
+    const inZone = bucket.key === 'temple' ? TEMPLE_DUNGEONS.has(id)
+      : band && !TEMPLE_DUNGEONS.has(id) && d.doorPos.z >= band[0] && d.doorPos.z < band[1];
+    if (inZone) for (const s of d.spawns || []) ids.add(s.mobId);
+  }
+  return ids;
+}
 
 function templeRange(quests: Record<string, Q>): [number, number] {
   const lvls = Object.values(quests).map(q => q.minLevel ?? 15);
@@ -106,13 +130,18 @@ function classRewards(q: Q): string {
     .join('\n');
 }
 
-function objectiveHowTo(o: any): string {
+// link a mob to its bestiary entry when it's in this zone's bestiary
+function mobRef(id: string, label: string, linkSet: Set<string>): string {
+  return linkSet.has(id) ? `[${label}](bestiary.md#mob-${id})` : label;
+}
+
+function objectiveHowTo(o: any, linkSet: Set<string>): string {
   const lines: string[] = [];
   if (o.type === 'kill') {
     const m = ALL_MOBS[o.targetMobId];
     const tags = m ? [m.boss && '**Boss**', m.elite && '**Elite**', m.rare && 'Rare'].filter(Boolean).join(', ') : '';
     const lvl = m ? ` (level ${m.minLevel}–${m.maxLevel}${tags ? ', ' + tags : ''})` : '';
-    lines.push(`- **Kill ${o.count}× ${mobName(o.targetMobId)}**${lvl}`);
+    lines.push(`- **Kill ${o.count}× ${mobRef(o.targetMobId, mobName(o.targetMobId), linkSet)}**${lvl}`);
     const where = whereMob(o.targetMobId);
     if (where.length) for (const w of where) lines.push(`  - ${w}`);
     else lines.push(`  - _Spawns as part of a scripted encounter_`);
@@ -124,7 +153,7 @@ function objectiveHowTo(o: any): string {
     for (const d of drops) {
       const where = whereMob(d.mobId);
       const w = where.length ? ` — ${where.join('; ')}` : '';
-      lines.push(`  - Drops from **${d.name}** (${Math.round(d.chance * 100)}% chance)${w}`);
+      lines.push(`  - Drops from ${mobRef(d.mobId, `**${d.name}**`, linkSet)} (${Math.round(d.chance * 100)}% chance)${w}`);
     }
     if (!ground.length && !drops.length) lines.push(`  - _Granted by a prerequisite quest or special encounter_`);
   } else if (o.type === 'interact') {
@@ -161,7 +190,8 @@ function questMd(q: Q, zone: typeof zoneBuckets[number]): string {
   L.push('');
   L.push(`## How to complete`);
   L.push('');
-  for (const o of q.objectives) L.push(objectiveHowTo(o));
+  const linkSet = bestiaryIdsFor(zone);
+  for (const o of q.objectives) L.push(objectiveHowTo(o, linkSet));
   L.push('');
   L.push(`Then return to ${turnIns} to turn in.`);
   L.push('');

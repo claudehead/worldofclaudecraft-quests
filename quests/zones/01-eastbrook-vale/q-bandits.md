@@ -15,7 +15,7 @@
 
 ## How to complete
 
-- **Kill 10× Vale Bandit** (level 3–5)
+- **Kill 10× [Vale Bandit](bestiary.md#mob-vale_bandit)** (level 3–5)
   - Found in the open world at ~x:65, z:-65 (7 mobs, radius 24)
   - Found in the open world at ~x:90, z:-90 (5 mobs, radius 16)
   - _Tracker: Vale Bandit slain_

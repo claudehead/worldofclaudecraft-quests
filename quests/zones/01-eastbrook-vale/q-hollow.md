@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Morthen the Gravecaller** (level 10–10, **Boss**, **Elite**)
+- **Kill 1× [Morthen the Gravecaller](bestiary.md#mob-morthen)** (level 10–10, **Boss**, **Elite**)
   - Inside dungeon **The Hollow Crypt** (entrance portal ~x:80, z:90)
   - _Tracker: Morthen the Gravecaller slain_
 

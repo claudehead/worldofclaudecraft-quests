@@ -149,6 +149,8 @@ const FAMILY_LABEL: Record<string, string> = {
 function mobSection(m: any): string {
   const L: string[] = [];
   const flags = [m.boss && 'Boss', m.elite && 'Elite', m.rare && 'Rare'].filter(Boolean).join(' · ');
+  L.push(`<a id="mob-${m.id}"></a>`);
+  L.push('');
   L.push(`### ${m.name}${flags ? ` — _${flags}_` : ''}`);
   L.push('');
   L.push(`<img src="../_mob-renders/${m.id}.png" width="150" align="right" alt="${m.name}">`);

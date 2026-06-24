@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 12× Boneclad Revenant** (level 18–19)
+- **Kill 12× [Boneclad Revenant](bestiary.md#mob-boneclad_revenant)** (level 18–19)
   - Found in the open world at ~x:-40, z:830 (8 mobs, radius 20)
   - Found in the open world at ~x:-15, z:860 (6 mobs, radius 16)
   - _Tracker: Boneclad Revenant slain_

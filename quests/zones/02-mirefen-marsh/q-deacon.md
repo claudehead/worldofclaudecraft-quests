@@ -15,7 +15,7 @@
 
 ## How to complete
 
-- **Kill 1× Deacon Voss** (level 12–12, **Boss**)
+- **Kill 1× [Deacon Voss](bestiary.md#mob-deacon_voss)** (level 12–12, **Boss**)
   - Found in the open world at ~x:0, z:510 (1 mob, radius 2)
   - _Tracker: Deacon Voss slain_
 

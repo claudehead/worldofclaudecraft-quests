@@ -15,12 +15,12 @@
 
 ## How to complete
 
-- **Kill 8× Gravecaller Summoner** (level 11–12)
+- **Kill 8× [Gravecaller Summoner](bestiary.md#mob-gravecaller_summoner)** (level 11–12)
   - Found in the open world at ~x:-5, z:500 (4 mobs, radius 12)
   - _Tracker: Gravecaller Summoner slain_
 - **Collect 4× Gravecaller Cipher**
-  - Drops from **Gravecaller Summoner** (60% chance) — Found in the open world at ~x:-5, z:500 (4 mobs, radius 12)
-  - Drops from **Gravecaller Mender** (40% chance) — Found in the open world at ~x:18, z:472 (2 mobs, radius 8)
+  - Drops from [**Gravecaller Summoner**](bestiary.md#mob-gravecaller_summoner) (60% chance) — Found in the open world at ~x:-5, z:500 (4 mobs, radius 12)
+  - Drops from [**Gravecaller Mender**](bestiary.md#mob-gravecaller_mender) (40% chance) — Found in the open world at ~x:18, z:472 (2 mobs, radius 8)
   - _Tracker: Gravecaller Cipher_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.

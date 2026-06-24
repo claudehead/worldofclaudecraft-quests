@@ -15,7 +15,7 @@
 
 ## How to complete
 
-- **Kill 14× Drowned Dead** (level 9–11)
+- **Kill 14× [Drowned Dead](bestiary.md#mob-drowned_dead)** (level 9–11)
   - Found in the open world at ~x:90, z:420 (8 mobs, radius 20)
   - Found in the open world at ~x:115, z:450 (6 mobs, radius 16)
   - _Tracker: Drowned Dead laid to rest_

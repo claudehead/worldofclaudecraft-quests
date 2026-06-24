@@ -15,7 +15,7 @@
 
 ## How to complete
 
-- **Kill 1× Gorrak the Ruthless** (level 6–6, **Boss**)
+- **Kill 1× [Gorrak the Ruthless](bestiary.md#mob-gorrak)** (level 6–6, **Boss**)
   - Found in the open world at ~x:92, z:-92 (1 mob, radius 2)
   - _Tracker: Gorrak the Ruthless slain_
 

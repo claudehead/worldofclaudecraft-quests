@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 12× Mirefen Troll** (level 10–12)
+- **Kill 12× [Mirefen Troll](bestiary.md#mob-fen_troll)** (level 10–12)
   - Found in the open world at ~x:-80, z:420 (7 mobs, radius 22)
   - Found in the open world at ~x:-105, z:455 (6 mobs, radius 18)
   - _Tracker: Mirefen Troll slain_

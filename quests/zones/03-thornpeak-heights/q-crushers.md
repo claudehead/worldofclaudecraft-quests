@@ -15,7 +15,7 @@
 
 ## How to complete
 
-- **Kill 10× Thornpeak Crusher** (level 16–17, **Elite**)
+- **Kill 10× [Thornpeak Crusher](bestiary.md#mob-ogre_crusher)** (level 16–17, **Elite**)
   - Found in the open world at ~x:-125, z:740 (8 mobs, radius 18)
   - _Tracker: Thornpeak Crusher slain_
 

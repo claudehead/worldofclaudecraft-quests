@@ -15,7 +15,7 @@
 
 ## How to complete
 
-- **Kill 10× Glimmermere Wader** (level 15–16)
+- **Kill 10× [Glimmermere Wader](bestiary.md#mob-glimmermere_wader)** (level 15–16)
   - Found in the open world at ~x:-78, z:778 (7 mobs, radius 16)
   - Found in the open world at ~x:-56, z:800 (5 mobs, radius 14)
   - _Tracker: Glimmermere Wader slain_

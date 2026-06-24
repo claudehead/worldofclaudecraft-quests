@@ -15,11 +15,11 @@
 
 ## How to complete
 
-- **Kill 8× Wyrmcult Necromancer** (level 18–19)
+- **Kill 8× [Wyrmcult Necromancer](bestiary.md#mob-wyrmcult_necromancer)** (level 18–19)
   - Found in the open world at ~x:40, z:855 (5 mobs, radius 14)
   - _Tracker: Wyrmcult Necromancer slain_
 - **Collect 3× Ritual Phylactery**
-  - Drops from **Wyrmcult Necromancer** (55% chance) — Found in the open world at ~x:40, z:855 (5 mobs, radius 14)
+  - Drops from [**Wyrmcult Necromancer**](bestiary.md#mob-wyrmcult_necromancer) (55% chance) — Found in the open world at ~x:40, z:855 (5 mobs, radius 14)
   - _Tracker: Ritual Phylactery_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to turn in.

@@ -16,8 +16,8 @@
 ## How to complete
 
 - **Collect 6× Glowing Wax**
-  - Drops from **Deeprock Tunneler** (50% chance) — Found in the open world at ~x:75, z:625 (8 mobs, radius 18); Found in the open world at ~x:105, z:600 (6 mobs, radius 14)
-  - Drops from **Ironvein Foreman** (100% chance) — Found in the open world at ~x:100, z:617 (1 mob, radius 5)
+  - Drops from [**Deeprock Tunneler**](bestiary.md#mob-deeprock_kobold) (50% chance) — Found in the open world at ~x:75, z:625 (8 mobs, radius 18); Found in the open world at ~x:105, z:600 (6 mobs, radius 14)
+  - Drops from [**Ironvein Foreman**](bestiary.md#mob-ironvein_foreman) (100% chance) — Found in the open world at ~x:100, z:617 (1 mob, radius 5)
   - _Tracker: Glowing Wax_
 
 Then return to **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668)_ to turn in.

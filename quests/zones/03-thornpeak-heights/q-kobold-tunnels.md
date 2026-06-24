@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 12× Deeprock Tunneler** (level 14–15)
+- **Kill 12× [Deeprock Tunneler](bestiary.md#mob-deeprock_kobold)** (level 14–15)
   - Found in the open world at ~x:75, z:625 (8 mobs, radius 18)
   - Found in the open world at ~x:105, z:600 (6 mobs, radius 14)
   - _Tracker: Deeprock Tunneler slain_

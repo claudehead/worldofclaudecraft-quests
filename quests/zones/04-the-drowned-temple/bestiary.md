@@ -6,6 +6,8 @@
 
 ## Common creatures
 
+<a id="mob-drowned_votary"></a>
+
 ### Drowned Votary
 
 <img src="../_mob-renders/drowned_votary.png" width="150" align="right" alt="Drowned Votary">
@@ -23,6 +25,8 @@
 
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
 
+<a id="mob-glimmermere_wader"></a>
+
 ### Glimmermere Wader
 
 <img src="../_mob-renders/glimmermere_wader.png" width="150" align="right" alt="Glimmermere Wader">
@@ -39,6 +43,8 @@
 **Best way to kill:**
 
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+<a id="mob-sethrael_palecoil"></a>
 
 ### Sethrael the Palecoil — _Rare_
 
@@ -60,6 +66,8 @@
 
 ## Elites
 
+<a id="mob-choirmother_selthe"></a>
+
 ### Choirmother Selthe — _Elite_
 
 <img src="../_mob-renders/choirmother_selthe.png" width="150" align="right" alt="Choirmother Selthe">
@@ -80,6 +88,8 @@
 
 ## Bosses
 
+<a id="mob-ysolei"></a>
+
 ### Ysolei, Avatar of the Drowned Moon — _Boss · Elite_
 
 <img src="../_mob-renders/ysolei.png" width="150" align="right" alt="Ysolei, Avatar of the Drowned Moon">
@@ -99,6 +109,8 @@
 - Summons adds at HP thresholds — bring AoE or kill the adds fast; don't let them pile up.
 - **Lunar Tide:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
+
+<a id="mob-nythraxis_scourge_of_thornpeak"></a>
 
 ### Nythraxis, Scourge of Thornpeak — _Boss · Elite_
 

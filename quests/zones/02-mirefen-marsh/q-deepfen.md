@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 12× Deepfen Snapper** (level 8–9)
+- **Kill 12× [Deepfen Snapper](bestiary.md#mob-deepfen_murloc)** (level 8–9)
   - Found in the open world at ~x:-82, z:273 (8 mobs, radius 15)
   - Found in the open world at ~x:-120, z:350 (6 mobs, radius 13)
   - _Tracker: Deepfen Snapper slain_

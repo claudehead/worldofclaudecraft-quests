@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Vael the Mistcaller** (level 13–13, **Boss**, **Elite**)
+- **Kill 1× [Vael the Mistcaller](bestiary.md#mob-vael_the_mistcaller)** (level 13–13, **Boss**, **Elite**)
   - Inside dungeon **The Sunken Bastion** (entrance portal ~x:45, z:515)
   - _Tracker: Vael the Mistcaller slain_
 

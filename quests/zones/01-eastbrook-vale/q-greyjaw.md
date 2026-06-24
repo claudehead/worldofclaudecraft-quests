@@ -16,7 +16,7 @@
 ## How to complete
 
 - **Collect 1× Old Greyjaw's Fang**
-  - Drops from **Old Greyjaw** (100% chance) — Found in the open world at ~x:0, z:95 (1 mob, radius 8)
+  - Drops from [**Old Greyjaw**](bestiary.md#mob-old_greyjaw) (100% chance) — Found in the open world at ~x:0, z:95 (1 mob, radius 8)
   - _Tracker: Old Greyjaw's Fang_
 
 Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.

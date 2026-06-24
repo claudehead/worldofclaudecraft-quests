@@ -16,7 +16,7 @@
 
 ## How to complete
 
-- **Kill 1× Grand Necromancer Velkhar** (level 20–20, **Elite**)
+- **Kill 1× [Grand Necromancer Velkhar](bestiary.md#mob-grand_necromancer_velkhar)** (level 20–20, **Elite**)
   - Inside dungeon **Gravewyrm Sanctum** (entrance portal ~x:0, z:880)
   - _Tracker: Grand Necromancer Velkhar slain_
 

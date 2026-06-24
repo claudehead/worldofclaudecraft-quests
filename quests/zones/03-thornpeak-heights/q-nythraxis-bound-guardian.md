@@ -19,11 +19,11 @@
 - **Interact with Ritual Circle**
   - Locations: ~x:68, z:800
   - _Tracker: Crypt Keystone used at the ritual circle_
-- **Kill 1× The Bound Guardian** (level 20–20, **Boss**, **Elite**)
+- **Kill 1× [The Bound Guardian](bestiary.md#mob-bound_guardian)** (level 20–20, **Boss**, **Elite**)
   - _Spawns as part of a scripted encounter_
   - _Tracker: The Bound Guardian defeated_
 - **Collect 1× King's Signet**
-  - Drops from **The Bound Guardian** (100% chance)
+  - Drops from [**The Bound Guardian**](bestiary.md#mob-bound_guardian) (100% chance)
   - _Tracker: King's Signet_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to turn in.

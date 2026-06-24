@@ -14,7 +14,7 @@
 
 ## How to complete
 
-- **Kill 12× Ridge Stalker** (level 13–14)
+- **Kill 12× [Ridge Stalker](bestiary.md#mob-ridge_stalker)** (level 13–14)
   - Found in the open world at ~x:-50, z:590 (7 mobs, radius 22)
   - Found in the open world at ~x:45, z:600 (6 mobs, radius 20)
   - _Tracker: Ridge Stalker slain_

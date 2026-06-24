@@ -6,6 +6,8 @@
 
 ## Common creatures
 
+<a id="mob-mire_prowler"></a>
+
 ### Mire Prowler
 
 <img src="../_mob-renders/mire_prowler.png" width="150" align="right" alt="Mire Prowler">
@@ -22,6 +24,8 @@
 **Best way to kill:**
 
 - **Miring Pounce:** Slows your attack speed on hit — expect a longer fight.
+
+<a id="mob-deepfen_murloc"></a>
 
 ### Deepfen Snapper
 
@@ -41,6 +45,8 @@
 - **Tide Cadence:** Hastes allies' swings — kill this one first.
 - **Acid Spit:** Corrodes your armor — physical mitigation drops; finish it quickly.
 
+<a id="mob-mire_widow"></a>
+
 ### Mirefen Widow
 
 <img src="../_mob-renders/mire_widow.png" width="150" align="right" alt="Mirefen Widow">
@@ -58,6 +64,8 @@
 
 - **Exposed Wound:** Makes you take more crits — bursty fight; keep HP topped.
 
+<a id="mob-bog_bloat"></a>
+
 ### Bog Bloat
 
 <img src="../_mob-renders/bog_bloat.png" width="150" align="right" alt="Bog Bloat">
@@ -74,6 +82,8 @@
 **Best way to kill:**
 
 - **Caustic Spores:** Explodes when it dies — clear its blast radius the moment it drops.
+
+<a id="mob-drowned_dead"></a>
 
 ### Drowned Dead
 
@@ -93,6 +103,8 @@
 - **Drowning Grasp:** Heals from the damage it deals — out-DPS its self-healing.
 - **Bog Rot:** Disease DoT — cleanse disease or heal through.
 
+<a id="mob-gravecaller_cultist"></a>
+
 ### Gravecaller Cultist
 
 <img src="../_mob-renders/gravecaller_cultist.png" width="150" align="right" alt="Gravecaller Cultist">
@@ -111,6 +123,8 @@
 - **Weakening Hex:** Can hex/transform you — kill it fast or fight with a partner.
 - **Curse of Frailty:** Increases your damage taken — fight it with support.
 
+<a id="mob-fen_troll"></a>
+
 ### Mirefen Troll
 
 <img src="../_mob-renders/fen_troll.png" width="150" align="right" alt="Mirefen Troll">
@@ -127,6 +141,8 @@
 **Best way to kill:**
 
 - **Withering Rot:** Withers your stats over time — kill it before the debuff piles up.
+
+<a id="mob-gravecaller_mender"></a>
 
 ### Gravecaller Mender
 
@@ -145,6 +161,8 @@
 
 - **Grave Mending:** Heals its wounded allies on a timer — **kill it first** or burst the group together.
 - **Draining Litany:** Taxes your ability costs — don't let the fight drag.
+
+<a id="mob-gravecaller_summoner"></a>
 
 ### Gravecaller Summoner
 
@@ -165,6 +183,8 @@
 - **Silencing Shriek:** Silences casters — melee/wand it down, or LoS the cast.
 - **Wail of the Grave:** Stacks a fear/dread debuff — don't let the fight drag.
 
+<a id="mob-grubjaw"></a>
+
 ### Grubjaw the Glutton — _Rare_
 
 <img src="../_mob-renders/grubjaw.png" width="150" align="right" alt="Grubjaw the Glutton">
@@ -184,6 +204,8 @@
 - **Devour Magic:** Strips your buffs on hit — re-up key buffs or burst it down.
 
 ## Elites
+
+<a id="mob-mirejaw_the_ravenous"></a>
 
 ### Mirejaw the Ravenous — _Elite · Rare_
 
@@ -208,6 +230,8 @@
 - **Sapping Bite:** Saps your resources — keep fights short.
 - Will follow you into the water — no escaping by swimming.
 
+<a id="mob-sloomtooth_the_drowned"></a>
+
 ### Sloomtooth the Drowned — _Elite · Rare_
 
 <img src="../_mob-renders/sloomtooth_the_drowned.png" width="150" align="right" alt="Sloomtooth the Drowned">
@@ -230,6 +254,8 @@
 - **Tidal Sweep:** Cleaves its frontal arc — keep everyone but the tank out of its face.
 - Will follow you into the water — no escaping by swimming.
 
+<a id="mob-bastion_revenant"></a>
+
 ### Bastion Revenant — _Elite_
 
 <img src="../_mob-renders/bastion_revenant.png" width="150" align="right" alt="Bastion Revenant">
@@ -247,6 +273,8 @@
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - **Mortal Strike:** Cuts the healing you receive — kill it before the debuff stacks matter.
+
+<a id="mob-sister_nhalia"></a>
 
 ### Sister Nhalia — _Elite · Rare_
 
@@ -272,6 +300,8 @@
 - **Spirit Siphon:** Drains life to heal itself — burst it before it tops up.
 - Will follow you into the water — no escaping by swimming.
 
+<a id="mob-tidebound_acolyte"></a>
+
 ### Tidebound Acolyte — _Elite_
 
 <img src="../_mob-renders/tidebound_acolyte.png" width="150" align="right" alt="Tidebound Acolyte">
@@ -289,6 +319,8 @@
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
 - Heals itself once when low — stun/interrupt the cast or burst straight past it.
+
+<a id="mob-knight_commander_olen"></a>
 
 ### Knight-Commander Olen — _Elite_
 
@@ -310,6 +342,8 @@
 
 ## Bosses
 
+<a id="mob-mirefen_broodmother"></a>
+
 ### The Broodmother — _Boss_
 
 <img src="../_mob-renders/mirefen_broodmother.png" width="150" align="right" alt="The Broodmother">
@@ -327,6 +361,8 @@
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
 - **Brood Venom:** Stacking poison — the longer it's on you the harder it bites; kill it before stacks ramp.
+
+<a id="mob-deacon_voss"></a>
 
 ### Deacon Voss — _Boss_
 
@@ -346,6 +382,8 @@
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
 - **Drowning Hymn:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - **Profane Rune:** Arcane DoT on hit — cleanse or heal through.
+
+<a id="mob-vael_the_mistcaller"></a>
 
 ### Vael the Mistcaller — _Boss · Elite_
 
