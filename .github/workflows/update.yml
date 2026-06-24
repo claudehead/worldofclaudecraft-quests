@@ -1,0 +1,52 @@
+name: Regenerate guide
+
+on:
+  workflow_dispatch:        # run manually from the Actions tab
+  schedule:
+    - cron: '0 6 * * 1'     # every Monday 06:00 UTC
+
+concurrency:
+  group: regenerate
+  cancel-in-progress: true
+
+permissions:
+  contents: write           # allow committing the regenerated files
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Clone upstream game source
+        run: git clone --depth 1 https://github.com/levy-street/world-of-claudecraft woc
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install generator deps
+        working-directory: tools
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: Regenerate everything
+        run: bash tools/build.sh
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # ignore the upstream clone and generator intermediates
+          git add -A -- ':!woc' ':!tools/node_modules' ':!tools/*.json' || true
+          git restore --staged tools/package.json tools/package-lock.json 2>/dev/null || true
+          git add tools/package.json tools/package-lock.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes — guide is already up to date."
+          else
+            git commit -m "Regenerate guide from upstream [skip ci]"
+            git push
+          fi

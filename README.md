@@ -31,14 +31,16 @@ classes/
 dungeons/
   README.md            All dungeons + suggested party size
   <dungeon>.md         Roster, bosses, enemy levels (mobs link to the bestiary)
+  _maps/               Per-dungeon route maps (entry → pulls → boss)
 delves/
   README.md            Replayable delves overview
   <delve>.md           Tiers, affixes, companion, enemies, Marks vendor
+tools/                 Generators + the regeneration pipeline
 ```
 
 ## Dungeons
 
-The **[dungeons/](dungeons/README.md)** folder has a page per instanced dungeon (Hollow Crypt, Sunken Bastion, Gravewyrm Sanctum, the Nythraxis raid): suggested party size, enemy level range, a full enemy roster, and bosses — every enemy links to its bestiary entry. Quest pages that send you into a dungeon link straight to it.
+The **[dungeons/](dungeons/README.md)** folder has a page per instanced dungeon (Hollow Crypt, Sunken Bastion, Gravewyrm Sanctum, the Nythraxis raid): a **route map** (entry → each enemy pull → boss, plotted from the real spawn coordinates), suggested party size, enemy level range, a full enemy roster, and bosses — every enemy links to its bestiary entry. Quest pages that send you into a dungeon link straight to it.
 
 ## Delves
 
@@ -68,10 +70,29 @@ The mob portraits (`zones/_mob-renders/*.png`) are **rendered from the game's ac
 
 > Coordinates are the game's world `(x, z)` positions — handy as a rough compass, since the zones run north (low `z`) to south (high `z`).
 
+## How it's built
+
+Almost everything here is **generated from the upstream game data** — 107 of the 109 markdown files, plus every map, mob render, and item icon. Only this `README.md` and `tools/README.md` are hand-written. The generators live in [`tools/`](tools/README.md).
+
+### Automatic updates
+
+A GitHub Action ([`.github/workflows/update.yml`](.github/workflows/update.yml)) keeps the guide in sync with the game:
+
+- Runs **weekly** (and on demand from the Actions tab).
+- Clones the latest [world-of-claudecraft](https://github.com/levy-street/world-of-claudecraft), installs the generator deps + headless Chromium, runs [`tools/build.sh`](tools/build.sh), and commits any changes.
+- If the game data hasn't changed, it's a no-op (the pipeline is idempotent).
+
+### Regenerate locally
+
+```sh
+git clone https://github.com/levy-street/world-of-claudecraft woc   # upstream source next to this repo
+cd tools && npm install && npx playwright install chromium && cd ..
+bash tools/build.sh
+```
+
 ## Notes
 
 - 👥 marks **group quests** (the page lists the suggested party size).
 - Quests with a `minLevel` are gated; the rest unlock at their zone's starting level.
-- Generated from the upstream game data. To refresh after the game updates, re-run the extractor against a fresh clone (see commit history for the generator script).
 
 _Not affiliated with the upstream project — this is a fan-made reference._

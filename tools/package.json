@@ -1,0 +1,15 @@
+{
+  "name": "woc-quests-generators",
+  "private": true,
+  "type": "module",
+  "description": "Generators that build the quest guide from the world-of-claudecraft source.",
+  "scripts": {
+    "build": "bash build.sh"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.1",
+    "playwright": "^1.61.1",
+    "three": "^0.184.0",
+    "tsx": "^4.22.4"
+  }
+}

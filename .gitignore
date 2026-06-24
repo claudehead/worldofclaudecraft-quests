@@ -8,6 +8,11 @@ world-of-claudecraft/
 tools/node_modules/
 node_modules/
 
+# Generator intermediates (manifests built at run time)
+tools/mobs.json
+tools/loot-items.json
+tools/class-models.json
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db
