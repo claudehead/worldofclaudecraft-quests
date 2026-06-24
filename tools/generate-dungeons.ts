@@ -43,6 +43,13 @@ function dungeonPage(id: string, d: any): string {
   L.push('');
   if (d.enterText) { L.push(`> ${d.enterText}`); L.push(''); }
 
+  if (mobs.length) {
+    L.push(`![Map of ${d.name}](_maps/${id}.svg)`);
+    L.push('');
+    L.push(`_Green = entry · red/crimson = enemy pulls · gold = boss. Top to bottom is the route in._`);
+    L.push('');
+  }
+
   if (!mobs.length) {
     L.push(`_A quiet instance with no fixed enemies._`);
     L.push('');

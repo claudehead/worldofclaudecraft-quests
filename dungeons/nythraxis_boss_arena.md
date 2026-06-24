@@ -9,6 +9,10 @@
 
 > You pass through the sealed royal door.
 
+![Map of Nythraxis Raid Arena](_maps/nythraxis_boss_arena.svg)
+
+_Green = entry · red/crimson = enemy pulls · gold = boss. Top to bottom is the route in._
+
 ## Bosses
 
 - [**Nythraxis, Scourge of Thornpeak**](../quests/zones/04-the-drowned-temple/bestiary.md#mob-nythraxis_scourge_of_thornpeak) _(Elite)_ — level 20. See the bestiary for its mechanics and loot.

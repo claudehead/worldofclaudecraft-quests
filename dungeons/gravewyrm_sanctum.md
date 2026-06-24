@@ -9,6 +9,10 @@
 
 > The air goes cold. Something vast breathes below...
 
+![Map of Gravewyrm Sanctum](_maps/gravewyrm_sanctum.svg)
+
+_Green = entry · red/crimson = enemy pulls · gold = boss. Top to bottom is the route in._
+
 ## Bosses
 
 - [**Korzul the Gravewyrm**](../quests/zones/03-thornpeak-heights/bestiary.md#mob-korzul_the_gravewyrm) _(Elite)_ — level 20. See the bestiary for its mechanics and loot.

@@ -9,6 +9,10 @@
 
 > You wade down into the Sunken Bastion...
 
+![Map of The Sunken Bastion](_maps/sunken_bastion.svg)
+
+_Green = entry · red/crimson = enemy pulls · gold = boss. Top to bottom is the route in._
+
 ## Bosses
 
 - [**Vael the Mistcaller**](../quests/zones/02-mirefen-marsh/bestiary.md#mob-vael_the_mistcaller) _(Elite)_ — level 13. See the bestiary for its mechanics and loot.

@@ -9,6 +9,10 @@
 
 > You descend into the Hollow Crypt...
 
+![Map of The Hollow Crypt](_maps/hollow_crypt.svg)
+
+_Green = entry · red/crimson = enemy pulls · gold = boss. Top to bottom is the route in._
+
 ## Bosses
 
 - [**Morthen the Gravecaller**](../quests/zones/01-eastbrook-vale/bestiary.md#mob-morthen) _(Elite)_ — level 10. See the bestiary for its mechanics and loot.
