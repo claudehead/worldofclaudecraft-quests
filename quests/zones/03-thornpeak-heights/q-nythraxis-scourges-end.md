@@ -17,7 +17,7 @@
 ## How to complete
 
 - **Kill 1× [Nythraxis, Scourge of Thornpeak](bestiary.md#mob-nythraxis_scourge_of_thornpeak)** (level 20–20, **Boss**, **Elite**)
-  - Inside dungeon **Nythraxis Raid Arena** (entrance portal ~x:-152, z:610)
+  - Inside dungeon [**Nythraxis Raid Arena**](../../../dungeons/nythraxis_boss_arena.md) (entrance portal ~x:-152, z:610)
   - _Tracker: Nythraxis slain_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ or **Brother Aldric**, Priest of the Vale _(at ~x:0, z:0)_ to turn in.

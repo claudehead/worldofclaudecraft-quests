@@ -28,7 +28,14 @@ classes/
   README.md            The 9 classes at a glance
   <class>.md           Per-class page: specs + every ability by learn-level
   _class-renders/      Class model portraits (rendered from the game)
+dungeons/
+  README.md            All dungeons + suggested party size
+  <dungeon>.md         Roster, bosses, enemy levels (mobs link to the bestiary)
 ```
+
+## Dungeons
+
+The **[dungeons/](dungeons/README.md)** folder has a page per instanced dungeon (Hollow Crypt, Sunken Bastion, Gravewyrm Sanctum, the Nythraxis raid): suggested party size, enemy level range, a full enemy roster, and bosses — every enemy links to its bestiary entry. Quest pages that send you into a dungeon link straight to it.
 
 ## Classes
 

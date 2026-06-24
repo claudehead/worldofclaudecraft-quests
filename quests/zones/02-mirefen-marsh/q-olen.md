@@ -17,7 +17,7 @@
 ## How to complete
 
 - **Kill 1× [Knight-Commander Olen](bestiary.md#mob-knight_commander_olen)** (level 13–13, **Elite**)
-  - Inside dungeon **The Sunken Bastion** (entrance portal ~x:45, z:515)
+  - Inside dungeon [**The Sunken Bastion**](../../../dungeons/sunken_bastion.md) (entrance portal ~x:45, z:515)
   - _Tracker: Knight-Commander Olen laid to rest_
 
 Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.

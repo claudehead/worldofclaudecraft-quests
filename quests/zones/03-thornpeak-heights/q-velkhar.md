@@ -17,7 +17,7 @@
 ## How to complete
 
 - **Kill 1× [Grand Necromancer Velkhar](bestiary.md#mob-grand_necromancer_velkhar)** (level 20–20, **Elite**)
-  - Inside dungeon **Gravewyrm Sanctum** (entrance portal ~x:0, z:880)
+  - Inside dungeon [**Gravewyrm Sanctum**](../../../dungeons/gravewyrm_sanctum.md) (entrance portal ~x:0, z:880)
   - _Tracker: Grand Necromancer Velkhar slain_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to turn in.

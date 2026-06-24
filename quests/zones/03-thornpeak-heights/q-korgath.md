@@ -17,7 +17,7 @@
 ## How to complete
 
 - **Kill 1× [Korgath the Bound](bestiary.md#mob-korgath_the_bound)** (level 20–20, **Elite**)
-  - Inside dungeon **Gravewyrm Sanctum** (entrance portal ~x:0, z:880)
+  - Inside dungeon [**Gravewyrm Sanctum**](../../../dungeons/gravewyrm_sanctum.md) (entrance portal ~x:0, z:880)
   - _Tracker: Korgath the Bound slain_
 
 Then return to **Scout Maren**, Marshal's Scout _(at ~x:7, z:670)_ to turn in.

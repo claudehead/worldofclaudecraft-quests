@@ -17,7 +17,7 @@
 ## How to complete
 
 - **Kill 1× [Sexton Marrow](bestiary.md#mob-sexton_marrow)** (level 9–9, **Elite**)
-  - Inside dungeon **The Hollow Crypt** (entrance portal ~x:80, z:90)
+  - Inside dungeon [**The Hollow Crypt**](../../../dungeons/hollow_crypt.md) (entrance portal ~x:80, z:90)
   - _Tracker: Sexton Marrow laid to rest_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to turn in.

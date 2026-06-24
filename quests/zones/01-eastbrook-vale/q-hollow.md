@@ -17,7 +17,7 @@
 ## How to complete
 
 - **Kill 1× [Morthen the Gravecaller](bestiary.md#mob-morthen)** (level 10–10, **Boss**, **Elite**)
-  - Inside dungeon **The Hollow Crypt** (entrance portal ~x:80, z:90)
+  - Inside dungeon [**The Hollow Crypt**](../../../dungeons/hollow_crypt.md) (entrance portal ~x:80, z:90)
   - _Tracker: Morthen the Gravecaller slain_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to turn in.

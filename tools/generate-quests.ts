@@ -85,10 +85,10 @@ function campsForMob(mobId: string): string[] {
 }
 
 // dungeons that spawn a given mob
-function dungeonsForMob(mobId: string): { name: string; door: { x: number; z: number } }[] {
-  return Object.values(DUNGEON_DEFS)
-    .filter((d: any) => (d.spawns || []).some((s: any) => s.mobId === mobId))
-    .map((d: any) => ({ name: d.name, door: d.doorPos }));
+function dungeonsForMob(mobId: string): { id: string; name: string; door: { x: number; z: number } }[] {
+  return (Object.entries(DUNGEON_DEFS) as any[])
+    .filter(([, d]) => (d.spawns || []).some((s: any) => s.mobId === mobId))
+    .map(([id, d]) => ({ id, name: d.name, door: d.doorPos }));
 }
 
 // which mobs drop a given item (esp. quest items)
@@ -112,7 +112,7 @@ function groundFor(itemId: string): string[] {
 function whereMob(mobId: string): string[] {
   const out: string[] = [];
   for (const c of campsForMob(mobId)) out.push(`Found in the open world at ${c}`);
-  for (const d of dungeonsForMob(mobId)) out.push(`Inside dungeon **${d.name}** (entrance portal ~x:${Math.round(d.door.x)}, z:${Math.round(d.door.z)})`);
+  for (const d of dungeonsForMob(mobId)) out.push(`Inside dungeon [**${d.name}**](../../../dungeons/${d.id}.md) (entrance portal ~x:${Math.round(d.door.x)}, z:${Math.round(d.door.z)})`);
   return out;
 }
 

@@ -17,7 +17,7 @@
 ## How to complete
 
 - **Kill 1× [Vael the Mistcaller](bestiary.md#mob-vael_the_mistcaller)** (level 13–13, **Boss**, **Elite**)
-  - Inside dungeon **The Sunken Bastion** (entrance portal ~x:45, z:515)
+  - Inside dungeon [**The Sunken Bastion**](../../../dungeons/sunken_bastion.md) (entrance portal ~x:45, z:515)
   - _Tracker: Vael the Mistcaller slain_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.
