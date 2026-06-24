@@ -46,4 +46,7 @@ $TSX $TOOLS/generate-delves.ts delves
 node $TOOLS/render-loot.mjs delves/_shop-items.json $WOC/public delves/_delve-icons
 rm -f delves/_shop-items.json
 
+echo "==> website manifest"
+$TSX $TOOLS/generate-site-manifest.ts docs/manifest.json
+
 echo "==> done"

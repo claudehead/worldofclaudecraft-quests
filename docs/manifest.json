@@ -1,0 +1,887 @@
+{
+  "repo": "claudehead/worldofclaudecraft-quests",
+  "branch": "main",
+  "counts": {
+    "quests": 77,
+    "zones": 4,
+    "classes": 9,
+    "dungeons": 5,
+    "delves": 1
+  },
+  "levelRange": [
+    1,
+    20
+  ],
+  "zones": [
+    {
+      "key": "zone1",
+      "dir": "01-eastbrook-vale",
+      "title": "Eastbrook Vale",
+      "levelRange": [
+        1,
+        7
+      ],
+      "hub": "Eastbrook",
+      "biome": "vale",
+      "bestiary": "quests/zones/01-eastbrook-vale/bestiary.md",
+      "map": "quests/zones/01-eastbrook-vale/map.svg",
+      "quests": [
+        {
+          "id": "q_wolves",
+          "name": "Wolves at the Door",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-wolves.md"
+        },
+        {
+          "id": "q_greyjaw",
+          "name": "The Old Wolf",
+          "level": 1,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-greyjaw.md"
+        },
+        {
+          "id": "q_boars",
+          "name": "Bristleback Hides",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-boars.md"
+        },
+        {
+          "id": "q_whispers",
+          "name": "Whispers Below",
+          "level": 1,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-whispers.md"
+        },
+        {
+          "id": "q_names_of_the_dead",
+          "name": "The Names of the Dead",
+          "level": 1,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-names-of-the-dead.md"
+        },
+        {
+          "id": "q_silence_the_call",
+          "name": "Silence the Call",
+          "level": 1,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-silence-the-call.md"
+        },
+        {
+          "id": "q_rite",
+          "name": "The Binding Rite",
+          "level": 1,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-rite.md"
+        },
+        {
+          "id": "q_hollow",
+          "name": "Into the Hollow",
+          "level": 1,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-hollow.md"
+        },
+        {
+          "id": "q_sexton",
+          "name": "The Sexton's Bell",
+          "level": 1,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-sexton.md"
+        },
+        {
+          "id": "q_gravecallers_trail",
+          "name": "The Gravecaller's Trail",
+          "level": 1,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-gravecallers-trail.md"
+        },
+        {
+          "id": "q_bandits",
+          "name": "Bandits of the Vale",
+          "level": 1,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-bandits.md"
+        },
+        {
+          "id": "q_ringleader",
+          "name": "The Ringleader",
+          "level": 1,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-ringleader.md"
+        },
+        {
+          "id": "q_spiders",
+          "name": "Webwood Menace",
+          "level": 2,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-spiders.md"
+        },
+        {
+          "id": "q_murlocs",
+          "name": "Trouble at the Lake",
+          "level": 3,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-murlocs.md"
+        },
+        {
+          "id": "q_supplies",
+          "name": "Stolen Supplies",
+          "level": 3,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-supplies.md"
+        },
+        {
+          "id": "q_mine",
+          "name": "Rats in the Mine",
+          "level": 4,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-mine.md"
+        },
+        {
+          "id": "q_bones",
+          "name": "The Restless Dead",
+          "level": 5,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-bones.md"
+        },
+        {
+          "id": "q_mogger",
+          "name": "Mogger Must Fall",
+          "level": 6,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-mogger.md"
+        }
+      ]
+    },
+    {
+      "key": "zone2",
+      "dir": "02-mirefen-marsh",
+      "title": "Mirefen Marsh",
+      "levelRange": [
+        6,
+        13
+      ],
+      "hub": "Fenbridge",
+      "biome": "marsh",
+      "bestiary": "quests/zones/02-mirefen-marsh/bestiary.md",
+      "map": "quests/zones/02-mirefen-marsh/map.svg",
+      "quests": [
+        {
+          "id": "q_aldrics_fallen_star",
+          "name": "Aldric's Fallen Star",
+          "level": 5,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-aldrics-fallen-star.md"
+        },
+        {
+          "id": "q_fenbridge_muster",
+          "name": "Muster at Fenbridge",
+          "level": 6,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-fenbridge-muster.md"
+        },
+        {
+          "id": "q_prowlers",
+          "name": "Teeth of the Fen",
+          "level": 6,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-prowlers.md"
+        },
+        {
+          "id": "q_prowler_pelts",
+          "name": "Pelts for the Causeway",
+          "level": 6,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-prowler-pelts.md"
+        },
+        {
+          "id": "q_the_codfather",
+          "name": "The Codfather",
+          "level": 6,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-the-codfather.md"
+        },
+        {
+          "id": "q_idols",
+          "name": "Idols of the Deep",
+          "level": 6,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-idols.md"
+        },
+        {
+          "id": "q_deepfen_purge",
+          "name": "Back to the Shallows",
+          "level": 6,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-deepfen-purge.md"
+        },
+        {
+          "id": "q_broodmother",
+          "name": "The Broodmother",
+          "level": 6,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-broodmother.md"
+        },
+        {
+          "id": "q_drowned_censers",
+          "name": "Censers from the Deep",
+          "level": 6,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-drowned-censers.md"
+        },
+        {
+          "id": "q_no_rest",
+          "name": "No Rest in the Reeds",
+          "level": 6,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-no-rest.md"
+        },
+        {
+          "id": "q_troll_fetishes",
+          "name": "Fetish and Bone",
+          "level": 6,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-troll-fetishes.md"
+        },
+        {
+          "id": "q_summoners",
+          "name": "Stopping the Summoning",
+          "level": 6,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-summoners.md"
+        },
+        {
+          "id": "q_deacon",
+          "name": "The Deacon of the Mire",
+          "level": 6,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-deacon.md"
+        },
+        {
+          "id": "q_fen_supplies",
+          "name": "The Lost Caravan",
+          "level": 7,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-fen-supplies.md"
+        },
+        {
+          "id": "q_deepfen",
+          "name": "The Deepfen Stirs",
+          "level": 7,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-deepfen.md"
+        },
+        {
+          "id": "q_widows",
+          "name": "Silk and Venom",
+          "level": 8,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-widows.md"
+        },
+        {
+          "id": "q_drowned",
+          "name": "The Drowned Dead",
+          "level": 9,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-drowned.md"
+        },
+        {
+          "id": "q_trolls",
+          "name": "Mounds of the Mirefen",
+          "level": 10,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-trolls.md"
+        },
+        {
+          "id": "q_grubjaw",
+          "name": "The Glutton",
+          "level": 11,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-grubjaw.md"
+        },
+        {
+          "id": "q_cult_camp",
+          "name": "Robes in the Reeds",
+          "level": 11,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-cult-camp.md"
+        },
+        {
+          "id": "q_bastion_door",
+          "name": "The Sunken Bastion",
+          "level": 12,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-bastion-door.md"
+        },
+        {
+          "id": "q_olen",
+          "name": "The Knight-Commander's Shame",
+          "level": 12,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-olen.md"
+        },
+        {
+          "id": "q_mistcaller",
+          "name": "The Mistcaller",
+          "level": 12,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/02-mirefen-marsh/q-mistcaller.md"
+        }
+      ]
+    },
+    {
+      "key": "zone3",
+      "dir": "03-thornpeak-heights",
+      "title": "Thornpeak Heights",
+      "levelRange": [
+        13,
+        20
+      ],
+      "hub": "Highwatch",
+      "biome": "peaks",
+      "bestiary": "quests/zones/03-thornpeak-heights/bestiary.md",
+      "map": "quests/zones/03-thornpeak-heights/map.svg",
+      "quests": [
+        {
+          "id": "q_highwatch_summons",
+          "name": "The Watch on the Peaks",
+          "level": 12,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-highwatch-summons.md"
+        },
+        {
+          "id": "q_stalkers",
+          "name": "Stalkers on the Ridge",
+          "level": 13,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-stalkers.md"
+        },
+        {
+          "id": "q_stalker_pelts",
+          "name": "Winter Is Coming to Highwatch",
+          "level": 13,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-stalker-pelts.md"
+        },
+        {
+          "id": "q_glowing_wax",
+          "name": "Strange Wax",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-glowing-wax.md"
+        },
+        {
+          "id": "q_ogre_totems",
+          "name": "Totems of War",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-ogre-totems.md"
+        },
+        {
+          "id": "q_ogre_bounty",
+          "name": "The Captain's Bounty",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-ogre-bounty.md"
+        },
+        {
+          "id": "q_drogmar",
+          "name": "Warlord Drogmar",
+          "level": 13,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-drogmar.md"
+        },
+        {
+          "id": "q_shard_cores",
+          "name": "Cores of the Storm",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-shard-cores.md"
+        },
+        {
+          "id": "q_cult_orders",
+          "name": "Orders from Below",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-cult-orders.md"
+        },
+        {
+          "id": "q_revenant_vanguard",
+          "name": "Bones of the Vanguard",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-revenant-vanguard.md"
+        },
+        {
+          "id": "q_breaking_the_seal",
+          "name": "Breaking the Seal",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-breaking-the-seal.md"
+        },
+        {
+          "id": "q_voice_below",
+          "name": "The Voice Below",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-voice-below.md"
+        },
+        {
+          "id": "q_sanctum_gate",
+          "name": "The Sanctum Gate",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-sanctum-gate.md"
+        },
+        {
+          "id": "q_kobold_tunnels",
+          "name": "Deeprock Trouble",
+          "level": 14,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-kobold-tunnels.md"
+        },
+        {
+          "id": "q_ogre_edges",
+          "name": "Ogres at the Foothills",
+          "level": 15,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-ogre-edges.md"
+        },
+        {
+          "id": "q_crushers",
+          "name": "Break the War-Camp",
+          "level": 16,
+          "group": true,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-crushers.md"
+        },
+        {
+          "id": "q_elementals",
+          "name": "The Mountain Wakes",
+          "level": 16,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-elementals.md"
+        },
+        {
+          "id": "q_kazzix",
+          "name": "The Shardlord",
+          "level": 17,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-kazzix.md"
+        },
+        {
+          "id": "q_zealots",
+          "name": "Chants on the Wind",
+          "level": 17,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-zealots.md"
+        },
+        {
+          "id": "q_necromancers",
+          "name": "The Phylactery Ring",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-necromancers.md"
+        },
+        {
+          "id": "q_revenants",
+          "name": "The Revenant Fields",
+          "level": 18,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-revenants.md"
+        },
+        {
+          "id": "q_wyrm_sigils",
+          "name": "Sigils of the Wyrm",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-wyrm-sigils.md"
+        },
+        {
+          "id": "q_korgath",
+          "name": "The Bound Guardian",
+          "level": 18,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-korgath.md"
+        },
+        {
+          "id": "q_velkhar",
+          "name": "The Grand Necromancer",
+          "level": 18,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-velkhar.md"
+        },
+        {
+          "id": "q_gravewyrm",
+          "name": "Korzul the Gravewyrm",
+          "level": 18,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-gravewyrm.md"
+        },
+        {
+          "id": "q_nythraxis_restless_dead",
+          "name": "Unrest in the Bonefields",
+          "level": 20,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-nythraxis-restless-dead.md"
+        },
+        {
+          "id": "q_nythraxis_graves",
+          "name": "Graves of the Forgotten",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-nythraxis-graves.md"
+        },
+        {
+          "id": "q_nythraxis_sealed_crypt",
+          "name": "The Abandoned Crypt",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-nythraxis-sealed-crypt.md"
+        },
+        {
+          "id": "q_nythraxis_bound_guardian",
+          "name": "The Bound Guardian",
+          "level": 20,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-nythraxis-bound-guardian.md"
+        },
+        {
+          "id": "q_nythraxis_scourges_end",
+          "name": "Scourge's End",
+          "level": 20,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-nythraxis-scourges-end.md"
+        }
+      ]
+    },
+    {
+      "key": "temple",
+      "dir": "04-the-drowned-temple",
+      "title": "The Drowned Temple",
+      "levelRange": [
+        15,
+        16
+      ],
+      "hub": null,
+      "biome": "temple",
+      "bestiary": "quests/zones/04-the-drowned-temple/bestiary.md",
+      "map": "quests/zones/04-the-drowned-temple/map.svg",
+      "quests": [
+        {
+          "id": "q_glimmermere_light",
+          "name": "Light on the Water",
+          "level": 15,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/04-the-drowned-temple/q-glimmermere-light.md"
+        },
+        {
+          "id": "q_tarn_waders",
+          "name": "What the Tarn Gives Up",
+          "level": 15,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/04-the-drowned-temple/q-tarn-waders.md"
+        },
+        {
+          "id": "q_drowned_choir",
+          "name": "The Drowned Choir",
+          "level": 15,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/04-the-drowned-temple/q-drowned-choir.md"
+        },
+        {
+          "id": "q_palecoil",
+          "name": "Sethrael the Palecoil",
+          "level": 16,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/04-the-drowned-temple/q-palecoil.md"
+        },
+        {
+          "id": "q_silence_the_choir",
+          "name": "Silence the Choir",
+          "level": 16,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/04-the-drowned-temple/q-silence-the-choir.md"
+        },
+        {
+          "id": "q_drowned_moon",
+          "name": "The Drowned Moon",
+          "level": 16,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/04-the-drowned-temple/q-drowned-moon.md"
+        }
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "id": "warrior",
+      "name": "Warrior",
+      "resource": "rage",
+      "roles": [
+        "tank",
+        "dps"
+      ],
+      "specs": [
+        "Arms",
+        "Fury",
+        "Protection"
+      ],
+      "file": "classes/warrior.md",
+      "render": "classes/_class-renders/warrior.png"
+    },
+    {
+      "id": "paladin",
+      "name": "Paladin",
+      "resource": "mana",
+      "roles": [
+        "tank",
+        "healer",
+        "dps"
+      ],
+      "specs": [
+        "Holy",
+        "Protection",
+        "Retribution"
+      ],
+      "file": "classes/paladin.md",
+      "render": "classes/_class-renders/paladin.png"
+    },
+    {
+      "id": "hunter",
+      "name": "Hunter",
+      "resource": "mana",
+      "roles": [
+        "dps"
+      ],
+      "specs": [
+        "Beast Mastery",
+        "Marksmanship",
+        "Survival"
+      ],
+      "file": "classes/hunter.md",
+      "render": "classes/_class-renders/hunter.png"
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue",
+      "resource": "energy",
+      "roles": [
+        "dps"
+      ],
+      "specs": [
+        "Assassination",
+        "Combat",
+        "Subtlety"
+      ],
+      "file": "classes/rogue.md",
+      "render": "classes/_class-renders/rogue.png"
+    },
+    {
+      "id": "priest",
+      "name": "Priest",
+      "resource": "mana",
+      "roles": [
+        "healer",
+        "dps"
+      ],
+      "specs": [
+        "Discipline",
+        "Holy",
+        "Shadow"
+      ],
+      "file": "classes/priest.md",
+      "render": "classes/_class-renders/priest.png"
+    },
+    {
+      "id": "shaman",
+      "name": "Shaman",
+      "resource": "mana",
+      "roles": [
+        "healer",
+        "dps"
+      ],
+      "specs": [
+        "Elemental",
+        "Enhancement",
+        "Restoration"
+      ],
+      "file": "classes/shaman.md",
+      "render": "classes/_class-renders/shaman.png"
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "resource": "mana",
+      "roles": [
+        "dps"
+      ],
+      "specs": [
+        "Arcane",
+        "Fire",
+        "Frost"
+      ],
+      "file": "classes/mage.md",
+      "render": "classes/_class-renders/mage.png"
+    },
+    {
+      "id": "warlock",
+      "name": "Warlock",
+      "resource": "mana",
+      "roles": [
+        "dps"
+      ],
+      "specs": [
+        "Affliction",
+        "Demonology",
+        "Destruction"
+      ],
+      "file": "classes/warlock.md",
+      "render": "classes/_class-renders/warlock.png"
+    },
+    {
+      "id": "druid",
+      "name": "Druid",
+      "resource": "mana",
+      "roles": [
+        "tank",
+        "healer",
+        "dps"
+      ],
+      "specs": [
+        "Balance",
+        "Feral",
+        "Restoration"
+      ],
+      "file": "classes/druid.md",
+      "render": "classes/_class-renders/druid.png"
+    }
+  ],
+  "dungeons": [
+    {
+      "id": "hollow_crypt",
+      "name": "The Hollow Crypt",
+      "suggestedPlayers": 5,
+      "hasMap": true,
+      "file": "dungeons/hollow_crypt.md",
+      "map": "dungeons/_maps/hollow_crypt.svg"
+    },
+    {
+      "id": "sunken_bastion",
+      "name": "The Sunken Bastion",
+      "suggestedPlayers": 5,
+      "hasMap": true,
+      "file": "dungeons/sunken_bastion.md",
+      "map": "dungeons/_maps/sunken_bastion.svg"
+    },
+    {
+      "id": "gravewyrm_sanctum",
+      "name": "Gravewyrm Sanctum",
+      "suggestedPlayers": 5,
+      "hasMap": true,
+      "file": "dungeons/gravewyrm_sanctum.md",
+      "map": "dungeons/_maps/gravewyrm_sanctum.svg"
+    },
+    {
+      "id": "nythraxis_crypt",
+      "name": "Abandoned Crypt",
+      "suggestedPlayers": 1,
+      "hasMap": false,
+      "file": "dungeons/nythraxis_crypt.md",
+      "map": null
+    },
+    {
+      "id": "nythraxis_boss_arena",
+      "name": "Nythraxis Raid Arena",
+      "suggestedPlayers": 10,
+      "hasMap": true,
+      "file": "dungeons/nythraxis_boss_arena.md",
+      "map": "dungeons/_maps/nythraxis_boss_arena.svg"
+    }
+  ],
+  "delves": [
+    {
+      "id": "collapsed_reliquary",
+      "name": "The Collapsed Reliquary",
+      "minLevel": 7,
+      "file": "delves/collapsed_reliquary.md"
+    }
+  ]
+}

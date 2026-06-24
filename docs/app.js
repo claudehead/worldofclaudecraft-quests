@@ -1,0 +1,259 @@
+'use strict';
+const app = document.getElementById('app');
+let M = null;            // manifest
+let RAW = '';            // raw.githubusercontent base
+const mdCache = new Map();
+
+// ---------- helpers ----------
+const el = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild; };
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const dirOf = (p) => p.replace(/[^/]*$/, '');
+function resolvePath(base, rel) {
+  if (/^https?:/.test(rel) || rel.startsWith('#')) return rel;
+  const out = [];
+  for (const seg of (base + rel).split('/')) {
+    if (seg === '..') out.pop();
+    else if (seg !== '.' && seg !== '') out.push(seg);
+  }
+  return out.join('/');
+}
+const raw = (path) => RAW + path;
+
+async function getMd(path) {
+  if (mdCache.has(path)) return mdCache.get(path);
+  const res = await fetch(raw(path));
+  if (!res.ok) throw new Error(`${res.status} ${path}`);
+  const text = await res.text();
+  mdCache.set(path, text);
+  return text;
+}
+
+function reveal(scope) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  (scope || document).querySelectorAll('.reveal').forEach(n => io.observe(n));
+}
+
+// ---------- markdown rendering ----------
+function renderMarkdown(container, md, docPath) {
+  const base = dirOf(docPath);
+  container.innerHTML = marked.parse(md, { mangle: false, headerIds: false });
+  // rewrite images to raw URLs
+  container.querySelectorAll('img').forEach(img => {
+    const src = img.getAttribute('src') || '';
+    if (src && !/^https?:/.test(src)) img.src = raw(resolvePath(base, src));
+    img.loading = 'lazy';
+  });
+  // rewrite links: .md -> in-app route, assets -> raw, external -> new tab
+  container.querySelectorAll('a').forEach(a => {
+    const href = a.getAttribute('href') || '';
+    if (!href || href.startsWith('#/')) return;
+    if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; return; }
+    if (href.startsWith('#')) return; // same-doc anchor (handled by ids)
+    const [pathPart, anchor] = href.split('#');
+    if (/\.md$/.test(pathPart)) {
+      const tgt = resolvePath(base, pathPart);
+      a.setAttribute('href', `#/doc/${encodeURIComponent(tgt)}${anchor ? '/' + encodeURIComponent(anchor) : ''}`);
+    } else if (/\.(svg|png|jpg|jpeg)$/.test(pathPart)) {
+      a.href = raw(resolvePath(base, pathPart)); a.target = '_blank'; a.rel = 'noopener';
+    }
+  });
+}
+
+// ---------- views ----------
+function home() {
+  const c = M.counts;
+  const featureCards = [
+    ['#/quests', '🗺️', 'Quests', `${c.quests} quests across ${c.zones} zones, sorted by level — with maps, rewards, and exact objectives.`],
+    ['#/bestiary', '🐺', 'Bestiary', `Every creature with a model render, stats, kill tactics, and a full loot table.`],
+    ['#/classes', '⚔️', 'Classes', `${c.classes} classes — specs, abilities by learn-level, and model portraits.`],
+    ['#/dungeons', '🏰', 'Dungeons', `Route maps, rosters and bosses for every instance.`],
+    ['#/delves', '🔮', 'Delves', `Tiers, affixes, companions and the Marks vendor.`],
+  ];
+  app.innerHTML = '';
+  app.append(el(`
+    <div class="hero">
+      <span class="eyebrow reveal">The complete field guide</span>
+      <h1 class="reveal">World of<br><span class="accent">Claudecraft</span></h1>
+      <p class="sub reveal">Every quest, creature, class, dungeon and delve — rendered live from the source data. Pick a quest at your level and go.</p>
+      <div class="cta reveal">
+        <span class="btn primary" data-go="#/quests">Browse quests →</span>
+        <span class="btn ghost" data-go="#/bestiary">Open the bestiary</span>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><div class="n">${c.quests}</div><div class="l">Quests</div></div>
+        <div class="stat"><div class="n">${c.zones}</div><div class="l">Zones</div></div>
+        <div class="stat"><div class="n">${c.classes}</div><div class="l">Classes</div></div>
+        <div class="stat"><div class="n">1–20</div><div class="l">Levels</div></div>
+      </div>
+    </div>`));
+  const sec = el(`<section class="block"><div class="wrap"><div class="grid g-3"></div></div></section>`);
+  const grid = sec.querySelector('.grid');
+  featureCards.forEach(([go, ico, title, desc]) => {
+    const card = el(`<div class="card feature reveal" data-go="${go}">
+      <div class="ico">${ico}</div>
+      <h3>${title}</h3><div class="meta">${desc}</div>
+      <div class="arrow">Explore →</div></div>`);
+    grid.append(card);
+  });
+  app.append(sec);
+  reveal();
+}
+
+function questsView() {
+  const allQuests = M.zones.flatMap(z => z.quests.map(q => ({ ...q, zoneTitle: z.title, zoneDir: z.dir })));
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">${M.counts.quests} quests</span><h2>Quests by level</h2>
+      <p>Filter by zone or search, then open any quest for objectives, rewards, and where to go.</p></div>
+    <div class="controls reveal">
+      <input class="search" id="q-search" placeholder="Search quests…">
+      <div class="pills" id="q-zones"></div>
+    </div>
+    <div class="grid g-3" id="q-grid"></div>
+  </div></section>`));
+  const zonesPills = app.querySelector('#q-zones');
+  const grid = app.querySelector('#q-grid');
+  const search = app.querySelector('#q-search');
+  let zoneFilter = 'all', term = '';
+
+  const pills = [['all', 'All zones'], ...M.zones.map(z => [z.dir, z.title])];
+  pills.forEach(([id, label], i) => {
+    const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`);
+    p.onclick = () => { zoneFilter = id; zonesPills.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+    zonesPills.append(p);
+  });
+  search.oninput = () => { term = search.value.toLowerCase(); draw(); };
+
+  function draw() {
+    const list = allQuests
+      .filter(q => zoneFilter === 'all' || q.zoneDir === zoneFilter)
+      .filter(q => !term || q.name.toLowerCase().includes(term))
+      .sort((a, b) => a.level - b.level);
+    grid.innerHTML = '';
+    list.forEach(q => {
+      const card = el(`<div class="card" data-go="#/doc/${encodeURIComponent(q.file)}">
+        <h3>${esc(q.name)}</h3>
+        <div class="meta">${esc(q.zoneTitle)}</div>
+        <div class="tags">
+          <span class="tag lvl">Lv ${q.level}+</span>
+          ${q.group ? '<span class="tag group">Group</span>' : ''}
+          ${q.chain ? '<span class="tag">Chain</span>' : ''}
+        </div></div>`);
+      grid.append(card);
+    });
+    if (!list.length) grid.append(el('<div class="meta">No quests match.</div>'));
+  }
+  draw(); reveal();
+}
+
+function zonesView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Bestiary</span><h2>Creatures by zone</h2>
+      <p>Each zone's bestiary: model renders, health and armor, the best way to kill every mob, and full loot tables.</p></div>
+    <div class="grid g-2" id="z-grid"></div></div></section>`));
+  const grid = app.querySelector('#z-grid');
+  M.zones.forEach(z => {
+    const card = el(`<div class="card reveal" data-go="#/doc/${encodeURIComponent(z.bestiary)}">
+      <h3>${esc(z.title)}</h3>
+      <div class="meta">Levels ${z.levelRange[0]}–${z.levelRange[1]}${z.hub ? ' · Hub: ' + esc(z.hub) : ''}</div>
+      <div class="tags"><span class="tag lvl">${z.quests.length} quests</span><span class="tag">Bestiary →</span></div></div>`);
+    grid.append(card);
+  });
+  reveal();
+}
+
+function classesView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">${M.classes.length} classes</span><h2>Choose your class</h2>
+      <p>Specs, signature abilities, and every spell with the level you learn it.</p></div>
+    <div class="grid g-3" id="c-grid"></div></div></section>`));
+  const grid = app.querySelector('#c-grid');
+  M.classes.forEach(c => {
+    const card = el(`<div class="card classcard reveal" data-go="#/doc/${encodeURIComponent(c.file)}">
+      <img src="${raw(c.render)}" alt="${esc(c.name)}" loading="lazy">
+      <h3>${esc(c.name)}</h3>
+      <div class="meta">${esc((c.roles || []).join(' · '))} · ${esc(c.resource)}</div>
+      <div class="tags" style="justify-content:center">${(c.specs || []).map(s => `<span class="tag">${esc(s)}</span>`).join('')}</div></div>`);
+    grid.append(card);
+  });
+  reveal();
+}
+
+function simpleListView(title, eyebrow, blurb, items) {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">${esc(eyebrow)}</span><h2>${esc(title)}</h2><p>${esc(blurb)}</p></div>
+    <div class="grid g-2" id="l-grid"></div></div></section>`));
+  const grid = app.querySelector('#l-grid');
+  items.forEach(it => {
+    const card = el(`<div class="card reveal" data-go="#/doc/${encodeURIComponent(it.file)}">
+      <h3>${esc(it.name)}</h3><div class="meta">${esc(it.meta || '')}</div>
+      ${it.tags ? `<div class="tags">${it.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>` : ''}</div>`);
+    grid.append(card);
+  });
+  reveal();
+}
+
+async function docView(path, anchor) {
+  app.innerHTML = '<div class="spinner"></div>';
+  let md;
+  try { md = await getMd(path); }
+  catch (e) { app.innerHTML = `<section class="block"><div class="wrap"><p class="meta">Couldn't load <code>${esc(path)}</code> (${esc(e.message)}).</p><p><span class="btn ghost" data-go="#/">← Home</span></p></div></section>`; return; }
+  const wrap = el(`<section class="block"><div class="wrap"><div class="doc"><span class="back">← Back</span><div class="body"></div></div></div></section>`);
+  wrap.querySelector('.back').onclick = () => history.length > 1 ? history.back() : (location.hash = '#/');
+  renderMarkdown(wrap.querySelector('.body'), md, path);
+  app.innerHTML = '';
+  app.append(wrap);
+  window.scrollTo(0, 0);
+  if (anchor) {
+    const t = document.getElementById(anchor);
+    if (t) setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+  }
+}
+
+// ---------- router ----------
+function router() {
+  const h = location.hash || '#/';
+  setActiveNav(h);
+  const parts = h.slice(2).split('/');
+  const head = parts[0] || '';
+  if (head === 'quests') return questsView();
+  if (head === 'bestiary') return zonesView();
+  if (head === 'classes') return classesView();
+  if (head === 'dungeons') return simpleListView('Dungeons', 'Instanced content', 'Route maps, full rosters and bosses for every dungeon.',
+    M.dungeons.map(d => ({ name: d.name, file: d.file, meta: d.suggestedPlayers ? `Suggested players: ${d.suggestedPlayers}` : '', tags: d.hasMap ? ['Map', 'Roster'] : ['Roster'] })));
+  if (head === 'delves') return simpleListView('Delves', 'Replayable', 'Scalable mini-instances with tiers, affixes, companions and a Marks vendor.',
+    M.delves.map(d => ({ name: d.name, file: d.file, meta: `Minimum level ${d.minLevel}`, tags: ['Tiers', 'Vendor'] })));
+  if (head === 'doc') return docView(decodeURIComponent(parts[1] || ''), parts[2] ? decodeURIComponent(parts[2]) : '');
+  return home();
+}
+
+function setActiveNav(h) {
+  document.querySelectorAll('nav .link').forEach(a => {
+    const go = a.getAttribute('data-go');
+    a.classList.toggle('active', h.startsWith(go) && go !== '#/');
+  });
+}
+
+// global click handler for [data-go]
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('[data-go]');
+  if (t) { e.preventDefault(); location.hash = t.getAttribute('data-go'); }
+});
+window.addEventListener('hashchange', router);
+window.addEventListener('scroll', () => document.body.classList.toggle('scrolled', window.scrollY > 10));
+
+// ---------- boot ----------
+(async function boot() {
+  try {
+    M = await (await fetch('manifest.json', { cache: 'no-cache' })).json();
+    RAW = `https://raw.githubusercontent.com/${M.repo}/${M.branch}/`;
+    router();
+  } catch (e) {
+    app.innerHTML = `<section class="block"><div class="wrap"><p class="meta">Failed to load the guide manifest. ${esc(e.message)}</p></div></section>`;
+  }
+})();

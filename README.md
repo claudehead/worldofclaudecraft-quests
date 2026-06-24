@@ -4,6 +4,10 @@ A complete, organized walkthrough for every quest in [World of Claudecraft](http
 
 **77 quests** across **4 zones** (levels 1–20).
 
+## 🌐 Website
+
+There's a browsable site in [`docs/`](docs/) — a single-page app with an Apple-style design that **renders entirely from this repo**: it loads a generated `manifest.json` for navigation and fetches the markdown, maps, mob renders, and item icons live from `raw.githubusercontent.com`. No content is hand-written into the site, and the manifest is rebuilt by the same auto-update pipeline, so the site always matches the data here. Enable it under **Settings → Pages → Source: `main` / `/docs`**.
+
 ## How to use this
 
 - **Playing a character?** Open **[quests/by-level.md](quests/by-level.md)** and do everything at or below your current level.
