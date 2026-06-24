@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>html,body{margin:0;background:transparent}#c{display:block}</style></head>
+<body>
+<canvas id="c" width="512" height="512"></canvas>
+<script type="importmap">
+{ "imports": { "three": "/vendor/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from '/vendor/jsm/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from '/vendor/jsm/libs/meshopt_decoder.module.js';
+import { DRACOLoader } from '/vendor/jsm/loaders/DRACOLoader.js';
+
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setClearColor(0x000000, 0);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(35, 1, 0.01, 100);
+
+// soft, even studio lighting so the authored colours read true
+scene.add(new THREE.HemisphereLight(0xffffff, 0x6a6a72, 1.15));
+const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.set(2.5, 4, 3); scene.add(key);
+const fill = new THREE.DirectionalLight(0xffffff, 0.6); fill.position.set(-3, 1.5, 1); scene.add(fill);
+const rim = new THREE.DirectionalLight(0xbfd8ff, 0.7); rim.position.set(0, 2, -4); scene.add(rim);
+
+const loader = new GLTFLoader();
+loader.setMeshoptDecoder(MeshoptDecoder);
+let current = null;
+
+window.__renderMob = async ({ url, tint, tintStrength }) => {
+  if (current) { scene.remove(current); current.traverse(o => { if (o.geometry) o.geometry.dispose(); }); current = null; }
+  const gltf = await loader.loadAsync(url);
+  const model = gltf.scene;
+  // skinned-mesh bind-pose bounds don't match the posed model, so three may
+  // frustum-cull them to nothing — disable culling for the portrait.
+  model.traverse(o => { if (o.isMesh || o.isSkinnedMesh) o.frustumCulled = false; });
+
+  // tint: lerp every base colour toward the mob's in-game tint (mirrors renderer)
+  if (tint && tintStrength > 0) {
+    const tc = new THREE.Color(tint);
+    model.traverse(o => {
+      if (!o.isMesh || !o.material) return;
+      const mats = Array.isArray(o.material) ? o.material : [o.material];
+      o.material = mats.map(mm => {
+        const c = mm.clone();
+        if (c.color) c.color.lerp(tc, tintStrength);
+        return c;
+      });
+      if (!Array.isArray(o.material)) o.material = o.material[0];
+    });
+  }
+
+  // pose: play an idle-ish clip a little way in, so humanoids aren't T-posed
+  if (gltf.animations && gltf.animations.length) {
+    const clip = gltf.animations.find(a => /idle|stand|rest/i.test(a.name)) || gltf.animations[0];
+    const mixer = new THREE.AnimationMixer(model);
+    mixer.clipAction(clip).play();
+    mixer.update(0.6);
+  }
+  model.updateMatrixWorld(true);
+
+  // EXPERIMENT: keep skinning, swap to unlit material
+  model.traverse(o=>{ if(o.isMesh||o.isSkinnedMesh){ const m=Array.isArray(o.material)?o.material[0]:o.material; o.material=new THREE.MeshLambertMaterial({color:(m&&m.color)?m.color.clone():new THREE.Color(0x888888),map:(m&&m.map)||null,vertexColors:!!(m&&m.vertexColors)}); }});
+  const model2=model;
+  scene.add(model2);
+  model2.updateWorldMatrix(true,true);
+  const box=new THREE.Box3().setFromObject(model2);
+  const size=new THREE.Vector3(); box.getSize(size);
+  const center=new THREE.Vector3(); box.getCenter(center);
+  model2.position.sub(center);
+  model2.rotation.y=-0.5;
+  current=model2;
+  const radius = Math.max(size.x, size.y, size.z) * 0.5 || 1;
+  const dist = radius / Math.tan((camera.fov * Math.PI / 180) / 2) * 1.5;
+  camera.position.set(dist * 0.55, radius * 0.65, dist);
+  camera.lookAt(0, 0, 0);
+  camera.updateProjectionMatrix();
+
+  renderer.render(scene, camera);
+  renderer.render(scene, camera); // second pass: ensure buffer is committed
+  let meshes = 0; model2.traverse(o => { if (o.isMesh) meshes++; });
+  window.__diag = { meshes, size: size.toArray().map(n => +n.toFixed(3)), camPos: camera.position.toArray().map(n => +n.toFixed(2)) };
+  return canvas.toDataURL('image/png');
+};
+
+window.__testCube = () => {
+  const cube = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2), new THREE.MeshBasicMaterial({ color: 0xff2020 }));
+  scene.add(cube);
+  camera.position.set(3, 3, 4); camera.lookAt(0, 0, 0); camera.updateProjectionMatrix();
+  renderer.render(scene, camera);
+  const t = document.createElement('canvas'); t.width = canvas.width; t.height = canvas.height;
+  const x = t.getContext('2d'); x.drawImage(canvas, 0, 0);
+  const d = x.getImageData(0, 0, canvas.width, canvas.height).data;
+  let red = 0; for (let i = 0; i < d.length; i += 4) if (d[i] > 100 && d[i + 3] > 10) red++;
+  return red;
+};
+window.__ready = true;
+</script>
+</body>
+</html>

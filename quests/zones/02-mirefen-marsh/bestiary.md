@@ -8,7 +8,7 @@
 
 ### Mire Prowler
 
-<img src="../_mob-icons/mire_prowler.svg" width="100" align="right" alt="Mire Prowler">
+<img src="../_mob-renders/mire_prowler.png" width="150" align="right" alt="Mire Prowler">
 
 | Stat | Value |
 |---|---|
@@ -25,7 +25,7 @@
 
 ### Deepfen Snapper
 
-<img src="../_mob-icons/deepfen_murloc.svg" width="100" align="right" alt="Deepfen Snapper">
+<img src="../_mob-renders/deepfen_murloc.png" width="150" align="right" alt="Deepfen Snapper">
 
 | Stat | Value |
 |---|---|
@@ -43,7 +43,7 @@
 
 ### Mirefen Widow
 
-<img src="../_mob-icons/mire_widow.svg" width="100" align="right" alt="Mirefen Widow">
+<img src="../_mob-renders/mire_widow.png" width="150" align="right" alt="Mirefen Widow">
 
 | Stat | Value |
 |---|---|
@@ -60,7 +60,7 @@
 
 ### Bog Bloat
 
-<img src="../_mob-icons/bog_bloat.svg" width="100" align="right" alt="Bog Bloat">
+<img src="../_mob-renders/bog_bloat.png" width="150" align="right" alt="Bog Bloat">
 
 | Stat | Value |
 |---|---|
@@ -77,7 +77,7 @@
 
 ### Drowned Dead
 
-<img src="../_mob-icons/drowned_dead.svg" width="100" align="right" alt="Drowned Dead">
+<img src="../_mob-renders/drowned_dead.png" width="150" align="right" alt="Drowned Dead">
 
 | Stat | Value |
 |---|---|
@@ -95,7 +95,7 @@
 
 ### Gravecaller Cultist
 
-<img src="../_mob-icons/gravecaller_cultist.svg" width="100" align="right" alt="Gravecaller Cultist">
+<img src="../_mob-renders/gravecaller_cultist.png" width="150" align="right" alt="Gravecaller Cultist">
 
 | Stat | Value |
 |---|---|
@@ -113,7 +113,7 @@
 
 ### Mirefen Troll
 
-<img src="../_mob-icons/fen_troll.svg" width="100" align="right" alt="Mirefen Troll">
+<img src="../_mob-renders/fen_troll.png" width="150" align="right" alt="Mirefen Troll">
 
 | Stat | Value |
 |---|---|
@@ -130,7 +130,7 @@
 
 ### Gravecaller Mender
 
-<img src="../_mob-icons/gravecaller_mender.svg" width="100" align="right" alt="Gravecaller Mender">
+<img src="../_mob-renders/gravecaller_mender.png" width="150" align="right" alt="Gravecaller Mender">
 
 | Stat | Value |
 |---|---|
@@ -148,7 +148,7 @@
 
 ### Gravecaller Summoner
 
-<img src="../_mob-icons/gravecaller_summoner.svg" width="100" align="right" alt="Gravecaller Summoner">
+<img src="../_mob-renders/gravecaller_summoner.png" width="150" align="right" alt="Gravecaller Summoner">
 
 | Stat | Value |
 |---|---|
@@ -167,7 +167,7 @@
 
 ### Grubjaw the Glutton — _Rare_
 
-<img src="../_mob-icons/grubjaw.svg" width="100" align="right" alt="Grubjaw the Glutton">
+<img src="../_mob-renders/grubjaw.png" width="150" align="right" alt="Grubjaw the Glutton">
 
 | Stat | Value |
 |---|---|
@@ -187,7 +187,7 @@
 
 ### Mirejaw the Ravenous — _Elite · Rare_
 
-<img src="../_mob-icons/mirejaw_the_ravenous.svg" width="100" align="right" alt="Mirejaw the Ravenous">
+<img src="../_mob-renders/mirejaw_the_ravenous.png" width="150" align="right" alt="Mirejaw the Ravenous">
 
 | Stat | Value |
 |---|---|
@@ -210,7 +210,7 @@
 
 ### Sloomtooth the Drowned — _Elite · Rare_
 
-<img src="../_mob-icons/sloomtooth_the_drowned.svg" width="100" align="right" alt="Sloomtooth the Drowned">
+<img src="../_mob-renders/sloomtooth_the_drowned.png" width="150" align="right" alt="Sloomtooth the Drowned">
 
 | Stat | Value |
 |---|---|
@@ -232,7 +232,7 @@
 
 ### Bastion Revenant — _Elite_
 
-<img src="../_mob-icons/bastion_revenant.svg" width="100" align="right" alt="Bastion Revenant">
+<img src="../_mob-renders/bastion_revenant.png" width="150" align="right" alt="Bastion Revenant">
 
 | Stat | Value |
 |---|---|
@@ -250,7 +250,7 @@
 
 ### Sister Nhalia — _Elite · Rare_
 
-<img src="../_mob-icons/sister_nhalia.svg" width="100" align="right" alt="Sister Nhalia">
+<img src="../_mob-renders/sister_nhalia.png" width="150" align="right" alt="Sister Nhalia">
 
 | Stat | Value |
 |---|---|
@@ -274,7 +274,7 @@
 
 ### Tidebound Acolyte — _Elite_
 
-<img src="../_mob-icons/tidebound_acolyte.svg" width="100" align="right" alt="Tidebound Acolyte">
+<img src="../_mob-renders/tidebound_acolyte.png" width="150" align="right" alt="Tidebound Acolyte">
 
 | Stat | Value |
 |---|---|
@@ -292,7 +292,7 @@
 
 ### Knight-Commander Olen — _Elite_
 
-<img src="../_mob-icons/knight_commander_olen.svg" width="100" align="right" alt="Knight-Commander Olen">
+<img src="../_mob-renders/knight_commander_olen.png" width="150" align="right" alt="Knight-Commander Olen">
 
 | Stat | Value |
 |---|---|
@@ -312,7 +312,7 @@
 
 ### The Broodmother — _Boss_
 
-<img src="../_mob-icons/mirefen_broodmother.svg" width="100" align="right" alt="The Broodmother">
+<img src="../_mob-renders/mirefen_broodmother.png" width="150" align="right" alt="The Broodmother">
 
 | Stat | Value |
 |---|---|
@@ -330,7 +330,7 @@
 
 ### Deacon Voss — _Boss_
 
-<img src="../_mob-icons/deacon_voss.svg" width="100" align="right" alt="Deacon Voss">
+<img src="../_mob-renders/deacon_voss.png" width="150" align="right" alt="Deacon Voss">
 
 | Stat | Value |
 |---|---|
@@ -349,7 +349,7 @@
 
 ### Vael the Mistcaller — _Boss · Elite_
 
-<img src="../_mob-icons/vael_the_mistcaller.svg" width="100" align="right" alt="Vael the Mistcaller">
+<img src="../_mob-renders/vael_the_mistcaller.png" width="150" align="right" alt="Vael the Mistcaller">
 
 | Stat | Value |
 |---|---|

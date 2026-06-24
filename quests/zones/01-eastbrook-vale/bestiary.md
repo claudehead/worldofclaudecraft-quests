@@ -8,7 +8,7 @@
 
 ### Forest Wolf
 
-<img src="../_mob-icons/forest_wolf.svg" width="100" align="right" alt="Forest Wolf">
+<img src="../_mob-renders/forest_wolf.png" width="150" align="right" alt="Forest Wolf">
 
 | Stat | Value |
 |---|---|
@@ -25,7 +25,7 @@
 
 ### Webwood Lurker
 
-<img src="../_mob-icons/webwood_spider.svg" width="100" align="right" alt="Webwood Lurker">
+<img src="../_mob-renders/webwood_spider.png" width="150" align="right" alt="Webwood Lurker">
 
 | Stat | Value |
 |---|---|
@@ -43,7 +43,7 @@
 
 ### Wild Boar
 
-<img src="../_mob-icons/wild_boar.svg" width="100" align="right" alt="Wild Boar">
+<img src="../_mob-renders/wild_boar.png" width="150" align="right" alt="Wild Boar">
 
 | Stat | Value |
 |---|---|
@@ -60,7 +60,7 @@
 
 ### Mudfin Skulker
 
-<img src="../_mob-icons/mudfin_murloc.svg" width="100" align="right" alt="Mudfin Skulker">
+<img src="../_mob-renders/mudfin_murloc.png" width="150" align="right" alt="Mudfin Skulker">
 
 | Stat | Value |
 |---|---|
@@ -77,7 +77,7 @@
 
 ### Vale Bandit
 
-<img src="../_mob-icons/vale_bandit.svg" width="100" align="right" alt="Vale Bandit">
+<img src="../_mob-renders/vale_bandit.png" width="150" align="right" alt="Vale Bandit">
 
 | Stat | Value |
 |---|---|
@@ -94,7 +94,7 @@
 
 ### Old Greyjaw — _Rare_
 
-<img src="../_mob-icons/old_greyjaw.svg" width="100" align="right" alt="Old Greyjaw">
+<img src="../_mob-renders/old_greyjaw.png" width="150" align="right" alt="Old Greyjaw">
 
 | Stat | Value |
 |---|---|
@@ -112,7 +112,7 @@
 
 ### Tunnel Rat Digger
 
-<img src="../_mob-icons/tunnel_rat.svg" width="100" align="right" alt="Tunnel Rat Digger">
+<img src="../_mob-renders/tunnel_rat.png" width="150" align="right" alt="Tunnel Rat Digger">
 
 | Stat | Value |
 |---|---|
@@ -129,7 +129,7 @@
 
 ### Restless Bones
 
-<img src="../_mob-icons/restless_bones.svg" width="100" align="right" alt="Restless Bones">
+<img src="../_mob-renders/restless_bones.png" width="150" align="right" alt="Restless Bones">
 
 | Stat | Value |
 |---|---|
@@ -149,7 +149,7 @@
 
 ### Mogger — _Elite · Rare_
 
-<img src="../_mob-icons/mogger.svg" width="100" align="right" alt="Mogger">
+<img src="../_mob-renders/mogger.png" width="150" align="right" alt="Mogger">
 
 | Stat | Value |
 |---|---|
@@ -173,7 +173,7 @@
 
 ### Captain Verlan — _Elite · Rare_
 
-<img src="../_mob-icons/captain_verlan.svg" width="100" align="right" alt="Captain Verlan">
+<img src="../_mob-renders/captain_verlan.png" width="150" align="right" alt="Captain Verlan">
 
 | Stat | Value |
 |---|---|
@@ -194,7 +194,7 @@
 
 ### Crypt Shambler — _Elite_
 
-<img src="../_mob-icons/crypt_shambler.svg" width="100" align="right" alt="Crypt Shambler">
+<img src="../_mob-renders/crypt_shambler.png" width="150" align="right" alt="Crypt Shambler">
 
 | Stat | Value |
 |---|---|
@@ -212,7 +212,7 @@
 
 ### Bonechill Widow — _Elite_
 
-<img src="../_mob-icons/bonechill_widow.svg" width="100" align="right" alt="Bonechill Widow">
+<img src="../_mob-renders/bonechill_widow.png" width="150" align="right" alt="Bonechill Widow">
 
 | Stat | Value |
 |---|---|
@@ -230,7 +230,7 @@
 
 ### Hollow Acolyte — _Elite_
 
-<img src="../_mob-icons/hollow_acolyte.svg" width="100" align="right" alt="Hollow Acolyte">
+<img src="../_mob-renders/hollow_acolyte.png" width="150" align="right" alt="Hollow Acolyte">
 
 | Stat | Value |
 |---|---|
@@ -248,7 +248,7 @@
 
 ### Sexton Marrow — _Elite_
 
-<img src="../_mob-icons/sexton_marrow.svg" width="100" align="right" alt="Sexton Marrow">
+<img src="../_mob-renders/sexton_marrow.png" width="150" align="right" alt="Sexton Marrow">
 
 | Stat | Value |
 |---|---|
@@ -268,7 +268,7 @@
 
 ### Gorrak the Ruthless — _Boss_
 
-<img src="../_mob-icons/gorrak.svg" width="100" align="right" alt="Gorrak the Ruthless">
+<img src="../_mob-renders/gorrak.png" width="150" align="right" alt="Gorrak the Ruthless">
 
 | Stat | Value |
 |---|---|
@@ -286,7 +286,7 @@
 
 ### Morthen the Gravecaller — _Boss · Elite_
 
-<img src="../_mob-icons/morthen.svg" width="100" align="right" alt="Morthen the Gravecaller">
+<img src="../_mob-renders/morthen.png" width="150" align="right" alt="Morthen the Gravecaller">
 
 | Stat | Value |
 |---|---|

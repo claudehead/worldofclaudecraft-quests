@@ -8,7 +8,7 @@
 
 ### Ridge Stalker
 
-<img src="../_mob-icons/ridge_stalker.svg" width="100" align="right" alt="Ridge Stalker">
+<img src="../_mob-renders/ridge_stalker.png" width="150" align="right" alt="Ridge Stalker">
 
 | Stat | Value |
 |---|---|
@@ -25,7 +25,7 @@
 
 ### Deeprock Tunneler
 
-<img src="../_mob-icons/deeprock_kobold.svg" width="100" align="right" alt="Deeprock Tunneler">
+<img src="../_mob-renders/deeprock_kobold.png" width="150" align="right" alt="Deeprock Tunneler">
 
 | Stat | Value |
 |---|---|
@@ -42,7 +42,7 @@
 
 ### Thornpeak Ogre
 
-<img src="../_mob-icons/thornpeak_ogre.svg" width="100" align="right" alt="Thornpeak Ogre">
+<img src="../_mob-renders/thornpeak_ogre.png" width="150" align="right" alt="Thornpeak Ogre">
 
 | Stat | Value |
 |---|---|
@@ -59,7 +59,7 @@
 
 ### Stormcrag Elemental
 
-<img src="../_mob-icons/stormcrag_elemental.svg" width="100" align="right" alt="Stormcrag Elemental">
+<img src="../_mob-renders/stormcrag_elemental.png" width="150" align="right" alt="Stormcrag Elemental">
 
 | Stat | Value |
 |---|---|
@@ -77,7 +77,7 @@
 
 ### Wyrmcult Zealot
 
-<img src="../_mob-icons/wyrmcult_zealot.svg" width="100" align="right" alt="Wyrmcult Zealot">
+<img src="../_mob-renders/wyrmcult_zealot.png" width="150" align="right" alt="Wyrmcult Zealot">
 
 | Stat | Value |
 |---|---|
@@ -95,7 +95,7 @@
 
 ### Boneclad Revenant
 
-<img src="../_mob-icons/boneclad_revenant.svg" width="100" align="right" alt="Boneclad Revenant">
+<img src="../_mob-renders/boneclad_revenant.png" width="150" align="right" alt="Boneclad Revenant">
 
 | Stat | Value |
 |---|---|
@@ -112,7 +112,7 @@
 
 ### Shardlord Kazzix — _Rare_
 
-<img src="../_mob-icons/shardlord_kazzix.svg" width="100" align="right" alt="Shardlord Kazzix">
+<img src="../_mob-renders/shardlord_kazzix.png" width="150" align="right" alt="Shardlord Kazzix">
 
 | Stat | Value |
 |---|---|
@@ -130,7 +130,7 @@
 
 ### Wyrmcult Necromancer
 
-<img src="../_mob-icons/wyrmcult_necromancer.svg" width="100" align="right" alt="Wyrmcult Necromancer">
+<img src="../_mob-renders/wyrmcult_necromancer.png" width="150" align="right" alt="Wyrmcult Necromancer">
 
 | Stat | Value |
 |---|---|
@@ -150,7 +150,7 @@
 
 ### Old Cragmaw — _Elite · Rare_
 
-<img src="../_mob-icons/old_cragmaw.svg" width="100" align="right" alt="Old Cragmaw">
+<img src="../_mob-renders/old_cragmaw.png" width="150" align="right" alt="Old Cragmaw">
 
 | Stat | Value |
 |---|---|
@@ -172,7 +172,7 @@
 
 ### Ironvein Foreman — _Elite · Rare_
 
-<img src="../_mob-icons/ironvein_foreman.svg" width="100" align="right" alt="Ironvein Foreman">
+<img src="../_mob-renders/ironvein_foreman.png" width="150" align="right" alt="Ironvein Foreman">
 
 | Stat | Value |
 |---|---|
@@ -196,7 +196,7 @@
 
 ### Thornpeak Crusher — _Elite_
 
-<img src="../_mob-icons/ogre_crusher.svg" width="100" align="right" alt="Thornpeak Crusher">
+<img src="../_mob-renders/ogre_crusher.png" width="150" align="right" alt="Thornpeak Crusher">
 
 | Stat | Value |
 |---|---|
@@ -214,7 +214,7 @@
 
 ### Brutok Skullsmasher — _Elite · Rare_
 
-<img src="../_mob-icons/brutok_skullsmasher.svg" width="100" align="right" alt="Brutok Skullsmasher">
+<img src="../_mob-renders/brutok_skullsmasher.png" width="150" align="right" alt="Brutok Skullsmasher">
 
 | Stat | Value |
 |---|---|
@@ -235,7 +235,7 @@
 
 ### Marrowlord Varkas — _Elite · Rare_
 
-<img src="../_mob-icons/marrowlord_varkas.svg" width="100" align="right" alt="Marrowlord Varkas">
+<img src="../_mob-renders/marrowlord_varkas.png" width="150" align="right" alt="Marrowlord Varkas">
 
 | Stat | Value |
 |---|---|
@@ -259,7 +259,7 @@
 
 ### Sanctum Boneguard — _Elite_
 
-<img src="../_mob-icons/sanctum_boneguard.svg" width="100" align="right" alt="Sanctum Boneguard">
+<img src="../_mob-renders/sanctum_boneguard.png" width="150" align="right" alt="Sanctum Boneguard">
 
 | Stat | Value |
 |---|---|
@@ -277,7 +277,7 @@
 
 ### Sanctum Drakonid — _Elite_
 
-<img src="../_mob-icons/sanctum_drakonid.svg" width="100" align="right" alt="Sanctum Drakonid">
+<img src="../_mob-renders/sanctum_drakonid.png" width="150" align="right" alt="Sanctum Drakonid">
 
 | Stat | Value |
 |---|---|
@@ -295,7 +295,7 @@
 
 ### Voskar the Emberwing — _Elite · Rare_
 
-<img src="../_mob-icons/voskar_emberwing.svg" width="100" align="right" alt="Voskar the Emberwing">
+<img src="../_mob-renders/voskar_emberwing.png" width="150" align="right" alt="Voskar the Emberwing">
 
 | Stat | Value |
 |---|---|
@@ -318,7 +318,7 @@
 
 ### Grand Necromancer Velkhar — _Elite_
 
-<img src="../_mob-icons/grand_necromancer_velkhar.svg" width="100" align="right" alt="Grand Necromancer Velkhar">
+<img src="../_mob-renders/grand_necromancer_velkhar.png" width="150" align="right" alt="Grand Necromancer Velkhar">
 
 | Stat | Value |
 |---|---|
@@ -336,7 +336,7 @@
 
 ### Korgath the Bound — _Elite_
 
-<img src="../_mob-icons/korgath_the_bound.svg" width="100" align="right" alt="Korgath the Bound">
+<img src="../_mob-renders/korgath_the_bound.png" width="150" align="right" alt="Korgath the Bound">
 
 | Stat | Value |
 |---|---|
@@ -357,7 +357,7 @@
 
 ### Warlord Drogmar — _Boss · Elite_
 
-<img src="../_mob-icons/warlord_drogmar.svg" width="100" align="right" alt="Warlord Drogmar">
+<img src="../_mob-renders/warlord_drogmar.png" width="150" align="right" alt="Warlord Drogmar">
 
 | Stat | Value |
 |---|---|
@@ -376,7 +376,7 @@
 
 ### Korzul the Gravewyrm — _Boss · Elite_
 
-<img src="../_mob-icons/korzul_the_gravewyrm.svg" width="100" align="right" alt="Korzul the Gravewyrm">
+<img src="../_mob-renders/korzul_the_gravewyrm.png" width="150" align="right" alt="Korzul the Gravewyrm">
 
 | Stat | Value |
 |---|---|
@@ -395,7 +395,7 @@
 
 ### Nythraxis, Scourge of Thornpeak — _Boss · Elite_
 
-<img src="../_mob-icons/nythraxis_scourge_of_thornpeak.svg" width="100" align="right" alt="Nythraxis, Scourge of Thornpeak">
+<img src="../_mob-renders/nythraxis_scourge_of_thornpeak.png" width="150" align="right" alt="Nythraxis, Scourge of Thornpeak">
 
 | Stat | Value |
 |---|---|
@@ -414,7 +414,7 @@
 
 ### The Bound Guardian — _Boss · Elite_
 
-<img src="../_mob-icons/bound_guardian.svg" width="100" align="right" alt="The Bound Guardian">
+<img src="../_mob-renders/bound_guardian.png" width="150" align="right" alt="The Bound Guardian">
 
 | Stat | Value |
 |---|---|

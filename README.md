@@ -40,7 +40,7 @@ Each zone folder also has:
 - `map.svg` — embedded in the zone README and every quest page in that zone
 - `bestiary.md` — every mob in the zone with a **portrait** plus its **health, armor (physical mitigation %), melee damage/DPS, notable drops, and the best way to kill it** (tactics derived from each mob's actual abilities — enrage, adds, AoE, poisons, frenzy, and so on). Mob stats are computed from the game's real formulas across each creature's spawn level range.
 
-The mob portraits (`zones/_mob-icons/*.svg`) are stylized family silhouettes filled with each creature's real in-game tint color, ringed by threat tier (gold = boss, crimson = elite, silver = rare). The game ships only 3D `.glb` models, which can't render inline on GitHub, so these icons stand in for them.
+The mob portraits (`zones/_mob-renders/*.png`) are **rendered from the game's actual 3D `.glb` models** — each mob resolved to its real model + in-game tint via the game's own `visualKeyFor` mapping, then rendered headlessly (Chromium + three.js) and screenshotted. Nothing is hand-drawn or guessed. See [`tools/`](tools/README.md) for the render pipeline.
 
 > Coordinates are the game's world `(x, z)` positions — handy as a rough compass, since the zones run north (low `z`) to south (high `z`).
 

@@ -8,7 +8,7 @@
 
 ### Drowned Votary
 
-<img src="../_mob-icons/drowned_votary.svg" width="100" align="right" alt="Drowned Votary">
+<img src="../_mob-renders/drowned_votary.png" width="150" align="right" alt="Drowned Votary">
 
 | Stat | Value |
 |---|---|
@@ -25,7 +25,7 @@
 
 ### Glimmermere Wader
 
-<img src="../_mob-icons/glimmermere_wader.svg" width="100" align="right" alt="Glimmermere Wader">
+<img src="../_mob-renders/glimmermere_wader.png" width="150" align="right" alt="Glimmermere Wader">
 
 | Stat | Value |
 |---|---|
@@ -42,7 +42,7 @@
 
 ### Sethrael the Palecoil — _Rare_
 
-<img src="../_mob-icons/sethrael_palecoil.svg" width="100" align="right" alt="Sethrael the Palecoil">
+<img src="../_mob-renders/sethrael_palecoil.png" width="150" align="right" alt="Sethrael the Palecoil">
 
 | Stat | Value |
 |---|---|
@@ -62,7 +62,7 @@
 
 ### Choirmother Selthe — _Elite_
 
-<img src="../_mob-icons/choirmother_selthe.svg" width="100" align="right" alt="Choirmother Selthe">
+<img src="../_mob-renders/choirmother_selthe.png" width="150" align="right" alt="Choirmother Selthe">
 
 | Stat | Value |
 |---|---|
@@ -82,7 +82,7 @@
 
 ### Ysolei, Avatar of the Drowned Moon — _Boss · Elite_
 
-<img src="../_mob-icons/ysolei.svg" width="100" align="right" alt="Ysolei, Avatar of the Drowned Moon">
+<img src="../_mob-renders/ysolei.png" width="150" align="right" alt="Ysolei, Avatar of the Drowned Moon">
 
 | Stat | Value |
 |---|---|
@@ -102,7 +102,7 @@
 
 ### Nythraxis, Scourge of Thornpeak — _Boss · Elite_
 
-<img src="../_mob-icons/nythraxis_scourge_of_thornpeak.svg" width="100" align="right" alt="Nythraxis, Scourge of Thornpeak">
+<img src="../_mob-renders/nythraxis_scourge_of_thornpeak.png" width="150" align="right" alt="Nythraxis, Scourge of Thornpeak">
 
 | Stat | Value |
 |---|---|
