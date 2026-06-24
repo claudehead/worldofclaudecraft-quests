@@ -8,6 +8,8 @@
 
 ### Mire Prowler
 
+<img src="../_mob-icons/mire_prowler.svg" width="100" align="right" alt="Mire Prowler">
+
 | Stat | Value |
 |---|---|
 | Level | 7–8 |
@@ -22,6 +24,8 @@
 - **Miring Pounce:** Slows your attack speed on hit — expect a longer fight.
 
 ### Deepfen Snapper
+
+<img src="../_mob-icons/deepfen_murloc.svg" width="100" align="right" alt="Deepfen Snapper">
 
 | Stat | Value |
 |---|---|
@@ -39,6 +43,8 @@
 
 ### Mirefen Widow
 
+<img src="../_mob-icons/mire_widow.svg" width="100" align="right" alt="Mirefen Widow">
+
 | Stat | Value |
 |---|---|
 | Level | 8–10 |
@@ -54,6 +60,8 @@
 
 ### Bog Bloat
 
+<img src="../_mob-icons/bog_bloat.svg" width="100" align="right" alt="Bog Bloat">
+
 | Stat | Value |
 |---|---|
 | Level | 9–11 |
@@ -68,6 +76,8 @@
 - **Caustic Spores:** Explodes when it dies — clear its blast radius the moment it drops.
 
 ### Drowned Dead
+
+<img src="../_mob-icons/drowned_dead.svg" width="100" align="right" alt="Drowned Dead">
 
 | Stat | Value |
 |---|---|
@@ -85,6 +95,8 @@
 
 ### Gravecaller Cultist
 
+<img src="../_mob-icons/gravecaller_cultist.svg" width="100" align="right" alt="Gravecaller Cultist">
+
 | Stat | Value |
 |---|---|
 | Level | 10–12 |
@@ -101,6 +113,8 @@
 
 ### Mirefen Troll
 
+<img src="../_mob-icons/fen_troll.svg" width="100" align="right" alt="Mirefen Troll">
+
 | Stat | Value |
 |---|---|
 | Level | 10–12 |
@@ -115,6 +129,8 @@
 - **Withering Rot:** Withers your stats over time — kill it before the debuff piles up.
 
 ### Gravecaller Mender
+
+<img src="../_mob-icons/gravecaller_mender.svg" width="100" align="right" alt="Gravecaller Mender">
 
 | Stat | Value |
 |---|---|
@@ -131,6 +147,8 @@
 - **Draining Litany:** Taxes your ability costs — don't let the fight drag.
 
 ### Gravecaller Summoner
+
+<img src="../_mob-icons/gravecaller_summoner.svg" width="100" align="right" alt="Gravecaller Summoner">
 
 | Stat | Value |
 |---|---|
@@ -149,6 +167,8 @@
 
 ### Grubjaw the Glutton — _Rare_
 
+<img src="../_mob-icons/grubjaw.svg" width="100" align="right" alt="Grubjaw the Glutton">
+
 | Stat | Value |
 |---|---|
 | Level | 12 |
@@ -166,6 +186,8 @@
 ## Elites
 
 ### Mirejaw the Ravenous — _Elite · Rare_
+
+<img src="../_mob-icons/mirejaw_the_ravenous.svg" width="100" align="right" alt="Mirejaw the Ravenous">
 
 | Stat | Value |
 |---|---|
@@ -188,6 +210,8 @@
 
 ### Sloomtooth the Drowned — _Elite · Rare_
 
+<img src="../_mob-icons/sloomtooth_the_drowned.svg" width="100" align="right" alt="Sloomtooth the Drowned">
+
 | Stat | Value |
 |---|---|
 | Level | 11 |
@@ -208,6 +232,8 @@
 
 ### Bastion Revenant — _Elite_
 
+<img src="../_mob-icons/bastion_revenant.svg" width="100" align="right" alt="Bastion Revenant">
+
 | Stat | Value |
 |---|---|
 | Level | 12–13 |
@@ -223,6 +249,8 @@
 - **Mortal Strike:** Cuts the healing you receive — kill it before the debuff stacks matter.
 
 ### Sister Nhalia — _Elite · Rare_
+
+<img src="../_mob-icons/sister_nhalia.svg" width="100" align="right" alt="Sister Nhalia">
 
 | Stat | Value |
 |---|---|
@@ -246,6 +274,8 @@
 
 ### Tidebound Acolyte — _Elite_
 
+<img src="../_mob-icons/tidebound_acolyte.svg" width="100" align="right" alt="Tidebound Acolyte">
+
 | Stat | Value |
 |---|---|
 | Level | 12–13 |
@@ -261,6 +291,8 @@
 - Heals itself once when low — stun/interrupt the cast or burst straight past it.
 
 ### Knight-Commander Olen — _Elite_
+
+<img src="../_mob-icons/knight_commander_olen.svg" width="100" align="right" alt="Knight-Commander Olen">
 
 | Stat | Value |
 |---|---|
@@ -280,6 +312,8 @@
 
 ### The Broodmother — _Boss_
 
+<img src="../_mob-icons/mirefen_broodmother.svg" width="100" align="right" alt="The Broodmother">
+
 | Stat | Value |
 |---|---|
 | Level | 10 |
@@ -295,6 +329,8 @@
 - **Brood Venom:** Stacking poison — the longer it's on you the harder it bites; kill it before stacks ramp.
 
 ### Deacon Voss — _Boss_
+
+<img src="../_mob-icons/deacon_voss.svg" width="100" align="right" alt="Deacon Voss">
 
 | Stat | Value |
 |---|---|
@@ -312,6 +348,8 @@
 - **Profane Rune:** Arcane DoT on hit — cleanse or heal through.
 
 ### Vael the Mistcaller — _Boss · Elite_
+
+<img src="../_mob-icons/vael_the_mistcaller.svg" width="100" align="right" alt="Vael the Mistcaller">
 
 | Stat | Value |
 |---|---|

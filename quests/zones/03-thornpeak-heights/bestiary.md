@@ -8,6 +8,8 @@
 
 ### Ridge Stalker
 
+<img src="../_mob-icons/ridge_stalker.svg" width="100" align="right" alt="Ridge Stalker">
+
 | Stat | Value |
 |---|---|
 | Level | 13–14 |
@@ -22,6 +24,8 @@
 - **Rending Claws:** Physical bleed DoT — bandages won't work while it ticks; heal through it.
 
 ### Deeprock Tunneler
+
+<img src="../_mob-icons/deeprock_kobold.svg" width="100" align="right" alt="Deeprock Tunneler">
 
 | Stat | Value |
 |---|---|
@@ -38,6 +42,8 @@
 
 ### Thornpeak Ogre
 
+<img src="../_mob-icons/thornpeak_ogre.svg" width="100" align="right" alt="Thornpeak Ogre">
+
 | Stat | Value |
 |---|---|
 | Level | 15–16 |
@@ -52,6 +58,8 @@
 - **Concussive Blow:** Concusses (brief stun/daze) on hit — avoid multi-pulls.
 
 ### Stormcrag Elemental
+
+<img src="../_mob-icons/stormcrag_elemental.svg" width="100" align="right" alt="Stormcrag Elemental">
 
 | Stat | Value |
 |---|---|
@@ -69,6 +77,8 @@
 
 ### Wyrmcult Zealot
 
+<img src="../_mob-icons/wyrmcult_zealot.svg" width="100" align="right" alt="Wyrmcult Zealot">
+
 | Stat | Value |
 |---|---|
 | Level | 17–19 |
@@ -85,6 +95,8 @@
 
 ### Boneclad Revenant
 
+<img src="../_mob-icons/boneclad_revenant.svg" width="100" align="right" alt="Boneclad Revenant">
+
 | Stat | Value |
 |---|---|
 | Level | 18–19 |
@@ -99,6 +111,8 @@
 - **Soul Siphon:** Drains your energy/mana — burst it down.
 
 ### Shardlord Kazzix — _Rare_
+
+<img src="../_mob-icons/shardlord_kazzix.svg" width="100" align="right" alt="Shardlord Kazzix">
 
 | Stat | Value |
 |---|---|
@@ -115,6 +129,8 @@
 - **Frostbite:** Frost DoT that slows — cleanse or push through quickly.
 
 ### Wyrmcult Necromancer
+
+<img src="../_mob-icons/wyrmcult_necromancer.svg" width="100" align="right" alt="Wyrmcult Necromancer">
 
 | Stat | Value |
 |---|---|
@@ -133,6 +149,8 @@
 ## Elites
 
 ### Old Cragmaw — _Elite · Rare_
+
+<img src="../_mob-icons/old_cragmaw.svg" width="100" align="right" alt="Old Cragmaw">
 
 | Stat | Value |
 |---|---|
@@ -153,6 +171,8 @@
 - Will follow you into the water — no escaping by swimming.
 
 ### Ironvein Foreman — _Elite · Rare_
+
+<img src="../_mob-icons/ironvein_foreman.svg" width="100" align="right" alt="Ironvein Foreman">
 
 | Stat | Value |
 |---|---|
@@ -176,6 +196,8 @@
 
 ### Thornpeak Crusher — _Elite_
 
+<img src="../_mob-icons/ogre_crusher.svg" width="100" align="right" alt="Thornpeak Crusher">
+
 | Stat | Value |
 |---|---|
 | Level | 16–17 |
@@ -191,6 +213,8 @@
 - **Disarming Smash:** Can disarm your weapon — casters are unaffected; melee just wait it out.
 
 ### Brutok Skullsmasher — _Elite · Rare_
+
+<img src="../_mob-icons/brutok_skullsmasher.svg" width="100" align="right" alt="Brutok Skullsmasher">
 
 | Stat | Value |
 |---|---|
@@ -210,6 +234,8 @@
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
 
 ### Marrowlord Varkas — _Elite · Rare_
+
+<img src="../_mob-icons/marrowlord_varkas.svg" width="100" align="right" alt="Marrowlord Varkas">
 
 | Stat | Value |
 |---|---|
@@ -233,6 +259,8 @@
 
 ### Sanctum Boneguard — _Elite_
 
+<img src="../_mob-icons/sanctum_boneguard.svg" width="100" align="right" alt="Sanctum Boneguard">
+
 | Stat | Value |
 |---|---|
 | Level | 19 |
@@ -249,6 +277,8 @@
 
 ### Sanctum Drakonid — _Elite_
 
+<img src="../_mob-icons/sanctum_drakonid.svg" width="100" align="right" alt="Sanctum Drakonid">
+
 | Stat | Value |
 |---|---|
 | Level | 19–20 |
@@ -264,6 +294,8 @@
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
 
 ### Voskar the Emberwing — _Elite · Rare_
+
+<img src="../_mob-icons/voskar_emberwing.svg" width="100" align="right" alt="Voskar the Emberwing">
 
 | Stat | Value |
 |---|---|
@@ -286,6 +318,8 @@
 
 ### Grand Necromancer Velkhar — _Elite_
 
+<img src="../_mob-icons/grand_necromancer_velkhar.svg" width="100" align="right" alt="Grand Necromancer Velkhar">
+
 | Stat | Value |
 |---|---|
 | Level | 20 |
@@ -301,6 +335,8 @@
 - Summons adds at HP thresholds — bring AoE or kill the adds fast; don't let them pile up.
 
 ### Korgath the Bound — _Elite_
+
+<img src="../_mob-icons/korgath_the_bound.svg" width="100" align="right" alt="Korgath the Bound">
 
 | Stat | Value |
 |---|---|
@@ -321,6 +357,8 @@
 
 ### Warlord Drogmar — _Boss · Elite_
 
+<img src="../_mob-icons/warlord_drogmar.svg" width="100" align="right" alt="Warlord Drogmar">
+
 | Stat | Value |
 |---|---|
 | Level | 17 |
@@ -337,6 +375,8 @@
 - **Battle Fury:** Builds escalating fury the longer it swings — burst it down, or break melee to drop the stacks.
 
 ### Korzul the Gravewyrm — _Boss · Elite_
+
+<img src="../_mob-icons/korzul_the_gravewyrm.svg" width="100" align="right" alt="Korzul the Gravewyrm">
 
 | Stat | Value |
 |---|---|
@@ -355,6 +395,8 @@
 
 ### Nythraxis, Scourge of Thornpeak — _Boss · Elite_
 
+<img src="../_mob-icons/nythraxis_scourge_of_thornpeak.svg" width="100" align="right" alt="Nythraxis, Scourge of Thornpeak">
+
 | Stat | Value |
 |---|---|
 | Level | 20 |
@@ -371,6 +413,8 @@
 - Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 
 ### The Bound Guardian — _Boss · Elite_
+
+<img src="../_mob-icons/bound_guardian.svg" width="100" align="right" alt="The Bound Guardian">
 
 | Stat | Value |
 |---|---|

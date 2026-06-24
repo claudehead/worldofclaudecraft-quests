@@ -151,6 +151,8 @@ function mobSection(m: any): string {
   const flags = [m.boss && 'Boss', m.elite && 'Elite', m.rare && 'Rare'].filter(Boolean).join(' · ');
   L.push(`### ${m.name}${flags ? ` — _${flags}_` : ''}`);
   L.push('');
+  L.push(`<img src="../_mob-icons/${m.id}.svg" width="100" align="right" alt="${m.name}">`);
+  L.push('');
   const lvl = m.minLevel === m.maxLevel ? `${m.minLevel}` : `${m.minLevel}–${m.maxLevel}`;
   const hpLo = hpAt(m, m.minLevel), hpHi = hpAt(m, m.maxLevel);
   const hp = hpLo === hpHi ? `${hpLo}` : `${hpLo}–${hpHi}`;

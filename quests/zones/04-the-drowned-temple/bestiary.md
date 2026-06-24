@@ -8,6 +8,8 @@
 
 ### Drowned Votary
 
+<img src="../_mob-icons/drowned_votary.svg" width="100" align="right" alt="Drowned Votary">
+
 | Stat | Value |
 |---|---|
 | Level | 15–16 |
@@ -23,6 +25,8 @@
 
 ### Glimmermere Wader
 
+<img src="../_mob-icons/glimmermere_wader.svg" width="100" align="right" alt="Glimmermere Wader">
+
 | Stat | Value |
 |---|---|
 | Level | 15–16 |
@@ -37,6 +41,8 @@
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
 
 ### Sethrael the Palecoil — _Rare_
+
+<img src="../_mob-icons/sethrael_palecoil.svg" width="100" align="right" alt="Sethrael the Palecoil">
 
 | Stat | Value |
 |---|---|
@@ -56,6 +62,8 @@
 
 ### Choirmother Selthe — _Elite_
 
+<img src="../_mob-icons/choirmother_selthe.svg" width="100" align="right" alt="Choirmother Selthe">
+
 | Stat | Value |
 |---|---|
 | Level | 18 |
@@ -74,6 +82,8 @@
 
 ### Ysolei, Avatar of the Drowned Moon — _Boss · Elite_
 
+<img src="../_mob-icons/ysolei.svg" width="100" align="right" alt="Ysolei, Avatar of the Drowned Moon">
+
 | Stat | Value |
 |---|---|
 | Level | 18 |
@@ -91,6 +101,8 @@
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
 
 ### Nythraxis, Scourge of Thornpeak — _Boss · Elite_
+
+<img src="../_mob-icons/nythraxis_scourge_of_thornpeak.svg" width="100" align="right" alt="Nythraxis, Scourge of Thornpeak">
 
 | Stat | Value |
 |---|---|

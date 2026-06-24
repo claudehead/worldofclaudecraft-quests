@@ -8,6 +8,8 @@
 
 ### Forest Wolf
 
+<img src="../_mob-icons/forest_wolf.svg" width="100" align="right" alt="Forest Wolf">
+
 | Stat | Value |
 |---|---|
 | Level | 1–2 |
@@ -22,6 +24,8 @@
 - Frenzies nearby kin (faster swings) when one dies — pull them one at a time.
 
 ### Webwood Lurker
+
+<img src="../_mob-icons/webwood_spider.svg" width="100" align="right" alt="Webwood Lurker">
 
 | Stat | Value |
 |---|---|
@@ -39,6 +43,8 @@
 
 ### Wild Boar
 
+<img src="../_mob-icons/wild_boar.svg" width="100" align="right" alt="Wild Boar">
+
 | Stat | Value |
 |---|---|
 | Level | 2–3 |
@@ -53,6 +59,8 @@
 - **Bristled Hide:** Reflects melee damage back at attackers — prefer ranged/spell damage.
 
 ### Mudfin Skulker
+
+<img src="../_mob-icons/mudfin_murloc.svg" width="100" align="right" alt="Mudfin Skulker">
 
 | Stat | Value |
 |---|---|
@@ -69,6 +77,8 @@
 
 ### Vale Bandit
 
+<img src="../_mob-icons/vale_bandit.svg" width="100" align="right" alt="Vale Bandit">
+
 | Stat | Value |
 |---|---|
 | Level | 3–5 |
@@ -83,6 +93,8 @@
 - **Blinding Powder:** Can blind you — pull singles so a blind isn't fatal.
 
 ### Old Greyjaw — _Rare_
+
+<img src="../_mob-icons/old_greyjaw.svg" width="100" align="right" alt="Old Greyjaw">
 
 | Stat | Value |
 |---|---|
@@ -100,6 +112,8 @@
 
 ### Tunnel Rat Digger
 
+<img src="../_mob-icons/tunnel_rat.svg" width="100" align="right" alt="Tunnel Rat Digger">
+
 | Stat | Value |
 |---|---|
 | Level | 4–6 |
@@ -114,6 +128,8 @@
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
 
 ### Restless Bones
+
+<img src="../_mob-icons/restless_bones.svg" width="100" align="right" alt="Restless Bones">
 
 | Stat | Value |
 |---|---|
@@ -132,6 +148,8 @@
 ## Elites
 
 ### Mogger — _Elite · Rare_
+
+<img src="../_mob-icons/mogger.svg" width="100" align="right" alt="Mogger">
 
 | Stat | Value |
 |---|---|
@@ -155,6 +173,8 @@
 
 ### Captain Verlan — _Elite · Rare_
 
+<img src="../_mob-icons/captain_verlan.svg" width="100" align="right" alt="Captain Verlan">
+
 | Stat | Value |
 |---|---|
 | Level | 7 |
@@ -174,6 +194,8 @@
 
 ### Crypt Shambler — _Elite_
 
+<img src="../_mob-icons/crypt_shambler.svg" width="100" align="right" alt="Crypt Shambler">
+
 | Stat | Value |
 |---|---|
 | Level | 7–8 |
@@ -189,6 +211,8 @@
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
 
 ### Bonechill Widow — _Elite_
+
+<img src="../_mob-icons/bonechill_widow.svg" width="100" align="right" alt="Bonechill Widow">
 
 | Stat | Value |
 |---|---|
@@ -206,6 +230,8 @@
 
 ### Hollow Acolyte — _Elite_
 
+<img src="../_mob-icons/hollow_acolyte.svg" width="100" align="right" alt="Hollow Acolyte">
+
 | Stat | Value |
 |---|---|
 | Level | 8 |
@@ -221,6 +247,8 @@
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
 
 ### Sexton Marrow — _Elite_
+
+<img src="../_mob-icons/sexton_marrow.svg" width="100" align="right" alt="Sexton Marrow">
 
 | Stat | Value |
 |---|---|
@@ -240,6 +268,8 @@
 
 ### Gorrak the Ruthless — _Boss_
 
+<img src="../_mob-icons/gorrak.svg" width="100" align="right" alt="Gorrak the Ruthless">
+
 | Stat | Value |
 |---|---|
 | Level | 6 |
@@ -255,6 +285,8 @@
 - Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
 
 ### Morthen the Gravecaller — _Boss · Elite_
+
+<img src="../_mob-icons/morthen.svg" width="100" align="right" alt="Morthen the Gravecaller">
 
 | Stat | Value |
 |---|---|
