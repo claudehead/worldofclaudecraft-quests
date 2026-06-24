@@ -2,6 +2,11 @@ name: Regenerate guide
 
 on:
   workflow_dispatch:        # run manually from the Actions tab
+    inputs:
+      dry_run:
+        description: 'Regenerate but do not commit/push (just report changes)'
+        type: boolean
+        default: false
   schedule:
     - cron: '0 6 * * 1'     # every Monday 06:00 UTC
 
@@ -46,6 +51,9 @@ jobs:
           git add tools/package.json tools/package-lock.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes — guide is already up to date."
+          elif [ "${{ inputs.dry_run }}" = "true" ]; then
+            echo "Dry run — changes detected but not committed:"
+            git diff --cached --stat
           else
             git commit -m "Regenerate guide from upstream [skip ci]"
             git push
