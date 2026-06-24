@@ -8,14 +8,17 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: '0 6 * * 1'     # every Monday 06:00 UTC
+    - cron: '*/30 * * * *'  # check upstream every 30 minutes
 
 concurrency:
   group: regenerate
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write           # allow committing the regenerated files
+
+env:
+  UPSTREAM: https://github.com/levy-street/world-of-claudecraft
 
 jobs:
   regenerate:
@@ -24,37 +27,62 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v4
 
+      # Cheap gate: compare upstream's current HEAD to the SHA we last built
+      # from. Scheduled runs do nothing (≈5s) unless upstream moved; a manual
+      # dispatch always proceeds.
+      - name: Check upstream for changes
+        id: check
+        run: |
+          UP=$(git ls-remote "$UPSTREAM" HEAD | cut -f1)
+          PREV=$(cat .upstream-sha 2>/dev/null || echo none)
+          echo "Upstream HEAD: $UP"
+          echo "Last built:    $PREV"
+          echo "sha=$UP" >> "$GITHUB_OUTPUT"
+          if [ "$UP" != "$PREV" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "No upstream change — nothing to do."
+          fi
+
       - name: Clone upstream game source
-        run: git clone --depth 1 https://github.com/levy-street/world-of-claudecraft woc
+        if: steps.check.outputs.run == 'true'
+        run: git clone --depth 1 "$UPSTREAM" woc
 
       - name: Set up Node
+        if: steps.check.outputs.run == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
       - name: Install generator deps
+        if: steps.check.outputs.run == 'true'
         working-directory: tools
         run: |
           npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
 
       - name: Regenerate everything
+        if: steps.check.outputs.run == 'true'
         run: bash tools/build.sh
 
       - name: Commit and push if changed
+        if: steps.check.outputs.run == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # ignore the upstream clone and generator intermediates
-          git add -A -- ':!woc' ':!tools/node_modules' ':!tools/*.json' || true
+          # record the upstream version we just built from
+          echo "${{ steps.check.outputs.sha }}" > .upstream-sha
+          # stage results, excluding the upstream clone and generator intermediates
+          git add -A -- ':!woc' ':!tools/node_modules' ':!tools/*.json'
           git restore --staged tools/package.json tools/package-lock.json 2>/dev/null || true
           git add tools/package.json tools/package-lock.json 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No changes — guide is already up to date."
+            echo "Upstream moved but nothing in the guide changed."
           elif [ "${{ inputs.dry_run }}" = "true" ]; then
             echo "Dry run — changes detected but not committed:"
             git diff --cached --stat
           else
-            git commit -m "Regenerate guide from upstream [skip ci]"
+            git commit -m "Regenerate guide from upstream ${{ steps.check.outputs.sha }} [skip ci]"
             git push
           fi

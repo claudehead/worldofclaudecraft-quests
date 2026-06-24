@@ -78,9 +78,10 @@ Almost everything here is **generated from the upstream game data** — 107 of t
 
 A GitHub Action ([`.github/workflows/update.yml`](.github/workflows/update.yml)) keeps the guide in sync with the game:
 
-- Runs **weekly** (and on demand from the Actions tab).
-- Clones the latest [world-of-claudecraft](https://github.com/levy-street/world-of-claudecraft), installs the generator deps + headless Chromium, runs [`tools/build.sh`](tools/build.sh), and commits any changes.
-- If the game data hasn't changed, it's a no-op (the pipeline is idempotent).
+- **Checks the upstream repo every 30 minutes** (and on demand from the Actions tab).
+- Each check first compares upstream's `HEAD` to the SHA in [`.upstream-sha`](.upstream-sha) (the version last built from). If nothing moved, the run ends in a few seconds — no clone, no rebuild.
+- When upstream **has** changed, it clones the latest [world-of-claudecraft](https://github.com/levy-street/world-of-claudecraft), installs the generator deps + headless Chromium, runs [`tools/build.sh`](tools/build.sh), and commits any resulting changes.
+- The pipeline is idempotent, so it only ever commits a real diff.
 
 ### Regenerate locally
 
