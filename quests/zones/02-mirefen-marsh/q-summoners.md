@@ -43,3 +43,5 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 ![Map of Zone 2 — Mirefen Marsh](map.svg)
 
 _Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
+
+See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.

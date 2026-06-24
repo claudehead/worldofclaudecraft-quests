@@ -6,6 +6,8 @@ Level range: **15–16** · 6 quests
 
 _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green = ground pickups · blue = water._
 
+📖 **[Bestiary for this zone](bestiary.md)** — every mob's health, armor, damage, and how to kill it.
+
 | Lvl | Quest | Giver | Type |
 |----:|-------|-------|------|
 | 15 | [Light on the Water](q-glimmermere-light.md) | Ondrel Vane | collect |

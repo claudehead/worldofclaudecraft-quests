@@ -39,3 +39,5 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 ![Map of Zone 3 — Thornpeak Heights](map.svg)
 
 _Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
+
+See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.

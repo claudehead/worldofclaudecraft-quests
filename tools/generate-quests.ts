@@ -190,6 +190,8 @@ function questMd(q: Q, zone: typeof zoneBuckets[number]): string {
   L.push('');
   L.push(`_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._`);
   L.push('');
+  L.push(`See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.`);
+  L.push('');
   return L.join('\n');
 }
 
@@ -212,6 +214,8 @@ for (const zone of zoneBuckets) {
   zlines.push(`![Map of ${zone.title}](map.svg)`);
   zlines.push('');
   zlines.push(`_Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green = ground pickups · blue = water._`);
+  zlines.push('');
+  zlines.push(`📖 **[Bestiary for this zone](bestiary.md)** — every mob's health, armor, damage, and how to kill it.`);
   zlines.push('');
   zlines.push(`| Lvl | Quest | Giver | Type |`);
   zlines.push(`|----:|-------|-------|------|`);

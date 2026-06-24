@@ -6,6 +6,8 @@ Level range: **1–7** · Hub: Eastbrook · 18 quests
 
 _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green = ground pickups · blue = water._
 
+📖 **[Bestiary for this zone](bestiary.md)** — every mob's health, armor, damage, and how to kill it.
+
 | Lvl | Quest | Giver | Type |
 |----:|-------|-------|------|
 | 1 | [Wolves at the Door](q-wolves.md) | Marshal Redbrook | kill |

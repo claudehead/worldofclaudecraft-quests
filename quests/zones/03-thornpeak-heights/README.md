@@ -6,6 +6,8 @@ Level range: **13–20** · Hub: Highwatch · 30 quests
 
 _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green = ground pickups · blue = water._
 
+📖 **[Bestiary for this zone](bestiary.md)** — every mob's health, armor, damage, and how to kill it.
+
 | Lvl | Quest | Giver | Type |
 |----:|-------|-------|------|
 | 12 | [The Watch on the Peaks](q-highwatch-summons.md) | Brother Aldric | collect |

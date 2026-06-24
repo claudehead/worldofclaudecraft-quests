@@ -35,7 +35,10 @@ characters/
 - A **zone map** (SVG) plotting NPCs, mob camps, dungeon entrances, ground pickups, lakes and roads — match the names in the guide to the markers
 - The in-game **story** and **completion** text
 
-Each zone folder has a `map.svg` embedded in both its README and every quest page in that zone.
+Each zone folder also has:
+
+- `map.svg` — embedded in the zone README and every quest page in that zone
+- `bestiary.md` — every mob in the zone with its **health, armor (physical mitigation %), melee damage/DPS, notable drops, and the best way to kill it** (tactics derived from each mob's actual abilities — enrage, adds, AoE, poisons, frenzy, and so on). Mob stats are computed from the game's real formulas across each creature's spawn level range.
 
 > Coordinates are the game's world `(x, z)` positions — handy as a rough compass, since the zones run north (low `z`) to south (high `z`).
 

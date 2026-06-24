@@ -6,6 +6,8 @@ Level range: **6–13** · Hub: Fenbridge · 23 quests
 
 _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green = ground pickups · blue = water._
 
+📖 **[Bestiary for this zone](bestiary.md)** — every mob's health, armor, damage, and how to kill it.
+
 | Lvl | Quest | Giver | Type |
 |----:|-------|-------|------|
 | 5 | [Aldric's Fallen Star](q-aldrics-fallen-star.md) | Brother Aldric | collect |
