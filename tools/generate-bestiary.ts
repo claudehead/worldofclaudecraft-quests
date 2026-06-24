@@ -80,7 +80,8 @@ function lootTable(m: any): string[] {
       if (l.questId) notes.push(`quest item — only drops while on _${QNAME[l.questId] || l.questId}_`);
       if (l.rollGroup) notes.push(nGroups > 1 ? `exclusive set ${groupNo[l.rollGroup]} †` : 'exclusive set †');
       if (it?.kind === 'junk' && it.sellValue) notes.push(`sells for ${it.sellValue}c`);
-      out.push(`| ${itemName(l.itemId)} | ${itemType(it)} | ${Math.round(l.chance * 100)}% | ${notes.join('; ')} |`);
+      const icon = `<img src="../_loot-icons/${l.itemId}.png" width="22" alt="">`;
+      out.push(`| ${icon} ${itemName(l.itemId)} | ${itemType(it)} | ${Math.round(l.chance * 100)}% | ${notes.join('; ')} |`);
     }
     out.push('');
     if (nGroups) {

@@ -30,9 +30,9 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Mire Prowler Pelt | Quest item | 60% | quest item — only drops while on _Pelts for the Causeway_ |
-| Soggy Moccasin | Junk | 30% | sells for 9c |
-| Lesser Healing Potion | Potion | 8% |  |
+| <img src="../_loot-icons/mire_prowler_pelt.png" width="22" alt=""> Mire Prowler Pelt | Quest item | 60% | quest item — only drops while on _Pelts for the Causeway_ |
+| <img src="../_loot-icons/soggy_moccasin.png" width="22" alt=""> Soggy Moccasin | Junk | 30% | sells for 9c |
+| <img src="../_loot-icons/lesser_healing_potion.png" width="22" alt=""> Lesser Healing Potion | Potion | 8% |  |
 
 <a id="mob-deepfen_murloc"></a>
 
@@ -59,8 +59,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Waterlogged Idol | Quest item | 50% | quest item — only drops while on _Idols of the Deep_ |
-| Slimy Murloc Scale | Junk | 40% | sells for 5c |
+| <img src="../_loot-icons/waterlogged_idol.png" width="22" alt=""> Waterlogged Idol | Quest item | 50% | quest item — only drops while on _Idols of the Deep_ |
+| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> Slimy Murloc Scale | Junk | 40% | sells for 5c |
 
 <a id="mob-mire_widow"></a>
 
@@ -86,8 +86,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Widow Venom Sac | Quest item | 65% | quest item — only drops while on _Silk and Venom_ |
-| Twitching Spider Leg | Junk | 40% | sells for 4c |
+| <img src="../_loot-icons/widow_venom_sac.png" width="22" alt=""> Widow Venom Sac | Quest item | 65% | quest item — only drops while on _Silk and Venom_ |
+| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> Twitching Spider Leg | Junk | 40% | sells for 4c |
 
 <a id="mob-bog_bloat"></a>
 
@@ -113,7 +113,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Tangled Weed | Junk | 50% | sells for 1c |
+| <img src="../_loot-icons/tangled_weed.png" width="22" alt=""> Tangled Weed | Junk | 50% | sells for 1c |
 
 <a id="mob-drowned_dead"></a>
 
@@ -140,8 +140,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Bone Fragments | Junk | 50% | sells for 7c |
-| Cracked Fetish | Junk | 30% | sells for 14c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> Bone Fragments | Junk | 50% | sells for 7c |
+| <img src="../_loot-icons/cracked_fetish.png" width="22" alt=""> Cracked Fetish | Junk | 30% | sells for 14c |
 
 <a id="mob-gravecaller_cultist"></a>
 
@@ -168,8 +168,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Linen Scrap | Junk | 30% | sells for 3c |
-| Tallow Candle | Junk | 30% | sells for 5c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> Linen Scrap | Junk | 30% | sells for 3c |
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> Tallow Candle | Junk | 30% | sells for 5c |
 
 <a id="mob-fen_troll"></a>
 
@@ -195,10 +195,10 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Mirefen Troll Fetish | Quest item | 60% | quest item — only drops while on _Fetish and Bone_ |
-| Chipped Tusk | Junk | 40% | sells for 15c |
-| Bogiron Nugget | Junk | 30% | sells for 12c |
-| Elixir of the Bear | Elixir | 7% |  |
+| <img src="../_loot-icons/troll_fetish.png" width="22" alt=""> Mirefen Troll Fetish | Quest item | 60% | quest item — only drops while on _Fetish and Bone_ |
+| <img src="../_loot-icons/chipped_tusk.png" width="22" alt=""> Chipped Tusk | Junk | 40% | sells for 15c |
+| <img src="../_loot-icons/bogiron_nugget.png" width="22" alt=""> Bogiron Nugget | Junk | 30% | sells for 12c |
+| <img src="../_loot-icons/elixir_of_the_bear.png" width="22" alt=""> Elixir of the Bear | Elixir | 7% |  |
 
 <a id="mob-gravecaller_mender"></a>
 
@@ -225,8 +225,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Gravecaller Cipher | Quest item | 40% | quest item — only drops while on _Stopping the Summoning_ |
-| Tallow Candle | Junk | 30% | sells for 5c |
+| <img src="../_loot-icons/cult_cipher.png" width="22" alt=""> Gravecaller Cipher | Quest item | 40% | quest item — only drops while on _Stopping the Summoning_ |
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> Tallow Candle | Junk | 30% | sells for 5c |
 
 <a id="mob-gravecaller_summoner"></a>
 
@@ -254,7 +254,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Gravecaller Cipher | Quest item | 60% | quest item — only drops while on _Stopping the Summoning_ |
+| <img src="../_loot-icons/cult_cipher.png" width="22" alt=""> Gravecaller Cipher | Quest item | 60% | quest item — only drops while on _Stopping the Summoning_ |
 
 <a id="mob-grubjaw"></a>
 
@@ -281,8 +281,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Grubjaw's Tusk | Quest item | 100% | quest item — only drops while on _The Glutton_ |
-| Chipped Tusk | Junk | 100% | sells for 15c |
+| <img src="../_loot-icons/grubjaw_tusk.png" width="22" alt=""> Grubjaw's Tusk | Quest item | 100% | quest item — only drops while on _The Glutton_ |
+| <img src="../_loot-icons/chipped_tusk.png" width="22" alt=""> Chipped Tusk | Junk | 100% | sells for 15c |
 
 ## Elites
 
@@ -316,11 +316,11 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Slimy Murloc Scale | Junk | 100% | sells for 5c |
-| Mirejaw Biteblade | Weapon — Main hand | 25% |  |
-| Mirejaw Scale Vest | Armor — Chest | 25% |  |
-| Fen Reaver Glaive | Weapon — Main hand | 25% | exclusive set † |
-| Mirejaw Oracle Staff | Weapon — Main hand | 25% | exclusive set † |
+| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> Slimy Murloc Scale | Junk | 100% | sells for 5c |
+| <img src="../_loot-icons/mirejaw_biteblade.png" width="22" alt=""> Mirejaw Biteblade | Weapon — Main hand | 25% |  |
+| <img src="../_loot-icons/mirejaw_scale_vest.png" width="22" alt=""> Mirejaw Scale Vest | Armor — Chest | 25% |  |
+| <img src="../_loot-icons/fen_reaver_glaive.png" width="22" alt=""> Fen Reaver Glaive | Weapon — Main hand | 25% | exclusive set † |
+| <img src="../_loot-icons/mirejaw_oracle_staff.png" width="22" alt=""> Mirejaw Oracle Staff | Weapon — Main hand | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -353,10 +353,10 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Slimy Murloc Scale | Junk | 100% | sells for 5c |
-| Tidereaver Gaff | Weapon — Main hand | 25% | exclusive set † |
-| Sloomtooth's Tidefang | Weapon — Main hand | 25% | exclusive set † |
-| Drowned Tide Scepter | Weapon — Main hand | 25% | exclusive set † |
+| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> Slimy Murloc Scale | Junk | 100% | sells for 5c |
+| <img src="../_loot-icons/tidereaver_gaff.png" width="22" alt=""> Tidereaver Gaff | Weapon — Main hand | 25% | exclusive set † |
+| <img src="../_loot-icons/sloomtooth_tidefang.png" width="22" alt=""> Sloomtooth's Tidefang | Weapon — Main hand | 25% | exclusive set † |
+| <img src="../_loot-icons/drowned_tide_scepter.png" width="22" alt=""> Drowned Tide Scepter | Weapon — Main hand | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -385,8 +385,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Bone Fragments | Junk | 70% | sells for 7c |
-| Mistveil Cord | Armor — Waist | 6% | exclusive set † |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> Bone Fragments | Junk | 70% | sells for 7c |
+| <img src="../_loot-icons/mistveil_cord.png" width="22" alt=""> Mistveil Cord | Armor — Waist | 6% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -421,9 +421,9 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Tallow Candle | Junk | 100% | sells for 5c |
-| Nhalia's Funeral Wraps | Armor — Legs | 25% |  |
-| Nhalia's Dirgeblade | Weapon — Main hand | 25% | exclusive set † |
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> Tallow Candle | Junk | 100% | sells for 5c |
+| <img src="../_loot-icons/nhalias_funeral_wraps.png" width="22" alt=""> Nhalia's Funeral Wraps | Armor — Legs | 25% |  |
+| <img src="../_loot-icons/nhalias_dirgeblade.png" width="22" alt=""> Nhalia's Dirgeblade | Weapon — Main hand | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -452,8 +452,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Linen Scrap | Junk | 50% | sells for 3c |
-| Mistveil Grips | Armor — Hands | 6% | exclusive set † |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> Linen Scrap | Junk | 50% | sells for 3c |
+| <img src="../_loot-icons/mistveil_grips.png" width="22" alt=""> Mistveil Grips | Armor — Hands | 6% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -482,12 +482,12 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Trollhide Leggings | Armor — Legs | 50% | exclusive set 1 † |
-| Marshstrider Boots | Armor — Feet | 50% | exclusive set 1 † |
-| Fenmist Robe | Armor — Chest | 25% | exclusive set 2 † |
-| Tideguard Greaves | Armor — Legs | 10% | exclusive set 2 † |
-| Tideguard Sabatons | Armor — Feet | 10% | exclusive set 2 † |
-| Eelscale Leggings | Armor — Legs | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/trollhide_leggings.png" width="22" alt=""> Trollhide Leggings | Armor — Legs | 50% | exclusive set 1 † |
+| <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> Marshstrider Boots | Armor — Feet | 50% | exclusive set 1 † |
+| <img src="../_loot-icons/fenmist_robe.png" width="22" alt=""> Fenmist Robe | Armor — Chest | 25% | exclusive set 2 † |
+| <img src="../_loot-icons/tideguard_greaves.png" width="22" alt=""> Tideguard Greaves | Armor — Legs | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/tideguard_sabatons.png" width="22" alt=""> Tideguard Sabatons | Armor — Feet | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/eelscale_leggings.png" width="22" alt=""> Eelscale Leggings | Armor — Legs | 10% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 
@@ -518,9 +518,9 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Twitching Spider Leg | Junk | 100% | sells for 4c |
-| Marshstrider Boots | Armor — Feet | 40% |  |
-| Broodmother's Silk Robe | Armor — Chest | 25% |  |
+| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> Twitching Spider Leg | Junk | 100% | sells for 4c |
+| <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> Marshstrider Boots | Armor — Feet | 40% |  |
+| <img src="../_loot-icons/broodmother_silk_robe.png" width="22" alt=""> Broodmother's Silk Robe | Armor — Chest | 25% |  |
 
 <a id="mob-deacon_voss"></a>
 
@@ -548,8 +548,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Tallow Candle | Junk | 100% | sells for 5c |
-| Voss's Sanctified Mace | Weapon — Main hand | 25% |  |
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> Tallow Candle | Junk | 100% | sells for 5c |
+| <img src="../_loot-icons/voss_sanctified_mace.png" width="22" alt=""> Voss's Sanctified Mace | Weapon — Main hand | 25% |  |
 
 <a id="mob-vael_the_mistcaller"></a>
 
@@ -577,17 +577,17 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| Deepfen Pearl | Junk | 100% | sells for 600c |
-| Trollhide Leggings | Armor — Legs | 34% | exclusive set 1 † |
-| Marshstrider Boots | Armor — Feet | 33% | exclusive set 1 † |
-| Fenmist Robe | Armor — Chest | 33% | exclusive set 1 † |
-| Eelskin Tunic | Armor — Chest | 20% | exclusive set 2 † |
-| Mistveil Cord | Armor — Waist | 12% | exclusive set 2 † |
-| Mistveil Grips | Armor — Hands | 12% | exclusive set 2 † |
-| Tidescale Vest | Armor — Chest | 10% | exclusive set 2 † |
-| Drowned Prayer Leggings | Armor — Legs | 10% | exclusive set 2 † |
-| Drowned Prayer Sandals | Armor — Feet | 10% | exclusive set 2 † |
-| Eelscale Treads | Armor — Feet | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/deepfen_pearl.png" width="22" alt=""> Deepfen Pearl | Junk | 100% | sells for 600c |
+| <img src="../_loot-icons/trollhide_leggings.png" width="22" alt=""> Trollhide Leggings | Armor — Legs | 34% | exclusive set 1 † |
+| <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> Marshstrider Boots | Armor — Feet | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/fenmist_robe.png" width="22" alt=""> Fenmist Robe | Armor — Chest | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/eelskin_tunic.png" width="22" alt=""> Eelskin Tunic | Armor — Chest | 20% | exclusive set 2 † |
+| <img src="../_loot-icons/mistveil_cord.png" width="22" alt=""> Mistveil Cord | Armor — Waist | 12% | exclusive set 2 † |
+| <img src="../_loot-icons/mistveil_grips.png" width="22" alt=""> Mistveil Grips | Armor — Hands | 12% | exclusive set 2 † |
+| <img src="../_loot-icons/tidescale_vest.png" width="22" alt=""> Tidescale Vest | Armor — Chest | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/drowned_prayer_leggings.png" width="22" alt=""> Drowned Prayer Leggings | Armor — Legs | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/drowned_prayer_sandals.png" width="22" alt=""> Drowned Prayer Sandals | Armor — Feet | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/eelscale_treads.png" width="22" alt=""> Eelscale Treads | Armor — Feet | 10% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 
