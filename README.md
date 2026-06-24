@@ -1,0 +1,45 @@
+# World of Claudecraft — Quest Guide
+
+A complete, organized walkthrough for every quest in [World of Claudecraft](https://github.com/levy-street/world-of-claudecraft), extracted straight from the game's content data so the level requirements, objectives, drop locations, NPCs, and rewards are exact.
+
+**77 quests** across **4 zones** (levels 1–20).
+
+## How to use this
+
+- **Playing a character?** Open **[quests/by-level.md](quests/by-level.md)** and do everything at or below your current level.
+- **Want a zone walkthrough?** Browse **[quests/](quests/README.md)** — each zone has its own folder and index.
+- **Tracking multiple characters?** Copy [`characters/_template.md`](characters/_template.md) per character and tick off quests as you turn them in. See [characters/README.md](characters/README.md).
+
+## Layout
+
+```
+quests/
+  README.md            Index of all zones
+  by-level.md          Every quest grouped by required level  ← start here
+  zones/
+    01-eastbrook-vale/     levels 1–7    (18 quests)
+    02-mirefen-marsh/      levels 6–13   (23 quests)
+    03-thornpeak-heights/  levels 13–20  (30 quests)
+    04-the-drowned-temple/ endgame 15+   (6 quests)
+characters/
+  _template.md         Copy this per character (checklist by level)
+  README.md            How to track progress
+```
+
+## What each quest page tells you
+
+- **Recommended level** and which quest chain it belongs to (prerequisites + follow-ups)
+- **Quest giver** and **turn-in NPC** with map coordinates
+- **How to complete** — every objective resolved to real mob/item names, the level of each mob, and exactly where to find them (open-world camp coordinates or which dungeon), plus drop chances for collected items
+- **Rewards** — XP, copper, and the item reward for each class
+- The in-game **story** and **completion** text
+
+> Coordinates are the game's world `(x, z)` positions — handy as a rough compass, since the zones run north (low `z`) to south (high `z`).
+
+## Notes
+
+- 👥 marks **group quests** (the page lists the suggested party size).
+- Quests with a `minLevel` are gated; the rest unlock at their zone's starting level.
+- Generated from the upstream game data. To refresh after the game updates, re-run the extractor against a fresh clone (see commit history for the generator script).
+
+_Not affiliated with the upstream project — this is a fan-made reference._
