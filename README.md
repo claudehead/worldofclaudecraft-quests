@@ -31,11 +31,18 @@ classes/
 dungeons/
   README.md            All dungeons + suggested party size
   <dungeon>.md         Roster, bosses, enemy levels (mobs link to the bestiary)
+delves/
+  README.md            Replayable delves overview
+  <delve>.md           Tiers, affixes, companion, enemies, Marks vendor
 ```
 
 ## Dungeons
 
 The **[dungeons/](dungeons/README.md)** folder has a page per instanced dungeon (Hollow Crypt, Sunken Bastion, Gravewyrm Sanctum, the Nythraxis raid): suggested party size, enemy level range, a full enemy roster, and bosses — every enemy links to its bestiary entry. Quest pages that send you into a dungeon link straight to it.
+
+## Delves
+
+The **[delves/](delves/README.md)** folder documents the replayable delve system (The Collapsed Reliquary): difficulty tiers, the random affixes that roll on higher tiers, your companion and its Marks upgrades, the enemy roster, and the **Marks vendor** stock — each shop item with its icon, rarity, stats, and unlock condition.
 
 ## Classes
 
