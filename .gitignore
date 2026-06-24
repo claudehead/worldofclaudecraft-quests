@@ -1,7 +1,6 @@
 # Secrets — never commit
 .env
 .env.*
-!.env.example
 
 # Generator working dirs (local clones / temp output)
 woc/
