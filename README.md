@@ -24,7 +24,15 @@ quests/
 characters/
   _template.md         Copy this per character (checklist by level)
   README.md            How to track progress
+classes/
+  README.md            The 9 classes at a glance
+  <class>.md           Per-class page: specs + every ability by learn-level
+  _class-renders/      Class model portraits (rendered from the game)
 ```
+
+## Classes
+
+The **[classes/](classes/README.md)** folder documents all 9 playable classes — warrior, paladin, hunter, rogue, priest, shaman, mage, warlock, druid. Each page has the class's specs, signature abilities, a portrait rendered from the game model, and a table of **every ability with the level you learn it** (and where its ranks upgrade) — so you can plan a character's leveling alongside the quest list.
 
 ## What each quest page tells you
 
