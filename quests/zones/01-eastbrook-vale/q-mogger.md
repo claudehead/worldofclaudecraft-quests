@@ -34,3 +34,9 @@ Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
 ## On completion
 
 > Mogger dead at last. Eastbrook's fields are safer, and you leave the Vale with one more tale worth retelling.
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

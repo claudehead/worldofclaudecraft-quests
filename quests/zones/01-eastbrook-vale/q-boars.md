@@ -28,3 +28,9 @@ Then return to **Trader Wilkes**, Provisioner _(at ~x:-7, z:3)_ to turn in.
 ## On completion
 
 > Ah, fine bristly hides! These will fetch a good price.
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

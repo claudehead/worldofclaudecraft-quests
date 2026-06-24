@@ -33,3 +33,9 @@ Then return to **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ to turn in.
 ## On completion
 
 > Dead? Truly dead? Then the thicket is just trees again. The Light bless your blade, $N.
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

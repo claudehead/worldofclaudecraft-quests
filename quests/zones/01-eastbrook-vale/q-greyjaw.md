@@ -31,3 +31,9 @@ Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
 ## On completion
 
 > So the old devil is dead at last. The stable boy will sleep easier — and so will I.
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

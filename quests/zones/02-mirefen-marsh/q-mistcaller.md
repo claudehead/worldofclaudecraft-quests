@@ -34,3 +34,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 ## On completion
 
 > Vael is dead, and the mist is lifting for the first time in years. But Maren heard his last words, and they freeze my blood: 'The Wyrm stirs beneath the peaks.' The sect serves something older than we ever guessed, $N. Rest while you can — the mountains are next.
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

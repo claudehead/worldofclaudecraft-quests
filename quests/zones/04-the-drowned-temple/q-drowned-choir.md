@@ -39,3 +39,9 @@ Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.
 ## Leads to
 
 - Silence the Choir (`q_silence_the_choir`)
+
+## Zone map
+
+![Map of Zone 4 — The Drowned Temple (Endgame)](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

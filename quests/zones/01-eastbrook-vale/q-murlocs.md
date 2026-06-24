@@ -28,3 +28,9 @@ Then return to **Fisherman Brandt**, Old Salt _(at ~x:-16, z:6)_ to turn in.
 ## On completion
 
 > Hah! That will teach them to mind their own mudholes.
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

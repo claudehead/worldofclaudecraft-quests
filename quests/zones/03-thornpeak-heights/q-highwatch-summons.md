@@ -28,3 +28,9 @@ Then return to **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ to tur
 ## On completion
 
 > Aldric's word reaches far. If the priest of the Vale is climbing the mountain himself, then it is as bad as I feared. Welcome to Highwatch, $N.
+
+## Zone map
+
+![Map of Zone 3 — Thornpeak Heights](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

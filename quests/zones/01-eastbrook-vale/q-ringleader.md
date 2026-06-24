@@ -33,3 +33,9 @@ Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
 ## On completion
 
 > Gorrak is dead? Then the Vale is free of his shadow. You have done Eastbrook a great service.
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

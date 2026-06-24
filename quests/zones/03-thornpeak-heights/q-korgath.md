@@ -32,3 +32,9 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:7, z:670)_ to turn in.
 ## On completion
 
 > Korgath, broken at last. Even his chains deserved a kinder end than that. The wraps are yours — wear them past the threshold he kept.
+
+## Zone map
+
+![Map of Zone 3 — Thornpeak Heights](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

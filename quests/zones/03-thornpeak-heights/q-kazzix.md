@@ -30,3 +30,9 @@ Then return to **Loremaster Caddis**, Loremaster _(at ~x:12, z:655)_ to turn in.
 ## On completion
 
 > The heartshard! Still crackling — magnificent. Take these leggings; I sized them off a guess and a prayer.
+
+## Zone map
+
+![Map of Zone 3 — Thornpeak Heights](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

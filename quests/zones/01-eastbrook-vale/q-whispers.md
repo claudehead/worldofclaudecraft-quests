@@ -34,3 +34,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to tu
 
 - The Names of the Dead (`q_names_of_the_dead`)
 - The Binding Rite (`q_rite`)
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

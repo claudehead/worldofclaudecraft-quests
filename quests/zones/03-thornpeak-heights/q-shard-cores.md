@@ -29,3 +29,9 @@ Then return to **Loremaster Caddis**, Loremaster _(at ~x:12, z:655)_ to turn in.
 ## On completion
 
 > Each core leans the same way, like iron filings to a lodestone. They point south, $N. To the Sanctum.
+
+## Zone map
+
+![Map of Zone 3 — Thornpeak Heights](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

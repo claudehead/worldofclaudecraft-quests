@@ -33,3 +33,9 @@ Then return to **Loremaster Caddis**, Loremaster _(at ~x:12, z:655)_ to turn in.
 ## Leads to
 
 - Strange Wax (`q_glowing_wax`)
+
+## Zone map
+
+![Map of Zone 3 — Thornpeak Heights](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

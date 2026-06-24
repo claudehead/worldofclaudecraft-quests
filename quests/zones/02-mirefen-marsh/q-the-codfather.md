@@ -28,3 +28,9 @@ Then return to **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ to turn in.
 ## On completion
 
 > By the damp saints... The Codfather himself. Look at those whiskers. Fenbridge will eat stories off this catch for a year, $N.
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

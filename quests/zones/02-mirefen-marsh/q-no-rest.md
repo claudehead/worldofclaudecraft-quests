@@ -34,3 +34,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 ## On completion
 
 > You give the dead more mercy than their masters ever did. Take this — you have more than earned it.
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

@@ -31,3 +31,9 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.
 ## On completion
 
 > Same maker as the banners in the cult camp. The trolls are hired shovels, nothing more. Good work, $N.
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

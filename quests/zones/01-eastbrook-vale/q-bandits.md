@@ -38,3 +38,9 @@ Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
 ## Leads to
 
 - The Ringleader (`q_ringleader`)
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

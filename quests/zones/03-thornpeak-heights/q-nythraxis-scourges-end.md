@@ -29,3 +29,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ or **
 ## On completion
 
 > Then the crown is silent at last. Thornpeak will still carry its dead, but no king below it will call them to war again. You have ended what Aldren, Malric, and Voss could only contain.
+
+## Zone map
+
+![Map of Zone 3 — Thornpeak Heights](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

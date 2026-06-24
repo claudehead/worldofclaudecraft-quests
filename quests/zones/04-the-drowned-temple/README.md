@@ -2,6 +2,10 @@
 
 Level range: **15–16** · 6 quests
 
+![Map of Zone 4 — The Drowned Temple (Endgame)](map.svg)
+
+_Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green = ground pickups · blue = water._
+
 | Lvl | Quest | Giver | Type |
 |----:|-------|-------|------|
 | 15 | [Light on the Water](q-glimmermere-light.md) | Ondrel Vane | collect |

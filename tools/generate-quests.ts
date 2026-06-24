@@ -1,13 +1,3 @@
-// Quest-guide generator. Reads the upstream game's content data and emits the
-// markdown under ../quests and the per-character template under ../characters.
-//
-// Usage (regenerate after the game updates):
-//   1. git clone https://github.com/levy-street/world-of-claudecraft  (as a sibling: ../world-of-claudecraft)
-//   2. Adjust the import paths below to point at that checkout's src/sim.
-//   3. npm i tsx && npx tsx generate-quests.ts ../quests
-//
-// The imports below are written relative to wherever this script is run from;
-// repoint the '../woc/...' prefix at your world-of-claudecraft checkout.
 import { QUESTS, MOBS, ITEMS, NPCS, CAMPS, GROUND_OBJECTS, ZONES } from '../woc/src/sim/data.ts';
 import { ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
 import { ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
@@ -194,6 +184,12 @@ function questMd(q: Q, zone: typeof zoneBuckets[number]): string {
     for (const f of followups) L.push(`- ${f.name} (\`${f.id}\`)`);
     L.push('');
   }
+  L.push(`## Zone map`);
+  L.push('');
+  L.push(`![Map of ${zone.title}](map.svg)`);
+  L.push('');
+  L.push(`_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._`);
+  L.push('');
   return L.join('\n');
 }
 
@@ -212,6 +208,10 @@ for (const zone of zoneBuckets) {
   zlines.push(`# ${zone.title}`);
   zlines.push('');
   zlines.push(`Level range: **${zone.levelRange[0]}–${zone.levelRange[1]}**${zone.hub ? ` · Hub: ${zone.hub}` : ''} · ${ordered.length} quests`);
+  zlines.push('');
+  zlines.push(`![Map of ${zone.title}](map.svg)`);
+  zlines.push('');
+  zlines.push(`_Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green = ground pickups · blue = water._`);
   zlines.push('');
   zlines.push(`| Lvl | Quest | Giver | Type |`);
   zlines.push(`|----:|-------|-------|------|`);

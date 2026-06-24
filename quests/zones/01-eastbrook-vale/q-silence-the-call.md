@@ -30,3 +30,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to tu
 ## On completion
 
 > The yard grows quieter — but the calling has not stopped. It rises from below now, $N. From the crypt itself.
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

@@ -32,3 +32,9 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.
 ## On completion
 
 > Then his watch is finally over. I'll see his name cut into the gate myself. Thank you, $N.
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 2630" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="2630" fill="#1f2a24"/>
+<line x1="82.2" y1="0" x2="82.2" y2="2630" stroke="#2c3a32" stroke-width="1"/>
+<line x1="219.2" y1="0" x2="219.2" y2="2630" stroke="#2c3a32" stroke-width="1"/>
+<line x1="356.2" y1="0" x2="356.2" y2="2630" stroke="#2c3a32" stroke-width="1"/>
+<line x1="493.2" y1="0" x2="493.2" y2="2630" stroke="#2c3a32" stroke-width="1"/>
+<line x1="630.1" y1="0" x2="630.1" y2="2630" stroke="#2c3a32" stroke-width="1"/>
+<line x1="767.1" y1="0" x2="767.1" y2="2630" stroke="#2c3a32" stroke-width="1"/>
+<line x1="904.1" y1="0" x2="904.1" y2="2630" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="109.6" x2="1000" y2="109.6" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="246.6" x2="1000" y2="246.6" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="383.6" x2="1000" y2="383.6" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="520.5" x2="1000" y2="520.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="657.5" x2="1000" y2="657.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="794.5" x2="1000" y2="794.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="931.5" x2="1000" y2="931.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1068.5" x2="1000" y2="1068.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1205.5" x2="1000" y2="1205.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1342.5" x2="1000" y2="1342.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1479.5" x2="1000" y2="1479.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1616.4" x2="1000" y2="1616.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1753.4" x2="1000" y2="1753.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1890.4" x2="1000" y2="1890.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="2027.4" x2="1000" y2="2027.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="2164.4" x2="1000" y2="2164.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="2301.4" x2="1000" y2="2301.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="2438.4" x2="1000" y2="2438.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="2575.3" x2="1000" y2="2575.3" stroke="#2c3a32" stroke-width="1"/>
+<circle cx="301.4" cy="2191.8" r="49.3" fill="#2f6f8f" opacity="0.55"/>
+<path d="M493.2 986.3 L520.5 1342.5 L493.2 1589.0 L493.2 1917.8" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M476.7 1934.2 L328.8 2027.4 L191.8 2123.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M509.6 1939.7 L684.9 2082.2 L794.5 2191.8" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M493.2 1961.6 L493.2 2246.6 L493.2 2465.8" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<circle cx="493.2" cy="1917.8" r="54.8" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
+<text x="493.2" y="1917.8" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Highwatch</text>
+<text x="356.2" y="1726.0" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Stalker Ridge</text>
+<text x="726.0" y="1794.5" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Deeprock Burrows</text>
+<text x="246.6" y="2027.4" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Ogre Foothills</text>
+<text x="137.0" y="2137.0" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Drogmar's War-Camp</text>
+<text x="794.5" y="2191.8" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Stormcrag</text>
+<text x="301.4" y="2219.2" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">The Glimmermere</text>
+<text x="643.8" y="2356.2" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Wyrmcult Tents</text>
+<text x="383.6" y="2383.6" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Revenant Fields</text>
+<text x="493.2" y="2520.5" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Gravewyrm Sanctum</text>
+<circle cx="356.2" cy="1726.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="356.2" y="1718.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ridge Stalker ×7</text>
+<circle cx="616.4" cy="1753.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="616.4" y="1745.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ridge Stalker ×6</text>
+<circle cx="268.5" cy="1684.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="268.5" y="1676.9" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Old Cragmaw ×1</text>
+<circle cx="698.6" cy="1821.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="698.6" y="1813.9" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Deeprock Tunneler ×8</text>
+<circle cx="780.8" cy="1753.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="780.8" y="1745.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Deeprock Tunneler ×6</text>
+<circle cx="767.1" cy="1800.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="767.1" y="1792.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ironvein Foreman ×1</text>
+<circle cx="246.6" cy="2027.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="246.6" y="2019.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Thornpeak Ogre ×7</text>
+<circle cx="328.8" cy="2109.6" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="328.8" y="2101.6" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Thornpeak Ogre ×6</text>
+<circle cx="150.7" cy="2137.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="150.7" y="2129.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Thornpeak Crusher ×8</text>
+<circle cx="131.5" cy="2158.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="131.5" y="2150.9" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Warlord Drogmar ×1</text>
+<circle cx="369.9" cy="2213.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="369.9" y="2205.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Brutok Skullsmasher ×1</text>
+<circle cx="794.5" cy="2191.8" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="794.5" y="2183.8" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Stormcrag Elemental ×8</text>
+<circle cx="863.0" cy="2287.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="863.0" y="2279.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Stormcrag Elemental ×6</text>
+<circle cx="890.4" cy="2342.5" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="890.4" y="2334.5" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Shardlord Kazzix ×1</text>
+<circle cx="643.8" cy="2356.2" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="643.8" y="2348.2" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Wyrmcult Zealot ×8</text>
+<circle cx="561.6" cy="2424.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="561.6" y="2416.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Wyrmcult Zealot ×6</text>
+<circle cx="602.7" cy="2452.1" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="602.7" y="2444.1" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Wyrmcult Necromancer ×5</text>
+<circle cx="383.6" cy="2383.6" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="383.6" y="2375.6" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Boneclad Revenant ×8</text>
+<circle cx="452.1" cy="2465.8" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="452.1" y="2457.8" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Boneclad Revenant ×6</text>
+<circle cx="400.0" cy="2416.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="400.0" y="2408.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Marrowlord Varkas ×1</text>
+<circle cx="712.3" cy="2424.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="712.3" y="2416.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Voskar the Emberwing ×1</text>
+<circle cx="712.3" cy="2424.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="712.3" y="2416.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Wyrmcult Zealot ×2</text>
+<rect x="491.9" y="1897.4" width="8" height="8" transform="rotate(45 495.9 1901.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="483.7" y="1905.6" width="8" height="8" transform="rotate(45 487.7 1909.6)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="495.9" y="1911.4" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Highwatch Summons</text>
+<rect x="171.3" y="2094.6" width="8" height="8" transform="rotate(45 175.3 2098.6)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="154.9" y="2113.8" width="8" height="8" transform="rotate(45 158.9 2117.8)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="135.7" y="2097.4" width="8" height="8" transform="rotate(45 139.7 2101.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="116.5" y="2127.5" width="8" height="8" transform="rotate(45 120.5 2131.5)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="105.6" y="2152.2" width="8" height="8" transform="rotate(45 109.6 2156.2)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="124.8" y="2168.6" width="8" height="8" transform="rotate(45 128.8 2172.6)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="149.4" y="2160.4" width="8" height="8" transform="rotate(45 153.4 2164.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="175.3" y="2108.6" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ogre War Totem</text>
+<rect x="467.2" y="2439.8" width="8" height="8" transform="rotate(45 471.2 2443.8)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="480.9" y="2453.5" width="8" height="8" transform="rotate(45 484.9 2457.5)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="497.4" y="2464.5" width="8" height="8" transform="rotate(45 501.4 2468.5)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="511.1" y="2478.2" width="8" height="8" transform="rotate(45 515.1 2482.2)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="471.2" y="2453.8" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Gravewyrm Sigil</text>
+<rect x="472.7" y="2494.6" width="8" height="8" transform="rotate(45 476.7 2498.6)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="483.7" y="2505.6" width="8" height="8" transform="rotate(45 487.7 2509.6)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="494.6" y="2497.4" width="8" height="8" transform="rotate(45 498.6 2501.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="505.6" y="2511.1" width="8" height="8" transform="rotate(45 509.6 2515.1)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="476.7" y="2508.6" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Key Shard</text>
+<rect x="867.2" y="2401.5" width="8" height="8" transform="rotate(45 871.2 2405.5)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="871.2" y="2415.5" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Grave of Captain Aldren</text>
+<rect x="875.5" y="2056.3" width="8" height="8" transform="rotate(45 879.5 2060.3)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="879.5" y="2070.3" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Grave of High Priest Malric</text>
+<rect x="108.3" y="2261.8" width="8" height="8" transform="rotate(45 112.3 2265.8)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="112.3" y="2275.8" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Grave of Royal Assassin Voss</text>
+<rect x="675.5" y="2297.4" width="8" height="8" transform="rotate(45 679.5 2301.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="679.5" y="2311.4" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ritual Circle</text>
+<rect x="486.2" y="2513.5" width="14" height="14" fill="#9b59b6" stroke="#11160f" stroke-width="1.5"/>
+<text x="493.2" y="2512.5" fill="#d6a7e3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">⚔ Gravewyrm Sanctum</text>
+<circle cx="504.1" cy="1928.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="504.1" y="1920.8" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Captain Thessaly</text>
+<circle cx="465.8" cy="1906.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="465.8" y="1898.8" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Brother Aldric</text>
+<circle cx="493.2" cy="109.6" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="493.2" y="101.6" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Brother Aldric</text>
+<circle cx="512.3" cy="1945.2" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="512.3" y="1937.2" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Scout Maren</text>
+<circle cx="479.5" cy="1939.7" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="479.5" y="1931.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Quartermaster Bree</text>
+<circle cx="487.7" cy="1950.7" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="487.7" y="1942.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Armorer Hode</text>
+<circle cx="526.0" cy="1904.1" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="526.0" y="1896.1" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Loremaster Caddis</text>
+<text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">Thornpeak Heights — N ↑</text>
+<rect x="10" y="2512" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
+<rect x="18" y="2519" width="11" height="11" fill="#f0c419"/>
+<text x="36" y="2528" fill="#cfe3d6" font-size="12">NPC (quest giver / turn-in)</text>
+<rect x="18" y="2537" width="11" height="11" fill="#d9534f"/>
+<text x="36" y="2546" fill="#cfe3d6" font-size="12">Mob camp (×count)</text>
+<rect x="18" y="2555" width="11" height="11" fill="#9b59b6"/>
+<text x="36" y="2564" fill="#cfe3d6" font-size="12">Dungeon entrance</text>
+<rect x="18" y="2573" width="11" height="11" fill="#5cb85c"/>
+<text x="36" y="2582" fill="#cfe3d6" font-size="12">Quest pickup (ground)</text>
+<rect x="18" y="2591" width="11" height="11" fill="#2f6f8f"/>
+<text x="36" y="2600" fill="#cfe3d6" font-size="12">Water</text>
+</svg>

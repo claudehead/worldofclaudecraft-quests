@@ -33,3 +33,9 @@ Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.
 ## On completion
 
 > Cold as the bottom of the world, and still it twitches. The shelf is clear, $N — the stair to the gate stands open. I almost wish it did not.
+
+## Zone map
+
+![Map of Zone 4 — The Drowned Temple (Endgame)](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

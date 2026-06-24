@@ -28,3 +28,9 @@ Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to tur
 ## On completion
 
 > Aldric's seal, is it? Then you'll do. The fen has been swallowing my patrols whole, and I need every blade that floats.
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

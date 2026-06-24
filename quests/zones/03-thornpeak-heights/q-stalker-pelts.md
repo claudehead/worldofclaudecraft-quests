@@ -30,3 +30,9 @@ Then return to **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668
 ## On completion
 
 > Thick as my arm, these. The watch will not freeze this year — take these treads for your trouble.
+
+## Zone map
+
+![Map of Zone 3 — Thornpeak Heights](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

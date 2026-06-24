@@ -2,6 +2,10 @@
 
 Level range: **1–7** · Hub: Eastbrook · 18 quests
 
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green = ground pickups · blue = water._
+
 | Lvl | Quest | Giver | Type |
 |----:|-------|-------|------|
 | 1 | [Wolves at the Door](q-wolves.md) | Marshal Redbrook | kill |

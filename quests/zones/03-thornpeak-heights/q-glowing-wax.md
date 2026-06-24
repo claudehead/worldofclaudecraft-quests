@@ -30,3 +30,9 @@ Then return to **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668
 ## On completion
 
 > Still warm. The Loremaster says the glow matches no flame he knows of. I say it is mountain trouble, and I say it kindly.
+
+## Zone map
+
+![Map of Zone 3 — Thornpeak Heights](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

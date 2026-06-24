@@ -30,3 +30,9 @@ Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to tur
 ## On completion
 
 > Ruthless and thorough. If this marsh ever dries out, there's warden's work waiting for you.
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

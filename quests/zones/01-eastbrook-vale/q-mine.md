@@ -28,3 +28,9 @@ Then return to **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ to turn in.
 ## On completion
 
 > Ha! Back to work, lads! You have my thanks — and my coin.
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

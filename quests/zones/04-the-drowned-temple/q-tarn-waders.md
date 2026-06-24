@@ -35,3 +35,9 @@ Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.
 
 - The Drowned Choir (`q_drowned_choir`)
 - Sethrael the Palecoil (`q_palecoil`)
+
+## Zone map
+
+![Map of Zone 4 — The Drowned Temple (Endgame)](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

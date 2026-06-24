@@ -31,3 +31,9 @@ Then return to **Apothecary Lin**, Herbalist _(at ~x:11, z:-3)_ to turn in.
 ## On completion
 
 > Ugh, still twitching. Perfect. Here, you've earned this.
+
+## Zone map
+
+![Map of Zone 1 — Eastbrook Vale](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

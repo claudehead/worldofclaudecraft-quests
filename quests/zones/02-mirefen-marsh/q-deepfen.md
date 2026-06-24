@@ -33,3 +33,9 @@ Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to tur
 ## Leads to
 
 - Idols of the Deep (`q_idols`)
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

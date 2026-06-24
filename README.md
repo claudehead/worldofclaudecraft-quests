@@ -32,7 +32,10 @@ characters/
 - **Quest giver** and **turn-in NPC** with map coordinates
 - **How to complete** — every objective resolved to real mob/item names, the level of each mob, and exactly where to find them (open-world camp coordinates or which dungeon), plus drop chances for collected items
 - **Rewards** — XP, copper, and the item reward for each class
+- A **zone map** (SVG) plotting NPCs, mob camps, dungeon entrances, ground pickups, lakes and roads — match the names in the guide to the markers
 - The in-game **story** and **completion** text
+
+Each zone folder has a `map.svg` embedded in both its README and every quest page in that zone.
 
 > Coordinates are the game's world `(x, z)` positions — handy as a rough compass, since the zones run north (low `z`) to south (high `z`).
 

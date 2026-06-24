@@ -33,3 +33,9 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:7, z:670)_ to turn in.
 ## Leads to
 
 - Totems of War (`q_ogre_totems`)
+
+## Zone map
+
+![Map of Zone 3 — Thornpeak Heights](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._

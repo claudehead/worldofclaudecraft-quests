@@ -31,3 +31,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 ## On completion
 
 > This is no weapon I know. Look at how the plates fold. It may be a rare piece of armor, if it can be worn at all. Take it and try it on, $N, but be careful.
+
+## Zone map
+
+![Map of Zone 2 — Mirefen Marsh](map.svg)
+
+_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
