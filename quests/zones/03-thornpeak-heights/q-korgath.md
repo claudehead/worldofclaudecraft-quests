@@ -27,7 +27,7 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:7, z:670)_ to turn in.
 - **XP:** 4200
 - **Money:** 2500 copper
 - **Item reward (by class):**
-  - Korgath's Chainwraps — _warrior, mage, rogue_
+  - <img src="../_loot-icons/korgaths_chainwraps.png" width="20" alt=""> 🔵 Korgath's Chainwraps — _warrior, mage, rogue_ · 125 armor, +6 Sta
 
 ## On completion
 

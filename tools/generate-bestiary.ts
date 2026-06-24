@@ -5,6 +5,7 @@ import { ZONE2_CAMPS, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_CAMPS, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_CAMPS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
+import { qualityDot, statLine } from './iteminfo.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/out';
@@ -81,7 +82,10 @@ function lootTable(m: any): string[] {
       if (l.rollGroup) notes.push(nGroups > 1 ? `exclusive set ${groupNo[l.rollGroup]} †` : 'exclusive set †');
       if (it?.kind === 'junk' && it.sellValue) notes.push(`sells for ${it.sellValue}c`);
       const icon = `<img src="../_loot-icons/${l.itemId}.png" width="22" alt="">`;
-      out.push(`| ${icon} ${itemName(l.itemId)} | ${itemType(it)} | ${Math.round(l.chance * 100)}% | ${notes.join('; ')} |`);
+      const dot = qualityDot(l.itemId);
+      const stats = statLine(l.itemId);
+      const type = stats ? `${itemType(it)} · ${stats}` : itemType(it);
+      out.push(`| ${icon} ${dot} ${itemName(l.itemId)} | ${type} | ${Math.round(l.chance * 100)}% | ${notes.join('; ')} |`);
     }
     out.push('');
     if (nGroups) {

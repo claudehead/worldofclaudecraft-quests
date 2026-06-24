@@ -25,7 +25,7 @@ Then return to **Loremaster Caddis**, Loremaster _(at ~x:12, z:655)_ to turn in.
 - **XP:** 3800
 - **Money:** 2000 copper
 - **Item reward (by class):**
-  - Stormshard Leggings — _warrior, mage, rogue_
+  - <img src="../_loot-icons/stormshard_leggings.png" width="20" alt=""> 🔵 Stormshard Leggings — _warrior, mage, rogue_ · 110 armor, +5 Sta
 
 ## On completion
 

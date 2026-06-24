@@ -26,9 +26,9 @@ Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
 - **XP:** 800
 - **Money:** 500 copper
 - **Item reward (by class):**
-  - Militia Chainvest — _warrior_
-  - Valewoven Robe — _mage_
-  - Shadowstitch Jerkin — _rogue_
+  - <img src="../_loot-icons/militia_vest.png" width="20" alt=""> 🟢 Militia Chainvest — _warrior_ · 90 armor, +2 Sta
+  - <img src="../_loot-icons/woven_robe.png" width="20" alt=""> 🟢 Valewoven Robe — _mage_ · 30 armor, +3 Int, +2 Spi
+  - <img src="../_loot-icons/shadow_jerkin.png" width="20" alt=""> 🟢 Shadowstitch Jerkin — _rogue_ · 55 armor, +3 Agi
 
 ## On completion
 

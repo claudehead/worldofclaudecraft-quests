@@ -26,7 +26,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 - **XP:** 900
 - **Money:** 300 copper
 - **Item reward (by class):**
-  - Alien Armor Plate — _warrior, mage, rogue_
+  - <img src="../_loot-icons/alien_armor_plate.png" width="20" alt=""> 🔵 Alien Armor Plate — _warrior, mage, rogue_
 
 ## On completion
 

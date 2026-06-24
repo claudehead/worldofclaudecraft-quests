@@ -29,5 +29,12 @@ for (const id of mobIds) {
   if (!m || m.petRole) continue;
   for (const l of m.loot || []) if (l.itemId) items.add(l.itemId);
 }
+// also include every quest reward item (so reward icons render too)
+for (const [, quests] of zones) {
+  for (const q of Object.values(quests) as any[]) {
+    for (const it of Object.values(q.itemRewards || {})) items.add(it as string);
+    for (const it of q.requiredItems || []) items.add(it);
+  }
+}
 fs.writeFileSync(process.argv[2] || 'loot-items.json', JSON.stringify([...items].sort(), null, 0));
 console.log(`wrote ${items.size} loot item ids`);

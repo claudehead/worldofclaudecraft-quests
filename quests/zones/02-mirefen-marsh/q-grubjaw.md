@@ -25,7 +25,7 @@ Then return to **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ to turn in.
 - **XP:** 1700
 - **Money:** 700 copper
 - **Item reward (by class):**
-  - Marshstrider Boots — _warrior, mage, rogue_
+  - <img src="../_loot-icons/marshstrider_boots.png" width="20" alt=""> 🟢 Marshstrider Boots — _warrior, mage, rogue_ · 40 armor, +2 Agi, +2 Sta
 
 ## On completion
 

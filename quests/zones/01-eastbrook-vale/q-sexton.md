@@ -27,9 +27,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to tu
 - **XP:** 1000
 - **Money:** 600 copper
 - **Item reward (by class):**
-  - Marrowtread Boots — _warrior_
-  - Sexton's Slippers — _mage_
-  - Gravewalker Softboots — _rogue_
+  - <img src="../_loot-icons/marrowtread_boots.png" width="20" alt=""> 🔵 Marrowtread Boots — _warrior_ · 45 armor, +1 Str, +2 Sta
+  - <img src="../_loot-icons/sextons_slippers.png" width="20" alt=""> 🔵 Sexton's Slippers — _mage_ · 20 armor, +2 Int, +2 Spi
+  - <img src="../_loot-icons/gravewalker_softboots.png" width="20" alt=""> 🔵 Gravewalker Softboots — _rogue_ · 32 armor, +3 Agi
 
 ## On completion
 

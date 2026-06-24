@@ -33,7 +33,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 - **XP:** 5200
 - **Money:** 3500 copper
 - **Item reward (by class):**
-  - King's Signet — _warrior, mage, rogue_
+  - <img src="../_loot-icons/kings_signet.png" width="20" alt=""> 🔵 King's Signet — _warrior, mage, rogue_
 
 ## On completion
 

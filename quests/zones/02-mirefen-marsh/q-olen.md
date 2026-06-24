@@ -27,7 +27,7 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.
 - **XP:** 1800
 - **Money:** 800 copper
 - **Item reward (by class):**
-  - Knight-Commander's Greaves — _warrior, mage, rogue_
+  - <img src="../_loot-icons/knight_commanders_greaves.png" width="20" alt=""> 🔵 Knight-Commander's Greaves — _warrior, mage, rogue_ · 95 armor, +4 Sta
 
 ## On completion
 

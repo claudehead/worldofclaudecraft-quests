@@ -30,8 +30,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> Cracked Wolf Fang | Junk | 45% | sells for 4c |
-| <img src="../_loot-icons/milepost_boots.png" width="22" alt=""> Milepost Boots | Armor — Feet | 10% |  |
+| <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> ⚫ Cracked Wolf Fang | Junk | 45% | sells for 4c |
+| <img src="../_loot-icons/milepost_boots.png" width="22" alt=""> 🟢 Milepost Boots | Armor — Feet · 30 armor, +1 Agi, +1 Sta | 10% |  |
 
 <a id="mob-webwood_spider"></a>
 
@@ -58,8 +58,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/webwood_silk.png" width="22" alt=""> Webwood Silk Gland | Quest item | 55% | quest item — only drops while on _Webwood Menace_ |
-| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> Twitching Spider Leg | Junk | 40% | sells for 4c |
+| <img src="../_loot-icons/webwood_silk.png" width="22" alt="">  Webwood Silk Gland | Quest item | 55% | quest item — only drops while on _Webwood Menace_ |
+| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚫ Twitching Spider Leg | Junk | 40% | sells for 4c |
 
 <a id="mob-wild_boar"></a>
 
@@ -85,9 +85,9 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/boar_hide.png" width="22" alt=""> Bristly Boar Hide | Quest item | 60% | quest item — only drops while on _Bristleback Hides_ |
-| <img src="../_loot-icons/tough_jerky.png" width="22" alt=""> Tough Jerky | Food | 30% |  |
-| <img src="../_loot-icons/trail_leggings.png" width="22" alt=""> Trailworn Leggings | Armor — Legs | 10% |  |
+| <img src="../_loot-icons/boar_hide.png" width="22" alt="">  Bristly Boar Hide | Quest item | 60% | quest item — only drops while on _Bristleback Hides_ |
+| <img src="../_loot-icons/tough_jerky.png" width="22" alt=""> ⚪ Tough Jerky | Food · restores 61 HP (over time) | 30% |  |
+| <img src="../_loot-icons/trail_leggings.png" width="22" alt=""> 🟢 Trailworn Leggings | Armor — Legs · 45 armor, +2 Agi | 10% |  |
 
 <a id="mob-mudfin_murloc"></a>
 
@@ -113,8 +113,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> Slimy Murloc Scale | Junk | 50% | sells for 5c |
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> Linen Scrap | Junk | 20% | sells for 3c |
+| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Murloc Scale | Junk | 50% | sells for 5c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 20% | sells for 3c |
 
 <a id="mob-vale_bandit"></a>
 
@@ -140,8 +140,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bandit_bandana.png" width="22" alt=""> Red Bandana | Junk | 50% | sells for 6c |
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> Linen Scrap | Junk | 30% | sells for 3c |
+| <img src="../_loot-icons/bandit_bandana.png" width="22" alt=""> ⚫ Red Bandana | Junk | 50% | sells for 6c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 30% | sells for 3c |
 
 <a id="mob-old_greyjaw"></a>
 
@@ -168,8 +168,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/greyjaw_fang.png" width="22" alt=""> Old Greyjaw's Fang | Quest item | 100% | quest item — only drops while on _The Old Wolf_ |
-| <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> Cracked Wolf Fang | Junk | 100% | sells for 4c |
+| <img src="../_loot-icons/greyjaw_fang.png" width="22" alt="">  Old Greyjaw's Fang | Quest item | 100% | quest item — only drops while on _The Old Wolf_ |
+| <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> ⚫ Cracked Wolf Fang | Junk | 100% | sells for 4c |
 
 <a id="mob-tunnel_rat"></a>
 
@@ -195,10 +195,10 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> Tallow Candle | Junk | 60% | sells for 5c |
-| <img src="../_loot-icons/blessed_wax.png" width="22" alt=""> Blessed Tallow | Quest item | 45% | quest item — only drops while on _The Binding Rite_ |
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> Linen Scrap | Junk | 25% | sells for 3c |
-| <img src="../_loot-icons/mossy_handwraps.png" width="22" alt=""> Mossgrown Handwraps | Armor — Hands | 15% |  |
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Tallow Candle | Junk | 60% | sells for 5c |
+| <img src="../_loot-icons/blessed_wax.png" width="22" alt="">  Blessed Tallow | Quest item | 45% | quest item — only drops while on _The Binding Rite_ |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 25% | sells for 3c |
+| <img src="../_loot-icons/mossy_handwraps.png" width="22" alt=""> 🟢 Mossgrown Handwraps | Armor — Hands · 12 armor, +1 Int, +2 Spi | 15% |  |
 
 <a id="mob-restless_bones"></a>
 
@@ -225,8 +225,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> Bone Fragments | Junk | 60% | sells for 7c |
-| <img src="../_loot-icons/ghostly_essence.png" width="22" alt=""> Ghostly Essence | Quest item | 55% | quest item — only drops while on _The Binding Rite_ |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 60% | sells for 7c |
+| <img src="../_loot-icons/ghostly_essence.png" width="22" alt="">  Ghostly Essence | Quest item | 55% | quest item — only drops while on _The Binding Rite_ |
 
 ## Elites
 
@@ -261,10 +261,10 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> Linen Scrap | Junk | 100% | sells for 3c |
-| <img src="../_loot-icons/moggers_stomper_boots.png" width="22" alt=""> Mogger's Stomper Boots | Armor — Feet | 30% |  |
-| <img src="../_loot-icons/moggers_shiv.png" width="22" alt=""> Mogger's Shiv | Weapon — Main hand | 25% | exclusive set † |
-| <img src="../_loot-icons/cryptstalker_jerkin.png" width="22" alt=""> Cryptstalker Jerkin | Armor — Chest | 25% | exclusive set † |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 100% | sells for 3c |
+| <img src="../_loot-icons/moggers_stomper_boots.png" width="22" alt=""> 🟢 Mogger's Stomper Boots | Armor — Feet · 32 armor, +2 Agi, +1 Sta | 30% |  |
+| <img src="../_loot-icons/moggers_shiv.png" width="22" alt=""> 🔵 Mogger's Shiv | Weapon — Main hand · 6–11 dmg @ 1.7s (~5 DPS), +4 Agi, +2 Sta | 25% | exclusive set † |
+| <img src="../_loot-icons/cryptstalker_jerkin.png" width="22" alt=""> 🔵 Cryptstalker Jerkin | Armor — Chest · 65 armor, +4 Agi, +2 Sta | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -296,11 +296,11 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> Bone Fragments | Junk | 100% | sells for 7c |
-| <img src="../_loot-icons/oathbound_greaves.png" width="22" alt=""> Oathbound Greaves | Armor — Legs | 30% |  |
-| <img src="../_loot-icons/verlans_oathblade.png" width="22" alt=""> Verlan's Oathblade | Weapon — Main hand | 25% | exclusive set † |
-| <img src="../_loot-icons/hollow_vigil_staff.png" width="22" alt=""> Staff of the Hollow Vigil | Weapon — Main hand | 25% | exclusive set † |
-| <img src="../_loot-icons/gravewardens_shiv.png" width="22" alt=""> Gravewarden's Shiv | Weapon — Main hand | 25% | exclusive set † |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 100% | sells for 7c |
+| <img src="../_loot-icons/oathbound_greaves.png" width="22" alt=""> 🟢 Oathbound Greaves | Armor — Legs · 52 armor, +1 Str, +2 Sta | 30% |  |
+| <img src="../_loot-icons/verlans_oathblade.png" width="22" alt=""> 🔵 Verlan's Oathblade | Weapon — Main hand · 10–16 dmg @ 2.5s (~5 DPS), +4 Str, +2 Sta | 25% | exclusive set † |
+| <img src="../_loot-icons/hollow_vigil_staff.png" width="22" alt=""> 🔵 Staff of the Hollow Vigil | Weapon — Main hand · 11–18 dmg @ 3s (~5 DPS), +5 Int, +2 Spi | 25% | exclusive set † |
+| <img src="../_loot-icons/gravewardens_shiv.png" width="22" alt=""> 🔵 Gravewarden's Shiv | Weapon — Main hand · 7–11 dmg @ 1.7s (~5 DPS), +4 Agi, +2 Sta | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -329,7 +329,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> Bone Fragments | Junk | 80% | sells for 7c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 80% | sells for 7c |
 
 <a id="mob-bonechill_widow"></a>
 
@@ -356,7 +356,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> Twitching Spider Leg | Junk | 70% | sells for 4c |
+| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚫ Twitching Spider Leg | Junk | 70% | sells for 4c |
 
 <a id="mob-hollow_acolyte"></a>
 
@@ -383,7 +383,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> Linen Scrap | Junk | 60% | sells for 3c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 60% | sells for 3c |
 
 <a id="mob-sexton_marrow"></a>
 
@@ -410,8 +410,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/quilted_trousers.png" width="22" alt=""> Quilted Trousers | Armor — Legs | 40% |  |
-| <img src="../_loot-icons/oiled_boots.png" width="22" alt=""> Oiled Leather Boots | Armor — Feet | 40% |  |
+| <img src="../_loot-icons/quilted_trousers.png" width="22" alt=""> 🟢 Quilted Trousers | Armor — Legs · 30 armor, +2 Sta | 40% |  |
+| <img src="../_loot-icons/oiled_boots.png" width="22" alt=""> 🟢 Oiled Leather Boots | Armor — Feet · 25 armor, +1 Agi | 40% |  |
 
 ## Bosses
 
@@ -440,11 +440,11 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bandit_bandana.png" width="22" alt=""> Red Bandana | Junk | 100% | sells for 6c |
-| <img src="../_loot-icons/oiled_boots.png" width="22" alt=""> Oiled Leather Boots | Armor — Feet | 50% |  |
-| <img src="../_loot-icons/quilted_trousers.png" width="22" alt=""> Quilted Trousers | Armor — Legs | 50% |  |
-| <img src="../_loot-icons/gorraks_cleaver.png" width="22" alt=""> Gorrak's Cleaver | Weapon — Main hand | 30% |  |
-| <img src="../_loot-icons/gorraks_cruel_chopper.png" width="22" alt=""> Gorrak's Cruel Chopper | Weapon — Main hand | 25% |  |
+| <img src="../_loot-icons/bandit_bandana.png" width="22" alt=""> ⚫ Red Bandana | Junk | 100% | sells for 6c |
+| <img src="../_loot-icons/oiled_boots.png" width="22" alt=""> 🟢 Oiled Leather Boots | Armor — Feet · 25 armor, +1 Agi | 50% |  |
+| <img src="../_loot-icons/quilted_trousers.png" width="22" alt=""> 🟢 Quilted Trousers | Armor — Legs · 30 armor, +2 Sta | 50% |  |
+| <img src="../_loot-icons/gorraks_cleaver.png" width="22" alt=""> 🟢 Gorrak's Cleaver | Weapon — Main hand · 8–14 dmg @ 2.5s (~4 DPS), +3 Str | 30% |  |
+| <img src="../_loot-icons/gorraks_cruel_chopper.png" width="22" alt=""> 🟢 Gorrak's Cruel Chopper | Weapon — Main hand · 8–13 dmg @ 2.4s (~4 DPS), +2 Str, +1 Sta | 25% |  |
 
 <a id="mob-morthen"></a>
 
@@ -471,12 +471,12 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/cryptbone_greaves.png" width="22" alt=""> Cryptbone Greaves | Armor — Legs | 34% | exclusive set 1 † |
-| <img src="../_loot-icons/quilted_trousers.png" width="22" alt=""> Quilted Trousers | Armor — Legs | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/oiled_boots.png" width="22" alt=""> Oiled Leather Boots | Armor — Feet | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/greyjaw_hide_boots.png" width="22" alt=""> Greyjaw Hide Boots | Armor — Feet | 25% | exclusive set 2 † |
-| <img src="../_loot-icons/cryptbone_helm.png" width="22" alt=""> Cryptbone Helm | Armor — Head | 18% | exclusive set 2 † |
-| <img src="../_loot-icons/cryptbone_pauldrons.png" width="22" alt=""> Cryptbone Pauldrons | Armor — Shoulder | 18% | exclusive set 2 † |
+| <img src="../_loot-icons/cryptbone_greaves.png" width="22" alt=""> 🟢 Cryptbone Greaves | Armor — Legs · 48 armor, +2 Sta | 34% | exclusive set 1 † |
+| <img src="../_loot-icons/quilted_trousers.png" width="22" alt=""> 🟢 Quilted Trousers | Armor — Legs · 30 armor, +2 Sta | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/oiled_boots.png" width="22" alt=""> 🟢 Oiled Leather Boots | Armor — Feet · 25 armor, +1 Agi | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/greyjaw_hide_boots.png" width="22" alt=""> 🟢 Greyjaw Hide Boots | Armor — Feet · 28 armor, +1 Agi, +1 Sta | 25% | exclusive set 2 † |
+| <img src="../_loot-icons/cryptbone_helm.png" width="22" alt=""> 🟢 Cryptbone Helm | Armor — Head · 48 armor, +3 Sta | 18% | exclusive set 2 † |
+| <img src="../_loot-icons/cryptbone_pauldrons.png" width="22" alt=""> 🟢 Cryptbone Pauldrons | Armor — Shoulder · 36 armor, +2 Sta | 18% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 

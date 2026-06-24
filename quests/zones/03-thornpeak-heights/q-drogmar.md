@@ -27,9 +27,9 @@ Then return to **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ to tur
 - **XP:** 4000
 - **Money:** 2500 copper
 - **Item reward (by class):**
-  - Drogmar's Skullcleaver — _warrior_
-  - Ogre Bonecharm Staff — _mage_
-  - Gutripper Shiv — _rogue_
+  - <img src="../_loot-icons/drogmars_skullcleaver.png" width="20" alt=""> 🔵 Drogmar's Skullcleaver — _warrior_ · 22–35 dmg @ 2.6s (~11 DPS), +7 Str, +4 Sta
+  - <img src="../_loot-icons/ogre_bonecharm_staff.png" width="20" alt=""> 🔵 Ogre Bonecharm Staff — _mage_ · 24–38 dmg @ 3s (~10 DPS), +9 Int, +4 Spi
+  - <img src="../_loot-icons/gutripper_shiv.png" width="20" alt=""> 🔵 Gutripper Shiv — _rogue_ · 14–22 dmg @ 1.7s (~11 DPS), +8 Agi, +3 Sta
 
 ## On completion
 

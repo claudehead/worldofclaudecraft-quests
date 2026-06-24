@@ -30,7 +30,7 @@ Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.
 - **XP:** 3800
 - **Money:** 1800 copper
 - **Item reward (by class):**
-  - Tidewatcher's Wraps — _warrior, mage, rogue_
+  - <img src="../_loot-icons/tidewatchers_wraps.png" width="20" alt=""> 🟢 Tidewatcher's Wraps — _warrior, mage, rogue_ · 65 armor, +3 Sta, +2 Spi
 
 ## On completion
 

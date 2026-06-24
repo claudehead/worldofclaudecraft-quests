@@ -27,9 +27,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 - **XP:** 2800
 - **Money:** 2500 copper
 - **Item reward (by class):**
-  - Mistcaller's Edge — _warrior_
-  - Vael's Mist-Staff — _mage_
-  - Riptide Dirk — _rogue_
+  - <img src="../_loot-icons/mistcallers_edge.png" width="20" alt=""> 🔵 Mistcaller's Edge — _warrior_ · 14–23 dmg @ 2.3s (~8 DPS), +4 Str, +3 Sta
+  - <img src="../_loot-icons/vaels_mist_staff.png" width="20" alt=""> 🔵 Vael's Mist-Staff — _mage_ · 15–26 dmg @ 3s (~7 DPS), +6 Int, +3 Spi
+  - <img src="../_loot-icons/riptide_dirk.png" width="20" alt=""> 🔵 Riptide Dirk — _rogue_ · 9–15 dmg @ 1.7s (~7 DPS), +5 Agi, +2 Sta
 
 ## On completion
 

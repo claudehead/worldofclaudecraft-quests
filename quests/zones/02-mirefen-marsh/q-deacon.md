@@ -26,9 +26,9 @@ Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to tur
 - **XP:** 2200
 - **Money:** 1000 copper
 - **Item reward (by class):**
-  - Deacon's Cleaver — _warrior_
-  - Staff of Drowned Prayers — _mage_
-  - Mistbinder Kris — _rogue_
+  - <img src="../_loot-icons/deacons_cleaver.png" width="20" alt=""> 🟢 Deacon's Cleaver — _warrior_ · 11–18 dmg @ 2.4s (~6 DPS), +4 Str
+  - <img src="../_loot-icons/staff_of_drowned_prayers.png" width="20" alt=""> 🟢 Staff of Drowned Prayers — _mage_ · 12–20 dmg @ 3s (~5 DPS), +5 Int, +2 Spi
+  - <img src="../_loot-icons/mistbinder_kris.png" width="20" alt=""> 🟢 Mistbinder Kris — _rogue_ · 7–12 dmg @ 1.7s (~6 DPS), +4 Agi
 
 ## On completion
 

@@ -26,9 +26,9 @@ Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.
 - **XP:** 4000
 - **Money:** 2000 copper
 - **Item reward (by class):**
-  - Moonscale Saber — _warrior_
-  - Palecoil Rod — _mage_
-  - Tideglass Dirk — _rogue_
+  - <img src="../_loot-icons/moonscale_saber.png" width="20" alt=""> 🟢 Moonscale Saber — _warrior_ · 17–28 dmg @ 2.4s (~9 DPS), +5 Str, +2 Sta
+  - <img src="../_loot-icons/palecoil_rod.png" width="20" alt=""> 🟢 Palecoil Rod — _mage_ · 18–31 dmg @ 3s (~8 DPS), +6 Int, +2 Spi
+  - <img src="../_loot-icons/tideglass_dirk.png" width="20" alt=""> 🟢 Tideglass Dirk — _rogue_ · 11–18 dmg @ 1.7s (~9 DPS), +6 Agi
 
 ## On completion
 

@@ -27,9 +27,9 @@ Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.
 - **XP:** 4400
 - **Money:** 2400 copper
 - **Item reward (by class):**
-  - Drownstep Sabatons — _warrior_
-  - Drownstep Slippers — _mage_
-  - Drownstep Treads — _rogue_
+  - <img src="../_loot-icons/drownstep_sabatons.png" width="20" alt=""> 🔵 Drownstep Sabatons — _warrior_ · 90 armor, +2 Str, +4 Sta
+  - <img src="../_loot-icons/drownstep_slippers.png" width="20" alt=""> 🔵 Drownstep Slippers — _mage_ · 35 armor, +5 Int, +3 Spi
+  - <img src="../_loot-icons/drownstep_treads.png" width="20" alt=""> 🔵 Drownstep Treads — _rogue_ · 60 armor, +6 Agi, +2 Sta
 
 ## On completion
 

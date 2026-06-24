@@ -30,8 +30,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/drowned_offering.png" width="22" alt=""> Drowned Offering | Quest item | 60% | quest item — only drops while on _The Drowned Choir_ |
-| <img src="../_loot-icons/briny_idol.png" width="22" alt=""> Briny Idol | Junk | 30% | sells for 32c |
+| <img src="../_loot-icons/drowned_offering.png" width="22" alt="">  Drowned Offering | Quest item | 60% | quest item — only drops while on _The Drowned Choir_ |
+| <img src="../_loot-icons/briny_idol.png" width="22" alt=""> ⚫ Briny Idol | Junk | 30% | sells for 32c |
 
 <a id="mob-glimmermere_wader"></a>
 
@@ -57,8 +57,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/pale_pearl.png" width="22" alt=""> Pale Pearl | Junk | 40% | sells for 30c |
-| <img src="../_loot-icons/moonpale_scale.png" width="22" alt=""> Moonpale Scale | Junk | 30% | sells for 26c |
+| <img src="../_loot-icons/pale_pearl.png" width="22" alt=""> ⚫ Pale Pearl | Junk | 40% | sells for 30c |
+| <img src="../_loot-icons/moonpale_scale.png" width="22" alt=""> ⚫ Moonpale Scale | Junk | 30% | sells for 26c |
 
 <a id="mob-sethrael_palecoil"></a>
 
@@ -85,9 +85,9 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/palecoil_heartscale.png" width="22" alt=""> Sethrael's Heartscale | Quest item | 100% | quest item — only drops while on _Sethrael the Palecoil_ |
-| <img src="../_loot-icons/moonpale_scale.png" width="22" alt=""> Moonpale Scale | Junk | 100% | sells for 26c |
-| <img src="../_loot-icons/pale_pearl.png" width="22" alt=""> Pale Pearl | Junk | 50% | sells for 30c |
+| <img src="../_loot-icons/palecoil_heartscale.png" width="22" alt="">  Sethrael's Heartscale | Quest item | 100% | quest item — only drops while on _Sethrael the Palecoil_ |
+| <img src="../_loot-icons/moonpale_scale.png" width="22" alt=""> ⚫ Moonpale Scale | Junk | 100% | sells for 26c |
+| <img src="../_loot-icons/pale_pearl.png" width="22" alt=""> ⚫ Pale Pearl | Junk | 50% | sells for 30c |
 
 ## Elites
 
@@ -116,8 +116,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/briny_idol.png" width="22" alt=""> Briny Idol | Junk | 50% | sells for 32c |
-| <img src="../_loot-icons/selthes_seastriders.png" width="22" alt=""> Selthe's Sea-Striders | Armor — Feet | 40% |  |
+| <img src="../_loot-icons/briny_idol.png" width="22" alt=""> ⚫ Briny Idol | Junk | 50% | sells for 32c |
+| <img src="../_loot-icons/selthes_seastriders.png" width="22" alt=""> 🔵 Selthe's Sea-Striders | Armor — Feet · 75 armor, +4 Agi, +3 Sta | 40% |  |
 
 ## Bosses
 
@@ -148,10 +148,10 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/ysols_pearl_greaves.png" width="22" alt=""> Ysolei's Pearl Greaves | Armor — Legs | 50% |  |
-| <img src="../_loot-icons/moonshroud_breastplate.png" width="22" alt=""> Moonshroud Breastplate | Armor — Chest | 34% | exclusive set † |
-| <img src="../_loot-icons/moonshroud_robe.png" width="22" alt=""> Moonshroud Robe | Armor — Chest | 33% | exclusive set † |
-| <img src="../_loot-icons/moonshroud_tunic.png" width="22" alt=""> Moonshroud Tunic | Armor — Chest | 33% | exclusive set † |
+| <img src="../_loot-icons/ysols_pearl_greaves.png" width="22" alt=""> 🔵 Ysolei's Pearl Greaves | Armor — Legs · 130 armor, +6 Sta, +3 Spi | 50% |  |
+| <img src="../_loot-icons/moonshroud_breastplate.png" width="22" alt=""> 🔵 Moonshroud Breastplate | Armor — Chest · 200 armor, +4 Str, +7 Sta | 34% | exclusive set † |
+| <img src="../_loot-icons/moonshroud_robe.png" width="22" alt=""> 🔵 Moonshroud Robe | Armor — Chest · 70 armor, +10 Int, +5 Spi | 33% | exclusive set † |
+| <img src="../_loot-icons/moonshroud_tunic.png" width="22" alt=""> 🔵 Moonshroud Tunic | Armor — Chest · 125 armor, +9 Agi, +4 Sta | 33% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -181,32 +181,32 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> Crownforged Dreadhelm | Armor — Head | 17% | exclusive set 1 † |
-| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> Crownforged Warspaulders | Armor — Shoulder | 17% | exclusive set 2 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> Crownforged Dreadhelm | Armor — Head | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> Nighttalon Crown | Armor — Head | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> Soulflame Cowl | Armor — Head | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> Stormcaller's Crown | Armor — Head | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> Soulflame Mantle | Armor — Shoulder | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> Crownforged Warspaulders | Armor — Shoulder | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> Nighttalon Shoulderguards | Armor — Shoulder | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> Stormcaller's Spaulders | Armor — Shoulder | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> Nighttalon Crown | Armor — Head | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> Soulflame Cowl | Armor — Head | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> Stormcaller's Crown | Armor — Head | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> Nighttalon Shoulderguards | Armor — Shoulder | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> Soulflame Mantle | Armor — Shoulder | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> Nighttalon Shoulderguards | Armor — Shoulder | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> Soulflame Mantle | Armor — Shoulder | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> Crownforged Dreadhelm | Armor — Head | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> Nighttalon Crown | Armor — Head | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> Stormcaller's Spaulders | Armor — Shoulder | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> Nighttalon Shoulderguards | Armor — Shoulder | 16% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> Soulflame Mantle | Armor — Shoulder | 16% | exclusive set 3 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> Crownforged Dreadhelm | Armor — Head | 16% | exclusive set 4 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> Nighttalon Crown | Armor — Head | 16% | exclusive set 4 † |
-| <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> Heartwood of the Deathless Crown | Weapon — Main hand | 3% | exclusive set 1 † |
-| <img src="../_loot-icons/kingsbane_last_oath.png" width="22" alt=""> Kingsbane, Last Oath of Thornpeak | Weapon — Main hand | 3% | exclusive set 2 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Armor — Head · 310 armor, +12 Str, +14 Sta | 17% | exclusive set 1 † |
+| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Crownforged Warspaulders | Armor — Shoulder · 260 armor, +10 Str, +12 Sta | 17% | exclusive set 2 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Armor — Head · 310 armor, +12 Str, +14 Sta | 17% | exclusive set 3 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Armor — Head · 190 armor, +16 Agi, +10 Sta | 17% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Soulflame Cowl | Armor — Head · 105 armor, +10 Sta, +17 Int | 17% | exclusive set 3 † |
+| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Stormcaller's Crown | Armor — Head · 225 armor, +12 Sta, +16 Int | 17% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Armor — Shoulder · 92 armor, +9 Sta, +15 Int | 17% | exclusive set 4 † |
+| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Crownforged Warspaulders | Armor — Shoulder · 260 armor, +10 Str, +12 Sta | 17% | exclusive set 4 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Armor — Shoulder · 165 armor, +14 Agi, +9 Sta | 17% | exclusive set 4 † |
+| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Stormcaller's Spaulders | Armor — Shoulder · 190 armor, +11 Sta, +14 Int | 17% | exclusive set 4 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Armor — Head · 190 armor, +16 Agi, +10 Sta | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Soulflame Cowl | Armor — Head · 105 armor, +10 Sta, +17 Int | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Stormcaller's Crown | Armor — Head · 225 armor, +12 Sta, +16 Int | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Armor — Shoulder · 165 armor, +14 Agi, +9 Sta | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Armor — Shoulder · 92 armor, +9 Sta, +15 Int | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Armor — Shoulder · 165 armor, +14 Agi, +9 Sta | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Armor — Shoulder · 92 armor, +9 Sta, +15 Int | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Armor — Head · 310 armor, +12 Str, +14 Sta | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Armor — Head · 190 armor, +16 Agi, +10 Sta | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Stormcaller's Spaulders | Armor — Shoulder · 190 armor, +11 Sta, +14 Int | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Armor — Shoulder · 165 armor, +14 Agi, +9 Sta | 16% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Armor — Shoulder · 92 armor, +9 Sta, +15 Int | 16% | exclusive set 3 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Armor — Head · 310 armor, +12 Str, +14 Sta | 16% | exclusive set 4 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Armor — Head · 190 armor, +16 Agi, +10 Sta | 16% | exclusive set 4 † |
+| <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> 🟠 Heartwood of the Deathless Crown | Weapon — Main hand · 42–68 dmg @ 3.2s (~17 DPS), +24 Agi, +18 Sta, +20 Int | 3% | exclusive set 1 † |
+| <img src="../_loot-icons/kingsbane_last_oath.png" width="22" alt=""> 🟠 Kingsbane, Last Oath of Thornpeak | Weapon — Main hand · 46–74 dmg @ 2.8s (~21 DPS), +24 Str, +20 Sta | 3% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 

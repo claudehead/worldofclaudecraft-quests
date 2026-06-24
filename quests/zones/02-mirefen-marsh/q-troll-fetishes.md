@@ -26,7 +26,7 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.
 - **XP:** 1650
 - **Money:** 600 copper
 - **Item reward (by class):**
-  - Trollhide Leggings — _warrior, mage, rogue_
+  - <img src="../_loot-icons/trollhide_leggings.png" width="20" alt=""> 🟢 Trollhide Leggings — _warrior, mage, rogue_ · 55 armor, +2 Str, +3 Sta
 
 ## On completion
 

@@ -27,9 +27,9 @@ Then return to **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ to tur
 - **XP:** 4500
 - **Money:** 2400 copper
 - **Item reward (by class):**
-  - Boneplate Vest — _warrior_
-  - Revenant Silk Robe — _mage_
-  - Nightwalk Jerkin — _rogue_
+  - <img src="../_loot-icons/boneplate_vest.png" width="20" alt=""> 🟢 Boneplate Vest — _warrior_ · 170 armor, +3 Str, +6 Sta
+  - <img src="../_loot-icons/revenant_silk_robe.png" width="20" alt=""> 🟢 Revenant Silk Robe — _mage_ · 60 armor, +7 Int, +4 Spi
+  - <img src="../_loot-icons/nightwalk_jerkin.png" width="20" alt=""> 🟢 Nightwalk Jerkin — _rogue_ · 105 armor, +7 Agi, +2 Sta
 
 ## On completion
 

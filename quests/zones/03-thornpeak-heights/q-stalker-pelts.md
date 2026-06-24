@@ -25,7 +25,7 @@ Then return to **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668
 - **XP:** 2300
 - **Money:** 1000 copper
 - **Item reward (by class):**
-  - Ridgestalker Treads — _warrior, mage, rogue_
+  - <img src="../_loot-icons/ridgestalker_treads.png" width="20" alt=""> 🟢 Ridgestalker Treads — _warrior, mage, rogue_ · 50 armor, +3 Agi, +2 Sta
 
 ## On completion
 

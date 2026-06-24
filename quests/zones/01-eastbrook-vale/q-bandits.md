@@ -27,9 +27,9 @@ Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
 - **XP:** 550
 - **Money:** 200 copper
 - **Item reward (by class):**
-  - Redbrook Militia Blade — _warrior_
-  - Vale Apprentice Staff — _mage_
-  - Keen Dirk — _rogue_
+  - <img src="../_loot-icons/redbrook_blade.png" width="20" alt=""> 🟢 Redbrook Militia Blade — _warrior_ · 6–11 dmg @ 2.2s (~4 DPS), +2 Str
+  - <img src="../_loot-icons/apprentice_staff.png" width="20" alt=""> 🟢 Vale Apprentice Staff — _mage_ · 7–12 dmg @ 3s (~3 DPS), +1 Sta, +3 Int
+  - <img src="../_loot-icons/keen_dirk.png" width="20" alt=""> 🟢 Keen Dirk — _rogue_ · 4–8 dmg @ 1.7s (~4 DPS), +2 Agi
 
 ## On completion
 

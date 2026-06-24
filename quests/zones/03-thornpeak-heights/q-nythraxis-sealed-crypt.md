@@ -32,7 +32,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 - **XP:** 4600
 - **Money:** 2500 copper
 - **Item reward (by class):**
-  - Crypt Keystone — _warrior, mage, rogue_
+  - <img src="../_loot-icons/crypt_keystone.png" width="20" alt=""> 🟢 Crypt Keystone — _warrior, mage, rogue_
 
 ## On completion
 

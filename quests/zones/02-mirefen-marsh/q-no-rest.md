@@ -27,9 +27,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 - **XP:** 1500
 - **Money:** 550 copper
 - **Item reward (by class):**
-  - Drownedguard Breastplate — _warrior_
-  - Fenmist Robe — _mage_
-  - Eelskin Tunic — _rogue_
+  - <img src="../_loot-icons/drownedguard_breastplate.png" width="20" alt=""> 🟢 Drownedguard Breastplate — _warrior_ · 130 armor, +4 Sta
+  - <img src="../_loot-icons/fenmist_robe.png" width="20" alt=""> 🟢 Fenmist Robe — _mage_ · 45 armor, +5 Int, +3 Spi
+  - <img src="../_loot-icons/eelskin_tunic.png" width="20" alt=""> 🟢 Eelskin Tunic — _rogue_ · 80 armor, +5 Agi
 
 ## On completion
 

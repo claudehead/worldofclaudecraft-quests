@@ -27,9 +27,9 @@ Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
 - **XP:** 1200
 - **Money:** 900 copper
 - **Item reward (by class):**
-  - Bristleback Maul — _warrior_
-  - Sableweb Slippers — _mage_
-  - Mogger's Stomper Boots — _rogue_
+  - <img src="../_loot-icons/bristleback_maul.png" width="20" alt=""> 🟢 Bristleback Maul — _warrior_ · 7–12 dmg @ 2.8s (~3 DPS), +2 Str, +1 Sta
+  - <img src="../_loot-icons/sableweb_slippers.png" width="20" alt=""> 🟢 Sableweb Slippers — _mage_ · 18 armor, +2 Int, +1 Spi
+  - <img src="../_loot-icons/moggers_stomper_boots.png" width="20" alt=""> 🟢 Mogger's Stomper Boots — _rogue_ · 32 armor, +2 Agi, +1 Sta
 
 ## On completion
 

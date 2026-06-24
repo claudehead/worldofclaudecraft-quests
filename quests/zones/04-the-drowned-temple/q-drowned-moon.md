@@ -27,9 +27,9 @@ Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.
 - **XP:** 5000
 - **Money:** 12000 copper
 - **Item reward (by class):**
-  - Drowned Moon Maul — _warrior_
-  - Drowned Moon Scepter — _mage_
-  - Drowned Moon Kris — _rogue_
+  - <img src="../_loot-icons/drownedmoon_maul.png" width="20" alt=""> 🔵 Drowned Moon Maul — _warrior_ · 24–38 dmg @ 2.6s (~12 DPS), +8 Str, +4 Sta
+  - <img src="../_loot-icons/drownedmoon_scepter.png" width="20" alt=""> 🔵 Drowned Moon Scepter — _mage_ · 26–42 dmg @ 3s (~11 DPS), +10 Int, +4 Spi
+  - <img src="../_loot-icons/drownedmoon_kris.png" width="20" alt=""> 🔵 Drowned Moon Kris — _rogue_ · 16–25 dmg @ 1.7s (~12 DPS), +9 Agi, +3 Sta
 
 ## On completion
 

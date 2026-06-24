@@ -7,6 +7,7 @@ import { ZONE1_ZONE } from '../woc/src/sim/content/zone1.ts';
 import { ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
+import { qualityDot, statLine } from './iteminfo.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/out';
@@ -126,7 +127,11 @@ function classRewards(q: Q): string {
   const byItem: Record<string, string[]> = {};
   for (const [cls, item] of entries) (byItem[item as string] ||= []).push(cls);
   return Object.entries(byItem)
-    .map(([item, classes]) => `  - ${itemName(item)} — _${classes.join(', ')}_`)
+    .map(([item, classes]) => {
+      const icon = `<img src="../_loot-icons/${item}.png" width="20" alt="">`;
+      const stats = statLine(item);
+      return `  - ${icon} ${qualityDot(item)} ${itemName(item)} — _${classes.join(', ')}_${stats ? ` · ${stats}` : ''}`;
+    })
     .join('\n');
 }
 

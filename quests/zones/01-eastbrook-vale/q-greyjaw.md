@@ -26,7 +26,7 @@ Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
 - **XP:** 450
 - **Money:** 150 copper
 - **Item reward (by class):**
-  - Greyjaw's Pelt Leggings — _warrior, mage, rogue_
+  - <img src="../_loot-icons/greyjaw_pelt_cloak.png" width="20" alt=""> 🟢 Greyjaw's Pelt Leggings — _warrior, mage, rogue_ · 35 armor, +1 Agi, +1 Sta
 
 ## On completion
 

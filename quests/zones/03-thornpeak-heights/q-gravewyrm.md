@@ -27,9 +27,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 - **XP:** 5300
 - **Money:** 25000 copper
 - **Item reward (by class):**
-  - Gravewyrm Scale Hauberk — _warrior_
-  - Wyrmcult Grand Robe — _mage_
-  - Wyrmscale Jerkin — _rogue_
+  - <img src="../_loot-icons/gravewyrm_scale_hauberk.png" width="20" alt=""> 🔵 Gravewyrm Scale Hauberk — _warrior_ · 230 armor, +5 Str, +8 Sta
+  - <img src="../_loot-icons/wyrmcult_grand_robe.png" width="20" alt=""> 🔵 Wyrmcult Grand Robe — _mage_ · 75 armor, +11 Int, +5 Spi
+  - <img src="../_loot-icons/wyrmscale_jerkin.png" width="20" alt=""> 🔵 Wyrmscale Jerkin — _rogue_ · 145 armor, +10 Agi, +5 Sta
 
 ## On completion
 
