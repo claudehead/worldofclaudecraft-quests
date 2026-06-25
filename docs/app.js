@@ -187,6 +187,18 @@ function classesView() {
 }
 
 const QUALITY_COLOR = { legendary: '#e6803a', epic: '#a86bd6', rare: '#46b8da', uncommon: '#5cb85c', common: '#c8c8cf', poor: '#7a7a82' };
+// Render an item source; for drops, link each mob to its bestiary entry.
+function sourceHTML(src) {
+  if (!src) return '';
+  if (src.type === 'drop' && Array.isArray(src.mobs)) {
+    const parts = src.mobs.slice(0, 3).map(m => m.dir
+      ? `<a href="#/doc/${encodeURIComponent('quests/zones/' + m.dir + '/bestiary.md')}/${encodeURIComponent('mob-' + m.id)}">${esc(m.name)}</a>`
+      : esc(m.name));
+    const more = src.mobs.length > 3 ? ` +${src.mobs.length - 3} more` : '';
+    return 'Drops from ' + parts.join(', ') + more;
+  }
+  return esc(src.label || '');
+}
 let gearData = null;
 async function gearView() {
   app.innerHTML = '';
@@ -230,7 +242,7 @@ async function gearView() {
     grid.innerHTML = '';
     list.slice(0, 240).forEach(g => {
       const col = QUALITY_COLOR[g.quality] || '#ccc';
-      const src = g.sources[0] ? g.sources[0].label : '';
+      const src = sourceHTML(g.sources[0]);
       const card = el(`<div class="card gearcard">
         <div class="gearhead">
           <img class="gicon" src="${raw(g.icon)}" alt="" loading="lazy" style="border-color:${col}">
@@ -238,7 +250,7 @@ async function gearView() {
             <div class="meta">${esc(g.qualityName)} · ${esc(g.slotLabel)}${g.armorType ? ' · ' + esc(g.armorType[0].toUpperCase() + g.armorType.slice(1)) : ''}</div></div>
         </div>
         ${g.stats ? `<div class="gstats">${esc(g.stats)}</div>` : ''}
-        <div class="gsrc">${esc(src)}</div>
+        <div class="gsrc">${src}</div>
       </div>`);
       grid.append(card);
     });
@@ -278,13 +290,12 @@ async function bisView() {
     const grid = el(`<div class="grid g-4"></div>`);
     c.slots.forEach(s => {
       const col = QUALITY_COLOR[s.item.quality] || '#ccc';
-      const src = s.item.sources[0] ? s.item.sources[0].label : '';
       grid.append(el(`<div class="card gearcard reveal">
         <div class="bisslot">${esc(s.slotLabel)}</div>
         <div class="gearhead"><img class="gicon" src="${raw(s.item.icon)}" alt="" loading="lazy" style="border-color:${col}">
           <div><h3 style="color:${col};font-size:15px">${esc(s.item.name)}</h3><div class="meta">${esc(s.item.qualityName)}</div></div></div>
         ${s.item.stats ? `<div class="gstats">${esc(s.item.stats)}</div>` : ''}
-        <div class="gsrc">${esc(src)}</div></div>`));
+        <div class="gsrc">${sourceHTML(s.item.sources[0])}</div></div>`));
     });
     body.append(grid);
     reveal(body);
@@ -332,7 +343,7 @@ async function consumablesView() {
           <div><h3 style="color:${col}">${esc(it.name)}</h3><div class="meta">${esc(it.category)}${it.quality !== 'common' ? ' · ' + esc(it.qualityName) : ''}</div></div>
         </div>
         ${it.effect ? `<div class="gstats">${esc(it.effect)}</div>` : ''}
-        <div class="gsrc">${esc(it.sources[0] ? it.sources[0].label : '')}</div></div>`);
+        <div class="gsrc">${sourceHTML(it.sources[0])}</div></div>`);
       grid.append(card);
     });
     if (!list.length) grid.append(el('<div class="meta">No consumables match.</div>'));

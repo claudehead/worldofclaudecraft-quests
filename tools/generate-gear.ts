@@ -2,7 +2,10 @@ import { ITEMS, MOBS, NPCS, QUESTS } from '../woc/src/sim/data.ts';
 import { DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { DELVE_MOBS, DELVE_SHOPS } from '../woc/src/sim/content/delves/index.ts';
 import { quality, statLine } from './iteminfo.ts';
+import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
+
+const DIR = bestiaryDirByMob();
 
 const OUT = process.argv[2] || '/tmp/gen/gear.json';
 const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS, ...DELVE_MOBS };
@@ -14,9 +17,9 @@ const SLOT_LABEL: Record<string, string> = {
 const SLOT_ORDER = ['mainhand', 'helmet', 'shoulder', 'chest', 'gloves', 'waist', 'legs', 'feet'];
 
 // ---- precompute reverse indexes for "where to get" ----
-const dropsBy: Record<string, string[]> = {};
-for (const m of Object.values(ALL_MOBS) as any[]) {
-  for (const l of m.loot || []) if (l.itemId) (dropsBy[l.itemId] ||= []).push(m.name);
+const dropsBy: Record<string, { id: string; name: string }[]> = {};
+for (const [mid, m] of Object.entries(ALL_MOBS) as any[]) {
+  for (const l of m.loot || []) if (l.itemId) (dropsBy[l.itemId] ||= []).push({ id: mid, name: m.name });
 }
 const questBy: Record<string, string[]> = {};
 for (const q of Object.values(QUESTS) as any[]) {
@@ -32,14 +35,19 @@ for (const offers of Object.values(DELVE_SHOPS) as any[]) {
 }
 
 function uniq(a: string[] = []): string[] { return [...new Set(a)]; }
-function sourcesFor(id: string): { type: string; label: string }[] {
-  const out: { type: string; label: string }[] = [];
+function dropMobs(id: string) {
+  const seen = new Set<string>(), out: any[] = [];
+  for (const m of dropsBy[id] || []) { if (seen.has(m.id)) continue; seen.add(m.id); out.push({ id: m.id, name: m.name, dir: DIR[m.id] || null }); }
+  return out;
+}
+function sourcesFor(id: string): any[] {
+  const out: any[] = [];
   if (questBy[id]) out.push({ type: 'quest', label: `Quest: ${uniq(questBy[id]).join(', ')}` });
   if (delveBy[id] != null) out.push({ type: 'delve', label: `Delve vendor — ${delveBy[id]} Marks` });
   if (vendorBy[id]) out.push({ type: 'vendor', label: `Vendor: ${uniq(vendorBy[id]).join(', ')}` });
   if (dropsBy[id]) {
-    const mobs = uniq(dropsBy[id]);
-    out.push({ type: 'drop', label: `Drops from ${mobs.slice(0, 3).join(', ')}${mobs.length > 3 ? ` +${mobs.length - 3} more` : ''}` });
+    const mobs = dropMobs(id);
+    out.push({ type: 'drop', label: `Drops from ${mobs.slice(0, 3).map(m => m.name).join(', ')}${mobs.length > 3 ? ` +${mobs.length - 3} more` : ''}`, mobs });
   }
   if (!out.length) out.push({ type: 'other', label: 'Starting / crafted gear' });
   return out;

@@ -2,15 +2,18 @@ import { ITEMS, MOBS, NPCS, QUESTS } from '../woc/src/sim/data.ts';
 import { DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { DELVE_MOBS, DELVE_SHOPS } from '../woc/src/sim/content/delves/index.ts';
 import { quality, statLine } from './iteminfo.ts';
+import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
+
+const DIR = bestiaryDirByMob();
 
 const OUT = process.argv[2] || '/tmp/gen/consumables.json';
 const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS, ...DELVE_MOBS };
 const KINDS = ['food', 'drink', 'potion', 'elixir'];
 const CAT_LABEL: Record<string, string> = { food: 'Food', drink: 'Drink', potion: 'Potion', elixir: 'Elixir' };
 
-const dropsBy: Record<string, string[]> = {};
-for (const m of Object.values(ALL_MOBS) as any[]) for (const l of m.loot || []) if (l.itemId) (dropsBy[l.itemId] ||= []).push(m.name);
+const dropsBy: Record<string, { id: string; name: string }[]> = {};
+for (const [mid, m] of Object.entries(ALL_MOBS) as any[]) for (const l of m.loot || []) if (l.itemId) (dropsBy[l.itemId] ||= []).push({ id: mid, name: m.name });
 const questBy: Record<string, string[]> = {};
 for (const q of Object.values(QUESTS) as any[]) for (const it of Object.values(q.itemRewards || {})) (questBy[it as string] ||= []).push(q.name);
 const vendorBy: Record<string, string[]> = {};
@@ -19,12 +22,17 @@ const delveBy: Record<string, number> = {};
 for (const offers of Object.values(DELVE_SHOPS) as any[]) for (const o of offers) delveBy[o.itemId] = o.marks;
 
 const uniq = (a: string[] = []) => [...new Set(a)];
-function sourcesFor(id: string): { type: string; label: string }[] {
-  const out: { type: string; label: string }[] = [];
+function dropMobs(id: string) {
+  const seen = new Set<string>(), out: any[] = [];
+  for (const m of dropsBy[id] || []) { if (seen.has(m.id)) continue; seen.add(m.id); out.push({ id: m.id, name: m.name, dir: DIR[m.id] || null }); }
+  return out;
+}
+function sourcesFor(id: string): any[] {
+  const out: any[] = [];
   if (vendorBy[id]) out.push({ type: 'vendor', label: `Vendor: ${uniq(vendorBy[id]).join(', ')}` });
   if (questBy[id]) out.push({ type: 'quest', label: `Quest: ${uniq(questBy[id]).join(', ')}` });
   if (delveBy[id] != null) out.push({ type: 'delve', label: `Delve vendor — ${delveBy[id]} Marks` });
-  if (dropsBy[id]) { const m = uniq(dropsBy[id]); out.push({ type: 'drop', label: `Drops from ${m.slice(0, 3).join(', ')}${m.length > 3 ? ` +${m.length - 3} more` : ''}` }); }
+  if (dropsBy[id]) { const m = dropMobs(id); out.push({ type: 'drop', label: `Drops from ${m.slice(0, 3).map(x => x.name).join(', ')}${m.length > 3 ? ` +${m.length - 3} more` : ''}`, mobs: m }); }
   if (!out.length) out.push({ type: 'other', label: 'Cooked / gathered / fished' });
   return out;
 }
