@@ -194,6 +194,19 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .ldot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 2px; vertical-align: middle; }
 .pill:not(.active) .ldot { opacity: .35; }
 
+/* patch notes */
+.patchlayout { display: grid; grid-template-columns: 200px 1fr; gap: 26px; align-items: start; }
+@media (max-width: 720px) { .patchlayout { grid-template-columns: 1fr; } }
+.patchnav { position: sticky; top: calc(var(--nav-h) + 16px); display: flex; flex-direction: column; gap: 4px; max-height: 70vh; overflow-y: auto; }
+@media (max-width: 720px) { .patchnav { position: static; flex-direction: row; flex-wrap: wrap; max-height: none; } }
+.patchitem { display: flex; justify-content: space-between; gap: 8px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; background: var(--glass); transition: background .2s, border-color .2s; }
+.patchitem:hover { background: var(--glass-2); }
+.patchitem.on { border-color: var(--gold); background: rgba(230,187,106,.12); }
+.patchitem .pv { font-weight: 600; font-size: 14px; }
+.patchitem .pd { color: var(--muted-2); font-size: 12px; }
+.patchsrc { margin-bottom: 18px; font-size: 13px; }
+.patchitem .pd, .patchnav { scrollbar-width: thin; }
+
 /* leveling route */
 .routezone { margin-bottom: 34px; }
 .routezone h3 { font-size: 22px; margin: 0 0 14px; }

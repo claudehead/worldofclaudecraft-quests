@@ -76,6 +76,7 @@ function home() {
     ['#/talents', '🌳', 'Talents', `Interactive talent calculator — spend points across class and spec trees.`],
     ['#/dungeons', '🏰', 'Dungeons', `Route maps, rosters and bosses for every instance.`],
     ['#/delves', '🔮', 'Delves', `Tiers, affixes, companions and the Marks vendor.`],
+    ['#/patches', '📜', 'Patch notes', `What's new — official release notes for every game version.`],
   ];
   app.innerHTML = '';
   app.append(el(`
@@ -536,6 +537,40 @@ function toast(msg) {
   setTimeout(() => { t.classList.remove('in'); setTimeout(() => t.remove(), 300); }, 1800);
 }
 
+let patchData = null;
+async function patchesView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Patch notes</span><h2>What's new in the game</h2>
+      <p>Official release notes for World of Claudecraft, newest first — pulled straight from the upstream releases.</p></div>
+    <div class="patchlayout">
+      <div class="patchnav" id="patchnav"></div>
+      <div class="doc" id="patchbody"></div>
+    </div>
+  </div></section>`));
+  if (!patchData) {
+    try { patchData = await (await fetch('patches.json', { cache: 'no-cache' })).json(); }
+    catch (e) { app.querySelector('#patchbody').innerHTML = `<div class="meta">Couldn't load patch notes (${esc(e.message)}).</div>`; return; }
+  }
+  const nav = app.querySelector('#patchnav'), body = app.querySelector('#patchbody');
+  const patches = patchData.patches;
+  if (!patches.length) { body.innerHTML = '<div class="meta">No patch notes.</div>'; return; }
+  let active = 0;
+  patches.forEach((p, i) => {
+    const it = el(`<div class="patchitem ${i === 0 ? 'on' : ''}"><span class="pv">${esc(p.version)}</span><span class="pd">${esc(p.date)}</span></div>`);
+    it.onclick = () => { active = i; nav.querySelectorAll('.patchitem').forEach(x => x.classList.remove('on')); it.classList.add('on'); draw(); };
+    nav.append(it);
+  });
+  function draw() {
+    const p = patches[active];
+    body.innerHTML = marked.parse(p.body, { mangle: false, headerIds: false });
+    body.querySelectorAll('a').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+    body.prepend(el(`<div class="patchsrc"><a href="${esc(p.url)}" target="_blank" rel="noopener">View ${esc(p.version)} on GitHub →</a></div>`));
+    body.scrollIntoView({ block: 'nearest' });
+  }
+  draw(); reveal();
+}
+
 function routeView() {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
@@ -772,6 +807,7 @@ function router() {
   if (head === 'quests') return questsView();
   if (head === 'map') return worldMapView();
   if (head === 'route') return routeView();
+  if (head === 'patches') return patchesView();
   if (head === 'bestiary') return zonesView();
   if (head === 'gear') return gearView();
   if (head === 'bis') return bisView();

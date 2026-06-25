@@ -64,6 +64,8 @@ jobs:
 
       - name: Regenerate everything
         if: steps.check.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: bash tools/build.sh
 
       - name: Commit and push if changed
