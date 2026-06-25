@@ -19,6 +19,7 @@
 | Health | 160–179 HP |
 | Armor (physical mitigation) | 72–84 (~7% vs a same-level attacker) |
 | Melee damage | 16–27 per hit @ 2s swing (~10–11 DPS) |
+| Location | Mirefen Marsh · ~x:-40, z:230 · ~x:35, z:225 — [🗺️ show on map](#/map/-40/230) |
 
 **Best way to kill:**
 
@@ -47,6 +48,7 @@
 | Health | 181–200 HP |
 | Armor (physical mitigation) | 84–96 (~7–8% vs a same-level attacker) |
 | Melee damage | 18–31 per hit @ 1.9s swing (~12–13 DPS) |
+| Location | Mirefen Marsh · ~x:-82, z:273 · ~x:-120, z:350 — [🗺️ show on map](#/map/-82/273) |
 
 **Best way to kill:**
 
@@ -75,6 +77,7 @@
 | Health | 181–219 HP |
 | Armor (physical mitigation) | 70–90 (~6–7% vs a same-level attacker) |
 | Melee damage | 19–35 per hit @ 1.8s swing (~13–16 DPS) |
+| Location | Mirefen Marsh · ~x:70, z:300 · ~x:95, z:340 — [🗺️ show on map](#/map/70/300) |
 
 **Best way to kill:**
 
@@ -102,6 +105,7 @@
 | Health | 180–214 HP |
 | Armor (physical mitigation) | 72–90 (~6% vs a same-level attacker) |
 | Melee damage | 18–34 per hit @ 2.6s swing (~9–11 DPS) |
+| Location | Mirefen Marsh · ~x:72, z:428 · ~x:110, z:440 — [🗺️ show on map](#/map/72/428) |
 
 **Best way to kill:**
 
@@ -128,6 +132,7 @@
 | Health | 212–252 HP |
 | Armor (physical mitigation) | 112–140 (~9% vs a same-level attacker) |
 | Melee damage | 21–39 per hit @ 2.3s swing (~12–14 DPS) |
+| Location | Mirefen Marsh · ~x:90, z:420 · ~x:115, z:450 — [🗺️ show on map](#/map/90/420) |
 
 **Best way to kill:**
 
@@ -156,6 +161,7 @@
 | Health | 230–270 HP |
 | Armor (physical mitigation) | 180–220 (~13% vs a same-level attacker) |
 | Melee damage | 24–44 per hit @ 2s swing (~16–18 DPS) |
+| Location | Mirefen Marsh · ~x:15, z:470 · ~x:-25, z:490 — [🗺️ show on map](#/map/15/470) |
 
 **Best way to kill:**
 
@@ -184,6 +190,7 @@
 | Health | 245–287 HP |
 | Armor (physical mitigation) | 162–198 (~11–12% vs a same-level attacker) |
 | Melee damage | 24–44 per hit @ 2.2s swing (~14–16 DPS) |
+| Location | Mirefen Marsh · ~x:-80, z:420 · ~x:-105, z:455 — [🗺️ show on map](#/map/-80/420) |
 
 **Best way to kill:**
 
@@ -213,6 +220,7 @@
 | Health | 224–242 HP |
 | Armor (physical mitigation) | 160–176 (~11% vs a same-level attacker) |
 | Melee damage | 24–40 per hit @ 2.1s swing (~15–16 DPS) |
+| Location | Mirefen Marsh · ~x:18, z:472 — [🗺️ show on map](#/map/18/472) |
 
 **Best way to kill:**
 
@@ -241,6 +249,7 @@
 | Health | 236–255 HP |
 | Armor (physical mitigation) | 160–176 (~11% vs a same-level attacker) |
 | Melee damage | 28–47 per hit @ 2s swing (~18–19 DPS) |
+| Location | Mirefen Marsh · ~x:-5, z:500 — [🗺️ show on map](#/map/-5/500) |
 
 **Best way to kill:**
 
@@ -270,7 +279,7 @@
 | Armor (physical mitigation) | 220 (~13% vs a same-level attacker) |
 | Melee damage | 30–47 per hit @ 2.2s swing (~18 DPS) |
 | Respawn | ~2 min (rare spawn) |
-| Spawn point | ~x:-120, z:480 |
+| Location | Mirefen Marsh · ~x:-120, z:480 — [🗺️ show on map](#/map/-120/480) |
 
 **Best way to kill:**
 
@@ -303,7 +312,7 @@
 | Melee damage | 58–91 per hit @ 1.8s swing (~41 DPS) |
 | Crowd control | Immune |
 | Respawn | ~4.5 hours (rare spawn) |
-| Spawn point | ~x:-132, z:333 |
+| Location | Mirefen Marsh · ~x:-132, z:333 — [🗺️ show on map](#/map/-132/333) |
 
 **Best way to kill:**
 
@@ -343,7 +352,7 @@
 | Melee damage | 65–101 per hit @ 1.9s swing (~44 DPS) |
 | Crowd control | Immune |
 | Respawn | ~4.5 hours (rare spawn) |
-| Spawn point | ~x:118, z:455 |
+| Location | Mirefen Marsh · ~x:118, z:455 — [🗺️ show on map](#/map/118/455) |
 
 **Best way to kill:**
 
@@ -380,6 +389,7 @@
 | Armor (physical mitigation) | 198–216 (~12–13% vs a same-level attacker) |
 | Melee damage | 42–71 per hit @ 2.3s swing (~23–25 DPS) |
 | Respawn | ~25s |
+| Location | Mirefen Marsh |
 
 **Best way to kill:**
 
@@ -412,7 +422,7 @@
 | Melee damage | 69–108 per hit @ 2s swing (~44 DPS) |
 | Crowd control | Immune |
 | Respawn | ~4.5 hours (rare spawn) |
-| Spawn point | ~x:24, z:492 |
+| Location | Mirefen Marsh · ~x:24, z:492 — [🗺️ show on map](#/map/24/492) |
 
 **Best way to kill:**
 
@@ -450,6 +460,7 @@
 | Armor (physical mitigation) | 154–168 (~10% vs a same-level attacker) |
 | Melee damage | 45–75 per hit @ 2s swing (~29–31 DPS) |
 | Respawn | ~25s |
+| Location | Mirefen Marsh |
 
 **Best way to kill:**
 
@@ -481,6 +492,7 @@
 | Armor (physical mitigation) | 288 (~16% vs a same-level attacker) |
 | Melee damage | 51–79 per hit @ 2.2s swing (~30 DPS) |
 | Respawn | ~25s |
+| Location | Mirefen Marsh |
 
 **Best way to kill:**
 
@@ -518,7 +530,7 @@
 | Armor (physical mitigation) | 144 (~10% vs a same-level attacker) |
 | Melee damage | 24–38 per hit @ 1.8s swing (~17 DPS) |
 | Respawn | ~25s |
-| Spawn point | ~x:98, z:348 |
+| Location | Mirefen Marsh · ~x:98, z:348 — [🗺️ show on map](#/map/98/348) |
 
 **Best way to kill:**
 
@@ -549,7 +561,7 @@
 | Armor (physical mitigation) | 286 (~17% vs a same-level attacker) |
 | Melee damage | 31–48 per hit @ 2.4s swing (~16 DPS) |
 | Respawn | ~25s |
-| Spawn point | ~x:0, z:510 |
+| Location | Mirefen Marsh · ~x:0, z:510 — [🗺️ show on map](#/map/0/510) |
 
 **Best way to kill:**
 
@@ -580,6 +592,7 @@
 | Armor (physical mitigation) | 312 (~17% vs a same-level attacker) |
 | Melee damage | 52–81 per hit @ 2.4s swing (~28 DPS) |
 | Respawn | ~25s |
+| Location | Mirefen Marsh |
 
 **Best way to kill:**
 

@@ -210,6 +210,8 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .worldmap { position: relative; height: 74vh; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #0c0f12; touch-action: none; }
 .wsvg { width: 100%; height: 100%; display: block; cursor: grab; }
 .wsvg:active { cursor: grabbing; }
+.mapfocus { animation: mapfocus 1.4s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes mapfocus { 0% { opacity: 1; r: 8px; } 70% { opacity: 0; r: 26px; } 100% { opacity: 0; } }
 .wlabel { display: none; }
 .wsvg.labels .wlabel { display: block; }
 .wtip { position: absolute; pointer-events: none; opacity: 0; transition: opacity .12s; background: #11160f; border: 1px solid var(--line); color: var(--text); font-size: 12.5px; padding: 4px 9px; border-radius: 8px; z-index: 5; white-space: nowrap; }

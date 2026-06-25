@@ -19,6 +19,7 @@
 | Health | 28–42 HP |
 | Armor (physical mitigation) | 0–10 (~0–2% vs a same-level attacker) |
 | Melee damage | 2–6 per hit @ 2s swing (~2–3 DPS) |
+| Location | Eastbrook Vale · ~x:-15, z:55 · ~x:20, z:70 — [🗺️ show on map](#/map/-15/55) |
 
 **Best way to kill:**
 
@@ -46,6 +47,7 @@
 | Health | 45–75 HP |
 | Armor (physical mitigation) | 8–24 (~1–3% vs a same-level attacker) |
 | Melee damage | 5–11 per hit @ 1.8s swing (~3–5 DPS) |
+| Location | Eastbrook Vale · ~x:-60, z:5 — [🗺️ show on map](#/map/-60/5) |
 
 **Best way to kill:**
 
@@ -74,6 +76,7 @@
 | Health | 50–66 HP |
 | Armor (physical mitigation) | 14–28 (~2–4% vs a same-level attacker) |
 | Melee damage | 5–10 per hit @ 2.2s swing (~3–4 DPS) |
+| Location | Eastbrook Vale · ~x:55, z:12 · ~x:80, z:-15 — [🗺️ show on map](#/map/55/12) |
 
 **Best way to kill:**
 
@@ -102,6 +105,7 @@
 | Health | 70–104 HP |
 | Armor (physical mitigation) | 24–48 (~4–5% vs a same-level attacker) |
 | Melee damage | 7–16 per hit @ 1.9s swing (~5–7 DPS) |
+| Location | Eastbrook Vale · ~x:-75, z:57 — [🗺️ show on map](#/map/-75/57) |
 
 **Best way to kill:**
 
@@ -129,6 +133,7 @@
 | Health | 76–112 HP |
 | Armor (physical mitigation) | 40–80 (~6–9% vs a same-level attacker) |
 | Melee damage | 7–16 per hit @ 2s swing (~5–7 DPS) |
+| Location | Eastbrook Vale · ~x:65, z:-65 · ~x:90, z:-90 — [🗺️ show on map](#/map/65/-65) |
 
 **Best way to kill:**
 
@@ -157,7 +162,7 @@
 | Armor (physical mitigation) | 48 (~6% vs a same-level attacker) |
 | Melee damage | 9–14 per hit @ 1.8s swing (~6 DPS) |
 | Respawn | ~2 min (rare spawn) |
-| Spawn point | ~x:0, z:95 |
+| Location | Eastbrook Vale · ~x:0, z:95 — [🗺️ show on map](#/map/0/95) |
 
 **Best way to kill:**
 
@@ -186,6 +191,7 @@
 | Health | 96–132 HP |
 | Armor (physical mitigation) | 48–80 (~6–8% vs a same-level attacker) |
 | Melee damage | 10–20 per hit @ 2.1s swing (~6–8 DPS) |
+| Location | Eastbrook Vale · ~x:-82, z:-62 — [🗺️ show on map](#/map/-82/-62) |
 
 **Best way to kill:**
 
@@ -215,6 +221,7 @@
 | Health | 122–160 HP |
 | Armor (physical mitigation) | 56–84 (~6–8% vs a same-level attacker) |
 | Melee damage | 12–25 per hit @ 2.3s swing (~7–9 DPS) |
+| Location | Eastbrook Vale · ~x:80, z:78 — [🗺️ show on map](#/map/80/78) |
 
 **Best way to kill:**
 
@@ -247,7 +254,7 @@
 | Melee damage | 35–55 per hit @ 2.2s swing (~20 DPS) |
 | Crowd control | Immune |
 | Respawn | ~2 min (rare spawn) |
-| Spawn point | ~x:118, z:-26 |
+| Location | Eastbrook Vale · ~x:118, z:-26 — [🗺️ show on map](#/map/118/-26) |
 
 **Best way to kill:**
 
@@ -287,7 +294,7 @@
 | Melee damage | 39–61 per hit @ 2.6s swing (~19 DPS) |
 | Crowd control | Immune |
 | Respawn | ~3 min (rare spawn) |
-| Spawn point | ~x:92, z:90 |
+| Location | Eastbrook Vale · ~x:92, z:90 — [🗺️ show on map](#/map/92/90) |
 
 **Best way to kill:**
 
@@ -324,6 +331,7 @@
 | Armor (physical mitigation) | 108–126 (~10% vs a same-level attacker) |
 | Melee damage | 24–42 per hit @ 2.4s swing (~13–14 DPS) |
 | Respawn | ~25s |
+| Location | Eastbrook Vale |
 
 **Best way to kill:**
 
@@ -352,6 +360,7 @@
 | Armor (physical mitigation) | 84–96 (~7–8% vs a same-level attacker) |
 | Melee damage | 30–51 per hit @ 1.8s swing (~21–23 DPS) |
 | Respawn | ~25s |
+| Location | Eastbrook Vale |
 
 **Best way to kill:**
 
@@ -380,6 +389,7 @@
 | Armor (physical mitigation) | 98 (~8% vs a same-level attacker) |
 | Melee damage | 29–45 per hit @ 2s swing (~19 DPS) |
 | Respawn | ~25s |
+| Location | Eastbrook Vale |
 
 **Best way to kill:**
 
@@ -408,6 +418,7 @@
 | Armor (physical mitigation) | 176 (~13% vs a same-level attacker) |
 | Melee damage | 35–54 per hit @ 2.2s swing (~20 DPS) |
 | Respawn | ~25s |
+| Location | Eastbrook Vale |
 
 **Best way to kill:**
 
@@ -439,7 +450,7 @@
 | Armor (physical mitigation) | 150 (~14% vs a same-level attacker) |
 | Melee damage | 16–25 per hit @ 2.4s swing (~9 DPS) |
 | Respawn | ~25s |
-| Spawn point | ~x:92, z:-92 |
+| Location | Eastbrook Vale · ~x:92, z:-92 — [🗺️ show on map](#/map/92/-92) |
 
 **Best way to kill:**
 
@@ -472,6 +483,7 @@
 | Armor (physical mitigation) | 234 (~16% vs a same-level attacker) |
 | Melee damage | 41–65 per hit @ 2.6s swing (~20 DPS) |
 | Respawn | ~25s |
+| Location | Eastbrook Vale |
 
 **Best way to kill:**
 

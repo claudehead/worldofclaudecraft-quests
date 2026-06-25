@@ -19,6 +19,7 @@
 | Health | 382–404 HP |
 | Armor (physical mitigation) | 224–240 (~12% vs a same-level attacker) |
 | Melee damage | 36–59 per hit @ 2s swing (~23–24 DPS) |
+| Location | The Drowned Temple · ~x:-90, z:802 · ~x:-64, z:814 — [🗺️ show on map](#/map/-90/802) |
 
 **Best way to kill:**
 
@@ -46,6 +47,7 @@
 | Health | 378–400 HP |
 | Armor (physical mitigation) | 196–210 (~10–11% vs a same-level attacker) |
 | Melee damage | 36–59 per hit @ 1.9s swing (~24–26 DPS) |
+| Location | The Drowned Temple · ~x:-78, z:778 · ~x:-56, z:800 — [🗺️ show on map](#/map/-78/778) |
 
 **Best way to kill:**
 
@@ -74,7 +76,7 @@
 | Armor (physical mitigation) | 330 (~16% vs a same-level attacker) |
 | Melee damage | 44–69 per hit @ 2.2s swing (~26 DPS) |
 | Respawn | ~2 min (rare spawn) |
-| Spawn point | ~x:-96, z:814 |
+| Location | The Drowned Temple · ~x:-96, z:814 — [🗺️ show on map](#/map/-96/814) |
 
 **Best way to kill:**
 
@@ -107,6 +109,7 @@
 | Armor (physical mitigation) | 374 (~16% vs a same-level attacker) |
 | Melee damage | 69–109 per hit @ 2.2s swing (~40 DPS) |
 | Respawn | ~25s |
+| Location | The Drowned Temple |
 
 **Best way to kill:**
 
@@ -138,6 +141,7 @@
 | Armor (physical mitigation) | 476 (~20% vs a same-level attacker) |
 | Melee damage | 76–119 per hit @ 2.5s swing (~39 DPS) |
 | Respawn | ~25s |
+| Location | The Drowned Temple |
 
 **Best way to kill:**
 
@@ -174,6 +178,7 @@
 | Melee damage | 325–507 per hit @ 2.6s swing (~160 DPS) |
 | Crowd control | Immune |
 | Respawn | ~25s |
+| Location | The Drowned Temple |
 
 **Best way to kill:**
 

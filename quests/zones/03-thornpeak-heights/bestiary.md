@@ -19,6 +19,7 @@
 | Health | 310–331 HP |
 | Armor (physical mitigation) | 168–182 (~10% vs a same-level attacker) |
 | Melee damage | 32–53 per hit @ 1.9s swing (~22–23 DPS) |
+| Location | Thornpeak Heights · ~x:-50, z:590 · ~x:45, z:600 — [🗺️ show on map](#/map/-50/590) |
 
 **Best way to kill:**
 
@@ -45,6 +46,7 @@
 | Health | 346–368 HP |
 | Armor (physical mitigation) | 234–252 (~13% vs a same-level attacker) |
 | Melee damage | 34–56 per hit @ 2.1s swing (~21–22 DPS) |
+| Location | Thornpeak Heights · ~x:75, z:625 · ~x:105, z:600 — [🗺️ show on map](#/map/75/625) |
 
 **Best way to kill:**
 
@@ -73,6 +75,7 @@
 | Health | 388–411 HP |
 | Armor (physical mitigation) | 308–330 (~16% vs a same-level attacker) |
 | Melee damage | 38–63 per hit @ 2.6s swing (~19–20 DPS) |
+| Location | Thornpeak Heights · ~x:-90, z:700 · ~x:-60, z:730 — [🗺️ show on map](#/map/-90/700) |
 
 **Best way to kill:**
 
@@ -99,6 +102,7 @@
 | Health | 414–436 HP |
 | Armor (physical mitigation) | 320–340 (~15% vs a same-level attacker) |
 | Melee damage | 44–72 per hit @ 2.2s swing (~26–27 DPS) |
+| Location | Thornpeak Heights · ~x:110, z:760 · ~x:135, z:795 — [🗺️ show on map](#/map/110/760) |
 
 **Best way to kill:**
 
@@ -128,6 +132,7 @@
 | Health | 414–458 HP |
 | Armor (physical mitigation) | 320–360 (~15% vs a same-level attacker) |
 | Melee damage | 44–76 per hit @ 2s swing (~28–31 DPS) |
+| Location | Thornpeak Heights · ~x:55, z:820 · ~x:25, z:845 · ~x:80, z:845 — [🗺️ show on map](#/map/55/820) |
 
 **Best way to kill:**
 
@@ -156,6 +161,7 @@
 | Health | 457–480 HP |
 | Armor (physical mitigation) | 306–324 (~14% vs a same-level attacker) |
 | Melee damage | 46–76 per hit @ 2.3s swing (~26–27 DPS) |
+| Location | Thornpeak Heights · ~x:-40, z:830 · ~x:-15, z:860 — [🗺️ show on map](#/map/-40/830) |
 
 **Best way to kill:**
 
@@ -184,7 +190,7 @@
 | Armor (physical mitigation) | 408 (~17% vs a same-level attacker) |
 | Melee damage | 48–76 per hit @ 2.2s swing (~28 DPS) |
 | Respawn | ~2 min (rare spawn) |
-| Spawn point | ~x:145, z:815 |
+| Location | Thornpeak Heights · ~x:145, z:815 — [🗺️ show on map](#/map/145/815) |
 
 **Best way to kill:**
 
@@ -213,6 +219,7 @@
 | Health | 415–436 HP |
 | Armor (physical mitigation) | 272–288 (~12–13% vs a same-level attacker) |
 | Melee damage | 48–79 per hit @ 2s swing (~31–33 DPS) |
+| Location | Thornpeak Heights · ~x:40, z:855 — [🗺️ show on map](#/map/40/855) |
 
 **Best way to kill:**
 
@@ -245,7 +252,7 @@
 | Melee damage | 82–128 per hit @ 1.7s swing (~62 DPS) |
 | Crowd control | Immune |
 | Respawn | ~3 min (rare spawn) |
-| Spawn point | ~x:-82, z:575 |
+| Location | Thornpeak Heights · ~x:-82, z:575 — [🗺️ show on map](#/map/-82/575) |
 
 **Best way to kill:**
 
@@ -280,7 +287,7 @@
 | Melee damage | 102–159 per hit @ 2s swing (~65 DPS) |
 | Crowd control | Immune |
 | Respawn | ~6 hours (rare spawn) |
-| Spawn point | ~x:100, z:617 |
+| Location | Thornpeak Heights · ~x:100, z:617 — [🗺️ show on map](#/map/100/617) |
 
 **Best way to kill:**
 
@@ -320,6 +327,7 @@
 | Armor (physical mitigation) | 360–384 (~17% vs a same-level attacker) |
 | Melee damage | 60–99 per hit @ 2.6s swing (~30–31 DPS) |
 | Respawn | ~25s |
+| Location | Thornpeak Heights · ~x:-125, z:740 — [🗺️ show on map](#/map/-125/740) |
 
 **Best way to kill:**
 
@@ -349,7 +357,7 @@
 | Melee damage | 88–138 per hit @ 2.7s swing (~42 DPS) |
 | Crowd control | Immune |
 | Respawn | ~3 hours (rare spawn) |
-| Spawn point | ~x:-45, z:768 |
+| Location | Thornpeak Heights · ~x:-45, z:768 — [🗺️ show on map](#/map/-45/768) |
 
 **Best way to kill:**
 
@@ -387,7 +395,7 @@
 | Melee damage | 134–210 per hit @ 2.4s swing (~72 DPS) |
 | Crowd control | Immune |
 | Respawn | ~6 hours (rare spawn) |
-| Spawn point | ~x:-34, z:842 |
+| Location | Thornpeak Heights · ~x:-34, z:842 — [🗺️ show on map](#/map/-34/842) |
 
 **Best way to kill:**
 
@@ -425,6 +433,7 @@
 | Armor (physical mitigation) | 396 (~16% vs a same-level attacker) |
 | Melee damage | 73–114 per hit @ 2.3s swing (~41 DPS) |
 | Respawn | ~25s |
+| Location | Thornpeak Heights |
 
 **Best way to kill:**
 
@@ -457,6 +466,7 @@
 | Armor (physical mitigation) | 468–494 (~19% vs a same-level attacker) |
 | Melee damage | 76–124 per hit @ 2.2s swing (~44–46 DPS) |
 | Respawn | ~25s |
+| Location | Thornpeak Heights |
 
 **Best way to kill:**
 
@@ -490,7 +500,7 @@
 | Melee damage | 132–207 per hit @ 2.5s swing (~68 DPS) |
 | Crowd control | Immune |
 | Respawn | ~6 hours (rare spawn) |
-| Spawn point | ~x:80, z:845 |
+| Location | Thornpeak Heights · ~x:80, z:845 — [🗺️ show on map](#/map/80/845) |
 
 **Best way to kill:**
 
@@ -527,6 +537,7 @@
 | Armor (physical mitigation) | 380 (~15% vs a same-level attacker) |
 | Melee damage | 79–124 per hit @ 2s swing (~51 DPS) |
 | Respawn | ~25s |
+| Location | Thornpeak Heights |
 
 **Best way to kill:**
 
@@ -567,6 +578,7 @@
 | Armor (physical mitigation) | 570 (~21% vs a same-level attacker) |
 | Melee damage | 83–130 per hit @ 2.8s swing (~38 DPS) |
 | Respawn | ~25s |
+| Location | Thornpeak Heights |
 
 **Best way to kill:**
 
@@ -612,7 +624,7 @@
 | Armor (physical mitigation) | 448 (~20% vs a same-level attacker) |
 | Melee damage | 66–104 per hit @ 2.6s swing (~33 DPS) |
 | Respawn | ~25s |
-| Spawn point | ~x:-132, z:748 |
+| Location | Thornpeak Heights · ~x:-132, z:748 — [🗺️ show on map](#/map/-132/748) |
 
 **Best way to kill:**
 
@@ -643,6 +655,7 @@
 | Armor (physical mitigation) | 646 (~24% vs a same-level attacker) |
 | Melee damage | 86–135 per hit @ 2.6s swing (~43 DPS) |
 | Respawn | ~25s |
+| Location | Thornpeak Heights |
 
 **Best way to kill:**
 
@@ -689,6 +702,7 @@
 | Melee damage | 325–507 per hit @ 2.6s swing (~160 DPS) |
 | Crowd control | Immune |
 | Respawn | ~25s |
+| Location | Thornpeak Heights |
 
 **Best way to kill:**
 
@@ -745,6 +759,7 @@
 | Melee damage | 97–151 per hit @ 2.4s swing (~52 DPS) |
 | Crowd control | Immune |
 | Respawn | ~6.9 hours |
+| Location | Thornpeak Heights |
 
 **Best way to kill:**
 

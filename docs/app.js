@@ -294,7 +294,7 @@ const MARKER = {
   poi: { color: '#7fa890', r: 3, label: 'Places' },
 };
 let worldData = null;
-async function worldMapView() {
+async function worldMapView(fx, fz) {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
     <div class="shead reveal"><span class="eyebrow">World map</span><h2>The world of Claudecraft</h2>
@@ -381,6 +381,15 @@ async function worldMapView() {
     const p = el(`<span class="pill active"><span class="ldot" style="background:${cfg.color}"></span> ${cfg.label}</span>`);
     p.onclick = () => { on[type] = !on[type]; p.classList.toggle('active', on[type]); layers[type].style.display = on[type] ? '' : 'none'; };
     lh.append(p);
+  }
+
+  // focus on a spawn point (deep-linked from the bestiary: #/map/<x>/<z>)
+  const tx = Number(fx), tz = Number(fz);
+  if (Number.isFinite(tx) && Number.isFinite(tz)) {
+    const span = 220; // zoomed-in window around the point
+    vb = { x: tx - span / 2, y: tz - span / 2, w: span, h: span }; apply();
+    const ring = mk('circle', { cx: tx, cy: tz, r: 14, fill: 'none', stroke: '#ffd479', 'stroke-width': 3, 'vector-effect': 'non-scaling-stroke', class: 'mapfocus' });
+    svg.append(ring);
   }
   reveal();
 }
@@ -958,7 +967,7 @@ function router() {
   const parts = h.slice(2).split('/');
   const head = parts[0] || '';
   if (head === 'quests') return questsView();
-  if (head === 'map') return worldMapView();
+  if (head === 'map') return worldMapView(parts[1], parts[2]);
   if (head === 'route') return routeView();
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();

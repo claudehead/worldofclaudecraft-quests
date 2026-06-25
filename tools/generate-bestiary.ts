@@ -230,7 +230,7 @@ function humanRespawn(sec: number): string {
   const h = min / 60; return `~${h % 1 ? h.toFixed(1) : h} hours`;
 }
 
-function mobSection(m: any, spawns: { x: number; z: number; count: number }[] = []): string {
+function mobSection(m: any, spawns: { x: number; z: number; count: number }[] = [], zoneTitle = ''): string {
   const L: string[] = [];
   const flags = [m.boss && 'Boss', m.elite && 'Elite', m.rare && 'Rare'].filter(Boolean).join(' · ');
   L.push(`<a id="mob-${m.id}"></a>`);
@@ -259,9 +259,13 @@ function mobSection(m: any, spawns: { x: number; z: number; count: number }[] = 
   if (m.ccImmune) L.push(`| Crowd control | Immune |`);
   // respawn timer matters most for rares/elites/bosses (long timers); skip the trivial 25s on trash
   if (m.rare || m.elite || m.boss || m.respawnMult) L.push(`| Respawn | ${humanRespawn(respawnSeconds(m))}${m.rare ? ' (rare spawn)' : ''} |`);
-  if ((m.rare || m.boss) && spawns.length) {
-    const pts = spawns.map(s => `~x:${Math.round(s.x)}, z:${Math.round(s.z)}`).join(' · ');
-    L.push(`| Spawn point | ${pts} |`);
+  // where to find it: zone + spawn coordinates, with a link that opens the spot on the world map
+  if (zoneTitle || spawns.length) {
+    const coords = spawns.map(s => `~x:${Math.round(s.x)}, z:${Math.round(s.z)}`).join(' · ');
+    const main = spawns.slice().sort((a, b) => b.count - a.count)[0];
+    const link = main ? ` — [🗺️ show on map](#/map/${Math.round(main.x)}/${Math.round(main.z)})` : '';
+    const where = [zoneTitle, coords].filter(Boolean).join(' · ');
+    L.push(`| Location | ${where}${link} |`);
   }
   L.push('');
   L.push(`**Best way to kill:**`);
@@ -296,7 +300,7 @@ for (const spec of zones) {
   const mobs = mobsForZone(spec);
   const spawnsByMob: Record<string, { x: number; z: number; count: number }[]> = {};
   for (const c of spec.camps) (spawnsByMob[c.mobId] ||= []).push({ x: c.center.x, z: c.center.z, count: c.count });
-  const sec = (m: any) => mobSection(m, spawnsByMob[m.id] || []);
+  const sec = (m: any) => mobSection(m, spawnsByMob[m.id] || [], spec.title);
   const L: string[] = [];
   L.push(`# Bestiary — ${spec.title}`);
   L.push('');
