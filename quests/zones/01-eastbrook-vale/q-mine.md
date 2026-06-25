@@ -29,10 +29,8 @@ Then return to **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ to turn in.
 
 > Ha! Back to work, lads! You have my thanks — and my coin.
 
-## Zone map
+## Where to go
 
-![Map of Zone 1 — Eastbrook Vale](map.svg)
+![Where to go for Rats in the Mine](qmap-q-mine.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

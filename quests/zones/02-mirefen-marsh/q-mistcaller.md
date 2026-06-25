@@ -35,10 +35,8 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 
 > Vael is dead, and the mist is lifting for the first time in years. But Maren heard his last words, and they freeze my blood: 'The Wyrm stirs beneath the peaks.' The sect serves something older than we ever guessed, $N. Rest while you can — the mountains are next.
 
-## Zone map
+## Where to go
 
-![Map of Zone 2 — Mirefen Marsh](map.svg)
+![Where to go for The Mistcaller](qmap-q-mistcaller.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

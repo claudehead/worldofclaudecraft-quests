@@ -34,10 +34,8 @@ Then return to **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ to turn in.
 
 > Dead? Truly dead? Then the thicket is just trees again. The Light bless your blade, $N.
 
-## Zone map
+## Where to go
 
-![Map of Zone 2 — Mirefen Marsh](map.svg)
+![Where to go for The Broodmother](qmap-q-broodmother.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 4 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

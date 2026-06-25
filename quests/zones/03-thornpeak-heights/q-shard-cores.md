@@ -30,10 +30,8 @@ Then return to **Loremaster Caddis**, Loremaster _(at ~x:12, z:655)_ to turn in.
 
 > Each core leans the same way, like iron filings to a lodestone. They point south, $N. To the Sanctum.
 
-## Zone map
+## Where to go
 
-![Map of Zone 3 — Thornpeak Heights](map.svg)
+![Where to go for Cores of the Storm](qmap-q-shard-cores.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

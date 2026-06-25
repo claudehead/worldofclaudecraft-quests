@@ -31,10 +31,8 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to tu
 
 > The yard grows quieter — but the calling has not stopped. It rises from below now, $N. From the crypt itself.
 
-## Zone map
+## Where to go
 
-![Map of Zone 1 — Eastbrook Vale](map.svg)
+![Where to go for Silence the Call](qmap-q-silence-the-call.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

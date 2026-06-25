@@ -29,10 +29,8 @@ Then return to **Trader Wilkes**, Provisioner _(at ~x:-7, z:3)_ to turn in.
 
 > Ah, fine bristly hides! These will fetch a good price.
 
-## Zone map
+## Where to go
 
-![Map of Zone 1 — Eastbrook Vale](map.svg)
+![Where to go for Bristleback Hides](qmap-q-boars.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

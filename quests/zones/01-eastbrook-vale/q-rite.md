@@ -38,10 +38,8 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to tu
 - Into the Hollow (`q_hollow`)
 - The Sexton's Bell (`q_sexton`)
 
-## Zone map
+## Where to go
 
-![Map of Zone 1 — Eastbrook Vale](map.svg)
+![Where to go for The Binding Rite](qmap-q-rite.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 4 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

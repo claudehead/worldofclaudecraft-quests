@@ -31,10 +31,8 @@ Then return to **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668
 
 > Still warm. The Loremaster says the glow matches no flame he knows of. I say it is mountain trouble, and I say it kindly.
 
-## Zone map
+## Where to go
 
-![Map of Zone 3 — Thornpeak Heights](map.svg)
+![Where to go for Strange Wax](qmap-q-glowing-wax.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

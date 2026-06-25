@@ -29,10 +29,8 @@ Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to tur
 
 > Aldric's seal, is it? Then you'll do. The fen has been swallowing my patrols whole, and I need every blade that floats.
 
-## Zone map
+## Where to go
 
-![Map of Zone 2 — Mirefen Marsh](map.svg)
+![Where to go for Muster at Fenbridge](qmap-q-fenbridge-muster.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

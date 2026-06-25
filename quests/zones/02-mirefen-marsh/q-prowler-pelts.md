@@ -29,10 +29,8 @@ Then return to **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ to turn in.
 
 > Good thick pelts, these. The causeway will outlast the both of us now.
 
-## Zone map
+## Where to go
 
-![Map of Zone 2 — Mirefen Marsh](map.svg)
+![Where to go for Pelts for the Causeway](qmap-q-prowler-pelts.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

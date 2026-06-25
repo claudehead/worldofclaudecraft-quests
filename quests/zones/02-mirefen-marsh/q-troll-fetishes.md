@@ -32,10 +32,8 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.
 
 > Same maker as the banners in the cult camp. The trolls are hired shovels, nothing more. Good work, $N.
 
-## Zone map
+## Where to go
 
-![Map of Zone 2 — Mirefen Marsh](map.svg)
+![Where to go for Fetish and Bone](qmap-q-troll-fetishes.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

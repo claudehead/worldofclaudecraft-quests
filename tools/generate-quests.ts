@@ -219,13 +219,11 @@ function questMd(q: Q, zone: typeof zoneBuckets[number]): string {
     for (const f of followups) L.push(`- ${f.name} (\`${f.id}\`)`);
     L.push('');
   }
-  L.push(`## Zone map`);
+  L.push(`## Where to go`);
   L.push('');
-  L.push(`![Map of ${zone.title}](map.svg)`);
+  L.push(`![Where to go for ${q.name}](qmap-${slug(q.id)}.svg)`);
   L.push('');
-  L.push(`_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._`);
-  L.push('');
-  L.push(`See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.`);
+  L.push(`_Numbered route: ① start → objectives → ${q.objectives.length + 2} turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._`);
   L.push('');
   return L.join('\n');
 }

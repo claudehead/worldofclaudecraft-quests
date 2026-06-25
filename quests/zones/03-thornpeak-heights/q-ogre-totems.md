@@ -34,10 +34,8 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:7, z:670)_ to turn in.
 
 - The Captain's Bounty (`q_ogre_bounty`)
 
-## Zone map
+## Where to go
 
-![Map of Zone 3 — Thornpeak Heights](map.svg)
+![Where to go for Totems of War](qmap-q-ogre-totems.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

@@ -33,10 +33,8 @@ Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.
 
 - What the Tarn Gives Up (`q_tarn_waders`)
 
-## Zone map
+## Where to go
 
-![Map of Zone 4 — The Drowned Temple (Endgame)](map.svg)
+![Where to go for Light on the Water](qmap-q-glimmermere-light.svg)
 
-_Gold = NPCs · red = mob camps · purple = dungeons · green = ground pickups. Match the names above to the markers._
-
-See the **[zone bestiary](bestiary.md)** for the health, armor, and kill tactics of every mob named above.
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

@@ -198,6 +198,51 @@ function simpleListView(title, eyebrow, blurb, items) {
   reveal();
 }
 
+let questMaps = null; // lazy-loaded quest-maps.json
+async function getQuestMaps() {
+  if (questMaps) return questMaps;
+  try { questMaps = await (await fetch(raw('quests/quest-maps.json'))).json(); }
+  catch { questMaps = {}; }
+  return questMaps;
+}
+
+// Turn an embedded per-quest map into an interactive, clickable route.
+async function enhanceQuestMap(body) {
+  const img = [...body.querySelectorAll('img')].find(i => /qmap-[^/]+\.svg$/.test(i.getAttribute('src') || i.src));
+  if (!img) return;
+  const mapPath = img.src.replace(RAW, '');
+  const qm = await getQuestMaps();
+  const entry = Object.values(qm).find(e => e.map === mapPath);
+  if (!entry) return;
+  // inline the SVG so its markers become clickable DOM
+  let svgText;
+  try { svgText = await (await fetch(img.src)).text(); } catch { return; }
+  const holder = el(`<div class="qmap"></div>`);
+  holder.innerHTML = svgText;
+  const svg = holder.querySelector('svg');
+  svg.removeAttribute('width'); svg.removeAttribute('height');
+  // clickable step chips
+  const stepsBar = el(`<div class="qsteps"></div>`);
+  const KIND_COLOR = { giver: '#f0c419', turnin: '#5cb85c', kill: '#d9534f', collect: '#46b8da', interact: '#9b8cff' };
+  entry.steps.forEach(st => {
+    const chip = el(`<button class="qchip"><span class="dot" style="background:${KIND_COLOR[st.kind] || '#999'}">${st.n}</span> ${esc(st.label)}</button>`);
+    chip.onmouseenter = chip.onclick = () => focusStep(svg, st.n, chip, stepsBar);
+    stepsBar.append(chip);
+  });
+  const panel = el(`<div class="qmap-panel"></div>`);
+  panel.append(el(`<div class="qmap-hint">Tap a step to highlight it on the map</div>`), stepsBar, holder);
+  img.replaceWith(panel);
+}
+function focusStep(svg, n, chip, bar) {
+  bar.querySelectorAll('.qchip').forEach(c => c.classList.remove('on'));
+  chip.classList.add('on');
+  svg.querySelectorAll('.qstep').forEach(g => {
+    const steps = (g.getAttribute('data-steps') || '').split(',');
+    g.classList.toggle('flash', steps.includes(String(n)));
+    g.style.opacity = steps.includes(String(n)) ? '1' : '0.32';
+  });
+}
+
 async function docView(path, anchor) {
   app.innerHTML = '<div class="spinner"></div>';
   let md;
@@ -205,10 +250,12 @@ async function docView(path, anchor) {
   catch (e) { app.innerHTML = `<section class="block"><div class="wrap"><p class="meta">Couldn't load <code>${esc(path)}</code> (${esc(e.message)}).</p><p><span class="btn ghost" data-go="#/">← Home</span></p></div></section>`; return; }
   const wrap = el(`<section class="block"><div class="wrap"><div class="doc"><span class="back">← Back</span><div class="body"></div></div></div></section>`);
   wrap.querySelector('.back').onclick = () => history.length > 1 ? history.back() : (location.hash = '#/');
-  renderMarkdown(wrap.querySelector('.body'), md, path);
+  const body = wrap.querySelector('.body');
+  renderMarkdown(body, md, path);
   app.innerHTML = '';
   app.append(wrap);
   window.scrollTo(0, 0);
+  enhanceQuestMap(body);
   if (anchor) {
     const t = document.getElementById(anchor);
     if (t) setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
