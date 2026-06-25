@@ -54,6 +54,11 @@ $TSX $TOOLS/generate-gear.ts gear/gear.json
 node $TOOLS/render-loot.mjs gear/gear-icons.json $WOC/public gear/_icons
 rm -f gear/gear-icons.json
 
+echo "==> consumables catalog + icons"
+$TSX $TOOLS/generate-consumables.ts consumables/consumables.json
+node $TOOLS/render-loot.mjs consumables/consumable-icons.json $WOC/public consumables/_icons
+rm -f consumables/consumable-icons.json
+
 echo "==> website manifest"
 $TSX $TOOLS/generate-site-manifest.ts docs/manifest.json
 

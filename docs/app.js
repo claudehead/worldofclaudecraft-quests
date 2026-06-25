@@ -68,6 +68,7 @@ function home() {
     ['#/quests', '🗺️', 'Quests', `${c.quests} quests across ${c.zones} zones, sorted by level — with maps, rewards, and exact objectives.`],
     ['#/bestiary', '🐺', 'Bestiary', `Every creature with a model render, stats, kill tactics, and a full loot table.`],
     ['#/gear', '🛡️', 'Gear', `Every weapon and armor piece — rarity, stats, and where to get it.`],
+    ['#/consumables', '🍖', 'Consumables', `Food, drink, potions and elixirs — what they restore and where to buy them.`],
     ['#/classes', '⚔️', 'Classes', `${c.classes} classes — specs, abilities by learn-level, and model portraits.`],
     ['#/dungeons', '🏰', 'Dungeons', `Route maps, rosters and bosses for every instance.`],
     ['#/delves', '🔮', 'Delves', `Tiers, affixes, companions and the Marks vendor.`],
@@ -196,6 +197,7 @@ async function gearView() {
       <div class="pills" id="gslots"></div>
     </div>
     <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="gquals"></div></div>
+    <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="gsources"></div></div>
     <div class="gearcount meta" id="gcount" style="margin-bottom:14px"></div>
     <div class="grid g-3" id="ggrid"></div>
   </div></section>`));
@@ -204,7 +206,7 @@ async function gearView() {
     catch (e) { app.querySelector('#ggrid').innerHTML = `<div class="meta">Couldn't load gear (${esc(e.message)}).</div>`; return; }
   }
   const grid = app.querySelector('#ggrid'), count = app.querySelector('#gcount');
-  let slot = 'all', qual = 'all', term = '';
+  let slot = 'all', qual = 'all', src = 'all', term = '';
   const mkPills = (host, items, onPick) => {
     items.forEach(([id, label], i) => {
       const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`);
@@ -214,12 +216,14 @@ async function gearView() {
   };
   mkPills(app.querySelector('#gslots'), [['all', 'All slots'], ...gearData.slots.map(s => [s.id, s.label])], v => { slot = v; draw(); });
   mkPills(app.querySelector('#gquals'), [['all', 'All rarities'], ...gearData.qualities.map(q => [q, q[0].toUpperCase() + q.slice(1)])], v => { qual = v; draw(); });
+  mkPills(app.querySelector('#gsources'), [['all', 'Any source'], ['quest', '🗺️ Quest reward'], ['drop', 'Drop'], ['vendor', 'Vendor'], ['delve', 'Delve']], v => { src = v; draw(); });
   app.querySelector('#gsearch').oninput = (e) => { term = e.target.value.toLowerCase(); draw(); };
 
   function draw() {
     const list = gearData.gear
       .filter(g => slot === 'all' || g.slot === slot)
       .filter(g => qual === 'all' || g.quality === qual)
+      .filter(g => src === 'all' || g.sources.some(s => s.type === src))
       .filter(g => !term || g.name.toLowerCase().includes(term));
     count.textContent = `${list.length} of ${gearData.count} items`;
     grid.innerHTML = '';
@@ -239,6 +243,54 @@ async function gearView() {
     });
     if (!list.length) grid.append(el('<div class="meta">No gear matches.</div>'));
     if (list.length > 240) grid.append(el(`<div class="meta">Showing first 240 — refine with filters.</div>`));
+  }
+  draw(); reveal();
+}
+
+let consData = null;
+async function consumablesView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Consumables</span><h2>Food, drink & potions</h2>
+      <p>Everything you eat, drink or quaff — what it restores and where to get it.</p></div>
+    <div class="controls reveal"><input class="search" id="csearch" placeholder="Search consumables…"><div class="pills" id="ccats"></div></div>
+    <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="csources"></div></div>
+    <div class="meta" id="ccount" style="margin-bottom:14px"></div>
+    <div class="grid g-3" id="cgrid"></div>
+  </div></section>`));
+  if (!consData) {
+    try { consData = await (await fetch(raw('consumables/consumables.json'))).json(); }
+    catch (e) { app.querySelector('#cgrid').innerHTML = `<div class="meta">Couldn't load consumables (${esc(e.message)}).</div>`; return; }
+  }
+  const grid = app.querySelector('#cgrid'), count = app.querySelector('#ccount');
+  let cat = 'all', src = 'all', term = '';
+  const mkPills = (host, items, onPick) => items.forEach(([id, label], i) => {
+    const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`);
+    p.onclick = () => { host.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); onPick(id); };
+    host.append(p);
+  });
+  mkPills(app.querySelector('#ccats'), [['all', 'All types'], ...consData.categories.map(c => [c.id, c.label])], v => { cat = v; draw(); });
+  mkPills(app.querySelector('#csources'), [['all', 'Any source'], ['vendor', 'Vendor'], ['quest', '🗺️ Quest'], ['drop', 'Drop'], ['delve', 'Delve']], v => { src = v; draw(); });
+  app.querySelector('#csearch').oninput = (e) => { term = e.target.value.toLowerCase(); draw(); };
+  function draw() {
+    const list = consData.items
+      .filter(i => cat === 'all' || i.kind === cat)
+      .filter(i => src === 'all' || i.sources.some(s => s.type === src))
+      .filter(i => !term || i.name.toLowerCase().includes(term));
+    count.textContent = `${list.length} of ${consData.count} consumables`;
+    grid.innerHTML = '';
+    list.forEach(it => {
+      const col = QUALITY_COLOR[it.quality] || '#ccc';
+      const card = el(`<div class="card gearcard">
+        <div class="gearhead">
+          <img class="gicon" src="${raw(it.icon)}" alt="" loading="lazy" style="border-color:${col}">
+          <div><h3 style="color:${col}">${esc(it.name)}</h3><div class="meta">${esc(it.category)}${it.quality !== 'common' ? ' · ' + esc(it.qualityName) : ''}</div></div>
+        </div>
+        ${it.effect ? `<div class="gstats">${esc(it.effect)}</div>` : ''}
+        <div class="gsrc">${esc(it.sources[0] ? it.sources[0].label : '')}</div></div>`);
+      grid.append(card);
+    });
+    if (!list.length) grid.append(el('<div class="meta">No consumables match.</div>'));
   }
   draw(); reveal();
 }
@@ -331,6 +383,7 @@ function router() {
   if (head === 'quests') return questsView();
   if (head === 'bestiary') return zonesView();
   if (head === 'gear') return gearView();
+  if (head === 'consumables') return consumablesView();
   if (head === 'classes') return classesView();
   if (head === 'dungeons') return simpleListView('Dungeons', 'Instanced content', 'Route maps, full rosters and bosses for every dungeon.',
     M.dungeons.map(d => ({ name: d.name, file: d.file, meta: d.suggestedPlayers ? `Suggested players: ${d.suggestedPlayers}` : '', tags: d.hasMap ? ['Map', 'Roster'] : ['Roster'] })));
