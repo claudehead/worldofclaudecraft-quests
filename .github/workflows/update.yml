@@ -75,10 +75,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # record the upstream version we just built from
           echo "${{ steps.check.outputs.sha }}" > .upstream-sha
-          # stage results, excluding the upstream clone and generator intermediates
-          git add -A -- ':!woc' ':!tools/node_modules' ':!tools/*.json'
-          git restore --staged tools/package.json tools/package-lock.json 2>/dev/null || true
-          git add tools/package.json tools/package-lock.json 2>/dev/null || true
+          # stage results; .gitignore already excludes woc/, tools/node_modules/,
+          # and the generator intermediates, so -A skips them without erroring.
+          git add -A
           if git diff --cached --quiet; then
             echo "Upstream moved but nothing in the guide changed."
           elif [ "${{ inputs.dry_run }}" = "true" ]; then
