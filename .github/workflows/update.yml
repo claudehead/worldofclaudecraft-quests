@@ -85,5 +85,11 @@ jobs:
             git diff --cached --stat
           else
             git commit -m "Regenerate guide from upstream ${{ steps.check.outputs.sha }} [skip ci]"
-            git push
+            # rebase-and-retry so a concurrent push to main doesn't fail the run
+            for i in 1 2 3 4 5; do
+              if git push; then echo "pushed"; break; fi
+              echo "push rejected (attempt $i) — rebasing on latest main"
+              git pull --rebase origin main || exit 1
+              [ "$i" = "5" ] && { echo "still failing after retries"; exit 1; }
+            done
           fi
