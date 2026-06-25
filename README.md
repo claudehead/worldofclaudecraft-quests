@@ -1,105 +1,86 @@
-# World of Claudecraft — Quest Guide
+# World of Claudecraft — Field Guide
 
-A complete, organized walkthrough for every quest in [World of Claudecraft](https://github.com/levy-street/world-of-claudecraft), extracted straight from the game's content data so the level requirements, objectives, drop locations, NPCs, and rewards are exact.
+A complete companion for [World of Claudecraft](https://github.com/levy-street/world-of-claudecraft) — quests, creatures, gear, classes, talents, dungeons, delves and more, all **extracted straight from the game's own data** so every level, stat, drop, and location is exact. Nothing is hand-written or guessed; the whole thing **regenerates automatically** when the game updates.
 
-**77 quests** across **4 zones** (levels 1–20).
+**77 quests · 4 zones · 60+ creatures · 214 gear items · 9 classes · levels 1–20.**
 
-## 🌐 Website
+## 🌐 The website
 
-There's a browsable site in [`docs/`](docs/) — a single-page app with an Apple-style design that **renders entirely from this repo**: it loads generated data files for navigation and fetches the markdown, maps, mob renders, and item icons live from `raw.githubusercontent.com`. No content is hand-written into the site, and the data is rebuilt by the same auto-update pipeline, so the site always matches the data here. Enable it under **Settings → Pages → Source: `main` / `/docs`**.
+A browsable single-page app lives in [`docs/`](docs/) and is served via GitHub Pages:
 
-Tabs: quests · leveling route · world map · bestiary · gear · best-in-slot · consumables · classes · abilities · talent calculator · dungeons · delves — plus **global search** (press `/`), **shareable talent builds**, a **light/dark toggle**, and it's an **installable PWA** that works offline.
+### **https://claudehead.github.io/worldofclaudecraft-quests/**
 
-## How to use this
+It renders **entirely from this repo** — it loads small generated data files for navigation and pulls the markdown, maps, renders, and icons live from `raw.githubusercontent.com`, so it always matches the data here.
 
-- **Playing a character?** Open **[quests/by-level.md](quests/by-level.md)** and do everything at or below your current level.
-- **Want a zone walkthrough?** Browse **[quests/](quests/README.md)** — each zone has its own folder and index.
-- **Tracking multiple characters?** Copy [`characters/_template.md`](characters/_template.md) per character and tick off quests as you turn them in. See [characters/README.md](characters/README.md).
+**Tabs**
 
-## Layout
+| | |
+|---|---|
+| 🚀 **Start here** | New-player guide: controls, questing, grouping, trading, chat, lag fixes |
+| 🗺️ **Quests** | All 77 by level/zone, each with a "where to go" route map |
+| 🧭 **Leveling route** | The fastest 1→20 path, zone by zone |
+| 🗺️ **World map** | Pan/zoom every zone with clickable, labellable markers |
+| 🐺 **Bestiary** | Every mob: model render, stats, kill tactics, full loot table |
+| 🧑‍🌾 **NPCs** | Quest-givers & vendors — location, quests offered, stock |
+| 🛡️ **Gear** | All 214 items — rarity, stats, and where to get them |
+| ✨ **Best in Slot** | Best gear per class, **by zone** |
+| 🍖 **Consumables** | Food, drink, potions, elixirs |
+| ⚔️ **Classes** | Specs, abilities by learn-level, model portraits |
+| 📖 **Abilities** | Searchable spellbook with real icons + ranks |
+| 🌳 **Talents** | Interactive calculator with shareable/saved builds |
+| 🧮 **Combat maths** | The real damage/armor/HP/XP formulas |
+| 🏰 **Dungeons** | Route maps, rosters, bosses |
+| 🔮 **Delves** | Tiers, affixes, companion, Marks vendor, lockpicking |
+| 💠 **Augments** | Class augments + world power-ups |
+| 🎨 **Cosmetics** | Event skins + rendered Combat Mech chromas |
+| 📜 **Patch notes** | Official release notes for every game version |
+
+Plus **global search** (press `/`), **13 languages** (the game's own translations), **light/dark** toggle, a **mobile menu**, and it's an **installable, offline-capable PWA**.
+
+## Reading the repo directly
+
+Everything on the site is generated markdown + data you can also browse on GitHub:
 
 ```
-quests/
-  README.md            Index of all zones
-  by-level.md          Every quest grouped by required level  ← start here
-  zones/
-    01-eastbrook-vale/     levels 1–7    (18 quests)
-    02-mirefen-marsh/      levels 6–13   (23 quests)
-    03-thornpeak-heights/  levels 13–20  (30 quests)
-    04-the-drowned-temple/ endgame 15+   (6 quests)
-characters/
-  _template.md         Copy this per character (checklist by level)
-  README.md            How to track progress
-classes/
-  README.md            The 9 classes at a glance
-  <class>.md           Per-class page: specs + every ability by learn-level
-  _class-renders/      Class model portraits (rendered from the game)
-dungeons/
-  README.md            All dungeons + suggested party size
-  <dungeon>.md         Roster, bosses, enemy levels (mobs link to the bestiary)
-  _maps/               Per-dungeon route maps (entry → pulls → boss)
-delves/
-  README.md            Replayable delves overview
-  <delve>.md           Tiers, affixes, companion, enemies, Marks vendor
-tools/                 Generators + the regeneration pipeline
+quests/        77 quest pages by zone + by-level index; per-quest route maps
+  zones/<zone>/bestiary.md   mobs with renders, stats, tactics, loot
+classes/       per-class pages + model portraits
+dungeons/      per-dungeon pages + route maps
+delves/        the Collapsed Reliquary delve guide
+npcs/          NPC catalog (npcs.json + portraits)
+gear/          gear.json + bis.json + item icons
+consumables/   consumables.json + icons
+reference/     combat.md, getting-started.md
+cosmetics/     cosmetics.json + mech chroma renders
+characters/    per-character progress template (copy + tick off)
+docs/          the website (app + generated data: manifest, search, i18n, …)
+tools/         the generators + the regeneration pipeline
 ```
 
-## Dungeons
+## What the data captures
 
-The **[dungeons/](dungeons/README.md)** folder has a page per instanced dungeon (Hollow Crypt, Sunken Bastion, Gravewyrm Sanctum, the Nythraxis raid): a **route map** (entry → each enemy pull → boss, plotted from the real spawn coordinates), suggested party size, enemy level range, a full enemy roster, and bosses — every enemy links to its bestiary entry. Quest pages that send you into a dungeon link straight to it.
+- **Quests** — recommended level, chain (prereqs/follow-ups), giver & turn-in NPCs with coordinates, every objective resolved to real mob/item names + where to find them, drop chances, per-class rewards, and the in-game story.
+- **Mobs** — health, armor (with physical mitigation %), melee damage/DPS, a full loot table, and the best way to kill it (tactics derived from the mob's actual abilities), with a **portrait rendered from the game's real 3D model**.
+- **Items** — rarity, stats, weapon DPS, and where to get them, each with its **real in-game icon** (the game's own icon code; weapon art rasterized from game assets).
+- **Stats & formulas** — computed from the game's real combat math (armor curve, elite ×2.3 HP/×1.5 dmg, HP-from-stamina, XP table).
 
-## Delves
+> Coordinates are the game's world `(x, z)` positions — a rough compass; zones run north (low `z`) to south (high `z`).
 
-The **[delves/](delves/README.md)** folder documents the replayable delve system (The Collapsed Reliquary): difficulty tiers, the random affixes that roll on higher tiers, your companion and its Marks upgrades, the enemy roster, and the **Marks vendor** stock — each shop item with its icon, rarity, stats, and unlock condition.
+## How it's built — and kept current
 
-## Classes
+Nearly everything is **generated from the upstream game data**; only this `README.md` and [`tools/README.md`](tools/README.md) are hand-written.
 
-The **[classes/](classes/README.md)** folder documents all 9 playable classes — warrior, paladin, hunter, rogue, priest, shaman, mage, warlock, druid. Each page has the class's specs, signature abilities, a portrait rendered from the game model, and a table of **every ability with the level you learn it** (and where its ranks upgrade) — so you can plan a character's leveling alongside the quest list.
+A GitHub Action ([`.github/workflows/update.yml`](.github/workflows/update.yml)) keeps it in sync:
 
-## What each quest page tells you
-
-- **Recommended level** and which quest chain it belongs to (prerequisites + follow-ups)
-- **Quest giver** and **turn-in NPC** with map coordinates
-- **How to complete** — every objective resolved to real mob/item names, the level of each mob, and exactly where to find them (open-world camp coordinates or which dungeon), plus drop chances for collected items
-- **Rewards** — XP, copper, and the item reward for each class
-- A **zone map** (SVG) plotting NPCs, mob camps, dungeon entrances, ground pickups, lakes and roads — match the names in the guide to the markers
-- The in-game **story** and **completion** text
-
-Each zone folder also has:
-
-- `map.svg` — embedded in the zone README and every quest page in that zone
-- `bestiary.md` — every mob in the zone with a **portrait** plus its **health, armor (physical mitigation %), melee damage/DPS, a full loot table, and the best way to kill it** (tactics derived from each mob's actual abilities — enrage, adds, AoE, poisons, frenzy, and so on). Mob stats are computed from the game's real formulas across each creature's spawn level range.
-
-Every item in those loot tables shows its **real in-game icon** (`zones/_loot-icons/*.png`) — generated by the game's own procedural icon code (`iconDataUrl`), with hand-painted weapon thumbnails rasterized from the game's assets. Nothing is hand-drawn.
-
-The mob portraits (`zones/_mob-renders/*.png`) are **rendered from the game's actual 3D `.glb` models** — each mob resolved to its real model + in-game tint via the game's own `visualKeyFor` mapping, then rendered headlessly (Chromium + three.js) and screenshotted. Nothing is hand-drawn or guessed. See [`tools/`](tools/README.md) for the render pipeline.
-
-> Coordinates are the game's world `(x, z)` positions — handy as a rough compass, since the zones run north (low `z`) to south (high `z`).
-
-## How it's built
-
-Almost everything here is **generated from the upstream game data** — 107 of the 109 markdown files, plus every map, mob render, and item icon. Only this `README.md` and `tools/README.md` are hand-written. The generators live in [`tools/`](tools/README.md).
-
-### Automatic updates
-
-A GitHub Action ([`.github/workflows/update.yml`](.github/workflows/update.yml)) keeps the guide in sync with the game:
-
-- **Checks the upstream repo every 30 minutes** (and on demand from the Actions tab).
-- Each check first compares upstream's `HEAD` to the SHA in [`.upstream-sha`](.upstream-sha) (the version last built from). If nothing moved, the run ends in a few seconds — no clone, no rebuild.
-- When upstream **has** changed, it clones the latest [world-of-claudecraft](https://github.com/levy-street/world-of-claudecraft), installs the generator deps + headless Chromium, runs [`tools/build.sh`](tools/build.sh), and commits any resulting changes.
-- The pipeline is idempotent, so it only ever commits a real diff.
+- **Checks upstream every 30 minutes** (and on demand). It compares the game's `HEAD` to [`.upstream-sha`](.upstream-sha); if nothing changed, the run ends in seconds.
+- When the game **has** changed, it clones it, installs the generator deps + headless Chromium, runs [`tools/build.sh`](tools/build.sh), and commits the regenerated guide. Idempotent — it only ever commits a real diff.
 
 ### Regenerate locally
 
 ```sh
-git clone https://github.com/levy-street/world-of-claudecraft woc   # upstream source next to this repo
+git clone https://github.com/levy-street/world-of-claudecraft woc   # upstream source, next to this repo
 cd tools && npm install && npx playwright install chromium && cd ..
 bash tools/build.sh
 ```
-
-## Notes
-
-- 👥 marks **group quests** (the page lists the suggested party size).
-- Quests with a `minLevel` are gated; the rest unlock at their zone's starting level.
 
 _Not affiliated with the upstream project — this is a fan-made reference._
