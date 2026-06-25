@@ -75,6 +75,7 @@ function renderMarkdown(container, md, docPath) {
 function home() {
   const c = M.counts;
   const featureCards = [
+    ['#/doc/' + encodeURIComponent('reference/getting-started.md'), '🚀', 'Getting started', `New player? Controls, how to quest, group, trade, chat — and lag fixes.`],
     ['#/quests', '🗺️', 'Quests', `${c.quests} quests across ${c.zones} zones, sorted by level — with maps, rewards, and exact objectives.`],
     ['#/route', '🧭', 'Leveling route', `The fastest 1→20 questing path, zone by zone in level order.`],
     ['#/map', '🗺️', 'World map', `Pan and zoom the whole world — towns, dungeons, delves, camps and quest-givers.`],
@@ -98,8 +99,8 @@ function home() {
       <h1 class="reveal">World of<br><span class="accent">Claudecraft</span></h1>
       <p class="sub reveal">Every quest, creature, class, dungeon and delve — rendered live from the source data. Pick a quest at your level and go.</p>
       <div class="cta reveal">
-        <span class="btn primary" data-go="#/quests">Browse quests →</span>
-        <span class="btn ghost" data-go="#/bestiary">Open the bestiary</span>
+        <span class="btn primary" data-go="#/doc/reference%2Fgetting-started.md">New here? Start guide →</span>
+        <span class="btn ghost" data-go="#/quests">Browse quests</span>
       </div>
       <div class="stats reveal">
         <div class="stat"><div class="n">${c.quests}</div><div class="l">Quests</div></div>

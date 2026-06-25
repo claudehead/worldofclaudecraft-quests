@@ -94,6 +94,9 @@ $TSX $TOOLS/generate-site-manifest.ts docs/manifest.json
 echo "==> search index"
 $TSX $TOOLS/generate-search-index.ts docs/search.json
 
+echo "==> getting-started guide"
+$TSX $TOOLS/generate-getting-started.ts reference/getting-started.md
+
 echo "==> patch notes (upstream releases)"
 node $TOOLS/generate-patch-notes.mjs docs/patches.json
 
