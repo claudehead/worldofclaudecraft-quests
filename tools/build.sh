@@ -68,10 +68,20 @@ $TSX $TOOLS/generate-worldmap.ts docs/world-map.json
 echo "==> quest voice-over manifest"
 $TSX $TOOLS/generate-voice-manifest.ts $WOC/public/audio/voice docs/voice.json
 
-echo "==> talent data"
+echo "==> talents + icons"
 $TSX $TOOLS/generate-talents.ts docs/talents.json
+node $TOOLS/render-game-icons.mjs docs/talent-icon-ids.json talent $WOC/public docs/talent-icons
+rm -f docs/talent-icon-ids.json
+
+echo "==> abilities + icons"
+$TSX $TOOLS/generate-abilities.ts abilities/abilities.json
+node $TOOLS/render-game-icons.mjs abilities/ability-icon-ids.json ability $WOC/public abilities/_icons
+rm -f abilities/ability-icon-ids.json
 
 echo "==> website manifest"
 $TSX $TOOLS/generate-site-manifest.ts docs/manifest.json
+
+echo "==> search index"
+$TSX $TOOLS/generate-search-index.ts docs/search.json
 
 echo "==> done"

@@ -356,6 +356,53 @@ async function worldMapView() {
   reveal();
 }
 
+let abilityData = null;
+async function abilitiesView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Abilities</span><h2>Spellbook</h2>
+      <p>Every ability with its real icon, the level you learn it, cost, cast, cooldown, range and effect. Filter by class or search.</p></div>
+    <div class="controls reveal"><input class="search" id="absearch" placeholder="Search abilities…"><div class="pills" id="abclass"></div></div>
+    <div class="meta" id="abcount" style="margin-bottom:14px"></div>
+    <div id="abbody"></div>
+  </div></section>`));
+  if (!abilityData) {
+    try { abilityData = await (await fetch(raw('abilities/abilities.json'))).json(); }
+    catch (e) { app.querySelector('#abbody').innerHTML = `<div class="meta">Couldn't load abilities (${esc(e.message)}).</div>`; return; }
+  }
+  const host = app.querySelector('#abbody'), count = app.querySelector('#abcount');
+  let cls = 'all', term = '';
+  const pillHost = app.querySelector('#abclass');
+  [['all', 'All classes'], ...abilityData.classes.map(c => [c.id, c.name])].forEach(([id, label], i) => {
+    const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`);
+    p.onclick = () => { cls = id; pillHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+    pillHost.append(p);
+  });
+  app.querySelector('#absearch').oninput = e => { term = e.target.value.toLowerCase(); draw(); };
+  function draw() {
+    host.innerHTML = ''; let n = 0;
+    for (const c of abilityData.classes) {
+      if (cls !== 'all' && c.id !== cls) continue;
+      const list = c.abilities.filter(a => !term || a.name.toLowerCase().includes(term));
+      if (!list.length) continue;
+      n += list.length;
+      const sec = el(`<div class="absec"><h3>${esc(c.name)}</h3><div class="abgrid"></div></div>`);
+      const grid = sec.querySelector('.abgrid');
+      for (const a of list) {
+        grid.append(el(`<div class="card abcard">
+          <div class="gearhead"><img class="gicon" src="${raw(a.icon)}" alt="" loading="lazy">
+            <div><h3 style="font-size:15px">${esc(a.name)}</h3><div class="meta">Learn at level ${a.learnLevel}${a.rankLevels.length ? ` · ranks ${a.rankLevels.join(', ')}` : ''}</div></div></div>
+          <div class="abmeta">${a.cost ? a.cost + ' cost · ' : ''}${esc(a.cast)} · ${esc(a.cooldown)} CD · ${esc(a.range)} · ${esc(a.school)}</div>
+          <div class="gstats">${esc(a.description)}</div></div>`));
+      }
+      host.append(sec);
+    }
+    count.textContent = `${n} abilities`;
+    reveal(host);
+  }
+  draw(); reveal(); applyPendingSearch();
+}
+
 let talentData = null;
 async function talentsView() {
   app.innerHTML = '';
@@ -417,7 +464,8 @@ async function talentsView() {
       const maxed = rank >= n.maxRank;
       const avail = canAdd(n, nodes) || rank > 0;
       const cell = el(`<div class="tnode ${rank > 0 ? (maxed ? 'maxed' : 'partial') : ''} ${avail ? '' : 'locked'}" title="${esc(n.name)} — ${esc(n.description || '')}">
-        <span class="ticon">${esc(n.icon || '✦')}</span>
+        <img class="ticon-img" src="${n.iconImg || ''}" alt="" loading="lazy">
+        <span class="tname">${esc(n.name)}</span>
         <span class="trank">${rank}/${n.maxRank}</span></div>`);
       cell.oncontextmenu = (e) => { e.preventDefault(); if (rank > 0) { alloc[n.id] = rank - 1; if (!alloc[n.id]) delete alloc[n.id]; draw(); } };
       cell.onclick = () => { if (canAdd(n, nodes)) { alloc[n.id] = rank + 1; draw(); } };
@@ -507,7 +555,7 @@ async function bisView() {
     body.append(grid);
     reveal(body);
   }
-  draw(); reveal();
+  draw(); reveal(); applyPendingSearch();
 }
 
 let consData = null;
@@ -555,7 +603,7 @@ async function consumablesView() {
     });
     if (!list.length) grid.append(el('<div class="meta">No consumables match.</div>'));
   }
-  draw(); reveal();
+  draw(); reveal(); applyPendingSearch();
 }
 
 function simpleListView(title, eyebrow, blurb, items) {
@@ -679,6 +727,7 @@ function router() {
   if (head === 'bis') return bisView();
   if (head === 'consumables') return consumablesView();
   if (head === 'classes') return classesView();
+  if (head === 'abilities') return abilitiesView();
   if (head === 'talents') return talentsView();
   if (head === 'dungeons') return simpleListView('Dungeons', 'Instanced content', 'Route maps, full rosters and bosses for every dungeon.',
     M.dungeons.map(d => ({ name: d.name, file: d.file, meta: d.suggestedPlayers ? `Suggested players: ${d.suggestedPlayers}` : '', tags: d.hasMap ? ['Map', 'Roster'] : ['Roster'] })));
@@ -695,11 +744,67 @@ function setActiveNav(h) {
   });
 }
 
+// ---------- global search ----------
+let searchIndex = null, pendingSearch = null;
+async function openSearch() {
+  if (document.getElementById('searchov')) return;
+  const ov = el(`<div class="searchov" id="searchov">
+    <div class="searchbox">
+      <input class="searchin" id="searchin" placeholder="Search quests, mobs, gear, abilities…" autocomplete="off">
+      <div class="searchres" id="searchres"></div>
+      <div class="searchhint">↑↓ to move · Enter to open · Esc to close</div>
+    </div></div>`);
+  document.body.append(ov);
+  const input = ov.querySelector('#searchin'), res = ov.querySelector('#searchres');
+  ov.addEventListener('click', e => { if (e.target === ov) close(); });
+  if (!searchIndex) { try { searchIndex = await (await fetch('search.json', { cache: 'no-cache' })).json(); } catch { searchIndex = []; } }
+  let hits = [], sel = 0;
+  function draw() {
+    res.innerHTML = '';
+    hits.forEach((h, i) => {
+      const r = el(`<div class="searchhit ${i === sel ? 'on' : ''}"><span class="searchtype">${esc(h.t)}</span> ${esc(h.n)}</div>`);
+      r.onclick = () => choose(h); r.onmouseenter = () => { sel = i; [...res.children].forEach((c, j) => c.classList.toggle('on', j === i)); };
+      res.append(r);
+    });
+  }
+  function run(q) {
+    q = q.trim().toLowerCase(); sel = 0;
+    if (!q) { hits = []; res.innerHTML = ''; return; }
+    hits = searchIndex.filter(e => e.nl.includes(q))
+      .sort((a, b) => (a.nl.startsWith(q) ? 0 : 1) - (b.nl.startsWith(q) ? 0 : 1) || a.n.length - b.n.length)
+      .slice(0, 40);
+    draw();
+  }
+  function choose(h) { close(); if (h.pre) pendingSearch = { go: h.go, term: h.pre }; location.hash = h.go; }
+  function close() { ov.remove(); document.removeEventListener('keydown', onKey); }
+  function onKey(e) {
+    if (e.key === 'Escape') return close();
+    if (e.key === 'ArrowDown') { sel = Math.min(sel + 1, hits.length - 1); draw(); e.preventDefault(); }
+    if (e.key === 'ArrowUp') { sel = Math.max(sel - 1, 0); draw(); e.preventDefault(); }
+    if (e.key === 'Enter' && hits[sel]) choose(hits[sel]);
+  }
+  input.addEventListener('input', () => run(input.value));
+  document.addEventListener('keydown', onKey);
+  input.focus();
+}
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && !/INPUT|TEXTAREA/.test(document.activeElement?.tagName || '') && !document.getElementById('searchov')) { e.preventDefault(); openSearch(); }
+});
+// apply a pending search term once the target tab has rendered its input
+function applyPendingSearch() {
+  if (!pendingSearch) return;
+  const sel = { '#/gear': '#gsearch', '#/consumables': '#csearch', '#/abilities': '#absearch' }[pendingSearch.go];
+  const term = pendingSearch.term; pendingSearch = null;
+  if (!sel) return;
+  setTimeout(() => { const inp = document.querySelector(sel); if (inp) { inp.value = term; inp.dispatchEvent(new Event('input')); } }, 300);
+}
+
 // global click handler for [data-go]
 document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-go]');
   if (t) { e.preventDefault(); location.hash = t.getAttribute('data-go'); }
 });
+document.getElementById('navsearch')?.addEventListener('click', openSearch);
 window.addEventListener('hashchange', router);
 window.addEventListener('scroll', () => document.body.classList.toggle('scrolled', window.scrollY > 10));
 
