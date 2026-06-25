@@ -230,6 +230,7 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .augtop { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
 .augtop h3 { margin: 0; font-size: 16px; }
 .chromaswatch { height: 54px; border-radius: 10px; margin-bottom: 10px; opacity: .85; }
+.chromaimg { width: 100%; max-width: 150px; aspect-ratio: 1; object-fit: contain; border: 2px solid; border-radius: 12px; background: rgba(0,0,0,.25); margin-bottom: 8px; }
 
 /* gear cards */
 .gearcard { cursor: default; }
@@ -285,7 +286,8 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 
 /* global search */
 .navsearch { font-size: 15px; }
-.navlang { background: var(--glass); border: 1px solid var(--line); color: var(--muted); border-radius: 8px; padding: 4px 6px; font-size: 12px; font-family: var(--font); cursor: pointer; max-width: 110px; }
+.langwrap { display: inline-flex; align-items: center; gap: 3px; font-size: 13px; }
+.navlang { background: var(--glass); border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: 4px 6px; font-size: 12px; font-family: var(--font); cursor: pointer; max-width: 110px; }
 .navlang:hover { color: var(--text); }
 @media (max-width: 640px) { .navlang { max-width: 84px; } }
 .searchov { position: fixed; inset: 0; z-index: 100; background: rgba(5,6,9,.6); backdrop-filter: blur(6px); display: flex; justify-content: center; align-items: flex-start; padding-top: 12vh; }

@@ -767,7 +767,7 @@ async function cosmeticsView() {
   const cg = el('<div class="grid g-4"></div>');
   cosmeticData.mechChromas.forEach(c => {
     const col = RC[c.rank] || '#ccc';
-    cg.append(el(`<div class="card" style="text-align:center"><div class="chromaswatch" style="background:${col}"></div><h3 style="font-size:15px;text-transform:capitalize">${esc(c.name)}</h3><div class="meta" style="color:${col}">${esc(c.rank)}</div></div>`));
+    cg.append(el(`<div class="card" style="text-align:center"><img class="chromaimg" src="${raw(c.render)}" alt="${esc(c.name)}" loading="lazy" style="border-color:${col}"><h3 style="font-size:15px;text-transform:capitalize">${esc(c.name)}</h3><div class="meta" style="color:${col}">${esc(c.rank)}</div></div>`));
   });
   body.append(cg);
   reveal();

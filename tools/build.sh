@@ -78,10 +78,12 @@ $TSX $TOOLS/generate-abilities.ts abilities/abilities.json
 node $TOOLS/render-game-icons.mjs abilities/ability-icon-ids.json ability $WOC/public abilities/_icons
 rm -f abilities/ability-icon-ids.json
 
-echo "==> augments, combat reference, cosmetics"
+echo "==> augments, combat reference, cosmetics (+ mech chroma renders)"
 $TSX $TOOLS/generate-augments.ts augments/augments.json
 $TSX $TOOLS/generate-combat-doc.ts reference/combat.md
 $TSX $TOOLS/generate-cosmetics.ts cosmetics/cosmetics.json
+node $TOOLS/render-mech.mjs cosmetics/chroma-renders.json $WOC/public cosmetics/_renders
+rm -f cosmetics/chroma-renders.json
 
 echo "==> translations (game locale files)"
 $TSX $TOOLS/generate-i18n.ts docs/i18n
