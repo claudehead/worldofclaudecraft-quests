@@ -433,7 +433,7 @@
 | Armor (physical mitigation) | 396 (~16% vs a same-level attacker) |
 | Melee damage | 73–114 per hit @ 2.3s swing (~41 DPS) |
 | Respawn | ~25s |
-| Location | Thornpeak Heights |
+| Location | Gravewyrm Sanctum (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fgravewyrm_sanctum.md) |
 
 **Best way to kill:**
 
@@ -466,7 +466,7 @@
 | Armor (physical mitigation) | 468–494 (~19% vs a same-level attacker) |
 | Melee damage | 76–124 per hit @ 2.2s swing (~44–46 DPS) |
 | Respawn | ~25s |
-| Location | Thornpeak Heights |
+| Location | Gravewyrm Sanctum (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fgravewyrm_sanctum.md) |
 
 **Best way to kill:**
 
@@ -537,7 +537,7 @@
 | Armor (physical mitigation) | 380 (~15% vs a same-level attacker) |
 | Melee damage | 79–124 per hit @ 2s swing (~51 DPS) |
 | Respawn | ~25s |
-| Location | Thornpeak Heights |
+| Location | Gravewyrm Sanctum (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fgravewyrm_sanctum.md) |
 
 **Best way to kill:**
 
@@ -578,7 +578,7 @@
 | Armor (physical mitigation) | 570 (~21% vs a same-level attacker) |
 | Melee damage | 83–130 per hit @ 2.8s swing (~38 DPS) |
 | Respawn | ~25s |
-| Location | Thornpeak Heights |
+| Location | Gravewyrm Sanctum (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fgravewyrm_sanctum.md) |
 
 **Best way to kill:**
 
@@ -655,7 +655,7 @@
 | Armor (physical mitigation) | 646 (~24% vs a same-level attacker) |
 | Melee damage | 86–135 per hit @ 2.6s swing (~43 DPS) |
 | Respawn | ~25s |
-| Location | Thornpeak Heights |
+| Location | Gravewyrm Sanctum (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fgravewyrm_sanctum.md) |
 
 **Best way to kill:**
 
@@ -702,7 +702,7 @@
 | Melee damage | 325–507 per hit @ 2.6s swing (~160 DPS) |
 | Crowd control | Immune |
 | Respawn | ~25s |
-| Location | Thornpeak Heights |
+| Location | Nythraxis Raid Arena (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fnythraxis_boss_arena.md) |
 
 **Best way to kill:**
 

@@ -178,7 +178,7 @@
 | Melee damage | 325–507 per hit @ 2.6s swing (~160 DPS) |
 | Crowd control | Immune |
 | Respawn | ~25s |
-| Location | The Drowned Temple |
+| Location | Nythraxis Raid Arena (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fnythraxis_boss_arena.md) |
 
 **Best way to kill:**
 

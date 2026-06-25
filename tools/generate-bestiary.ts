@@ -5,11 +5,18 @@ import { ZONE2_CAMPS, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_CAMPS, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_CAMPS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
+import { COLLAPSED_RELIQUARY_DELVE, DELVE_MOBS } from '../woc/src/sim/content/delves/index.ts';
 import { qualityDot, statLine } from './iteminfo.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/out';
-const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS };
+const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS, ...DELVE_MOBS };
+
+// mobs with no open-world camp live in a dungeon or delve — link there instead
+const dungeonByMob: Record<string, { name: string; file: string }> = {};
+for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) for (const s of d.spawns || []) { const mid = s.mobId || s.template; if (mid && !dungeonByMob[mid]) dungeonByMob[mid] = { name: d.name, file: `dungeons/${id}.md` }; }
+const delveByMob: Record<string, { name: string; file: string }> = {};
+for (const mid of Object.keys(DELVE_MOBS)) delveByMob[mid] = { name: COLLAPSED_RELIQUARY_DELVE.name, file: `delves/${COLLAPSED_RELIQUARY_DELVE.id}.md` };
 
 const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
 
@@ -259,13 +266,19 @@ function mobSection(m: any, spawns: { x: number; z: number; count: number }[] = 
   if (m.ccImmune) L.push(`| Crowd control | Immune |`);
   // respawn timer matters most for rares/elites/bosses (long timers); skip the trivial 25s on trash
   if (m.rare || m.elite || m.boss || m.respawnMult) L.push(`| Respawn | ${humanRespawn(respawnSeconds(m))}${m.rare ? ' (rare spawn)' : ''} |`);
-  // where to find it: zone + spawn coordinates, with a link that opens the spot on the world map
-  if (zoneTitle || spawns.length) {
+  // where to find it: open-world spawn -> world-map link; otherwise its dungeon/delve page
+  if (spawns.length) {
     const coords = spawns.map(s => `~x:${Math.round(s.x)}, z:${Math.round(s.z)}`).join(' · ');
     const main = spawns.slice().sort((a, b) => b.count - a.count)[0];
-    const link = main ? ` — [🗺️ show on map](#/map/${Math.round(main.x)}/${Math.round(main.z)})` : '';
-    const where = [zoneTitle, coords].filter(Boolean).join(' · ');
-    L.push(`| Location | ${where}${link} |`);
+    L.push(`| Location | ${[zoneTitle, coords].filter(Boolean).join(' · ')} — [🗺️ show on map](#/map/${Math.round(main.x)}/${Math.round(main.z)}) |`);
+  } else if (dungeonByMob[m.id]) {
+    const d = dungeonByMob[m.id];
+    L.push(`| Location | ${d.name} (dungeon) — [🏰 view dungeon](#/doc/${encodeURIComponent(d.file)}) |`);
+  } else if (delveByMob[m.id]) {
+    const d = delveByMob[m.id];
+    L.push(`| Location | ${d.name} (delve) — [🔮 view delve](#/doc/${encodeURIComponent(d.file)}) |`);
+  } else if (zoneTitle) {
+    L.push(`| Location | ${zoneTitle} |`);
   }
   L.push('');
   L.push(`**Best way to kill:**`);

@@ -389,7 +389,7 @@
 | Armor (physical mitigation) | 198–216 (~12–13% vs a same-level attacker) |
 | Melee damage | 42–71 per hit @ 2.3s swing (~23–25 DPS) |
 | Respawn | ~25s |
-| Location | Mirefen Marsh |
+| Location | The Sunken Bastion (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fsunken_bastion.md) |
 
 **Best way to kill:**
 
@@ -460,7 +460,7 @@
 | Armor (physical mitigation) | 154–168 (~10% vs a same-level attacker) |
 | Melee damage | 45–75 per hit @ 2s swing (~29–31 DPS) |
 | Respawn | ~25s |
-| Location | Mirefen Marsh |
+| Location | The Sunken Bastion (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fsunken_bastion.md) |
 
 **Best way to kill:**
 
@@ -492,7 +492,7 @@
 | Armor (physical mitigation) | 288 (~16% vs a same-level attacker) |
 | Melee damage | 51–79 per hit @ 2.2s swing (~30 DPS) |
 | Respawn | ~25s |
-| Location | Mirefen Marsh |
+| Location | The Sunken Bastion (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fsunken_bastion.md) |
 
 **Best way to kill:**
 
@@ -592,7 +592,7 @@
 | Armor (physical mitigation) | 312 (~17% vs a same-level attacker) |
 | Melee damage | 52–81 per hit @ 2.4s swing (~28 DPS) |
 | Respawn | ~25s |
-| Location | Mirefen Marsh |
+| Location | The Sunken Bastion (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fsunken_bastion.md) |
 
 **Best way to kill:**
 

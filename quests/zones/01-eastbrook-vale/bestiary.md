@@ -331,7 +331,7 @@
 | Armor (physical mitigation) | 108–126 (~10% vs a same-level attacker) |
 | Melee damage | 24–42 per hit @ 2.4s swing (~13–14 DPS) |
 | Respawn | ~25s |
-| Location | Eastbrook Vale |
+| Location | The Hollow Crypt (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fhollow_crypt.md) |
 
 **Best way to kill:**
 
@@ -360,7 +360,7 @@
 | Armor (physical mitigation) | 84–96 (~7–8% vs a same-level attacker) |
 | Melee damage | 30–51 per hit @ 1.8s swing (~21–23 DPS) |
 | Respawn | ~25s |
-| Location | Eastbrook Vale |
+| Location | The Hollow Crypt (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fhollow_crypt.md) |
 
 **Best way to kill:**
 
@@ -389,7 +389,7 @@
 | Armor (physical mitigation) | 98 (~8% vs a same-level attacker) |
 | Melee damage | 29–45 per hit @ 2s swing (~19 DPS) |
 | Respawn | ~25s |
-| Location | Eastbrook Vale |
+| Location | The Hollow Crypt (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fhollow_crypt.md) |
 
 **Best way to kill:**
 
@@ -418,7 +418,7 @@
 | Armor (physical mitigation) | 176 (~13% vs a same-level attacker) |
 | Melee damage | 35–54 per hit @ 2.2s swing (~20 DPS) |
 | Respawn | ~25s |
-| Location | Eastbrook Vale |
+| Location | The Hollow Crypt (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fhollow_crypt.md) |
 
 **Best way to kill:**
 
@@ -483,7 +483,7 @@
 | Armor (physical mitigation) | 234 (~16% vs a same-level attacker) |
 | Melee damage | 41–65 per hit @ 2.6s swing (~20 DPS) |
 | Respawn | ~25s |
-| Location | Eastbrook Vale |
+| Location | The Hollow Crypt (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fhollow_crypt.md) |
 
 **Best way to kill:**
 
