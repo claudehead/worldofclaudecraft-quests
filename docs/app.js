@@ -90,6 +90,10 @@ function home() {
     ['#/delves', '🔮', 'Delves', `Tiers, affixes, companions and the Marks vendor.`],
     ['#/augments', '💠', 'Augments', `Class augments and world power-ups — tiers, classes, and effects.`],
     ['#/doc/' + encodeURIComponent('reference/combat.md'), '🧮', 'Combat maths', `How damage, armor, HP, XP and elite scaling actually work.`],
+    ['#/doc/' + encodeURIComponent('reference/fishing.md'), '🎣', 'Fishing', `Per-water catch tables, the rare Glimmerfin Koi, and how to fish.`],
+    ['#/doc/' + encodeURIComponent('reference/pvp.md'), '⚔️', 'PvP — Coliseum', `1v1, 2v2 and Fiesta arena, plus the mid-match power-ups.`],
+    ['#/doc/' + encodeURIComponent('reference/tameable-beasts.md'), '🐾', 'Tameable beasts', `Every beast a Hunter can tame, by level and zone.`],
+    ['#/doc/' + encodeURIComponent('reference/warlock-demons.md'), '😈', 'Warlock demons', `All 7 summonable demons, rendered, with stats and roles.`],
     ['#/cosmetics', '🎨', 'Cosmetics', `Event skin tiers and the collectible Combat Mech chromas.`],
     ['#/patches', '📜', 'Patch notes', `What's new — official release notes for every game version.`],
   ];

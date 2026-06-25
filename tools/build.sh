@@ -102,6 +102,14 @@ $TSX $TOOLS/generate-search-index.ts docs/search.json
 echo "==> getting-started guide"
 $TSX $TOOLS/generate-getting-started.ts reference/getting-started.md
 
+echo "==> fishing, PvP, tameable beasts, warlock demons (+ renders)"
+$TSX $TOOLS/generate-fishing.ts reference/fishing.md
+$TSX $TOOLS/generate-pvp.ts reference/pvp.md
+$TSX $TOOLS/generate-tameable.ts reference/tameable-beasts.md
+$TSX $TOOLS/generate-warlock-demons.ts reference/warlock-demons.md
+node $TOOLS/render-mobs.mjs reference/demon-models.json $WOC/public reference/_demon-renders
+rm -f reference/demon-models.json
+
 echo "==> patch notes (upstream releases)"
 node $TOOLS/generate-patch-notes.mjs docs/patches.json
 
