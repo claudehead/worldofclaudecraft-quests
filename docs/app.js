@@ -68,6 +68,7 @@ function home() {
     ['#/quests', '🗺️', 'Quests', `${c.quests} quests across ${c.zones} zones, sorted by level — with maps, rewards, and exact objectives.`],
     ['#/bestiary', '🐺', 'Bestiary', `Every creature with a model render, stats, kill tactics, and a full loot table.`],
     ['#/gear', '🛡️', 'Gear', `Every weapon and armor piece — rarity, stats, and where to get it.`],
+    ['#/bis', '✨', 'Best in Slot', `The strongest gear in every slot, per class — with where to get it.`],
     ['#/consumables', '🍖', 'Consumables', `Food, drink, potions and elixirs — what they restore and where to buy them.`],
     ['#/classes', '⚔️', 'Classes', `${c.classes} classes — specs, abilities by learn-level, and model portraits.`],
     ['#/dungeons', '🏰', 'Dungeons', `Route maps, rosters and bosses for every instance.`],
@@ -247,6 +248,50 @@ async function gearView() {
   draw(); reveal();
 }
 
+let bisData = null;
+async function bisView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Best in slot</span><h2>Best gear per class</h2>
+      <p>The strongest item for each slot, picked per class by a stat-weight model (primary stats first, then armor, weapon DPS, and rarity). A guide, not gospel — spec and playstyle shift the edges.</p></div>
+    <div class="controls reveal"><div class="pills" id="bisclasses"></div></div>
+    <div id="bisbody"></div>
+  </div></section>`));
+  if (!bisData) {
+    try { bisData = await (await fetch(raw('gear/bis.json'))).json(); }
+    catch (e) { app.querySelector('#bisbody').innerHTML = `<div class="meta">Couldn't load BiS (${esc(e.message)}).</div>`; return; }
+  }
+  const pillHost = app.querySelector('#bisclasses'), body = app.querySelector('#bisbody');
+  let active = bisData.classes[0].id;
+  bisData.classes.forEach((c, i) => {
+    const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(c.name)}</span>`);
+    p.onclick = () => { active = c.id; pillHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+    pillHost.append(p);
+  });
+  function draw() {
+    const c = bisData.classes.find(x => x.id === active);
+    body.innerHTML = '';
+    const head = el(`<div class="bishead reveal">
+      <img src="${raw(c.render)}" alt="${esc(c.name)}" class="bisportrait">
+      <div><h3>${esc(c.name)}</h3><div class="meta">${esc((c.roles || []).join(' · '))}</div></div></div>`);
+    body.append(head);
+    const grid = el(`<div class="grid g-4"></div>`);
+    c.slots.forEach(s => {
+      const col = QUALITY_COLOR[s.item.quality] || '#ccc';
+      const src = s.item.sources[0] ? s.item.sources[0].label : '';
+      grid.append(el(`<div class="card gearcard reveal">
+        <div class="bisslot">${esc(s.slotLabel)}</div>
+        <div class="gearhead"><img class="gicon" src="${raw(s.item.icon)}" alt="" loading="lazy" style="border-color:${col}">
+          <div><h3 style="color:${col};font-size:15px">${esc(s.item.name)}</h3><div class="meta">${esc(s.item.qualityName)}</div></div></div>
+        ${s.item.stats ? `<div class="gstats">${esc(s.item.stats)}</div>` : ''}
+        <div class="gsrc">${esc(src)}</div></div>`));
+    });
+    body.append(grid);
+    reveal(body);
+  }
+  draw(); reveal();
+}
+
 let consData = null;
 async function consumablesView() {
   app.innerHTML = '';
@@ -383,6 +428,7 @@ function router() {
   if (head === 'quests') return questsView();
   if (head === 'bestiary') return zonesView();
   if (head === 'gear') return gearView();
+  if (head === 'bis') return bisView();
   if (head === 'consumables') return consumablesView();
   if (head === 'classes') return classesView();
   if (head === 'dungeons') return simpleListView('Dungeons', 'Instanced content', 'Route maps, full rosters and bosses for every dungeon.',

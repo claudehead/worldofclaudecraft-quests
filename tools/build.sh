@@ -59,6 +59,9 @@ $TSX $TOOLS/generate-consumables.ts consumables/consumables.json
 node $TOOLS/render-loot.mjs consumables/consumable-icons.json $WOC/public consumables/_icons
 rm -f consumables/consumable-icons.json
 
+echo "==> best-in-slot (reuses gear icons)"
+$TSX $TOOLS/generate-bis.ts gear/bis.json
+
 echo "==> website manifest"
 $TSX $TOOLS/generate-site-manifest.ts docs/manifest.json
 

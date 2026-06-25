@@ -133,6 +133,12 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .feature .arrow { color: var(--gold); font-size: 14px; margin-top: 10px; opacity: 0; transition: opacity .2s, transform .2s; }
 .feature:hover .arrow { opacity: 1; transform: translateX(3px); }
 
+/* best-in-slot */
+.bishead { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+.bisportrait { height: 90px; filter: drop-shadow(0 12px 20px rgba(0,0,0,.5)); }
+.bishead h3 { margin: 0; font-size: 24px; }
+.bisslot { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+
 /* gear cards */
 .gearcard { cursor: default; }
 .gearhead { display: flex; gap: 13px; align-items: center; }
