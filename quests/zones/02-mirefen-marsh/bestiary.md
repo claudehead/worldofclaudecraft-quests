@@ -205,7 +205,7 @@
 | <img src="../_loot-icons/troll_fetish.png" width="22" alt="">  Mirefen Troll Fetish | Quest item | 60% | quest item — only drops while on _Fetish and Bone_ |
 | <img src="../_loot-icons/chipped_tusk.png" width="22" alt=""> ⚫ Chipped Tusk | Junk | 40% | sells for 15c |
 | <img src="../_loot-icons/bogiron_nugget.png" width="22" alt=""> ⚫ Bogiron Nugget | Junk | 30% | sells for 12c |
-| <img src="../_loot-icons/elixir_of_the_bear.png" width="22" alt=""> 🟢 Elixir of the Bear | Elixir · Might of the Bear: +12 for 15 min | 7% |  |
+| <img src="../_loot-icons/elixir_of_the_bear.png" width="22" alt=""> 🟢 Elixir of the Bear | Elixir · Might of the Bear: +12 Stamina (~+120 HP) for 15 min | 7% |  |
 
 <a id="mob-gravecaller_mender"></a>
 

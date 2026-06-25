@@ -38,7 +38,11 @@ export function statLine(id: string): string {
   if (it.potionMana) parts.push(`restores ${it.potionMana} mana`);
   if (it.elixir) {
     const mins = Math.round((it.elixir.duration || 0) / 60);
-    parts.push(`${it.elixir.aura}: +${it.elixir.value} for ${mins} min`);
+    const BUFF: Record<string, string> = { buff_sta: 'Stamina', buff_str: 'Strength', buff_agi: 'Agility', buff_int: 'Intellect', buff_spi: 'Spirit', buff_allstats: 'all stats', buff_armor: 'Armor', buff_ap: 'Attack Power', buff_sp: 'Spell Power' };
+    const stat = BUFF[it.elixir.kind] || '';
+    // stamina (vanilla rules: past the first 20, each point = 10 HP)
+    const hp = (it.elixir.kind === 'buff_sta' || it.elixir.kind === 'buff_allstats') ? ` (~+${it.elixir.value * 10} HP)` : '';
+    parts.push(`${it.elixir.aura}: +${it.elixir.value}${stat ? ' ' + stat : ''}${hp} for ${mins} min`);
   }
   return parts.join(', ');
 }
