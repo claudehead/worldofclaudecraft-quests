@@ -1,8 +1,8 @@
 // Service worker: app shell cached for offline; data fetched network-first so
 // the guide stays current (falls back to cache when offline).
-const SHELL = 'woc-shell-v12';
+const SHELL = 'woc-shell-v13';
 const DATA = 'woc-data-v1';
-const SHELL_FILES = ['./', 'index.html', 'app.js?v=12', 'styles.css?v=12', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
+const SHELL_FILES = ['./', 'index.html', 'app.js?v=13', 'styles.css?v=13', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(SHELL).then(c => c.addAll(SHELL_FILES)).then(() => self.skipWaiting()));

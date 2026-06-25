@@ -1,12 +1,23 @@
 import { ITEMS, MOBS, NPCS, QUESTS } from '../woc/src/sim/data.ts';
 import { DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
-import { DELVE_MOBS, DELVE_SHOPS } from '../woc/src/sim/content/delves/index.ts';
+import { DELVE_MOBS, DELVE_SHOPS, COLLAPSED_RELIQUARY_DELVE } from '../woc/src/sim/content/delves/index.ts';
+import { ZONE1_QUESTS, ZONE1_ZONE } from '../woc/src/sim/content/zone1.ts';
+import { ZONE2_QUESTS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
+import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
+import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { GUIDE_CLASSES } from '../woc/src/guide/content.generated.ts';
 import { quality, statLine } from './iteminfo.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
 
 const DIR = bestiaryDirByMob();
+
+// the level you can realistically obtain an item: min across its sources
+// (dropping mob's level, the reward quest's level, the delve's min level).
+const questLevel: Record<string, number> = {};
+for (const [rec, low] of [[ZONE1_QUESTS, ZONE1_ZONE.levelRange[0]], [ZONE2_QUESTS, ZONE2_ZONE.levelRange[0]], [ZONE3_QUESTS, ZONE3_ZONE.levelRange[0]], [TEMPLE_QUESTS, 15]] as any[])
+  for (const q of Object.values(rec) as any[]) for (const it of Object.values(q.itemRewards || {})) questLevel[it as string] = Math.min(questLevel[it as string] ?? 99, q.minLevel ?? low);
+const MAX_LEVEL = 20;
 
 const OUT = process.argv[2] || '/tmp/gen/bis.json';
 const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS, ...DELVE_MOBS };
@@ -77,9 +88,18 @@ for (const i of Object.values(ITEMS) as any[]) {
   else if (i.kind === 'weapon') weapons.push(i);
 }
 
+function availLevel(id: string): number {
+  const lv: number[] = [];
+  for (const m of dropsBy[id] || []) { const mob = ALL_MOBS[m.id]; if (mob) lv.push(mob.minLevel || 1); }
+  if (questLevel[id] != null) lv.push(questLevel[id]);
+  if (delveBy[id] != null) lv.push(COLLAPSED_RELIQUARY_DELVE.minLevel || 7);
+  if (!lv.length) lv.push(1);
+  return Math.max(1, Math.min(...lv));
+}
+
 function bisItem(i: any) {
   const q = quality(i.id);
-  return { id: i.id, name: i.name, slot: i.slot || 'mainhand', slotLabel: SLOT_LABEL[i.slot] || 'Weapon', quality: i.quality || 'common', qualityName: q?.name || 'Common', stats: statLine(i.id), icon: `gear/_icons/${i.id}.png`, sources: sourcesFor(i.id) };
+  return { id: i.id, name: i.name, slot: i.slot || 'mainhand', slotLabel: SLOT_LABEL[i.slot] || 'Weapon', quality: i.quality || 'common', qualityName: q?.name || 'Common', stats: statLine(i.id), level: availLevel(i.id), icon: `gear/_icons/${i.id}.png`, sources: sourcesFor(i.id) };
 }
 
 const isCaster = (w: W) => (w.dps || 0) < 1;
@@ -101,8 +121,15 @@ const classes = GUIDE_CLASSES.map((c: any) => {
       const on = pool.filter(i => hasPrimary(i, prim));
       if (on.length) pool = on;
     }
-    const best = pool.map(i => ({ i, s: score(i, w) })).sort((a, b) => b.s - a.s)[0];
-    return { slot, slotLabel: SLOT_LABEL[slot], item: bisItem(best.i) };
+    const scored = pool.map(i => ({ i, s: score(i, w), lvl: availLevel(i.id) })).sort((a, b) => b.s - a.s);
+    // BiS progression as level rises: best-scoring item obtainable by each level
+    const progression: any[] = []; let prevId: string | null = null;
+    for (let L = 1; L <= MAX_LEVEL; L++) {
+      const top = scored.find(x => x.lvl <= L);
+      if (top && top.i.id !== prevId) { progression.push({ level: L, item: bisItem(top.i) }); prevId = top.i.id; }
+    }
+    if (!progression.length) return null;
+    return { slot, slotLabel: SLOT_LABEL[slot], item: progression[progression.length - 1].item, progression };
   }).filter(Boolean);
   return { id: c.id, name: c.id[0].toUpperCase() + c.id.slice(1), render: `classes/_class-renders/${c.id}.png`, roles: c.roles || [], slots };
 });

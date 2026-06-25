@@ -619,8 +619,12 @@ async function bisView() {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
     <div class="shead reveal"><span class="eyebrow">Best in slot</span><h2>Best gear per class</h2>
-      <p>The strongest item for each slot, picked per class by a stat-weight model (primary stats first, then armor, weapon DPS, and rarity). A guide, not gospel — spec and playstyle shift the edges.</p></div>
+      <p>The strongest item for each slot your class can get by a given level, picked by a stat-weight model (primary stats first, then armor, weapon DPS, rarity). A guide, not gospel — spec and playstyle shift the edges.</p></div>
     <div class="controls reveal"><div class="pills" id="bisclasses"></div></div>
+    <div class="controls reveal bislevelrow" style="margin-top:-4px">
+      <label class="bislevellabel">At level <b id="bislevelval">20</b></label>
+      <input type="range" id="bislevel" class="bisrange" min="1" max="20" value="20">
+    </div>
     <div id="bisbody"></div>
   </div></section>`));
   if (!bisData) {
@@ -628,28 +632,39 @@ async function bisView() {
     catch (e) { app.querySelector('#bisbody').innerHTML = `<div class="meta">Couldn't load BiS (${esc(e.message)}).</div>`; return; }
   }
   const pillHost = app.querySelector('#bisclasses'), body = app.querySelector('#bisbody');
-  let active = bisData.classes[0].id;
+  const slider = app.querySelector('#bislevel'), levelVal = app.querySelector('#bislevelval');
+  let active = bisData.classes[0].id, level = 20;
   bisData.classes.forEach((c, i) => {
     const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(c.name)}</span>`);
     p.onclick = () => { active = c.id; pillHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
     pillHost.append(p);
   });
+  slider.oninput = () => { level = +slider.value; levelVal.textContent = level; draw(); };
+  // pick the slot's best item obtainable by the chosen level
+  const itemAt = (s) => {
+    if (!s.progression) return s.item;
+    let pick = null;
+    for (const p of s.progression) { if (p.level <= level) pick = p.item; }
+    return pick; // null if nothing is available yet at this level
+  };
   function draw() {
     const c = bisData.classes.find(x => x.id === active);
     body.innerHTML = '';
     const head = el(`<div class="bishead reveal">
       <img src="${raw(c.render)}" alt="${esc(c.name)}" class="bisportrait">
-      <div><h3>${esc(c.name)}</h3><div class="meta">${esc((c.roles || []).join(' · '))}</div></div></div>`);
+      <div><h3>${esc(c.name)}</h3><div class="meta">${esc((c.roles || []).join(' · '))} · best gear by level ${level}</div></div></div>`);
     body.append(head);
     const grid = el(`<div class="grid g-4"></div>`);
     c.slots.forEach(s => {
-      const col = QUALITY_COLOR[s.item.quality] || '#ccc';
+      const it = itemAt(s);
+      if (!it) { grid.append(el(`<div class="card gearcard" style="opacity:.55"><div class="bisslot">${esc(s.slotLabel)}</div><div class="meta">No upgrade yet — quest/vendor gear.</div></div>`)); return; }
+      const col = QUALITY_COLOR[it.quality] || '#ccc';
       grid.append(el(`<div class="card gearcard reveal">
-        <div class="bisslot">${esc(s.slotLabel)}</div>
-        <div class="gearhead"><img class="gicon" src="${raw(s.item.icon)}" alt="" loading="lazy" style="border-color:${col}">
-          <div><h3 style="color:${col};font-size:15px">${esc(tn("items",s.item.id,s.item.name))}</h3><div class="meta">${esc(s.item.qualityName)}</div></div></div>
-        ${s.item.stats ? `<div class="gstats">${esc(s.item.stats)}</div>` : ''}
-        <div class="gsrc">${sourceHTML(s.item.sources[0])}</div></div>`));
+        <div class="bisslot">${esc(s.slotLabel)} <span class="bisfromlvl">Lv ${it.level}+</span></div>
+        <div class="gearhead"><img class="gicon" src="${raw(it.icon)}" alt="" loading="lazy" style="border-color:${col}">
+          <div><h3 style="color:${col};font-size:15px">${esc(tn("items", it.id, it.name))}</h3><div class="meta">${esc(it.qualityName)}</div></div></div>
+        ${it.stats ? `<div class="gstats">${esc(it.stats)}</div>` : ''}
+        <div class="gsrc">${sourceHTML(it.sources[0])}</div></div>`));
     });
     body.append(grid);
     reveal(body);
