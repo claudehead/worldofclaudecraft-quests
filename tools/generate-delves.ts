@@ -19,6 +19,8 @@ function lockpickSection(d: any): string[] {
   L.push('');
   L.push(`Clearing the delve opens a **locked chest** guarded by a lockpicking minigame. The pick advances **one column at a time** through a fogged grid of tumblers — thread the open channel, seat exactly on each gate, dodge the ward-traps, and reach the bolt at the end.`);
   L.push('');
+  L.push(`> 📺 **Need help?** Watch a [lockpicking walkthrough video](https://discord.com/channels/1515097174378020894/1515979731760320522/1519349657938165930) on the community Discord.`);
+  L.push('');
   L.push(`### The five pick actions`);
   L.push('');
   L.push(`Each input moves the pick forward one column; you choose how deep it goes:`);
