@@ -133,6 +133,14 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .feature .arrow { color: var(--gold); font-size: 14px; margin-top: 10px; opacity: 0; transition: opacity .2s, transform .2s; }
 .feature:hover .arrow { opacity: 1; transform: translateX(3px); }
 
+/* gear cards */
+.gearcard { cursor: default; }
+.gearhead { display: flex; gap: 13px; align-items: center; }
+.gicon { width: 46px; height: 46px; border-radius: 10px; border: 2px solid; background: rgba(0,0,0,.25); flex: none; }
+.gearcard h3 { margin: 0 0 2px; font-size: 16px; line-height: 1.2; }
+.gstats { color: #d6d6db; font-size: 13px; margin-top: 12px; line-height: 1.5; }
+.gsrc { color: var(--muted-2); font-size: 12.5px; margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+
 /* class card with portrait */
 .classcard { text-align: center; padding-top: 14px; }
 .classcard img { height: 150px; object-fit: contain; filter: drop-shadow(0 18px 26px rgba(0,0,0,.5)); }

@@ -49,6 +49,11 @@ $TSX $TOOLS/generate-delves.ts delves
 node $TOOLS/render-loot.mjs delves/_shop-items.json $WOC/public delves/_delve-icons
 rm -f delves/_shop-items.json
 
+echo "==> gear catalog + icons"
+$TSX $TOOLS/generate-gear.ts gear/gear.json
+node $TOOLS/render-loot.mjs gear/gear-icons.json $WOC/public gear/_icons
+rm -f gear/gear-icons.json
+
 echo "==> website manifest"
 $TSX $TOOLS/generate-site-manifest.ts docs/manifest.json
 

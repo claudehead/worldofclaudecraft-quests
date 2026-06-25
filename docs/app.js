@@ -67,6 +67,7 @@ function home() {
   const featureCards = [
     ['#/quests', '🗺️', 'Quests', `${c.quests} quests across ${c.zones} zones, sorted by level — with maps, rewards, and exact objectives.`],
     ['#/bestiary', '🐺', 'Bestiary', `Every creature with a model render, stats, kill tactics, and a full loot table.`],
+    ['#/gear', '🛡️', 'Gear', `Every weapon and armor piece — rarity, stats, and where to get it.`],
     ['#/classes', '⚔️', 'Classes', `${c.classes} classes — specs, abilities by learn-level, and model portraits.`],
     ['#/dungeons', '🏰', 'Dungeons', `Route maps, rosters and bosses for every instance.`],
     ['#/delves', '🔮', 'Delves', `Tiers, affixes, companions and the Marks vendor.`],
@@ -183,6 +184,65 @@ function classesView() {
   reveal();
 }
 
+const QUALITY_COLOR = { legendary: '#e6803a', epic: '#a86bd6', rare: '#46b8da', uncommon: '#5cb85c', common: '#c8c8cf', poor: '#7a7a82' };
+let gearData = null;
+async function gearView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Gear</span><h2>Equipment</h2>
+      <p>Every weapon and armor piece — its rarity, stats, and where to get it. Filter by slot or quality, or search.</p></div>
+    <div class="controls reveal">
+      <input class="search" id="gsearch" placeholder="Search gear…">
+      <div class="pills" id="gslots"></div>
+    </div>
+    <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="gquals"></div></div>
+    <div class="gearcount meta" id="gcount" style="margin-bottom:14px"></div>
+    <div class="grid g-3" id="ggrid"></div>
+  </div></section>`));
+  if (!gearData) {
+    try { gearData = await (await fetch(raw('gear/gear.json'))).json(); }
+    catch (e) { app.querySelector('#ggrid').innerHTML = `<div class="meta">Couldn't load gear (${esc(e.message)}).</div>`; return; }
+  }
+  const grid = app.querySelector('#ggrid'), count = app.querySelector('#gcount');
+  let slot = 'all', qual = 'all', term = '';
+  const mkPills = (host, items, onPick) => {
+    items.forEach(([id, label], i) => {
+      const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`);
+      p.onclick = () => { host.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); onPick(id); };
+      host.append(p);
+    });
+  };
+  mkPills(app.querySelector('#gslots'), [['all', 'All slots'], ...gearData.slots.map(s => [s.id, s.label])], v => { slot = v; draw(); });
+  mkPills(app.querySelector('#gquals'), [['all', 'All rarities'], ...gearData.qualities.map(q => [q, q[0].toUpperCase() + q.slice(1)])], v => { qual = v; draw(); });
+  app.querySelector('#gsearch').oninput = (e) => { term = e.target.value.toLowerCase(); draw(); };
+
+  function draw() {
+    const list = gearData.gear
+      .filter(g => slot === 'all' || g.slot === slot)
+      .filter(g => qual === 'all' || g.quality === qual)
+      .filter(g => !term || g.name.toLowerCase().includes(term));
+    count.textContent = `${list.length} of ${gearData.count} items`;
+    grid.innerHTML = '';
+    list.slice(0, 240).forEach(g => {
+      const col = QUALITY_COLOR[g.quality] || '#ccc';
+      const src = g.sources[0] ? g.sources[0].label : '';
+      const card = el(`<div class="card gearcard">
+        <div class="gearhead">
+          <img class="gicon" src="${raw(g.icon)}" alt="" loading="lazy" style="border-color:${col}">
+          <div><h3 style="color:${col}">${esc(g.name)}</h3>
+            <div class="meta">${esc(g.qualityName)} · ${esc(g.slotLabel)}${g.armorType ? ' · ' + esc(g.armorType[0].toUpperCase() + g.armorType.slice(1)) : ''}</div></div>
+        </div>
+        ${g.stats ? `<div class="gstats">${esc(g.stats)}</div>` : ''}
+        <div class="gsrc">${esc(src)}</div>
+      </div>`);
+      grid.append(card);
+    });
+    if (!list.length) grid.append(el('<div class="meta">No gear matches.</div>'));
+    if (list.length > 240) grid.append(el(`<div class="meta">Showing first 240 — refine with filters.</div>`));
+  }
+  draw(); reveal();
+}
+
 function simpleListView(title, eyebrow, blurb, items) {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
@@ -270,6 +330,7 @@ function router() {
   const head = parts[0] || '';
   if (head === 'quests') return questsView();
   if (head === 'bestiary') return zonesView();
+  if (head === 'gear') return gearView();
   if (head === 'classes') return classesView();
   if (head === 'dungeons') return simpleListView('Dungeons', 'Instanced content', 'Route maps, full rosters and bosses for every dungeon.',
     M.dungeons.map(d => ({ name: d.name, file: d.file, meta: d.suggestedPlayers ? `Suggested players: ${d.suggestedPlayers}` : '', tags: d.hasMap ? ['Map', 'Roster'] : ['Roster'] })));
