@@ -222,7 +222,15 @@ const FAMILY_LABEL: Record<string, string> = {
   undead: 'Undead', troll: 'Troll', ogre: 'Ogre', elemental: 'Elemental', dragonkin: 'Dragonkin', demon: 'Demon',
 };
 
-function mobSection(m: any): string {
+// respawn = base 25s × the mob's multiplier (rares default to 4× in the sim)
+function respawnSeconds(m: any): number { return 25 * (m.respawnMult ?? (m.rare ? 4 : 1)); }
+function humanRespawn(sec: number): string {
+  if (sec < 90) return `~${Math.round(sec)}s`;
+  const min = sec / 60; if (min < 90) return `~${Math.round(min)} min`;
+  const h = min / 60; return `~${h % 1 ? h.toFixed(1) : h} hours`;
+}
+
+function mobSection(m: any, spawns: { x: number; z: number; count: number }[] = []): string {
   const L: string[] = [];
   const flags = [m.boss && 'Boss', m.elite && 'Elite', m.rare && 'Rare'].filter(Boolean).join(' · ');
   L.push(`<a id="mob-${m.id}"></a>`);
@@ -249,6 +257,12 @@ function mobSection(m: any): string {
   const dps = dLo.dps === dHi.dps ? `${dLo.dps}` : `${dLo.dps}–${dHi.dps}`;
   L.push(`| Melee damage | ${dLo.min}–${dHi.max} per hit @ ${m.attackSpeed}s swing (~${dps} DPS) |`);
   if (m.ccImmune) L.push(`| Crowd control | Immune |`);
+  // respawn timer matters most for rares/elites/bosses (long timers); skip the trivial 25s on trash
+  if (m.rare || m.elite || m.boss || m.respawnMult) L.push(`| Respawn | ${humanRespawn(respawnSeconds(m))}${m.rare ? ' (rare spawn)' : ''} |`);
+  if ((m.rare || m.boss) && spawns.length) {
+    const pts = spawns.map(s => `~x:${Math.round(s.x)}, z:${Math.round(s.z)}`).join(' · ');
+    L.push(`| Spawn point | ${pts} |`);
+  }
   L.push('');
   L.push(`**Best way to kill:**`);
   L.push('');
@@ -280,6 +294,9 @@ function mobsForZone(spec: ZoneSpec): any[] {
 
 for (const spec of zones) {
   const mobs = mobsForZone(spec);
+  const spawnsByMob: Record<string, { x: number; z: number; count: number }[]> = {};
+  for (const c of spec.camps) (spawnsByMob[c.mobId] ||= []).push({ x: c.center.x, z: c.center.z, count: c.count });
+  const sec = (m: any) => mobSection(m, spawnsByMob[m.id] || []);
   const L: string[] = [];
   L.push(`# Bestiary — ${spec.title}`);
   L.push('');
@@ -291,9 +308,9 @@ for (const spec of zones) {
   const normals = mobs.filter(m => !m.elite && !m.boss);
   const elites = mobs.filter(m => m.elite && !m.boss);
   const bosses = mobs.filter(m => m.boss);
-  if (normals.length) { L.push(`## Common creatures`); L.push(''); for (const m of normals) L.push(mobSection(m)); }
-  if (elites.length) { L.push(`## Elites`); L.push(''); for (const m of elites) L.push(mobSection(m)); }
-  if (bosses.length) { L.push(`## Bosses`); L.push(''); for (const m of bosses) L.push(mobSection(m)); }
+  if (normals.length) { L.push(`## Common creatures`); L.push(''); for (const m of normals) L.push(sec(m)); }
+  if (elites.length) { L.push(`## Elites`); L.push(''); for (const m of elites) L.push(sec(m)); }
+  if (bosses.length) { L.push(`## Bosses`); L.push(''); for (const m of bosses) L.push(sec(m)); }
   L.push(`---`);
   L.push('');
   L.push(`[← Back to ${spec.title} quests](README.md) · [Zone map](map.svg)`);

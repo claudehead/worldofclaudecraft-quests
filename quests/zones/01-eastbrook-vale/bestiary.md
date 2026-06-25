@@ -156,6 +156,8 @@
 | Health | 170 HP |
 | Armor (physical mitigation) | 48 (~6% vs a same-level attacker) |
 | Melee damage | 9–14 per hit @ 1.8s swing (~6 DPS) |
+| Respawn | ~2 min (rare spawn) |
+| Spawn point | ~x:0, z:95 |
 
 **Best way to kill:**
 
@@ -244,6 +246,8 @@
 | Armor (physical mitigation) | 170 (~16% vs a same-level attacker) |
 | Melee damage | 35–55 per hit @ 2.2s swing (~20 DPS) |
 | Crowd control | Immune |
+| Respawn | ~2 min (rare spawn) |
+| Spawn point | ~x:118, z:-26 |
 
 **Best way to kill:**
 
@@ -282,6 +286,8 @@
 | Armor (physical mitigation) | 192 (~16% vs a same-level attacker) |
 | Melee damage | 39–61 per hit @ 2.6s swing (~19 DPS) |
 | Crowd control | Immune |
+| Respawn | ~3 min (rare spawn) |
+| Spawn point | ~x:92, z:90 |
 
 **Best way to kill:**
 
@@ -317,6 +323,7 @@
 | Health | 391–437 HP |
 | Armor (physical mitigation) | 108–126 (~10% vs a same-level attacker) |
 | Melee damage | 24–42 per hit @ 2.4s swing (~13–14 DPS) |
+| Respawn | ~25s |
 
 **Best way to kill:**
 
@@ -344,6 +351,7 @@
 | Health | 416–460 HP |
 | Armor (physical mitigation) | 84–96 (~7–8% vs a same-level attacker) |
 | Melee damage | 30–51 per hit @ 1.8s swing (~21–23 DPS) |
+| Respawn | ~25s |
 
 **Best way to kill:**
 
@@ -371,6 +379,7 @@
 | Health | 391 HP |
 | Armor (physical mitigation) | 98 (~8% vs a same-level attacker) |
 | Melee damage | 29–45 per hit @ 2s swing (~19 DPS) |
+| Respawn | ~25s |
 
 **Best way to kill:**
 
@@ -398,6 +407,7 @@
 | Health | 695 HP |
 | Armor (physical mitigation) | 176 (~13% vs a same-level attacker) |
 | Melee damage | 35–54 per hit @ 2.2s swing (~20 DPS) |
+| Respawn | ~25s |
 
 **Best way to kill:**
 
@@ -428,6 +438,8 @@
 | Health | 310 HP |
 | Armor (physical mitigation) | 150 (~14% vs a same-level attacker) |
 | Melee damage | 16–25 per hit @ 2.4s swing (~9 DPS) |
+| Respawn | ~25s |
+| Spawn point | ~x:92, z:-92 |
 
 **Best way to kill:**
 
@@ -459,6 +471,7 @@
 | Health | 1191 HP |
 | Armor (physical mitigation) | 234 (~16% vs a same-level attacker) |
 | Melee damage | 41–65 per hit @ 2.6s swing (~20 DPS) |
+| Respawn | ~25s |
 
 **Best way to kill:**
 

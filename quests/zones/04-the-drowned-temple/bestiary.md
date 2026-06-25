@@ -73,6 +73,8 @@
 | Health | 595 HP |
 | Armor (physical mitigation) | 330 (~16% vs a same-level attacker) |
 | Melee damage | 44–69 per hit @ 2.2s swing (~26 DPS) |
+| Respawn | ~2 min (rare spawn) |
+| Spawn point | ~x:-96, z:814 |
 
 **Best way to kill:**
 
@@ -104,6 +106,7 @@
 | Health | 1362 HP |
 | Armor (physical mitigation) | 374 (~16% vs a same-level attacker) |
 | Melee damage | 69–109 per hit @ 2.2s swing (~40 DPS) |
+| Respawn | ~25s |
 
 **Best way to kill:**
 
@@ -134,6 +137,7 @@
 | Health | 2176 HP |
 | Armor (physical mitigation) | 476 (~20% vs a same-level attacker) |
 | Melee damage | 76–119 per hit @ 2.5s swing (~39 DPS) |
+| Respawn | ~25s |
 
 **Best way to kill:**
 
@@ -169,6 +173,7 @@
 | Armor (physical mitigation) | 798 (~28% vs a same-level attacker) |
 | Melee damage | 325–507 per hit @ 2.6s swing (~160 DPS) |
 | Crowd control | Immune |
+| Respawn | ~25s |
 
 **Best way to kill:**
 
