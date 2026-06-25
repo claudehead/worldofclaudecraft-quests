@@ -3,9 +3,20 @@ import { DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { DELVE_MOBS, DELVE_SHOPS } from '../woc/src/sim/content/delves/index.ts';
 import { quality, statLine } from './iteminfo.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
+import { canEquipItem, armorTypeForItem } from '../woc/src/sim/equipment_rules.ts';
+import { ALL_CLASSES } from '../woc/src/sim/types.ts';
 import * as fs from 'node:fs';
 
 const DIR = bestiaryDirByMob();
+const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
+// which classes can equip an item, plus a short restriction label (null = all classes)
+function usableBy(item: any): string[] { return (ALL_CLASSES as string[]).filter(c => canEquipItem(c as any, item)); }
+function restrictLabel(item: any, usable: string[]): string | null {
+  if (usable.length >= (ALL_CLASSES as string[]).length) return null;
+  const names = usable.map(cap).join(', ');
+  const at = item.kind === 'armor' ? armorTypeForItem(item) : null;
+  return at ? `${cap(at)} — ${names}` : names;
+}
 
 const OUT = process.argv[2] || '/tmp/gen/gear.json';
 const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS, ...DELVE_MOBS };
@@ -68,6 +79,8 @@ const gear = (Object.values(ITEMS) as any[])
       qualityName: q?.name || 'Common',
       stats: statLine(i.id),
       icon: `gear/_icons/${i.id}.png`,
+      usable: (() => { const u = usableBy(i); return u.length >= (ALL_CLASSES as string[]).length ? null : u.map(cap); })(),
+      restrict: restrictLabel(i, usableBy(i)),
       sources: sourcesFor(i.id),
     };
   })

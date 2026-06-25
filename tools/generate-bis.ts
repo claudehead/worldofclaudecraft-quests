@@ -6,6 +6,7 @@ import { ZONE2_QUESTS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { GUIDE_CLASSES } from '../woc/src/guide/content.generated.ts';
+import { canEquipItem } from '../woc/src/sim/equipment_rules.ts';
 import { quality, statLine } from './iteminfo.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
@@ -112,7 +113,7 @@ const classes = GUIDE_CLASSES.map((c: any) => {
   const w = WEIGHTS[c.id] || WEIGHTS.warrior;
   const prim = PRIMARY[c.id] || ['str'];
   const slots = SLOTS.map(slot => {
-    let pool = slot === 'mainhand' ? weapons : (armorBySlot[slot] || []);
+    let pool = (slot === 'mainhand' ? weapons : (armorBySlot[slot] || [])).filter(i => canEquipItem(c.id, i));
     if (!pool.length) return null;
     // keep the pick on-class: prefer items carrying a primary stat when any exist.
     // (Melee weapons are dps-led, so only casters filter weapons by int.)

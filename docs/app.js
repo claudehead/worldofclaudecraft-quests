@@ -231,6 +231,7 @@ async function gearView() {
     </div>
     <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="gquals"></div></div>
     <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="gsources"></div></div>
+    <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="gclasses"></div></div>
     <div class="gearcount meta" id="gcount" style="margin-bottom:14px"></div>
     <div class="grid g-3" id="ggrid"></div>
   </div></section>`));
@@ -239,7 +240,8 @@ async function gearView() {
     catch (e) { app.querySelector('#ggrid').innerHTML = `<div class="meta">Couldn't load gear (${esc(e.message)}).</div>`; return; }
   }
   const grid = app.querySelector('#ggrid'), count = app.querySelector('#gcount');
-  let slot = 'all', qual = 'all', src = 'all', term = '';
+  let slot = 'all', qual = 'all', src = 'all', term = '', cls = 'all';
+  const CLASSES = ['Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Shaman', 'Mage', 'Warlock', 'Druid'];
   const mkPills = (host, items, onPick) => {
     items.forEach(([id, label], i) => {
       const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`);
@@ -250,6 +252,7 @@ async function gearView() {
   mkPills(app.querySelector('#gslots'), [['all', 'All slots'], ...gearData.slots.map(s => [s.id, s.label])], v => { slot = v; draw(); });
   mkPills(app.querySelector('#gquals'), [['all', 'All rarities'], ...gearData.qualities.map(q => [q, q[0].toUpperCase() + q.slice(1)])], v => { qual = v; draw(); });
   mkPills(app.querySelector('#gsources'), [['all', 'Any source'], ['quest', '🗺️ Quest reward'], ['drop', 'Drop'], ['vendor', 'Vendor'], ['delve', 'Delve']], v => { src = v; draw(); });
+  mkPills(app.querySelector('#gclasses'), [['all', 'Any class'], ...CLASSES.map(c => [c, c])], v => { cls = v; draw(); });
   app.querySelector('#gsearch').oninput = (e) => { term = e.target.value.toLowerCase(); draw(); };
 
   function draw() {
@@ -257,6 +260,7 @@ async function gearView() {
       .filter(g => slot === 'all' || g.slot === slot)
       .filter(g => qual === 'all' || g.quality === qual)
       .filter(g => src === 'all' || g.sources.some(s => s.type === src))
+      .filter(g => cls === 'all' || g.usable === null || g.usable.includes(cls))
       .filter(g => !term || g.name.toLowerCase().includes(term));
     count.textContent = `${list.length} of ${gearData.count} items`;
     grid.innerHTML = '';
@@ -270,6 +274,7 @@ async function gearView() {
             <div class="meta">${esc(g.qualityName)} · ${esc(g.slotLabel)}${g.armorType ? ' · ' + esc(g.armorType[0].toUpperCase() + g.armorType.slice(1)) : ''}</div></div>
         </div>
         ${g.stats ? `<div class="gstats">${esc(g.stats)}</div>` : ''}
+        <div class="grestrict">${g.restrict ? '🔒 ' + esc(g.restrict) : 'Usable by all classes'}</div>
         <div class="gsrc">${src}</div>
       </div>`);
       grid.append(card);
