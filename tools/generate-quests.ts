@@ -1,4 +1,4 @@
-import { QUESTS, MOBS, ITEMS, NPCS, CAMPS, GROUND_OBJECTS, ZONES } from '../woc/src/sim/data.ts';
+import { QUESTS, MOBS, ITEMS, NPCS, CAMPS, GROUND_OBJECTS, ZONES, FISHING_TABLES } from '../woc/src/sim/data.ts';
 import { ZONE1_QUESTS, ZONE1_CAMPS } from '../woc/src/sim/content/zone1.ts';
 import { ZONE2_QUESTS, ZONE2_CAMPS } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_QUESTS, ZONE3_CAMPS } from '../woc/src/sim/content/zone3.ts';
@@ -16,6 +16,12 @@ type Q = (typeof QUESTS)[string];
 
 // Merge dungeon mobs into the name/loot universe.
 const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS };
+
+// Items obtained by fishing (not dropped/picked up) — these need a fishing pole.
+const FISHING_ITEMS = new Set<string>(['the_codfather']);
+for (const t of Object.values(FISHING_TABLES) as any[]) for (const e of t) if (e.itemId) FISHING_ITEMS.add(e.itemId);
+const POLE: any = Object.values(ITEMS).find((i: any) => i.use?.type === 'fishing');
+const POLE_VENDOR: any = POLE && Object.values(NPCS).find((n: any) => (n.vendorItems || []).includes(POLE.id));
 
 const zoneBuckets: { key: string; dir: string; title: string; quests: Record<string, Q>; levelRange: [number, number]; hub?: string }[] = [
   { key: 'zone1', dir: '01-eastbrook-vale', title: 'Zone 1 — Eastbrook Vale', quests: ZONE1_QUESTS, levelRange: ZONE1_ZONE.levelRange, hub: ZONE1_ZONE.hub?.name },
@@ -140,7 +146,7 @@ function mobRef(id: string, label: string, linkSet: Set<string>): string {
   return linkSet.has(id) ? `[${label}](bestiary.md#mob-${id})` : label;
 }
 
-function objectiveHowTo(o: any, linkSet: Set<string>): string {
+function objectiveHowTo(o: any, linkSet: Set<string>, zoneTitle: string): string {
   const lines: string[] = [];
   if (o.type === 'kill') {
     const m = ALL_MOBS[o.targetMobId];
@@ -160,7 +166,13 @@ function objectiveHowTo(o: any, linkSet: Set<string>): string {
       const w = where.length ? ` — ${where.join('; ')}` : '';
       lines.push(`  - Drops from ${mobRef(d.mobId, `**${d.name}**`, linkSet)} (${Math.round(d.chance * 100)}% chance)${w}`);
     }
-    if (!ground.length && !drops.length) lines.push(`  - _Granted by a prerequisite quest or special encounter_`);
+    if (!ground.length && !drops.length) {
+      if (FISHING_ITEMS.has(o.itemId) && POLE && POLE_VENDOR) {
+        lines.push(`  - 🎣 **Caught by fishing — not dropped.** First buy a **${POLE.name}** (~${POLE.buyValue}c) from **${POLE_VENDOR.name}** in ${ZONE1_ZONE.hub?.name || 'the starter town'} _(at ~x:${Math.round(POLE_VENDOR.pos.x)}, z:${Math.round(POLE_VENDOR.pos.z)})_, then equip it and **fish** in the ${zoneTitle.replace(/^Zone \d+ — /, '')} waters the quest describes (cast from the shoreline).`);
+      } else {
+        lines.push(`  - _Granted by a prerequisite quest or special encounter_`);
+      }
+    }
   } else if (o.type === 'interact') {
     const tgt = o.targetNpcId ? npcLabel(o.targetNpcId) : itemName(o.targetObjectItemId);
     lines.push(`- **Interact ${o.count > 1 ? `${o.count}× ` : ''}with ${tgt}**`);
@@ -196,7 +208,7 @@ function questMd(q: Q, zone: typeof zoneBuckets[number]): string {
   L.push(`## How to complete`);
   L.push('');
   const linkSet = bestiaryIdsFor(zone);
-  for (const o of q.objectives) L.push(objectiveHowTo(o, linkSet));
+  for (const o of q.objectives) L.push(objectiveHowTo(o, linkSet, zone.title));
   L.push('');
   L.push(`Then return to ${turnIns} to turn in.`);
   L.push('');

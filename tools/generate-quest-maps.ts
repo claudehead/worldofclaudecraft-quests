@@ -1,4 +1,4 @@
-import { MOBS, ITEMS } from '../woc/src/sim/data.ts';
+import { MOBS, ITEMS, FISHING_TABLES } from '../woc/src/sim/data.ts';
 import { ZONE1_NPCS, ZONE1_CAMPS, ZONE1_OBJECTS, ZONE1_ROADS, ZONE1_ZONE, ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
 import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_OBJECTS, ZONE2_ROADS, ZONE2_ZONE, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_OBJECTS, ZONE3_ROADS, ZONE3_ZONE, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
@@ -22,6 +22,8 @@ const zones = [
   { key: 'temple', dir: '04-the-drowned-temple', npcs: TEMPLE_NPCS, camps: TEMPLE_CAMPS, objects: TEMPLE_OBJECTS, roads: [], zone: null, quests: TEMPLE_QUESTS, zBand: null },
 ];
 const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
+const FISHING_ITEMS = new Set<string>(['the_codfather']);
+for (const t of Object.values(FISHING_TABLES) as any[]) for (const e of t) if (e.itemId) FISHING_ITEMS.add(e.itemId);
 
 function centroid(pts: Pt[]): Pt | null {
   if (!pts.length) return null;
@@ -71,6 +73,10 @@ function stepsForQuest(z: any, q: any): Step[] {
         const drops = mobsDroppingInZone(z, o.itemId);
         const c = centroid(drops.flatMap(m => campsForMob(z.camps, m)));
         if (c) steps.push({ key: o.itemId, kind: 'collect', pos: c, label: `${itemName(o.itemId)} — from ${drops.map(mobName).join('/')}` });
+        else if (FISHING_ITEMS.has(o.itemId) && z.zone?.lakes?.length) {
+          const lake = [...z.zone.lakes].sort((a: any, b: any) => b.radius - a.radius)[0];
+          steps.push({ key: o.itemId, kind: 'collect', pos: { x: lake.x, z: lake.z }, label: `🎣 Fish for ${itemName(o.itemId)}` });
+        }
       }
     } else if (o.type === 'interact') {
       if (o.targetObjectItemId) {

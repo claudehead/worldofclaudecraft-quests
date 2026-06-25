@@ -15,7 +15,7 @@
 ## How to complete
 
 - **Collect 1× The Codfather**
-  - _Granted by a prerequisite quest or special encounter_
+  - 🎣 **Caught by fishing — not dropped.** First buy a **Simple Fishing Pole** (~20c) from **Fisherman Brandt** in Eastbrook _(at ~x:-16, z:6)_, then equip it and **fish** in the Mirefen Marsh waters the quest describes (cast from the shoreline).
   - _Tracker: The Codfather_
 
 Then return to **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ to turn in.
