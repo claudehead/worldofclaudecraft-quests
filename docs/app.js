@@ -971,10 +971,21 @@ function applyPendingSearch() {
   setTimeout(() => { const inp = document.querySelector(sel); if (inp) { inp.value = term; inp.dispatchEvent(new Event('input')); } }, 300);
 }
 
+// mobile hamburger menu
+const navEl = document.querySelector('nav');
+const navToggle = document.getElementById('navtoggle');
+const closeMenu = () => { navEl?.classList.remove('open'); navToggle?.setAttribute('aria-expanded', 'false'); };
+navToggle?.addEventListener('click', () => {
+  const open = navEl.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+document.getElementById('navlang')?.addEventListener('change', closeMenu);
+
 // global click handler for [data-go]
 document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-go]');
-  if (t) { e.preventDefault(); location.hash = t.getAttribute('data-go'); }
+  if (t) { e.preventDefault(); closeMenu(); location.hash = t.getAttribute('data-go'); }
+  else if (e.target.closest('#navsearch, #navtheme')) closeMenu();
 });
 document.getElementById('navsearch')?.addEventListener('click', openSearch);
 (function theme() {
