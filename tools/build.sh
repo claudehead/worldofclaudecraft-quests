@@ -78,6 +78,14 @@ $TSX $TOOLS/generate-abilities.ts abilities/abilities.json
 node $TOOLS/render-game-icons.mjs abilities/ability-icon-ids.json ability $WOC/public abilities/_icons
 rm -f abilities/ability-icon-ids.json
 
+echo "==> augments, combat reference, cosmetics"
+$TSX $TOOLS/generate-augments.ts augments/augments.json
+$TSX $TOOLS/generate-combat-doc.ts reference/combat.md
+$TSX $TOOLS/generate-cosmetics.ts cosmetics/cosmetics.json
+
+echo "==> translations (game locale files)"
+$TSX $TOOLS/generate-i18n.ts docs/i18n
+
 echo "==> website manifest"
 $TSX $TOOLS/generate-site-manifest.ts docs/manifest.json
 

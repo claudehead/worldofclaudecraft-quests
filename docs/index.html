@@ -6,7 +6,7 @@
   <title>World of Claudecraft — Field Guide</title>
   <meta name="description" content="The complete field guide to World of Claudecraft — quests, bestiary, classes, dungeons and delves.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,8 +30,11 @@
     <a class="link opt" data-go="#/talents">Talents</a>
     <a class="link opt" data-go="#/dungeons">Dungeons</a>
     <a class="link opt" data-go="#/delves">Delves</a>
+    <a class="link opt" data-go="#/augments">Augments</a>
+    <a class="link opt" data-go="#/cosmetics">Cosmetics</a>
     <a class="link opt" data-go="#/patches">Patches</a>
     <a class="link navsearch" id="navsearch" title="Search ( / )">🔍</a>
+    <select class="navlang" id="navlang" title="Language" aria-label="Language"></select>
     <a class="link navtheme" id="navtheme" title="Toggle theme">🌙</a>
   </nav>
   <main id="app"><div class="spinner"></div></main>
@@ -39,7 +42,7 @@
     Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
     A fan-made guide — not affiliated with the upstream project.
   </footer>
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=9"></script>
   <script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));</script>
 </body>
 </html>

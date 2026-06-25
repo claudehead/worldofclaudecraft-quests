@@ -22,7 +22,7 @@ const zoneDirs: [any, string][] = [
   [ZONE3_QUESTS, '03-' + slug(ZONE3_ZONE.name)], [TEMPLE_QUESTS, '04-the-drowned-temple'],
 ];
 for (const [rec, dir] of zoneDirs) for (const q of Object.values(rec) as any[])
-  out.push({ t: 'Quest', n: q.name, go: docHash(`quests/zones/${dir}/${slug(q.id)}.md`) });
+  out.push({ t: 'Quest', n: q.name, k: `quests:${q.id}`, go: docHash(`quests/zones/${dir}/${slug(q.id)}.md`) });
 
 // mobs -> bestiary anchor
 const DIR = bestiaryDirByMob();
@@ -30,20 +30,20 @@ const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS };
 const seenMob = new Set<string>();
 for (const [id, dir] of Object.entries(DIR)) {
   const m = ALL_MOBS[id]; if (!m || seenMob.has(id)) continue; seenMob.add(id);
-  out.push({ t: m.boss ? 'Boss' : 'Mob', n: m.name, go: docHash(`quests/zones/${dir}/bestiary.md`, `mob-${id}`) });
+  out.push({ t: m.boss ? 'Boss' : 'Mob', n: m.name, k: `mobs:${id}`, go: docHash(`quests/zones/${dir}/bestiary.md`, `mob-${id}`) });
 }
 
 // gear + consumables -> their tab, prefilled
 for (const i of Object.values(ITEMS) as any[]) {
-  if (i.kind === 'armor' || i.kind === 'weapon') out.push({ t: 'Gear', n: i.name, go: '#/gear', pre: i.name });
-  else if (['food', 'drink', 'potion', 'elixir'].includes(i.kind)) out.push({ t: 'Consumable', n: i.name, go: '#/consumables', pre: i.name });
+  if (i.kind === 'armor' || i.kind === 'weapon') out.push({ t: 'Gear', n: i.name, k: `items:${i.id}`, go: '#/gear', pre: i.name });
+  else if (['food', 'drink', 'potion', 'elixir'].includes(i.kind)) out.push({ t: 'Consumable', n: i.name, k: `items:${i.id}`, go: '#/consumables', pre: i.name });
 }
 // abilities -> abilities tab, prefilled
-for (const a of Object.values(ABILITIES) as any[]) if (a.class) out.push({ t: 'Ability', n: a.name, go: '#/abilities', pre: a.name });
+for (const a of Object.values(ABILITIES) as any[]) if (a.class) out.push({ t: 'Ability', n: a.name, k: `abilities:${a.id}`, go: '#/abilities', pre: a.name });
 // classes / dungeons / delves
 for (const c of GUIDE_CLASSES as any[]) out.push({ t: 'Class', n: c.id[0].toUpperCase() + c.id.slice(1), go: docHash(`classes/${c.id}.md`) });
-for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) if ((d.spawns || []).length) out.push({ t: 'Dungeon', n: d.name, go: docHash(`dungeons/${id}.md`) });
-out.push({ t: 'Delve', n: COLLAPSED_RELIQUARY_DELVE.name, go: docHash(`delves/${COLLAPSED_RELIQUARY_DELVE.id}.md`) });
+for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) if ((d.spawns || []).length) out.push({ t: 'Dungeon', n: d.name, k: `dungeons:${id}`, go: docHash(`dungeons/${id}.md`) });
+out.push({ t: 'Delve', n: COLLAPSED_RELIQUARY_DELVE.name, k: `delves:${COLLAPSED_RELIQUARY_DELVE.id}`, go: docHash(`delves/${COLLAPSED_RELIQUARY_DELVE.id}.md`) });
 
 // dedupe identical (name+go)
 const seen = new Set<string>();

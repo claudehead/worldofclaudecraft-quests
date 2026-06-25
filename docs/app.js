@@ -19,6 +19,16 @@ function resolvePath(base, rel) {
 }
 const raw = (path) => RAW + path;
 
+// ---------- localization (the game's own translations) ----------
+let LANG = (() => { try { return localStorage.getItem('wc_lang') || 'en'; } catch (e) { return 'en'; } })();
+let I18N = {};
+const tn = (group, id, fallback) => (LANG !== 'en' && I18N[`${group}:${id}`]) || fallback;
+async function loadLang(code) {
+  if (code === 'en') { I18N = {}; LANG = 'en'; }
+  else { try { I18N = await (await fetch(`i18n/${code}.json`, { cache: 'force-cache' })).json(); LANG = code; } catch { I18N = {}; LANG = 'en'; } }
+  try { localStorage.setItem('wc_lang', LANG); } catch (e) {}
+}
+
 async function getMd(path) {
   if (mdCache.has(path)) return mdCache.get(path);
   const res = await fetch(raw(path));
@@ -76,6 +86,9 @@ function home() {
     ['#/talents', '🌳', 'Talents', `Interactive talent calculator — spend points across class and spec trees.`],
     ['#/dungeons', '🏰', 'Dungeons', `Route maps, rosters and bosses for every instance.`],
     ['#/delves', '🔮', 'Delves', `Tiers, affixes, companions and the Marks vendor.`],
+    ['#/augments', '💠', 'Augments', `Class augments and world power-ups — tiers, classes, and effects.`],
+    ['#/doc/' + encodeURIComponent('reference/combat.md'), '🧮', 'Combat maths', `How damage, armor, HP, XP and elite scaling actually work.`],
+    ['#/cosmetics', '🎨', 'Cosmetics', `Event skin tiers and the collectible Combat Mech chromas.`],
     ['#/patches', '📜', 'Patch notes', `What's new — official release notes for every game version.`],
   ];
   app.innerHTML = '';
@@ -141,7 +154,7 @@ function questsView() {
     grid.innerHTML = '';
     list.forEach(q => {
       const card = el(`<div class="card" data-go="#/doc/${encodeURIComponent(q.file)}">
-        <h3>${esc(q.name)}</h3>
+        <h3>${esc(tn('quests', q.id, q.name))}</h3>
         <div class="meta">${esc(q.zoneTitle)}</div>
         <div class="tags">
           <span class="tag lvl">Lv ${q.level}+</span>
@@ -250,7 +263,7 @@ async function gearView() {
       const card = el(`<div class="card gearcard">
         <div class="gearhead">
           <img class="gicon" src="${raw(g.icon)}" alt="" loading="lazy" style="border-color:${col}">
-          <div><h3 style="color:${col}">${esc(g.name)}</h3>
+          <div><h3 style="color:${col}">${esc(tn("items",g.id,g.name))}</h3>
             <div class="meta">${esc(g.qualityName)} · ${esc(g.slotLabel)}${g.armorType ? ' · ' + esc(g.armorType[0].toUpperCase() + g.armorType.slice(1)) : ''}</div></div>
         </div>
         ${g.stats ? `<div class="gstats">${esc(g.stats)}</div>` : ''}
@@ -392,7 +405,7 @@ async function abilitiesView() {
       for (const a of list) {
         grid.append(el(`<div class="card abcard">
           <div class="gearhead"><img class="gicon" src="${raw(a.icon)}" alt="" loading="lazy">
-            <div><h3 style="font-size:15px">${esc(a.name)}</h3><div class="meta">Learn at level ${a.learnLevel}${a.rankLevels.length ? ` · ranks ${a.rankLevels.join(', ')}` : ''}</div></div></div>
+            <div><h3 style="font-size:15px">${esc(tn("abilities",a.id,a.name))}</h3><div class="meta">Learn at level ${a.learnLevel}${a.rankLevels.length ? ` · ranks ${a.rankLevels.join(', ')}` : ''}</div></div></div>
           <div class="abmeta">${a.cost ? a.cost + ' cost · ' : ''}${esc(a.cast)} · ${esc(a.cooldown)} CD · ${esc(a.range)} · ${esc(a.school)}</div>
           <div class="gstats">${esc(a.description)}</div></div>`));
       }
@@ -591,7 +604,7 @@ function routeView() {
       step++;
       const row = el(`<a class="routeitem" href="#/doc/${encodeURIComponent(q.file)}">
         <span class="routenum">${step}</span>
-        <span class="routename">${esc(q.name)}${q.group ? ' 👥' : ''}${q.chain ? ' <span class="routechain">chain</span>' : ''}</span>
+        <span class="routename">${esc(tn('quests', q.id, q.name))}${q.group ? ' 👥' : ''}${q.chain ? ' <span class="routechain">chain</span>' : ''}</span>
         <span class="routearrow">→</span></a>`);
       list.append(row);
     }
@@ -633,7 +646,7 @@ async function bisView() {
       grid.append(el(`<div class="card gearcard reveal">
         <div class="bisslot">${esc(s.slotLabel)}</div>
         <div class="gearhead"><img class="gicon" src="${raw(s.item.icon)}" alt="" loading="lazy" style="border-color:${col}">
-          <div><h3 style="color:${col};font-size:15px">${esc(s.item.name)}</h3><div class="meta">${esc(s.item.qualityName)}</div></div></div>
+          <div><h3 style="color:${col};font-size:15px">${esc(tn("items",s.item.id,s.item.name))}</h3><div class="meta">${esc(s.item.qualityName)}</div></div></div>
         ${s.item.stats ? `<div class="gstats">${esc(s.item.stats)}</div>` : ''}
         <div class="gsrc">${sourceHTML(s.item.sources[0])}</div></div>`));
     });
@@ -680,7 +693,7 @@ async function consumablesView() {
       const card = el(`<div class="card gearcard">
         <div class="gearhead">
           <img class="gicon" src="${raw(it.icon)}" alt="" loading="lazy" style="border-color:${col}">
-          <div><h3 style="color:${col}">${esc(it.name)}</h3><div class="meta">${esc(it.category)}${it.quality !== 'common' ? ' · ' + esc(it.qualityName) : ''}</div></div>
+          <div><h3 style="color:${col}">${esc(tn("items",it.id,it.name))}</h3><div class="meta">${esc(it.category)}${it.quality !== 'common' ? ' · ' + esc(it.qualityName) : ''}</div></div>
         </div>
         ${it.effect ? `<div class="gstats">${esc(it.effect)}</div>` : ''}
         <div class="gsrc">${sourceHTML(it.sources[0])}</div></div>`);
@@ -689,6 +702,75 @@ async function consumablesView() {
     if (!list.length) grid.append(el('<div class="meta">No consumables match.</div>'));
   }
   draw(); reveal(); applyPendingSearch();
+}
+
+const TIER_COLOR = { silver: '#c8c8cf', gold: '#e6bb6a', prismatic: '#c08bff' };
+let augData = null;
+async function augmentsView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Augments</span><h2>Augments & power-ups</h2>
+      <p>Permanent class augments (slot them to empower your character) and the temporary world power-ups you grab mid-fight.</p></div>
+    <div class="controls reveal"><div class="pills" id="augclass"></div></div>
+    <div class="grid g-3" id="auggrid"></div>
+    <div class="shead reveal" style="margin-top:50px"><h2>World power-ups</h2><p>Temporary buffs from power-up orbs in the world.</p></div>
+    <div class="grid g-4" id="powgrid"></div>
+  </div></section>`));
+  if (!augData) {
+    try { augData = await (await fetch(raw('augments/augments.json'))).json(); }
+    catch (e) { app.querySelector('#auggrid').innerHTML = `<div class="meta">Couldn't load augments (${esc(e.message)}).</div>`; return; }
+  }
+  const classes = [...new Set(augData.augments.flatMap(a => a.classes))].sort();
+  let cls = 'all';
+  const ph = app.querySelector('#augclass'), grid = app.querySelector('#auggrid');
+  [['all', 'All classes'], ...classes.map(c => [c, c[0].toUpperCase() + c.slice(1)])].forEach(([id, label], i) => {
+    const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`);
+    p.onclick = () => { cls = id; ph.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+    ph.append(p);
+  });
+  function draw() {
+    grid.innerHTML = '';
+    augData.augments.filter(a => cls === 'all' || a.classes.includes(cls))
+      .sort((a, b) => augData.tiers.indexOf(b.tier) - augData.tiers.indexOf(a.tier) || a.name.localeCompare(b.name))
+      .forEach(a => {
+        const col = TIER_COLOR[a.tier] || '#ccc';
+        grid.append(el(`<div class="card augcard">
+          <div class="augtop"><h3 style="color:${col}">${esc(a.name)}</h3><span class="tag" style="border-color:${col}55;color:${col}">${esc(a.tier)}</span></div>
+          <div class="gstats">${esc(a.description)}</div>
+          <div class="gsrc">${esc(a.category)} · ${a.classes.length >= 6 ? 'most classes' : a.classes.map(c => c[0].toUpperCase() + c.slice(1)).join(', ')}</div></div>`));
+      });
+  }
+  draw();
+  const pg = app.querySelector('#powgrid');
+  augData.powerups.forEach(p => pg.append(el(`<div class="card"><h3>${esc(p.name)}</h3><div class="meta">${p.duration}s</div><div class="gstats">${p.effects.map(esc).join('<br>')}</div></div>`)));
+  reveal();
+}
+
+let cosmeticData = null;
+async function cosmeticsView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Cosmetics</span><h2>Skins & chromas</h2>
+      <p>The cosmetic system — event skin tiers and the collectible Combat Mech colour chromas.</p></div>
+    <div id="cosbody"></div></div></section>`));
+  if (!cosmeticData) {
+    try { cosmeticData = await (await fetch(raw('cosmetics/cosmetics.json'))).json(); }
+    catch (e) { app.querySelector('#cosbody').innerHTML = `<div class="meta">Couldn't load cosmetics (${esc(e.message)}).</div>`; return; }
+  }
+  const body = app.querySelector('#cosbody');
+  const RC = { uncommon: '#5cb85c', rare: '#46b8da', epic: '#a86bd6', legendary: '#e6803a' };
+  body.append(el(`<h3 style="margin:0 0 12px">Event skins</h3>`));
+  const et = el('<div class="grid g-3" style="margin-bottom:40px"></div>');
+  cosmeticData.eventTiers.forEach(t => et.append(el(`<div class="card"><h3 style="color:${RC[t.rank] || '#ccc'}">${t.rank[0].toUpperCase() + t.rank.slice(1)}</h3><div class="meta">Skin variant ${t.skin}</div></div>`)));
+  body.append(et);
+  body.append(el(`<h3 style="margin:0 0 12px">Combat Mech chromas <span class="meta" style="font-weight:400">· ${cosmeticData.mechChromas.length}</span></h3>`));
+  const cg = el('<div class="grid g-4"></div>');
+  cosmeticData.mechChromas.forEach(c => {
+    const col = RC[c.rank] || '#ccc';
+    cg.append(el(`<div class="card" style="text-align:center"><div class="chromaswatch" style="background:${col}"></div><h3 style="font-size:15px;text-transform:capitalize">${esc(c.name)}</h3><div class="meta" style="color:${col}">${esc(c.rank)}</div></div>`));
+  });
+  body.append(cg);
+  reveal();
 }
 
 function simpleListView(title, eyebrow, blurb, items) {
@@ -808,6 +890,8 @@ function router() {
   if (head === 'map') return worldMapView();
   if (head === 'route') return routeView();
   if (head === 'patches') return patchesView();
+  if (head === 'augments') return augmentsView();
+  if (head === 'cosmetics') return cosmeticsView();
   if (head === 'bestiary') return zonesView();
   if (head === 'gear') return gearView();
   if (head === 'bis') return bisView();
@@ -845,10 +929,11 @@ async function openSearch() {
   ov.addEventListener('click', e => { if (e.target === ov) close(); });
   if (!searchIndex) { try { searchIndex = await (await fetch('search.json', { cache: 'no-cache' })).json(); } catch { searchIndex = []; } }
   let hits = [], sel = 0;
+  const localName = (e) => { if (LANG !== 'en' && e.k) { const [g, id] = e.k.split(':'); return tn(g, id, e.n); } return e.n; };
   function draw() {
     res.innerHTML = '';
     hits.forEach((h, i) => {
-      const r = el(`<div class="searchhit ${i === sel ? 'on' : ''}"><span class="searchtype">${esc(h.t)}</span> ${esc(h.n)}</div>`);
+      const r = el(`<div class="searchhit ${i === sel ? 'on' : ''}"><span class="searchtype">${esc(h.t)}</span> ${esc(localName(h))}</div>`);
       r.onclick = () => choose(h); r.onmouseenter = () => { sel = i; [...res.children].forEach((c, j) => c.classList.toggle('on', j === i)); };
       res.append(r);
     });
@@ -856,8 +941,8 @@ async function openSearch() {
   function run(q) {
     q = q.trim().toLowerCase(); sel = 0;
     if (!q) { hits = []; res.innerHTML = ''; return; }
-    hits = searchIndex.filter(e => e.nl.includes(q))
-      .sort((a, b) => (a.nl.startsWith(q) ? 0 : 1) - (b.nl.startsWith(q) ? 0 : 1) || a.n.length - b.n.length)
+    hits = searchIndex.filter(e => e.nl.includes(q) || localName(e).toLowerCase().includes(q))
+      .sort((a, b) => (localName(a).toLowerCase().startsWith(q) ? 0 : 1) - (localName(b).toLowerCase().startsWith(q) ? 0 : 1) || a.n.length - b.n.length)
       .slice(0, 40);
     draw();
   }
@@ -902,10 +987,22 @@ window.addEventListener('hashchange', router);
 window.addEventListener('scroll', () => document.body.classList.toggle('scrolled', window.scrollY > 10));
 
 // ---------- boot ----------
+async function initLangSwitcher() {
+  const sel = document.getElementById('navlang');
+  if (!sel) return;
+  let langs = [{ code: 'en', label: 'English' }];
+  try { langs = await (await fetch('i18n/languages.json', { cache: 'force-cache' })).json(); } catch {}
+  sel.innerHTML = langs.map(l => `<option value="${l.code}">${l.label}</option>`).join('');
+  sel.value = LANG;
+  sel.onchange = async () => { await loadLang(sel.value); router(); };
+  if (LANG !== 'en') await loadLang(LANG);
+}
+
 (async function boot() {
   try {
     M = await (await fetch('manifest.json', { cache: 'no-cache' })).json();
     RAW = `https://raw.githubusercontent.com/${M.repo}/${M.branch}/`;
+    await initLangSwitcher();
     router();
   } catch (e) {
     app.innerHTML = `<section class="block"><div class="wrap"><p class="meta">Failed to load the guide manifest. ${esc(e.message)}</p></div></section>`;

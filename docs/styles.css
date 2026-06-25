@@ -225,6 +225,12 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .bishead h3 { margin: 0; font-size: 24px; }
 .bisslot { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
 
+/* augments + cosmetics */
+.augcard { cursor: default; }
+.augtop { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
+.augtop h3 { margin: 0; font-size: 16px; }
+.chromaswatch { height: 54px; border-radius: 10px; margin-bottom: 10px; opacity: .85; }
+
 /* gear cards */
 .gearcard { cursor: default; }
 .gearhead { display: flex; gap: 13px; align-items: center; }
@@ -279,6 +285,9 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 
 /* global search */
 .navsearch { font-size: 15px; }
+.navlang { background: var(--glass); border: 1px solid var(--line); color: var(--muted); border-radius: 8px; padding: 4px 6px; font-size: 12px; font-family: var(--font); cursor: pointer; max-width: 110px; }
+.navlang:hover { color: var(--text); }
+@media (max-width: 640px) { .navlang { max-width: 84px; } }
 .searchov { position: fixed; inset: 0; z-index: 100; background: rgba(5,6,9,.6); backdrop-filter: blur(6px); display: flex; justify-content: center; align-items: flex-start; padding-top: 12vh; }
 .searchbox { width: min(640px, 92vw); background: #14161c; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 30px 80px rgba(0,0,0,.55); overflow: hidden; }
 .searchin { width: 100%; border: none; background: transparent; color: var(--text); font-size: 18px; padding: 18px 20px; font-family: var(--font); border-bottom: 1px solid var(--line); }
