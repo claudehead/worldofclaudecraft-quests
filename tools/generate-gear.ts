@@ -19,7 +19,7 @@ const SLOT_ORDER = ['mainhand', 'helmet', 'shoulder', 'chest', 'gloves', 'waist'
 // ---- precompute reverse indexes for "where to get" ----
 const dropsBy: Record<string, { id: string; name: string }[]> = {};
 for (const [mid, m] of Object.entries(ALL_MOBS) as any[]) {
-  for (const l of m.loot || []) if (l.itemId) (dropsBy[l.itemId] ||= []).push({ id: mid, name: m.name });
+  for (const l of m.loot || []) if (l.itemId) (dropsBy[l.itemId] ||= []).push({ id: mid, name: m.name, chance: l.chance || 0 });
 }
 const questBy: Record<string, string[]> = {};
 for (const q of Object.values(QUESTS) as any[]) {
@@ -37,7 +37,7 @@ for (const offers of Object.values(DELVE_SHOPS) as any[]) {
 function uniq(a: string[] = []): string[] { return [...new Set(a)]; }
 function dropMobs(id: string) {
   const seen = new Set<string>(), out: any[] = [];
-  for (const m of dropsBy[id] || []) { if (seen.has(m.id)) continue; seen.add(m.id); out.push({ id: m.id, name: m.name, dir: DIR[m.id] || null }); }
+  for (const m of dropsBy[id] || []) { if (seen.has(m.id)) continue; seen.add(m.id); out.push({ id: m.id, name: m.name, chance: m.chance, dir: DIR[m.id] || null }); }
   return out;
 }
 function sourcesFor(id: string): any[] {

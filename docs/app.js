@@ -210,9 +210,10 @@ const QUALITY_COLOR = { legendary: '#e6803a', epic: '#a86bd6', rare: '#46b8da', 
 function sourceHTML(src) {
   if (!src) return '';
   if (src.type === 'drop' && Array.isArray(src.mobs)) {
-    const parts = src.mobs.slice(0, 3).map(m => m.dir
+    const pct = (c) => c ? ` <span class="droppct">${Math.round(c * 100)}%</span>` : '';
+    const parts = src.mobs.slice(0, 3).map(m => (m.dir
       ? `<a href="#/doc/${encodeURIComponent('quests/zones/' + m.dir + '/bestiary.md')}/${encodeURIComponent('mob-' + m.id)}">${esc(m.name)}</a>`
-      : esc(m.name));
+      : esc(m.name)) + pct(m.chance));
     const more = src.mobs.length > 3 ? ` +${src.mobs.length - 3} more` : '';
     return 'Drops from ' + parts.join(', ') + more;
   }
