@@ -333,6 +333,9 @@ async function worldMapView() {
       location.hash = `#/doc/${encodeURIComponent(p)}${anc ? '/' + encodeURIComponent(anc) : ''}`;
     });
     layers[m.type].append(c);
+    const t = mk('text', { x: m.x + cfg.r + 2, y: m.z + 3.5, fill: '#e8e8ea', 'font-size': 9, stroke: '#0a0c0e', 'stroke-width': 0.5, 'paint-order': 'stroke', class: 'wlabel' });
+    t.textContent = m.label; t.style.pointerEvents = 'none';
+    layers[m.type].append(t);
   }
   function moveTip(e) { const r = host.getBoundingClientRect(); tip.style.left = (e.clientX - r.left + 12) + 'px'; tip.style.top = (e.clientY - r.top + 12) + 'px'; }
   host.append(svg);
@@ -361,8 +364,12 @@ async function worldMapView() {
   svg.addEventListener('pointerup', () => { drag = null; });
   svg.addEventListener('pointerleave', () => { drag = null; });
 
-  // layer toggles
+  // labels toggle (off by default — names show on hover otherwise)
   const lh = app.querySelector('#wlayers');
+  const lblPill = el(`<span class="pill">🏷 Labels</span>`);
+  lblPill.onclick = () => { const on2 = svg.classList.toggle('labels'); lblPill.classList.toggle('active', on2); };
+  lh.append(lblPill);
+  // layer toggles
   for (const type of Object.keys(MARKER)) {
     const cfg = MARKER[type];
     const p = el(`<span class="pill active"><span class="ldot" style="background:${cfg.color}"></span> ${cfg.label}</span>`);
@@ -622,38 +629,41 @@ async function bisView() {
     <div class="shead reveal"><span class="eyebrow">Best in slot</span><h2>Best gear per class</h2>
       <p>The strongest item for each slot your class can get by a given level, picked by a stat-weight model (primary stats first, then armor, weapon DPS, rarity). A guide, not gospel — spec and playstyle shift the edges.</p></div>
     <div class="controls reveal"><div class="pills" id="bisclasses"></div></div>
-    <div class="controls reveal bislevelrow" style="margin-top:-4px">
-      <label class="bislevellabel">At level <b id="bislevelval">20</b></label>
-      <input type="range" id="bislevel" class="bisrange" min="1" max="20" value="20">
-    </div>
+    <div class="controls reveal" style="margin-top:-4px"><div class="pills" id="biszones"></div></div>
     <div id="bisbody"></div>
   </div></section>`));
   if (!bisData) {
     try { bisData = await (await fetch(raw('gear/bis.json'))).json(); }
     catch (e) { app.querySelector('#bisbody').innerHTML = `<div class="meta">Couldn't load BiS (${esc(e.message)}).</div>`; return; }
   }
-  const pillHost = app.querySelector('#bisclasses'), body = app.querySelector('#bisbody');
-  const slider = app.querySelector('#bislevel'), levelVal = app.querySelector('#bislevelval');
-  let active = bisData.classes[0].id, level = 20;
+  const pillHost = app.querySelector('#bisclasses'), body = app.querySelector('#bisbody'), zoneHost = app.querySelector('#biszones');
+  // gear-bearing zones, cumulative: best you can have by the END of each zone
+  const brackets = M.zones.filter(z => z.key && z.key !== 'temple').map(z => ({ label: z.title, maxLevel: z.levelRange[1], range: z.levelRange }));
+  let active = bisData.classes[0].id, bi = brackets.length - 1; // default: through the last zone
   bisData.classes.forEach((c, i) => {
     const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(c.name)}</span>`);
     p.onclick = () => { active = c.id; pillHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
     pillHost.append(p);
   });
-  slider.oninput = () => { level = +slider.value; levelVal.textContent = level; draw(); };
-  // pick the slot's best item obtainable by the chosen level
+  brackets.forEach((b, i) => {
+    const p = el(`<span class="pill ${i === bi ? 'active' : ''}">${esc(b.label)} <span class="bisfromlvl">${b.range[0]}–${b.range[1]}</span></span>`);
+    p.onclick = () => { bi = i; zoneHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+    zoneHost.append(p);
+  });
+  // best slot item obtainable by the end of the selected zone (cumulative)
   const itemAt = (s) => {
+    const level = brackets[bi].maxLevel;
     if (!s.progression) return s.item;
     let pick = null;
     for (const p of s.progression) { if (p.level <= level) pick = p.item; }
-    return pick; // null if nothing is available yet at this level
+    return pick;
   };
   function draw() {
     const c = bisData.classes.find(x => x.id === active);
     body.innerHTML = '';
     const head = el(`<div class="bishead reveal">
       <img src="${raw(c.render)}" alt="${esc(c.name)}" class="bisportrait">
-      <div><h3>${esc(c.name)}</h3><div class="meta">${esc((c.roles || []).join(' · '))} · best gear by level ${level}</div></div></div>`);
+      <div><h3>${esc(c.name)}</h3><div class="meta">${esc((c.roles || []).join(' · '))} · best gear through ${esc(brackets[bi].label)}</div></div></div>`);
     body.append(head);
     const grid = el(`<div class="grid g-4"></div>`);
     c.slots.forEach(s => {

@@ -117,15 +117,17 @@ const classes = GUIDE_CLASSES.map((c: any) => {
     // keep the pick on-class: prefer items carrying a primary stat when any exist.
     // (Melee weapons are dps-led, so only casters filter weapons by int.)
     const filterByStat = slot !== 'mainhand' || isCaster(w);
-    if (filterByStat) {
-      const on = pool.filter(i => hasPrimary(i, prim));
-      if (on.length) pool = on;
-    }
     const scored = pool.map(i => ({ i, s: score(i, w), lvl: availLevel(i.id) })).sort((a, b) => b.s - a.s);
-    // BiS progression as level rises: best-scoring item obtainable by each level
+    // BiS progression as level rises: the best item you can actually obtain by
+    // each level — prefer the class's primary stat, but fall back to the best
+    // wearable piece so early levels are never empty.
     const progression: any[] = []; let prevId: string | null = null;
     for (let L = 1; L <= MAX_LEVEL; L++) {
-      const top = scored.find(x => x.lvl <= L);
+      const avail = scored.filter(x => x.lvl <= L);
+      if (!avail.length) continue;
+      let list = avail;
+      if (filterByStat) { const pr = avail.filter(x => hasPrimary(x.i, prim)); if (pr.length) list = pr; }
+      const top = list[0];
       if (top && top.i.id !== prevId) { progression.push({ level: L, item: bisItem(top.i) }); prevId = top.i.id; }
     }
     if (!progression.length) return null;

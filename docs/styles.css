@@ -210,6 +210,8 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .worldmap { position: relative; height: 74vh; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #0c0f12; touch-action: none; }
 .wsvg { width: 100%; height: 100%; display: block; cursor: grab; }
 .wsvg:active { cursor: grabbing; }
+.wlabel { display: none; }
+.wsvg.labels .wlabel { display: block; }
 .wtip { position: absolute; pointer-events: none; opacity: 0; transition: opacity .12s; background: #11160f; border: 1px solid var(--line); color: var(--text); font-size: 12.5px; padding: 4px 9px; border-radius: 8px; z-index: 5; white-space: nowrap; }
 .ldot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 2px; vertical-align: middle; }
 .pill:not(.active) .ldot { opacity: .35; }
