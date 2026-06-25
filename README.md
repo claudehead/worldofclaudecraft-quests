@@ -6,7 +6,9 @@ A complete, organized walkthrough for every quest in [World of Claudecraft](http
 
 ## 🌐 Website
 
-There's a browsable site in [`docs/`](docs/) — a single-page app with an Apple-style design that **renders entirely from this repo**: it loads a generated `manifest.json` for navigation and fetches the markdown, maps, mob renders, and item icons live from `raw.githubusercontent.com`. No content is hand-written into the site, and the manifest is rebuilt by the same auto-update pipeline, so the site always matches the data here. Enable it under **Settings → Pages → Source: `main` / `/docs`**.
+There's a browsable site in [`docs/`](docs/) — a single-page app with an Apple-style design that **renders entirely from this repo**: it loads generated data files for navigation and fetches the markdown, maps, mob renders, and item icons live from `raw.githubusercontent.com`. No content is hand-written into the site, and the data is rebuilt by the same auto-update pipeline, so the site always matches the data here. Enable it under **Settings → Pages → Source: `main` / `/docs`**.
+
+Tabs: quests · leveling route · world map · bestiary · gear · best-in-slot · consumables · classes · abilities · talent calculator · dungeons · delves — plus **global search** (press `/`), **shareable talent builds**, a **light/dark toggle**, and it's an **installable PWA** that works offline.
 
 ## How to use this
 

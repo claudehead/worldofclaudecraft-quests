@@ -404,7 +404,7 @@ async function abilitiesView() {
 }
 
 let talentData = null;
-async function talentsView() {
+async function talentsView(initClass, initSpec, initAlloc) {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
     <div class="shead reveal"><span class="eyebrow">Talents</span><h2>Talent calculator</h2>
@@ -412,7 +412,10 @@ async function talentsView() {
     <div class="controls reveal"><div class="pills" id="tclass"></div></div>
     <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="tspec"></div>
       <span class="tbudget" id="tbudget"></span>
-      <span class="pill" id="treset">Reset</span></div>
+      <span class="pill" id="treset">Reset</span>
+      <span class="pill" id="tshare">🔗 Copy link</span>
+      <span class="pill" id="tsave">★ Save</span></div>
+    <div class="tsaved" id="tsaved"></div>
     <div id="ttrees" class="ttrees"></div>
   </div></section>`));
   if (!talentData) {
@@ -420,13 +423,28 @@ async function talentsView() {
     catch (e) { app.querySelector('#ttrees').innerHTML = `<div class="meta">Couldn't load talents (${esc(e.message)}).</div>`; return; }
   }
   const classIds = Object.keys(talentData.classes);
-  let classId = classIds[0], specIdx = 0;
+  let classId = classIds.includes(initClass) ? initClass : classIds[0], specIdx = 0;
   let alloc = {}; // nodeId -> rank
   const maxPoints = talentData.maxPoints;
 
+  // restore a shared build (#/talents/<class>/<spec>/<digits>)
+  function nodeOrder(cid, si) { const c = talentData.classes[cid]; return [...c.classTree, ...c.specs[si].nodes]; }
+  function decode(cid, sid, digits) {
+    const c = talentData.classes[cid]; const si = Math.max(0, c.specs.findIndex(s => s.id === sid));
+    specIdx = si; alloc = {};
+    const order = nodeOrder(cid, si);
+    [...(digits || '')].forEach((d, i) => { const r = parseInt(d, 36); if (order[i] && r > 0) alloc[order[i].id] = Math.min(r, order[i].maxRank); });
+  }
+  function encode() {
+    const order = nodeOrder(classId, specIdx);
+    return order.map(n => (alloc[n.id] || 0).toString(36)).join('').replace(/0+$/, '');
+  }
+  function buildHash() { return `#/talents/${classId}/${talentData.classes[classId].specs[specIdx].id}/${encode()}`; }
+  if (initClass) decode(classId, initSpec, initAlloc);
+
   const clsHost = app.querySelector('#tclass'), specHost = app.querySelector('#tspec');
-  classIds.forEach((id, i) => {
-    const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(talentData.classes[id].name)}</span>`);
+  classIds.forEach((id) => {
+    const p = el(`<span class="pill ${id === classId ? 'active' : ''}">${esc(talentData.classes[id].name)}</span>`);
     p.onclick = () => { classId = id; specIdx = 0; alloc = {}; clsHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); buildSpecs(); draw(); };
     clsHost.append(p);
   });
@@ -435,7 +453,7 @@ async function talentsView() {
   function buildSpecs() {
     specHost.innerHTML = '';
     talentData.classes[classId].specs.forEach((s, i) => {
-      const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(s.icon || '')} ${esc(s.name)}</span>`);
+      const p = el(`<span class="pill ${i === specIdx ? 'active' : ''}">${esc(s.icon || '')} ${esc(s.name)}</span>`);
       p.onclick = () => { specIdx = i; alloc = {}; specHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
       specHost.append(p);
     });
@@ -483,7 +501,39 @@ async function talentsView() {
     host.append(treeGrid(spec.nodes, spec.name));
     if (spec.mastery) host.append(el(`<div class="tmastery"><b>${esc(spec.name)} mastery — ${esc(spec.mastery.name)}:</b> ${esc(spec.mastery.description)}</div>`));
   }
+  // share + save
+  app.querySelector('#tshare').onclick = () => {
+    const hash = buildHash();
+    history.replaceState(null, '', hash);
+    const url = location.href;
+    navigator.clipboard?.writeText(url).then(() => toast('Build link copied')).catch(() => toast('Link in address bar'));
+  };
+  app.querySelector('#tsave').onclick = () => {
+    const name = prompt('Name this build:', `${talentData.classes[classId].name} ${talentData.classes[classId].specs[specIdx].name}`);
+    if (!name) return;
+    const saved = loadBuilds(); saved.unshift({ name, hash: buildHash() });
+    localStorage.setItem('wc_builds', JSON.stringify(saved.slice(0, 30))); drawSaved();
+  };
+  function loadBuilds() { try { return JSON.parse(localStorage.getItem('wc_builds') || '[]'); } catch { return []; } }
+  function drawSaved() {
+    const host = app.querySelector('#tsaved'); host.innerHTML = '';
+    const saved = loadBuilds();
+    if (!saved.length) return;
+    host.append(el('<span class="meta" style="font-size:12px">Saved builds:</span>'));
+    saved.forEach((b, i) => {
+      const chip = el(`<span class="pill savedbuild">${esc(b.name)} <span class="rm" title="delete">×</span></span>`);
+      chip.onclick = (e) => { if (e.target.classList.contains('rm')) { const s = loadBuilds(); s.splice(i, 1); localStorage.setItem('wc_builds', JSON.stringify(s)); drawSaved(); } else location.hash = b.hash; };
+      host.append(chip);
+    });
+  }
+  drawSaved();
   buildSpecs(); draw(); reveal();
+}
+
+function toast(msg) {
+  const t = el(`<div class="toast">${esc(msg)}</div>`); document.body.append(t);
+  requestAnimationFrame(() => t.classList.add('in'));
+  setTimeout(() => { t.classList.remove('in'); setTimeout(() => t.remove(), 300); }, 1800);
 }
 
 function routeView() {
@@ -728,7 +778,7 @@ function router() {
   if (head === 'consumables') return consumablesView();
   if (head === 'classes') return classesView();
   if (head === 'abilities') return abilitiesView();
-  if (head === 'talents') return talentsView();
+  if (head === 'talents') return talentsView(parts[1] ? decodeURIComponent(parts[1]) : null, parts[2] ? decodeURIComponent(parts[2]) : null, parts[3] ? decodeURIComponent(parts[3]) : '');
   if (head === 'dungeons') return simpleListView('Dungeons', 'Instanced content', 'Route maps, full rosters and bosses for every dungeon.',
     M.dungeons.map(d => ({ name: d.name, file: d.file, meta: d.suggestedPlayers ? `Suggested players: ${d.suggestedPlayers}` : '', tags: d.hasMap ? ['Map', 'Roster'] : ['Roster'] })));
   if (head === 'delves') return simpleListView('Delves', 'Replayable', 'Scalable mini-instances with tiers, affixes, companions and a Marks vendor.',
@@ -805,6 +855,13 @@ document.addEventListener('click', (e) => {
   if (t) { e.preventDefault(); location.hash = t.getAttribute('data-go'); }
 });
 document.getElementById('navsearch')?.addEventListener('click', openSearch);
+(function theme() {
+  const btn = document.getElementById('navtheme');
+  const set = (t) => { document.documentElement.dataset.theme = t === 'light' ? 'light' : ''; if (btn) btn.textContent = t === 'light' ? '☀️' : '🌙'; try { localStorage.setItem('wc_theme', t); } catch (e) {} document.querySelector('meta[name=theme-color]')?.setAttribute('content', t === 'light' ? '#f5f5f7' : '#07070b'); };
+  let cur = (() => { try { return localStorage.getItem('wc_theme') || 'dark'; } catch (e) { return 'dark'; } })();
+  set(cur);
+  btn?.addEventListener('click', () => { cur = cur === 'light' ? 'dark' : 'light'; set(cur); });
+})();
 window.addEventListener('hashchange', router);
 window.addEventListener('scroll', () => document.body.classList.toggle('scrolled', window.scrollY > 10));
 
