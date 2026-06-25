@@ -133,6 +133,46 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .feature .arrow { color: var(--gold); font-size: 14px; margin-top: 10px; opacity: 0; transition: opacity .2s, transform .2s; }
 .feature:hover .arrow { opacity: 1; transform: translateX(3px); }
 
+/* talent calculator */
+.tbudget { font-size: 14px; color: var(--muted); }
+.tbudget b { color: var(--gold); font-size: 16px; }
+.ttrees { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 720px) { .ttrees { grid-template-columns: 1fr; } }
+.ttree { background: var(--glass); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+.ttreehead { font-weight: 600; margin-bottom: 14px; display: flex; justify-content: space-between; }
+.ttreepts { color: var(--gold); }
+.tgrid { display: grid; gap: 12px; }
+.tnode { position: relative; aspect-ratio: 1; border: 1.5px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.03); display: grid; place-items: center; cursor: pointer; transition: border-color .15s, transform .12s; }
+.tnode:hover { transform: scale(1.06); }
+.tnode .ticon { font-size: clamp(16px, 3.4vw, 26px); }
+.tnode .trank { position: absolute; bottom: 3px; right: 5px; font-size: 10.5px; color: var(--muted); }
+.tnode.partial { border-color: var(--gold); }
+.tnode.maxed { border-color: var(--gold); background: rgba(230,187,106,.14); box-shadow: 0 0 0 1px var(--gold) inset; }
+.tnode.maxed .trank { color: var(--gold); }
+.tnode.locked { opacity: .4; cursor: not-allowed; }
+.tnode.locked:hover { transform: none; }
+.tmastery { grid-column: 1 / -1; background: var(--glass); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; padding: 12px 16px; color: var(--muted); font-size: 14px; }
+
+/* world map */
+.worldmap { position: relative; height: 74vh; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #0c0f12; touch-action: none; }
+.wsvg { width: 100%; height: 100%; display: block; cursor: grab; }
+.wsvg:active { cursor: grabbing; }
+.wtip { position: absolute; pointer-events: none; opacity: 0; transition: opacity .12s; background: #11160f; border: 1px solid var(--line); color: var(--text); font-size: 12.5px; padding: 4px 9px; border-radius: 8px; z-index: 5; white-space: nowrap; }
+.ldot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 2px; vertical-align: middle; }
+.pill:not(.active) .ldot { opacity: .35; }
+
+/* leveling route */
+.routezone { margin-bottom: 34px; }
+.routezone h3 { font-size: 22px; margin: 0 0 14px; }
+.routelevel { color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; margin: 16px 0 8px; }
+.routeitem { display: flex; align-items: center; gap: 12px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--glass); margin-bottom: 7px; transition: background .2s, border-color .2s, transform .15s; }
+.routeitem:hover { background: var(--glass-2); border-color: rgba(255,255,255,.18); transform: translateX(3px); }
+.routenum { width: 26px; height: 26px; flex: none; border-radius: 50%; background: var(--glass-2); display: grid; place-items: center; font-size: 12px; color: var(--muted); }
+.routename { flex: 1; }
+.routechain { font-size: 10.5px; color: var(--muted-2); border: 1px solid var(--line); border-radius: 999px; padding: 1px 7px; margin-left: 6px; }
+.routearrow { color: var(--gold); opacity: 0; transition: opacity .2s; }
+.routeitem:hover .routearrow { opacity: 1; }
+
 /* best-in-slot */
 .bishead { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
 .bisportrait { height: 90px; filter: drop-shadow(0 12px 20px rgba(0,0,0,.5)); }
@@ -190,6 +230,13 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .doc img[align="right"] { float: right; width: 150px; margin: 0 0 16px 22px; filter: drop-shadow(0 16px 24px rgba(0,0,0,.5)); }
 .doc img[src$=".svg"] { display: block; width: 100%; border-radius: 16px; border: 1px solid var(--line); margin: 18px 0; background: #11101a; }
 .doc code { background: var(--glass-2); padding: 2px 6px; border-radius: 6px; font-size: 13px; }
+
+/* quest voice-over */
+.voice { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin: 16px 0 22px; padding: 14px 16px; background: var(--glass); border: 1px solid var(--line); border-radius: 14px; }
+.voicelabel { font-size: 13px; color: var(--gold); font-weight: 600; }
+.voiceclip { display: flex; align-items: center; gap: 8px; }
+.voiceclip span { font-size: 12px; color: var(--muted); }
+.voiceclip audio { height: 32px; }
 
 /* interactive quest route map */
 .qmap-panel { margin: 18px 0; }

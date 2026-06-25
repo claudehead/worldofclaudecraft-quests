@@ -62,6 +62,15 @@ rm -f consumables/consumable-icons.json
 echo "==> best-in-slot (reuses gear icons)"
 $TSX $TOOLS/generate-bis.ts gear/bis.json
 
+echo "==> world map data"
+$TSX $TOOLS/generate-worldmap.ts docs/world-map.json
+
+echo "==> quest voice-over manifest"
+$TSX $TOOLS/generate-voice-manifest.ts $WOC/public/audio/voice docs/voice.json
+
+echo "==> talent data"
+$TSX $TOOLS/generate-talents.ts docs/talents.json
+
 echo "==> website manifest"
 $TSX $TOOLS/generate-site-manifest.ts docs/manifest.json
 

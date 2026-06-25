@@ -66,11 +66,14 @@ function home() {
   const c = M.counts;
   const featureCards = [
     ['#/quests', '🗺️', 'Quests', `${c.quests} quests across ${c.zones} zones, sorted by level — with maps, rewards, and exact objectives.`],
+    ['#/route', '🧭', 'Leveling route', `The fastest 1→20 questing path, zone by zone in level order.`],
+    ['#/map', '🗺️', 'World map', `Pan and zoom the whole world — towns, dungeons, delves, camps and quest-givers.`],
     ['#/bestiary', '🐺', 'Bestiary', `Every creature with a model render, stats, kill tactics, and a full loot table.`],
     ['#/gear', '🛡️', 'Gear', `Every weapon and armor piece — rarity, stats, and where to get it.`],
     ['#/bis', '✨', 'Best in Slot', `The strongest gear in every slot, per class — with where to get it.`],
     ['#/consumables', '🍖', 'Consumables', `Food, drink, potions and elixirs — what they restore and where to buy them.`],
     ['#/classes', '⚔️', 'Classes', `${c.classes} classes — specs, abilities by learn-level, and model portraits.`],
+    ['#/talents', '🌳', 'Talents', `Interactive talent calculator — spend points across class and spec trees.`],
     ['#/dungeons', '🏰', 'Dungeons', `Route maps, rosters and bosses for every instance.`],
     ['#/delves', '🔮', 'Delves', `Tiers, affixes, companions and the Marks vendor.`],
   ];
@@ -260,6 +263,210 @@ async function gearView() {
   draw(); reveal();
 }
 
+const MARKER = {
+  town: { color: '#f0d89a', r: 7, label: 'Towns' },
+  dungeon: { color: '#9b59b6', r: 7, label: 'Dungeons' },
+  delve: { color: '#46b8da', r: 7, label: 'Delves' },
+  npc: { color: '#5cb85c', r: 4.5, label: 'Quest givers' },
+  camp: { color: '#d9534f', r: 4.5, label: 'Mob camps' },
+  poi: { color: '#7fa890', r: 3, label: 'Places' },
+};
+let worldData = null;
+async function worldMapView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">World map</span><h2>The world of Claudecraft</h2>
+      <p>All four zones, north to south. Drag to pan, scroll to zoom, hover a marker for its name, click to open its page. Toggle layers below.</p></div>
+    <div class="controls reveal"><div class="pills" id="wlayers"></div></div>
+    <div class="worldmap reveal" id="wmap"><div class="wtip" id="wtip"></div></div>
+  </div></section>`));
+  if (!worldData) {
+    try { worldData = await (await fetch('world-map.json', { cache: 'no-cache' })).json(); }
+    catch (e) { app.querySelector('#wmap').innerHTML = `<div class="meta" style="padding:30px">Couldn't load the map (${esc(e.message)}).</div>`; return; }
+  }
+  const W = worldData, b = W.bounds;
+  const host = app.querySelector('#wmap'), tip = app.querySelector('#wtip');
+  const on = { town: true, dungeon: true, delve: true, npc: true, camp: true, poi: true };
+
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', `${b.minX} ${b.minZ} ${b.maxX - b.minX} ${b.maxZ - b.minZ}`);
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  svg.classList.add('wsvg');
+  const mk = (n, a) => { const e = document.createElementNS(svgNS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+
+  // zone bands
+  W.bands.forEach((bd, i) => {
+    svg.append(mk('rect', { x: b.minX, y: bd.zMin, width: b.maxX - b.minX, height: bd.zMax - bd.zMin, fill: i % 2 ? '#12161a' : '#15191d', opacity: 0.6 }));
+    const t = mk('text', { x: b.minX + 8, y: bd.zMin + 22, fill: '#3f5247', 'font-size': 22, 'font-weight': 'bold' }); t.textContent = `${bd.title} · ${bd.levelRange[0]}–${bd.levelRange[1]}`; svg.append(t);
+  });
+  for (const l of W.lakes) svg.append(mk('circle', { cx: l.x, cy: l.z, r: l.r, fill: '#2f6f8f', opacity: 0.4 }));
+  for (const seg of W.roads) { const p = mk('path', { d: seg.map((q, i) => `${i ? 'L' : 'M'}${q[0]} ${q[1]}`).join(' '), fill: 'none', stroke: '#6f6244', 'stroke-width': 2, opacity: 0.5, 'vector-effect': 'non-scaling-stroke' }); svg.append(p); }
+
+  const layers = {};
+  for (const type of Object.keys(MARKER)) { const g = mk('g', {}); layers[type] = g; svg.append(g); }
+  for (const m of W.markers) {
+    const cfg = MARKER[m.type]; if (!cfg) continue;
+    const c = mk('circle', { cx: m.x, cy: m.z, r: cfg.r, fill: cfg.color, stroke: '#0a0c0e', 'stroke-width': 1, 'vector-effect': 'non-scaling-stroke' });
+    c.style.cursor = m.link ? 'pointer' : 'default';
+    c.addEventListener('mouseenter', (e) => { tip.textContent = m.label; tip.style.opacity = 1; moveTip(e); });
+    c.addEventListener('mousemove', moveTip);
+    c.addEventListener('mouseleave', () => { tip.style.opacity = 0; });
+    if (m.link) c.addEventListener('click', () => {
+      const [p, anc] = m.link.split('#');
+      location.hash = `#/doc/${encodeURIComponent(p)}${anc ? '/' + encodeURIComponent(anc) : ''}`;
+    });
+    layers[m.type].append(c);
+  }
+  function moveTip(e) { const r = host.getBoundingClientRect(); tip.style.left = (e.clientX - r.left + 12) + 'px'; tip.style.top = (e.clientY - r.top + 12) + 'px'; }
+  host.append(svg);
+
+  // pan/zoom via viewBox
+  let vb = { x: b.minX, y: b.minZ, w: b.maxX - b.minX, h: b.maxZ - b.minZ };
+  const apply = () => svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
+  const fullW = vb.w, fullH = vb.h;
+  svg.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const r = svg.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+    const wx = vb.x + px * vb.w, wy = vb.y + py * vb.h;
+    const f = e.deltaY < 0 ? 0.85 : 1.18;
+    vb.w = Math.min(fullW, Math.max(fullW * 0.06, vb.w * f));
+    vb.h = Math.min(fullH, Math.max(fullH * 0.06, vb.h * f));
+    vb.x = wx - px * vb.w; vb.y = wy - py * vb.h; apply();
+  }, { passive: false });
+  let drag = null;
+  svg.addEventListener('pointerdown', (e) => { drag = { x: e.clientX, y: e.clientY }; svg.setPointerCapture(e.pointerId); });
+  svg.addEventListener('pointermove', (e) => {
+    if (!drag) return; const r = svg.getBoundingClientRect();
+    vb.x -= (e.clientX - drag.x) / r.width * vb.w; vb.y -= (e.clientY - drag.y) / r.height * vb.h;
+    drag = { x: e.clientX, y: e.clientY }; apply();
+  });
+  svg.addEventListener('pointerup', () => { drag = null; });
+  svg.addEventListener('pointerleave', () => { drag = null; });
+
+  // layer toggles
+  const lh = app.querySelector('#wlayers');
+  for (const type of Object.keys(MARKER)) {
+    const cfg = MARKER[type];
+    const p = el(`<span class="pill active"><span class="ldot" style="background:${cfg.color}"></span> ${cfg.label}</span>`);
+    p.onclick = () => { on[type] = !on[type]; p.classList.toggle('active', on[type]); layers[type].style.display = on[type] ? '' : 'none'; };
+    lh.append(p);
+  }
+  reveal();
+}
+
+let talentData = null;
+async function talentsView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Talents</span><h2>Talent calculator</h2>
+      <p>Pick a class and spec, then click talents to spend points (right-click to remove). Respects ranks, prerequisites, and tree gates.</p></div>
+    <div class="controls reveal"><div class="pills" id="tclass"></div></div>
+    <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="tspec"></div>
+      <span class="tbudget" id="tbudget"></span>
+      <span class="pill" id="treset">Reset</span></div>
+    <div id="ttrees" class="ttrees"></div>
+  </div></section>`));
+  if (!talentData) {
+    try { talentData = await (await fetch('talents.json', { cache: 'no-cache' })).json(); }
+    catch (e) { app.querySelector('#ttrees').innerHTML = `<div class="meta">Couldn't load talents (${esc(e.message)}).</div>`; return; }
+  }
+  const classIds = Object.keys(talentData.classes);
+  let classId = classIds[0], specIdx = 0;
+  let alloc = {}; // nodeId -> rank
+  const maxPoints = talentData.maxPoints;
+
+  const clsHost = app.querySelector('#tclass'), specHost = app.querySelector('#tspec');
+  classIds.forEach((id, i) => {
+    const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(talentData.classes[id].name)}</span>`);
+    p.onclick = () => { classId = id; specIdx = 0; alloc = {}; clsHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); buildSpecs(); draw(); };
+    clsHost.append(p);
+  });
+  app.querySelector('#treset').onclick = () => { alloc = {}; draw(); };
+
+  function buildSpecs() {
+    specHost.innerHTML = '';
+    talentData.classes[classId].specs.forEach((s, i) => {
+      const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(s.icon || '')} ${esc(s.name)}</span>`);
+      p.onclick = () => { specIdx = i; alloc = {}; specHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+      specHost.append(p);
+    });
+  }
+  const spent = () => Object.values(alloc).reduce((a, b) => a + b, 0);
+  const treeSpent = (nodes) => nodes.reduce((a, n) => a + (alloc[n.id] || 0), 0);
+
+  function canAdd(node, treeNodes) {
+    if ((alloc[node.id] || 0) >= node.maxRank) return false;
+    if (spent() >= maxPoints) return false;
+    if (node.pointsGate && treeSpent(treeNodes) < node.pointsGate) return false;
+    if (node.requires) for (const r of node.requires) { const dep = treeNodes.find(n => n.id === r); if (dep && (alloc[r] || 0) < dep.maxRank) return false; }
+    return true;
+  }
+  function treeGrid(nodes, title) {
+    const cols = Math.max(...nodes.map(n => n.col)) + 1;
+    const rows = Math.max(...nodes.map(n => n.row)) + 1;
+    const wrap = el(`<div class="ttree"><div class="ttreehead">${esc(title)} <span class="ttreepts">${treeSpent(nodes)}</span></div><div class="tgrid" style="grid-template-columns:repeat(${cols},1fr);grid-template-rows:repeat(${rows},auto)"></div></div>`);
+    const grid = wrap.querySelector('.tgrid');
+    const at = {};
+    for (const n of nodes) at[n.row + ',' + n.col] = n;
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const n = at[r + ',' + c];
+      if (!n) { grid.append(el('<div></div>')); continue; }
+      const rank = alloc[n.id] || 0;
+      const maxed = rank >= n.maxRank;
+      const avail = canAdd(n, nodes) || rank > 0;
+      const cell = el(`<div class="tnode ${rank > 0 ? (maxed ? 'maxed' : 'partial') : ''} ${avail ? '' : 'locked'}" title="${esc(n.name)} — ${esc(n.description || '')}">
+        <span class="ticon">${esc(n.icon || '✦')}</span>
+        <span class="trank">${rank}/${n.maxRank}</span></div>`);
+      cell.oncontextmenu = (e) => { e.preventDefault(); if (rank > 0) { alloc[n.id] = rank - 1; if (!alloc[n.id]) delete alloc[n.id]; draw(); } };
+      cell.onclick = () => { if (canAdd(n, nodes)) { alloc[n.id] = rank + 1; draw(); } };
+      grid.append(cell);
+    }
+    return wrap;
+  }
+  function draw() {
+    const cls = talentData.classes[classId];
+    const spec = cls.specs[specIdx];
+    app.querySelector('#tbudget').innerHTML = `<b>${spent()}</b> / ${maxPoints} points`;
+    const host = app.querySelector('#ttrees');
+    host.innerHTML = '';
+    host.append(treeGrid(cls.classTree, 'Class'));
+    host.append(treeGrid(spec.nodes, spec.name));
+    if (spec.mastery) host.append(el(`<div class="tmastery"><b>${esc(spec.name)} mastery — ${esc(spec.mastery.name)}:</b> ${esc(spec.mastery.description)}</div>`));
+  }
+  buildSpecs(); draw(); reveal();
+}
+
+function routeView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Leveling route</span><h2>Fastest path to 20</h2>
+      <p>Work top to bottom: each zone in level order, quests grouped by the level they unlock. Do everything in a zone before moving to the next — they're level-gated. 👥 = group · chains do prerequisites first.</p></div>
+    <div id="routebody"></div>
+  </div></section>`));
+  const body = app.querySelector('#routebody');
+  let step = 0;
+  for (const z of M.zones) {
+    const sec = el(`<div class="routezone reveal">
+      <h3>${esc(z.title)} <span class="meta" style="font-weight:400">· levels ${z.levelRange[0]}–${z.levelRange[1]}${z.hub ? ' · ' + esc(z.hub) : ''}</span></h3>
+      <div class="routelist"></div></div>`);
+    const list = sec.querySelector('.routelist');
+    let curLevel = null;
+    for (const q of z.quests) {
+      if (q.level !== curLevel) { curLevel = q.level; list.append(el(`<div class="routelevel">Level ${curLevel}+</div>`)); }
+      step++;
+      const row = el(`<a class="routeitem" href="#/doc/${encodeURIComponent(q.file)}">
+        <span class="routenum">${step}</span>
+        <span class="routename">${esc(q.name)}${q.group ? ' 👥' : ''}${q.chain ? ' <span class="routechain">chain</span>' : ''}</span>
+        <span class="routearrow">→</span></a>`);
+      list.append(row);
+    }
+    body.append(sec);
+  }
+  reveal();
+}
+
 let bisData = null;
 async function bisView() {
   app.innerHTML = '';
@@ -411,6 +618,33 @@ function focusStep(svg, n, chip, bar) {
   });
 }
 
+let voiceData = null;
+async function getVoice() {
+  if (voiceData) return voiceData;
+  try { voiceData = await (await fetch('voice.json', { cache: 'no-cache' })).json(); }
+  catch { voiceData = { base: '', quests: {} }; }
+  return voiceData;
+}
+// Add quest voice-over players (offer + completion) to a quest doc.
+async function enhanceVoice(body, docPath) {
+  const m = /quests\/zones\/[^/]+\/(q-[^/]+)\.md$/.exec(docPath);
+  if (!m) return;
+  const id = m[1].replace(/-/g, '_');
+  const v = await getVoice();
+  const entry = v.quests[id];
+  if (!entry) return;
+  const panel = el(`<div class="voice"><span class="voicelabel">🔊 Voice-over</span></div>`);
+  const add = (kind, label) => {
+    if (!entry[kind]) return;
+    const wrap = el(`<div class="voiceclip"><span>${label}</span></div>`);
+    const audio = el(`<audio controls preload="none" src="${v.base}${entry[kind]}"></audio>`);
+    wrap.append(audio); panel.append(wrap);
+  };
+  add('offer', 'Offer'); add('complete', 'Completion');
+  const h1 = body.querySelector('h1');
+  if (h1) h1.after(panel); else body.prepend(panel);
+}
+
 async function docView(path, anchor) {
   app.innerHTML = '<div class="spinner"></div>';
   let md;
@@ -423,6 +657,7 @@ async function docView(path, anchor) {
   app.innerHTML = '';
   app.append(wrap);
   window.scrollTo(0, 0);
+  enhanceVoice(body, path);
   enhanceQuestMap(body);
   if (anchor) {
     const t = document.getElementById(anchor);
@@ -437,11 +672,14 @@ function router() {
   const parts = h.slice(2).split('/');
   const head = parts[0] || '';
   if (head === 'quests') return questsView();
+  if (head === 'map') return worldMapView();
+  if (head === 'route') return routeView();
   if (head === 'bestiary') return zonesView();
   if (head === 'gear') return gearView();
   if (head === 'bis') return bisView();
   if (head === 'consumables') return consumablesView();
   if (head === 'classes') return classesView();
+  if (head === 'talents') return talentsView();
   if (head === 'dungeons') return simpleListView('Dungeons', 'Instanced content', 'Route maps, full rosters and bosses for every dungeon.',
     M.dungeons.map(d => ({ name: d.name, file: d.file, meta: d.suggestedPlayers ? `Suggested players: ${d.suggestedPlayers}` : '', tags: d.hasMap ? ['Map', 'Roster'] : ['Roster'] })));
   if (head === 'delves') return simpleListView('Delves', 'Replayable', 'Scalable mini-instances with tiers, affixes, companions and a Marks vendor.',
