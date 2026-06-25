@@ -49,6 +49,11 @@ $TSX $TOOLS/generate-delves.ts delves
 node $TOOLS/render-loot.mjs delves/_shop-items.json $WOC/public delves/_delve-icons
 rm -f delves/_shop-items.json
 
+echo "==> NPCs + portraits"
+$TSX $TOOLS/generate-npcs.ts npcs/npcs.json
+node $TOOLS/render-mobs.mjs npcs/npc-models.json $WOC/public npcs/_renders
+rm -f npcs/npc-models.json
+
 echo "==> gear catalog + icons"
 $TSX $TOOLS/generate-gear.ts gear/gear.json
 node $TOOLS/render-loot.mjs gear/gear-icons.json $WOC/public gear/_icons

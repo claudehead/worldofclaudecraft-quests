@@ -80,6 +80,7 @@ function home() {
     ['#/route', '🧭', 'Leveling route', `The fastest 1→20 questing path, zone by zone in level order.`],
     ['#/map', '🗺️', 'World map', `Pan and zoom the whole world — towns, dungeons, delves, camps and quest-givers.`],
     ['#/bestiary', '🐺', 'Bestiary', `Every creature with a model render, stats, kill tactics, and a full loot table.`],
+    ['#/npcs', '🧑‍🌾', 'NPCs', `Quest-givers and vendors — where they are, what they offer and sell.`],
     ['#/gear', '🛡️', 'Gear', `Every weapon and armor piece — rarity, stats, and where to get it.`],
     ['#/bis', '✨', 'Best in Slot', `The strongest gear in every slot, per class — with where to get it.`],
     ['#/consumables', '🍖', 'Consumables', `Food, drink, potions and elixirs — what they restore and where to buy them.`],
@@ -789,6 +790,44 @@ async function cosmeticsView() {
   reveal();
 }
 
+let npcData = null;
+async function npcsView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">NPCs</span><h2>Who's who</h2>
+      <p>Every quest-giver and vendor — where to find them, what quests they offer, and what they sell.</p></div>
+    <div class="controls reveal"><input class="search" id="nsearch" placeholder="Search NPCs…"><div class="pills" id="nzones"></div></div>
+    <div class="grid g-3" id="ngrid"></div>
+  </div></section>`));
+  if (!npcData) {
+    try { npcData = await (await fetch(raw('npcs/npcs.json'))).json(); }
+    catch (e) { app.querySelector('#ngrid').innerHTML = `<div class="meta">Couldn't load NPCs (${esc(e.message)}).</div>`; return; }
+  }
+  const grid = app.querySelector('#ngrid'); let zone = 'all', term = '';
+  const zh = app.querySelector('#nzones');
+  [['all', 'All zones'], ...npcData.zones.map(z => [z, z])].forEach(([id, label], i) => {
+    const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`);
+    p.onclick = () => { zone = id; zh.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+    zh.append(p);
+  });
+  app.querySelector('#nsearch').oninput = e => { term = e.target.value.toLowerCase(); draw(); };
+  function draw() {
+    grid.innerHTML = '';
+    npcData.npcs.filter(n => zone === 'all' || n.zone === zone).filter(n => !term || n.name.toLowerCase().includes(term) || (n.title || '').toLowerCase().includes(term)).forEach(n => {
+      const quests = n.quests.length ? `<div class="npcquests"><span class="npclbl">Quests</span>${n.quests.map(q => `<a href="#/doc/${encodeURIComponent(q.file)}">${esc(q.name)}</a>`).join('')}</div>` : '';
+      const vend = n.market ? `<div class="npcvend"><span class="npclbl">Sells</span> the World Market (auction house)</div>` : (n.vendorItems.length ? `<div class="npcvend"><span class="npclbl">Sells</span> ${n.vendorItems.slice(0, 6).map(esc).join(', ')}${n.vendorItems.length > 6 ? `, +${n.vendorItems.length - 6} more` : ''}</div>` : '');
+      grid.append(el(`<div class="card npccard">
+        <div class="npchead"><img class="npcimg" src="${raw(n.render)}" alt="" loading="lazy">
+          <div><h3>${esc(n.name)}</h3><div class="meta">${esc(n.title)}</div>
+            <div class="npcloc">${esc(n.zone)} · ~x:${n.pos.x}, z:${n.pos.z}</div></div></div>
+        ${n.greeting ? `<div class="npcgreet">“${esc(n.greeting)}”</div>` : ''}
+        ${quests}${vend}</div>`));
+    });
+    if (!grid.children.length) grid.append(el('<div class="meta">No NPCs match.</div>'));
+  }
+  draw(); reveal();
+}
+
 function simpleListView(title, eyebrow, blurb, items) {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
@@ -909,6 +948,7 @@ function router() {
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();
   if (head === 'bestiary') return zonesView();
+  if (head === 'npcs') return npcsView();
   if (head === 'gear') return gearView();
   if (head === 'bis') return bisView();
   if (head === 'consumables') return consumablesView();

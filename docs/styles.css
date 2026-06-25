@@ -257,6 +257,18 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .chromaswatch { height: 54px; border-radius: 10px; margin-bottom: 10px; opacity: .85; }
 .chromaimg { width: 100%; max-width: 150px; aspect-ratio: 1; object-fit: contain; border: 2px solid; border-radius: 12px; background: rgba(0,0,0,.25); margin-bottom: 8px; }
 
+/* npc cards */
+.npccard { cursor: default; }
+.npchead { display: flex; gap: 13px; align-items: flex-start; }
+.npcimg { width: 64px; height: 64px; flex: none; object-fit: contain; border-radius: 10px; background: rgba(0,0,0,.25); border: 1px solid var(--line); }
+.npccard h3 { margin: 0; font-size: 16px; }
+.npcloc { color: var(--muted-2); font-size: 12px; margin-top: 3px; }
+.npcgreet { color: var(--muted); font-style: italic; font-size: 13.5px; margin: 12px 0; }
+.npcquests, .npcvend { font-size: 13px; margin-top: 8px; }
+.npclbl { display: inline-block; font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--gold); margin-right: 6px; }
+.npcquests a { display: inline-block; color: var(--gold); border-bottom: 1px solid rgba(230,187,106,.25); margin-right: 10px; }
+.npcvend { color: var(--muted); }
+
 /* gear cards */
 .gearcard { cursor: default; }
 .gearhead { display: flex; gap: 13px; align-items: center; }
