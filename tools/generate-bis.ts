@@ -109,19 +109,29 @@ function hasPrimary(item: any, prim: string[]): boolean {
   return prim.some(k => (s[k] || 0) > 0);
 }
 
-const classes = GUIDE_CLASSES.map((c: any) => {
-  const w = WEIGHTS[c.id] || WEIGHTS.warrior;
-  const prim = PRIMARY[c.id] || ['str'];
-  const slots = SLOTS.map(slot => {
-    let pool = (slot === 'mainhand' ? weapons : (armorBySlot[slot] || [])).filter(i => canEquipItem(c.id, i));
+// per-role stat weighting — a tank wants stamina/armor, a healer int/spirit,
+// a dps its offensive primary. dps reuses the tuned per-class weights.
+function roleWeights(id: string, role: string): W {
+  const prim = PRIMARY[id] || ['str'];
+  if (role === 'tank') return { sta: 3, armor: 0.6, str: prim.includes('str') ? 1.6 : 0.5, agi: prim.includes('agi') ? 1.6 : 0.5, int: prim.includes('int') ? 0.8 : 0.2, dps: 1.3 };
+  if (role === 'healer') return { int: 2.2, spi: 2, sta: 1, armor: 0.02, dps: 0.1 };
+  return WEIGHTS[id] || WEIGHTS.warrior; // dps
+}
+function rolePrim(id: string, role: string): string[] {
+  const prim = PRIMARY[id] || ['str'];
+  if (role === 'tank') return ['sta', ...prim.filter(p => p === 'str' || p === 'agi')];
+  if (role === 'healer') return ['int', 'spi'];
+  return prim;
+}
+
+function buildSlots(classId: string, w: W, prim: string[]) {
+  return SLOTS.map(slot => {
+    const pool = (slot === 'mainhand' ? weapons : (armorBySlot[slot] || [])).filter(i => canEquipItem(classId, i));
     if (!pool.length) return null;
-    // keep the pick on-class: prefer items carrying a primary stat when any exist.
-    // (Melee weapons are dps-led, so only casters filter weapons by int.)
     const filterByStat = slot !== 'mainhand' || isCaster(w);
     const scored = pool.map(i => ({ i, s: score(i, w), lvl: availLevel(i.id) })).sort((a, b) => b.s - a.s);
-    // BiS progression as level rises: the best item you can actually obtain by
-    // each level — prefer the class's primary stat, but fall back to the best
-    // wearable piece so early levels are never empty.
+    // BiS progression as level rises: best item obtainable by each level —
+    // prefer the build's primary stats, but fall back so slots are never empty.
     const progression: any[] = []; let prevId: string | null = null;
     for (let L = 1; L <= MAX_LEVEL; L++) {
       const avail = scored.filter(x => x.lvl <= L);
@@ -134,7 +144,21 @@ const classes = GUIDE_CLASSES.map((c: any) => {
     if (!progression.length) return null;
     return { slot, slotLabel: SLOT_LABEL[slot], item: progression[progression.length - 1].item, progression };
   }).filter(Boolean);
-  return { id: c.id, name: c.id[0].toUpperCase() + c.id.slice(1), render: `classes/_class-renders/${c.id}.png`, roles: c.roles || [], slots };
+}
+
+const ROLE_LABEL: Record<string, string> = { dps: 'DPS', tank: 'Tank', healer: 'Healer' };
+const classes = GUIDE_CLASSES.map((c: any) => {
+  const specs: any[] = c.specs || [];
+  // one build per distinct role the class has, labelled with the specs that share it
+  const roles = [...new Set(specs.map(s => s.role))];
+  const builds = (roles.length ? roles : ['dps']).map(role => {
+    const names = specs.filter(s => s.role === role).map(s => s.name);
+    return {
+      role, label: ROLE_LABEL[role] || role, specs: names,
+      slots: buildSlots(c.id, roleWeights(c.id, role), rolePrim(c.id, role)),
+    };
+  });
+  return { id: c.id, name: c.id[0].toUpperCase() + c.id.slice(1), render: `classes/_class-renders/${c.id}.png`, roles: c.roles || [], builds };
 });
 
 fs.mkdirSync(OUT.replace(/[/\\][^/\\]+$/, '') || '.', { recursive: true });

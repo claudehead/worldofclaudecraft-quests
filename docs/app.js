@@ -644,6 +644,7 @@ async function bisView() {
     <div class="shead reveal"><span class="eyebrow">Best in slot</span><h2>Best gear per class</h2>
       <p>The strongest item for each slot your class can get by a given level, picked by a stat-weight model (primary stats first, then armor, weapon DPS, rarity). A guide, not gospel — spec and playstyle shift the edges.</p></div>
     <div class="controls reveal"><div class="pills" id="bisclasses"></div></div>
+    <div class="controls reveal" style="margin-top:-4px"><div class="pills" id="bisbuilds"></div></div>
     <div class="controls reveal" style="margin-top:-4px"><div class="pills" id="biszones"></div></div>
     <div id="bisbody"></div>
   </div></section>`));
@@ -651,13 +652,25 @@ async function bisView() {
     try { bisData = await (await fetch(raw('gear/bis.json'))).json(); }
     catch (e) { app.querySelector('#bisbody').innerHTML = `<div class="meta">Couldn't load BiS (${esc(e.message)}).</div>`; return; }
   }
-  const pillHost = app.querySelector('#bisclasses'), body = app.querySelector('#bisbody'), zoneHost = app.querySelector('#biszones');
+  const pillHost = app.querySelector('#bisclasses'), body = app.querySelector('#bisbody'), zoneHost = app.querySelector('#biszones'), buildHost = app.querySelector('#bisbuilds');
   // gear-bearing zones, cumulative: best you can have by the END of each zone
   const brackets = M.zones.filter(z => z.key && z.key !== 'temple').map(z => ({ label: z.title, maxLevel: z.levelRange[1], range: z.levelRange }));
-  let active = bisData.classes[0].id, bi = brackets.length - 1; // default: through the last zone
+  let active = bisData.classes[0].id, bi = brackets.length - 1, bd = 0; // class / zone / build
+  // builds() and a build-pill row that rebuilds when the class changes
+  const builds = () => (bisData.classes.find(x => x.id === active).builds) || [];
+  function renderBuildPills() {
+    buildHost.innerHTML = ''; bd = 0;
+    const bl = builds();
+    buildHost.style.display = bl.length > 1 ? '' : 'none';
+    bl.forEach((b, i) => {
+      const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(b.label)}${b.specs && b.specs.length ? ` <span class="bisfromlvl">${esc(b.specs.join('/'))}</span>` : ''}</span>`);
+      p.onclick = () => { bd = i; buildHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+      buildHost.append(p);
+    });
+  }
   bisData.classes.forEach((c, i) => {
     const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(c.name)}</span>`);
-    p.onclick = () => { active = c.id; pillHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+    p.onclick = () => { active = c.id; pillHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); renderBuildPills(); draw(); };
     pillHost.append(p);
   });
   brackets.forEach((b, i) => {
@@ -675,13 +688,14 @@ async function bisView() {
   };
   function draw() {
     const c = bisData.classes.find(x => x.id === active);
+    const build = (c.builds || [])[bd] || c.builds[0];
     body.innerHTML = '';
     const head = el(`<div class="bishead reveal">
       <img src="${raw(c.render)}" alt="${esc(c.name)}" class="bisportrait">
-      <div><h3>${esc(c.name)}</h3><div class="meta">${esc((c.roles || []).join(' · '))} · best gear through ${esc(brackets[bi].label)}</div></div></div>`);
+      <div><h3>${esc(c.name)} — ${esc(build.label)}</h3><div class="meta">${esc((build.specs || []).join(' · '))} · best gear through ${esc(brackets[bi].label)}</div></div></div>`);
     body.append(head);
     const grid = el(`<div class="grid g-4"></div>`);
-    c.slots.forEach(s => {
+    build.slots.forEach(s => {
       const it = itemAt(s);
       if (!it) { grid.append(el(`<div class="card gearcard" style="opacity:.55"><div class="bisslot">${esc(s.slotLabel)}</div><div class="meta">No upgrade yet — quest/vendor gear.</div></div>`)); return; }
       const col = QUALITY_COLOR[it.quality] || '#ccc';
@@ -695,7 +709,7 @@ async function bisView() {
     body.append(grid);
     reveal(body);
   }
-  draw(); reveal(); applyPendingSearch();
+  renderBuildPills(); draw(); reveal(); applyPendingSearch();
 }
 
 let consData = null;
