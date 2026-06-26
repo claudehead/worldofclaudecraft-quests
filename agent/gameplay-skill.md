@@ -95,3 +95,10 @@ learnings under "Session log" with the date.
   - OR fragmented MP4 (playable even if killed): add `-movflags +frag_keyframe+empty_moov+default_base_moof`.
 - **Stop ffmpeg GRACEFULLY, never `pkill`/SIGKILL:** let `-t` expire, or send `q` to its stdin. If you must stop early, write `q` to the ffmpeg process stdin (run it with a stdin pipe) so it finalizes.
 - Recovery of a moov-less mp4 needs `untrunc` + a healthy reference file of identical settings — avoid needing it by using mkv.
+
+## Boss mechanics (from the user)
+### Nythraxis (raid boss — `q_nythraxis_scourges_end`, giver brother_aldric_raid)
+- **Pillars are the survival mechanic.** They take TIME to charge — there's a **limited time window** to use them.
+- **Watch Nythraxis's cast:** under his HP bar you can see him **charging a death attack**.
+- **Race to the pillars before that cast finishes.** If you're **too slow to the pillars, it's GG** (raid wipe / instant death).
+- Implication for an agent: track the boss's cast bar under the HP bar; the moment the death-attack charge starts, drop everything and get to a charged pillar within the window — DPS is secondary to the pillar timing.
