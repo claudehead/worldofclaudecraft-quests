@@ -45,6 +45,9 @@ $TSX $TOOLS/generate-dungeons.ts dungeons
 echo "==> raids & dungeons guide"
 $TSX $TOOLS/generate-raids-dungeons.ts reference/raids-and-dungeons.md
 
+echo "==> walkable 3D dungeon geometry"
+$TSX $TOOLS/generate-dungeon3d.ts docs/dungeon3d.json
+
 echo "==> lockpicking + delve companions guides"
 $TSX $TOOLS/generate-lockpicking.ts reference/lockpicking.md
 $TSX $TOOLS/generate-companions.ts reference/companions.md

@@ -1132,6 +1132,134 @@ async function docView(path, anchor) {
   }
 }
 
+// ---------- walkable 3D dungeon ----------
+let dungeon3dData = null;
+async function dungeon3dView(sel) {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">3D · walkable</span><h2>Explore a dungeon</h2>
+      <p>Walk the real instance layout in first person. <b>Click the scene</b> to look around, <b>WASD</b> / arrows to move, <b>Esc</b> to release the mouse. Markers are enemy spawns — gold is the boss.</p></div>
+    <div class="controls reveal"><div class="pills" id="d3dpick"></div></div>
+    <div class="d3dwrap" style="position:relative;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:#05060a">
+      <canvas id="d3dcanvas" style="display:block;width:100%;height:70vh;touch-action:none"></canvas>
+      <div id="d3dhint" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:600 16px system-ui;color:#eee;background:rgba(0,0,0,.45);cursor:pointer;text-align:center">Click to enter · WASD to move · mouse to look · Esc to exit</div>
+      <div id="d3dlegend" class="meta" style="position:absolute;left:10px;bottom:8px;font-size:12px;color:#cfcfd6;text-shadow:0 1px 2px #000"></div>
+    </div>
+  </div></section>`));
+  if (!dungeon3dData) {
+    try { dungeon3dData = await (await fetch(cb(raw('docs/dungeon3d.json')))).json(); }
+    catch (e) { app.querySelector('#d3dhint').textContent = `Couldn't load dungeon (${esc(e.message)})`; return; }
+  }
+  const mods = await ensureThree();
+  const { PointerLockControls } = await import('three/addons/controls/PointerLockControls.js');
+  const { THREE } = mods;
+  const list = dungeon3dData.dungeons;
+  let current = list.find(d => d.id === sel) || list[0];
+  const pick = app.querySelector('#d3dpick');
+  list.forEach((d, i) => {
+    const p = el(`<span class="pill ${d.id === current.id ? 'active' : ''}">${esc(d.name)}</span>`);
+    p.onclick = () => { location.hash = `#/explore/${d.id}`; };
+    pick.append(p);
+  });
+
+  const canvas = app.querySelector('#d3dcanvas');
+  const hint = app.querySelector('#d3dhint');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x05060a);
+  scene.fog = new THREE.Fog(0x05060a, 30, 130);
+  const cam = new THREE.PerspectiveCamera(70, 1, 0.1, 400);
+  const controls = new PointerLockControls(cam, canvas);
+  scene.add(controls.getObject());
+
+  const INTERIOR_TINT = { crypt: 0x3a3f4a, sanctum: 0x4a4036, temple: 0x2f3a44, nythraxis: 0x402a3a };
+
+  function build(d) {
+    // clear previous content (keep camera rig)
+    for (let i = scene.children.length - 1; i >= 0; i--) { const c = scene.children[i]; if (c !== controls.getObject()) { scene.remove(c); } }
+    scene.add(new THREE.AmbientLight(0x8090a0, 0.7));
+    const dl = new THREE.DirectionalLight(0xfff2d8, 0.8); dl.position.set(10, 30, 5); scene.add(dl);
+    const f = d.floor, len = f.z1 - f.z0, wid = f.x1 - f.x0, cz = (f.z0 + f.z1) / 2;
+    const stone = (c) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.95 });
+    const tint = INTERIOR_TINT[d.interior] || 0x3a3f4a;
+    // floor
+    const floor = new THREE.Mesh(new THREE.BoxGeometry(wid + 2, 1, len), stone(tint));
+    floor.position.set((f.x0 + f.x1) / 2, -0.5, cz); scene.add(floor);
+    // ceiling (faint)
+    const ceil = new THREE.Mesh(new THREE.BoxGeometry(wid + 2, 0.5, len), stone(tint * 0 + 0x1a1d24));
+    ceil.position.set((f.x0 + f.x1) / 2, d.wall.height, cz); scene.add(ceil);
+    // side walls + end walls
+    const wallMat = stone(0x6b7079);
+    const mkWall = (w, h, dd, x, y, z) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, dd), wallMat); m.position.set(x, y, z); scene.add(m); };
+    mkWall(2, d.wall.height, len, d.wall.x, d.wall.height / 2, cz);
+    mkWall(2, d.wall.height, len, -d.wall.x, d.wall.height / 2, cz);
+    mkWall(wid + 6, d.wall.height, 2, 0, d.wall.height / 2, f.z0);
+    mkWall(wid + 6, d.wall.height, 2, 0, d.wall.height / 2, f.z1);
+    // entry pad (green) + exit portal (gold ring)
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(2, 2, 0.2, 24), new THREE.MeshStandardMaterial({ color: 0x4caf50, emissive: 0x1b5e20 }));
+    pad.position.set(d.entry.x, 0.1, d.entry.z); scene.add(pad);
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(2, 0.3, 12, 32), new THREE.MeshStandardMaterial({ color: 0xe6bb6a, emissive: 0x6a4a16 }));
+    ring.rotation.x = Math.PI / 2; ring.position.set(d.exit.x, 2, d.exit.z); scene.add(ring);
+    // spawn markers
+    const labelSprite = (text, color) => {
+      const cv = document.createElement('canvas'); cv.width = 256; cv.height = 64; const x = cv.getContext('2d');
+      x.fillStyle = 'rgba(0,0,0,.55)'; x.fillRect(0, 0, 256, 64); x.font = 'bold 26px system-ui'; x.fillStyle = color; x.textAlign = 'center'; x.fillText(text.slice(0, 18), 128, 42);
+      const tex = new THREE.CanvasTexture(cv); const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true })); sp.scale.set(8, 2, 1); return sp;
+    };
+    for (const s of d.spawns) {
+      const isBoss = s.rank === 'boss', isElite = s.rank === 'elite';
+      const col = isBoss ? 0xe6bb6a : isElite ? 0xe6803a : (parseInt((s.color || '#9aa').slice(1), 16) || 0x99aaaa);
+      const r = isBoss ? 1.6 : 0.8, h = (isBoss ? 4 : 2.2) * (s.scale || 1);
+      const body = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.6, r, h, 12), new THREE.MeshStandardMaterial({ color: col, emissive: isBoss ? 0x4a3410 : 0x000000, roughness: 0.6 }));
+      body.position.set(s.x, h / 2, s.z); scene.add(body);
+      if (isBoss || isElite) { const lab = labelSprite(s.name, isBoss ? '#ffd98a' : '#ffb27a'); lab.position.set(s.x, h + 1.6, s.z); scene.add(lab); }
+    }
+    // place camera at entry, eye height 3, looking down the corridor (+z)
+    controls.getObject().position.set(d.entry.x, 3, d.entry.z);
+    cam.lookAt(d.entry.x, 3, d.entry.z + 10);
+    const bosses = d.spawns.filter(s => s.rank === 'boss').map(s => s.name);
+    app.querySelector('#d3dlegend').innerHTML = `${esc(d.name)} · ${d.spawns.length} spawns${bosses.length ? ' · 🟡 Boss: ' + esc(bosses.join(', ')) : ''}`;
+  }
+  build(current);
+
+  // controls + movement
+  hint.onclick = () => controls.lock();
+  controls.addEventListener('lock', () => hint.style.display = 'none');
+  controls.addEventListener('unlock', () => hint.style.display = 'flex');
+  const keys = {};
+  const kd = e => { keys[e.code] = true; }, ku = e => { keys[e.code] = false; };
+  addEventListener('keydown', kd); addEventListener('keyup', ku);
+  function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
+  resize(); addEventListener('resize', resize);
+
+  let last = performance.now();
+  const fwd = new THREE.Vector3();
+  function loop(now) {
+    if (!document.body.contains(canvas)) { removeEventListener('keydown', kd); removeEventListener('keyup', ku); removeEventListener('resize', resize); renderer.dispose(); return; } // stop on navigate away
+    const dt = Math.min((now - last) / 1000, 0.05); last = now;
+    const speed = 14 * dt;
+    if (controls.isLocked) {
+      let mf = 0, ms = 0;
+      if (keys['KeyW'] || keys['ArrowUp']) mf += 1;
+      if (keys['KeyS'] || keys['ArrowDown']) mf -= 1;
+      if (keys['KeyD'] || keys['ArrowRight']) ms += 1;
+      if (keys['KeyA'] || keys['ArrowLeft']) ms -= 1;
+      if (mf) controls.moveForward(mf * speed);
+      if (ms) controls.moveRight(ms * speed);
+      // collision: clamp to walkable box
+      const p = controls.getObject().position, f = current.floor;
+      p.x = Math.max(f.x0 + 1, Math.min(f.x1 - 1, p.x));
+      p.z = Math.max(f.z0 + 1.5, Math.min(f.z1 - 1.5, p.z));
+      p.y = 3;
+    }
+    renderer.render(scene, cam);
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1148,6 +1276,7 @@ function router() {
   if (head === 'zones') return zonesView();
   if (head === 'npcs') return npcsView();
   if (head === 'assets') return assetsView();
+  if (head === 'explore') return dungeon3dView(parts[1]);
   if (head === 'gear') return gearView();
   if (head === 'bis') return bisView();
   if (head === 'consumables') return consumablesView();
