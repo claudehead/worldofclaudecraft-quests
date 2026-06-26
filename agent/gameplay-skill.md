@@ -87,3 +87,11 @@ learnings under "Session log" with the date.
   - ⚠️ **Retreat fails vs faster mobs** — directed retreat-to-hub still died (they out-run + burst < 40%, chase to hub). CC > running.
   - ✅ **Collect quests:** must stand ≤6yd on the corpse to loot (auto-loot range); kill at melee or `lootwalk` to the corpse. boar_hide = 60%/kill.
   - ✅ **Squishy-solo rule:** prefer single-pullable kill content (wolves) over swarmy high-value collect content (boars/bandits) until you have CC/escape or a level buffer.
+
+## ⚠️ Recording method (FIXED after sessions 06-08 corrupted)
+- **Problem:** plain `.mp4` via gdigrab writes the moov atom only on clean exit; hard-killing ffmpeg (`pkill`) mid-record → "moov atom not found" → unplayable. Lost sessions 06/07/08 this way.
+- **FIX — use a kill-safe container/flags:**
+  - Record to **`.mkv`** (Matroska is robust to interruption): `ffmpeg -f gdigrab -framerate 10 -i desktop -t 1200 -c:v libx264 -pix_fmt yuv420p out.mkv`
+  - OR fragmented MP4 (playable even if killed): add `-movflags +frag_keyframe+empty_moov+default_base_moof`.
+- **Stop ffmpeg GRACEFULLY, never `pkill`/SIGKILL:** let `-t` expire, or send `q` to its stdin. If you must stop early, write `q` to the ffmpeg process stdin (run it with a stdin pipe) so it finalizes.
+- Recovery of a moov-less mp4 needs `untrunc` + a healthy reference file of identical settings — avoid needing it by using mkv.
