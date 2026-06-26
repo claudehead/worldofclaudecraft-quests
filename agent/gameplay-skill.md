@@ -81,3 +81,9 @@ learnings under "Session log" with the date.
 
 ## Recording setup (user preference — do not violate)
 - **NEVER change window layout.** User runs a fixed split: **Claude on the right, game on the left.** Do NOT maximize/foreground/move the game window (no `SetForegroundWindow`/`ShowWindow`). Just start ffmpeg `gdigrab` full-screen capture and play — the layout is already correct.
+- **2026-06-26 (Opus session 08, 20-min — multi-quest/collect):** Built loot-capable harness (`joystick3.mjs`: auto-loot ≤6yd, `lootwalk`, per-NPC accept/turn-in). q_wolves deathless→lvl2, collect works (boar_hide 60%), but **boar camp = death trap (~5 deaths)**; pivoted to safe wolves → lvl3.
+  - 🔑 **USE CROWD-CONTROL TO SURVIVE.** Pure-DPS + back-pedal flee dies to swarms; a Mage must **Frost Nova (root) the meleeing mobs then run / Blink**. Harness only casts damage — adding Frost-Nova-on-melee is the top survivability fix.
+  - ⚠️ **Never pull camp centers** (6-mob packs swarm-burst). Single-pull from the edge, reset between.
+  - ⚠️ **Retreat fails vs faster mobs** — directed retreat-to-hub still died (they out-run + burst < 40%, chase to hub). CC > running.
+  - ✅ **Collect quests:** must stand ≤6yd on the corpse to loot (auto-loot range); kill at melee or `lootwalk` to the corpse. boar_hide = 60%/kill.
+  - ✅ **Squishy-solo rule:** prefer single-pullable kill content (wolves) over swarmy high-value collect content (boars/bandits) until you have CC/escape or a level buffer.

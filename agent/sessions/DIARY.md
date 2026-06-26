@@ -88,3 +88,19 @@ Videos are stored in `videos/` (gitignored — too large for git), named
 **Changed / TODO:**
 - **Harness gap found:** *collect* quests (q_boars, q_spiders) need a **loot-after-kill** step — `joystick2.mjs` only kills, doesn't loot corpses. Add a `loot` action (call `sim.interact()` on the fresh corpse) to unlock collect-quests.
 - Added the level-gate (`mob.lvl - myLvl < 2`) + flee@65% to the policy — fewer deaths when supervised.
+
+## Session 08 — 2026-06-26 — Opus — 20 min — multi-quest stacking + collect quests
+**Video:** `videos/2026-06-26_session-08_opus_20min-multiquest.mp4`
+**Goal:** Act on session-07 research — stack q_wolves + q_boars + q_spiders with the new loot-capable harness (`joystick3.mjs`) for faster leveling. (Recorded with the user's fixed layout untouched — no window changes.)
+**Result:** q_wolves deathless → lvl 2; **collect quest DID work** (boar_hide 60% drop, auto-loot credited 2/5 hides) — **but boars are a death trap** (~5 deaths). Pivoted to safe wolf farming → recovered → **level 3** (xp 502→863 deathless once safe).
+**Learned:**
+- ✅ **Looting works** — `lootCorpse`/auto-loot within 6yd credits collect items; boar_hide = 60% drop. Per-NPC accept/turn-in works (Wilkes/Lin, not just Redbrook).
+- ⚠️ **Swarming camps (6-mob boar/bandit packs) are lethal to a squishy solo Mage** — same pattern as session 06 bandits. Pulling at camp center aggros multiple → burst death.
+- ⚠️ **Retreat/flee fails vs swarms** — blind back-pedal runs *into* more mobs; even **directed retreat-to-hub fails** because mobs out-run me and burst me below ~40% before I escape (they even chase to the hub and finish me).
+- 🔑 **Biggest gap: I'm not using crowd-control.** A Mage has **Frost Nova (root)** and could Blink — the real survival tools. The harness only casts damage. **Root-and-run is how you survive a swarm; pure DPS + slow back-pedal is not.**
+- ⚠️ **Ranged + collect is awkward** — I kill at 16+yd but must stand ≤6yd on the corpse to loot; in a camp that walk is deadly.
+- ✅ **Safe path confirmed:** single-target wolf farming with retreat@70% = steady, near-deathless XP. For a low-level squishy solo, *single-pullable* content beats high-value swarmy content until I have CC/escape or more levels.
+**Changed (this session + TODO):**
+- Built `joystick3.mjs`: **auto-loot within 6yd**, **`lootwalk`** action, **per-NPC accept/turn-in** (`cmd.npc`), corpse count in obs. Loot gap from session 07 = closed.
+- **#1 TODO: add Frost Nova (and Blink) to the harness** — cast Frost Nova when ≥1 mob is in melee, then run. This is the missing survivability piece for camps.
+- **Pull discipline:** never path to camp *center*; pull singles from the edge and reset between.
