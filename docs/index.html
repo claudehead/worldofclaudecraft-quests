@@ -6,7 +6,7 @@
   <title>World of Claudecraft — Field Guide</title>
   <meta name="description" content="The complete field guide to World of Claudecraft — quests, bestiary, classes, dungeons and delves.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=31">
+  <link rel="stylesheet" href="styles.css?v=32">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -87,14 +87,27 @@
     A fan-made guide — not affiliated with the upstream project.
     <span id="visitcount" class="visitcount" hidden></span>
   </footer>
-  <!-- Privacy-friendly visitor analytics (GoatCounter — free, no cookies, GDPR-safe).
-       To ENABLE:
-         1. Make a free account at https://www.goatcounter.com/ → it creates <code>.goatcounter.com
-         2. In the site's Settings, tick "Allow viewing without login" to show the live counter below.
-         3. Set ANALYTICS_CODE to your <code> (just the subdomain, e.g. "claudehead").
-       Leave it "" to disable all tracking. Dashboard: https://<code>.goatcounter.com -->
+  <!-- Privacy-friendly visitor analytics — pick ONE (or neither). Both are free, cookieless, GDPR-safe.
+       Leave both blank to disable all tracking.
+
+       OPTION A — Cloudflare Web Analytics (accurate; stats in the Cloudflare dashboard only):
+         1. dash.cloudflare.com → Analytics & Logs → Web Analytics → Add a site (your Pages URL).
+         2. Copy the beacon "token" and set CF_BEACON_TOKEN below.
+         (No public counter, so the footer "visits" badge stays hidden with this option.)
+
+       OPTION B — GoatCounter (also shows a live count in the footer):
+         1. Free account at https://www.goatcounter.com/ → creates <code>.goatcounter.com
+         2. Settings → tick "Allow viewing without login" (enables the footer counter).
+         3. Set ANALYTICS_CODE to your <code> (e.g. "claudehead"). Dashboard: https://<code>.goatcounter.com -->
   <script>
-    window.ANALYTICS_CODE = ""; // "" = OFF.  e.g. "claudehead"
+    window.CF_BEACON_TOKEN = ""; // Cloudflare Web Analytics token ("" = off)
+    window.ANALYTICS_CODE = "";  // GoatCounter subdomain ("" = off), e.g. "claudehead"
+    if (window.CF_BEACON_TOKEN) {
+      const c = document.createElement('script');
+      c.defer = true; c.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      c.setAttribute('data-cf-beacon', JSON.stringify({ token: window.CF_BEACON_TOKEN, spa: true }));
+      document.head.appendChild(c);
+    }
     if (window.ANALYTICS_CODE) {
       window.goatcounter = { no_onload: true }; // app.js counts each SPA route instead
       const s = document.createElement('script');
@@ -103,7 +116,7 @@
       document.head.appendChild(s);
     }
   </script>
-  <script src="app.js?v=31"></script>
+  <script src="app.js?v=32"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});
