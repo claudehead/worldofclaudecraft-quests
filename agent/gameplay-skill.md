@@ -78,3 +78,6 @@ learnings under "Session log" with the date.
 - **RULE: fastest leveling = stack level-appropriate quests** (mob lvl ≤ myLvl+1) and kill in their overlap so each kill = kill-XP + quest progress (~2-3× effective). Never chase a high-XP quest whose mobs out-level you.
 - **Quest giver map:** hub (z≈6): Redbrook(wolves), Wilkes(boars/supplies), Lin(spiders), Brandt(murlocs), Odell(mine). North z≈304: Fenwick/Hale (prowlers, lvl7-8). Far north z≈664: Thessaly/Bree (stalkers, lvl13-14).
 - **HARNESS TODO:** add a `loot` action (interact with fresh corpse) — required for *collect* quests (q_boars, q_spiders); current harness only kills.
+
+## Recording setup (user preference — do not violate)
+- **NEVER change window layout.** User runs a fixed split: **Claude on the right, game on the left.** Do NOT maximize/foreground/move the game window (no `SetForegroundWindow`/`ShowWindow`). Just start ffmpeg `gdigrab` full-screen capture and play — the layout is already correct.
