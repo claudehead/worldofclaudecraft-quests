@@ -1134,16 +1134,19 @@ async function docView(path, anchor) {
 
 // ---------- walkable 3D dungeon ----------
 let dungeon3dData = null;
+const _d3dModels = {};
 async function dungeon3dView(sel) {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
     <div class="shead reveal"><span class="eyebrow">3D · walkable</span><h2>Explore a dungeon</h2>
-      <p>Walk the real instance layout in first person. <b>Click the scene</b> to look around, <b>WASD</b> / arrows to move, <b>Esc</b> to release the mouse. Markers are enemy spawns — gold is the boss.</p></div>
+      <p>Walk the real instance in first person. <b>Click the scene</b> to look, <b>WASD</b> / arrows to move, <b>Esc</b> to release. Models are the actual enemies (gold = boss). Press Esc, then <b>click a minimap dot</b> to open that page.</p></div>
     <div class="controls reveal"><div class="pills" id="d3dpick"></div></div>
     <div class="d3dwrap" style="position:relative;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:#05060a">
       <canvas id="d3dcanvas" style="display:block;width:100%;height:70vh;touch-action:none"></canvas>
       <div id="d3dhint" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:600 16px system-ui;color:#eee;background:rgba(0,0,0,.45);cursor:pointer;text-align:center">Click to enter · WASD to move · mouse to look · Esc to exit</div>
-      <div id="d3dlegend" class="meta" style="position:absolute;left:10px;bottom:8px;font-size:12px;color:#cfcfd6;text-shadow:0 1px 2px #000"></div>
+      <canvas id="d3dmap" width="170" height="230" title="Click a dot for its page" style="position:absolute;right:10px;top:10px;background:rgba(5,6,10,.72);border:1px solid #333;border-radius:8px;cursor:pointer"></canvas>
+      <div id="d3dhud" class="meta" style="position:absolute;left:10px;bottom:8px;font-size:12px;color:#cfcfd6;text-shadow:0 1px 2px #000"></div>
+      <div id="d3dload" style="position:absolute;left:10px;top:10px;font:600 12px system-ui;color:#e6bb6a;background:rgba(0,0,0,.5);padding:4px 8px;border-radius:6px">Loading models…</div>
     </div>
   </div></section>`));
   if (!dungeon3dData) {
@@ -1152,11 +1155,16 @@ async function dungeon3dView(sel) {
   }
   const mods = await ensureThree();
   const { PointerLockControls } = await import('three/addons/controls/PointerLockControls.js');
-  const { THREE } = mods;
+  const SkeletonUtils = await import('three/addons/utils/SkeletonUtils.js');
+  const { THREE, GLTFLoader, MeshoptDecoder } = mods;
+  const MODEL_BASE = `https://raw.githubusercontent.com/${dungeon3dData.modelRepo}/${dungeon3dData.modelRef}/public/`;
+  const loader = new GLTFLoader(); try { loader.setMeshoptDecoder(MeshoptDecoder); } catch (e) {}
+  const loadModel = (url) => _d3dModels[url] || (_d3dModels[url] = loader.loadAsync(MODEL_BASE + url).then(g => g.scene).catch(() => null));
+
   const list = dungeon3dData.dungeons;
   let current = list.find(d => d.id === sel) || list[0];
   const pick = app.querySelector('#d3dpick');
-  list.forEach((d, i) => {
+  list.forEach((d) => {
     const p = el(`<span class="pill ${d.id === current.id ? 'active' : ''}">${esc(d.name)}</span>`);
     p.onclick = () => { location.hash = `#/explore/${d.id}`; };
     pick.append(p);
@@ -1168,60 +1176,89 @@ async function dungeon3dView(sel) {
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x05060a);
-  scene.fog = new THREE.Fog(0x05060a, 30, 130);
-  const cam = new THREE.PerspectiveCamera(70, 1, 0.1, 400);
+  scene.fog = new THREE.Fog(0x05060a, 30, 140);
+  const cam = new THREE.PerspectiveCamera(70, 1, 0.1, 500);
   const controls = new PointerLockControls(cam, canvas);
   scene.add(controls.getObject());
-
   const INTERIOR_TINT = { crypt: 0x3a3f4a, sanctum: 0x4a4036, temple: 0x2f3a44, nythraxis: 0x402a3a };
+  const stone = (c) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.95 });
+  const labelSprite = (text, color) => {
+    const cv = document.createElement('canvas'); cv.width = 256; cv.height = 64; const x = cv.getContext('2d');
+    x.fillStyle = 'rgba(0,0,0,.55)'; x.fillRect(0, 0, 256, 64); x.font = 'bold 26px system-ui'; x.fillStyle = color; x.textAlign = 'center'; x.fillText(text.slice(0, 18), 128, 42);
+    return new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), transparent: true }));
+  };
 
-  function build(d) {
-    // clear previous content (keep camera rig)
-    for (let i = scene.children.length - 1; i >= 0; i--) { const c = scene.children[i]; if (c !== controls.getObject()) { scene.remove(c); } }
-    scene.add(new THREE.AmbientLight(0x8090a0, 0.7));
-    const dl = new THREE.DirectionalLight(0xfff2d8, 0.8); dl.position.set(10, 30, 5); scene.add(dl);
-    const f = d.floor, len = f.z1 - f.z0, wid = f.x1 - f.x0, cz = (f.z0 + f.z1) / 2;
-    const stone = (c) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.95 });
+  async function build(d) {
+    scene.add(new THREE.AmbientLight(0x8090a0, 0.8));
+    const dl = new THREE.DirectionalLight(0xfff2d8, 0.8); dl.position.set(10, 40, 5); scene.add(dl);
+    const f = d.floor, len = f.z1 - f.z0, wid = f.x1 - f.x0, cz = (f.z0 + f.z1) / 2, cxw = (f.x0 + f.x1) / 2;
     const tint = INTERIOR_TINT[d.interior] || 0x3a3f4a;
-    // floor
-    const floor = new THREE.Mesh(new THREE.BoxGeometry(wid + 2, 1, len), stone(tint));
-    floor.position.set((f.x0 + f.x1) / 2, -0.5, cz); scene.add(floor);
-    // ceiling (faint)
-    const ceil = new THREE.Mesh(new THREE.BoxGeometry(wid + 2, 0.5, len), stone(tint * 0 + 0x1a1d24));
-    ceil.position.set((f.x0 + f.x1) / 2, d.wall.height, cz); scene.add(ceil);
-    // side walls + end walls
+    const floor = new THREE.Mesh(new THREE.BoxGeometry(wid + 2, 1, len), stone(tint)); floor.position.set(cxw, -0.5, cz); scene.add(floor);
+    const ceil = new THREE.Mesh(new THREE.BoxGeometry(wid + 2, 0.5, len), stone(0x14161c)); ceil.position.set(cxw, d.wall.height, cz); scene.add(ceil);
     const wallMat = stone(0x6b7079);
     const mkWall = (w, h, dd, x, y, z) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, dd), wallMat); m.position.set(x, y, z); scene.add(m); };
     mkWall(2, d.wall.height, len, d.wall.x, d.wall.height / 2, cz);
     mkWall(2, d.wall.height, len, -d.wall.x, d.wall.height / 2, cz);
-    mkWall(wid + 6, d.wall.height, 2, 0, d.wall.height / 2, f.z0);
-    mkWall(wid + 6, d.wall.height, 2, 0, d.wall.height / 2, f.z1);
-    // entry pad (green) + exit portal (gold ring)
-    const pad = new THREE.Mesh(new THREE.CylinderGeometry(2, 2, 0.2, 24), new THREE.MeshStandardMaterial({ color: 0x4caf50, emissive: 0x1b5e20 }));
-    pad.position.set(d.entry.x, 0.1, d.entry.z); scene.add(pad);
-    const ring = new THREE.Mesh(new THREE.TorusGeometry(2, 0.3, 12, 32), new THREE.MeshStandardMaterial({ color: 0xe6bb6a, emissive: 0x6a4a16 }));
-    ring.rotation.x = Math.PI / 2; ring.position.set(d.exit.x, 2, d.exit.z); scene.add(ring);
-    // spawn markers
-    const labelSprite = (text, color) => {
-      const cv = document.createElement('canvas'); cv.width = 256; cv.height = 64; const x = cv.getContext('2d');
-      x.fillStyle = 'rgba(0,0,0,.55)'; x.fillRect(0, 0, 256, 64); x.font = 'bold 26px system-ui'; x.fillStyle = color; x.textAlign = 'center'; x.fillText(text.slice(0, 18), 128, 42);
-      const tex = new THREE.CanvasTexture(cv); const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true })); sp.scale.set(8, 2, 1); return sp;
-    };
-    for (const s of d.spawns) {
-      const isBoss = s.rank === 'boss', isElite = s.rank === 'elite';
-      const col = isBoss ? 0xe6bb6a : isElite ? 0xe6803a : (parseInt((s.color || '#9aa').slice(1), 16) || 0x99aaaa);
-      const r = isBoss ? 1.6 : 0.8, h = (isBoss ? 4 : 2.2) * (s.scale || 1);
-      const body = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.6, r, h, 12), new THREE.MeshStandardMaterial({ color: col, emissive: isBoss ? 0x4a3410 : 0x000000, roughness: 0.6 }));
-      body.position.set(s.x, h / 2, s.z); scene.add(body);
-      if (isBoss || isElite) { const lab = labelSprite(s.name, isBoss ? '#ffd98a' : '#ffb27a'); lab.position.set(s.x, h + 1.6, s.z); scene.add(lab); }
-    }
-    // place camera at entry, eye height 3, looking down the corridor (+z)
+    mkWall(wid + 6, d.wall.height, 2, cxw, d.wall.height / 2, f.z0);
+    mkWall(wid + 6, d.wall.height, 2, cxw, d.wall.height / 2, f.z1);
+    // interior props
+    const pr = d.props || {};
+    const pillarMat = stone(0x52565d), tombMat = stone(0x5a5f66);
+    for (const p of (pr.pillars || [])) { const c = new THREE.Mesh(new THREE.CylinderGeometry((pr.pillarR || 1) * 1.4, (pr.pillarR || 1) * 1.6, d.wall.height, 12), pillarMat); c.position.set(p.x, d.wall.height / 2, p.z); scene.add(c); }
+    for (const t of (pr.tombs || [])) { const b = new THREE.Mesh(new THREE.BoxGeometry((pr.tombHW || 1.1) * 2, 1.6, (pr.tombHD || 2.1) * 2), tombMat); b.position.set(t.x, 0.8, t.z); scene.add(b); }
+    if (pr.dais) { const da = new THREE.Mesh(new THREE.CylinderGeometry(pr.dais.r, pr.dais.r + 0.5, 1, 32), new THREE.MeshStandardMaterial({ color: 0x3a2f44, emissive: 0x140d1c, roughness: 0.9 })); da.position.set(pr.dais.x, 0.5, pr.dais.z); scene.add(da); }
+    // entry pad + exit ring
+    const pad = new THREE.Mesh(new THREE.CylinderGeometry(2, 2, 0.2, 24), new THREE.MeshStandardMaterial({ color: 0x4caf50, emissive: 0x1b5e20 })); pad.position.set(d.entry.x, 0.1, d.entry.z); scene.add(pad);
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(2, 0.3, 12, 32), new THREE.MeshStandardMaterial({ color: 0xe6bb6a, emissive: 0x6a4a16 })); ring.rotation.x = Math.PI / 2; ring.position.set(d.exit.x, 2, d.exit.z); scene.add(ring);
+    // camera at entry
     controls.getObject().position.set(d.entry.x, 3, d.entry.z);
     cam.lookAt(d.entry.x, 3, d.entry.z + 10);
-    const bosses = d.spawns.filter(s => s.rank === 'boss').map(s => s.name);
-    app.querySelector('#d3dlegend').innerHTML = `${esc(d.name)} · ${d.spawns.length} spawns${bosses.length ? ' · 🟡 Boss: ' + esc(bosses.join(', ')) : ''}`;
+    // spawns: real models (fallback marker)
+    for (const s of d.spawns) {
+      let placed = false;
+      if (s.model && s.model.glb) {
+        const tmpl = await loadModel(s.model.glb);
+        if (tmpl) {
+          const obj = SkeletonUtils.clone(tmpl);
+          const tcol = s.model.tint ? new THREE.Color(s.model.tint) : null, ts = s.model.tintStrength || 0;
+          obj.traverse(o => { if (o.isMesh && o.material) { o.material = Array.isArray(o.material) ? o.material.map(m => m.clone()) : o.material.clone(); const ms = Array.isArray(o.material) ? o.material : [o.material]; ms.forEach(m => { if (tcol && m.color) m.color.lerp(tcol, ts); }); } });
+          let box = new THREE.Box3().setFromObject(obj); const bh = (box.max.y - box.min.y) || 1;
+          obj.scale.setScalar(((s.model.height || 2.2) * (s.scale || 1)) / bh);
+          box = new THREE.Box3().setFromObject(obj); obj.position.set(s.x, -box.min.y, s.z); obj.rotation.y = Math.PI;
+          scene.add(obj); placed = true;
+        }
+      }
+      if (!placed) { const isB = s.rank === 'boss'; const h = (isB ? 4 : 2.2) * (s.scale || 1); const body = new THREE.Mesh(new THREE.CylinderGeometry(0.5, isB ? 1.4 : 0.8, h, 12), new THREE.MeshStandardMaterial({ color: isB ? 0xe6bb6a : 0x99aaaa, emissive: isB ? 0x4a3410 : 0 })); body.position.set(s.x, h / 2, s.z); scene.add(body); }
+      if (s.rank === 'boss' || s.rank === 'elite') { const lab = labelSprite(s.name, s.rank === 'boss' ? '#ffd98a' : '#ffb27a'); lab.scale.set(8, 2, 1); lab.position.set(s.x, ((s.model && s.model.height) || 3) * (s.scale || 1) + 1.6, s.z); scene.add(lab); }
+    }
+    app.querySelector('#d3dload').style.display = 'none';
   }
-  build(current);
+  await build(current);
+
+  // minimap
+  const map = app.querySelector('#d3dmap'), mctx = map.getContext('2d');
+  let mapHits = [];
+  function drawMap() {
+    const f = current.floor, W = map.width, H = map.height, pad = 8;
+    const sx = (W - 2 * pad) / (f.x1 - f.x0), sz = (H - 2 * pad) / (f.z1 - f.z0);
+    const X = x => pad + (x - f.x0) * sx, Z = z => pad + (z - f.z0) * sz;
+    mctx.clearRect(0, 0, W, H);
+    mctx.fillStyle = 'rgba(255,255,255,.06)'; mctx.fillRect(pad, pad, W - 2 * pad, H - 2 * pad);
+    mctx.fillStyle = '#3a3d44'; (current.props.pillars || []).forEach(p => mctx.fillRect(X(p.x) - 1, Z(p.z) - 1, 2, 2));
+    mctx.fillStyle = '#4a4d54'; (current.props.tombs || []).forEach(p => mctx.fillRect(X(p.x) - 2, Z(p.z) - 2, 4, 4));
+    const dot = (x, z, c, r) => { mctx.fillStyle = c; mctx.beginPath(); mctx.arc(X(x), Z(z), r, 0, 7); mctx.fill(); };
+    dot(current.entry.x, current.entry.z, '#4caf50', 3); dot(current.exit.x, current.exit.z, '#e6bb6a', 3);
+    mapHits = [];
+    current.spawns.forEach(s => { const c = s.rank === 'boss' ? '#ffd98a' : s.rank === 'elite' ? '#ffb27a' : '#9aa'; const r = s.rank === 'boss' ? 4 : 2; dot(s.x, s.z, c, r); mapHits.push({ x: X(s.x), y: Z(s.z), r: r + 4, s }); });
+    const p = controls.getObject().position; const dir = new THREE.Vector3(); cam.getWorldDirection(dir);
+    mctx.strokeStyle = '#fff'; mctx.lineWidth = 1.5; mctx.beginPath(); mctx.moveTo(X(p.x), Z(p.z)); mctx.lineTo(X(p.x + dir.x * 8), Z(p.z + dir.z * 8)); mctx.stroke();
+    dot(p.x, p.z, '#fff', 3);
+  }
+  map.onclick = (e) => {
+    const r = map.getBoundingClientRect(); const mx = (e.clientX - r.left) * map.width / r.width, my = (e.clientY - r.top) * map.height / r.height;
+    const hit = mapHits.find(h => Math.hypot(h.x - mx, h.y - my) <= h.r);
+    if (hit) location.hash = `#/doc/${encodeURIComponent('dungeons/' + current.id + '.md')}`;
+  };
 
   // controls + movement
   hint.onclick = () => controls.lock();
@@ -1232,27 +1269,32 @@ async function dungeon3dView(sel) {
   addEventListener('keydown', kd); addEventListener('keyup', ku);
   function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
   resize(); addEventListener('resize', resize);
+  const hud = app.querySelector('#d3dhud');
+  const bossSpawn = current.spawns.find(s => s.rank === 'boss');
 
   let last = performance.now();
-  const fwd = new THREE.Vector3();
   function loop(now) {
-    if (!document.body.contains(canvas)) { removeEventListener('keydown', kd); removeEventListener('keyup', ku); removeEventListener('resize', resize); renderer.dispose(); return; } // stop on navigate away
+    if (!document.body.contains(canvas)) { removeEventListener('keydown', kd); removeEventListener('keyup', ku); removeEventListener('resize', resize); renderer.dispose(); return; }
     const dt = Math.min((now - last) / 1000, 0.05); last = now;
-    const speed = 14 * dt;
+    const speed = 16 * dt;
     if (controls.isLocked) {
-      let mf = 0, ms = 0;
-      if (keys['KeyW'] || keys['ArrowUp']) mf += 1;
-      if (keys['KeyS'] || keys['ArrowDown']) mf -= 1;
+      let mfwd = 0, ms = 0;
+      if (keys['KeyW'] || keys['ArrowUp']) mfwd += 1;
+      if (keys['KeyS'] || keys['ArrowDown']) mfwd -= 1;
       if (keys['KeyD'] || keys['ArrowRight']) ms += 1;
       if (keys['KeyA'] || keys['ArrowLeft']) ms -= 1;
-      if (mf) controls.moveForward(mf * speed);
+      if (mfwd) controls.moveForward(mfwd * speed);
       if (ms) controls.moveRight(ms * speed);
-      // collision: clamp to walkable box
       const p = controls.getObject().position, f = current.floor;
       p.x = Math.max(f.x0 + 1, Math.min(f.x1 - 1, p.x));
       p.z = Math.max(f.z0 + 1.5, Math.min(f.z1 - 1.5, p.z));
       p.y = 3;
     }
+    const p = controls.getObject().position;
+    let hudText = `${esc(current.name)} · ${current.spawns.length} spawns`;
+    if (bossSpawn) hudText += ` · 🟡 ${esc(bossSpawn.name)} ${Math.round(Math.hypot(p.x - bossSpawn.x, p.z - bossSpawn.z))}yd`;
+    hud.innerHTML = hudText;
+    drawMap();
     renderer.render(scene, cam);
     requestAnimationFrame(loop);
   }
