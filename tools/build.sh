@@ -102,6 +102,9 @@ $TSX $TOOLS/generate-search-index.ts docs/search.json
 echo "==> getting-started guide"
 $TSX $TOOLS/generate-getting-started.ts reference/getting-started.md
 
+echo "==> materials / quest items / drops"
+$TSX $TOOLS/generate-materials.ts reference/materials.md
+
 echo "==> fishing, PvP, tameable beasts, warlock demons (+ renders)"
 $TSX $TOOLS/generate-fishing.ts reference/fishing.md
 $TSX $TOOLS/generate-pvp.ts reference/pvp.md

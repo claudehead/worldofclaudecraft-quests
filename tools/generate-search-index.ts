@@ -52,7 +52,15 @@ for (const g of [
   ['Fishing', 'reference/fishing.md'], ['PvP — Ashen Coliseum', 'reference/pvp.md'],
   ['Combat maths', 'reference/combat.md'], ['Getting started', 'reference/getting-started.md'],
   ['Tameable beasts', 'reference/tameable-beasts.md'], ['Warlock demons', 'reference/warlock-demons.md'],
+  ['Drops & materials', 'reference/materials.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
+
+// quest items / tools / trade goods -> materials page (anchored)
+for (const i of Object.values(ITEMS) as any[]) {
+  if (!['quest', 'tool', 'junk'].includes(i.kind)) continue;
+  const t = i.kind === 'quest' ? 'Quest item' : i.kind === 'tool' ? 'Tool' : 'Trade good';
+  out.push({ t, n: i.name, k: `items:${i.id}`, go: docHash('reference/materials.md', `item-${i.id}`) });
+}
 
 // fish -> fishing page
 const fishIds = new Set<string>();

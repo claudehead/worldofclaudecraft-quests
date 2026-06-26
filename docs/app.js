@@ -94,6 +94,7 @@ function home() {
     ['#/doc/' + encodeURIComponent('reference/pvp.md'), '⚔️', 'PvP — Coliseum', `1v1, 2v2 and Fiesta arena, plus the mid-match power-ups.`],
     ['#/doc/' + encodeURIComponent('reference/tameable-beasts.md'), '🐾', 'Tameable beasts', `Every beast a Hunter can tame, by level and zone.`],
     ['#/doc/' + encodeURIComponent('reference/warlock-demons.md'), '😈', 'Warlock demons', `All 7 summonable demons, rendered, with stats and roles.`],
+    ['#/doc/' + encodeURIComponent('reference/materials.md'), '📦', 'Drops & materials', `Quest items, tools and trade goods — where they drop and what they're for.`],
     ['#/cosmetics', '🎨', 'Cosmetics', `Event skin tiers and the collectible Combat Mech chromas.`],
     ['#/patches', '📜', 'Patch notes', `What's new — official release notes for every game version.`],
   ];
