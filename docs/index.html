@@ -6,7 +6,7 @@
   <title>World of Claudecraft — Field Guide</title>
   <meta name="description" content="The complete field guide to World of Claudecraft — quests, bestiary, classes, dungeons and delves.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=25">
+  <link rel="stylesheet" href="styles.css?v=26">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,28 +23,53 @@
     <div class="navlinks" id="navlinks">
       <a class="link" data-go="#/doc/reference%2Fgetting-started.md">Start here</a>
       <a class="link" data-go="#/quests">Quests</a>
-      <a class="link" data-go="#/route">Route</a>
-      <a class="link" data-go="#/map">Map</a>
-      <a class="link" data-go="#/bestiary">Bestiary</a>
-      <a class="link" data-go="#/npcs">NPCs</a>
-      <a class="link" data-go="#/gear">Gear</a>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">World</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/map">Map</a>
+          <a class="link" data-go="#/route">Leveling route</a>
+          <a class="link" data-go="#/bestiary">Bestiary</a>
+          <a class="link" data-go="#/npcs">NPCs</a>
+          <a class="link" data-go="#/dungeons">Dungeons</a>
+          <a class="link" data-go="#/delves">Delves</a>
+        </div>
+      </div>
       <a class="link" data-go="#/bis">BiS</a>
-      <a class="link" data-go="#/consumables">Consumables</a>
-      <a class="link" data-go="#/doc/reference%2Fmaterials.md">Drops</a>
-      <a class="link" data-go="#/classes">Classes</a>
-      <a class="link" data-go="#/abilities">Abilities</a>
-      <a class="link" data-go="#/talents">Talents</a>
-      <a class="link" data-go="#/doc/reference%2Fcombat.md">Combat</a>
-      <a class="link" data-go="#/doc/reference%2Ffishing.md">Fishing</a>
-      <a class="link" data-go="#/doc/reference%2Fpvp.md">PvP</a>
-      <a class="link" data-go="#/dungeons">Dungeons</a>
-      <a class="link" data-go="#/delves">Delves</a>
-      <a class="link" data-go="#/doc/reference%2Ftameable-beasts.md">Beasts</a>
-      <a class="link" data-go="#/doc/reference%2Fwarlock-demons.md">Demons</a>
-      <a class="link" data-go="#/augments">Augments</a>
-      <a class="link" data-go="#/cosmetics">Cosmetics</a>
-      <a class="link" data-go="#/assets">3D Assets</a>
-      <a class="link" data-go="#/patches">Patches</a>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Items</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/gear">Gear</a>
+          <a class="link" data-go="#/consumables">Consumables</a>
+          <a class="link" data-go="#/doc/reference%2Fmaterials.md">Drops & materials</a>
+          <a class="link" data-go="#/augments">Augments</a>
+          <a class="link" data-go="#/cosmetics">Cosmetics</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Characters</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/classes">Classes</a>
+          <a class="link" data-go="#/abilities">Abilities</a>
+          <a class="link" data-go="#/talents">Talents</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Guides</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/doc/reference%2Fcombat.md">Combat maths</a>
+          <a class="link" data-go="#/doc/reference%2Ffishing.md">Fishing</a>
+          <a class="link" data-go="#/doc/reference%2Fpvp.md">PvP — Coliseum</a>
+          <a class="link" data-go="#/doc/reference%2Ftameable-beasts.md">Tameable beasts</a>
+          <a class="link" data-go="#/doc/reference%2Fwarlock-demons.md">Warlock demons</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">More</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/assets">3D Assets</a>
+          <a class="link" data-go="#/patches">Patch notes</a>
+        </div>
+      </div>
       <a class="link navsearch" id="navsearch" title="Search ( / )">🔍 <span class="navctl-label">Search</span></a>
       <span class="langwrap" title="Language">🌐 <select class="navlang" id="navlang" aria-label="Language"></select></span>
       <a class="link navtheme" id="navtheme" title="Toggle theme">🌙 <span class="navctl-label">Theme</span></a>
@@ -55,7 +80,7 @@
     Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
     A fan-made guide — not affiliated with the upstream project.
   </footer>
-  <script src="app.js?v=25"></script>
+  <script src="app.js?v=26"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});

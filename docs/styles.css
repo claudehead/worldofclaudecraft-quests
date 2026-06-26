@@ -84,6 +84,24 @@ nav a.link:hover, nav a.link.active { color: var(--text); }
 .navctl-label { display: none; }
 .navtoggle { display: none; background: none; border: none; color: var(--text); font-size: 22px; line-height: 1; cursor: pointer; padding: 6px; }
 
+/* grouped nav dropdowns (desktop: hover panels) */
+.navgroup { position: relative; }
+.navgroupbtn { background: none; border: 0; color: var(--muted); font: inherit; font-size: 13px; cursor: pointer; white-space: nowrap; padding: 0; transition: color .2s; }
+.navgroupbtn:hover { color: var(--text); }
+.navgroupbtn::after { content: " ▾"; opacity: .6; font-size: 10px; }
+.navdropdown {
+  position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%);
+  display: none; flex-direction: column; gap: 1px; min-width: 170px;
+  background: rgba(12,12,16,0.97); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid var(--line); border-radius: 12px; padding: 7px; z-index: 60;
+  box-shadow: 0 16px 40px rgba(0,0,0,.4);
+}
+:root[data-theme="light"] .navdropdown { background: rgba(255,255,255,0.98); }
+.navgroup:hover .navdropdown, .navgroup:focus-within .navdropdown { display: flex; }
+.navdropdown::before { content: ""; position: absolute; bottom: 100%; left: 0; right: 0; height: 12px; } /* hover bridge */
+.navdropdown .link { padding: 8px 12px; border-radius: 8px; }
+.navdropdown .link:hover, .navdropdown .link.active { background: var(--glass); color: var(--gold); }
+
 @media (max-width: 1040px) {
   .navtoggle { display: block; }
   .navlinks {
@@ -97,6 +115,12 @@ nav a.link:hover, nav a.link.active { color: var(--text); }
   nav.open .navlinks { display: flex; }
   .navlinks .link { font-size: 16px; padding: 13px 24px; }
   .navlinks .link.active { background: var(--glass-2); color: var(--gold); }
+  /* groups become labelled sections with their links listed below */
+  .navgroup { display: block; }
+  .navgroupbtn { display: block; width: 100%; text-align: left; padding: 14px 24px 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted-2); pointer-events: none; }
+  .navgroupbtn::after { content: ""; }
+  .navdropdown { position: static; transform: none; display: flex; min-width: 0; background: none; border: 0; border-radius: 0; padding: 0; box-shadow: none; }
+  .navdropdown .link { padding: 11px 24px 11px 36px; font-size: 15px; border-radius: 0; }
   .navctl-label { display: inline; }
   .langwrap { padding: 12px 24px; font-size: 15px; }
   .navlang { max-width: none; flex: 1; padding: 8px; font-size: 14px; }
