@@ -56,3 +56,9 @@ learnings under "Session log" with the date.
   - ✅ **Leash = free mana regen** (walk back refills mana, no idle downtime).
   - 📝 **Known wolf spawn cluster: ~(-5,35)** north of the hub. When the hub is farmed out and stuck at 7/8, `goto` there for the last kill instead of idling.
   - Sessions are now logged in `agent/sessions/DIARY.md` with labeled videos in `agent/sessions/videos/`.
+- **2026-06-26 (Opus session 06, 10-min — bandits lesson):** Pushed into q_bandits too early; died 4× for 3 kills.
+  - ⚠️ **HARD RULE: do not engage mobs with `level - myLevel >= 2`.** Vale Bandits (lvl 3-5) shred a lvl-2 Mage; flee-at-50% doesn't save you (they burst & chase faster than back-pedal — I died *while fleeing*).
+  - ⚠️ **Level-gate content:** grind even-level mobs (wolves) to ~lvl 4-5 before bandits.
+  - ⚠️ **Death-spiral avoidance:** respawn is far (~-12,-14) from the bandit camp (65,-65); after 2 deaths to the same content, ABANDON it and return to safe farming instead of re-trekking 92yd back in.
+  - ✅ **Long-distance `goto` nav confirmed** — strafe-unstuck handled the full 95yd hub→camp trek without stalling.
+  - 📍 **Vale Bandit camps: (65,-65) r24 (7 mobs), (90,-90) r16 (5 mobs).** Wolf hub: (4,6). Wolf spawn cluster: (-5,35).

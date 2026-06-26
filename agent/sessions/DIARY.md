@@ -53,3 +53,19 @@ Videos are stored in `videos/` (gitignored — too large for git), named
 - Policy v3 in the decision loop: `flee(<50% in combat) > turnin > leash(>40yd) > kill(≤35yd) > venture-to-spawn`.
 - Used the new `goto x,z` command (from `joystick2.mjs`) to reach a spawn — confirmed working.
 - Set up this **sessions folder + diary + labeled videos** and brought the game window to the foreground/maximized during capture so the recording is watchable.
+
+## Session 06 — 2026-06-26 — Opus — 10 min, bandits = hard lesson ⚠️
+**Video:** `videos/2026-06-26_session-06_opus_10min-bandits-lesson.mp4`
+**Goal:** Clear q_wolves (now routine), then push into new content — trek ~95yd to the Vale Bandit camp (65,-65) and attempt q_bandits (kill 10, lvl 3-5).
+**Result:** q_wolves done deathless again → lvl 2. Then **died 4× for only 3 bandit kills.** Bandits are far too strong for a solo lvl-2 Mage.
+**Learned:**
+- ✅ **Long-distance nav works** — strafe-unstuck carried me the full 95yd from hub→bandit camp without stalling. `goto x,z` is reliable now even over long, obstacle-strewn paths.
+- ⚠️ **Bandits (lvl 3-5) burst a lvl-2 Mage from ~67%→0% in ~2 ticks**, even at d5. The +1..+3 level gap is lethal.
+- ⚠️ **flee-at-50% FAILS vs higher-level mobs** — they out-DPS and out-run the back-pedal; I died *while fleeing* (67→39→10→0). Fleeing only works vs even-level mobs.
+- ⚠️ **Death spiral:** respawn is far from the camp (~(-12,-14)), so each death = a 92yd trek straight back into the same fight. Repeated deaths burned most of the session.
+- ✅ **Validated my own rule the hard way:** "target level ≤ my level +1." Bandits broke it and I paid for it.
+**Changed (playbook updates):**
+- **Hard rule added:** never engage a mob whose `level - myLevel >= 2`. Skip it.
+- **Level gate:** grind wolves to ~lvl 4-5 BEFORE attempting bandits.
+- **Flee earlier (≤65%) AND kite** for anything near my level; don't melee-range as a Mage ever.
+- **Avoid death spirals:** after 2 deaths to the same content, abandon it and go back to safe content rather than re-trekking in.
