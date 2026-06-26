@@ -1,0 +1,170 @@
+{
+  "class": "shaman",
+  "name": "Shaman",
+  "resource": "mana",
+  "ranged": false,
+  "rules": {
+    "meleeRange": 5,
+    "gcd": 1.5,
+    "perceptionRadius": 60
+  },
+  "abilities": [
+    {
+      "id": "lightning_bolt",
+      "name": "Lightning Bolt",
+      "learnLevel": 1,
+      "cost": 15,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 1.5,
+      "school": "nature",
+      "requiresTarget": true,
+      "desc": "Hurls a bolt of lightning for $d Nature damage."
+    },
+    {
+      "id": "rockbiter_weapon",
+      "name": "Rockbiter Weapon",
+      "learnLevel": 1,
+      "cost": 20,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Imbues your weapon with the fury of stone: each swing deals 5 additional damage for 5 min."
+    },
+    {
+      "id": "healing_wave",
+      "name": "Healing Wave",
+      "learnLevel": 1,
+      "cost": 25,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 1.5,
+      "school": "nature",
+      "requiresTarget": true,
+      "desc": "Heals a friendly target for $d."
+    },
+    {
+      "id": "earth_shock",
+      "name": "Earth Shock",
+      "learnLevel": 4,
+      "cost": 30,
+      "cooldown": 6,
+      "range": 20,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": true,
+      "desc": "Instantly shocks the target with concussive force for $d Nature damage."
+    },
+    {
+      "id": "lightning_shield",
+      "name": "Lightning Shield",
+      "learnLevel": 8,
+      "cost": 25,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Surrounds you with crackling lightning: melee attackers take 13 Nature damage."
+    },
+    {
+      "id": "flame_shock",
+      "name": "Flame Shock",
+      "learnLevel": 10,
+      "cost": 35,
+      "cooldown": 6,
+      "range": 20,
+      "castTime": 0,
+      "school": "fire",
+      "requiresTarget": true,
+      "desc": "Sears the target with fire for 25 damage plus $d over 12 sec."
+    },
+    {
+      "id": "flametongue_weapon",
+      "name": "Flametongue Weapon",
+      "learnLevel": 10,
+      "cost": 25,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "fire",
+      "requiresTarget": false,
+      "desc": "Imbues your weapon with elemental fire: each swing deals 8 additional Fire damage for 5 min."
+    },
+    {
+      "id": "frost_shock",
+      "name": "Frost Shock",
+      "learnLevel": 14,
+      "cost": 50,
+      "cooldown": 6,
+      "range": 20,
+      "castTime": 0,
+      "school": "frost",
+      "requiresTarget": true,
+      "desc": "Instantly shocks the target with frost for $d Frost damage and slows its movement by 50% for 8 sec."
+    },
+    {
+      "id": "frostbrand_weapon",
+      "name": "Frostbrand Weapon",
+      "learnLevel": 12,
+      "cost": 25,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "frost",
+      "requiresTarget": false,
+      "desc": "Imbues your weapon with biting frost: each swing deals 8 additional damage for 5 min."
+    },
+    {
+      "id": "ghost_wolf",
+      "name": "Ghost Wolf",
+      "learnLevel": 16,
+      "cost": 35,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 2,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Turns you into a Ghost Wolf, increasing movement speed by 40%. Cast again to return to normal form."
+    },
+    {
+      "id": "stormstrike",
+      "name": "Stormstrike",
+      "learnLevel": 20,
+      "cost": 40,
+      "cooldown": 12,
+      "range": 0,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "Channels the storm through your weapon, instantly striking for weapon damage plus $d."
+    }
+  ],
+  "rotation": [
+    "stormstrike",
+    "frost_shock",
+    "flame_shock",
+    "earth_shock",
+    "lightning_bolt"
+  ],
+  "utility": [
+    "rockbiter_weapon",
+    "healing_wave",
+    "lightning_shield",
+    "flametongue_weapon",
+    "frostbrand_weapon",
+    "ghost_wolf"
+  ],
+  "playbook": [
+    "You are playing a Shaman (mana-based, melee).",
+    "Goal: gain XP safely — kill mobs at or below your level, complete quests, stay alive.",
+    "SURVIVE: if HP < 25% and a mob is hitting you, flee or use a defensive; if safe and HP < 60%, eat/consume.",
+    "RESOURCE: if mana < 20% and out of combat, drink before pulling.",
+    "ENGAGE: pick the nearest hostile within range of your goal, close to 5 yards (face it), then attack.",
+    "ROTATE: cast the first ready ability in \"rotation\" each GCD (respect cost/cooldown/range/line-of-sight); auto-attack fills the gaps.",
+    "LOOT/QUEST: after a kill, loot the corpse; interact with quest objects/NPCs the objective needs.",
+    "Avoid pulling Elite/Rare mobs above your level, and don't pull more than you can handle."
+  ]
+}

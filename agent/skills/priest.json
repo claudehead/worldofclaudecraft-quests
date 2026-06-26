@@ -1,0 +1,157 @@
+{
+  "class": "priest",
+  "name": "Priest",
+  "resource": "mana",
+  "ranged": true,
+  "rules": {
+    "meleeRange": 5,
+    "gcd": 1.5,
+    "perceptionRadius": 60
+  },
+  "abilities": [
+    {
+      "id": "smite",
+      "name": "Smite",
+      "learnLevel": 1,
+      "cost": 20,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 2,
+      "school": "holy",
+      "requiresTarget": true,
+      "desc": "Smites the enemy for $d Holy damage."
+    },
+    {
+      "id": "lesser_heal",
+      "name": "Lesser Heal",
+      "learnLevel": 1,
+      "cost": 30,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 2,
+      "school": "holy",
+      "requiresTarget": true,
+      "desc": "Heals a friendly target for $d."
+    },
+    {
+      "id": "power_word_fortitude",
+      "name": "Power Word: Fortitude",
+      "learnLevel": 1,
+      "cost": 30,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 0,
+      "school": "holy",
+      "requiresTarget": true,
+      "desc": "Increases the target's Stamina by 3 for 30 min."
+    },
+    {
+      "id": "shadow_word_pain",
+      "name": "Shadow Word: Pain",
+      "learnLevel": 4,
+      "cost": 25,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 0,
+      "school": "shadow",
+      "requiresTarget": true,
+      "desc": "A word of darkness causes $d Shadow damage over 18 sec."
+    },
+    {
+      "id": "power_word_shield",
+      "name": "Power Word: Shield",
+      "learnLevel": 6,
+      "cost": 45,
+      "cooldown": 6,
+      "range": 30,
+      "castTime": 0,
+      "school": "holy",
+      "requiresTarget": true,
+      "desc": "Shields the target, absorbing 48 damage for 30 sec."
+    },
+    {
+      "id": "renew",
+      "name": "Renew",
+      "learnLevel": 8,
+      "cost": 30,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 0,
+      "school": "holy",
+      "requiresTarget": true,
+      "desc": "Heals the target for $d over 15 sec."
+    },
+    {
+      "id": "mind_blast",
+      "name": "Mind Blast",
+      "learnLevel": 10,
+      "cost": 50,
+      "cooldown": 8,
+      "range": 30,
+      "castTime": 1.5,
+      "school": "shadow",
+      "requiresTarget": true,
+      "desc": "Blasts the target's mind for $d Shadow damage."
+    },
+    {
+      "id": "heal",
+      "name": "Heal",
+      "learnLevel": 14,
+      "cost": 95,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 2.5,
+      "school": "holy",
+      "requiresTarget": true,
+      "desc": "A slow but powerful prayer that heals a friendly target for $d."
+    },
+    {
+      "id": "mind_flay",
+      "name": "Mind Flay",
+      "learnLevel": 16,
+      "cost": 45,
+      "cooldown": 0,
+      "range": 20,
+      "castTime": 0,
+      "school": "shadow",
+      "requiresTarget": true,
+      "desc": "Assaults the target's mind with Shadow energy, causing 12 damage each second for 3 sec."
+    },
+    {
+      "id": "flash_heal",
+      "name": "Flash Heal",
+      "learnLevel": 20,
+      "cost": 75,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 1.5,
+      "school": "holy",
+      "requiresTarget": true,
+      "desc": "A fast prayer that heals a friendly target for $d."
+    }
+  ],
+  "rotation": [
+    "mind_flay",
+    "power_word_fortitude",
+    "shadow_word_pain",
+    "mind_blast",
+    "smite"
+  ],
+  "utility": [
+    "lesser_heal",
+    "power_word_shield",
+    "renew",
+    "heal",
+    "flash_heal"
+  ],
+  "playbook": [
+    "You are playing a Priest (mana-based, ranged).",
+    "Goal: gain XP safely — kill mobs at or below your level, complete quests, stay alive.",
+    "SURVIVE: if HP < 25% and a mob is hitting you, flee or use a defensive; if safe and HP < 60%, eat/consume.",
+    "RESOURCE: if mana < 20% and out of combat, drink before pulling.",
+    "ENGAGE: pick the nearest hostile within range of your goal, close to ability range (face it), then attack.",
+    "ROTATE: cast the first ready ability in \"rotation\" each GCD (respect cost/cooldown/range/line-of-sight); auto-attack fills the gaps.",
+    "LOOT/QUEST: after a kill, loot the corpse; interact with quest objects/NPCs the objective needs.",
+    "Avoid pulling Elite/Rare mobs above your level, and don't pull more than you can handle."
+  ]
+}

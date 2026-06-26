@@ -111,6 +111,9 @@ $TSX $TOOLS/generate-materials.ts reference/materials.md
 echo "==> world market (economy)"
 $TSX $TOOLS/generate-economy.ts reference/world-market.md $WOC
 
+echo "==> agent skill packs (per class)"
+$TSX $TOOLS/generate-agent-skill.ts agent/skills
+
 echo "==> fishing, PvP, tameable beasts, warlock demons (+ renders)"
 $TSX $TOOLS/generate-fishing.ts reference/fishing.md
 $TSX $TOOLS/generate-pvp.ts reference/pvp.md

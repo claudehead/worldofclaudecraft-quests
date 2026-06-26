@@ -1,0 +1,209 @@
+{
+  "class": "hunter",
+  "name": "Hunter",
+  "resource": "mana",
+  "ranged": true,
+  "rules": {
+    "meleeRange": 5,
+    "gcd": 1.5,
+    "perceptionRadius": 60
+  },
+  "abilities": [
+    {
+      "id": "raptor_strike",
+      "name": "Raptor Strike",
+      "learnLevel": 1,
+      "cost": 15,
+      "cooldown": 6,
+      "range": 0,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "A strong melee attack that increases damage by 5. Activates on your next swing."
+    },
+    {
+      "id": "aspect_of_the_hawk",
+      "name": "Aspect of the Hawk",
+      "learnLevel": 4,
+      "cost": 20,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Take on the aspect of the hawk, increasing attack power by 20 for 30 min."
+    },
+    {
+      "id": "serpent_sting",
+      "name": "Serpent Sting",
+      "learnLevel": 4,
+      "cost": 15,
+      "cooldown": 0,
+      "range": 35,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": true,
+      "desc": "Stings the target, dealing $d Nature damage over 15 sec."
+    },
+    {
+      "id": "arcane_shot",
+      "name": "Arcane Shot",
+      "learnLevel": 6,
+      "cost": 25,
+      "cooldown": 6,
+      "range": 35,
+      "castTime": 0,
+      "school": "arcane",
+      "requiresTarget": true,
+      "desc": "An instant shot that deals $d Arcane damage."
+    },
+    {
+      "id": "concussive_shot",
+      "name": "Concussive Shot",
+      "learnLevel": 8,
+      "cost": 20,
+      "cooldown": 12,
+      "range": 35,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "Dazes the target, slowing movement by 50% for 4 sec."
+    },
+    {
+      "id": "mongoose_bite",
+      "name": "Mongoose Bite",
+      "learnLevel": 10,
+      "cost": 10,
+      "cooldown": 5,
+      "range": 0,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "Counterattack after the target dodges for weapon damage plus 12. Cannot be dodged."
+    },
+    {
+      "id": "wing_clip",
+      "name": "Wing Clip",
+      "learnLevel": 10,
+      "cost": 20,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "Inflicts a wound that slows the enemy by 40% for 10 sec."
+    },
+    {
+      "id": "tame_beast",
+      "name": "Tame Beast",
+      "learnLevel": 10,
+      "cost": 0,
+      "cooldown": 0,
+      "range": 20,
+      "castTime": 6,
+      "school": "nature",
+      "requiresTarget": true,
+      "desc": "Begins taming a beast to be your companion. It must be your level or lower and not an elite. Your pet follows you, attacks your enemies, and holds threat of its own. You may have one pet at a time."
+    },
+    {
+      "id": "dismiss_pet",
+      "name": "Dismiss Pet",
+      "learnLevel": 10,
+      "cost": 0,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Releases your pet back to the wild."
+    },
+    {
+      "id": "revive_pet",
+      "name": "Revive Pet",
+      "learnLevel": 10,
+      "cost": 45,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 3,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Revives your dead pet and returns it to your side."
+    },
+    {
+      "id": "aspect_of_the_monkey",
+      "name": "Aspect of the Monkey",
+      "learnLevel": 10,
+      "cost": 20,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Take on the aspect of the monkey, increasing your dodge chance by 8% for 30 min."
+    },
+    {
+      "id": "aspect_of_the_cheetah",
+      "name": "Aspect of the Cheetah",
+      "learnLevel": 14,
+      "cost": 20,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Take on the aspect of the cheetah, increasing movement speed by 30% for 30 min."
+    },
+    {
+      "id": "aimed_shot",
+      "name": "Aimed Shot",
+      "learnLevel": 16,
+      "cost": 50,
+      "cooldown": 6,
+      "range": 35,
+      "castTime": 3,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "A carefully aimed shot that deals $d damage."
+    },
+    {
+      "id": "rapid_fire",
+      "name": "Rapid Fire",
+      "learnLevel": 20,
+      "cost": 0,
+      "cooldown": 300,
+      "range": 0,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": false,
+      "desc": "Increases your attack speed by 40% for 15 sec."
+    }
+  ],
+  "rotation": [
+    "concussive_shot",
+    "arcane_shot",
+    "raptor_strike",
+    "mongoose_bite",
+    "wing_clip",
+    "serpent_sting",
+    "aimed_shot",
+    "tame_beast"
+  ],
+  "utility": [
+    "aspect_of_the_hawk",
+    "dismiss_pet",
+    "revive_pet",
+    "aspect_of_the_monkey",
+    "aspect_of_the_cheetah",
+    "rapid_fire"
+  ],
+  "playbook": [
+    "You are playing a Hunter (mana-based, ranged).",
+    "Goal: gain XP safely — kill mobs at or below your level, complete quests, stay alive.",
+    "SURVIVE: if HP < 25% and a mob is hitting you, flee or use a defensive; if safe and HP < 60%, eat/consume.",
+    "RESOURCE: if mana < 20% and out of combat, drink before pulling.",
+    "ENGAGE: pick the nearest hostile within range of your goal, close to ability range (face it), then attack.",
+    "ROTATE: cast the first ready ability in \"rotation\" each GCD (respect cost/cooldown/range/line-of-sight); auto-attack fills the gaps.",
+    "LOOT/QUEST: after a kill, loot the corpse; interact with quest objects/NPCs the objective needs.",
+    "Avoid pulling Elite/Rare mobs above your level, and don't pull more than you can handle."
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "class": "mage",
+  "name": "Mage",
+  "resource": "mana",
+  "ranged": true,
+  "rules": {
+    "meleeRange": 5,
+    "gcd": 1.5,
+    "perceptionRadius": 60
+  },
+  "abilities": [
+    {
+      "id": "fireball",
+      "name": "Fireball",
+      "learnLevel": 1,
+      "cost": 30,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 1.5,
+      "school": "fire",
+      "requiresTarget": true,
+      "desc": "Hurls a fiery ball that causes $d Fire damage plus additional damage over time."
+    },
+    {
+      "id": "frost_armor",
+      "name": "Frost Armor",
+      "learnLevel": 1,
+      "cost": 20,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "frost",
+      "requiresTarget": false,
+      "desc": "Encases you in frost, increasing armor by 30 for 30 min."
+    },
+    {
+      "id": "arcane_intellect",
+      "name": "Arcane Intellect",
+      "learnLevel": 1,
+      "cost": 25,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "arcane",
+      "requiresTarget": false,
+      "desc": "Increases Intellect by 2 for 30 min."
+    },
+    {
+      "id": "frostbolt",
+      "name": "Frostbolt",
+      "learnLevel": 4,
+      "cost": 25,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 1.5,
+      "school": "frost",
+      "requiresTarget": true,
+      "desc": "Launches a bolt of frost, causing $d Frost damage and slowing movement by 40%."
+    },
+    {
+      "id": "conjure_water",
+      "name": "Conjure Water",
+      "learnLevel": 4,
+      "cost": 40,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 3,
+      "school": "arcane",
+      "requiresTarget": false,
+      "desc": "Conjures 2 bottles of water, restoring mana when drunk. Higher ranks conjure purer water."
+    },
+    {
+      "id": "conjure_food",
+      "name": "Conjure Food",
+      "learnLevel": 6,
+      "cost": 45,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 3,
+      "school": "arcane",
+      "requiresTarget": false,
+      "desc": "Conjures 2 servings of bread, restoring health when eaten. Higher ranks conjure heartier fare."
+    },
+    {
+      "id": "fire_blast",
+      "name": "Fire Blast",
+      "learnLevel": 6,
+      "cost": 40,
+      "cooldown": 8,
+      "range": 20,
+      "castTime": 0,
+      "school": "fire",
+      "requiresTarget": true,
+      "desc": "Blasts the enemy for $d Fire damage. Instant."
+    },
+    {
+      "id": "arcane_missiles",
+      "name": "Arcane Missiles",
+      "learnLevel": 8,
+      "cost": 50,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 0,
+      "school": "arcane",
+      "requiresTarget": true,
+      "desc": "Launches Arcane Missiles at the enemy, causing 8 Arcane damage each second for 3 sec."
+    },
+    {
+      "id": "polymorph",
+      "name": "Polymorph",
+      "learnLevel": 8,
+      "cost": 50,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 1.5,
+      "school": "arcane",
+      "requiresTarget": true,
+      "desc": "Transforms the enemy into a sheep for up to 15 sec. The sheep wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only."
+    },
+    {
+      "id": "frost_nova",
+      "name": "Frost Nova",
+      "learnLevel": 10,
+      "cost": 35,
+      "cooldown": 22,
+      "range": 0,
+      "castTime": 0,
+      "school": "frost",
+      "requiresTarget": false,
+      "desc": "Freezes all nearby enemies in place for up to 8 sec, dealing $d Frost damage."
+    },
+    {
+      "id": "arcane_explosion",
+      "name": "Arcane Explosion",
+      "learnLevel": 14,
+      "cost": 60,
+      "cooldown": 0,
+      "range": 0,
+      "castTime": 0,
+      "school": "arcane",
+      "requiresTarget": false,
+      "desc": "A burst of Arcane energy hits all nearby enemies for $d Arcane damage."
+    },
+    {
+      "id": "scorch",
+      "name": "Scorch",
+      "learnLevel": 16,
+      "cost": 35,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 1.5,
+      "school": "fire",
+      "requiresTarget": true,
+      "desc": "Scorches the enemy for $d Fire damage. Quick to cast."
+    },
+    {
+      "id": "ice_barrier",
+      "name": "Ice Barrier",
+      "learnLevel": 20,
+      "cost": 90,
+      "cooldown": 30,
+      "range": 0,
+      "castTime": 0,
+      "school": "frost",
+      "requiresTarget": false,
+      "desc": "Shields you in ice, absorbing 130 damage for 60 sec."
+    },
+    {
+      "id": "pyroblast",
+      "name": "Pyroblast",
+      "learnLevel": 20,
+      "cost": 125,
+      "cooldown": 0,
+      "range": 30,
+      "castTime": 6,
+      "school": "fire",
+      "requiresTarget": true,
+      "desc": "Hurls an immense fiery boulder that causes $d Fire damage plus additional damage over time."
+    }
+  ],
+  "rotation": [
+    "fire_blast",
+    "arcane_missiles",
+    "scorch",
+    "fireball",
+    "frostbolt",
+    "pyroblast"
+  ],
+  "utility": [
+    "frost_armor",
+    "arcane_intellect",
+    "conjure_water",
+    "conjure_food",
+    "polymorph",
+    "frost_nova",
+    "arcane_explosion",
+    "ice_barrier"
+  ],
+  "playbook": [
+    "You are playing a Mage (mana-based, ranged).",
+    "Goal: gain XP safely — kill mobs at or below your level, complete quests, stay alive.",
+    "SURVIVE: if HP < 25% and a mob is hitting you, flee or use a defensive; if safe and HP < 60%, eat/consume.",
+    "RESOURCE: if mana < 20% and out of combat, drink before pulling.",
+    "ENGAGE: pick the nearest hostile within range of your goal, close to ability range (face it), then attack.",
+    "ROTATE: cast the first ready ability in \"rotation\" each GCD (respect cost/cooldown/range/line-of-sight); auto-attack fills the gaps.",
+    "LOOT/QUEST: after a kill, loot the corpse; interact with quest objects/NPCs the objective needs.",
+    "Avoid pulling Elite/Rare mobs above your level, and don't pull more than you can handle."
+  ]
+}
