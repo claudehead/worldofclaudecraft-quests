@@ -55,6 +55,8 @@ for (const g of [
   ['Drops & materials', 'reference/materials.md'], ['World Market', 'reference/world-market.md'],
   ['Rules & conduct', 'reference/rules.md'],
   ['Raids & dungeons', 'reference/raids-and-dungeons.md'],
+  ["Lockpicking — Tumbler's Path", 'reference/lockpicking.md'],
+  ['Delve companions', 'reference/companions.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
 
 // quest items / tools / trade goods -> materials page (anchored)

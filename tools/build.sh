@@ -42,6 +42,10 @@ $TSX $TOOLS/generate-dungeons.ts dungeons
 echo "==> raids & dungeons guide"
 $TSX $TOOLS/generate-raids-dungeons.ts reference/raids-and-dungeons.md
 
+echo "==> lockpicking + delve companions guides"
+$TSX $TOOLS/generate-lockpicking.ts reference/lockpicking.md
+$TSX $TOOLS/generate-companions.ts reference/companions.md
+
 echo "==> class portraits + pages"
 $TSX $TOOLS/build-class-manifest.ts $TOOLS/class-models.json
 node $TOOLS/render-mobs.mjs $TOOLS/class-models.json $WOC/public classes/_class-renders
