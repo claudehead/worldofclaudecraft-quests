@@ -1,5 +1,7 @@
 # World of Claudecraft — Gameplay Skill (Claude's playbook)
 
+> ⛔ **HARD RULE — automation is OFFLINE/PRACTICE ONLY.** The game's terms forbid automation on a live account: every input must be MANUAL, only 1 account at a time (2 chars from one account is allowed, but only by hand). **Infractions can get the account BANNED.** This harness only ever drives the `localhost` offline build (`window.__game`, no login, no live server). NEVER point it at the online service or a real account. See memory: no-automation-on-live-account.
+
 Living notes Claude updates each session so it plays better next time. Append
 learnings under "Session log" with the date.
 
@@ -102,3 +104,8 @@ learnings under "Session log" with the date.
 - **Watch Nythraxis's cast:** under his HP bar you can see him **charging a death attack**.
 - **Race to the pillars before that cast finishes.** If you're **too slow to the pillars, it's GG** (raid wipe / instant death).
 - Implication for an agent: track the boss's cast bar under the HP bar; the moment the death-attack charge starts, drop everything and get to a charged pillar within the window — DPS is secondary to the pillar timing.
+- **2026-06-26 (Opus session 09, 10-min — MKV + CC):** First clean recording with the fixed method. q_wolves→lvl2, xp650, 2 deaths (both instructive).
+  - ✅ **MKV recording = no corruption.** Method permanently fixed.
+  - 🔑 **Retreat deadlock bug:** "go to hub" is a no-op once you're AT the hub, so a wolf that chased you kills you while you stand still. **FIX: when retreating but already near hub and still in combat, TURN AND KILL the (usually single) chaser with full mana — don't passively stand.**
+  - ⚠️ **Top off mana before the first pull** — Mage spawns at ~6 mana; no Fireball = melee = damage = death.
+  - ⚠️ **No CC at lvl 1-2** (Frost Nova/Ice Barrier learned later); harness casts them but they no-op until learned. Early survival is purely HP discipline + killing the chaser.
