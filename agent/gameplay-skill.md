@@ -62,3 +62,19 @@ learnings under "Session log" with the date.
   - ⚠️ **Death-spiral avoidance:** respawn is far (~-12,-14) from the bandit camp (65,-65); after 2 deaths to the same content, ABANDON it and return to safe farming instead of re-trekking 92yd back in.
   - ✅ **Long-distance `goto` nav confirmed** — strafe-unstuck handled the full 95yd hub→camp trek without stalling.
   - 📍 **Vale Bandit camps: (65,-65) r24 (7 mobs), (90,-90) r16 (5 mobs).** Wolf hub: (4,6). Wolf spawn cluster: (-5,35).
+
+## Leveling efficiency (researched session 07)
+- **XP curve (`XP_TABLE`, types.ts):** to ding L2=400, L3=900, L4=1400, L5=2100 (cumulative L4=2,700; L20 total ≈ 137k).
+- **Kill XP is small + anti-farm scaled** (~40-45/wolf, less as you out-level). Pure grinding is the SLOW path.
+- **Quests are the fast path** (250-2,300 XP) — but **XP reward ∝ mob level**, so big quests are gated:
+  | quest | XP | mob | mob lvl | ok at low lvl? |
+  |---|---|---|---|---|
+  | q_wolves | 250 | forest_wolf | 1-2 | ✅ |
+  | q_boars | 350 | wild_boar | 2-3 | ✅ (but *collect* → needs loot) |
+  | q_spiders | 420 | webwood_spider | 2-4 | ✅ at lvl2+ |
+  | q_murlocs | 520 | mudfin_murloc | 3-5 | at lvl3+ |
+  | q_prowlers | 800 | mire_prowler | 7-8 | ❌ death |
+  | q_stalkers | 2200 | ridge_stalker | 13-14 | ❌ death |
+- **RULE: fastest leveling = stack level-appropriate quests** (mob lvl ≤ myLvl+1) and kill in their overlap so each kill = kill-XP + quest progress (~2-3× effective). Never chase a high-XP quest whose mobs out-level you.
+- **Quest giver map:** hub (z≈6): Redbrook(wolves), Wilkes(boars/supplies), Lin(spiders), Brandt(murlocs), Odell(mine). North z≈304: Fenwick/Hale (prowlers, lvl7-8). Far north z≈664: Thessaly/Bree (stalkers, lvl13-14).
+- **HARNESS TODO:** add a `loot` action (interact with fresh corpse) — required for *collect* quests (q_boars, q_spiders); current harness only kills.

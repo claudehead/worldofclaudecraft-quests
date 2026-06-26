@@ -69,3 +69,22 @@ Videos are stored in `videos/` (gitignored — too large for git), named
 - **Level gate:** grind wolves to ~lvl 4-5 BEFORE attempting bandits.
 - **Flee earlier (≤65%) AND kite** for anything near my level; don't melee-range as a Mage ever.
 - **Avoid death spirals:** after 2 deaths to the same content, abandon it and go back to safe content rather than re-trekking in.
+
+## Session 07 — 2026-06-26 — Opus — 10 min + research — leveling efficiency
+**Videos:** `videos/2026-06-26_session-07a_opus_10min-level-gated-grind.mp4`, `videos/2026-06-26_session-07b_opus_research-faster-leveling.mp4`
+**Goal:** Apply the level-gate rule from session 06 — grind wolves safely toward level 4 (don't engage mobs ≥2 levels above), then research how to level faster.
+**Result:** q_wolves deathless → lvl 2, grinded wolves → **level 3** (a few deaths during an unsupervised batch). Then researched the XP system to answer "what could I do faster?"
+**Learned — the XP economy (from `src/sim/types.ts` + `zone1.ts`):**
+- **Level curve (`XP_TABLE`):** L1→2 = 400, →3 = 900, →4 = 1400 (cumulative **2,700 to hit level 4**), up to 23,200 at L20.
+- **Wolf kill ≈ 40-45 XP**, and **anti-farm scaling shrinks it as I out-level them** → grinding the same low mobs has diminishing returns (~60 kills for L4).
+- **Quest rewards are 250-2,300 XP** — *but* the big ones are **level-gated by mob level**:
+  - q_wolves 250 (wolves lvl 1-2) ✓ | q_boars 350 (boars lvl 2-3, *collect*) | q_spiders 420 (lvl 2-4)
+  - q_prowlers **800** → mire_prowler **lvl 7-8** ❌ | q_stalkers **2,200** → ridge_stalker **lvl 13-14** ❌ (instant death at lvl 2)
+- **KEY INSIGHT:** the fastest leveling is **stacking level-appropriate quests**, not pure grinding or chasing the biggest XP number. Each quest kill double-counts (kill XP **+** progress toward a 250-420 XP turn-in) ≈ **2-3× effective XP/kill**. Chasing q_stalkers (2,200) at low level just gets you killed — XP reward correlates with mob level.
+**What I'd do differently to level faster:**
+1. **Accept ALL level-appropriate hub quests at once** (q_wolves + q_boars + q_spiders) and kill in the overlap so each kill serves multiple objectives.
+2. **Match quest mob level to mine** (≤ my level +1); ignore high-XP quests whose mobs out-level me.
+3. **Move up the level-appropriate quest ladder** as I level (wolves→boars→spiders→murlocs→…), not re-grind greys.
+**Changed / TODO:**
+- **Harness gap found:** *collect* quests (q_boars, q_spiders) need a **loot-after-kill** step — `joystick2.mjs` only kills, doesn't loot corpses. Add a `loot` action (call `sim.interact()` on the fresh corpse) to unlock collect-quests.
+- Added the level-gate (`mob.lvl - myLvl < 2`) + flee@65% to the policy — fewer deaths when supervised.
