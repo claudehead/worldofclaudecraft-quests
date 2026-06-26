@@ -34,11 +34,12 @@ Press **`Enter`** to open chat, type, and press **`Enter`** to send. Prefix the 
 | `/y message` (or `/yell`) | **Yell** — the whole area |
 | `/w name message` (or `/tell`) | **Whisper** one player privately |
 | `/p message` (or `/party`) | **Party** chat |
-| `/g message` (or `/general`) | **General** — the zone-wide channel |
+| `/g message` | **Guild** chat |
+| `/general message` | **General** — the zone-wide channel |
 | `/world message` | **World** channel |
 | `/lfg message` | **Looking-for-group** channel |
 
-> Heads-up: **`/g` is the General channel here, not guild.** Guild is a social tab (friends/guild/ignore), but guild messages don't have their own slash-command.
+> Manage your guild and friends from the **Social** panel (friends / guild / ignore tabs).
 
 ## 5. Running slow? Fix lag
 
