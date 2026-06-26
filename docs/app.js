@@ -1306,6 +1306,7 @@ async function dungeon3dView(sel) {
 function router() {
   const h = location.hash || '#/';
   setActiveNav(h);
+  if (window.goatcounter && window.goatcounter.count) { try { window.goatcounter.count({ path: location.pathname + h, title: document.title }); } catch (e) {} }
   const parts = h.slice(2).split('/');
   const head = parts[0] || '';
   if (head === 'quests') return questsView();
@@ -1422,6 +1423,16 @@ document.getElementById('navsearch')?.addEventListener('click', openSearch);
 })();
 window.addEventListener('hashchange', router);
 window.addEventListener('scroll', () => document.body.classList.toggle('scrolled', window.scrollY > 10));
+
+// live visitor counter in the footer (GoatCounter public total; needs "allow viewing without login")
+(async () => {
+  const code = window.ANALYTICS_CODE; const elc = document.getElementById('visitcount');
+  if (!code || !elc) return;
+  try {
+    const j = await (await fetch(`https://${code}.goatcounter.com/counter/TOTAL.json`)).json();
+    elc.textContent = `· 👁 ${j.count} visits`; elc.hidden = false;
+  } catch (e) { /* stats private or offline — stay hidden */ }
+})();
 
 // ---------- boot ----------
 async function initLangSwitcher() {
