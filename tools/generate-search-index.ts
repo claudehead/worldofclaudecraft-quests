@@ -1,4 +1,6 @@
-import { ITEMS, MOBS, ABILITIES } from '../woc/src/sim/data.ts';
+import { ITEMS, MOBS, ABILITIES, FISHING_TABLES } from '../woc/src/sim/data.ts';
+import { POWERUPS } from '../woc/src/sim/content/augments.ts';
+import { WARLOCK_PET_MOBS } from '../woc/src/sim/content/warlock_pets.ts';
 import { ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
 import { ZONE2_QUESTS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
@@ -44,6 +46,24 @@ for (const a of Object.values(ABILITIES) as any[]) if (a.class) out.push({ t: 'A
 for (const c of GUIDE_CLASSES as any[]) out.push({ t: 'Class', n: c.id[0].toUpperCase() + c.id.slice(1), go: docHash(`classes/${c.id}.md`) });
 for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) if ((d.spawns || []).length) out.push({ t: 'Dungeon', n: d.name, k: `dungeons:${id}`, go: docHash(`dungeons/${id}.md`) });
 out.push({ t: 'Delve', n: COLLAPSED_RELIQUARY_DELVE.name, k: `delves:${COLLAPSED_RELIQUARY_DELVE.id}`, go: docHash(`delves/${COLLAPSED_RELIQUARY_DELVE.id}.md`) });
+
+// reference guides
+for (const g of [
+  ['Fishing', 'reference/fishing.md'], ['PvP — Ashen Coliseum', 'reference/pvp.md'],
+  ['Combat maths', 'reference/combat.md'], ['Getting started', 'reference/getting-started.md'],
+  ['Tameable beasts', 'reference/tameable-beasts.md'], ['Warlock demons', 'reference/warlock-demons.md'],
+]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
+
+// fish -> fishing page
+const fishIds = new Set<string>();
+for (const entries of Object.values(FISHING_TABLES) as any[]) for (const e of entries) if (e.itemId) fishIds.add(e.itemId);
+for (const id of fishIds) { const it: any = (ITEMS as any)[id]; if (it && it.kind === 'food') out.push({ t: 'Fish', n: it.name, k: `items:${id}`, go: docHash('reference/fishing.md') }); }
+
+// fiesta power-ups -> pvp page
+for (const p of POWERUPS as any[]) out.push({ t: 'Power-up', n: p.name, go: docHash('reference/pvp.md') });
+
+// warlock demons -> demons page (anchored)
+for (const [id, m] of Object.entries(WARLOCK_PET_MOBS) as any[]) out.push({ t: 'Demon', n: m.name, go: docHash('reference/warlock-demons.md', `demon-${id}`) });
 
 // dedupe identical (name+go)
 const seen = new Set<string>();
