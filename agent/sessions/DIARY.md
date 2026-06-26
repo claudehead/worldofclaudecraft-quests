@@ -104,3 +104,17 @@ Videos are stored in `videos/` (gitignored — too large for git), named
 - Built `joystick3.mjs`: **auto-loot within 6yd**, **`lootwalk`** action, **per-NPC accept/turn-in** (`cmd.npc`), corpse count in obs. Loot gap from session 07 = closed.
 - **#1 TODO: add Frost Nova (and Blink) to the harness** — cast Frost Nova when ≥1 mob is in melee, then run. This is the missing survivability piece for camps.
 - **Pull discipline:** never path to camp *center*; pull singles from the edge and reset between.
+
+## Session 09 — 2026-06-26 — Opus — 10 min — MKV recording + CC harness
+**Video:** `videos/2026-06-26_session-09_opus_10min-mkv-CC.mp4`
+**Goal:** First session with the FIXED recording (`.mkv`, kill-safe) + Frost Nova/Ice Barrier added to the harness (`joystick4.mjs`). Safe wolf questing. Layout left untouched.
+**Result:** ✅ **Recording is clean** (mkv → mp4, no corruption — the fix works). q_wolves done → level 2, xp→650. 2 deaths, both informative.
+**Learned:**
+- ✅ **MKV recording is robust** — no moov-atom problem; converts to a clean mp4. Recording method fixed for good.
+- ⚠️ **Mage spawns with ~6 mana**, not full — the first pulls had no Fireball (wand only) → took hits → early death. **FIX: regen/rebuff to full mana at the hub BEFORE the first pull.**
+- ⚠️ **CC isn't available at low level** — Frost Nova / Ice Barrier are learned later, so the harness CC casts no-op at lvl 1-2. No escape tool early; survival = don't let HP drop.
+- 🔑 **NEW BUG — "retreat to hub" deadlocks if a wolf chases you there.** Once I reach the hub, `go hub` is a no-op, so I **stand still and get meleed to death** (watched HP 36→0 at the hub while mana uselessly regenerated). **FIX: if retreating but already near the hub AND still in combat, TURN AND KILL the single chaser (full mana) — never passively stand.** Passive retreat into a corner = death.
+**Changed:**
+- `joystick4.mjs`: Frost Nova + Ice Barrier cast when a mob is in melee (≤8yd); frost_armor + arcane_intellect rebuffed on idle. (CC activates once learned.)
+- Recording switched to `.mkv` + graceful finish (no `pkill`).
+- **TODO (next):** retreat policy must **kill the chaser when cornered**; **top off mana before first pull**.
