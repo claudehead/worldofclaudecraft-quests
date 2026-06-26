@@ -39,6 +39,9 @@ echo "==> dungeon maps + pages"
 $TSX $TOOLS/generate-dungeon-maps.ts dungeons/_maps
 $TSX $TOOLS/generate-dungeons.ts dungeons
 
+echo "==> raids & dungeons guide"
+$TSX $TOOLS/generate-raids-dungeons.ts reference/raids-and-dungeons.md
+
 echo "==> class portraits + pages"
 $TSX $TOOLS/build-class-manifest.ts $TOOLS/class-models.json
 node $TOOLS/render-mobs.mjs $TOOLS/class-models.json $WOC/public classes/_class-renders
