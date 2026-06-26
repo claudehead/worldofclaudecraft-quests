@@ -1154,7 +1154,6 @@ async function dungeon3dView(sel) {
     catch (e) { app.querySelector('#d3dhint').textContent = `Couldn't load dungeon (${esc(e.message)})`; return; }
   }
   const mods = await ensureThree();
-  const { PointerLockControls } = await import('three/addons/controls/PointerLockControls.js');
   const SkeletonUtils = await import('three/addons/utils/SkeletonUtils.js');
   const { THREE, GLTFLoader, MeshoptDecoder } = mods;
   const MODEL_BASE = `https://raw.githubusercontent.com/${dungeon3dData.modelRepo}/${dungeon3dData.modelRef}/public/`;
@@ -1176,10 +1175,11 @@ async function dungeon3dView(sel) {
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x05060a);
-  scene.fog = new THREE.Fog(0x05060a, 30, 140);
-  const cam = new THREE.PerspectiveCamera(70, 1, 0.1, 500);
-  const controls = new PointerLockControls(cam, canvas);
-  scene.add(controls.getObject());
+  scene.fog = new THREE.Fog(0x0a0c12, 60, 260);
+  const cam = new THREE.PerspectiveCamera(75, 1, 0.1, 600);
+  const rig = new THREE.Object3D(); rig.position.set(0, 3, 0); rig.add(cam); scene.add(rig);
+  let yaw = Math.PI, pitch = 0; // rig.rotation.y = yaw, cam.rotation.x = pitch
+  const lamp = new THREE.PointLight(0xffe6b0, 1.3, 70, 1.4); lamp.position.set(0, 1.5, 0); cam.add(lamp); // head-lamp follows the view
   const INTERIOR_TINT = { crypt: 0x3a3f4a, sanctum: 0x4a4036, temple: 0x2f3a44, nythraxis: 0x402a3a };
   const stone = (c) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.95 });
   const labelSprite = (text, color) => {
@@ -1189,8 +1189,8 @@ async function dungeon3dView(sel) {
   };
 
   async function build(d) {
-    scene.add(new THREE.AmbientLight(0x8090a0, 0.8));
-    const dl = new THREE.DirectionalLight(0xfff2d8, 0.8); dl.position.set(10, 40, 5); scene.add(dl);
+    scene.add(new THREE.AmbientLight(0x9aa6b8, 1.2));
+    const dl = new THREE.DirectionalLight(0xfff2d8, 0.95); dl.position.set(10, 40, 5); scene.add(dl);
     const f = d.floor, len = f.z1 - f.z0, wid = f.x1 - f.x0, cz = (f.z0 + f.z1) / 2, cxw = (f.x0 + f.x1) / 2;
     const tint = INTERIOR_TINT[d.interior] || 0x3a3f4a;
     const floor = new THREE.Mesh(new THREE.BoxGeometry(wid + 2, 1, len), stone(tint)); floor.position.set(cxw, -0.5, cz); scene.add(floor);
@@ -1210,9 +1210,8 @@ async function dungeon3dView(sel) {
     // entry pad + exit ring
     const pad = new THREE.Mesh(new THREE.CylinderGeometry(2, 2, 0.2, 24), new THREE.MeshStandardMaterial({ color: 0x4caf50, emissive: 0x1b5e20 })); pad.position.set(d.entry.x, 0.1, d.entry.z); scene.add(pad);
     const ring = new THREE.Mesh(new THREE.TorusGeometry(2, 0.3, 12, 32), new THREE.MeshStandardMaterial({ color: 0xe6bb6a, emissive: 0x6a4a16 })); ring.rotation.x = Math.PI / 2; ring.position.set(d.exit.x, 2, d.exit.z); scene.add(ring);
-    // camera at entry
-    controls.getObject().position.set(d.entry.x, 3, d.entry.z);
-    cam.lookAt(d.entry.x, 3, d.entry.z + 10);
+    // camera at entry, facing down the corridor (+z)
+    rig.position.set(d.entry.x, 3, d.entry.z); yaw = Math.PI; pitch = 0;
     // spawns: real models (fallback marker)
     for (const s of d.spawns) {
       let placed = false;
@@ -1250,8 +1249,8 @@ async function dungeon3dView(sel) {
     dot(current.entry.x, current.entry.z, '#4caf50', 3); dot(current.exit.x, current.exit.z, '#e6bb6a', 3);
     mapHits = [];
     current.spawns.forEach(s => { const c = s.rank === 'boss' ? '#ffd98a' : s.rank === 'elite' ? '#ffb27a' : '#9aa'; const r = s.rank === 'boss' ? 4 : 2; dot(s.x, s.z, c, r); mapHits.push({ x: X(s.x), y: Z(s.z), r: r + 4, s }); });
-    const p = controls.getObject().position; const dir = new THREE.Vector3(); cam.getWorldDirection(dir);
-    mctx.strokeStyle = '#fff'; mctx.lineWidth = 1.5; mctx.beginPath(); mctx.moveTo(X(p.x), Z(p.z)); mctx.lineTo(X(p.x + dir.x * 8), Z(p.z + dir.z * 8)); mctx.stroke();
+    const p = rig.position; const hx = -Math.sin(yaw), hz = -Math.cos(yaw);
+    mctx.strokeStyle = '#fff'; mctx.lineWidth = 1.5; mctx.beginPath(); mctx.moveTo(X(p.x), Z(p.z)); mctx.lineTo(X(p.x + hx * 8), Z(p.z + hz * 8)); mctx.stroke();
     dot(p.x, p.z, '#fff', 3);
   }
   map.onclick = (e) => {
@@ -1260,13 +1259,31 @@ async function dungeon3dView(sel) {
     if (hit) location.hash = `#/doc/${encodeURIComponent('dungeons/' + current.id + '.md')}`;
   };
 
-  // controls + movement
-  hint.onclick = () => controls.lock();
-  controls.addEventListener('lock', () => hint.style.display = 'none');
-  controls.addEventListener('unlock', () => hint.style.display = 'flex');
+  // ---- unified look + move controls (mouse drag + touch + on-screen joystick) ----
+  const isTouch = matchMedia('(pointer: coarse)').matches;
+  hint.textContent = isTouch ? 'Tap to start · drag to look · use the stick to move' : 'Click & drag to look · WASD / arrows to move';
+  const hideHint = () => { hint.style.display = 'none'; };
+  hint.onclick = hideHint;
+  // drag-to-look (pointer events cover mouse + touch on the canvas)
+  let dragId = null, lx = 0, ly = 0;
+  canvas.addEventListener('pointerdown', e => { hideHint(); dragId = e.pointerId; lx = e.clientX; ly = e.clientY; });
+  canvas.addEventListener('pointermove', e => { if (e.pointerId !== dragId) return; yaw -= (e.clientX - lx) * 0.005; pitch -= (e.clientY - ly) * 0.005; pitch = Math.max(-1.2, Math.min(1.2, pitch)); lx = e.clientX; ly = e.clientY; });
+  const endDrag = e => { if (e.pointerId === dragId) dragId = null; };
+  canvas.addEventListener('pointerup', endDrag); canvas.addEventListener('pointercancel', endDrag);
+  // keyboard (desktop)
   const keys = {};
   const kd = e => { keys[e.code] = true; }, ku = e => { keys[e.code] = false; };
   addEventListener('keydown', kd); addEventListener('keyup', ku);
+  // on-screen joystick (touch)
+  const joy = { vx: 0, vy: 0, on: false };
+  const jbase = el(`<div style="position:absolute;left:18px;bottom:18px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid #555;touch-action:none;z-index:5;${isTouch ? '' : 'display:none'}"></div>`);
+  const jknob = el(`<div style="position:absolute;left:35px;top:35px;width:40px;height:40px;border-radius:50%;background:rgba(230,187,106,.85);pointer-events:none"></div>`);
+  jbase.append(jknob); app.querySelector('.d3dwrap').append(jbase);
+  const jmove = (cx, cy) => { const r = jbase.getBoundingClientRect(); let dx = cx - (r.left + 55), dy = cy - (r.top + 55); const m = Math.hypot(dx, dy) || 1, cl = Math.min(m, 45); dx = dx / m * cl; dy = dy / m * cl; joy.vx = dx / 45; joy.vy = dy / 45; jknob.style.left = (35 + dx) + 'px'; jknob.style.top = (35 + dy) + 'px'; };
+  const jend = () => { joy.on = false; joy.vx = joy.vy = 0; jknob.style.left = '35px'; jknob.style.top = '35px'; };
+  jbase.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); joy.on = true; jbase.setPointerCapture(e.pointerId); jmove(e.clientX, e.clientY); });
+  jbase.addEventListener('pointermove', e => { if (joy.on) jmove(e.clientX, e.clientY); });
+  jbase.addEventListener('pointerup', jend); jbase.addEventListener('pointercancel', jend);
   function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
   resize(); addEventListener('resize', resize);
   const hud = app.querySelector('#d3dhud');
@@ -1277,20 +1294,21 @@ async function dungeon3dView(sel) {
     if (!document.body.contains(canvas)) { removeEventListener('keydown', kd); removeEventListener('keyup', ku); removeEventListener('resize', resize); renderer.dispose(); return; }
     const dt = Math.min((now - last) / 1000, 0.05); last = now;
     const speed = 16 * dt;
-    if (controls.isLocked) {
-      let mfwd = 0, ms = 0;
-      if (keys['KeyW'] || keys['ArrowUp']) mfwd += 1;
-      if (keys['KeyS'] || keys['ArrowDown']) mfwd -= 1;
-      if (keys['KeyD'] || keys['ArrowRight']) ms += 1;
-      if (keys['KeyA'] || keys['ArrowLeft']) ms -= 1;
-      if (mfwd) controls.moveForward(mfwd * speed);
-      if (ms) controls.moveRight(ms * speed);
-      const p = controls.getObject().position, f = current.floor;
-      p.x = Math.max(f.x0 + 1, Math.min(f.x1 - 1, p.x));
-      p.z = Math.max(f.z0 + 1.5, Math.min(f.z1 - 1.5, p.z));
+    rig.rotation.y = yaw; cam.rotation.x = pitch;
+    let mfwd = 0, ms = 0;
+    if (keys['KeyW'] || keys['ArrowUp']) mfwd += 1;
+    if (keys['KeyS'] || keys['ArrowDown']) mfwd -= 1;
+    if (keys['KeyD'] || keys['ArrowRight']) ms += 1;
+    if (keys['KeyA'] || keys['ArrowLeft']) ms -= 1;
+    mfwd -= joy.vy; ms += joy.vx;
+    if (mfwd || ms) {
+      const fx = -Math.sin(yaw), fz = -Math.cos(yaw), rx = Math.cos(yaw), rz = -Math.sin(yaw);
+      const p = rig.position, f = current.floor;
+      p.x = Math.max(f.x0 + 1, Math.min(f.x1 - 1, p.x + (fx * mfwd + rx * ms) * speed));
+      p.z = Math.max(f.z0 + 1.5, Math.min(f.z1 - 1.5, p.z + (fz * mfwd + rz * ms) * speed));
       p.y = 3;
     }
-    const p = controls.getObject().position;
+    const p = rig.position;
     let hudText = `${esc(current.name)} · ${current.spawns.length} spawns`;
     if (bossSpawn) hudText += ` · 🟡 ${esc(bossSpawn.name)} ${Math.round(Math.hypot(p.x - bossSpawn.x, p.z - bossSpawn.z))}yd`;
     hud.innerHTML = hudText;
