@@ -217,6 +217,62 @@ function classesView() {
   reveal();
 }
 
+let bestiaryData = null;
+const RANK_COLOR = { boss: '#e6bb6a', elite: '#e6803a', rare: '#46b8da', normal: '#c8c8cf' };
+async function mobsView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Bestiary</span><h2>Creatures</h2>
+      <p>Every creature with its model render, level, health, where it lives, and loot. Filter by zone, type, or rank — or <a href="#/zones">browse by zone</a>.</p></div>
+    <div class="controls reveal">
+      <input class="search" id="msearch" placeholder="Search creatures…">
+      <div class="pills" id="mzones"></div>
+    </div>
+    <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="mfams"></div></div>
+    <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="mranks"></div></div>
+    <div class="gearcount meta" id="mcount" style="margin-bottom:14px"></div>
+    <div class="grid g-3" id="mgrid"></div>
+  </div></section>`));
+  if (!bestiaryData) {
+    try { bestiaryData = await (await fetch(cb(raw('bestiary/bestiary.json')))).json(); }
+    catch (e) { app.querySelector('#mgrid').innerHTML = `<div class="meta">Couldn't load bestiary (${esc(e.message)}).</div>`; return; }
+  }
+  const grid = app.querySelector('#mgrid'), count = app.querySelector('#mcount');
+  let zone = 'all', fam = 'all', rank = 'all', term = '';
+  const mkPills = (host, items, onPick) => { items.forEach(([id, label], i) => { const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`); p.onclick = () => { host.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); onPick(id); }; host.append(p); }); };
+  mkPills(app.querySelector('#mzones'), [['all', 'All zones'], ...bestiaryData.zones], v => { zone = v; draw(); });
+  mkPills(app.querySelector('#mfams'), [['all', 'All types'], ...bestiaryData.families], v => { fam = v; draw(); });
+  mkPills(app.querySelector('#mranks'), [['all', 'All ranks'], ['boss', 'Boss'], ['elite', 'Elite'], ['rare', 'Rare'], ['normal', 'Normal']], v => { rank = v; draw(); });
+  app.querySelector('#msearch').oninput = (e) => { term = e.target.value.toLowerCase(); draw(); };
+  function draw() {
+    const list = bestiaryData.mobs
+      .filter(m => zone === 'all' || m.zoneDir === zone)
+      .filter(m => fam === 'all' || m.family === fam)
+      .filter(m => rank === 'all' || m.rank === rank)
+      .filter(m => !term || m.name.toLowerCase().includes(term));
+    count.textContent = `${list.length} of ${bestiaryData.count} creatures`;
+    grid.innerHTML = '';
+    list.slice(0, 240).forEach(m => {
+      const col = RANK_COLOR[m.rank] || '#ccc';
+      const rankTag = m.rank !== 'normal' ? `<span class="tag" style="color:${col}">${m.rank[0].toUpperCase() + m.rank.slice(1)}</span>` : '';
+      const loot = m.loot.length ? ('Drops: ' + m.loot.slice(0, 3).map(l => esc(l.name) + (l.chance ? ` <span class="droppct">${Math.round(l.chance * 100)}%</span>` : '')).join(', ') + (m.loot.length > 3 ? ` +${m.loot.length - 3}` : '')) : 'No notable drops';
+      const card = el(`<div class="card gearcard" data-go="#/doc/${encodeURIComponent(m.detailFile)}/${encodeURIComponent('mob-' + m.id)}">
+        <div class="gearhead">
+          ${m.render ? `<img class="gicon" src="${raw(m.render)}" alt="" loading="lazy" style="border-color:${col}">` : `<div class="gicon" style="border-color:${col}"></div>`}
+          <div><h3 style="color:${col}">${esc(m.name)}</h3>
+            <div class="meta">Lvl ${esc(m.level)} · ${m.hp} HP · ${esc(m.familyLabel)}</div></div>
+        </div>
+        <div class="gstats">📍 ${esc(m.zoneTitle || '—')}${m.location && m.mapXZ ? ` · ${esc(m.location)}` : ''}</div>
+        <div class="gsrc">${loot} ${rankTag}</div>
+      </div>`);
+      grid.append(card);
+    });
+    if (!list.length) grid.append(el('<div class="meta">No creatures match.</div>'));
+    if (list.length > 240) grid.append(el(`<div class="meta">Showing first 240 — refine with filters.</div>`));
+  }
+  draw(); reveal();
+}
+
 const QUALITY_COLOR = { legendary: '#e6803a', epic: '#a86bd6', rare: '#46b8da', uncommon: '#5cb85c', common: '#c8c8cf', poor: '#7a7a82' };
 // Render an item source; for drops, link each mob to its bestiary entry.
 function sourceHTML(src) {
@@ -1088,7 +1144,8 @@ function router() {
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();
-  if (head === 'bestiary') return zonesView();
+  if (head === 'bestiary') return mobsView();
+  if (head === 'zones') return zonesView();
   if (head === 'npcs') return npcsView();
   if (head === 'assets') return assetsView();
   if (head === 'gear') return gearView();

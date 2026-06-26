@@ -27,6 +27,9 @@ $TSX $TOOLS/generate-quest-maps.ts quests
 echo "==> bestiary"
 $TSX $TOOLS/generate-bestiary.ts quests
 
+echo "==> bestiary cards (json)"
+$TSX $TOOLS/generate-bestiary-json.ts bestiary/bestiary.json
+
 echo "==> mob portraits (real .glb renders)"
 $TSX $TOOLS/build-mob-manifest.ts $TOOLS/mobs.json
 node $TOOLS/render-mobs.mjs $TOOLS/mobs.json $WOC/public quests/zones/_mob-renders
