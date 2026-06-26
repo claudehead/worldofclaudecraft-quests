@@ -52,7 +52,7 @@ for (const g of [
   ['Fishing', 'reference/fishing.md'], ['PvP — Ashen Coliseum', 'reference/pvp.md'],
   ['Combat maths', 'reference/combat.md'], ['Getting started', 'reference/getting-started.md'],
   ['Tameable beasts', 'reference/tameable-beasts.md'], ['Warlock demons', 'reference/warlock-demons.md'],
-  ['Drops & materials', 'reference/materials.md'],
+  ['Drops & materials', 'reference/materials.md'], ['World Market', 'reference/world-market.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
 
 // quest items / tools / trade goods -> materials page (anchored)

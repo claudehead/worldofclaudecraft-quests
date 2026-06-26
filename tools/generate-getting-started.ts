@@ -1,6 +1,15 @@
 import { BIND_ACTIONS, BIND_CATEGORIES } from '../woc/src/game/keybinds.ts';
 import * as fs from 'node:fs';
 
+// emote ids are a local const in sim.ts — scrape them so the list stays current
+const WOC = process.env.WOC_DIR || '../woc';
+let EMOTE_IDS: string[] = [];
+try {
+  const sim = fs.readFileSync(`${WOC}/src/sim/sim.ts`, 'utf8');
+  const m = /const EMOTES[^=]*=\s*\{([\s\S]*?)\n\};/.exec(sim);
+  if (m) EMOTE_IDS = [...m[1].matchAll(/^\s{2,4}([a-z_]+):\s*\{/gm)].map(x => x[1]);
+} catch {}
+
 const OUT = process.argv[2] || '/tmp/gen/getting-started.md';
 
 function keyLabel(code: string): string {
@@ -58,6 +67,12 @@ L.push(`| \`/lfg message\` | **Looking-for-group** channel |`);
 L.push('');
 L.push(`> Manage your guild and friends from the **Social** panel (friends / guild / ignore tabs).`);
 L.push('');
+if (EMOTE_IDS.length) {
+  L.push(`**Emotes.** Express yourself with \`/<emote>\` (add a target's name to aim it, e.g. \`/wave Aldric\`), or open the **Emote Wheel** (\`X\`). Available:`);
+  L.push('');
+  L.push(EMOTE_IDS.map(e => `\`/${e}\``).join(' · '));
+  L.push('');
+}
 
 L.push(`## 5. Running slow? Fix lag`);
 L.push('');

@@ -100,6 +100,7 @@ function home() {
     ['#/doc/' + encodeURIComponent('reference/tameable-beasts.md'), '🐾', 'Tameable beasts', `Every beast a Hunter can tame, by level and zone.`],
     ['#/doc/' + encodeURIComponent('reference/warlock-demons.md'), '😈', 'Warlock demons', `All 7 summonable demons, rendered, with stats and roles.`],
     ['#/doc/' + encodeURIComponent('reference/materials.md'), '📦', 'Drops & materials', `Quest items, tools and trade goods — where they drop and what they're for.`],
+    ['#/doc/' + encodeURIComponent('reference/world-market.md'), '💰', 'World Market', `The auction house — buying, selling, the Merchant's cut and listing rules.`],
     ['#/assets', '🧊', '3D asset browser', `Spin and inspect every 3D model in the game — hundreds never shown in the guide.`],
     ['#/cosmetics', '🎨', 'Cosmetics', `Event skin tiers and the collectible Combat Mech chromas.`],
     ['#/patches', '📜', 'Patch notes', `What's new — official release notes for every game version.`],

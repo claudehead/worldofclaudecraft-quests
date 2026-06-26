@@ -100,13 +100,16 @@ echo "==> search index"
 $TSX $TOOLS/generate-search-index.ts docs/search.json
 
 echo "==> getting-started guide"
-$TSX $TOOLS/generate-getting-started.ts reference/getting-started.md
+WOC_DIR=$WOC $TSX $TOOLS/generate-getting-started.ts reference/getting-started.md
 
 echo "==> 3D asset manifest"
 $TSX $TOOLS/generate-assets.ts $WOC docs/assets.json
 
 echo "==> materials / quest items / drops"
 $TSX $TOOLS/generate-materials.ts reference/materials.md
+
+echo "==> world market (economy)"
+$TSX $TOOLS/generate-economy.ts reference/world-market.md $WOC
 
 echo "==> fishing, PvP, tameable beasts, warlock demons (+ renders)"
 $TSX $TOOLS/generate-fishing.ts reference/fishing.md
