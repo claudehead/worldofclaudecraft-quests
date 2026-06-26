@@ -18,6 +18,11 @@ function resolvePath(base, rel) {
   return out.join('/');
 }
 const raw = (path) => RAW + path;
+// per-page-load cache-buster for DATA/markdown fetches (raw.githubusercontent +
+// Pages both CDN-cache ~5–10 min). Images via raw() stay cacheable. A fresh
+// reload always pulls the latest data; within a load it's still cached.
+const BUST = Date.now();
+const cb = (u) => u + (u.includes('?') ? '&' : '?') + 'cb=' + BUST;
 
 // ---------- localization (the game's own translations) ----------
 let LANG = (() => { try { return localStorage.getItem('wc_lang') || 'en'; } catch (e) { return 'en'; } })();
@@ -31,7 +36,7 @@ async function loadLang(code) {
 
 async function getMd(path) {
   if (mdCache.has(path)) return mdCache.get(path);
-  const res = await fetch(raw(path));
+  const res = await fetch(cb(raw(path)));
   if (!res.ok) throw new Error(`${res.status} ${path}`);
   const text = await res.text();
   mdCache.set(path, text);
@@ -241,7 +246,7 @@ async function gearView() {
     <div class="grid g-3" id="ggrid"></div>
   </div></section>`));
   if (!gearData) {
-    try { gearData = await (await fetch(raw('gear/gear.json'))).json(); }
+    try { gearData = await (await fetch(cb(raw('gear/gear.json')))).json(); }
     catch (e) { app.querySelector('#ggrid').innerHTML = `<div class="meta">Couldn't load gear (${esc(e.message)}).</div>`; return; }
   }
   const grid = app.querySelector('#ggrid'), count = app.querySelector('#gcount');
@@ -308,7 +313,7 @@ async function worldMapView(fx, fz) {
     <div class="worldmap reveal" id="wmap"><div class="wtip" id="wtip"></div></div>
   </div></section>`));
   if (!worldData) {
-    try { worldData = await (await fetch('world-map.json', { cache: 'no-cache' })).json(); }
+    try { worldData = await (await fetch(cb('world-map.json'))).json(); }
     catch (e) { app.querySelector('#wmap').innerHTML = `<div class="meta" style="padding:30px">Couldn't load the map (${esc(e.message)}).</div>`; return; }
   }
   const W = worldData, b = W.bounds;
@@ -410,7 +415,7 @@ async function abilitiesView() {
     <div id="abbody"></div>
   </div></section>`));
   if (!abilityData) {
-    try { abilityData = await (await fetch(raw('abilities/abilities.json'))).json(); }
+    try { abilityData = await (await fetch(cb(raw('abilities/abilities.json')))).json(); }
     catch (e) { app.querySelector('#abbody').innerHTML = `<div class="meta">Couldn't load abilities (${esc(e.message)}).</div>`; return; }
   }
   const host = app.querySelector('#abbody'), count = app.querySelector('#abcount');
@@ -462,7 +467,7 @@ async function talentsView(initClass, initSpec, initAlloc) {
     <div id="ttrees" class="ttrees"></div>
   </div></section>`));
   if (!talentData) {
-    try { talentData = await (await fetch('talents.json', { cache: 'no-cache' })).json(); }
+    try { talentData = await (await fetch(cb('talents.json'))).json(); }
     catch (e) { app.querySelector('#ttrees').innerHTML = `<div class="meta">Couldn't load talents (${esc(e.message)}).</div>`; return; }
   }
   const classIds = Object.keys(talentData.classes);
@@ -591,7 +596,7 @@ async function patchesView() {
     </div>
   </div></section>`));
   if (!patchData) {
-    try { patchData = await (await fetch('patches.json', { cache: 'no-cache' })).json(); }
+    try { patchData = await (await fetch(cb('patches.json'))).json(); }
     catch (e) { app.querySelector('#patchbody').innerHTML = `<div class="meta">Couldn't load patch notes (${esc(e.message)}).</div>`; return; }
   }
   const nav = app.querySelector('#patchnav'), body = app.querySelector('#patchbody');
@@ -654,7 +659,7 @@ async function bisView() {
     <div id="bisbody"></div>
   </div></section>`));
   if (!bisData) {
-    try { bisData = await (await fetch(raw('gear/bis.json'))).json(); }
+    try { bisData = await (await fetch(cb(raw('gear/bis.json')))).json(); }
     catch (e) { app.querySelector('#bisbody').innerHTML = `<div class="meta">Couldn't load BiS (${esc(e.message)}).</div>`; return; }
   }
   const pillHost = app.querySelector('#bisclasses'), body = app.querySelector('#bisbody'), zoneHost = app.querySelector('#biszones'), buildHost = app.querySelector('#bisbuilds');
@@ -729,7 +734,7 @@ async function consumablesView() {
     <div class="grid g-3" id="cgrid"></div>
   </div></section>`));
   if (!consData) {
-    try { consData = await (await fetch(raw('consumables/consumables.json'))).json(); }
+    try { consData = await (await fetch(cb(raw('consumables/consumables.json')))).json(); }
     catch (e) { app.querySelector('#cgrid').innerHTML = `<div class="meta">Couldn't load consumables (${esc(e.message)}).</div>`; return; }
   }
   const grid = app.querySelector('#cgrid'), count = app.querySelector('#ccount');
@@ -778,7 +783,7 @@ async function augmentsView() {
     <div class="grid g-4" id="powgrid"></div>
   </div></section>`));
   if (!augData) {
-    try { augData = await (await fetch(raw('augments/augments.json'))).json(); }
+    try { augData = await (await fetch(cb(raw('augments/augments.json')))).json(); }
     catch (e) { app.querySelector('#auggrid').innerHTML = `<div class="meta">Couldn't load augments (${esc(e.message)}).</div>`; return; }
   }
   const classes = [...new Set(augData.augments.flatMap(a => a.classes))].sort();
@@ -815,7 +820,7 @@ async function cosmeticsView() {
       <p>The cosmetic system — event skin tiers and the collectible Combat Mech colour chromas.</p></div>
     <div id="cosbody"></div></div></section>`));
   if (!cosmeticData) {
-    try { cosmeticData = await (await fetch(raw('cosmetics/cosmetics.json'))).json(); }
+    try { cosmeticData = await (await fetch(cb(raw('cosmetics/cosmetics.json')))).json(); }
     catch (e) { app.querySelector('#cosbody').innerHTML = `<div class="meta">Couldn't load cosmetics (${esc(e.message)}).</div>`; return; }
   }
   const body = app.querySelector('#cosbody');
@@ -844,7 +849,7 @@ async function npcsView() {
     <div class="grid g-3" id="ngrid"></div>
   </div></section>`));
   if (!npcData) {
-    try { npcData = await (await fetch(raw('npcs/npcs.json'))).json(); }
+    try { npcData = await (await fetch(cb(raw('npcs/npcs.json')))).json(); }
     catch (e) { app.querySelector('#ngrid').innerHTML = `<div class="meta">Couldn't load NPCs (${esc(e.message)}).</div>`; return; }
   }
   const grid = app.querySelector('#ngrid'); let zone = 'all', term = '';
@@ -890,7 +895,7 @@ function simpleListView(title, eyebrow, blurb, items) {
 let questMaps = null; // lazy-loaded quest-maps.json
 async function getQuestMaps() {
   if (questMaps) return questMaps;
-  try { questMaps = await (await fetch(raw('quests/quest-maps.json'))).json(); }
+  try { questMaps = await (await fetch(cb(raw('quests/quest-maps.json')))).json(); }
   catch { questMaps = {}; }
   return questMaps;
 }
@@ -935,7 +940,7 @@ function focusStep(svg, n, chip, bar) {
 let voiceData = null;
 async function getVoice() {
   if (voiceData) return voiceData;
-  try { voiceData = await (await fetch('voice.json', { cache: 'no-cache' })).json(); }
+  try { voiceData = await (await fetch(cb('voice.json'))).json(); }
   catch { voiceData = { base: '', quests: {} }; }
   return voiceData;
 }
@@ -1027,7 +1032,7 @@ async function openSearch() {
   document.body.append(ov);
   const input = ov.querySelector('#searchin'), res = ov.querySelector('#searchres');
   ov.addEventListener('click', e => { if (e.target === ov) close(); });
-  if (!searchIndex) { try { searchIndex = await (await fetch('search.json', { cache: 'no-cache' })).json(); } catch { searchIndex = []; } }
+  if (!searchIndex) { try { searchIndex = await (await fetch(cb('search.json'))).json(); } catch { searchIndex = []; } }
   let hits = [], sel = 0;
   const localName = (e) => { if (LANG !== 'en' && e.k) { const [g, id] = e.k.split(':'); return tn(g, id, e.n); } return e.n; };
   function draw() {
@@ -1111,7 +1116,7 @@ async function initLangSwitcher() {
 
 (async function boot() {
   try {
-    M = await (await fetch('manifest.json', { cache: 'no-cache' })).json();
+    M = await (await fetch(cb('manifest.json'))).json();
     RAW = `https://raw.githubusercontent.com/${M.repo}/${M.branch}/`;
     await initLangSwitcher();
     router();
