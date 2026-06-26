@@ -1,0 +1,78 @@
+{
+  "title": "World of Claudecraft — AI agent: final changeset",
+  "summary": "Everything needed to (A) make the game cleanly agent-drivable upstream, and (B) have an agent actually play the live client with no game change. Part B includes the non-obvious integration fixes discovered while getting Claude to play.",
+  "date": "2026-06-26",
+  "paths": {
+    "ourRepo": "claudehead/worldofclaudecraft-quests",
+    "gameRepo": "levy-street/world-of-claudecraft",
+    "fork": "claudehead/world-of-claudecraft"
+  },
+
+  "partA_upstreamChanges": {
+    "purpose": "Make src/sim multi-agent + LLM-readable. Additive, pure, backward-compatible. Needed for the HEADLESS / multi-agent / RL path; NOT required for in-browser take-over (Part B).",
+    "branch": "feat/agent-multi-obs",
+    "commit": "feat(sim): multi-agent observations + observe() for LLM/RL agents",
+    "changes": [
+      {
+        "file": "src/sim/sim.ts",
+        "action": "add per-pid public read accessors after the primary getters (mirror them, resolve by pid, fall back to primary)",
+        "code": [
+          "playerOf(pid?: number): Entity { return this.resolve(pid)?.e ?? this.player; }",
+          "moveInputOf(pid?: number): MoveInput { return this.resolve(pid)?.meta.moveInput ?? this.moveInput; }",
+          "inventoryOf(pid?: number): InvSlot[] { return this.resolve(pid)?.meta.inventory ?? this.inventory; }",
+          "xpOf(pid?: number): number { return this.resolve(pid)?.meta.xp ?? this.xp; }",
+          "knownOf(pid?: number): ResolvedAbility[] { return this.resolve(pid)?.meta.known ?? this.known; }"
+        ]
+      },
+      {
+        "file": "src/sim/obs.ts",
+        "action": "thread optional pid through applyAction(sim,action,pid?) and encodeObs(sim,pid?); replace sim.player/moveInput/inventory/known/xp with the *Of(pid) accessors; pass pid to targetNearestEnemy/startAutoAttack/interact/stopAutoAttack/castAbilityBySlot/useItem/releaseSpirit (all already accept pid)."
+      },
+      {
+        "file": "src/sim/obs.ts",
+        "action": "add observe(sim, pid?) returning a structured JSON snapshot (self/target/nearby-mobs as dist+bearingDeg/ready-abilities) — the LLM-readable twin of encodeObs. Uses existing angleTo/normAngle/dist2d."
+      },
+      { "file": "tests/obs.test.ts", "action": "add vitest: encodeObs length == obsSize(); applyAction maps; multi-agent pid independence; observe() shape. Keep tests/architecture.test.ts (sim purity) green." }
+    ],
+    "verify": ["npx vitest run tests/obs.test.ts tests/architecture.test.ts", "npx tsc --noEmit", "npm test && npm run build"]
+  },
+
+  "partB_inBrowserTakeover": {
+    "purpose": "Let an agent play the LIVE client (load the game yourself, then it takes over). NO game change required.",
+    "entryPoint": "After load, src/main.ts exposes window.__game = { sim, world, input, hud, controller, ... }. Read window.__game.sim for state; call the same public Sim methods the HUD calls to act.",
+    "perceive": "Read window.__game.sim: player = sim.player; entities = sim.entities (Map); quest log = sim.players.get(sim.primaryId).questLog (NOT sim.player.questLog).",
+    "act": {
+      "move": "Real key events (W/A/D) — the input layer rebuilds moveInput from the keyboard each frame, so directly setting sim.moveInput is clobbered.",
+      "facing": "sim.player.facing = Math.atan2(target.x - p.x, target.z - p.z)  // the game's facingToward convention (src/game/click_move.ts). Then hold W to run straight at the target.",
+      "combat": "sim.targetEntity(id); sim.startAutoAttack(); sim.castAbility('fireball')  // melee range 5, Fireball range 30.",
+      "quests": "sim.acceptQuest('q_wolves') at the giver; sim.turnInQuest('q_wolves') when sim.questState('q_wolves')==='ready'.",
+      "chat": "sim.chat('/s hello')  // /s say, /p party, /g guild, /general, /world, /lfg"
+    },
+    "integrationGotchas": [
+      { "problem": "Headless Chromium throttles requestAnimationFrame/timers for backgrounded pages, which FREEZES the game's tick loop (world doesn't advance; only ~17 frames in 48s).", "fix": "Launch with --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-renderer-backgrounding, or run headed." },
+      { "problem": "Setting sim.moveInput.forward=true in JS does nothing — the input system overwrites moveInput from real keyboard state every frame.", "fix": "Drive movement with real key events (page.keyboard.down('w')), not by mutating moveInput." },
+      { "problem": "Character would wander, never reaching the mob (turn-key math didn't converge).", "fix": "Set facing directly to Math.atan2(dx,dz) and hold W — matches the game's own click-to-move, no turn-key guessing." },
+      { "problem": "Offline character creation: clicking the class button via DOM .click()/text match silently failed — character always spawned as the default Warrior.", "fix": "There are TWO [data-class=\"X\"] elements (one hidden); click the VISIBLE one: locator('[data-class=\"mage\"]:visible'). Verify sim.player.resourceType after spawn." },
+      { "problem": "Quest never looked accepted (the agent kept re-accepting → the in-game 'beep' error).", "fix": "Read the quest log from the player META (sim.players.get(sim.primaryId).questLog), not the entity. And call acceptQuest ONCE; re-accepting a held quest emits an error." },
+      { "problem": "talkToNpc(npcId) alone did not accept q_wolves.", "fix": "Call sim.acceptQuest('q_wolves') explicitly while standing at the giver (within INTERACT_RANGE)." }
+    ],
+    "scope": "Offline/practice mode only. The live multiplayer server is authoritative and runs anti-bot (src/sim/client_challenge.ts, src/net/native_attestation.ts); driving it externally would desync and/or be flagged. Coordinate with maintainers for any online/server-side agent."
+  },
+
+  "partC_clientArtifacts": {
+    "note": "In claudehead/worldofclaudecraft-quests (this repo) — no game change.",
+    "files": {
+      "agent/woc-agent.user.js": "Tampermonkey userscript: F8 take-over of window.__game.sim; two-tier loop (per-frame executor + ~1Hz brain); local Gemma via Ollama with a scripted fallback.",
+      "agent/skills/<class>.json": "Per-class playbooks (abilities/rotation/rules) generated from CLASSES/ABILITIES by tools/generate-agent-skill.ts.",
+      "agent/agent-support-changeset.json": "The upstream PR spec (Part A).",
+      "tools/generate-agent-skill.ts": "Generator for the skill packs (wired into tools/build.sh).",
+      "harness (demonstrated)": "Playwright control harness that opens the game, exposes obs via C:/tmp/woc-obs.json, and applies actions from C:/tmp/woc-ctl.json — used for Claude live-play + full-screen recording (ffmpeg gdigrab)."
+    }
+  },
+
+  "decisionLoop": {
+    "twoTier": "Brain (LLM: Claude or local Gemma) decides a high-level intent ~1x/sec from observe(); a deterministic executor enacts it every frame (face+approach+cast/attack/loot). Keeps it responsive and cheap.",
+    "knowledgeSource": "The agent plays informed by this repo's generated guide data (quests, bestiary stats, per-class rotations) — e.g. q_wolves = kill 8 Forest Wolves (lvl 1-2), Mage rotation Fireball>Frostbolt>Fire Blast.",
+    "verifiedRun": "Mage: walk to Marshal Redbrook -> accept 'Wolves at the Door' -> Fireball 8 Forest Wolves -> turn in -> reward + level 2 -> follow-up quests (q_greyjaw, q_bandits) unlocked."
+  }
+}
