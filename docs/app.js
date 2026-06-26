@@ -100,6 +100,7 @@ function home() {
     ['#/doc/' + encodeURIComponent('reference/tameable-beasts.md'), '🐾', 'Tameable beasts', `Every beast a Hunter can tame, by level and zone.`],
     ['#/doc/' + encodeURIComponent('reference/warlock-demons.md'), '😈', 'Warlock demons', `All 7 summonable demons, rendered, with stats and roles.`],
     ['#/doc/' + encodeURIComponent('reference/materials.md'), '📦', 'Drops & materials', `Quest items, tools and trade goods — where they drop and what they're for.`],
+    ['#/assets', '🧊', '3D asset browser', `Spin and inspect every 3D model in the game — hundreds never shown in the guide.`],
     ['#/cosmetics', '🎨', 'Cosmetics', `Event skin tiers and the collectible Combat Mech chromas.`],
     ['#/patches', '📜', 'Patch notes', `What's new — official release notes for every game version.`],
   ];
@@ -839,6 +840,96 @@ async function cosmeticsView() {
   reveal();
 }
 
+// ---------- 3D asset browser ----------
+let assetData = null, _threeMods = null;
+async function ensureThree() {
+  if (_threeMods) return _threeMods;
+  const THREE = await import('three');
+  const { GLTFLoader } = await import('three/addons/loaders/GLTFLoader.js');
+  const { OrbitControls } = await import('three/addons/controls/OrbitControls.js');
+  const { MeshoptDecoder } = await import('three/addons/libs/meshopt_decoder.module.js');
+  _threeMods = { THREE, GLTFLoader, OrbitControls, MeshoptDecoder };
+  return _threeMods;
+}
+async function assetsView() {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">3D assets</span><h2>Asset browser</h2>
+      <p>Every 3D model in the game — spin, zoom and inspect them live. Most never appear in the guide: creatures, foliage, props, weapons and dungeon pieces. Drag to orbit, scroll to zoom.</p></div>
+    <div class="controls reveal"><input class="search" id="asearch" placeholder="Search models…"><div class="pills" id="acats"></div></div>
+    <div class="assetwrap reveal">
+      <div class="assetviewer"><div id="aviewer" class="aviewer"></div><div class="amodelname" id="amodelname">Pick a model →</div></div>
+      <div class="assetlist" id="alist"></div>
+    </div>
+  </div></section>`));
+  if (!assetData) {
+    try { assetData = await (await fetch(cb('assets.json'))).json(); }
+    catch (e) { app.querySelector('#alist').innerHTML = `<div class="meta">Couldn't load assets (${esc(e.message)}).</div>`; return; }
+  }
+  const list = app.querySelector('#alist'), catHost = app.querySelector('#acats'), nameEl = app.querySelector('#amodelname');
+  const base = `https://raw.githubusercontent.com/${assetData.repo}/${assetData.ref}/public/`;
+  let cat = 'all', term = '';
+  [['all', `All (${assetData.count})`], ...assetData.categories.map(c => [c.id, `${c.label} (${c.count})`])].forEach(([id, label], i) => {
+    const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`);
+    p.onclick = () => { cat = id; catHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+    catHost.append(p);
+  });
+  app.querySelector('#asearch').oninput = e => { term = e.target.value.toLowerCase(); draw(); };
+
+  // viewer (created lazily on first model open, reused after)
+  let viewer = null;
+  async function openModel(a) {
+    nameEl.textContent = a.name + ' · ' + (assetData.categories.find(c => c.id === a.cat)?.label || a.cat);
+    const host = app.querySelector('#aviewer');
+    host.innerHTML = '<div class="aspin"><div class="spinner"></div></div>';
+    let mods;
+    try { mods = await ensureThree(); } catch (e) { host.innerHTML = `<div class="meta" style="padding:20px">3D viewer needs internet to load three.js. ${esc(e.message)}</div>`; return; }
+    const { THREE, GLTFLoader, OrbitControls, MeshoptDecoder } = mods;
+    if (!viewer) {
+      const canvas = document.createElement('canvas');
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, 1, 0.01, 5000);
+      scene.add(new THREE.HemisphereLight(0xffffff, 0x444455, 1.1));
+      const k = new THREE.DirectionalLight(0xffffff, 1.4); k.position.set(3, 5, 4); scene.add(k);
+      const f = new THREE.DirectionalLight(0xffffff, 0.5); f.position.set(-4, 1, -2); scene.add(f);
+      const controls = new OrbitControls(camera, canvas); controls.enableDamping = true;
+      const loader = new GLTFLoader(); loader.setMeshoptDecoder(MeshoptDecoder);
+      viewer = { canvas, renderer, scene, camera, controls, loader, cur: null };
+      viewer.resize = () => { const r = host.getBoundingClientRect(); const w = r.width || 480, h = r.height || 380; renderer.setPixelRatio(Math.min(2, devicePixelRatio)); renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); };
+      (function loop() { if (!document.contains(host)) { renderer.dispose(); viewer = null; return; } controls.update(); renderer.render(scene, camera); requestAnimationFrame(loop); })();
+    }
+    const v = viewer;
+    host.innerHTML = ''; host.append(v.canvas); v.resize();
+    try {
+      const gltf = await v.loader.loadAsync(base + a.path);
+      if (v.cur) v.scene.remove(v.cur);
+      const model = gltf.scene; v.scene.add(model); v.cur = model;
+      if (gltf.animations && gltf.animations.length) { const m = new THREE.AnimationMixer(model); m.clipAction(gltf.animations[0]).play(); m.update(0.5); }
+      model.updateWorldMatrix(true, true);
+      const box = new THREE.Box3().setFromObject(model), size = new THREE.Vector3(), c = new THREE.Vector3();
+      box.getSize(size); box.getCenter(c); model.position.sub(c);
+      const r = Math.max(size.x, size.y, size.z) || 1, d = r / Math.tan(v.camera.fov * Math.PI / 360) * 1.4;
+      v.camera.position.set(d * 0.6, r * 0.5, d); v.camera.near = r / 100; v.camera.far = r * 100; v.camera.updateProjectionMatrix();
+      v.controls.target.set(0, 0, 0); v.controls.update();
+    } catch (e) { host.innerHTML = `<div class="meta" style="padding:20px">Couldn't load this model (${esc(e.message)}).</div>`; }
+  }
+
+  function draw() {
+    list.innerHTML = '';
+    const items = assetData.assets.filter(a => cat === 'all' || a.cat === cat).filter(a => !term || a.name.toLowerCase().includes(term) || a.path.toLowerCase().includes(term));
+    for (const a of items.slice(0, 400)) {
+      const b = el(`<button class="assetrow"><span class="assetname">${esc(a.name)}</span><span class="assetcat">${esc(a.sub || a.cat)}</span></button>`);
+      b.onclick = () => { list.querySelectorAll('.assetrow').forEach(x => x.classList.remove('on')); b.classList.add('on'); openModel(a); };
+      list.append(b);
+    }
+    if (items.length > 400) list.append(el(`<div class="meta" style="padding:8px">+${items.length - 400} more — narrow with search.</div>`));
+    if (!items.length) list.append(el('<div class="meta" style="padding:8px">No models match.</div>'));
+  }
+  draw(); reveal();
+}
+
 let npcData = null;
 async function npcsView() {
   app.innerHTML = '';
@@ -998,6 +1089,7 @@ function router() {
   if (head === 'cosmetics') return cosmeticsView();
   if (head === 'bestiary') return zonesView();
   if (head === 'npcs') return npcsView();
+  if (head === 'assets') return assetsView();
   if (head === 'gear') return gearView();
   if (head === 'bis') return bisView();
   if (head === 'consumables') return consumablesView();

@@ -102,6 +102,9 @@ $TSX $TOOLS/generate-search-index.ts docs/search.json
 echo "==> getting-started guide"
 $TSX $TOOLS/generate-getting-started.ts reference/getting-started.md
 
+echo "==> 3D asset manifest"
+$TSX $TOOLS/generate-assets.ts $WOC docs/assets.json
+
 echo "==> materials / quest items / drops"
 $TSX $TOOLS/generate-materials.ts reference/materials.md
 

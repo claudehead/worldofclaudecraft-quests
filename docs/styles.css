@@ -282,6 +282,21 @@ h1, h2, h3 { letter-spacing: -0.03em; font-weight: 600; }
 .gsrc { color: var(--muted-2); font-size: 12.5px; margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
 .droppct { color: var(--muted-2); font-size: 11.5px; }
 .grestrict { font-size: 11.5px; color: var(--muted-2); margin: 6px 0 2px; }
+
+/* 3D asset browser */
+.assetwrap { display: grid; grid-template-columns: 1fr 320px; gap: 18px; align-items: start; }
+.assetviewer { position: sticky; top: 78px; }
+.aviewer { aspect-ratio: 4/3; width: 100%; background: radial-gradient(circle at 50% 35%, rgba(255,255,255,.06), rgba(0,0,0,.3)); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.aviewer canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+.aviewer canvas:active { cursor: grabbing; }
+.aspin { display: flex; align-items: center; justify-content: center; height: 100%; }
+.amodelname { margin-top: 10px; font-size: 14px; color: var(--text); text-align: center; }
+.assetlist { max-height: 70vh; overflow-y: auto; border: 1px solid var(--line); border-radius: 12px; padding: 6px; }
+.assetrow { display: flex; justify-content: space-between; align-items: center; gap: 10px; width: 100%; text-align: left; background: none; border: 0; color: var(--text); font: inherit; font-size: 13.5px; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+.assetrow:hover { background: var(--glass); }
+.assetrow.on { background: var(--glass-2); color: var(--gold); }
+.assetcat { font-size: 11px; color: var(--muted-2); white-space: nowrap; }
+@media (max-width: 800px) { .assetwrap { grid-template-columns: 1fr; } .assetviewer { position: static; } .assetlist { max-height: 50vh; } }
 .gsrc a { color: var(--gold); border-bottom: 1px solid rgba(230,187,106,.3); }
 .gsrc a:hover { border-bottom-color: var(--gold); }
 
