@@ -1,0 +1,130 @@
+{
+  "title": "World of Claudecraft — AI-agent support changeset",
+  "purpose": "Make the game cleanly drivable by an external/LLM agent (Claude, Gemma) and by multi-agent RL, with minimal, additive, pure changes to the simulation core.",
+  "targetRepo": "levy-street/world-of-claudecraft",
+  "suggestedBranch": "feat/agent-multi-obs",
+  "conventionalCommit": "feat(sim): multi-agent observations + observe() for LLM/RL agents",
+  "noGameChangeRequiredFor": {
+    "what": "Single-player in-browser take-over (load the game yourself, then let an agent play).",
+    "why": "After load, src/main.ts already exposes the live instance on window.__game = { sim, world, input, hud, controller, ... }. An external script (Tampermonkey userscript or Playwright via CDP) reads window.__game.sim and calls the same public Sim methods the HUD calls (targetEntity, startAutoAttack, castAbility, interact, chat) and presses real keys for movement. See client tooling below. No upstream change needed for this path.",
+    "movementNote": "The input system overwrites Entity.moveInput from the keyboard each frame, so move via real key events (W/A/D) — or set Entity.facing = Math.atan2(dx,dz) (the game's facingToward convention from src/game/click_move.ts) and hold W to run straight at a target.",
+    "scope": "Offline/practice mode only. The live multiplayer server is authoritative and runs an anti-bot stack (src/sim/client_challenge.ts, src/net/native_attestation.ts); driving it externally would desync and/or be flagged. Coordinate with maintainers for any online/server-side agent."
+  },
+  "constraints": [
+    "src/sim/ must stay pure: no DOM/three/net imports, no Math.random/Date.now/performance.now; all randomness via Rng, time via the sim clock (enforced by tests/architecture.test.ts).",
+    "Changes are additive and backward-compatible: every new param is optional and defaults to the primary player, so existing single-agent callers (and the current RL env) are unaffected."
+  ],
+  "changes": [
+    {
+      "file": "src/sim/sim.ts",
+      "action": "add",
+      "location": "Right after the existing primary getters (get player/get moveInput/get inventory/get xp/get known) and the private resolve(pid) helper.",
+      "rationale": "obs.ts and any agent need to read/act per player id. The action methods already accept an optional pid (castAbility, castAbilityBySlot, targetEntity, targetNearestEnemy, startAutoAttack, stopAutoAttack, interact, useItem, releaseSpirit); these public read accessors mirror the primary getters but resolve by pid, completing the per-pid surface.",
+      "code": [
+        "// --- per-pid read accessors (mirror the primary getters; default to primary) ---",
+        "playerOf(pid?: number): Entity { return this.resolve(pid)?.e ?? this.player; }",
+        "moveInputOf(pid?: number): MoveInput { return this.resolve(pid)?.meta.moveInput ?? this.moveInput; }",
+        "inventoryOf(pid?: number): InvSlot[] { return this.resolve(pid)?.meta.inventory ?? this.inventory; }",
+        "xpOf(pid?: number): number { return this.resolve(pid)?.meta.xp ?? this.xp; }",
+        "knownOf(pid?: number): ResolvedAbility[] { return this.resolve(pid)?.meta.known ?? this.known; }"
+      ]
+    },
+    {
+      "file": "src/sim/obs.ts",
+      "action": "modify",
+      "symbol": "applyAction",
+      "location": "Function signature + body.",
+      "rationale": "Drive any player by id (multi-agent), backward-compatible.",
+      "edits": [
+        "Change signature: `export function applyAction(sim: Sim, action: number): void` -> `export function applyAction(sim: Sim, action: number, pid?: number): void`.",
+        "Replace `const inp = sim.moveInput;` with `const inp = sim.moveInputOf(pid);`.",
+        "Replace `sim.player` -> `sim.playerOf(pid)` and `sim.inventory` -> `sim.inventoryOf(pid)` inside the function (incl. the eat_drink branch and the final `if (sim.player.dead) sim.releaseSpirit();`).",
+        "Pass pid to every action call: `sim.targetNearestEnemy(pid)`, `sim.startAutoAttack(pid)`, `sim.interact(pid)`, `sim.stopAutoAttack(pid)`, `sim.castAbilityBySlot(parseInt(...,10)-1, pid)`, `sim.useItem(s.itemId, pid)`, `sim.releaseSpirit(pid)`."
+      ]
+    },
+    {
+      "file": "src/sim/obs.ts",
+      "action": "modify",
+      "symbol": "encodeObs",
+      "location": "Function signature + the line `const p = sim.player;` and ability/xp reads.",
+      "rationale": "Observe any player by id.",
+      "edits": [
+        "Change signature: `export function encodeObs(sim: Sim): number[]` -> `export function encodeObs(sim: Sim, pid?: number): number[]`.",
+        "Replace `const p = sim.player;` with `const p = sim.playerOf(pid);`.",
+        "Replace `sim.known` -> `sim.knownOf(pid)` and `sim.xp` -> `sim.xpOf(pid)` where used."
+      ]
+    },
+    {
+      "file": "src/sim/obs.ts",
+      "action": "add",
+      "symbol": "observe",
+      "location": "New exported function (LLM-readable twin of encodeObs).",
+      "rationale": "LLM agents (Claude/Gemma) consume a small structured JSON snapshot rather than a float vector. Uses the same egocentric data (distance + relative bearing) the numeric obs uses, so the two never disagree.",
+      "code": [
+        "export interface AgentObs {",
+        "  self: { hp: number; hpMax: number; resource: number; resourceMax: number; level: number; pos: { x: number; z: number }; facing: number; inCombat: boolean; dead: boolean; gcdReady: boolean };",
+        "  target: null | { id: number; dist: number; bearingDeg: number; hpFrac: number; levelDelta: number; hostile: boolean; lootable: boolean };",
+        "  mobs: { id: number; dist: number; bearingDeg: number; hpFrac: number; levelDelta: number; attackingMe: boolean }[];",
+        "  abilities: { slot: number; id: string; ready: boolean }[];",
+        "}",
+        "export function observe(sim: Sim, pid?: number): AgentObs {",
+        "  const p = sim.playerOf(pid);",
+        "  const bearing = (e: Entity) => normAngle(angleTo(p.pos, e.pos) - p.facing) * 180 / Math.PI;",
+        "  const t = p.targetId !== null ? sim.entities.get(p.targetId) : null;",
+        "  const mobs = [...sim.entities.values()]",
+        "    .filter((e) => e.kind === 'mob' && !e.dead && e.hostile && dist2d(p.pos, e.pos) < 60)",
+        "    .sort((a, b) => dist2d(p.pos, a.pos) - dist2d(p.pos, b.pos))",
+        "    .slice(0, 5)",
+        "    .map((e) => ({ id: e.id, dist: Math.round(dist2d(p.pos, e.pos)), bearingDeg: Math.round(bearing(e)), hpFrac: +(e.hp / Math.max(1, e.maxHp)).toFixed(2), levelDelta: e.level - p.level, attackingMe: e.aggroTargetId === p.id }));",
+        "  const known = sim.knownOf(pid);",
+        "  const abilities = known.map((k, i) => ({ slot: i + 1, id: k.def.id, ready: (p.cooldowns.get(k.def.id) ?? 0) <= 0 && p.resource >= k.cost && (k.def.offGcd || (p.gcdRemaining ?? 0) <= 0) }));",
+        "  return {",
+        "    self: { hp: p.hp, hpMax: p.maxHp, resource: p.resource, resourceMax: p.maxResource, level: p.level, pos: { x: p.pos.x, z: p.pos.z }, facing: p.facing, inCombat: !!p.inCombat, dead: !!p.dead, gcdReady: (p.gcdRemaining ?? 0) <= 0 },",
+        "    target: t && (!t.dead || t.lootable) ? { id: t.id, dist: Math.round(dist2d(p.pos, t.pos)), bearingDeg: Math.round(bearing(t)), hpFrac: +(t.hp / Math.max(1, t.maxHp)).toFixed(2), levelDelta: t.level - p.level, hostile: !!t.hostile, lootable: !!(t.dead && t.lootable) } : null,",
+        "    mobs,",
+        "    abilities,",
+        "  };",
+        "}"
+      ],
+      "importsNeeded": "These helpers are already imported at the top of obs.ts: angleTo, normAngle, dist2d, Entity. No new imports."
+    },
+    {
+      "file": "tests/obs.test.ts",
+      "action": "add",
+      "rationale": "CONTRIBUTING requires tests for src/sim changes; obs.ts has none today (bonus coverage).",
+      "code": [
+        "import { describe, it, expect } from 'vitest';",
+        "import { Sim } from '../src/sim/sim';",
+        "import { encodeObs, applyAction, observe, obsSize } from '../src/sim/obs';",
+        "",
+        "function freshSim() { const s = new Sim({ seed: 1 } as any); s.addPlayer('warrior', 'A'); return s; }",
+        "",
+        "describe('obs multi-agent', () => {",
+        "  it('encodeObs length matches obsSize()', () => { const s = freshSim(); expect(encodeObs(s).length).toBe(obsSize()); });",
+        "  it('applyAction forward sets the player moveInput', () => { const s = freshSim(); applyAction(s, 1 /* forward */); expect(s.moveInput.forward).toBe(true); });",
+        "  it('drives a second player by pid independently', () => { const s = freshSim(); const pid2 = s.addPlayer('mage', 'B'); applyAction(s, 1, pid2); expect(s.moveInputOf(pid2).forward).toBe(true); expect(s.moveInput.forward).toBe(false); });",
+        "  it('observe() returns a structured snapshot', () => { const s = freshSim(); const o = observe(s); expect(typeof o.self.hp).toBe('number'); expect(Array.isArray(o.mobs)).toBe(true); expect(Array.isArray(o.abilities)).toBe(true); });",
+        "});"
+      ],
+      "note": "Adjust the Sim constructor call to match the project's test setup (see tests/warlock_pets.test.ts / tests/raid_lockout_world.test.ts for how Sim is built in this repo)."
+    }
+  ],
+  "verify": [
+    "npx vitest run tests/obs.test.ts",
+    "npx vitest run tests/architecture.test.ts   # sim purity must stay green",
+    "npx tsc --noEmit                              # no new type errors in sim.ts / obs.ts",
+    "npm test && npm run build"
+  ],
+  "agentUsageAfterChange": {
+    "headless": "import { Sim } from './sim'; const s = new Sim(...); const pid = s.addPlayer('mage','Bot'); loop: const o = observe(s, pid); const action = brain(o); applyAction(s, action, pid); s.tick();",
+    "twoTier": "LLM (Claude/Gemma) decides a high-level intent ~1x/sec from observe(); a deterministic executor enacts it via applyAction/Sim methods every tick. Keeps the sim deterministic and decouples LLM latency."
+  },
+  "clientTooling": {
+    "note": "Lives in this guide repo (claudehead/worldofclaudecraft-quests), NOT the game — no game change required.",
+    "files": {
+      "agent/woc-agent.user.js": "Tampermonkey userscript: F8 take-over of the live window.__game.sim; two-tier loop; Gemma via Ollama with a scripted fallback.",
+      "agent/skills/<class>.json": "Per-class playbooks (abilities/rotation/rules) generated from CLASSES/ABILITIES by tools/generate-agent-skill.ts.",
+      "agent/README.md": "Setup (Tampermonkey + Ollama), offline-only caveat, tuning (TURN_SIGN, model)."
+    }
+  }
+}
