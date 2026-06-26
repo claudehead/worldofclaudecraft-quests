@@ -51,6 +51,9 @@ for (const [id, m] of Object.entries(ALL)) {
   if (camp) { zoneDir = camp.zone.dir; zoneTitle = camp.zone.title; location = `${Math.round(camp.center.x)}, ${Math.round(camp.center.z)}`; mapXZ = [Math.round(camp.center.x), Math.round(camp.center.z)]; detailFile = `quests/zones/${zoneDir}/bestiary.md`; }
   else if (dung) { zoneTitle = dung.name; location = dung.name; detailFile = dung.file; zoneDir = dung.zoneDir; }
   else if (delve) { zoneTitle = delve.name; location = delve.name; detailFile = delve.file; }
+  else if (m.family === 'demon') { zoneTitle = 'Warlock demon'; location = location || 'Summoned'; detailFile = 'reference/warlock-demons.md'; }
+  // anchor only exists on per-zone bestiary pages; other pages link without it
+  const detailAnchor = detailFile.endsWith('bestiary.md') ? `mob-${id}` : '';
   const loot = (m.loot || [])
     .filter((l: any) => l.itemId)
     .map((l: any) => ({ name: itemName(l.itemId), chance: l.chance ?? null, quality: itemQual(l.itemId) }));
@@ -59,7 +62,7 @@ for (const [id, m] of Object.entries(ALL)) {
     level: m.minLevel === maxL ? `${maxL}` : `${m.minLevel}–${maxL}`,
     minLevel: m.minLevel ?? maxL, maxLevel: maxL,
     hp, family: m.family || 'other', familyLabel: FAMILY_LABEL[m.family] || (m.family ? m.family[0].toUpperCase() + m.family.slice(1) : 'Other'),
-    rank, zoneDir, zoneTitle, location, mapXZ, detailFile,
+    rank, zoneDir, zoneTitle, location, mapXZ, detailFile, detailAnchor,
     render: hasRender(id) ? `quests/zones/_mob-renders/${id}.png` : null,
     loot: loot.slice(0, 6),
   });

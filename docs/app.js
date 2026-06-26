@@ -256,7 +256,8 @@ async function mobsView() {
       const col = RANK_COLOR[m.rank] || '#ccc';
       const rankTag = m.rank !== 'normal' ? `<span class="tag" style="color:${col}">${m.rank[0].toUpperCase() + m.rank.slice(1)}</span>` : '';
       const loot = m.loot.length ? ('Drops: ' + m.loot.slice(0, 3).map(l => esc(l.name) + (l.chance ? ` <span class="droppct">${Math.round(l.chance * 100)}%</span>` : '')).join(', ') + (m.loot.length > 3 ? ` +${m.loot.length - 3}` : '')) : 'No notable drops';
-      const card = el(`<div class="card gearcard" data-go="#/doc/${encodeURIComponent(m.detailFile)}/${encodeURIComponent('mob-' + m.id)}">
+      const link = m.detailFile ? `#/doc/${encodeURIComponent(m.detailFile)}${m.detailAnchor ? '/' + encodeURIComponent(m.detailAnchor) : ''}` : '';
+      const card = el(`<div class="card gearcard"${link ? ` data-go="${link}"` : ' style="cursor:default"'}>
         <div class="gearhead">
           ${m.render ? `<img class="gicon" src="${raw(m.render)}" alt="" loading="lazy" style="border-color:${col}">` : `<div class="gicon" style="border-color:${col}"></div>`}
           <div><h3 style="color:${col}">${esc(m.name)}</h3>
