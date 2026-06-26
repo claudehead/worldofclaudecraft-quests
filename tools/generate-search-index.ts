@@ -53,6 +53,7 @@ for (const g of [
   ['Combat maths', 'reference/combat.md'], ['Getting started', 'reference/getting-started.md'],
   ['Tameable beasts', 'reference/tameable-beasts.md'], ['Warlock demons', 'reference/warlock-demons.md'],
   ['Drops & materials', 'reference/materials.md'], ['World Market', 'reference/world-market.md'],
+  ['Rules & conduct', 'reference/rules.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
 
 // quest items / tools / trade goods -> materials page (anchored)
