@@ -30,12 +30,15 @@ Press **`Enter`** to open chat, type, and press **`Enter`** to send. Prefix the 
 
 | Type this | Goes to |
 |---|---|
-| `/p message` | **Party** chat |
-| `/s message` | Say (nearby) |
-| `/y message` | Yell |
-| `/general message` | Zone general |
-| `/world message` | World |
-| `/lfg message` | Looking-for-group |
+| `/s message` (or `/say`) | **Say** — players nearby |
+| `/y message` (or `/yell`) | **Yell** — the whole area |
+| `/w name message` (or `/tell`) | **Whisper** one player privately |
+| `/p message` (or `/party`) | **Party** chat |
+| `/g message` (or `/general`) | **General** — the zone-wide channel |
+| `/world message` | **World** channel |
+| `/lfg message` | **Looking-for-group** channel |
+
+> Heads-up: **`/g` is the General channel here, not guild.** Guild is a social tab (friends/guild/ignore), but guild messages don't have their own slash-command.
 
 ## 5. Running slow? Fix lag
 

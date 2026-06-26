@@ -47,12 +47,15 @@ L.push(`Press **\`Enter\`** to open chat, type, and press **\`Enter\`** to send.
 L.push('');
 L.push(`| Type this | Goes to |`);
 L.push(`|---|---|`);
-L.push(`| \`/p message\` | **Party** chat |`);
-L.push(`| \`/s message\` | Say (nearby) |`);
-L.push(`| \`/y message\` | Yell |`);
-L.push(`| \`/general message\` | Zone general |`);
-L.push(`| \`/world message\` | World |`);
-L.push(`| \`/lfg message\` | Looking-for-group |`);
+L.push(`| \`/s message\` (or \`/say\`) | **Say** — players nearby |`);
+L.push(`| \`/y message\` (or \`/yell\`) | **Yell** — the whole area |`);
+L.push(`| \`/w name message\` (or \`/tell\`) | **Whisper** one player privately |`);
+L.push(`| \`/p message\` (or \`/party\`) | **Party** chat |`);
+L.push(`| \`/g message\` (or \`/general\`) | **General** — the zone-wide channel |`);
+L.push(`| \`/world message\` | **World** channel |`);
+L.push(`| \`/lfg message\` | **Looking-for-group** channel |`);
+L.push('');
+L.push(`> Heads-up: **\`/g\` is the General channel here, not guild.** Guild is a social tab (friends/guild/ignore), but guild messages don't have their own slash-command.`);
 L.push('');
 
 L.push(`## 5. Running slow? Fix lag`);
