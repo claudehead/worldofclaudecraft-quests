@@ -51,3 +51,8 @@ learnings under "Session log" with the date.
   - 📝 **q_greyjaw** needs `greyjaw_fang` — did NOT drop from regular Forest Wolves in ~20 kills; likely a **named "Greyjaw" rare wolf** spawn, not a common drop. Look for a named mob, not grind-farmable from commons.
   - ✅ **Hard leash works** — recentered from hub:49 → hub:1 then re-engaged. No more endless drift.
   - ⚠️ **Death during retreat:** leash triggered walk-back at 46% HP but a chasing wolf bursted me 31→0 mid-retreat. **LESSON: combine — if HP<40% AND leashing, `flee` (back-pedal) takes priority over walking toward town; only walk back once HP recovers and combat drops.** Final session: lvl 2, xp 833, full q_wolves loop done.
+- **2026-06-26 (Opus session 05, 5-min — DEATHLESS):** Playbook validated — full q_wolves loop, 0 deaths, HP ~100% throughout.
+  - ✅ **Decision priority that works:** `flee(<50% & in combat) > turn-in > leash(hub>40) > kill(≤35yd) > venture-to-spawn`. The flee-first ordering killed the session-04 retreat-death problem.
+  - ✅ **Leash = free mana regen** (walk back refills mana, no idle downtime).
+  - 📝 **Known wolf spawn cluster: ~(-5,35)** north of the hub. When the hub is farmed out and stuck at 7/8, `goto` there for the last kill instead of idling.
+  - Sessions are now logged in `agent/sessions/DIARY.md` with labeled videos in `agent/sessions/videos/`.

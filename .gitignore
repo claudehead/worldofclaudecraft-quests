@@ -16,3 +16,4 @@ tools/class-models.json
 # OS / editor cruft
 .DS_Store
 Thumbs.db
+agent/sessions/videos/
