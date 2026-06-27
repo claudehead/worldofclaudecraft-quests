@@ -1,0 +1,9 @@
+{
+  "name": "woc-guide-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Discord bot that answers World of Claudecraft guide queries from the live guide data",
+  "scripts": { "start": "node woc-bot.mjs" },
+  "dependencies": { "discord.js": "^14.16.3" }
+}
