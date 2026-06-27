@@ -1411,7 +1411,7 @@ async function quest3dView(id) {
     let bx = new THREE.Box3().setFromObject(o); const h = (bx.max.y - bx.min.y) || 1; o.scale.setScalar(targetH / h);
     bx = new THREE.Box3().setFromObject(o); o.position.set(x, sampleH(x, z) - bx.min.y, z); o.rotation.y = rotY; scene.add(o); return o;
   }
-  const LBL = Math.max(6, Math.min(26, span * 0.045));
+  const LBL = Math.max(3, Math.min(9, span * 0.02));
   const textLabel = (text, fg = '#fff', bg = 'rgba(0,0,0,.62)') => {
     const font = 'bold 30px system-ui'; const mc = document.createElement('canvas').getContext('2d'); mc.font = font;
     const w = Math.ceil(mc.measureText(text).width) + 24, h = 46; const cv = document.createElement('canvas'); cv.width = w; cv.height = h; const x = cv.getContext('2d');
@@ -1425,7 +1425,7 @@ async function quest3dView(id) {
   for (const n of (q.npcs || [])) { const th = n.model.height || 2; await place(n.model.glb, n.x, n.z, { targetH: th, tint: n.model.tint, ts: n.model.tintStrength, rotY: Math.PI }); addLabel(n.name, n.x, sampleH(n.x, n.z) + th + LBL * 0.7, n.z, '#ffe9b0'); }
   for (const c of (q.camps || [])) { const cn = c.count || 4; for (let i = 0; i < cn; i++) { const a = (i / cn) * 6.28 + i, rr = (c.r || 8) * (0.3 + 0.6 * ((i * 0.618) % 1)); await place(c.model.glb, c.x + Math.cos(a) * rr, c.z + Math.sin(a) * rr, { targetH: c.model.height || 2, tint: c.model.tint, ts: c.model.tintStrength, rotY: a + Math.PI }); } addLabel(`${c.name} ×${c.count}`, c.x, sampleH(c.x, c.z) + (c.model.height || 2) + LBL * 0.9, c.z, '#ff9a9a'); }
   // quest path (gold arc) + numbered pins
-  const pathLift = Math.max(1.5, span * 0.01), arcLift = span * 0.08, pinH = Math.max(7, span * 0.05), labScale = Math.max(8, span * 0.06);
+  const pathLift = Math.max(1.5, span * 0.01), arcLift = span * 0.08, pinH = Math.max(6, span * 0.04), labScale = Math.max(4, Math.min(11, span * 0.028));
   const wps = q.steps.map(s => new THREE.Vector3(s.x, sampleH(s.x, s.z) + pathLift, s.z)); const cpts = [];
   for (let i = 0; i < wps.length; i++) { cpts.push(wps[i]); if (i < wps.length - 1) { const a = wps[i], bb = wps[i + 1]; cpts.push(new THREE.Vector3((a.x + bb.x) / 2, (a.y + bb.y) / 2 + arcLift, (a.z + bb.z) / 2)); } }
   let curve = null;
