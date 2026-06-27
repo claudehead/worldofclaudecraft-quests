@@ -60,6 +60,12 @@ for (const [id, d] of Object.entries(DUNGEON_DEFS) as [string, any][]) {
 }
 dungeons.sort((a, b) => a.players - b.players || a.name.localeCompare(b.name));
 
-fs.writeFileSync(OUT, JSON.stringify({ count: dungeons.length, modelRepo: 'levy-street/world-of-claudecraft', modelRef: 'main', dungeons }));
+const propModels = {
+  pillar: 'models/dungeon/pillar.glb',
+  tomb: 'models/dungeon/coffin_decorated.glb',
+  torch: 'models/dungeon/torch_lit.glb',
+  chest: 'models/dungeon/chest_gold.glb',
+};
+fs.writeFileSync(OUT, JSON.stringify({ count: dungeons.length, modelRepo: 'levy-street/world-of-claudecraft', modelRef: 'main', propModels, dungeons }));
 const modeled = dungeons.reduce((s, d) => s + d.spawns.filter((x: any) => x.model).length, 0);
 console.log(`wrote dungeon3d.json (${dungeons.length} dungeons, ${modeled} modeled spawns) to ${OUT}`);

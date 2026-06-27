@@ -1202,12 +1202,33 @@ async function dungeon3dView(sel) {
     mkWall(2, d.wall.height, len, -d.wall.x, d.wall.height / 2, cz);
     mkWall(wid + 6, d.wall.height, 2, cxw, d.wall.height / 2, f.z0);
     mkWall(wid + 6, d.wall.height, 2, cxw, d.wall.height / 2, f.z1);
-    // interior props
-    const pr = d.props || {};
+    // interior props — real KayKit dungeon models, with box fallbacks
+    const pr = d.props || {}, PM = dungeon3dData.propModels || {};
     const pillarMat = stone(0x52565d), tombMat = stone(0x5a5f66);
-    for (const p of (pr.pillars || [])) { const c = new THREE.Mesh(new THREE.CylinderGeometry((pr.pillarR || 1) * 1.4, (pr.pillarR || 1) * 1.6, d.wall.height, 12), pillarMat); c.position.set(p.x, d.wall.height / 2, p.z); scene.add(c); }
-    for (const t of (pr.tombs || [])) { const b = new THREE.Mesh(new THREE.BoxGeometry((pr.tombHW || 1.1) * 2, 1.6, (pr.tombHD || 2.1) * 2), tombMat); b.position.set(t.x, 0.8, t.z); scene.add(b); }
-    if (pr.dais) { const da = new THREE.Mesh(new THREE.CylinderGeometry(pr.dais.r, pr.dais.r + 0.5, 1, 32), new THREE.MeshStandardMaterial({ color: 0x3a2f44, emissive: 0x140d1c, roughness: 0.9 })); da.position.set(pr.dais.x, 0.5, pr.dais.z); scene.add(da); }
+    const placeProp = async (url, x, z, { targetH = null, rotY = 0 } = {}) => {
+      const tmpl = url ? await loadModel(url) : null; if (!tmpl) return false;
+      const o = tmpl.clone(true);
+      let box = new THREE.Box3().setFromObject(o); const bh = (box.max.y - box.min.y) || 1;
+      if (targetH) o.scale.setScalar(targetH / bh);
+      box = new THREE.Box3().setFromObject(o); o.position.set(x, -box.min.y, z); o.rotation.y = rotY;
+      scene.add(o); return true;
+    };
+    let torchBudget = 8;
+    for (let i = 0; i < (pr.pillars || []).length; i++) {
+      const p = pr.pillars[i];
+      const ok = await placeProp(PM.pillar, p.x, p.z, { targetH: d.wall.height });
+      if (!ok) { const c = new THREE.Mesh(new THREE.CylinderGeometry((pr.pillarR || 1) * 1.4, (pr.pillarR || 1) * 1.6, d.wall.height, 12), pillarMat); c.position.set(p.x, d.wall.height / 2, p.z); scene.add(c); }
+      if (i % 2 === 0 && torchBudget > 0) { // torch + warm light on every other pillar (capped)
+        const tx = p.x + (p.x < 0 ? 1.4 : -1.4);
+        await placeProp(PM.torch, tx, p.z, { targetH: 2.4 });
+        const pl = new THREE.PointLight(0xffa64d, 1.1, 26, 1.6); pl.position.set(tx, 4.2, p.z); scene.add(pl); torchBudget--;
+      }
+    }
+    for (const t of (pr.tombs || [])) {
+      const ok = await placeProp(PM.tomb, t.x, t.z, { targetH: 1.4, rotY: t.x < 0 ? Math.PI / 2 : -Math.PI / 2 });
+      if (!ok) { const b = new THREE.Mesh(new THREE.BoxGeometry((pr.tombHW || 1.1) * 2, 1.6, (pr.tombHD || 2.1) * 2), tombMat); b.position.set(t.x, 0.8, t.z); scene.add(b); }
+    }
+    if (pr.dais) { const da = new THREE.Mesh(new THREE.CylinderGeometry(pr.dais.r, pr.dais.r + 0.5, 1, 32), new THREE.MeshStandardMaterial({ color: 0x3a2f44, emissive: 0x140d1c, roughness: 0.9 })); da.position.set(pr.dais.x, 0.5, pr.dais.z); scene.add(da); await placeProp(PM.chest, pr.dais.x, pr.dais.z - pr.dais.r * 0.5, { targetH: 1.4 }); }
     // entry pad + exit ring
     const pad = new THREE.Mesh(new THREE.CylinderGeometry(2, 2, 0.2, 24), new THREE.MeshStandardMaterial({ color: 0x4caf50, emissive: 0x1b5e20 })); pad.position.set(d.entry.x, 0.1, d.entry.z); scene.add(pad);
     const ring = new THREE.Mesh(new THREE.TorusGeometry(2, 0.3, 12, 32), new THREE.MeshStandardMaterial({ color: 0xe6bb6a, emissive: 0x6a4a16 })); ring.rotation.x = Math.PI / 2; ring.position.set(d.exit.x, 2, d.exit.z); scene.add(ring);
