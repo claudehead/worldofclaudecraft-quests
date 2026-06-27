@@ -66,6 +66,7 @@ for (const g of [
 out.push({ t: 'Tool', n: 'Farming calculator', go: '#/farming' });
 out.push({ t: 'Tool', n: 'Where to get items (drop locator)', go: '#/drops' });
 out.push({ t: 'Tool', n: 'Quest chains', go: '#/chains' });
+out.push({ t: 'Tool', n: 'DPS & survivability calculator', go: '#/calc' });
 
 // quest items / tools / trade goods -> materials page (anchored)
 for (const i of Object.values(ITEMS) as any[]) {

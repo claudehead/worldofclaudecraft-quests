@@ -1615,6 +1615,64 @@ async function questChainsView() {
   reveal();
 }
 
+// ---------- DPS / EHP calculator ----------
+let statData = null;
+async function calcView() {
+  app.innerHTML = '';
+  if (!statData) {
+    try { statData = await (await fetch(cb('classstats.json'))).json(); }
+    catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load class stats (${esc(e.message)})</p></div></section>`)); return; }
+  }
+  const K = statData.constants, cls = Object.values(statData.classes);
+  const st = { cls: 'warrior', level: statData.maxLevel, g: { str: 0, agi: 0, sta: 0, int: 0, ap: 0, armor: 0, crit: 0 }, w: { min: 8, max: 14, speed: 2.5 } };
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Tools · combat</span><h2>DPS &amp; survivability calculator</h2>
+      <p>Estimates attack power, crit, health, armor mitigation and white-hit DPS using the game's real combat formulas. Pick a class and level, then add your gear's bonuses.</p></div>
+    <div class="controls reveal"><div class="pills" id="cclass"></div></div>
+    <div class="controls reveal" style="margin-top:-8px;gap:16px;flex-wrap:wrap">
+      <label class="meta">Level <select id="clevel"></select></label>
+    </div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:8px">
+      <div class="card" style="padding:14px 16px"><h3 style="margin:0 0 10px">Gear bonuses</h3><div id="cgear" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div></div>
+      <div class="card" style="padding:14px 16px"><h3 style="margin:0 0 10px">Weapon</h3><div id="cweap" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div></div>
+      <div class="card" id="cout" style="padding:14px 16px"></div>
+    </div>
+  </div></section>`));
+  const classHost = app.querySelector('#cclass');
+  cls.forEach((c) => { const p = el(`<span class="pill${c.id === st.cls ? ' active' : ''}">${esc(c.name)}</span>`); p.onclick = () => { st.cls = c.id; classHost.querySelectorAll('.pill').forEach((x) => x.classList.remove('active')); p.classList.add('active'); render(); }; classHost.append(p); });
+  const lv = app.querySelector('#clevel'); for (let i = 1; i <= statData.maxLevel; i++) lv.append(el(`<option value="${i}"${i === st.level ? ' selected' : ''}>${i}</option>`)); lv.onchange = () => { st.level = +lv.value; render(); };
+  const numField = (label, get, set) => { const w = el(`<label class="meta" style="display:flex;flex-direction:column;gap:2px">${label}<input type="number" value="${get()}" style="padding:6px 8px;border-radius:6px;border:1px solid #888;background:#fff;color:#111;color-scheme:light"></label>`); w.querySelector('input').oninput = (e) => { set(parseFloat(e.target.value) || 0); render(); }; return w; };
+  const gh = app.querySelector('#cgear');
+  [['+ Strength', 'str'], ['+ Agility', 'agi'], ['+ Stamina', 'sta'], ['+ Intellect', 'int'], ['+ Attack Power', 'ap'], ['+ Armor', 'armor'], ['+ Crit %', 'crit']].forEach(([l, k]) => gh.append(numField(l, () => st.g[k], (v) => st.g[k] = v)));
+  const wh = app.querySelector('#cweap');
+  [['Min dmg', 'min'], ['Max dmg', 'max'], ['Speed (s)', 'speed']].forEach(([l, k]) => wh.append(numField(l, () => st.w[k], (v) => st.w[k] = v)));
+  function render() {
+    const c = statData.classes[st.cls], L = st.level;
+    const base = {}; for (const k of ['str', 'agi', 'sta', 'int', 'armor']) base[k] = c.baseStats[k] + c.statsPerLevel[k] * (L - 1);
+    const str = base.str + st.g.str, agi = base.agi + st.g.agi, sta = base.sta + st.g.sta, int = base.int + st.g.int;
+    const ap = (c.apRule === 'str2' ? str * 2 : c.apRule === 'stragi' ? str + agi : str) + st.g.ap;
+    const crit = K.baseCrit + agi * K.critPerAgi + st.g.crit / 100;
+    const spellCrit = K.baseCrit + int * K.spellCritPerInt;
+    const hpSta = Math.min(sta, K.staLowCap) * K.staHpLow + Math.max(0, sta - K.staLowCap) * K.staHpHigh;
+    const hp = c.baseHp + c.hpPerLevel * (L - 1) + hpSta;
+    const armor = base.armor + st.g.armor + agi * K.armorPerAgi;
+    const mit = Math.min(K.armorCap, armor / (armor + K.armorA * L + K.armorB));
+    const ehp = hp / (1 - mit);
+    const avg = (st.w.min + st.w.max) / 2, perHit = avg + (ap / K.apToDamageDivisor) * st.w.speed;
+    const dpsWhite = st.w.speed > 0 ? perHit / st.w.speed : 0;
+    const dps = dpsWhite * (1 + crit * (K.meleeCritMult - 1));
+    const row = (a, b) => `<div style="display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-bottom:1px solid var(--line,#262626)"><span class="meta">${a}</span><b>${b}</b></div>`;
+    app.querySelector('#cout').innerHTML = `<h3 style="margin:0 0 10px">${esc(c.name)} · level ${L}</h3>
+      ${row('Strength / Agility', `${str} / ${agi}`)}${row('Stamina / Intellect', `${sta} / ${int}`)}
+      ${row('Attack power', Math.round(ap))}${row('Melee crit', (crit * 100).toFixed(1) + '%')}${c.caster ? row('Spell crit', (spellCrit * 100).toFixed(1) + '%') : ''}
+      ${row('Health', Math.round(hp))}${row('Armor', Math.round(armor))}${row('Mitigation (vs lv ' + L + ')', (mit * 100).toFixed(1) + '%')}${row('Effective HP', Math.round(ehp))}
+      ${row('White-hit damage', Math.round(perHit))}${row('White DPS (with crit)', dps.toFixed(1))}
+      <p class="meta" style="margin:10px 0 0;opacity:.75">DPS is raw weapon/auto-attack output before the target's armor; abilities and ${c.caster ? 'spell coefficients' : 'rotation'} add more. Talents not included.</p>`;
+  }
+  render();
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1628,6 +1686,7 @@ function router() {
   if (head === 'farming') return farmingView(parts[1]);
   if (head === 'drops') return dropsView();
   if (head === 'chains') return questChainsView();
+  if (head === 'calc') return calcView();
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();
