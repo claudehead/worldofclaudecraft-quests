@@ -1673,6 +1673,79 @@ async function calcView() {
   reveal();
 }
 
+// ---------- can I solo this? ----------
+let mobStatData = null;
+async function soloView() {
+  app.innerHTML = '';
+  try {
+    if (!statData) statData = await (await fetch(cb('classstats.json'))).json();
+    if (!mobStatData) mobStatData = await (await fetch(cb('mobstats.json'))).json();
+  } catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load data (${esc(e.message)})</p></div></section>`)); return; }
+  const K = statData.constants, cls = Object.values(statData.classes);
+  const st = { cls: 'warrior', level: 10, ap: 0, armor: 0, sta: 0, w: { min: 8, max: 14, speed: 2.5 }, near: true };
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Tools · combat</span><h2>Can I solo this?</h2>
+      <p>Pits your damage and survivability against each mob — time-to-kill vs time-to-die — for a quick "safe to pull?" verdict. Uses the game's real combat math.</p></div>
+    <div class="controls reveal"><div class="pills" id="sclass"></div></div>
+    <div class="controls reveal" style="margin-top:-8px;gap:14px;flex-wrap:wrap">
+      <label class="meta">Level <select id="slevel"></select></label>
+      <label class="meta">Wpn min <input id="swmin" type="number" value="8" style="width:60px"></label>
+      <label class="meta">max <input id="swmax" type="number" value="14" style="width:60px"></label>
+      <label class="meta">speed <input id="swspd" type="number" value="2.5" step="0.1" style="width:60px"></label>
+      <label class="meta">+AP <input id="sap" type="number" value="0" style="width:60px"></label>
+      <label class="meta">+Armor <input id="sarm" type="number" value="0" style="width:60px"></label>
+      <label class="meta">+Sta <input id="ssta" type="number" value="0" style="width:60px"></label>
+      <label class="meta"><input id="snear" type="checkbox" checked> near my level only</label>
+    </div>
+    <div id="sout" class="reveal" style="margin-top:8px"></div>
+  </div></section>`));
+  app.querySelectorAll('#sclass,#slevel input,select,input').forEach(() => {});
+  const classHost = app.querySelector('#sclass');
+  cls.forEach((c) => { const p = el(`<span class="pill${c.id === st.cls ? ' active' : ''}">${esc(c.name)}</span>`); p.onclick = () => { st.cls = c.id; classHost.querySelectorAll('.pill').forEach((x) => x.classList.remove('active')); p.classList.add('active'); render(); }; classHost.append(p); });
+  const lv = app.querySelector('#slevel'); for (let i = 1; i <= statData.maxLevel; i++) lv.append(el(`<option value="${i}"${i === st.level ? ' selected' : ''}>${i}</option>`)); lv.onchange = () => { st.level = +lv.value; render(); };
+  const bind = (id, fn) => { const e = app.querySelector(id); e.oninput = () => { fn(e.type === 'checkbox' ? e.checked : (parseFloat(e.value) || 0)); render(); }; };
+  bind('#swmin', (v) => st.w.min = v); bind('#swmax', (v) => st.w.max = v); bind('#swspd', (v) => st.w.speed = v);
+  bind('#sap', (v) => st.ap = v); bind('#sarm', (v) => st.armor = v); bind('#ssta', (v) => st.sta = v); bind('#snear', (v) => st.near = v);
+  const mitig = (armor, atkLevel) => Math.min(K.armorCap, armor / (armor + K.armorA * atkLevel + K.armorB));
+  function render() {
+    const c = statData.classes[st.cls], L = st.level;
+    const b = {}; for (const k of ['str', 'agi', 'sta', 'int', 'armor']) b[k] = c.baseStats[k] + c.statsPerLevel[k] * (L - 1);
+    const agi = b.agi, sta = b.sta + st.sta;
+    const ap = (c.apRule === 'str2' ? b.str * 2 : c.apRule === 'stragi' ? b.str + agi : b.str) + st.ap;
+    const crit = K.baseCrit + agi * K.critPerAgi;
+    const hp = c.baseHp + c.hpPerLevel * (L - 1) + (Math.min(sta, K.staLowCap) * K.staHpLow + Math.max(0, sta - K.staLowCap) * K.staHpHigh);
+    const pArmor = b.armor + st.armor + agi * K.armorPerAgi;
+    const perHit = (st.w.min + st.w.max) / 2 + (ap / K.apToDamageDivisor) * st.w.speed;
+    const pDpsRaw = st.w.speed > 0 ? (perHit / st.w.speed) * (1 + crit * (K.meleeCritMult - 1)) : 0;
+    let mobs = mobStatData.mobs;
+    if (st.near) mobs = mobs.filter((m) => m.level >= L - 6 && m.level <= L + 4);
+    const rows = mobs.map((m) => {
+      const pDps = pDpsRaw * (1 - mitig(m.armor, L)); // my dps into mob armor
+      const ttk = pDps > 0 ? m.hp / pDps : Infinity;
+      const mDps = m.dps * (1 - mitig(pArmor, m.level)); // mob dps into my armor
+      const ttd = mDps > 0 ? hp / mDps : Infinity;
+      const ratio = ttd / ttk;
+      const verdict = ttk > ttd ? '☠️ deadly' : ratio >= 2.5 ? '✅ easy' : ratio >= 1.3 ? '👍 doable' : '⚠️ risky';
+      const color = ttk > ttd ? '#e0526a' : ratio >= 2.5 ? '#36c275' : ratio >= 1.3 ? '#8bd24f' : '#e0a23a';
+      return { m, ttk, ttd, verdict, color, ratio };
+    }).sort((a, b2) => b2.ratio - a.ratio);
+    app.querySelector('#sout').innerHTML = `<div style="overflow-x:auto"><table id="stable" style="width:100%;border-collapse:collapse;font-size:.93rem">
+      <thead><tr style="text-align:left"><th>Mob</th><th style="text-align:center">Lvl</th><th>Where</th><th style="text-align:right">Mob HP</th><th style="text-align:right">Kill (s)</th><th style="text-align:right">Die (s)</th><th style="text-align:center">Verdict</th></tr></thead>
+      <tbody>${rows.map((r) => `<tr${r.m.elite ? ' style="font-weight:600"' : ''}>
+        <td>${esc(r.m.name)}${r.m.elite ? ' <span class="pill" style="background:#7a4dff;color:#fff">elite</span>' : ''}${r.m.rare ? ' <span class="pill" style="background:#c0852a;color:#fff">rare</span>' : ''}</td>
+        <td style="text-align:center">${r.m.minLevel === r.m.maxLevel ? r.m.level : r.m.minLevel + '–' + r.m.maxLevel}</td>
+        <td>${esc(r.m.zones.join(', ') || '—')}</td>
+        <td style="text-align:right">${r.m.hp}</td>
+        <td style="text-align:right">${isFinite(r.ttk) ? r.ttk.toFixed(1) : '∞'}</td>
+        <td style="text-align:right">${isFinite(r.ttd) ? r.ttd.toFixed(1) : '∞'}</td>
+        <td style="text-align:center;color:${r.color};font-weight:700">${r.verdict}</td></tr>`).join('')}</tbody></table></div>
+      <p class="meta" style="margin-top:10px;opacity:.75">White-hit DPS only (abilities add more), no miss/dodge, 1v1. "Kill" = time to kill the mob; "Die" = time it kills you. Verdict compares the two.</p>`;
+    app.querySelectorAll('#stable td, #stable th').forEach((x) => { x.style.padding = '5px 8px'; x.style.borderBottom = '1px solid var(--line,#2a2a2a)'; });
+  }
+  render();
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1687,6 +1760,7 @@ function router() {
   if (head === 'drops') return dropsView();
   if (head === 'chains') return questChainsView();
   if (head === 'calc') return calcView();
+  if (head === 'solo') return soloView();
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();

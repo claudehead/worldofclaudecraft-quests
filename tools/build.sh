@@ -37,8 +37,9 @@ echo "==> drop locator + quest chains"
 $TSX $TOOLS/generate-drops.ts docs/drops.json
 $TSX $TOOLS/generate-questchains.ts docs/questchains.json
 
-echo "==> class stats (DPS/EHP calculator)"
+echo "==> class stats + mob stats (calculators)"
 $TSX $TOOLS/generate-classstats.ts docs/classstats.json
+$TSX $TOOLS/generate-mobstats.ts docs/mobstats.json
 
 echo "==> bestiary"
 $TSX $TOOLS/generate-bestiary.ts quests
