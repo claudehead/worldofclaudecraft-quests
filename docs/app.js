@@ -1342,6 +1342,80 @@ async function dungeon3dView(sel) {
   reveal();
 }
 
+// ---------- 3D quest route ----------
+let questMapData = null;
+const ZONE_GROUND = { '01-eastbrook-vale': 0x35502f, '02-mirefen-marsh': 0x2f4338, '03-thornpeak-heights': 0x4a4338, '04-the-drowned-temple': 0x223742 };
+const QSTEP_COLOR = { giver: 0xf0c419, turnin: 0x5cb85c, kill: 0xd9534f, collect: 0x46b8da, interact: 0x9b8cff };
+const QSTEP_CSS = { giver: '#f0c419', turnin: '#5cb85c', kill: '#d9534f', collect: '#46b8da', interact: '#9b8cff' };
+async function quest3dView(id) {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">3D · quest route</span><h2>Quest paths</h2>
+      <p>The route for a quest in 3D — from the giver, through each objective, to the turn-in. Drag to orbit, scroll to zoom. Pick a quest:</p></div>
+    <div class="controls reveal"><select id="qrpick" class="search" style="max-width:420px"></select></div>
+    <div style="position:relative;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:#070a0e;margin-bottom:14px">
+      <canvas id="qrcanvas" style="display:block;width:100%;height:62vh;touch-action:none"></canvas>
+    </div>
+    <div id="qrsteps" class="meta"></div>
+  </div></section>`));
+  if (!questMapData) {
+    try { questMapData = await (await fetch(cb(raw('quests/quest-maps.json')))).json(); }
+    catch (e) { app.querySelector('#qrsteps').textContent = `Couldn't load quest routes (${esc(e.message)})`; return; }
+  }
+  const ids = Object.keys(questMapData);
+  const cur = questMapData[id] ? id : ids[0];
+  const q = questMapData[cur];
+  // selector grouped by zone
+  const sel = app.querySelector('#qrpick');
+  const byZone = {};
+  ids.forEach(k => { const z = questMapData[k].zone; (byZone[z] = byZone[z] || []).push(k); });
+  sel.innerHTML = Object.keys(byZone).sort().map(z => `<optgroup label="${esc(z)}">` + byZone[z].map(k => `<option value="${k}"${k === cur ? ' selected' : ''}>${esc(questMapData[k].name || k)}</option>`).join('') + '</optgroup>').join('');
+  sel.onchange = () => { location.hash = `#/questroute/${sel.value}`; };
+  // steps legend
+  app.querySelector('#qrsteps').innerHTML = '<b>Route:</b> ' + q.steps.map(s => `<span style="display:inline-block;margin:2px 8px 2px 0"><span style="display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border-radius:50%;background:${QSTEP_CSS[s.kind] || '#888'};color:#000;font-weight:700;font-size:11px">${s.n}</span> ${esc(s.label)}</span>`).join(' → ');
+
+  const mods = await ensureThree(); const { THREE, OrbitControls } = mods;
+  const canvas = app.querySelector('#qrcanvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(0x070a0e);
+  const cam = new THREE.PerspectiveCamera(55, 1, 0.5, 4000);
+  scene.add(new THREE.AmbientLight(0xb0b8c4, 1.1));
+  const dl = new THREE.DirectionalLight(0xfff2d8, 0.7); dl.position.set(1, 3, 2); scene.add(dl);
+  const xs = q.steps.map(s => s.x), zs = q.steps.map(s => s.z);
+  const minX = Math.min(...xs), maxX = Math.max(...xs), minZ = Math.min(...zs), maxZ = Math.max(...zs);
+  const cx = (minX + maxX) / 2, cz = (minZ + maxZ) / 2, span = Math.max(maxX - minX, maxZ - minZ, 30) + 40;
+  // ground + grid
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(span * 1.5, span * 1.5), new THREE.MeshStandardMaterial({ color: ZONE_GROUND[q.zone] || 0x33402f, roughness: 1 }));
+  ground.rotation.x = -Math.PI / 2; ground.position.set(cx, 0, cz); scene.add(ground);
+  const grid = new THREE.GridHelper(span * 1.5, 24, 0x000000, 0x223018); grid.position.set(cx, 0.05, cz); grid.material.opacity = 0.25; grid.material.transparent = true; scene.add(grid);
+  // path tube through the waypoints
+  const pts = q.steps.map(s => new THREE.Vector3(s.x, 1.2, s.z));
+  if (pts.length >= 2) {
+    const curve = new THREE.CatmullRomCurve3(pts, false, 'catmullrom', 0.4);
+    const tube = new THREE.Mesh(new THREE.TubeGeometry(curve, Math.max(20, pts.length * 16), 0.7, 8, false), new THREE.MeshStandardMaterial({ color: 0xe6bb6a, emissive: 0x6a4a16, roughness: 0.5 }));
+    scene.add(tube);
+  }
+  // number sprite
+  const numSprite = (n, col) => {
+    const cv = document.createElement('canvas'); cv.width = cv.height = 64; const x = cv.getContext('2d');
+    x.fillStyle = col; x.beginPath(); x.arc(32, 32, 28, 0, 7); x.fill(); x.fillStyle = '#000'; x.font = 'bold 38px system-ui'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(String(n), 32, 34);
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), depthTest: false })); sp.scale.set(7, 7, 1); return sp;
+  };
+  // markers (pin per step)
+  q.steps.forEach(s => {
+    const col = QSTEP_COLOR[s.kind] || 0x999999;
+    const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.25, 6, 8), new THREE.MeshStandardMaterial({ color: col })); pole.position.set(s.x, 3, s.z); scene.add(pole);
+    const orb = new THREE.Mesh(new THREE.SphereGeometry(1.4, 16, 16), new THREE.MeshStandardMaterial({ color: col, emissive: col, emissiveIntensity: 0.35 })); orb.position.set(s.x, 6.5, s.z); scene.add(orb);
+    const lab = numSprite(s.n, QSTEP_CSS[s.kind] || '#999'); lab.position.set(s.x, 10, s.z); scene.add(lab);
+  });
+  cam.position.set(cx, span * 0.85, cz + span * 0.85); cam.lookAt(cx, 0, cz);
+  const controls = new OrbitControls(cam, canvas); controls.target.set(cx, 0, cz); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49;
+  function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
+  resize(); addEventListener('resize', resize);
+  (function loop() { if (!document.body.contains(canvas)) { removeEventListener('resize', resize); renderer.dispose(); return; } controls.update(); renderer.render(scene, cam); requestAnimationFrame(loop); })();
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1360,6 +1434,7 @@ function router() {
   if (head === 'npcs') return npcsView();
   if (head === 'assets') return assetsView();
   if (head === 'explore') return dungeon3dView(parts[1]);
+  if (head === 'questroute') return quest3dView(parts[1]);
   if (head === 'gear') return gearView();
   if (head === 'bis') return bisView();
   if (head === 'consumables') return consumablesView();

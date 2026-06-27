@@ -179,7 +179,7 @@ for (const z of zones) {
     const file = `qmap-${slug(q.id)}.svg`;
     fs.mkdirSync(`${OUT}/zones/${z.dir}`, { recursive: true });
     fs.writeFileSync(`${OUT}/zones/${z.dir}/${file}`, questMap(z, q, steps));
-    manifest[q.id] = { zone: z.dir, map: `quests/zones/${z.dir}/${file}`, steps: steps.map((s, i) => ({ n: i + 1, kind: s.kind, key: s.key, label: s.label })) };
+    manifest[q.id] = { zone: z.dir, map: `quests/zones/${z.dir}/${file}`, name: q.name, steps: steps.map((s, i) => ({ n: i + 1, kind: s.kind, key: s.key, label: s.label, x: Math.round(s.pos.x), z: Math.round(s.pos.z) })) };
     n++;
   }
 }
