@@ -1453,6 +1453,67 @@ async function quest3dView(id) {
   reveal();
 }
 
+// ---------- 3D whole-zone world ----------
+let zone3dData = null;
+async function zone3dView(dir) {
+  app.innerHTML = '';
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">3D · zone</span><h2>Explore the zone</h2>
+      <p>A whole zone rendered in 3D — real terrain, towns, mob camps, roads, lakes and named places. Drag to orbit, scroll to zoom.</p></div>
+    <div class="controls reveal" style="position:relative;z-index:30"><select id="z3pick" style="max-width:420px;position:relative;z-index:30;padding:8px 10px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light"></select></div>
+    <div style="position:relative;z-index:1;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:#9fbcd6">
+      <canvas id="z3canvas" style="display:block;width:100%;height:70vh;touch-action:none"></canvas>
+      <div id="z3load" style="position:absolute;left:10px;top:10px;font:600 12px system-ui;color:#fff;background:rgba(0,0,0,.5);padding:4px 8px;border-radius:6px">Building the zone…</div>
+    </div>
+  </div></section>`));
+  if (!zone3dData) {
+    try { zone3dData = await (await fetch(cb(raw('docs/zone3d.json')))).json(); }
+    catch (e) { app.querySelector('#z3load').textContent = `Couldn't load zone (${esc(e.message)})`; return; }
+  }
+  const Z = zone3dData.zones, ids = Object.keys(Z), cur = Z[dir] ? dir : ids[0], q = Z[cur];
+  const sel = app.querySelector('#z3pick');
+  sel.innerHTML = ids.map(k => `<option value="${k}"${k === cur ? ' selected' : ''}>${esc(Z[k].name)}</option>`).join('');
+  sel.onchange = () => { location.hash = `#/zone3d/${sel.value}`; };
+
+  const mods = await ensureThree(); const SkeletonUtils = await import('three/addons/utils/SkeletonUtils.js');
+  const { THREE, GLTFLoader, OrbitControls, MeshoptDecoder } = mods;
+  const MODEL_BASE = `https://raw.githubusercontent.com/${zone3dData.modelRepo}/${zone3dData.modelRef}/public/`;
+  const loader = new GLTFLoader(); try { loader.setMeshoptDecoder(MeshoptDecoder); } catch (e) {}
+  const cache = {}; const loadGLTF = (u) => cache[u] || (cache[u] = loader.loadAsync(MODEL_BASE + u).catch(() => null));
+  const canvas = app.querySelector('#z3canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const b = q.bounds, cx = (b.x0 + b.x1) / 2, cz = (b.z0 + b.z1) / 2, span = Math.max(b.x1 - b.x0, b.z1 - b.z0), sky = 0x9fbcd6;
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(sky); scene.fog = new THREE.Fog(sky, span * 0.9, span * 2.4);
+  const cam = new THREE.PerspectiveCamera(58, 1, 0.5, span * 8);
+  scene.add(new THREE.HemisphereLight(0xcfe2f2, 0x40392c, 1.05));
+  const sun = new THREE.DirectionalLight(0xfff2d8, 1.0); sun.position.set(span * 0.3, span * 0.7, span * 0.2); scene.add(sun);
+  const T = q.terrain;
+  const sampleH = (x, z) => { if (!T) return 0; const fx = Math.max(0, Math.min(T.res - 1.001, (x - T.x0) / (T.x1 - T.x0) * (T.res - 1))), fz = Math.max(0, Math.min(T.res - 1.001, (z - T.z0) / (T.z1 - T.z0) * (T.res - 1))); const j = Math.floor(fx), i = Math.floor(fz), tj = fx - j, ti = fz - i, w = T.res, H = T.heights; return (H[i * w + j] * (1 - tj) + H[i * w + j + 1] * tj) * (1 - ti) + (H[(i + 1) * w + j] * (1 - tj) + H[(i + 1) * w + j + 1] * tj) * ti; };
+  const gGeo = new THREE.PlaneGeometry(T.x1 - T.x0, T.z1 - T.z0, T.res - 1, T.res - 1); const gp = gGeo.attributes.position;
+  for (let k = 0; k < gp.count; k++) gp.setZ(k, sampleH(cx + gp.getX(k), cz - gp.getY(k)));
+  gGeo.computeVertexNormals();
+  const ground = new THREE.Mesh(gGeo, new THREE.MeshStandardMaterial({ color: q.biome || '#3f5a33', roughness: 1, flatShading: true })); ground.rotation.x = -Math.PI / 2; ground.position.set(cx, 0, cz); scene.add(ground);
+  for (const l of (q.lakes || [])) { const m = new THREE.Mesh(new THREE.CircleGeometry(l.r, 32), new THREE.MeshStandardMaterial({ color: 0x2b6fa6, transparent: true, opacity: 0.85, roughness: 0.15 })); m.rotation.x = -Math.PI / 2; m.position.set(l.x, sampleH(l.x, l.z) + 0.3, l.z); scene.add(m); }
+  for (const r of (q.roads || [])) { if (r.length < 2) continue; const c = new THREE.CatmullRomCurve3(r.map(p => new THREE.Vector3(p.x, sampleH(p.x, p.z) + 0.4, p.z))); scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, Math.max(20, r.length * 8), 2.2, 6, false), new THREE.MeshStandardMaterial({ color: 0x9c8157, roughness: 1 }))); }
+  async function place(url, x, z, { targetH = 2, tint = null, ts = 0, rotY = 0 } = {}) { const g = await loadGLTF(url); if (!g) return; const o = SkeletonUtils.clone(g.scene); if (tint) { const tc = new THREE.Color(tint); o.traverse(n => { if (n.isMesh && n.material) { n.material = Array.isArray(n.material) ? n.material.map(m => m.clone()) : n.material.clone(); (Array.isArray(n.material) ? n.material : [n.material]).forEach(m => { if (m.color) m.color.lerp(tc, ts); }); } }); } let bx = new THREE.Box3().setFromObject(o); const h = (bx.max.y - bx.min.y) || 1; o.scale.setScalar(targetH / h); bx = new THREE.Box3().setFromObject(o); o.position.set(x, sampleH(x, z) - bx.min.y, z); o.rotation.y = rotY; scene.add(o); }
+  const LBL = Math.max(4, Math.min(11, span * 0.012));
+  const textLabel = (text, fg, bg) => { const font = 'bold 30px system-ui'; const mc = document.createElement('canvas').getContext('2d'); mc.font = font; const w = Math.ceil(mc.measureText(text).width) + 24, h = 46; const cv = document.createElement('canvas'); cv.width = w; cv.height = h; const x = cv.getContext('2d'); x.fillStyle = bg; x.fillRect(0, 0, w, h); x.font = font; x.fillStyle = fg; x.textBaseline = 'middle'; x.textAlign = 'center'; x.fillText(text, w / 2, h / 2 + 1); const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), depthTest: false, transparent: true })); sp.scale.set(LBL * (w / h), LBL, 1); return sp; };
+  const addLabel = (text, x, y, z, fg, bg = 'rgba(0,0,0,.6)', f = 1) => { const s = textLabel(text, fg, bg); s.scale.multiplyScalar(f); s.position.set(x, y, z); scene.add(s); };
+  for (const f of (q.foliage || [])) await place(f.url, f.x, f.z, { targetH: f.h || 2, rotY: (f.x * 0.7 + f.z) % 6.28 });
+  for (const d of (q.decor || [])) await place(d.url, d.x, d.z, { targetH: d.h || 2, rotY: d.rotY || 0 });
+  for (const n of (q.npcs || [])) { const th = n.model.height || 2; await place(n.model.glb, n.x, n.z, { targetH: th, tint: n.model.tint, ts: n.model.tintStrength, rotY: Math.PI }); addLabel(n.name, n.x, sampleH(n.x, n.z) + th + LBL * 0.7, n.z, '#ffe9b0'); }
+  for (const c of (q.camps || [])) { const cn = c.count || 3; for (let i = 0; i < cn; i++) { const a = (i / cn) * 6.28 + i, rr = (c.r || 8) * (0.3 + 0.6 * ((i * 0.618) % 1)); await place(c.model.glb, c.x + Math.cos(a) * rr, c.z + Math.sin(a) * rr, { targetH: c.model.height || 2, tint: c.model.tint, ts: c.model.tintStrength, rotY: a + Math.PI }); } addLabel(c.name, c.x, sampleH(c.x, c.z) + (c.model.height || 2) + LBL * 0.9, c.z, '#ff9a9a'); }
+  for (const pl of (q.places || [])) addLabel(pl.name, pl.x, sampleH(pl.x, pl.z) + LBL * 3, pl.z, '#fff6d8', 'rgba(10,12,18,.4)', 1.8);
+  app.querySelector('#z3load').style.display = 'none';
+  cam.position.set(cx + span * 0.4, span * 0.6, cz + span * 0.8); cam.lookAt(cx, 0, cz);
+  const controls = new OrbitControls(cam, canvas); controls.target.set(cx, sampleH(cx, cz), cz); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49; controls.autoRotate = true; controls.autoRotateSpeed = 0.4;
+  canvas.addEventListener('pointerdown', () => { controls.autoRotate = false; });
+  function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
+  resize(); addEventListener('resize', resize);
+  (function loop() { if (!document.body.contains(canvas)) { removeEventListener('resize', resize); renderer.dispose(); return; } controls.update(); renderer.render(scene, cam); requestAnimationFrame(loop); })();
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1472,6 +1533,7 @@ function router() {
   if (head === 'assets') return assetsView();
   if (head === 'explore') return dungeon3dView(parts[1]);
   if (head === 'questroute') return quest3dView(parts[1]);
+  if (head === 'zone3d') return zone3dView(parts[1]);
   if (head === 'gear') return gearView();
   if (head === 'bis') return bisView();
   if (head === 'consumables') return consumablesView();
