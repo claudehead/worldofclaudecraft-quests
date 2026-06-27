@@ -52,6 +52,9 @@ echo "==> lockpicking + delve companions guides"
 $TSX $TOOLS/generate-lockpicking.ts reference/lockpicking.md
 $TSX $TOOLS/generate-companions.ts reference/companions.md
 
+echo "==> endgame & prestige guide"
+$TSX $TOOLS/generate-endgame.ts reference/endgame.md
+
 echo "==> class portraits + pages"
 $TSX $TOOLS/build-class-manifest.ts $TOOLS/class-models.json
 node $TOOLS/render-mobs.mjs $TOOLS/class-models.json $WOC/public classes/_class-renders
