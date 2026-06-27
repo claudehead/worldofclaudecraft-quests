@@ -1351,8 +1351,8 @@ async function quest3dView(id) {
   app.append(el(`<section class="block"><div class="wrap">
     <div class="shead reveal"><span class="eyebrow">3D · in-game route</span><h2>Quest paths</h2>
       <p>The quest rendered in the world — terrain, foliage, NPCs and mobs from the game, with a hero walking the route from giver → objectives → turn-in. Drag to orbit, scroll to zoom. Pick a quest:</p></div>
-    <div class="controls reveal"><select id="qrpick" class="search" style="max-width:420px"></select></div>
-    <div style="position:relative;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:#9fbcd6;margin-bottom:14px">
+    <div class="controls reveal" style="position:relative;z-index:30"><select id="qrpick" style="max-width:420px;position:relative;z-index:30;padding:8px 10px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light"></select></div>
+    <div style="position:relative;z-index:1;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:#9fbcd6;margin-bottom:14px">
       <canvas id="qrcanvas" style="display:block;width:100%;height:62vh;touch-action:none"></canvas>
       <div id="qrload" style="position:absolute;left:10px;top:10px;font:600 12px system-ui;color:#fff;background:rgba(0,0,0,.5);padding:4px 8px;border-radius:6px">Building the world…</div>
     </div>
