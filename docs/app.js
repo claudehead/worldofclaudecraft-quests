@@ -1403,11 +1403,19 @@ async function quest3dView(id) {
     let bx = new THREE.Box3().setFromObject(o); const h = (bx.max.y - bx.min.y) || 1; o.scale.setScalar(targetH / h);
     bx = new THREE.Box3().setFromObject(o); o.position.set(x, -bx.min.y, z); o.rotation.y = rotY; scene.add(o); return o;
   }
+  const LBL = Math.max(6, Math.min(26, span * 0.045));
+  const textLabel = (text, fg = '#fff', bg = 'rgba(0,0,0,.62)') => {
+    const font = 'bold 30px system-ui'; const mc = document.createElement('canvas').getContext('2d'); mc.font = font;
+    const w = Math.ceil(mc.measureText(text).width) + 24, h = 46; const cv = document.createElement('canvas'); cv.width = w; cv.height = h; const x = cv.getContext('2d');
+    x.fillStyle = bg; x.fillRect(0, 0, w, h); x.font = font; x.fillStyle = fg; x.textBaseline = 'middle'; x.textAlign = 'center'; x.fillText(text, w / 2, h / 2 + 1);
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), depthTest: false, transparent: true })); sp.scale.set(LBL * (w / h), LBL, 1); return sp;
+  };
+  const addLabel = (text, x, y, z, fg) => { const s = textLabel(text, fg); s.position.set(x, y, z); scene.add(s); return s; };
   // foliage, NPCs, mob camps — the actual world
   for (const f of (q.foliage || [])) await place(f.url, f.x, f.z, { targetH: f.scale * 4, rotY: (f.x * 0.7 + f.z) % 6.28 });
   for (const d of (q.decor || [])) await place(d.url, d.x, d.z, { targetH: d.scale * 2.2, rotY: d.rotY || 0 });
-  for (const n of (q.npcs || [])) await place(n.model.glb, n.x, n.z, { targetH: n.model.height || 2, tint: n.model.tint, ts: n.model.tintStrength, rotY: Math.PI });
-  for (const c of (q.camps || [])) { const cn = c.count || 4; for (let i = 0; i < cn; i++) { const a = (i / cn) * 6.28 + i, rr = (c.r || 8) * (0.3 + 0.6 * ((i * 0.618) % 1)); await place(c.model.glb, c.x + Math.cos(a) * rr, c.z + Math.sin(a) * rr, { targetH: c.model.height || 2, tint: c.model.tint, ts: c.model.tintStrength, rotY: a + Math.PI }); } }
+  for (const n of (q.npcs || [])) { const th = n.model.height || 2; await place(n.model.glb, n.x, n.z, { targetH: th, tint: n.model.tint, ts: n.model.tintStrength, rotY: Math.PI }); addLabel(n.name, n.x, th + LBL * 0.7, n.z, '#ffe9b0'); }
+  for (const c of (q.camps || [])) { const cn = c.count || 4; for (let i = 0; i < cn; i++) { const a = (i / cn) * 6.28 + i, rr = (c.r || 8) * (0.3 + 0.6 * ((i * 0.618) % 1)); await place(c.model.glb, c.x + Math.cos(a) * rr, c.z + Math.sin(a) * rr, { targetH: c.model.height || 2, tint: c.model.tint, ts: c.model.tintStrength, rotY: a + Math.PI }); } addLabel(`${c.name} ×${c.count}`, c.x, (c.model.height || 2) + LBL * 0.9, c.z, '#ff9a9a'); }
   // quest path (gold arc) + numbered pins
   const baseY = Math.max(2, span * 0.012), arcLift = span * 0.11, pinH = Math.max(7, span * 0.05), labScale = Math.max(8, span * 0.06);
   const wps = q.steps.map(s => new THREE.Vector3(s.x, baseY, s.z)); const cpts = [];
@@ -1418,8 +1426,8 @@ async function quest3dView(id) {
   q.steps.forEach((s, i) => { const col = QSTEP_COLOR[s.kind] || 0x999999; const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, pinH, 8), new THREE.MeshStandardMaterial({ color: col, emissive: col, emissiveIntensity: 0.3 })); pole.position.set(s.x, pinH / 2, s.z); scene.add(pole); const lab = numSprite(i + 1, QSTEP_CSS[s.kind] || '#999'); lab.position.set(s.x, pinH + labScale * 0.5, s.z); scene.add(lab); });
   app.querySelector('#qrload').style.display = 'none';
   // hero character that walks the path
-  let hero = null, mixer = null;
-  (async () => { const g = await loadGLTF(q.character); if (!g) return; hero = SkeletonUtils.clone(g.scene); let bx = new THREE.Box3().setFromObject(hero); const h = (bx.max.y - bx.min.y) || 1; hero.scale.setScalar(2.4 / h); scene.add(hero); if (g.animations && g.animations.length) { mixer = new THREE.AnimationMixer(hero); mixer.clipAction(g.animations.find(a => /walk|run|move/i.test(a.name)) || g.animations[0]).play(); } })();
+  let hero = null, mixer = null, heroLabel = null;
+  (async () => { const g = await loadGLTF(q.character); if (!g) return; hero = SkeletonUtils.clone(g.scene); let bx = new THREE.Box3().setFromObject(hero); const h = (bx.max.y - bx.min.y) || 1; hero.scale.setScalar(2.4 / h); scene.add(hero); heroLabel = textLabel('You', '#bfe9ff'); scene.add(heroLabel); if (g.animations && g.animations.length) { mixer = new THREE.AnimationMixer(hero); mixer.clipAction(g.animations.find(a => /walk|run|move/i.test(a.name)) || g.animations[0]).play(); } })();
 
   cam.position.set(cx + span * 0.5, span * 0.6, cz + span * 1.0); cam.lookAt(cx, 0, cz);
   const controls = new OrbitControls(cam, canvas); controls.target.set(cx, baseY, cz); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
@@ -1430,7 +1438,7 @@ async function quest3dView(id) {
   (function loop(now) {
     if (!document.body.contains(canvas)) { removeEventListener('resize', resize); renderer.dispose(); return; }
     const dt = Math.min((now - last) / 1000, 0.05); last = now; if (mixer) mixer.update(dt);
-    if (hero && curve) { const t = ((now || 0) % travelMs) / travelMs; const p = curve.getPointAt(t), tan = curve.getTangentAt(t); hero.position.set(p.x, baseY - 0.4, p.z); hero.lookAt(p.x + tan.x, baseY - 0.4, p.z + tan.z); }
+    if (hero && curve) { const t = ((now || 0) % travelMs) / travelMs; const p = curve.getPointAt(t), tan = curve.getTangentAt(t); hero.position.set(p.x, baseY - 0.4, p.z); hero.lookAt(p.x + tan.x, baseY - 0.4, p.z + tan.z); if (heroLabel) heroLabel.position.set(p.x, baseY + 4, p.z); }
     controls.update(); renderer.render(scene, cam); requestAnimationFrame(loop);
   })(performance.now());
   reveal();
