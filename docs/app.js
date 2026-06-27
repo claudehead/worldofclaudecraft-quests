@@ -1558,6 +1558,63 @@ async function farmingView(levelArg) {
   reveal();
 }
 
+// ---------- drop / farm locator ----------
+let dropsData = null;
+const QCOL = { poor: '#9d9d9d', common: '#ffffff', uncommon: '#1eff00', rare: '#0070dd', epic: '#a335ee', legendary: '#ff8000' };
+async function dropsView() {
+  app.innerHTML = '';
+  if (!dropsData) {
+    try { dropsData = await (await fetch(cb('drops.json'))).json(); }
+    catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load drop data (${esc(e.message)})</p></div></section>`)); return; }
+  }
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Tools · items</span><h2>Where do I get it?</h2>
+      <p>Search any item to see every source — which mobs drop it (with chance, level, zone and spawn density), which ground objects contain it, and which vendors sell it.</p></div>
+    <div class="controls reveal"><input class="search" id="dsearch" placeholder="Search an item… (e.g. pelt, ore, hide, ring)"></div>
+    <div class="dcount meta reveal" id="dcount"></div>
+    <div id="dlist" class="reveal"></div>
+  </div></section>`));
+  const list = app.querySelector('#dlist'), count = app.querySelector('#dcount'), input = app.querySelector('#dsearch');
+  const srcLine = (s) => {
+    if (s.type === 'mob') { const flags = [s.boss ? 'boss' : '', s.elite ? 'elite' : '', s.rare ? 'rare' : ''].filter(Boolean).join(' '); return `<li>🗡 <b>${esc(s.name)}</b> <span class="meta">lv ${s.level}${flags ? ' · ' + flags : ''}</span> — ${s.chance}%${s.zones.length ? ' · ' + esc(s.zones.join(', ')) : ''}${s.spawns ? ` · ${s.spawns} spawns` : ''}${s.questId ? ' <span class="meta">(only while on that quest)</span>' : ''}</li>`; }
+    if (s.type === 'object') return `<li>📦 <b>${esc(s.name)}</b> <span class="meta">ground object${s.zones.length ? ' · ' + esc(s.zones.join(', ')) : ''} · ${s.count} spots</span></li>`;
+    return `<li>🛒 <b>${esc(s.name)}</b> <span class="meta">vendor${s.zones.length ? ' · ' + esc(s.zones.join(', ')) : ''}</span></li>`;
+  };
+  function render(q) {
+    q = (q || '').trim().toLowerCase();
+    const matches = q ? dropsData.items.filter((i) => i.nl ? i.nl.includes(q) : i.name.toLowerCase().includes(q)) : dropsData.items;
+    const shown = matches.slice(0, 150);
+    count.textContent = `${matches.length} item${matches.length === 1 ? '' : 's'}${matches.length > shown.length ? ` (showing ${shown.length})` : ''}`;
+    list.innerHTML = shown.map((i) => `<div class="card" style="margin-bottom:10px;padding:12px 14px">
+      <div style="font-weight:700;color:${QCOL[i.quality] || '#fff'}">${esc(i.name)} <span class="meta" style="font-weight:400;color:var(--muted,#999)">${esc(i.kind)}${i.slot ? ' · ' + esc(i.slot) : ''}</span></div>
+      <ul style="margin:8px 0 0;padding-left:18px;line-height:1.7">${i.sources.map(srcLine).join('')}</ul></div>`).join('') || '<p class="meta">No items match.</p>';
+  }
+  input.oninput = () => render(input.value);
+  render('');
+  reveal();
+}
+
+// ---------- quest chain visualizer ----------
+let chainData = null;
+async function questChainsView() {
+  app.innerHTML = '';
+  if (!chainData) {
+    try { chainData = await (await fetch(cb('questchains.json'))).json(); }
+    catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load quest chains (${esc(e.message)})</p></div></section>`)); return; }
+  }
+  const renderNode = (n) => `<li><a class="qlink" href="${n.href}">${esc(n.name)}</a>${n.minLevel ? ` <span class="meta">lv ${n.minLevel}</span>` : ''}${n.giver ? ` <span class="meta">· ${esc(n.giver)}</span>` : ''}${n.children && n.children.length ? `<ul>${n.children.map(renderNode).join('')}</ul>` : ''}</li>`;
+  const zones = chainData.zones.map((z) => `<div class="card reveal" style="margin-bottom:16px;padding:14px 16px">
+    <h3 style="margin:0 0 6px">${esc(z.name)} <span class="meta" style="font-weight:400">· ${z.chains.length} chain${z.chains.length === 1 ? '' : 's'}</span></h3>
+    ${z.chains.map((c) => `<ul class="qchain">${renderNode(c)}</ul>`).join('')}</div>`).join('');
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">World · storylines</span><h2>Quest chains</h2>
+      <p>Multi-step quest storylines, in order — follow each branch from the first quest to its conclusion. Click any quest for its full page.</p></div>
+    ${zones}
+    <style>.qchain{list-style:none;padding-left:0;margin:6px 0}.qchain ul{list-style:none;margin:2px 0 2px 0;padding-left:20px;border-left:2px solid var(--line,#333)}.qchain li{margin:4px 0;position:relative;padding-left:14px}.qchain li::before{content:'↳';position:absolute;left:-2px;opacity:.5}.qchain>li::before{content:'';padding:0}.qlink{font-weight:600}</style>
+  </div></section>`));
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1569,6 +1626,8 @@ function router() {
   if (head === 'map') return worldMapView(parts[1], parts[2]);
   if (head === 'route') return routeView();
   if (head === 'farming') return farmingView(parts[1]);
+  if (head === 'drops') return dropsView();
+  if (head === 'chains') return questChainsView();
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();

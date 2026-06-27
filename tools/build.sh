@@ -33,6 +33,10 @@ $TSX $TOOLS/generate-zone3d.ts docs/zone3d.json
 echo "==> farming calculator"
 $TSX $TOOLS/generate-farming.ts docs/farming.json
 
+echo "==> drop locator + quest chains"
+$TSX $TOOLS/generate-drops.ts docs/drops.json
+$TSX $TOOLS/generate-questchains.ts docs/questchains.json
+
 echo "==> bestiary"
 $TSX $TOOLS/generate-bestiary.ts quests
 
