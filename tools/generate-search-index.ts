@@ -59,6 +59,7 @@ for (const g of [
   ['Delve companions', 'reference/companions.md'],
   ['Bosses & encounters', 'reference/encounters.md'],
   ['Endgame & prestige', 'reference/endgame.md'],
+  ['Sneak peek (upcoming branches)', 'reference/sneak-peek.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
 
 // quest items / tools / trade goods -> materials page (anchored)

@@ -147,4 +147,7 @@ rm -f reference/demon-models.json
 echo "==> patch notes (upstream releases)"
 node $TOOLS/generate-patch-notes.mjs docs/patches.json
 
+echo "==> sneak peek (upstream branches)"
+node $TOOLS/generate-sneak-peek.mjs reference/sneak-peek.md || echo "  (skipped: GitHub API unavailable)"
+
 echo "==> done"
