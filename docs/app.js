@@ -1420,6 +1420,7 @@ async function quest3dView(id) {
   };
   const addLabel = (text, x, y, z, fg) => { const s = textLabel(text, fg); s.position.set(x, y, z); scene.add(s); return s; };
   // foliage, NPCs, mob camps — the actual world
+  for (const pl of (q.places || [])) { const s = textLabel(pl.name, '#fff6d8', 'rgba(10,12,18,.4)'); s.scale.multiplyScalar(1.7); s.position.set(pl.x, sampleH(pl.x, pl.z) + LBL * 2.6, pl.z); scene.add(s); }
   for (const f of (q.foliage || [])) await place(f.url, f.x, f.z, { targetH: f.h || 2, rotY: (f.x * 0.7 + f.z) % 6.28 });
   for (const d of (q.decor || [])) await place(d.url, d.x, d.z, { targetH: d.h || 2, rotY: d.rotY || 0 });
   for (const n of (q.npcs || [])) { const th = n.model.height || 2; await place(n.model.glb, n.x, n.z, { targetH: th, tint: n.model.tint, ts: n.model.tintStrength, rotY: Math.PI }); addLabel(n.name, n.x, sampleH(n.x, n.z) + th + LBL * 0.7, n.z, '#ffe9b0'); }

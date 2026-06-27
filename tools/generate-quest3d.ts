@@ -28,10 +28,10 @@ const OUT = process.argv[2] || 'docs/quest3d.json';
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 const ZONES = [
-  { dir: '01-eastbrook-vale', biome: 0x3f5a33, npcs: ZONE1_NPCS, camps: ZONE1_CAMPS, objects: ZONE1_OBJECTS, roads: ZONE1_ROADS, lakes: (ZONE1_ZONE as any).lakes || [], quests: ZONE1_QUESTS, foliage: ['oak_1', 'oak_2', 'bush', 'bush_flowers', 'fern', 'mushroom'] },
-  { dir: '02-mirefen-marsh', biome: 0x35463a, npcs: ZONE2_NPCS, camps: ZONE2_CAMPS, objects: ZONE2_OBJECTS, roads: ZONE2_ROADS, lakes: (ZONE2_ZONE as any).lakes || [], quests: ZONE2_QUESTS, foliage: ['dead_1', 'dead_2', 'fern', 'mushroom', 'bush'] },
-  { dir: '03-thornpeak-heights', biome: 0x52483a, npcs: ZONE3_NPCS, camps: ZONE3_CAMPS, objects: ZONE3_OBJECTS, roads: ZONE3_ROADS, lakes: (ZONE3_ZONE as any).lakes || [], quests: ZONE3_QUESTS, foliage: ['dead_1', 'dead_3', 'bush', 'fern'] },
-  { dir: '04-the-drowned-temple', biome: 0x27424c, npcs: TEMPLE_NPCS, camps: TEMPLE_CAMPS, objects: TEMPLE_OBJECTS, roads: [], lakes: [], quests: TEMPLE_QUESTS, foliage: ['fern', 'mushroom', 'dead_2'] },
+  { dir: '01-eastbrook-vale', biome: 0x3f5a33, npcs: ZONE1_NPCS, camps: ZONE1_CAMPS, objects: ZONE1_OBJECTS, roads: ZONE1_ROADS, lakes: (ZONE1_ZONE as any).lakes || [], pois: (ZONE1_ZONE as any).pois || [], hub: (ZONE1_ZONE as any).hub, graveyard: (ZONE1_ZONE as any).graveyard, quests: ZONE1_QUESTS, foliage: ['oak_1', 'oak_2', 'bush', 'bush_flowers', 'fern', 'mushroom'] },
+  { dir: '02-mirefen-marsh', biome: 0x35463a, npcs: ZONE2_NPCS, camps: ZONE2_CAMPS, objects: ZONE2_OBJECTS, roads: ZONE2_ROADS, lakes: (ZONE2_ZONE as any).lakes || [], pois: (ZONE2_ZONE as any).pois || [], hub: (ZONE2_ZONE as any).hub, graveyard: (ZONE2_ZONE as any).graveyard, quests: ZONE2_QUESTS, foliage: ['dead_1', 'dead_2', 'fern', 'mushroom', 'bush'] },
+  { dir: '03-thornpeak-heights', biome: 0x52483a, npcs: ZONE3_NPCS, camps: ZONE3_CAMPS, objects: ZONE3_OBJECTS, roads: ZONE3_ROADS, lakes: (ZONE3_ZONE as any).lakes || [], pois: (ZONE3_ZONE as any).pois || [], hub: (ZONE3_ZONE as any).hub, graveyard: (ZONE3_ZONE as any).graveyard, quests: ZONE3_QUESTS, foliage: ['dead_1', 'dead_3', 'bush', 'fern'] },
+  { dir: '04-the-drowned-temple', biome: 0x27424c, npcs: TEMPLE_NPCS, camps: TEMPLE_CAMPS, objects: TEMPLE_OBJECTS, roads: [], lakes: [], pois: [], hub: null, graveyard: null, quests: TEMPLE_QUESTS, foliage: ['fern', 'mushroom', 'dead_2'] },
 ] as any[];
 
 const itemName = (id: string) => (MOBS as any)[id]?.name || id;
@@ -105,7 +105,12 @@ for (const z of ZONES) {
     const RES = 56, gx = (bounds.x1 - bounds.x0) / (RES - 1), gz = (bounds.z1 - bounds.z0) / (RES - 1), heights: number[] = [];
     for (let i = 0; i < RES; i++) for (let j = 0; j < RES; j++) heights.push(+terrainHeight(bounds.x0 + j * gx, bounds.z0 + i * gz, SEED).toFixed(2));
     const terrain = { res: RES, x0: bounds.x0, z0: bounds.z0, x1: bounds.x1, z1: bounds.z1, heights };
-    out[q.id] = { name: q.name, zone: z.dir, biome: '#' + z.biome.toString(16).padStart(6, '0'), bounds, terrain, steps, npcs, camps, lakes, roads, foliage, decor, character: 'models/chars/players/ranger.glb' };
+    // place/area names (same labels the 2D maps use)
+    const places: any[] = [];
+    for (const p of (z.pois || [])) if (inB(p)) places.push({ name: p.label, x: p.x, z: p.z });
+    if (z.hub && inB(z.hub) && !places.some((pl) => pl.name === z.hub.name)) places.push({ name: z.hub.name, x: z.hub.x, z: z.hub.z });
+    if (z.graveyard && inB(z.graveyard)) places.push({ name: 'Graveyard', x: z.graveyard.x, z: z.graveyard.z });
+    out[q.id] = { name: q.name, zone: z.dir, biome: '#' + z.biome.toString(16).padStart(6, '0'), bounds, terrain, steps, npcs, camps, lakes, roads, foliage, decor, places, character: 'models/chars/players/ranger.glb' };
   }
 }
 
