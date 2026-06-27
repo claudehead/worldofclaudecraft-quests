@@ -8,7 +8,21 @@ import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_OBJECTS, ZONE2_ROADS, ZONE2_ZONE, ZONE2_
 import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_OBJECTS, ZONE3_ROADS, ZONE3_ZONE, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_NPCS, TEMPLE_CAMPS, TEMPLE_OBJECTS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import * as mf from '../woc/src/render/characters/manifest.ts';
+import { terrainHeight } from '../woc/src/sim/world.ts';
 import * as fs from 'node:fs';
+
+const SEED = 20061; // WORLD_SEED from src/main.ts — matches the live overworld terrain
+function foliageH(url: string, rnd: () => number): number {
+  if (/oak|tree/.test(url)) return 6 + rnd() * 3;
+  if (/dead_/.test(url)) return 4 + rnd() * 2;
+  if (/rock_tall/.test(url)) return 2.5 + rnd() * 1.4;
+  if (/rock_large|ore_rocks|\/rocks/.test(url)) return 1.6 + rnd() * 1.1;
+  if (/wood_log/.test(url)) return 0.8 + rnd() * 0.4;
+  if (/bush/.test(url)) return 1.3 + rnd() * 0.7;
+  if (/fern/.test(url)) return 1 + rnd() * 0.5;
+  if (/mushroom/.test(url)) return 0.5 + rnd() * 0.4;
+  return 1.5;
+}
 
 const OUT = process.argv[2] || 'docs/quest3d.json';
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -79,14 +93,19 @@ for (const z of ZONES) {
       if (lakes.some((l) => Math.hypot(l.x - x, l.z - zz) < l.r + 3)) continue;
       if (steps.some((s) => Math.hypot(s.x - x, s.z - zz) < 5)) continue;
       const rock = rnd() < 0.22;
-      foliage.push({ x: Math.round(x), z: Math.round(zz), url: rock ? ROCKS[Math.floor(rnd() * ROCKS.length)] : `models/foliage/${z.foliage[Math.floor(rnd() * z.foliage.length)]}.glb`, scale: +(rock ? 1.4 + rnd() * 1.8 : 0.8 + rnd() * 1.2).toFixed(2) });
+      const url = rock ? ROCKS[Math.floor(rnd() * ROCKS.length)] : `models/foliage/${z.foliage[Math.floor(rnd() * z.foliage.length)]}.glb`;
+      foliage.push({ x: Math.round(x), z: Math.round(zz), url, h: +foliageH(url, rnd).toFixed(2) });
     }
-    // decor props that dress up camps and the quest hub
+    // decor props (real sizes) that dress up camps and the quest hub
     const decor: any[] = [];
-    for (const c of camps) { decor.push({ x: c.x, z: c.z, url: 'models/props/bonfire.glb', scale: 1.4, rotY: 0 }); decor.push({ x: c.x + 6, z: c.z + 4, url: 'models/props/tent_small.glb', scale: 3, rotY: rnd() * 6.28 }); if (rnd() < 0.6) decor.push({ x: c.x - 5, z: c.z + 3, url: 'models/dungeon/barrel_large.glb', scale: 1.6, rotY: 0 }); }
+    for (const c of camps) { decor.push({ x: c.x, z: c.z, url: 'models/props/bonfire.glb', h: 1.4, rotY: 0 }); decor.push({ x: c.x + 6, z: c.z + 4, url: 'models/props/tent_small.glb', h: 2.6, rotY: rnd() * 6.28 }); if (rnd() < 0.6) decor.push({ x: c.x - 5, z: c.z + 3, url: 'models/dungeon/barrel_large.glb', h: 1.3, rotY: 0 }); }
     const giverStep = steps.find((s) => s.kind === 'giver');
-    if (giverStep) { decor.push({ x: giverStep.x + 6, z: giverStep.z + 3, url: 'models/props/market_stand_1.glb', scale: 3, rotY: 1.2 }); decor.push({ x: giverStep.x - 6, z: giverStep.z + 4, url: 'models/props/cart.glb', scale: 2.6, rotY: 2.4 }); decor.push({ x: giverStep.x + 2, z: giverStep.z - 6, url: 'models/props/well.glb', scale: 2.6, rotY: 0 }); }
-    out[q.id] = { name: q.name, zone: z.dir, biome: '#' + z.biome.toString(16).padStart(6, '0'), bounds, steps, npcs, camps, lakes, roads, foliage, decor, character: 'models/chars/players/ranger.glb' };
+    if (giverStep) { decor.push({ x: giverStep.x + 6, z: giverStep.z + 3, url: 'models/props/market_stand_1.glb', h: 2.8, rotY: 1.2 }); decor.push({ x: giverStep.x - 6, z: giverStep.z + 4, url: 'models/props/cart.glb', h: 1.8, rotY: 2.4 }); decor.push({ x: giverStep.x + 2, z: giverStep.z - 6, url: 'models/props/well.glb', h: 2.6, rotY: 0 }); }
+    // bake real terrain heights over the bounds (matches the live overworld)
+    const RES = 56, gx = (bounds.x1 - bounds.x0) / (RES - 1), gz = (bounds.z1 - bounds.z0) / (RES - 1), heights: number[] = [];
+    for (let i = 0; i < RES; i++) for (let j = 0; j < RES; j++) heights.push(+terrainHeight(bounds.x0 + j * gx, bounds.z0 + i * gz, SEED).toFixed(2));
+    const terrain = { res: RES, x0: bounds.x0, z0: bounds.z0, x1: bounds.x1, z1: bounds.z1, heights };
+    out[q.id] = { name: q.name, zone: z.dir, biome: '#' + z.biome.toString(16).padStart(6, '0'), bounds, terrain, steps, npcs, camps, lakes, roads, foliage, decor, character: 'models/chars/players/ranger.glb' };
   }
 }
 
