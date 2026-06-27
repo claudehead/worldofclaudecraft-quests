@@ -24,6 +24,9 @@ $TSX $TOOLS/generate-maps.ts quests
 echo "==> per-quest route maps"
 $TSX $TOOLS/generate-quest-maps.ts quests
 
+echo "==> 3D quest world slices"
+$TSX $TOOLS/generate-quest3d.ts docs/quest3d.json
+
 echo "==> bestiary"
 $TSX $TOOLS/generate-bestiary.ts quests
 

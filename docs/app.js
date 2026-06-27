@@ -1343,98 +1343,95 @@ async function dungeon3dView(sel) {
 }
 
 // ---------- 3D quest route ----------
-let questMapData = null;
-const ZONE_GROUND = { '01-eastbrook-vale': 0x35502f, '02-mirefen-marsh': 0x2f4338, '03-thornpeak-heights': 0x4a4338, '04-the-drowned-temple': 0x223742 };
+let quest3dData = null;
 const QSTEP_COLOR = { giver: 0xf0c419, turnin: 0x5cb85c, kill: 0xd9534f, collect: 0x46b8da, interact: 0x9b8cff };
 const QSTEP_CSS = { giver: '#f0c419', turnin: '#5cb85c', kill: '#d9534f', collect: '#46b8da', interact: '#9b8cff' };
 async function quest3dView(id) {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
-    <div class="shead reveal"><span class="eyebrow">3D · quest route</span><h2>Quest paths</h2>
-      <p>The route for a quest in 3D — from the giver, through each objective, to the turn-in. Drag to orbit, scroll to zoom. Pick a quest:</p></div>
+    <div class="shead reveal"><span class="eyebrow">3D · in-game route</span><h2>Quest paths</h2>
+      <p>The quest rendered in the world — terrain, foliage, NPCs and mobs from the game, with a hero walking the route from giver → objectives → turn-in. Drag to orbit, scroll to zoom. Pick a quest:</p></div>
     <div class="controls reveal"><select id="qrpick" class="search" style="max-width:420px"></select></div>
-    <div style="position:relative;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:#070a0e;margin-bottom:14px">
+    <div style="position:relative;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:#9fbcd6;margin-bottom:14px">
       <canvas id="qrcanvas" style="display:block;width:100%;height:62vh;touch-action:none"></canvas>
+      <div id="qrload" style="position:absolute;left:10px;top:10px;font:600 12px system-ui;color:#fff;background:rgba(0,0,0,.5);padding:4px 8px;border-radius:6px">Building the world…</div>
     </div>
     <div id="qrsteps" class="meta"></div>
   </div></section>`));
-  if (!questMapData) {
-    try { questMapData = await (await fetch(cb(raw('quests/quest-maps.json')))).json(); }
-    catch (e) { app.querySelector('#qrsteps').textContent = `Couldn't load quest routes (${esc(e.message)})`; return; }
+  if (!quest3dData) {
+    try { quest3dData = await (await fetch(cb(raw('docs/quest3d.json')))).json(); }
+    catch (e) { app.querySelector('#qrsteps').textContent = `Couldn't load quest world (${esc(e.message)})`; return; }
   }
-  const ids = Object.keys(questMapData);
-  const cur = questMapData[id] ? id : ids[0];
-  const q = questMapData[cur];
-  // selector grouped by zone
+  const Q = quest3dData.quests, ids = Object.keys(Q);
+  const cur = Q[id] ? id : ids[0];
+  const q = Q[cur];
   const sel = app.querySelector('#qrpick');
   const byZone = {};
-  ids.forEach(k => { const z = questMapData[k].zone; (byZone[z] = byZone[z] || []).push(k); });
-  sel.innerHTML = Object.keys(byZone).sort().map(z => `<optgroup label="${esc(z)}">` + byZone[z].map(k => `<option value="${k}"${k === cur ? ' selected' : ''}>${esc(questMapData[k].name || k)}</option>`).join('') + '</optgroup>').join('');
+  ids.forEach(k => { const z = Q[k].zone; (byZone[z] = byZone[z] || []).push(k); });
+  sel.innerHTML = Object.keys(byZone).sort().map(z => `<optgroup label="${esc(z)}">` + byZone[z].map(k => `<option value="${k}"${k === cur ? ' selected' : ''}>${esc(Q[k].name || k)}</option>`).join('') + '</optgroup>').join('');
   sel.onchange = () => { location.hash = `#/questroute/${sel.value}`; };
-  // steps legend
-  app.querySelector('#qrsteps').innerHTML = '<b>Route:</b> ' + q.steps.map(s => `<span style="display:inline-block;margin:2px 8px 2px 0"><span style="display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border-radius:50%;background:${QSTEP_CSS[s.kind] || '#888'};color:#000;font-weight:700;font-size:11px">${s.n}</span> ${esc(s.label)}</span>`).join(' → ');
+  app.querySelector('#qrsteps').innerHTML = '<b>Route:</b> ' + q.steps.map((s, i) => `<span style="display:inline-block;margin:2px 8px 2px 0"><span style="display:inline-block;width:18px;height:18px;line-height:18px;text-align:center;border-radius:50%;background:${QSTEP_CSS[s.kind] || '#888'};color:#000;font-weight:700;font-size:11px">${i + 1}</span> ${esc(s.label)}</span>`).join(' → ');
 
-  const mods = await ensureThree(); const { THREE, OrbitControls } = mods;
+  const mods = await ensureThree(); const SkeletonUtils = await import('three/addons/utils/SkeletonUtils.js');
+  const { THREE, GLTFLoader, OrbitControls, MeshoptDecoder } = mods;
+  const MODEL_BASE = `https://raw.githubusercontent.com/${quest3dData.modelRepo}/${quest3dData.modelRef}/public/`;
+  const loader = new GLTFLoader(); try { loader.setMeshoptDecoder(MeshoptDecoder); } catch (e) {}
+  const cache = {}; const loadGLTF = (u) => cache[u] || (cache[u] = loader.loadAsync(MODEL_BASE + u).catch(() => null));
   const canvas = app.querySelector('#qrcanvas');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  const scene = new THREE.Scene(); scene.background = new THREE.Color(0x070a0e);
-  const cam = new THREE.PerspectiveCamera(55, 1, 0.5, 4000);
-  scene.add(new THREE.AmbientLight(0xb0b8c4, 1.1));
-  const dl = new THREE.DirectionalLight(0xfff2d8, 0.7); dl.position.set(1, 3, 2); scene.add(dl);
-  const xs = q.steps.map(s => s.x), zs = q.steps.map(s => s.z);
-  const minX = Math.min(...xs), maxX = Math.max(...xs), minZ = Math.min(...zs), maxZ = Math.max(...zs);
-  const cx = (minX + maxX) / 2, cz = (minZ + maxZ) / 2, span = Math.max(maxX - minX, maxZ - minZ, 30) + 40;
-  // sizes scale with the route so nothing looks like a thin line
-  const S = span, baseY = Math.max(2, S * 0.02), arcLift = S * 0.16;
-  const pinH = Math.max(8, S * 0.07), orbR = Math.max(1.8, S * 0.026), tubeR = Math.max(0.9, S * 0.009), labScale = Math.max(9, S * 0.075);
-  // ground with gentle rolling relief (so it reads as terrain, not a sheet)
-  const gsz = S * 1.6, seg = 48, amp = S * 0.02;
-  const gGeo = new THREE.PlaneGeometry(gsz, gsz, seg, seg);
-  const gp = gGeo.attributes.position;
-  for (let i = 0; i < gp.count; i++) { const vx = gp.getX(i), vy = gp.getY(i); gp.setZ(i, Math.sin(vx * 0.03 + cx) * Math.cos(vy * 0.03 + cz) * amp); }
+  const b = q.bounds, cx = (b.x0 + b.x1) / 2, cz = (b.z0 + b.z1) / 2, span = Math.max(b.x1 - b.x0, b.z1 - b.z0);
+  const sky = 0x9fbcd6;
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(sky); scene.fog = new THREE.Fog(sky, span * 0.7, span * 2.0);
+  const cam = new THREE.PerspectiveCamera(58, 1, 0.5, span * 8);
+  scene.add(new THREE.HemisphereLight(0xcfe2f2, 0x40392c, 1.05));
+  const sun = new THREE.DirectionalLight(0xfff2d8, 1.0); sun.position.set(span * 0.3, span * 0.7, span * 0.2); scene.add(sun);
+  // ground with rolling relief + biome colour
+  const gsz = span * 1.8, seg = 64, amp = span * 0.015;
+  const gGeo = new THREE.PlaneGeometry(gsz, gsz, seg, seg); const gp = gGeo.attributes.position;
+  for (let i = 0; i < gp.count; i++) { const vx = gp.getX(i), vy = gp.getY(i); gp.setZ(i, Math.sin(vx * 0.04 + cx) * Math.cos(vy * 0.035 + cz) * amp); }
   gGeo.computeVertexNormals();
-  const ground = new THREE.Mesh(gGeo, new THREE.MeshStandardMaterial({ color: ZONE_GROUND[q.zone] || 0x33402f, roughness: 1, flatShading: true }));
+  const ground = new THREE.Mesh(gGeo, new THREE.MeshStandardMaterial({ color: q.biome || '#3f5a33', roughness: 1, flatShading: true }));
   ground.rotation.x = -Math.PI / 2; ground.position.set(cx, 0, cz); scene.add(ground);
-  const grid = new THREE.GridHelper(gsz, 28, 0x000000, 0x2a3a1e); grid.position.set(cx, 0.1, cz); grid.material.opacity = 0.2; grid.material.transparent = true; scene.add(grid);
-  // arced path: raise a midpoint between each pair so the route clearly climbs in 3D
-  const wps = q.steps.map(s => new THREE.Vector3(s.x, baseY, s.z));
-  const cpts = [];
-  for (let i = 0; i < wps.length; i++) { cpts.push(wps[i]); if (i < wps.length - 1) { const a = wps[i], b = wps[i + 1]; cpts.push(new THREE.Vector3((a.x + b.x) / 2, baseY + arcLift, (a.z + b.z) / 2)); } }
-  let curve = null;
-  if (cpts.length >= 2) {
-    curve = new THREE.CatmullRomCurve3(cpts, false, 'catmullrom', 0.25);
-    const tube = new THREE.Mesh(new THREE.TubeGeometry(curve, Math.max(40, cpts.length * 24), tubeR, 10, false), new THREE.MeshStandardMaterial({ color: 0xe6bb6a, emissive: 0x6a4a16, emissiveIntensity: 0.5, roughness: 0.4 }));
-    scene.add(tube);
+  // lakes + roads
+  for (const l of (q.lakes || [])) { const m = new THREE.Mesh(new THREE.CircleGeometry(l.r, 32), new THREE.MeshStandardMaterial({ color: 0x2b6fa6, transparent: true, opacity: 0.85, roughness: 0.15 })); m.rotation.x = -Math.PI / 2; m.position.set(l.x, 0.4, l.z); scene.add(m); }
+  for (const r of (q.roads || [])) { if (r.length < 2) continue; const c = new THREE.CatmullRomCurve3(r.map(p => new THREE.Vector3(p.x, 0.5, p.z))); scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, Math.max(20, r.length * 8), 2.2, 6, false), new THREE.MeshStandardMaterial({ color: 0x9c8157, roughness: 1 }))); }
+  // model placement helper (clone + tint + scale to height)
+  async function place(url, x, z, { targetH = 2, tint = null, ts = 0, rotY = 0 } = {}) {
+    const g = await loadGLTF(url); if (!g) return null;
+    const o = SkeletonUtils.clone(g.scene);
+    if (tint) { const tc = new THREE.Color(tint); o.traverse(n => { if (n.isMesh && n.material) { n.material = Array.isArray(n.material) ? n.material.map(m => m.clone()) : n.material.clone(); (Array.isArray(n.material) ? n.material : [n.material]).forEach(m => { if (m.color) m.color.lerp(tc, ts); }); } }); }
+    let bx = new THREE.Box3().setFromObject(o); const h = (bx.max.y - bx.min.y) || 1; o.scale.setScalar(targetH / h);
+    bx = new THREE.Box3().setFromObject(o); o.position.set(x, -bx.min.y, z); o.rotation.y = rotY; scene.add(o); return o;
   }
-  const numSprite = (n, col) => {
-    const cv = document.createElement('canvas'); cv.width = cv.height = 64; const x = cv.getContext('2d');
-    x.fillStyle = col; x.beginPath(); x.arc(32, 32, 28, 0, 7); x.fill(); x.lineWidth = 4; x.strokeStyle = '#000'; x.stroke(); x.fillStyle = '#000'; x.font = 'bold 38px system-ui'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(String(n), 32, 34);
-    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), depthTest: false })); sp.scale.set(labScale, labScale, 1); return sp;
-  };
-  // markers: shadow disk + tall post + glowing orb + number, scaled to the route
-  q.steps.forEach(s => {
-    const col = QSTEP_COLOR[s.kind] || 0x999999;
-    const sh = new THREE.Mesh(new THREE.CircleGeometry(orbR * 1.4, 20), new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.3 })); sh.rotation.x = -Math.PI / 2; sh.position.set(s.x, 0.2, s.z); scene.add(sh);
-    const pole = new THREE.Mesh(new THREE.CylinderGeometry(orbR * 0.18, orbR * 0.18, pinH, 8), new THREE.MeshStandardMaterial({ color: col })); pole.position.set(s.x, pinH / 2, s.z); scene.add(pole);
-    const orb = new THREE.Mesh(new THREE.SphereGeometry(orbR, 18, 18), new THREE.MeshStandardMaterial({ color: col, emissive: col, emissiveIntensity: 0.5 })); orb.position.set(s.x, pinH, s.z); scene.add(orb);
-    const lab = numSprite(s.n, QSTEP_CSS[s.kind] || '#999'); lab.position.set(s.x, pinH + orbR + labScale * 0.45, s.z); scene.add(lab);
-  });
-  // animated traveler that walks the route start -> end (proves direction + depth)
-  const traveler = new THREE.Mesh(new THREE.SphereGeometry(orbR * 0.8, 16, 16), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xffd98a, emissiveIntensity: 0.9 }));
-  if (curve) scene.add(traveler);
-  const tLight = new THREE.PointLight(0xffd98a, 1.2, S * 0.6, 1.5); if (curve) scene.add(tLight);
+  // foliage, NPCs, mob camps — the actual world
+  for (const f of (q.foliage || [])) await place(f.url, f.x, f.z, { targetH: f.scale * 4, rotY: (f.x * 0.7 + f.z) % 6.28 });
+  for (const n of (q.npcs || [])) await place(n.model.glb, n.x, n.z, { targetH: n.model.height || 2, tint: n.model.tint, ts: n.model.tintStrength, rotY: Math.PI });
+  for (const c of (q.camps || [])) { const cn = c.count || 3; for (let i = 0; i < cn; i++) { const a = (i / cn) * 6.28, rr = (c.r || 8) * 0.4; await place(c.model.glb, c.x + Math.cos(a) * rr, c.z + Math.sin(a) * rr, { targetH: c.model.height || 2, tint: c.model.tint, ts: c.model.tintStrength, rotY: a + Math.PI }); } }
+  // quest path (gold arc) + numbered pins
+  const baseY = Math.max(2, span * 0.012), arcLift = span * 0.11, pinH = Math.max(7, span * 0.05), labScale = Math.max(8, span * 0.06);
+  const wps = q.steps.map(s => new THREE.Vector3(s.x, baseY, s.z)); const cpts = [];
+  for (let i = 0; i < wps.length; i++) { cpts.push(wps[i]); if (i < wps.length - 1) { const a = wps[i], bb = wps[i + 1]; cpts.push(new THREE.Vector3((a.x + bb.x) / 2, baseY + arcLift, (a.z + bb.z) / 2)); } }
+  let curve = null;
+  if (cpts.length >= 2) { curve = new THREE.CatmullRomCurve3(cpts, false, 'catmullrom', 0.25); scene.add(new THREE.Mesh(new THREE.TubeGeometry(curve, Math.max(40, cpts.length * 24), Math.max(0.6, span * 0.006), 8, false), new THREE.MeshStandardMaterial({ color: 0xe6bb6a, emissive: 0x6a4a16, emissiveIntensity: 0.6, roughness: 0.4 }))); }
+  const numSprite = (n, col) => { const cv = document.createElement('canvas'); cv.width = cv.height = 64; const x = cv.getContext('2d'); x.fillStyle = col; x.beginPath(); x.arc(32, 32, 28, 0, 7); x.fill(); x.lineWidth = 4; x.strokeStyle = '#000'; x.stroke(); x.fillStyle = '#000'; x.font = 'bold 38px system-ui'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(String(n), 32, 34); const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), depthTest: false })); sp.scale.set(labScale, labScale, 1); return sp; };
+  q.steps.forEach((s, i) => { const col = QSTEP_COLOR[s.kind] || 0x999999; const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, pinH, 8), new THREE.MeshStandardMaterial({ color: col, emissive: col, emissiveIntensity: 0.3 })); pole.position.set(s.x, pinH / 2, s.z); scene.add(pole); const lab = numSprite(i + 1, QSTEP_CSS[s.kind] || '#999'); lab.position.set(s.x, pinH + labScale * 0.5, s.z); scene.add(lab); });
+  app.querySelector('#qrload').style.display = 'none';
+  // hero character that walks the path
+  let hero = null, mixer = null;
+  (async () => { const g = await loadGLTF(q.character); if (!g) return; hero = SkeletonUtils.clone(g.scene); let bx = new THREE.Box3().setFromObject(hero); const h = (bx.max.y - bx.min.y) || 1; hero.scale.setScalar(2.4 / h); scene.add(hero); if (g.animations && g.animations.length) { mixer = new THREE.AnimationMixer(hero); mixer.clipAction(g.animations.find(a => /walk|run|move/i.test(a.name)) || g.animations[0]).play(); } })();
 
-  cam.position.set(cx + span * 0.45, span * 0.7, cz + span * 0.95); cam.lookAt(cx, 0, cz);
-  const controls = new OrbitControls(cam, canvas); controls.target.set(cx, baseY, cz); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49; controls.autoRotate = true; controls.autoRotateSpeed = 0.6;
-  canvas.addEventListener('pointerdown', () => { controls.autoRotate = false; }); // stop spinning once the user grabs it
+  cam.position.set(cx + span * 0.5, span * 0.6, cz + span * 1.0); cam.lookAt(cx, 0, cz);
+  const controls = new OrbitControls(cam, canvas); controls.target.set(cx, baseY, cz); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
+  canvas.addEventListener('pointerdown', () => { controls.autoRotate = false; });
   function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
   resize(); addEventListener('resize', resize);
-  const travelMs = curve ? Math.max(4000, curve.getLength() * 12) : 0;
+  const travelMs = curve ? Math.max(10000, curve.getLength() * 90) : 0; let last = performance.now();
   (function loop(now) {
     if (!document.body.contains(canvas)) { removeEventListener('resize', resize); renderer.dispose(); return; }
-    if (curve) { const t = ((now || 0) % travelMs) / travelMs; const p = curve.getPointAt(t); traveler.position.copy(p); tLight.position.copy(p); }
+    const dt = Math.min((now - last) / 1000, 0.05); last = now; if (mixer) mixer.update(dt);
+    if (hero && curve) { const t = ((now || 0) % travelMs) / travelMs; const p = curve.getPointAt(t), tan = curve.getTangentAt(t); hero.position.set(p.x, baseY - 0.4, p.z); hero.lookAt(p.x + tan.x, baseY - 0.4, p.z + tan.z); }
     controls.update(); renderer.render(scene, cam); requestAnimationFrame(loop);
-  })();
+  })(performance.now());
   reveal();
 }
 
