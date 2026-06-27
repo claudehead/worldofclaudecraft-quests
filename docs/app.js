@@ -1136,6 +1136,39 @@ async function docView(path, anchor) {
 // ---------- walkable 3D dungeon ----------
 let dungeon3dData = null;
 const _d3dModels = {};
+// WebXR "Enter VR" button — appends to `wrap`, manages the immersive session,
+// and calls onState(true/false) on enter/exit. No-op if the device/browser
+// has no immersive-vr support (so desktop visitors never see it).
+async function addVrButton(renderer, wrap, onState) {
+  if (!navigator.xr || !navigator.xr.isSessionSupported) return;
+  let ok = false; try { ok = await navigator.xr.isSessionSupported('immersive-vr'); } catch (e) {}
+  if (!ok) return;
+  const btn = el(`<button class="vrbtn" style="position:absolute;right:14px;top:14px;z-index:6;padding:8px 14px;border-radius:8px;border:1px solid #888;background:#111;color:#fff;font:600 13px system-ui;cursor:pointer">🥽 Enter VR</button>`);
+  let session = null;
+  btn.onclick = async () => {
+    if (session) { session.end(); return; }
+    try { session = await navigator.xr.requestSession('immersive-vr', { optionalFeatures: ['local-floor'] }); }
+    catch (e) { btn.textContent = 'VR unavailable'; return; }
+    renderer.xr.setReferenceSpaceType('local-floor');
+    await renderer.xr.setSession(session);
+    btn.textContent = '🚪 Exit VR'; onState && onState(true);
+    session.addEventListener('end', () => { session = null; btn.textContent = '🥽 Enter VR'; onState && onState(false); });
+  };
+  wrap.append(btn);
+}
+// Per-frame XR controller read: left stick -> {fwd, strafe}, right stick X -> snap-turn step (debounced).
+function readXrSticks(renderer, snap) {
+  const out = { fwd: 0, strafe: 0, turn: 0 };
+  if (!renderer.xr.isPresenting) return out;
+  const s = renderer.xr.getSession(); if (!s) return out;
+  for (const src of s.inputSources) {
+    const gp = src.gamepad; if (!gp || !gp.axes) continue;
+    const ax = gp.axes, x = ax.length > 2 ? ax[2] : ax[0] || 0, y = ax.length > 3 ? ax[3] : ax[1] || 0;
+    if (src.handedness === 'right') { if (Math.abs(x) > 0.7 && !snap.armed) { out.turn = Math.sign(x); snap.armed = true; } if (Math.abs(x) < 0.3) snap.armed = false; }
+    else { out.fwd += -y; out.strafe += x; }
+  }
+  return out;
+}
 async function dungeon3dView(sel) {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
@@ -1174,11 +1207,15 @@ async function dungeon3dView(sel) {
   const hint = app.querySelector('#d3dhint');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.xr.enabled = true;
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x05060a);
   scene.fog = new THREE.Fog(0x0a0c12, 60, 260);
   const cam = new THREE.PerspectiveCamera(75, 1, 0.1, 600);
   const rig = new THREE.Object3D(); rig.position.set(0, 3, 0); rig.add(cam); scene.add(rig);
+  const snap = { armed: false };
+  let inVR = false;
+  addVrButton(renderer, app.querySelector('.d3dwrap'), (on) => { inVR = on; rig.position.y = on ? 0 : 3; });
   let yaw = Math.PI, pitch = 0; // rig.rotation.y = yaw, cam.rotation.x = pitch
   const lamp = new THREE.PointLight(0xffe6b0, 1.3, 70, 1.4); lamp.position.set(0, 1.5, 0); cam.add(lamp); // head-lamp follows the view
   const INTERIOR_TINT = { crypt: 0x3a3f4a, sanctum: 0x4a4036, temple: 0x2f3a44, nythraxis: 0x402a3a };
@@ -1313,22 +1350,25 @@ async function dungeon3dView(sel) {
 
   let last = performance.now();
   function loop(now) {
-    if (!document.body.contains(canvas)) { removeEventListener('keydown', kd); removeEventListener('keyup', ku); removeEventListener('resize', resize); renderer.dispose(); return; }
+    if (!document.body.contains(canvas)) { removeEventListener('keydown', kd); removeEventListener('keyup', ku); removeEventListener('resize', resize); renderer.setAnimationLoop(null); renderer.dispose(); return; }
     const dt = Math.min((now - last) / 1000, 0.05); last = now;
     const speed = 16 * dt;
-    rig.rotation.y = yaw; cam.rotation.x = pitch;
+    const xr = readXrSticks(renderer, snap);
+    if (xr.turn) yaw -= xr.turn * (Math.PI / 6); // 30° snap-turn
+    rig.rotation.y = yaw; if (!inVR) cam.rotation.x = pitch; // in VR the headset drives pitch
     let mfwd = 0, ms = 0;
     if (keys['KeyW'] || keys['ArrowUp']) mfwd += 1;
     if (keys['KeyS'] || keys['ArrowDown']) mfwd -= 1;
     if (keys['KeyD'] || keys['ArrowRight']) ms += 1;
     if (keys['KeyA'] || keys['ArrowLeft']) ms -= 1;
     mfwd -= joy.vy; ms += joy.vx;
+    mfwd += xr.fwd; ms += xr.strafe;
     if (mfwd || ms) {
       const fx = -Math.sin(yaw), fz = -Math.cos(yaw), rx = Math.cos(yaw), rz = -Math.sin(yaw);
       const p = rig.position, f = current.floor;
       p.x = Math.max(f.x0 + 1, Math.min(f.x1 - 1, p.x + (fx * mfwd + rx * ms) * speed));
       p.z = Math.max(f.z0 + 1.5, Math.min(f.z1 - 1.5, p.z + (fz * mfwd + rz * ms) * speed));
-      p.y = 3;
+      p.y = inVR ? 0 : 3;
     }
     const p = rig.position;
     let hudText = `${esc(current.name)} · ${current.spawns.length} spawns`;
@@ -1336,9 +1376,8 @@ async function dungeon3dView(sel) {
     hud.innerHTML = hudText;
     drawMap();
     renderer.render(scene, cam);
-    requestAnimationFrame(loop);
   }
-  requestAnimationFrame(loop);
+  renderer.setAnimationLoop(loop);
   reveal();
 }
 
