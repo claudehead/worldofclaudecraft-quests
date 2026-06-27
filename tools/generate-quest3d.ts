@@ -66,20 +66,27 @@ for (const z of ZONES) {
     const inB = (p: any) => p.x >= bounds.x0 && p.x <= bounds.x1 && p.z >= bounds.z0 && p.z <= bounds.z1;
     // nearby NPCs + camps + lakes + objects + roads
     const npcs = (Object.values(z.npcs) as any[]).filter((n) => inB(n.pos)).map((n) => ({ name: n.name, x: n.pos.x, z: n.pos.z, model: modelFor('npc', n.id) })).filter((n) => n.model);
-    const camps = (z.camps as any[]).filter((c) => inB(c.center)).map((c) => ({ x: c.center.x, z: c.center.z, r: c.radius || 8, count: Math.min(c.count || 3, 5), model: modelFor('mob', c.mobId), name: itemName(c.mobId) })).filter((c) => c.model);
+    const camps = (z.camps as any[]).filter((c) => inB(c.center)).map((c) => ({ x: c.center.x, z: c.center.z, r: c.radius || 8, count: Math.min(c.count || 4, 8), model: modelFor('mob', c.mobId), name: itemName(c.mobId) })).filter((c) => c.model);
     const lakes = (z.lakes as any[]).filter((l) => inB(l)).map((l) => ({ x: l.x, z: l.z, r: l.radius }));
     const roads = (z.roads as any[]).map((r) => r.map((p: any) => ({ x: p.x, z: p.z }))).filter((r) => r.some(inB));
-    // deterministic foliage scatter (skip lakes + path corridor)
+    // deterministic foliage + rock scatter (skip lakes + path corridor)
     const rnd = rng(hash(q.id)); const foliage: any[] = [];
+    const ROCKS = ['models/props/rock_large_d.glb', 'models/props/rock_large_f.glb', 'models/props/rock_tall_a.glb', 'models/props/rock_tall_h.glb', 'models/resources/wood_log_a.glb'];
     const area = (bounds.x1 - bounds.x0) * (bounds.z1 - bounds.z0);
-    const target = Math.min(120, Math.round(area / 900));
+    const target = Math.min(220, Math.round(area / 480));
     for (let i = 0; i < target * 3 && foliage.length < target; i++) {
       const x = bounds.x0 + rnd() * (bounds.x1 - bounds.x0), zz = bounds.z0 + rnd() * (bounds.z1 - bounds.z0);
       if (lakes.some((l) => Math.hypot(l.x - x, l.z - zz) < l.r + 3)) continue;
-      if (steps.some((s) => Math.hypot(s.x - x, s.z - zz) < 6)) continue;
-      foliage.push({ x: Math.round(x), z: Math.round(zz), url: `models/foliage/${z.foliage[Math.floor(rnd() * z.foliage.length)]}.glb`, scale: +(0.8 + rnd() * 1.1).toFixed(2) });
+      if (steps.some((s) => Math.hypot(s.x - x, s.z - zz) < 5)) continue;
+      const rock = rnd() < 0.22;
+      foliage.push({ x: Math.round(x), z: Math.round(zz), url: rock ? ROCKS[Math.floor(rnd() * ROCKS.length)] : `models/foliage/${z.foliage[Math.floor(rnd() * z.foliage.length)]}.glb`, scale: +(rock ? 1.4 + rnd() * 1.8 : 0.8 + rnd() * 1.2).toFixed(2) });
     }
-    out[q.id] = { name: q.name, zone: z.dir, biome: '#' + z.biome.toString(16).padStart(6, '0'), bounds, steps, npcs, camps, lakes, roads, foliage, character: 'models/chars/players/ranger.glb' };
+    // decor props that dress up camps and the quest hub
+    const decor: any[] = [];
+    for (const c of camps) { decor.push({ x: c.x, z: c.z, url: 'models/props/bonfire.glb', scale: 1.4, rotY: 0 }); decor.push({ x: c.x + 6, z: c.z + 4, url: 'models/props/tent_small.glb', scale: 3, rotY: rnd() * 6.28 }); if (rnd() < 0.6) decor.push({ x: c.x - 5, z: c.z + 3, url: 'models/dungeon/barrel_large.glb', scale: 1.6, rotY: 0 }); }
+    const giverStep = steps.find((s) => s.kind === 'giver');
+    if (giverStep) { decor.push({ x: giverStep.x + 6, z: giverStep.z + 3, url: 'models/props/market_stand_1.glb', scale: 3, rotY: 1.2 }); decor.push({ x: giverStep.x - 6, z: giverStep.z + 4, url: 'models/props/cart.glb', scale: 2.6, rotY: 2.4 }); decor.push({ x: giverStep.x + 2, z: giverStep.z - 6, url: 'models/props/well.glb', scale: 2.6, rotY: 0 }); }
+    out[q.id] = { name: q.name, zone: z.dir, biome: '#' + z.biome.toString(16).padStart(6, '0'), bounds, steps, npcs, camps, lakes, roads, foliage, decor, character: 'models/chars/players/ranger.glb' };
   }
 }
 

@@ -1381,7 +1381,7 @@ async function quest3dView(id) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   const b = q.bounds, cx = (b.x0 + b.x1) / 2, cz = (b.z0 + b.z1) / 2, span = Math.max(b.x1 - b.x0, b.z1 - b.z0);
   const sky = 0x9fbcd6;
-  const scene = new THREE.Scene(); scene.background = new THREE.Color(sky); scene.fog = new THREE.Fog(sky, span * 0.7, span * 2.0);
+  const scene = new THREE.Scene(); scene.background = new THREE.Color(sky); scene.fog = new THREE.Fog(sky, span * 1.8, span * 4.5);
   const cam = new THREE.PerspectiveCamera(58, 1, 0.5, span * 8);
   scene.add(new THREE.HemisphereLight(0xcfe2f2, 0x40392c, 1.05));
   const sun = new THREE.DirectionalLight(0xfff2d8, 1.0); sun.position.set(span * 0.3, span * 0.7, span * 0.2); scene.add(sun);
@@ -1405,8 +1405,9 @@ async function quest3dView(id) {
   }
   // foliage, NPCs, mob camps — the actual world
   for (const f of (q.foliage || [])) await place(f.url, f.x, f.z, { targetH: f.scale * 4, rotY: (f.x * 0.7 + f.z) % 6.28 });
+  for (const d of (q.decor || [])) await place(d.url, d.x, d.z, { targetH: d.scale * 2.2, rotY: d.rotY || 0 });
   for (const n of (q.npcs || [])) await place(n.model.glb, n.x, n.z, { targetH: n.model.height || 2, tint: n.model.tint, ts: n.model.tintStrength, rotY: Math.PI });
-  for (const c of (q.camps || [])) { const cn = c.count || 3; for (let i = 0; i < cn; i++) { const a = (i / cn) * 6.28, rr = (c.r || 8) * 0.4; await place(c.model.glb, c.x + Math.cos(a) * rr, c.z + Math.sin(a) * rr, { targetH: c.model.height || 2, tint: c.model.tint, ts: c.model.tintStrength, rotY: a + Math.PI }); } }
+  for (const c of (q.camps || [])) { const cn = c.count || 4; for (let i = 0; i < cn; i++) { const a = (i / cn) * 6.28 + i, rr = (c.r || 8) * (0.3 + 0.6 * ((i * 0.618) % 1)); await place(c.model.glb, c.x + Math.cos(a) * rr, c.z + Math.sin(a) * rr, { targetH: c.model.height || 2, tint: c.model.tint, ts: c.model.tintStrength, rotY: a + Math.PI }); } }
   // quest path (gold arc) + numbered pins
   const baseY = Math.max(2, span * 0.012), arcLift = span * 0.11, pinH = Math.max(7, span * 0.05), labScale = Math.max(8, span * 0.06);
   const wps = q.steps.map(s => new THREE.Vector3(s.x, baseY, s.z)); const cpts = [];
