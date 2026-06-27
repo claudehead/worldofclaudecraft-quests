@@ -62,6 +62,9 @@ for (const g of [
   ['Sneak peek (upcoming branches)', 'reference/sneak-peek.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
 
+// interactive tools (view routes, not docs)
+out.push({ t: 'Tool', n: 'Farming calculator', go: '#/farming' });
+
 // quest items / tools / trade goods -> materials page (anchored)
 for (const i of Object.values(ITEMS) as any[]) {
   if (!['quest', 'tool', 'junk'].includes(i.kind)) continue;

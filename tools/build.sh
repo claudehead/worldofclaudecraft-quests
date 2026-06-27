@@ -30,6 +30,9 @@ $TSX $TOOLS/generate-quest3d.ts docs/quest3d.json
 echo "==> 3D whole-zone worlds"
 $TSX $TOOLS/generate-zone3d.ts docs/zone3d.json
 
+echo "==> farming calculator"
+$TSX $TOOLS/generate-farming.ts docs/farming.json
+
 echo "==> bestiary"
 $TSX $TOOLS/generate-bestiary.ts quests
 

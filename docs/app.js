@@ -1514,6 +1514,50 @@ async function zone3dView(dir) {
   reveal();
 }
 
+// ---------- farming calculator ----------
+let farmingData = null;
+async function farmingView(levelArg) {
+  app.innerHTML = '';
+  if (!farmingData) {
+    try { farmingData = await (await fetch(cb('farming.json'))).json(); }
+    catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load farming data (${esc(e.message)})</p></div></section>`)); return; }
+  }
+  const maxL = farmingData.maxLevel;
+  const L = Math.min(maxL - 1, Math.max(1, parseInt(levelArg, 10) || 1));
+  const opts = [];
+  for (let i = 1; i < maxL; i++) opts.push(`<option value="${i}"${i === L ? ' selected' : ''}>Level ${i} → ${i + 1}</option>`);
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Tools · leveling</span><h2>Farming calculator</h2>
+      <p>How many of each mob you must kill to reach the next level — using the game's real XP curve and level-difference scaling. Pick your level; the best repeatable grind is highlighted.</p></div>
+    <div class="controls reveal"><label class="meta" style="display:flex;gap:8px;align-items:center">I am
+      <select id="flevel" style="padding:8px 10px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light">${opts.join('')}</select></label></div>
+    <div id="fbody" class="reveal"></div>
+    <p class="meta reveal" style="margin-top:14px;opacity:.8">Kills assume no rested XP (<b>rested halves the kills</b>) and don't count quest XP — turning in quests is far faster than pure grinding. Elite mobs award ×2 XP. Mobs more than your level + 3 are shown greyed (too dangerous to farm solo); grey-level mobs give 0 XP and are omitted.</p>
+  </div></section>`));
+  const sel = app.querySelector('#flevel');
+  sel.onchange = () => { location.hash = `#/farming/${sel.value}`; };
+  const p = farmingData.perLevel.find((x) => x.level === L);
+  const rows = p.mobs.slice(0, 18).map((m, i) => {
+    const best = i === 0 && !m.tooHigh;
+    const tags = [m.elite ? '<span class="pill" style="background:#7a4dff;color:#fff">elite ×2</span>' : '', m.rare ? '<span class="pill" style="background:#c0852a;color:#fff">rare</span>' : '', m.tooHigh ? '<span class="pill" style="background:#a33;color:#fff">too high</span>' : ''].filter(Boolean).join(' ');
+    return `<tr style="${best ? 'background:rgba(255,210,80,.14);font-weight:600' : (m.tooHigh ? 'opacity:.5' : '')}">
+      <td>${best ? '⭐ ' : ''}${esc(m.name)} ${tags}</td>
+      <td style="text-align:center">${m.minLevel === m.maxLevel ? m.level : m.minLevel + '–' + m.maxLevel}</td>
+      <td>${esc((m.zones || []).join(', ') || '—')}</td>
+      <td style="text-align:right">${m.xpPerKill}</td>
+      <td style="text-align:right"><b>${m.kills.toLocaleString()}</b></td>
+      <td style="text-align:right">${m.spawns}</td></tr>`;
+  }).join('');
+  app.querySelector('#fbody').innerHTML = `
+    <p class="meta" style="margin:6px 0 12px">Level ${L} → ${L + 1} needs <b>${p.xpNeeded.toLocaleString()} XP</b>.</p>
+    <div style="overflow-x:auto"><table id="ftable" style="width:100%;border-collapse:collapse;font-size:.95rem">
+      <thead><tr style="text-align:left"><th>Mob</th><th style="text-align:center">Lvl</th><th>Where</th>
+        <th style="text-align:right">XP/kill</th><th style="text-align:right">Kills to level</th><th style="text-align:right">Spawns</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`;
+  app.querySelectorAll('#ftable td, #ftable th').forEach((c) => { c.style.padding = '6px 8px'; c.style.borderBottom = '1px solid var(--line,#2a2a2a)'; });
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1524,6 +1568,7 @@ function router() {
   if (head === 'quests') return questsView();
   if (head === 'map') return worldMapView(parts[1], parts[2]);
   if (head === 'route') return routeView();
+  if (head === 'farming') return farmingView(parts[1]);
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();
