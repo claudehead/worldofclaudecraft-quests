@@ -34,4 +34,6 @@ Then return to **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ to tur
 
 ![Where to go for Stalkers on the Ridge](qmap-q-stalkers.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_stalkers)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

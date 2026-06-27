@@ -38,4 +38,6 @@ Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.
 
 ![Where to go for Robes in the Reeds](qmap-q-cult-camp.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_cult_camp)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

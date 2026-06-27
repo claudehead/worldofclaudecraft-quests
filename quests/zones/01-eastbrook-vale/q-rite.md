@@ -42,4 +42,6 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to tu
 
 ![Where to go for The Binding Rite](qmap-q-rite.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_rite)**
+
 _Numbered route: ① start → objectives → 4 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

@@ -39,4 +39,6 @@ Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
 
 ![Where to go for Wolves at the Door](qmap-q-wolves.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_wolves)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

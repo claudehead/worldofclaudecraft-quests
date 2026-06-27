@@ -44,4 +44,6 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 
 ![Where to go for Graves of the Forgotten](qmap-q-nythraxis-graves.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_nythraxis_graves)**
+
 _Numbered route: ① start → objectives → 5 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

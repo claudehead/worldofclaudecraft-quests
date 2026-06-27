@@ -39,4 +39,6 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 
 ![Where to go for No Rest in the Reeds](qmap-q-no-rest.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_no_rest)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

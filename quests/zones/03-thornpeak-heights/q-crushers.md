@@ -38,4 +38,6 @@ Then return to **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ to tur
 
 ![Where to go for Break the War-Camp](qmap-q-crushers.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_crushers)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

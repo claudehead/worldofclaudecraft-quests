@@ -35,4 +35,6 @@ Then return to **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668
 
 ![Where to go for Winter Is Coming to Highwatch](qmap-q-stalker-pelts.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_stalker_pelts)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

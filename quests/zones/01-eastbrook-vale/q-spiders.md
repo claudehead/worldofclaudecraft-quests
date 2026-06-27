@@ -36,4 +36,6 @@ Then return to **Apothecary Lin**, Herbalist _(at ~x:11, z:-3)_ to turn in.
 
 ![Where to go for Webwood Menace](qmap-q-spiders.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_spiders)**
+
 _Numbered route: ① start → objectives → 4 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

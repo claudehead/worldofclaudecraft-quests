@@ -235,6 +235,8 @@ function questMd(q: Q, zone: typeof zoneBuckets[number]): string {
   L.push('');
   L.push(`![Where to go for ${q.name}](qmap-${slug(q.id)}.svg)`);
   L.push('');
+  L.push(`**[🧭 Open this route in 3D →](#/questroute/${q.id})**`);
+  L.push('');
   L.push(`_Numbered route: ① start → objectives → ${q.objectives.length + 2} turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._`);
   L.push('');
   return L.join('\n');

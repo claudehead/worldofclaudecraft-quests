@@ -38,4 +38,6 @@ Then return to **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ to turn in.
 
 ![Where to go for The Broodmother](qmap-q-broodmother.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_broodmother)**
+
 _Numbered route: ① start → objectives → 4 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

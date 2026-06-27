@@ -38,4 +38,6 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to tu
 
 ![Where to go for The Names of the Dead](qmap-q-names-of-the-dead.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_names_of_the_dead)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

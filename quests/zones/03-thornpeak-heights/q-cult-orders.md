@@ -43,4 +43,6 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 
 ![Where to go for Orders from Below](qmap-q-cult-orders.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_cult_orders)**
+
 _Numbered route: ① start → objectives → 4 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

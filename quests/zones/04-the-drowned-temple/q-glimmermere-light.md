@@ -37,4 +37,6 @@ Then return to **Ondrel Vane**, Tidewatcher _(at ~x:-66, z:786)_ to turn in.
 
 ![Where to go for Light on the Water](qmap-q-glimmermere-light.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_glimmermere_light)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

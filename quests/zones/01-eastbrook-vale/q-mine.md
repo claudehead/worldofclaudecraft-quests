@@ -33,4 +33,6 @@ Then return to **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ to turn in.
 
 ![Where to go for Rats in the Mine](qmap-q-mine.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_mine)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

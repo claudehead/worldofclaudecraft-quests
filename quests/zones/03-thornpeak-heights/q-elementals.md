@@ -38,4 +38,6 @@ Then return to **Loremaster Caddis**, Loremaster _(at ~x:12, z:655)_ to turn in.
 
 ![Where to go for The Mountain Wakes](qmap-q-elementals.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_elementals)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

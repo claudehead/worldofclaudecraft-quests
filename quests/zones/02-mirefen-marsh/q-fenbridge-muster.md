@@ -33,4 +33,6 @@ Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to tur
 
 ![Where to go for Muster at Fenbridge](qmap-q-fenbridge-muster.svg)
 
+**[🧭 Open this route in 3D →](#/questroute/q_fenbridge_muster)**
+
 _Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._
