@@ -52,8 +52,9 @@ for (const [id, m] of Object.entries(ALL)) {
   else if (dung) { zoneTitle = dung.name; location = dung.name; detailFile = dung.file; zoneDir = dung.zoneDir; }
   else if (delve) { zoneTitle = delve.name; location = delve.name; detailFile = delve.file; }
   else if (m.family === 'demon') { zoneTitle = 'Warlock demon'; location = location || 'Summoned'; detailFile = 'reference/warlock-demons.md'; }
-  // anchor only exists on per-zone bestiary pages; other pages link without it
-  const detailAnchor = detailFile.endsWith('bestiary.md') ? `mob-${id}` : '';
+  else { zoneTitle = zoneTitle || (rank === 'boss' ? 'Boss encounter' : 'Encounter'); location = location || (rank === 'boss' ? 'World boss / encounter' : 'Encounter'); detailFile = 'reference/encounters.md'; }
+  // anchors live on per-zone bestiary pages and the encounters page
+  const detailAnchor = (detailFile.endsWith('bestiary.md') || detailFile.endsWith('encounters.md')) ? `mob-${id}` : '';
   const loot = (m.loot || [])
     .filter((l: any) => l.itemId)
     .map((l: any) => ({ name: itemName(l.itemId), chance: l.chance ?? null, quality: itemQual(l.itemId) }));
@@ -69,8 +70,27 @@ for (const [id, m] of Object.entries(ALL)) {
 }
 mobs.sort((a, b) => (a.minLevel - b.minLevel) || a.name.localeCompare(b.name));
 
+// --- Bosses & Encounters page: the mobs with no open-world camp / instance home ---
+const enc = mobs.filter((m) => m.detailFile === 'reference/encounters.md')
+  .sort((a, b) => (b.rank === 'boss' ? 1 : 0) - (a.rank === 'boss' ? 1 : 0) || a.minLevel - b.minLevel || a.name.localeCompare(b.name));
+const EL: string[] = [
+  '# Bosses & Encounters', '',
+  'Creatures from scripted fights, raids, and roaming/world spawns that don\'t belong to a single open-world camp. (Summoned warlock pets live on the [Warlock demons](warlock-demons.md) page; instanced bosses also appear on [Raids & dungeons](raids-and-dungeons.md).)', '',
+];
+const rankTag = (r: string) => r === 'boss' ? ' 🟡 Boss' : r === 'elite' ? ' 🔶 Elite' : r === 'rare' ? ' 🔹 Rare' : '';
+for (const m of enc) {
+  EL.push(`<a id="mob-${m.id}"></a>`, '');
+  if (m.render) EL.push(`<img src="../${m.render}" width="140" align="right" alt="${m.name}">`, '');
+  EL.push(`### ${m.name}${rankTag(m.rank)}`, '');
+  EL.push(`**Level ${m.level} · ${m.hp} HP · ${m.familyLabel}**`, '');
+  if (m.loot && m.loot.length) EL.push('**Drops:** ' + m.loot.map((l: any) => l.name + (l.chance ? ` _(${Math.round(l.chance * 100)}%)_` : '')).join(', '), '');
+  EL.push('<br clear="all">', '');
+}
+EL.push('_Auto-generated from the game source; updates with each release._');
+fs.writeFileSync('reference/encounters.md', EL.join('\n') + '\n');
+
 const families = [...new Set(mobs.map((m) => m.family))].map((f) => [f, FAMILY_LABEL[f] || f[0].toUpperCase() + f.slice(1)]);
 const zones = ZONES.map((z) => [z.dir, z.title]);
 fs.mkdirSync('bestiary', { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify({ count: mobs.length, zones, families, mobs }));
-console.log(`wrote bestiary.json (${mobs.length} mobs, ${families.length} families) to ${OUT}`);
+console.log(`wrote bestiary.json (${mobs.length} mobs, ${families.length} families); encounters.md (${enc.length} mobs)`);
