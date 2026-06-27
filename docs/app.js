@@ -1438,7 +1438,7 @@ async function quest3dView(id) {
   (async () => { const g = await loadGLTF(q.character); if (!g) return; hero = SkeletonUtils.clone(g.scene); let bx = new THREE.Box3().setFromObject(hero); const h = (bx.max.y - bx.min.y) || 1; hero.scale.setScalar(2.4 / h); scene.add(hero); heroLabel = textLabel('You', '#bfe9ff'); scene.add(heroLabel); if (g.animations && g.animations.length) { mixer = new THREE.AnimationMixer(hero); mixer.clipAction(g.animations.find(a => /walk|run|move/i.test(a.name)) || g.animations[0]).play(); } })();
 
   cam.position.set(cx + span * 0.5, span * 0.6, cz + span * 1.0); cam.lookAt(cx, 0, cz);
-  const controls = new OrbitControls(cam, canvas); controls.target.set(cx, baseY, cz); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
+  const controls = new OrbitControls(cam, canvas); controls.target.set(cx, sampleH(cx, cz), cz); controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
   canvas.addEventListener('pointerdown', () => { controls.autoRotate = false; });
   function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix(); }
   resize(); addEventListener('resize', resize);
