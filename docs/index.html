@@ -6,7 +6,7 @@
   <title>World of Claudecraft — Field Guide</title>
   <meta name="description" content="The complete field guide to World of Claudecraft — quests, bestiary, classes, dungeons and delves.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=56">
+  <link rel="stylesheet" href="styles.css?v=57">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -44,6 +44,8 @@
         <button type="button" class="navgroupbtn">Items</button>
         <div class="navdropdown">
           <a class="link" data-go="#/gear">Gear</a>
+          <a class="link" data-go="#/upgrades">Upgrade finder</a>
+          <a class="link" data-go="#/compare">Compare gear</a>
           <a class="link" data-go="#/drops">Where to get items</a>
           <a class="link" data-go="#/consumables">Consumables</a>
           <a class="link" data-go="#/doc/reference%2Fmaterials.md">Drops & materials</a>
@@ -126,7 +128,7 @@
       document.head.appendChild(s);
     }
   </script>
-  <script src="app.js?v=56"></script>
+  <script src="app.js?v=57"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});

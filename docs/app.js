@@ -1785,6 +1785,74 @@ async function soloView() {
   reveal();
 }
 
+// ---------- item compare + upgrade finder ----------
+let gearAll = null;
+const STAT_LABEL = { str: 'Strength', agi: 'Agility', sta: 'Stamina', int: 'Intellect', spi: 'Spirit', armor: 'Armor', ap: 'Attack Power', crit: 'Crit', dodge: 'Dodge' };
+const wDps = (w) => w && w.speed ? ((w.min + w.max) / 2) / w.speed : 0;
+const gearScore = (g) => Object.values(g.bonuses || {}).reduce((a, b) => a + (+b || 0), 0) + wDps(g.weapon) * 3;
+const srcText = (g) => (g.sources || []).map((s) => s.label || s.type).join(' · ') || '—';
+async function ensureGear() { if (!gearAll) gearAll = await (await fetch(cb(raw('gear/gear.json')))).json(); return gearAll; }
+
+async function compareView() {
+  app.innerHTML = '';
+  try { await ensureGear(); } catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load gear (${esc(e.message)})</p></div></section>`)); return; }
+  const opts = gearAll.gear.map((g) => `<option value="${g.id}">${esc(g.name)} (${esc(g.slotLabel)})</option>`).join('');
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Items · compare</span><h2>Compare gear</h2><p>Pick two pieces to see their stats side by side — the higher value in each row is highlighted.</p></div>
+    <div class="controls reveal" style="gap:14px;flex-wrap:wrap">
+      <select id="cmpA" style="min-width:240px;max-width:46%;padding:8px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light">${opts}</select>
+      <select id="cmpB" style="min-width:240px;max-width:46%;padding:8px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light">${opts}</select>
+    </div>
+    <div id="cmpOut" class="reveal" style="margin-top:10px"></div>
+  </div></section>`));
+  const A = app.querySelector('#cmpA'), B = app.querySelector('#cmpB');
+  B.selectedIndex = Math.min(1, gearAll.gear.length - 1);
+  const find = (id) => gearAll.gear.find((g) => g.id === id);
+  function render() {
+    const a = find(A.value), b = find(B.value); if (!a || !b) return;
+    const keys = [...new Set([...Object.keys(a.bonuses || {}), ...Object.keys(b.bonuses || {})])];
+    if (a.weapon || b.weapon) keys.unshift('__dps');
+    const hi = 'background:rgba(54,194,117,.18);font-weight:700';
+    const cell = (g) => `<td style="text-align:center;color:${QCOL[g.quality] || '#fff'}"><b>${esc(g.name)}</b><br><span class="meta">${esc(g.slotLabel)} · ${esc(g.qualityName)}${g.usable ? ' · ' + g.usable.join('/') : ''}</span></td>`;
+    const valA = (k) => k === '__dps' ? +wDps(a.weapon).toFixed(1) : (a.bonuses?.[k] || 0);
+    const valB = (k) => k === '__dps' ? +wDps(b.weapon).toFixed(1) : (b.bonuses?.[k] || 0);
+    const rows = keys.map((k) => { const x = valA(k), y = valB(k); return `<tr><td style="${x > y ? hi : ''};text-align:right">${x || '—'}</td><td style="text-align:center;color:var(--muted,#999)">${k === '__dps' ? 'Weapon DPS' : STAT_LABEL[k] || k}</td><td style="${y > x ? hi : ''}">${y || '—'}</td></tr>`; }).join('');
+    app.querySelector('#cmpOut').innerHTML = `<table id="cmpTbl" style="width:100%;border-collapse:collapse;font-size:.95rem"><thead><tr><td></td>${cell(a)}${cell(b)}</tr></thead></table>
+      <table id="cmpTbl2" style="width:100%;border-collapse:collapse;font-size:.95rem"><tbody>${rows}</tbody></table>
+      <p class="meta" style="margin-top:8px">${esc(a.name)} where: ${esc(srcText(a))}<br>${esc(b.name)} where: ${esc(srcText(b))}</p>`;
+    app.querySelectorAll('#cmpTbl2 td').forEach((c) => { c.style.padding = '5px 10px'; c.style.borderBottom = '1px solid var(--line,#2a2a2a)'; });
+  }
+  A.onchange = render; B.onchange = render; render();
+  reveal();
+}
+
+async function upgradesView() {
+  app.innerHTML = '';
+  try { await ensureGear(); } catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load gear (${esc(e.message)})</p></div></section>`)); return; }
+  const CLS = ['Warrior', 'Paladin', 'Hunter', 'Rogue', 'Priest', 'Shaman', 'Mage', 'Warlock', 'Druid'];
+  const st = { cls: 'Warrior', slot: gearAll.slots[0].id };
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Items · upgrades</span><h2>Gear upgrade finder</h2><p>Pick your class and a slot to see the best gear you can equip there, ranked by stat value, with where to get each.</p></div>
+    <div class="controls reveal"><div class="pills" id="ucls"></div></div>
+    <div class="controls reveal" style="margin-top:-8px"><label class="meta">Slot <select id="uslot" style="padding:8px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light">${gearAll.slots.map((s) => `<option value="${s.id}">${esc(s.label)}</option>`).join('')}</select></label></div>
+    <div id="uout" class="reveal" style="margin-top:8px"></div>
+  </div></section>`));
+  const ch = app.querySelector('#ucls');
+  CLS.forEach((c) => { const p = el(`<span class="pill${c === st.cls ? ' active' : ''}">${esc(c)}</span>`); p.onclick = () => { st.cls = c; ch.querySelectorAll('.pill').forEach((x) => x.classList.remove('active')); p.classList.add('active'); render(); }; ch.append(p); });
+  app.querySelector('#uslot').onchange = (e) => { st.slot = e.target.value; render(); };
+  function render() {
+    const list = gearAll.gear.filter((g) => g.slot === st.slot && (!g.usable || g.usable.includes(st.cls)))
+      .map((g) => ({ g, score: gearScore(g) })).sort((a, b) => b.score - a.score).slice(0, 20);
+    const rows = list.map((x, i) => { const g = x.g; const stats = Object.entries(g.bonuses || {}).map(([k, v]) => `+${v} ${STAT_LABEL[k] || k}`).join(', ');
+      const wp = g.weapon ? `${g.weapon.min}–${g.weapon.max} @ ${g.weapon.speed}s (${wDps(g.weapon).toFixed(1)} dps)` : '';
+      return `<tr${i === 0 ? ' style="background:rgba(255,210,80,.14);font-weight:600"' : ''}><td style="color:${QCOL[g.quality] || '#fff'}">${i === 0 ? '⭐ ' : ''}${esc(g.name)}</td><td>${esc([wp, stats].filter(Boolean).join(' · ')) || '—'}</td><td class="meta">${esc(srcText(g))}</td></tr>`; }).join('');
+    app.querySelector('#uout').innerHTML = `<div style="overflow-x:auto"><table id="utbl" style="width:100%;border-collapse:collapse;font-size:.93rem"><thead><tr style="text-align:left"><th>Item</th><th>Stats</th><th>Where</th></tr></thead><tbody>${rows || '<tr><td colspan=3 class="meta">No gear for this class in this slot.</td></tr>'}</tbody></table></div>`;
+    app.querySelectorAll('#utbl td, #utbl th').forEach((c) => { c.style.padding = '5px 8px'; c.style.borderBottom = '1px solid var(--line,#2a2a2a)'; });
+  }
+  render();
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1800,6 +1868,8 @@ function router() {
   if (head === 'chains') return questChainsView();
   if (head === 'calc') return calcView();
   if (head === 'solo') return soloView();
+  if (head === 'compare') return compareView();
+  if (head === 'upgrades') return upgradesView();
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();

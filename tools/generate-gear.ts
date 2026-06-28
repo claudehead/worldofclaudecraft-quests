@@ -78,6 +78,8 @@ const gear = (Object.values(ITEMS) as any[])
       quality: i.quality || 'common',
       qualityName: q?.name || 'Common',
       stats: statLine(i.id),
+      bonuses: i.stats || {},
+      weapon: i.weapon || null,
       icon: `gear/_icons/${i.id}.png`,
       usable: (() => { const u = usableBy(i); return u.length >= (ALL_CLASSES as string[]).length ? null : u.map(cap); })(),
       restrict: restrictLabel(i, usableBy(i)),
