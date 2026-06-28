@@ -4,8 +4,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <a id="mob-ysolei"></a>
 
-<img src="../quests/zones/_mob-renders/ysolei.png" width="140" align="right" alt="Ysolei, Avatar of the Drowned Moon">
-
 ### Ysolei, Avatar of the Drowned Moon 🟡 Boss
 
 **Level 18 · 984 HP · Dragonkin**
@@ -15,8 +13,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 <br clear="all">
 
 <a id="mob-bound_guardian"></a>
-
-<img src="../quests/zones/_mob-renders/bound_guardian.png" width="140" align="right" alt="The Bound Guardian">
 
 ### The Bound Guardian 🟡 Boss
 
@@ -135,8 +131,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 <br clear="all">
 
 <a id="mob-choirmother_selthe"></a>
-
-<img src="../quests/zones/_mob-renders/choirmother_selthe.png" width="140" align="right" alt="Choirmother Selthe">
 
 ### Choirmother Selthe 🔶 Elite
 

@@ -41,10 +41,6 @@ Press **`Enter`** to open chat, type, and press **`Enter`** to send. Prefix the 
 
 > Manage your guild and friends from the **Social** panel (friends / guild / ignore tabs).
 
-**Emotes.** Express yourself with `/<emote>` (add a target's name to aim it, e.g. `/wave Aldric`), or open the **Emote Wheel** (`X`). Available:
-
-`/wave` · `/bow` · `/cheer` · `/dance` · `/laugh` · `/cry` · `/salute` · `/thank` · `/clap` · `/greet` · `/roar` · `/sigh` · `/kneel` · `/point` · `/flex` · `/cower`
-
 ## 5. Running slow? Fix lag
 
 Most stutter is the browser, not the game. In order:
