@@ -40,6 +40,7 @@ $TSX $TOOLS/generate-questchains.ts docs/questchains.json
 echo "==> class stats + mob stats (calculators)"
 $TSX $TOOLS/generate-classstats.ts docs/classstats.json
 $TSX $TOOLS/generate-mobstats.ts docs/mobstats.json
+$TSX $TOOLS/generate-bosses.ts docs/bosses.json
 
 echo "==> bestiary"
 $TSX $TOOLS/generate-bestiary.ts quests

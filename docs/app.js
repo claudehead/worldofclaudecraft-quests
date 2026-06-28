@@ -1853,6 +1853,37 @@ async function upgradesView() {
   reveal();
 }
 
+// ---------- boss strategy cards ----------
+let bossData = null;
+async function bossesView() {
+  app.innerHTML = '';
+  if (!bossData) {
+    try { bossData = await (await fetch(cb('bosses.json'))).json(); }
+    catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load bosses (${esc(e.message)})</p></div></section>`)); return; }
+  }
+  const bold = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+  const RC = { Boss: '#ff8000', Elite: '#a335ee', Rare: '#0070dd' };
+  const cards = bossData.bosses.map((b) => `<div class="card reveal" style="margin-bottom:14px;padding:14px 16px">
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline">
+      <h3 style="margin:0">${esc(b.name)} <span class="pill" style="background:${RC[b.rank] || '#555'};color:#fff">${b.rank}</span></h3>
+      <span class="meta">lv ${b.level} · ${b.hp.toLocaleString()} HP · ${esc(b.where)}</span></div>
+    ${b.tips.length ? `<ul style="margin:10px 0 0;padding-left:18px;line-height:1.7">${b.tips.map((t) => `<li>${bold(t)}</li>`).join('')}</ul>` : '<p class="meta" style="margin:8px 0 0">No special mechanics — straight tank &amp; spank.</p>'}
+  </div>`).join('');
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">World · encounters</span><h2>Boss strategies</h2>
+      <p>Every boss and special-mechanic enemy, with how to handle their abilities — derived from the game's real mechanic data.</p></div>
+    <div class="controls reveal"><input class="search" id="bsearch" placeholder="Search a boss…"></div>
+    <div id="blist">${cards}</div>
+  </div></section>`));
+  const list = app.querySelector('#blist'), all = list.innerHTML;
+  app.querySelector('#bsearch').oninput = (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    if (!q) { list.innerHTML = all; reveal(); return; }
+    list.innerHTML = bossData.bosses.filter((b) => b.name.toLowerCase().includes(q)).map((b) => `<div class="card" style="margin-bottom:14px;padding:14px 16px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h3 style="margin:0">${esc(b.name)} <span class="pill" style="background:${RC[b.rank] || '#555'};color:#fff">${b.rank}</span></h3><span class="meta">lv ${b.level} · ${b.hp.toLocaleString()} HP · ${esc(b.where)}</span></div>${b.tips.length ? `<ul style="margin:10px 0 0;padding-left:18px;line-height:1.7">${b.tips.map((t) => `<li>${bold(t)}</li>`).join('')}</ul>` : ''}</div>`).join('') || '<p class="meta">No boss matches.</p>';
+  };
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1870,6 +1901,7 @@ function router() {
   if (head === 'solo') return soloView();
   if (head === 'compare') return compareView();
   if (head === 'upgrades') return upgradesView();
+  if (head === 'bosses') return bossesView();
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();
