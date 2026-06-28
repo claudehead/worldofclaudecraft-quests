@@ -1913,6 +1913,67 @@ async function levelTimeView(startArg) {
   reveal();
 }
 
+// ---------- interactive 2D atlas (separate from #/map) ----------
+async function atlasView(dir) {
+  app.innerHTML = '';
+  if (!zone3dData) {
+    try { zone3dData = await (await fetch(cb(raw('docs/zone3d.json')))).json(); }
+    catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load atlas (${esc(e.message)})</p></div></section>`)); return; }
+  }
+  const Z = zone3dData.zones, ids = Object.keys(Z), cur = Z[dir] ? dir : ids[0], q = Z[cur];
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">World · atlas</span><h2>Interactive map</h2>
+      <p>A top-down, zoomable map of each zone — towns, mob camps, roads, lakes and named places. Drag to pan, scroll to zoom, click an NPC or camp.</p></div>
+    <div class="controls reveal" style="position:relative;z-index:5"><select id="atpick" style="max-width:420px;padding:8px 10px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light">${ids.map((k) => `<option value="${k}"${k === cur ? ' selected' : ''}>${esc(Z[k].name)}</option>`).join('')}</select>
+      <span class="pill" id="atreset">Reset view</span></div>
+    <div style="position:relative;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:${q.biome || '#2b3a22'}">
+      <svg id="atsvg" style="display:block;width:100%;height:72vh;touch-action:none;cursor:grab"></svg>
+      <div id="attip" style="position:absolute;pointer-events:none;display:none;background:rgba(8,10,16,.92);color:#fff;font:600 12px system-ui;padding:4px 8px;border-radius:6px;z-index:6"></div>
+    </div>
+  </div></section>`));
+  app.querySelector('#atpick').onchange = (e) => { location.hash = `#/atlas/${e.target.value}`; };
+  const svg = app.querySelector('#atsvg'), tip = app.querySelector('#attip');
+  const b = q.bounds, W = b.x1 - b.x0, H = b.z1 - b.z0;
+  // world -> map: +X left (game convention), north (higher z) up
+  const MX = (x) => (b.x1 - x), MZ = (z) => (b.z1 - z);
+  const NS = 'http://www.w3.org/2000/svg';
+  const mk = (tag, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
+  const root = mk('g', {}); svg.append(root);
+  const lbl = Math.max(3, W * 0.018);
+  // lakes
+  for (const l of (q.lakes || [])) root.append(mk('circle', { cx: MX(l.x), cy: MZ(l.z), r: l.r || l.radius || 6, fill: '#2b6fa6', 'fill-opacity': '0.8' }));
+  // roads
+  for (const r of (q.roads || [])) { if (r.length < 2) continue; root.append(mk('polyline', { points: r.map((p) => `${MX(p.x)},${MZ(p.z)}`).join(' '), fill: 'none', stroke: '#9c8157', 'stroke-width': Math.max(1, W * 0.006), 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-opacity': '0.85' })); }
+  // foliage as faint texture (capped)
+  for (const f of (q.foliage || []).slice(0, 120)) root.append(mk('circle', { cx: MX(f.x), cy: MZ(f.z), r: lbl * 0.25, fill: '#000', 'fill-opacity': '0.12' }));
+  const hov = (e, text) => { tip.textContent = text; tip.style.display = 'block'; const r = svg.getBoundingClientRect(); tip.style.left = (e.clientX - r.left + 12) + 'px'; tip.style.top = (e.clientY - r.top + 12) + 'px'; };
+  const out = () => { tip.style.display = 'none'; };
+  const pin = (x, z, color, r, text, href) => {
+    const c = mk('circle', { cx: MX(x), cy: MZ(z), r, fill: color, stroke: '#000', 'stroke-width': r * 0.35, style: href ? 'cursor:pointer' : '' });
+    c.addEventListener('pointerenter', (e) => hov(e, text)); c.addEventListener('pointermove', (e) => hov(e, text)); c.addEventListener('pointerleave', out);
+    if (href) c.addEventListener('click', (ev) => { ev.stopPropagation(); location.hash = href; });
+    root.append(c);
+  };
+  // camps (mobs)
+  for (const c of (q.camps || [])) pin(c.x, c.z, '#e0526a', lbl * 0.45, `${c.name}${c.count ? ' ×' + c.count : ''}`, '#/bestiary');
+  // npcs
+  for (const n of (q.npcs || [])) pin(n.x, n.z, '#ffd24f', lbl * 0.5, n.name, '#/npcs');
+  // place labels
+  for (const pl of (q.places || [])) { const t = mk('text', { x: MX(pl.x), y: MZ(pl.z), fill: '#fff6d8', 'font-size': lbl, 'font-weight': '700', 'text-anchor': 'middle', stroke: '#000', 'stroke-width': lbl * 0.06, 'paint-order': 'stroke' }); t.textContent = pl.name; root.append(t); }
+  // pan/zoom via viewBox (MX/MZ already produce 0..W / 0..H coordinates)
+  const vb2 = { x: 0, y: 0, w: W, h: H }, home2 = { x: 0, y: 0, w: W, h: H };
+  const set = () => svg.setAttribute('viewBox', `${vb2.x} ${vb2.y} ${vb2.w} ${vb2.h}`);
+  svg.addEventListener('wheel', (e) => { e.preventDefault(); const r = svg.getBoundingClientRect(); const mxp = (e.clientX - r.left) / r.width, myp = (e.clientY - r.top) / r.height; const f = e.deltaY < 0 ? 0.85 : 1.18; const nw = Math.min(W * 1.2, Math.max(W * 0.08, vb2.w * f)), nh = nw * (H / W); vb2.x += (vb2.w - nw) * mxp; vb2.y += (vb2.h - nh) * myp; vb2.w = nw; vb2.h = nh; set(); }, { passive: false });
+  let drag = null;
+  svg.addEventListener('pointerdown', (e) => { drag = { x: e.clientX, y: e.clientY }; svg.style.cursor = 'grabbing'; svg.setPointerCapture(e.pointerId); });
+  svg.addEventListener('pointermove', (e) => { if (!drag) return; const r = svg.getBoundingClientRect(); vb2.x -= (e.clientX - drag.x) / r.width * vb2.w; vb2.y -= (e.clientY - drag.y) / r.height * vb2.h; drag = { x: e.clientX, y: e.clientY }; set(); });
+  const endDrag = () => { drag = null; svg.style.cursor = 'grab'; };
+  svg.addEventListener('pointerup', endDrag); svg.addEventListener('pointercancel', endDrag);
+  app.querySelector('#atreset').onclick = () => { Object.assign(vb2, home2); set(); };
+  set();
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1932,6 +1993,7 @@ function router() {
   if (head === 'upgrades') return upgradesView();
   if (head === 'bosses') return bossesView();
   if (head === 'leveltime') return levelTimeView(parts[1]);
+  if (head === 'atlas') return atlasView(parts[1]);
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();
