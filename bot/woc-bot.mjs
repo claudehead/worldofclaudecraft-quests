@@ -2,7 +2,7 @@
 // straight from the live guide data, so it stays in sync with the site.
 //
 // Setup: see bot/README.md. Needs DISCORD_TOKEN in the environment.
-import { Client, GatewayIntentBits, EmbedBuilder } from 'discord.js';
+import { Client, GatewayIntentBits, EmbedBuilder, REST, Routes, SlashCommandBuilder } from 'discord.js';
 
 const SITE = process.env.WOC_SITE || 'https://claudehead.github.io/worldofclaudecraft-quests';
 const RAW = 'https://raw.githubusercontent.com/claudehead/worldofclaudecraft-quests/main';
@@ -82,8 +82,32 @@ function cmdHelp() {
   return { embeds: [e] };
 }
 
+// ---- slash commands (registered on startup) ----
+const SLASH = [
+  new SlashCommandBuilder().setName('where').setDescription('Where an item drops / who sells it').addStringOption((o) => o.setName('item').setDescription('item name').setRequired(true)),
+  new SlashCommandBuilder().setName('farm').setDescription('Best mobs to grind at a level').addIntegerOption((o) => o.setName('level').setDescription('your level').setRequired(true)),
+  new SlashCommandBuilder().setName('mob').setDescription("A mob's HP, damage and zones").addStringOption((o) => o.setName('name').setDescription('mob name').setRequired(true)),
+  new SlashCommandBuilder().setName('wochelp').setDescription('List guide bot commands'),
+].map((c) => c.toJSON());
+async function registerSlash(appId) {
+  try { await new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN).put(Routes.applicationCommands(appId), { body: SLASH }); console.log('slash commands registered'); }
+  catch (e) { console.error('slash register failed:', e.message); }
+}
+
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
-client.once('ready', async () => { console.log(`logged in as ${client.user.tag}`); await refresh(); setInterval(refresh, 30 * 60 * 1000); });
+client.once('ready', async () => { console.log(`logged in as ${client.user.tag}`); await refresh(); setInterval(refresh, 30 * 60 * 1000); await registerSlash(client.application.id); });
+client.on('interactionCreate', (i) => {
+  if (!i.isChatInputCommand()) return;
+  let reply;
+  switch (i.commandName) {
+    case 'where': reply = cmdWhere(i.options.getString('item')); break;
+    case 'farm': reply = cmdFarm(String(i.options.getInteger('level'))); break;
+    case 'mob': reply = cmdMob(i.options.getString('name')); break;
+    case 'wochelp': reply = cmdHelp(); break;
+    default: return;
+  }
+  i.reply(reply).catch((e) => console.error('interaction reply', e.message));
+});
 client.on('messageCreate', (msg) => {
   if (msg.author.bot || !msg.content.startsWith(PREFIX)) return;
   const [cmd, ...rest] = msg.content.slice(PREFIX.length).trim().split(/\s+/);

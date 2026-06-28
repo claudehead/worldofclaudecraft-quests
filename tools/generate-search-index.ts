@@ -71,6 +71,7 @@ out.push({ t: 'Tool', n: 'Can I solo this? (mob vs you)', go: '#/solo' });
 out.push({ t: 'Tool', n: 'Gear upgrade finder', go: '#/upgrades' });
 out.push({ t: 'Tool', n: 'Compare gear', go: '#/compare' });
 out.push({ t: 'Tool', n: 'Boss strategies', go: '#/bosses' });
+out.push({ t: 'Tool', n: 'Time to max level', go: '#/leveltime' });
 
 // quest items / tools / trade goods -> materials page (anchored)
 for (const i of Object.values(ITEMS) as any[]) {

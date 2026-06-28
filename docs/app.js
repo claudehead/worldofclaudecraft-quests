@@ -1884,6 +1884,35 @@ async function bossesView() {
   reveal();
 }
 
+// ---------- time-to-level estimator ----------
+async function levelTimeView(startArg) {
+  app.innerHTML = '';
+  if (!farmingData) {
+    try { farmingData = await (await fetch(cb('farming.json'))).json(); }
+    catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load data (${esc(e.message)})</p></div></section>`)); return; }
+  }
+  const maxL = farmingData.maxLevel, start = Math.min(maxL - 1, Math.max(1, parseInt(startArg, 10) || 1));
+  const opts = []; for (let i = 1; i < maxL; i++) opts.push(`<option value="${i}"${i === start ? ' selected' : ''}>Level ${i}</option>`);
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">World · leveling</span><h2>Time to max level</h2>
+      <p>Grinding from your level to ${maxL}: total XP and how many mob kills it takes if you only grind the best spot each level. <b>Quests cut this dramatically</b> — treat it as the slow-path ceiling.</p></div>
+    <div class="controls reveal"><label class="meta">Starting at <select id="ltlevel">${opts.join('')}</select></label></div>
+    <div id="ltout" class="reveal" style="margin-top:8px"></div>
+  </div></section>`));
+  const sel = app.querySelector('#ltlevel'); sel.onchange = () => { location.hash = `#/leveltime/${sel.value}`; };
+  let totXp = 0, totKills = 0; const rows = [];
+  for (let L = start; L < maxL; L++) {
+    const p = farmingData.perLevel.find((x) => x.level === L); if (!p) continue;
+    const best = p.mobs.find((m) => !m.tooHigh) || p.mobs[0];
+    totXp += p.xpNeeded; totKills += best ? best.kills : 0;
+    rows.push(`<tr><td>${L} → ${L + 1}</td><td style="text-align:right">${p.xpNeeded.toLocaleString()}</td><td>${best ? esc(best.name) : '—'}</td><td style="text-align:right">${best ? best.kills.toLocaleString() : '—'}</td><td style="text-align:right">${totKills.toLocaleString()}</td></tr>`);
+  }
+  app.querySelector('#ltout').innerHTML = `<p class="meta" style="margin:0 0 12px">From level ${start} to ${maxL}: <b>${totXp.toLocaleString()} XP</b> ≈ <b>${totKills.toLocaleString()} kills</b> grinding (½ that with rested XP, far less with quests).</p>
+    <div style="overflow-x:auto"><table id="lttbl" style="width:100%;border-collapse:collapse;font-size:.93rem"><thead><tr style="text-align:left"><th>Level</th><th style="text-align:right">XP</th><th>Best grind</th><th style="text-align:right">Kills</th><th style="text-align:right">Cumulative</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
+  app.querySelectorAll('#lttbl td, #lttbl th').forEach((c) => { c.style.padding = '5px 8px'; c.style.borderBottom = '1px solid var(--line,#2a2a2a)'; });
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1902,6 +1931,7 @@ function router() {
   if (head === 'compare') return compareView();
   if (head === 'upgrades') return upgradesView();
   if (head === 'bosses') return bossesView();
+  if (head === 'leveltime') return levelTimeView(parts[1]);
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();
