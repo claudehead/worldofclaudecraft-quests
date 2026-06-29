@@ -45,12 +45,12 @@ $TSX $TOOLS/generate-bosses.ts docs/bosses.json
 echo "==> bestiary"
 $TSX $TOOLS/generate-bestiary.ts quests
 
-echo "==> bestiary cards (json)"
-$TSX $TOOLS/generate-bestiary-json.ts bestiary/bestiary.json
-
-echo "==> mob portraits (real .glb renders)"
+echo "==> mob portraits (real .glb renders) — must run BEFORE bestiary json so card thumbnails resolve"
 $TSX $TOOLS/build-mob-manifest.ts $TOOLS/mobs.json
 node $TOOLS/render-mobs.mjs $TOOLS/mobs.json $WOC/public quests/zones/_mob-renders
+
+echo "==> bestiary cards (json)"
+$TSX $TOOLS/generate-bestiary-json.ts bestiary/bestiary.json
 
 echo "==> loot icons (game icon code)"
 $TSX $TOOLS/build-loot-manifest.ts $TOOLS/loot-items.json
