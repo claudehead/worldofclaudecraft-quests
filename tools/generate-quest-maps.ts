@@ -128,7 +128,7 @@ function questMap(z: any, q: any, steps: Step[]): string {
   if (z.zone?.hub) s.push(`<circle cx="${X(z.zone.hub.x)}" cy="${Y(z.zone.hub.z)}" r="${R(z.zone.hub.radius)}" fill="#caa15a" opacity="0.08" stroke="#caa15a" stroke-width="1" stroke-opacity="0.3"/>`);
   for (const c of z.camps) s.push(`<circle cx="${X(c.center.x)}" cy="${Y(c.center.z)}" r="4" fill="#3a4a42"/>`);
   for (const n of Object.values(z.npcs) as any[]) s.push(`<circle cx="${X(n.pos.x)}" cy="${Y(n.pos.z)}" r="4" fill="#3a4a42"/>`);
-  for (const p of (z.zone?.pois || [])) s.push(`<text x="${X(p.x)}" y="${Y(p.z)}" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">${esc(p.label)}</text>`);
+  for (const p of (z.zone?.pois || [])) s.push(`<text x="${X(p.x)}" y="${Y(p.z)}" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">${esc(p.label)}</text>`);
 
   // merge steps that share (nearly) the same spot into one numbered badge
   const locs: { pos: Pt; nums: number[]; kinds: string[]; keys: string[] }[] = [];

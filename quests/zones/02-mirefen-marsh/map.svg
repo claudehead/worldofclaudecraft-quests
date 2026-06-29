@@ -27,13 +27,13 @@
 <path d="M496.3 721.9 L517.5 955.4 L544.1 1141.2 L610.4 1260.6" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
 <circle cx="491.0" cy="690.0" r="53.1" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
 <text x="491.0" y="690.0" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Fenbridge</text>
-<text x="384.8" y="504.2" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Prowler Reeds</text>
-<text x="212.3" y="690.0" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Deepfen Shallows</text>
-<text x="703.3" y="729.8" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Widow Thicket</text>
-<text x="756.4" y="1048.3" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Drowned Chapel</text>
-<text x="238.9" y="1061.6" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Troll Mounds</text>
-<text x="491.0" y="1181.0" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Gravecaller Encampment</text>
-<text x="610.4" y="1260.6" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">The Sunken Bastion</text>
+<text x="384.8" y="504.2" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Prowler Reeds</text>
+<text x="212.3" y="690.0" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Deepfen Shallows</text>
+<text x="703.3" y="729.8" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Widow Thicket</text>
+<text x="756.4" y="1048.3" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Drowned Chapel</text>
+<text x="238.9" y="1061.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Troll Mounds</text>
+<text x="491.0" y="1181.0" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Gravecaller Encampment</text>
+<text x="610.4" y="1260.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Sunken Bastion</text>
 <circle cx="384.8" cy="504.2" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
 <text x="384.8" y="496.2" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Mire Prowler ×7</text>
 <circle cx="583.9" cy="491.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>

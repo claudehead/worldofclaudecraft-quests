@@ -389,7 +389,7 @@ async function worldMapView(fx, fz) {
   // zone bands
   W.bands.forEach((bd, i) => {
     svg.append(mk('rect', { x: b.minX, y: bd.zMin, width: b.maxX - b.minX, height: bd.zMax - bd.zMin, fill: i % 2 ? '#12161a' : '#15191d', opacity: 0.6 }));
-    const t = mk('text', { x: b.minX + 8, y: bd.zMin + 22, fill: '#3f5247', 'font-size': 22, 'font-weight': 'bold' }); t.textContent = `${bd.title} · ${bd.levelRange[0]}–${bd.levelRange[1]}`; svg.append(t);
+    const t = mk('text', { x: b.minX + 8, y: bd.zMin + 22, fill: '#cfe3d6', 'font-size': 22, 'font-weight': 'bold', stroke: '#0a0c0e', 'stroke-width': 0.7, 'paint-order': 'stroke', opacity: 0.85 }); t.textContent = `${bd.title} · ${bd.levelRange[0]}–${bd.levelRange[1]}`; svg.append(t);
   });
   for (const l of W.lakes) svg.append(mk('circle', { cx: l.x, cy: l.z, r: l.r, fill: '#2f6f8f', opacity: 0.4 }));
   for (const seg of W.roads) { const p = mk('path', { d: seg.map((q, i) => `${i ? 'L' : 'M'}${q[0]} ${q[1]}`).join(' '), fill: 'none', stroke: '#6f6244', 'stroke-width': 2, opacity: 0.5, 'vector-effect': 'non-scaling-stroke' }); svg.append(p); }

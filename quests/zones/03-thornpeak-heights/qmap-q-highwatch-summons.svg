@@ -35,16 +35,16 @@
 <circle cx="479.5" cy="1939.7" r="4" fill="#3a4a42"/>
 <circle cx="487.7" cy="1950.7" r="4" fill="#3a4a42"/>
 <circle cx="526.0" cy="1904.1" r="4" fill="#3a4a42"/>
-<text x="493.2" y="1917.8" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">Highwatch</text>
-<text x="356.2" y="1726.0" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">Stalker Ridge</text>
-<text x="726.0" y="1794.5" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">Deeprock Burrows</text>
-<text x="246.6" y="2027.4" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">Ogre Foothills</text>
-<text x="137.0" y="2137.0" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">Drogmar's War-Camp</text>
-<text x="794.5" y="2191.8" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">Stormcrag</text>
-<text x="301.4" y="2219.2" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">The Glimmermere</text>
-<text x="643.8" y="2356.2" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">Wyrmcult Tents</text>
-<text x="383.6" y="2383.6" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">Revenant Fields</text>
-<text x="493.2" y="2520.5" fill="#4f6a5c" font-size="11" font-style="italic" text-anchor="middle">Gravewyrm Sanctum</text>
+<text x="493.2" y="1917.8" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Highwatch</text>
+<text x="356.2" y="1726.0" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Stalker Ridge</text>
+<text x="726.0" y="1794.5" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Deeprock Burrows</text>
+<text x="246.6" y="2027.4" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Ogre Foothills</text>
+<text x="137.0" y="2137.0" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Drogmar's War-Camp</text>
+<text x="794.5" y="2191.8" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Stormcrag</text>
+<text x="301.4" y="2219.2" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Glimmermere</text>
+<text x="643.8" y="2356.2" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Wyrmcult Tents</text>
+<text x="383.6" y="2383.6" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Revenant Fields</text>
+<text x="493.2" y="2520.5" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Gravewyrm Sanctum</text>
 <g class="qstep" data-keys="highwatch_summons,turnin" data-steps="1,2">
 <circle cx="491.8" cy="1905.5" r="21" fill="#5cb85c" opacity="0.18"/>
 <circle cx="491.8" cy="1905.5" r="14" fill="#5cb85c" stroke="#11160f" stroke-width="2"/>

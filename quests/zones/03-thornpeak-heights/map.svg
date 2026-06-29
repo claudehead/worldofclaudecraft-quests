@@ -33,15 +33,15 @@
 <path d="M493.2 1961.6 L493.2 2246.6 L493.2 2465.8" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
 <circle cx="493.2" cy="1917.8" r="54.8" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
 <text x="493.2" y="1917.8" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Highwatch</text>
-<text x="356.2" y="1726.0" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Stalker Ridge</text>
-<text x="726.0" y="1794.5" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Deeprock Burrows</text>
-<text x="246.6" y="2027.4" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Ogre Foothills</text>
-<text x="137.0" y="2137.0" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Drogmar's War-Camp</text>
-<text x="794.5" y="2191.8" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Stormcrag</text>
-<text x="301.4" y="2219.2" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">The Glimmermere</text>
-<text x="643.8" y="2356.2" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Wyrmcult Tents</text>
-<text x="383.6" y="2383.6" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Revenant Fields</text>
-<text x="493.2" y="2520.5" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Gravewyrm Sanctum</text>
+<text x="356.2" y="1726.0" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Stalker Ridge</text>
+<text x="726.0" y="1794.5" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Deeprock Burrows</text>
+<text x="246.6" y="2027.4" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Ogre Foothills</text>
+<text x="137.0" y="2137.0" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Drogmar's War-Camp</text>
+<text x="794.5" y="2191.8" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Stormcrag</text>
+<text x="301.4" y="2219.2" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Glimmermere</text>
+<text x="643.8" y="2356.2" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Wyrmcult Tents</text>
+<text x="383.6" y="2383.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Revenant Fields</text>
+<text x="493.2" y="2520.5" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Gravewyrm Sanctum</text>
 <circle cx="356.2" cy="1726.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
 <text x="356.2" y="1718.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ridge Stalker ×7</text>
 <circle cx="616.4" cy="1753.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>

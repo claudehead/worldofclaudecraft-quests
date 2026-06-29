@@ -101,7 +101,7 @@ function renderZoneMap(spec: ZoneSpec): string {
   // POIs (area labels)
   for (const p of spec.pois || []) {
     if (spec.hub && p.label === spec.hub.name) continue;
-    s.push(`<text x="${X(p.x)}" y="${Y(p.z)}" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">${esc(p.label)}</text>`);
+    s.push(`<text x="${X(p.x)}" y="${Y(p.z)}" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">${esc(p.label)}</text>`);
   }
 
   const label = (x: number, z: number, t: string, fill: string, dy = -8) =>

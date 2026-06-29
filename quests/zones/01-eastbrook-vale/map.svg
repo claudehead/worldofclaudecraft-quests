@@ -22,15 +22,15 @@
 <path d="M525.0 453.1 L615.6 537.5 L693.8 615.6 L750.0 659.4" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
 <circle cx="506.3" cy="428.1" r="81.3" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
 <text x="506.3" y="428.1" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Eastbrook</text>
-<text x="500.0" y="646.9" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Wolf Run</text>
-<text x="709.4" y="428.1" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Boar Meadow</text>
-<text x="231.3" y="684.4" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Mirror Lake</text>
-<text x="318.8" y="440.6" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Webwood</text>
-<text x="243.8" y="228.1" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Copper Dig</text>
-<text x="743.8" y="190.6" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Bandit Camp</text>
-<text x="756.3" y="678.1" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Fallen Chapel</text>
-<text x="490.6" y="265.6" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Reliquary Hill</text>
-<text x="631.3" y="865.6" fill="#7fa890" font-size="12" font-style="italic" text-anchor="middle">Brightwood Glade</text>
+<text x="500.0" y="646.9" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Wolf Run</text>
+<text x="709.4" y="428.1" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Boar Meadow</text>
+<text x="231.3" y="684.4" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Mirror Lake</text>
+<text x="318.8" y="440.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Webwood</text>
+<text x="243.8" y="228.1" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Copper Dig</text>
+<text x="743.8" y="190.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Bandit Camp</text>
+<text x="756.3" y="678.1" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Fallen Chapel</text>
+<text x="490.6" y="265.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Reliquary Hill</text>
+<text x="631.3" y="865.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Brightwood Glade</text>
 <circle cx="459.4" cy="600.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
 <text x="459.4" y="592.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Forest Wolf ×7</text>
 <circle cx="568.8" cy="646.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
