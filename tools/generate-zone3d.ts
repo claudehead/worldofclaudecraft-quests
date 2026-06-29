@@ -72,5 +72,26 @@ for (const z of ZONES) {
   out[z.dir] = { name: z.Z?.name || (z.dir === '04-the-drowned-temple' ? 'The Drowned Temple' : z.dir), biome: '#' + z.biome.toString(16).padStart(6, '0'), bounds, terrain: { res: RES, x0, z0, x1, z1, heights }, npcs, camps, roads, lakes: lakes.map((l: any) => ({ x: l.x, z: l.z, r: l.radius })), places, foliage, decor };
 }
 
+// ---- combined "Whole World" entry: all zones stitched into one 3D scene ----
+{
+  const zs = Object.values(out) as any[];
+  const wb = {
+    x0: Math.min(...zs.map((z) => z.bounds.x0)), x1: Math.max(...zs.map((z) => z.bounds.x1)),
+    z0: Math.min(...zs.map((z) => z.bounds.z0)), z1: Math.max(...zs.map((z) => z.bounds.z1)),
+  };
+  const merge = (k: string) => zs.flatMap((z) => z[k] || []);
+  // cap mob count per camp + subsample foliage so the full world stays performant
+  const camps = merge('camps').map((c: any) => ({ ...c, count: Math.min(c.count || 2, 2) }));
+  let foliage = merge('foliage'); const FCAP = 380;
+  if (foliage.length > FCAP) { const step = foliage.length / FCAP; foliage = Array.from({ length: FCAP }, (_, i) => foliage[Math.floor(i * step)]); }
+  const RES = 120, gx = (wb.x1 - wb.x0) / (RES - 1), gz = (wb.z1 - wb.z0) / (RES - 1), heights: number[] = [];
+  for (let i = 0; i < RES; i++) for (let j = 0; j < RES; j++) heights.push(+terrainHeight(wb.x0 + j * gx, wb.z0 + i * gz, SEED).toFixed(2));
+  out['00-world'] = {
+    name: 'Whole World', biome: '#3a4f30', bounds: wb,
+    terrain: { res: RES, x0: wb.x0, z0: wb.z0, x1: wb.x1, z1: wb.z1, heights },
+    npcs: merge('npcs'), camps, roads: merge('roads'), lakes: merge('lakes'), places: merge('places'), foliage, decor: merge('decor'),
+  };
+}
+// world entry stays LAST so #/zone3d still defaults to a light single zone
 fs.writeFileSync(OUT, JSON.stringify({ modelRepo: 'levy-street/world-of-claudecraft', modelRef: 'main', zones: out }));
-console.log(`wrote zone3d.json (${Object.keys(out).length} zones)`);
+console.log(`wrote zone3d.json (${Object.keys(out).length} entries incl. Whole World)`);
