@@ -109,5 +109,16 @@ Most stutter is the browser, not the game. In order:
 | Action Bar 10 | `0` |
 | Action Bar 11 | `Minus` |
 | Action Bar 12 | `Equal` |
+| Secondary Bar 1 | `Numpad1` |
+| Secondary Bar 2 | `Numpad2` |
+| Secondary Bar 3 | `Numpad3` |
+| Secondary Bar 4 | `Numpad4` |
+| Secondary Bar 5 | `Numpad5` |
+| Secondary Bar 6 | `Numpad6` |
+| Secondary Bar 7 | `Numpad7` |
+| Secondary Bar 8 | `Numpad8` |
+| Secondary Bar 9 | `Numpad9` |
+| Secondary Bar 10 | `Numpad0` |
+| Secondary Bar 11 | `NumpadDecimal` |
 
 _Most actions are rebindable in Settings → Keybinds._

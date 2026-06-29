@@ -13,7 +13,7 @@ The Warlock fights alongside a summoned demon. Each fills a different role — p
 | Stat | Value |
 |---|---|
 | Base health | 30 (+12/level) |
-| Base damage | 5 (+1.6/level) @ 2s |
+| Base damage | 5 (+1.1/level) @ 2s |
 | Size | tiny (×0.55) |
 
 <a id="demon-voidwalker"></a>
@@ -27,7 +27,7 @@ The Warlock fights alongside a summoned demon. Each fills a different role — p
 | Stat | Value |
 |---|---|
 | Base health | 70 (+28/level) |
-| Base damage | 4 (+1.2/level) @ 2s |
+| Base damage | 4 (+0.75/level) @ 2s |
 | Size | large (×1.15) |
 
 <a id="demon-succubus"></a>

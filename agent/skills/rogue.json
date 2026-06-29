@@ -199,7 +199,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Vanish from sight, entering Stealth even in combat. You move 30% slower while hidden. Lasts up to 10 sec."
+      "desc": "Vanish from sight, entering Stealth even in combat. You move 50% slower while hidden. Lasts up to 10 sec."
     },
     {
       "id": "instant_poison",
@@ -259,7 +259,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Conceals you in the shadows: enemies barely notice you, but you move 30% slower. Attacking or taking damage breaks Stealth. Cast again to step out."
+      "desc": "Conceals you in the shadows: enemies barely notice you, but you move 50% slower. Attacking or taking damage breaks Stealth. Cast again to step out."
     }
   ],
   "rotation": [

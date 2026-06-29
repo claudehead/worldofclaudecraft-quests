@@ -27,17 +27,13 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 - **XP:** 4500
 - **Money:** 3000 copper
 - **Item reward (by class):**
-  - <img src="../_loot-icons/boneguard_breastplate.png" width="20" alt=""> 🔵 Boneguard Breastplate — _warrior_ · 210 armor, +4 Str, +7 Sta
-  - <img src="../_loot-icons/staff_of_velkhar.png" width="20" alt=""> 🔵 Staff of Velkhar — _mage_ · 27–43 dmg @ 3s (~12 DPS), +10 Int, +5 Spi
+  - <img src="../_loot-icons/boneguard_breastplate.png" width="20" alt=""> 🔵 Boneguard Breastplate — _warrior_ · 210 armor, +5 Str, +8 Sta
+  - <img src="../_loot-icons/staff_of_velkhar.png" width="20" alt=""> 🔵 Staff of Velkhar — _mage_ · 27–43 dmg @ 3s (~12 DPS), +9 Int, +4 Spi
   - <img src="../_loot-icons/shadowmeld_tunic.png" width="20" alt=""> 🔵 Shadowmeld Tunic — _rogue_ · 130 armor, +9 Agi, +4 Sta
 
 ## On completion
 
 > Velkhar is dead, and the rite is headless. But you felt it down there, did you not? The souls are already spent — the Wyrm is no longer asleep.
-
-## Leads to
-
-- Korzul the Gravewyrm (`q_gravewyrm`)
 
 ## Where to go
 

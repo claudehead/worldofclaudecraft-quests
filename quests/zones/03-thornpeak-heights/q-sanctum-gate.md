@@ -34,6 +34,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 
 - The Bound Guardian (`q_korgath`)
 - The Grand Necromancer (`q_velkhar`)
+- Korzul the Gravewyrm (`q_gravewyrm`)
 
 ## Where to go
 

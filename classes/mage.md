@@ -27,7 +27,7 @@
 | Frostbolt | 4 _(ranks: 8, 14, 20)_ | 25 | 1.5s | — | 30 | Frost | Launches a bolt of frost, causing X Frost damage and slowing movement by 40%. |
 | Conjure Food | 6 _(ranks: 12, 18)_ | 45 | 3s | — | Melee | Arcane | Conjures 2 servings of bread, restoring health when eaten. Higher ranks conjure heartier fare. |
 | Fire Blast | 6 _(ranks: 12, 18)_ | 40 | Instant | 8s | 20 | Fire | Blasts the enemy for X Fire damage. Instant. |
-| Arcane Missiles | 8 _(ranks: 14, 20)_ | 50 | Instant | — | 30 | Arcane | Launches Arcane Missiles at the enemy, causing 8 Arcane damage each second for 3 sec. |
+| Arcane Missiles | 8 _(ranks: 14, 20)_ | 50 | Instant | — | 30 | Arcane | Launches Arcane Missiles at the enemy, causing X Arcane damage each second for 3 sec. |
 | Polymorph | 8 _(ranks: 18)_ | 50 | 1.5s | — | 30 | Arcane | Transforms the enemy into a sheep for up to 15 sec. The sheep wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only. |
 | Frost Nova | 10 _(ranks: 16)_ | 35 | Instant | 22s | Melee | Frost | Freezes all nearby enemies in place for up to 8 sec, dealing X Frost damage. |
 | Arcane Explosion | 14 | 60 | Instant | — | Melee | Arcane | A burst of Arcane energy hits all nearby enemies for X Arcane damage. |

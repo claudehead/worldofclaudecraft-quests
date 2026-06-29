@@ -28,7 +28,7 @@
 | Life Tap | 6 _(ranks: 14, 20)_ | — | Instant | — | Melee | Shadow | Converts 30 health into 30 mana. |
 | Curse of Agony | 8 _(ranks: 14, 20)_ | 25 | Instant | — | 30 | Shadow | Curses the target with agony: X Shadow damage over 24 sec. |
 | Summon Voidwalker | 8 | 80 | 5s | — | Melee | Shadow | Summons a Voidwalker under the command of the Warlock. The Voidwalker is a sturdy demon that taunts your enemies and soaks up punishment. Summoning a new demon dismisses your current one. You may have one demon at a time. |
-| Drain Life | 10 _(ranks: 14, 20)_ | 35 | Instant | — | 20 | Shadow | Drains the target's life, transferring 7 health to you each second for 5 sec. |
+| Drain Life | 10 _(ranks: 14, 20)_ | 35 | Instant | — | 20 | Shadow | Drains the target's life, transferring X health to you each second for 5 sec. |
 | Summon Succubus | 12 | 100 | 5s | — | Melee | Shadow | Summons a Succubus under the command of the Warlock. The Succubus is a fragile demon that strikes quickly and hits hard in melee. Summoning a new demon dismisses your current one. You may have one demon at a time. |
 | Fear | 14 | 40 | 1.5s | — | 20 | Shadow | Strikes terror into the enemy, leaving it cowering for up to 8 sec. Any damage breaks the effect. |
 | Summon Felhunter | 14 | 120 | 5s | — | Melee | Shadow | Summons a Felhunter under the command of the Warlock. The Felhunter harries enemies from range with Shadow Bite and excels at hunting spellcasters. Summoning a new demon dismisses your current one. You may have one demon at a time. |

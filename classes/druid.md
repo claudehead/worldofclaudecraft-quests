@@ -33,7 +33,7 @@
 | Growl | 10 | — | Instant | 10s | 8 | Physical | Growls at the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec. Bear Form only. |
 | Maul | 10 _(ranks: 16)_ | 15 | Instant | — | Melee | Physical | A mauling attack that increases melee damage by X and causes a high amount of threat. Activates on your next swing. Bear Form only. |
 | Claw | 12 _(ranks: 18)_ | 45 | Instant | — | Melee | Physical | Claw the enemy for weapon damage plus X. Awards 1 combo point. Wolf Form only. |
-| Prowl | 12 | — | Instant | — | Melee | Physical | Enter stealth while in Wolf Form. Cannot be used in combat. |
+| Prowl | 12 | — | Instant | — | Melee | Physical | Enter stealth while in Wolf Form, moving 50% slower. Cannot be used in combat. |
 | Rake | 12 _(ranks: 18)_ | 35 | Instant | — | Melee | Physical | A stealth opener that rakes the enemy for weapon damage plus X and causes bleeding damage over 9 sec. Awards 1 combo point. Wolf Form only. |
 | Wolf Form | 12 | 30 | Instant | — | Melee | Physical | Shapeshift into a wolf: agility rises with your level, attack power +8 plus 2 per level, your attacks use energy and combo points, and you generate 29% less threat. Cast again to return to caster form. |
 | Ferocious Bite | 14 | 35 | Instant | — | Melee | Physical | Finishing move that causes damage per combo point. Wolf Form only. |

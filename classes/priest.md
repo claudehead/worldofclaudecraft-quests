@@ -28,7 +28,7 @@
 | Renew | 8 _(ranks: 14, 20)_ | 30 | Instant | — | 30 | Holy | Heals the target for X over 15 sec. |
 | Mind Blast | 10 _(ranks: 14, 20)_ | 50 | 1.5s | 8s | 30 | Shadow | Blasts the target's mind for X Shadow damage. |
 | Heal | 14 _(ranks: 20)_ | 95 | 2.5s | — | 30 | Holy | A slow but powerful prayer that heals a friendly target for X. |
-| Mind Flay | 16 | 45 | Instant | — | 20 | Shadow | Assaults the target's mind with Shadow energy, causing 12 damage each second for 3 sec. |
+| Mind Flay | 16 | 45 | Instant | — | 20 | Shadow | Assaults the target's mind with Shadow energy, causing X Shadow damage each second for 3 sec. |
 | Flash Heal | 20 | 75 | 1.5s | — | 30 | Holy | A fast prayer that heals a friendly target for X. |
 
 ---

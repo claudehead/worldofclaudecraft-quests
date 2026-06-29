@@ -331,7 +331,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Murloc Scale | Junk | 100% | sells for 5c |
 | <img src="../_loot-icons/mirejaw_biteblade.png" width="22" alt=""> 🟢 Mirejaw Biteblade | Weapon — Main hand · 8–14 dmg @ 1.7s (~6 DPS), +5 Agi, +2 Sta | 25% |  |
-| <img src="../_loot-icons/mirejaw_scale_vest.png" width="22" alt=""> 🟢 Mirejaw Scale Vest | Armor — Chest · 115 armor, +2 Str, +3 Sta | 25% |  |
+| <img src="../_loot-icons/mirejaw_scale_vest.png" width="22" alt=""> 🟢 Mirejaw Scale Vest | Mail armor — Chest · 115 armor, +2 Str, +3 Sta | 25% |  |
 | <img src="../_loot-icons/fen_reaver_glaive.png" width="22" alt=""> 🔵 Fen Reaver Glaive | Weapon — Main hand · 16–26 dmg @ 2.4s (~9 DPS), +5 Str, +3 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/mirejaw_oracle_staff.png" width="22" alt=""> 🔵 Mirejaw Oracle Staff | Weapon — Main hand · 16–27 dmg @ 3s (~7 DPS), +6 Int, +3 Spi | 25% | exclusive set † |
 
@@ -403,7 +403,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 70% | sells for 7c |
-| <img src="../_loot-icons/mistveil_cord.png" width="22" alt=""> 🟢 Mistveil Cord | Armor — Waist · 30 armor, +1 Agi, +2 Sta | 6% | exclusive set † |
+| <img src="../_loot-icons/mistveil_cord.png" width="22" alt=""> 🟢 Mistveil Cord | Cloth armor — Waist · 30 armor, +1 Agi, +2 Sta | 6% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -441,7 +441,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Tallow Candle | Junk | 100% | sells for 5c |
-| <img src="../_loot-icons/nhalias_funeral_wraps.png" width="22" alt=""> 🟢 Nhalia's Funeral Wraps | Armor — Legs · 48 armor, +5 Int, +2 Spi | 25% |  |
+| <img src="../_loot-icons/nhalias_funeral_wraps.png" width="22" alt=""> 🟢 Nhalia's Funeral Wraps | Cloth armor — Legs · 48 armor, +5 Int, +2 Spi | 25% |  |
 | <img src="../_loot-icons/nhalias_dirgeblade.png" width="22" alt=""> 🔵 Nhalia's Dirgeblade | Weapon — Main hand · 10–16 dmg @ 1.7s (~8 DPS), +6 Agi, +3 Sta | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
@@ -474,7 +474,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 50% | sells for 3c |
-| <img src="../_loot-icons/mistveil_grips.png" width="22" alt=""> 🟢 Mistveil Grips | Armor — Hands · 36 armor, +2 Agi, +1 Sta | 6% | exclusive set † |
+| <img src="../_loot-icons/mistveil_grips.png" width="22" alt=""> 🟢 Mistveil Grips | Cloth armor — Hands · 36 armor, +2 Agi, +1 Sta | 6% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -505,12 +505,12 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/trollhide_leggings.png" width="22" alt=""> 🟢 Trollhide Leggings | Armor — Legs · 55 armor, +2 Str, +3 Sta | 50% | exclusive set 1 † |
-| <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> 🟢 Marshstrider Boots | Armor — Feet · 40 armor, +2 Agi, +2 Sta | 50% | exclusive set 1 † |
-| <img src="../_loot-icons/fenmist_robe.png" width="22" alt=""> 🟢 Fenmist Robe | Armor — Chest · 45 armor, +5 Int, +3 Spi | 25% | exclusive set 2 † |
-| <img src="../_loot-icons/tideguard_greaves.png" width="22" alt=""> 🔵 Tideguard Greaves | Armor — Legs · 125 armor, +3 Str, +5 Sta | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/tideguard_sabatons.png" width="22" alt=""> 🔵 Tideguard Sabatons | Armor — Feet · 105 armor, +2 Str, +4 Sta | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/eelscale_leggings.png" width="22" alt=""> 🔵 Eelscale Leggings | Armor — Legs · 86 armor, +6 Agi, +3 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/trollhide_leggings.png" width="22" alt=""> 🟢 Trollhide Leggings | Cloth armor — Legs · 55 armor, +2 Str, +3 Sta | 50% | exclusive set 1 † |
+| <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> 🟢 Marshstrider Boots | Cloth armor — Feet · 40 armor, +2 Agi, +2 Sta | 50% | exclusive set 1 † |
+| <img src="../_loot-icons/fenmist_robe.png" width="22" alt=""> 🟢 Fenmist Robe | Cloth armor — Chest · 45 armor, +5 Int, +3 Spi | 25% | exclusive set 2 † |
+| <img src="../_loot-icons/tideguard_greaves.png" width="22" alt=""> 🔵 Tideguard Greaves | Mail armor — Legs · 125 armor, +3 Str, +5 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/tideguard_sabatons.png" width="22" alt=""> 🔵 Tideguard Sabatons | Mail armor — Feet · 105 armor, +2 Str, +4 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/eelscale_leggings.png" width="22" alt=""> 🔵 Eelscale Leggings | Leather armor — Legs · 86 armor, +6 Agi, +3 Sta | 10% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 
@@ -544,8 +544,8 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚫ Twitching Spider Leg | Junk | 100% | sells for 4c |
-| <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> 🟢 Marshstrider Boots | Armor — Feet · 40 armor, +2 Agi, +2 Sta | 40% |  |
-| <img src="../_loot-icons/broodmother_silk_robe.png" width="22" alt=""> 🟢 Broodmother's Silk Robe | Armor — Chest · 42 armor, +4 Int, +2 Spi | 25% |  |
+| <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> 🟢 Marshstrider Boots | Cloth armor — Feet · 40 armor, +2 Agi, +2 Sta | 40% |  |
+| <img src="../_loot-icons/broodmother_silk_robe.png" width="22" alt=""> 🟢 Broodmother's Silk Robe | Cloth armor — Chest · 42 armor, +4 Int, +2 Spi | 25% |  |
 
 <a id="mob-deacon_voss"></a>
 
@@ -607,16 +607,16 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/deepfen_pearl.png" width="22" alt=""> ⚫ Deepfen Pearl | Junk | 100% | sells for 600c |
-| <img src="../_loot-icons/trollhide_leggings.png" width="22" alt=""> 🟢 Trollhide Leggings | Armor — Legs · 55 armor, +2 Str, +3 Sta | 34% | exclusive set 1 † |
-| <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> 🟢 Marshstrider Boots | Armor — Feet · 40 armor, +2 Agi, +2 Sta | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/fenmist_robe.png" width="22" alt=""> 🟢 Fenmist Robe | Armor — Chest · 45 armor, +5 Int, +3 Spi | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/eelskin_tunic.png" width="22" alt=""> 🟢 Eelskin Tunic | Armor — Chest · 80 armor, +5 Agi | 20% | exclusive set 2 † |
-| <img src="../_loot-icons/mistveil_cord.png" width="22" alt=""> 🟢 Mistveil Cord | Armor — Waist · 30 armor, +1 Agi, +2 Sta | 12% | exclusive set 2 † |
-| <img src="../_loot-icons/mistveil_grips.png" width="22" alt=""> 🟢 Mistveil Grips | Armor — Hands · 36 armor, +2 Agi, +1 Sta | 12% | exclusive set 2 † |
-| <img src="../_loot-icons/tidescale_vest.png" width="22" alt=""> 🔵 Tidescale Vest | Armor — Chest · 90 armor, +2 Agi, +3 Sta | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/drowned_prayer_leggings.png" width="22" alt=""> 🔵 Drowned Prayer Leggings | Armor — Legs · 48 armor, +6 Int, +4 Spi | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/drowned_prayer_sandals.png" width="22" alt=""> 🔵 Drowned Prayer Sandals | Armor — Feet · 42 armor, +5 Int, +3 Spi | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/eelscale_treads.png" width="22" alt=""> 🔵 Eelscale Treads | Armor — Feet · 72 armor, +5 Agi, +3 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/trollhide_leggings.png" width="22" alt=""> 🟢 Trollhide Leggings | Cloth armor — Legs · 55 armor, +2 Str, +3 Sta | 34% | exclusive set 1 † |
+| <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> 🟢 Marshstrider Boots | Cloth armor — Feet · 40 armor, +2 Agi, +2 Sta | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/fenmist_robe.png" width="22" alt=""> 🟢 Fenmist Robe | Cloth armor — Chest · 45 armor, +5 Int, +3 Spi | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/eelskin_tunic.png" width="22" alt=""> 🟢 Eelskin Tunic | Leather armor — Chest · 80 armor, +5 Agi | 20% | exclusive set 2 † |
+| <img src="../_loot-icons/mistveil_cord.png" width="22" alt=""> 🟢 Mistveil Cord | Cloth armor — Waist · 30 armor, +1 Agi, +2 Sta | 12% | exclusive set 2 † |
+| <img src="../_loot-icons/mistveil_grips.png" width="22" alt=""> 🟢 Mistveil Grips | Cloth armor — Hands · 36 armor, +2 Agi, +1 Sta | 12% | exclusive set 2 † |
+| <img src="../_loot-icons/tidescale_vest.png" width="22" alt=""> 🔵 Tidescale Vest | Mail armor — Chest · 90 armor, +2 Agi, +3 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/drowned_prayer_leggings.png" width="22" alt=""> 🔵 Drowned Prayer Leggings | Cloth armor — Legs · 48 armor, +6 Int, +4 Spi | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/drowned_prayer_sandals.png" width="22" alt=""> 🔵 Drowned Prayer Sandals | Cloth armor — Feet · 42 armor, +5 Int, +3 Spi | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/eelscale_treads.png" width="22" alt=""> 🔵 Eelscale Treads | Leather armor — Feet · 72 armor, +5 Agi, +3 Sta | 10% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 

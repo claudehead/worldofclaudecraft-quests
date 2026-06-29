@@ -23,7 +23,7 @@
 | Eviscerate | 1 _(ranks: 12, 18)_ | 35 | Instant | — | Melee | Physical | Finishing move that causes damage per combo point. |
 | Garrote | 1 _(ranks: 14)_ | 50 | Instant | — | Melee | Physical | Garrote the enemy, causing damage now and bleeding it for X over 18 sec. Must be stealthed. Awards 1 combo point. |
 | Sinister Strike | 1 _(ranks: 8, 14, 20)_ | 45 | Instant | — | Melee | Physical | An instant strike for weapon damage plus X. Awards 1 combo point. |
-| Stealth | 2 | — | Instant | 10s | Melee | Physical | Conceals you in the shadows: enemies barely notice you, but you move 30% slower. Attacking or taking damage breaks Stealth. Cast again to step out. |
+| Stealth | 2 | — | Instant | 10s | Melee | Physical | Conceals you in the shadows: enemies barely notice you, but you move 50% slower. Attacking or taking damage breaks Stealth. Cast again to step out. |
 | Backstab | 4 _(ranks: 12, 18)_ | 60 | Instant | — | Melee | Physical | Backstab the target for 150% weapon damage plus X. Must be behind the target. Requires a dagger. Awards 1 combo point. |
 | Gouge | 6 _(ranks: 14)_ | 45 | Instant | 10s | Melee | Physical | Strikes the target, incapacitating it for 4 sec. Any damage breaks the effect. Awards 1 combo point. |
 | Cheap Shot | 8 | 60 | Instant | — | Melee | Physical | Strike the target, stunning it for 4 sec. Must be stealthed. Awards 2 combo points. |
@@ -37,7 +37,7 @@
 | Ambush | 16 | 60 | Instant | — | Melee | Physical | Ambush the target for 250% weapon damage plus X. Must be stealthed and behind the target. Requires a dagger. Awards 1 combo point. |
 | Rupture | 16 | 25 | Instant | — | Melee | Physical | Finishing move that wounds the target, causing it to bleed for X over 16 sec. |
 | Instant Poison | 18 | 40 | Instant | — | Melee | Nature | Coats your weapon for 30 min, causing each of your melee swings to deal 8 additional Nature damage. |
-| Vanish | 18 | — | Instant | 5 min | Melee | Physical | Vanish from sight, entering Stealth even in combat. You move 30% slower while hidden. Lasts up to 10 sec. |
+| Vanish | 18 | — | Instant | 5 min | Melee | Physical | Vanish from sight, entering Stealth even in combat. You move 50% slower while hidden. Lasts up to 10 sec. |
 | Adrenaline Rush | 20 | — | Instant | 3 min | Melee | Physical | Your blood runs hot, instantly restoring 60 energy. |
 | Blind | 20 | 50 | Instant | 2 min | 5 | Physical | Blinds the target, causing it to wander disoriented for 8 sec. Any damage breaks the effect. |
 | Deadly Poison | 20 | 40 | Instant | — | Melee | Nature | Coats your weapon for 30 min, causing each of your melee swings to deal 14 additional Nature damage. |

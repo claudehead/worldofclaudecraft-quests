@@ -115,7 +115,7 @@
       "castTime": 0,
       "school": "shadow",
       "requiresTarget": true,
-      "desc": "Assaults the target's mind with Shadow energy, causing 12 damage each second for 3 sec."
+      "desc": "Assaults the target's mind with Shadow energy, causing $d Shadow damage each second for 3 sec."
     },
     {
       "id": "flash_heal",

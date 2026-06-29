@@ -58,15 +58,15 @@ Spend **Marks** (earned from clears) at the delve vendor:
 
 | Item | Type | Cost | Unlock |
 |---|---|---:|---|
-| <img src="_delve-icons/reliquary_legs.png" width="22" alt=""> 🟢 Vaultbound Legwraps | armor · 48 armor, +2 Sta | 8 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_shoulder.png" width="22" alt=""> 🟢 Crumbled Spaulders | armor · 36 armor, +2 Sta | 8 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_gloves_rog.png" width="22" alt=""> 🟢 Bonewarden Grips | armor · 36 armor, +2 Agi, +1 Sta | 8 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_cloth_chest.png" width="22" alt=""> 🟢 Shroud of the Reliquary | armor · 30 armor, +2 Int, +1 Spi | 10 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_leather_chest.png" width="22" alt=""> 🟢 Dustwarden Jerkin | armor · 55 armor, +2 Agi, +1 Sta | 10 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_plate_chest.png" width="22" alt=""> 🟢 Reliquary Guard Hauberk | armor · 90 armor, +1 Str, +2 Sta | 10 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_helm.png" width="22" alt=""> 🟢 Ossuary Watch Helm | armor · 48 armor, +1 Str, +2 Sta | 12 Marks | Unlocks after 3 clears |
-| <img src="_delve-icons/deacon_reliquary_helm.png" width="22" alt=""> 🔵 Deacon's Reliquary Helm | armor · 105 armor, +3 Str, +4 Sta | 28 Marks | Unlocks after a Heroic clear |
-| <img src="_delve-icons/varric_shadow_cowl.png" width="22" alt=""> 🔵 Varric's Shadow Cowl | armor · 42 armor, +4 Int, +3 Spi | 28 Marks | Unlocks after a Heroic clear |
+| <img src="_delve-icons/reliquary_legs.png" width="22" alt=""> 🟢 Vaultbound Legwraps | Cloth armor · 48 armor, +2 Sta | 8 Marks | Available from the start |
+| <img src="_delve-icons/reliquary_shoulder.png" width="22" alt=""> 🟢 Crumbled Spaulders | Mail armor · 36 armor, +2 Sta | 8 Marks | Available from the start |
+| <img src="_delve-icons/reliquary_gloves_rog.png" width="22" alt=""> 🟢 Bonewarden Grips | Leather armor · 36 armor, +2 Agi, +1 Sta | 8 Marks | Available from the start |
+| <img src="_delve-icons/reliquary_cloth_chest.png" width="22" alt=""> 🟢 Shroud of the Reliquary | Cloth armor · 30 armor, +2 Int, +1 Spi | 10 Marks | Available from the start |
+| <img src="_delve-icons/reliquary_leather_chest.png" width="22" alt=""> 🟢 Dustwarden Jerkin | Leather armor · 55 armor, +2 Agi, +1 Sta | 10 Marks | Available from the start |
+| <img src="_delve-icons/reliquary_plate_chest.png" width="22" alt=""> 🟢 Reliquary Guard Hauberk | Mail armor · 90 armor, +1 Str, +2 Sta | 10 Marks | Available from the start |
+| <img src="_delve-icons/reliquary_helm.png" width="22" alt=""> 🟢 Ossuary Watch Helm | Mail armor · 48 armor, +1 Str, +2 Sta | 12 Marks | Unlocks after 3 clears |
+| <img src="_delve-icons/deacon_reliquary_helm.png" width="22" alt=""> 🔵 Deacon's Reliquary Helm | Mail armor · 105 armor, +3 Str, +4 Sta | 28 Marks | Unlocks after a Heroic clear |
+| <img src="_delve-icons/varric_shadow_cowl.png" width="22" alt=""> 🔵 Varric's Shadow Cowl | Cloth armor · 42 armor, +4 Int, +3 Spi | 28 Marks | Unlocks after a Heroic clear |
 
 ## Chests & lockpicking — "Tumbler's Path"
 

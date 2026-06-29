@@ -67,7 +67,7 @@
       "castTime": 0,
       "school": "nature",
       "requiresTarget": false,
-      "desc": "Surrounds you with crackling lightning: melee attackers take 13 Nature damage."
+      "desc": "Surrounds you with crackling lightning: melee attackers take 13 Nature damage, up to 3 charges and at most once every 5 seconds."
     },
     {
       "id": "flame_shock",

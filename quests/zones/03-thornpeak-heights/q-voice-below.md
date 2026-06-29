@@ -32,8 +32,8 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 - **Money:** 2400 copper
 - **Item reward (by class):**
   - <img src="../_loot-icons/zealotsbane_blade.png" width="20" alt=""> 🟢 Zealotsbane Blade — _warrior_ · 18–29 dmg @ 2.3s (~10 DPS), +6 Str, +2 Sta
-  - <img src="../_loot-icons/emberwood_staff.png" width="20" alt=""> 🟢 Emberwood Staff — _mage_ · 20–33 dmg @ 3s (~9 DPS), +8 Int, +3 Spi
-  - <img src="../_loot-icons/cultist_flayer.png" width="20" alt=""> 🟢 Cultist Flayer — _rogue_ · 12–19 dmg @ 1.7s (~9 DPS), +7 Agi
+  - <img src="../_loot-icons/emberwood_staff.png" width="20" alt=""> 🟢 Emberwood Staff — _mage_ · 20–33 dmg @ 3s (~9 DPS), +6 Int, +2 Spi
+  - <img src="../_loot-icons/cultist_flayer.png" width="20" alt=""> 🟢 Cultist Flayer — _rogue_ · 12–19 dmg @ 1.7s (~9 DPS), +8 Agi
 
 ## On completion
 

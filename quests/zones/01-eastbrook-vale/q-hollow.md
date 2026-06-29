@@ -27,9 +27,9 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to tu
 - **XP:** 1500
 - **Money:** 10000 copper
 - **Item reward (by class):**
-  - <img src="../_loot-icons/gravecaller_blade.png" width="20" alt=""> 🔵 Gravecaller's Broadblade — _warrior_ · 9–16 dmg @ 2.4s (~5 DPS), +3 Str, +2 Sta
-  - <img src="../_loot-icons/widowfang_dirk.png" width="20" alt=""> 🔵 Widowfang Dirk — _rogue_ · 6–10 dmg @ 1.7s (~5 DPS), +3 Agi, +2 Sta
-  - <img src="../_loot-icons/gravecaller_staff.png" width="20" alt=""> 🔵 Staff of the Hollow — _mage_ · 10–17 dmg @ 3s (~5 DPS), +4 Int, +2 Spi
+  - <img src="../_loot-icons/gravecaller_blade.png" width="20" alt=""> 🔵 Gravecaller's Broadblade — _warrior_ · 9–16 dmg @ 2.4s (~5 DPS), +4 Str, +3 Sta
+  - <img src="../_loot-icons/widowfang_dirk.png" width="20" alt=""> 🔵 Widowfang Dirk — _rogue_ · 6–10 dmg @ 1.7s (~5 DPS), +4 Agi, +3 Sta
+  - <img src="../_loot-icons/gravecaller_staff.png" width="20" alt=""> 🔵 Staff of the Hollow — _mage_ · 10–17 dmg @ 3s (~5 DPS), +5 Int, +2 Spi
 
 ## On completion
 

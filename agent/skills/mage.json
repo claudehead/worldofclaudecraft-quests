@@ -103,7 +103,7 @@
       "castTime": 0,
       "school": "arcane",
       "requiresTarget": true,
-      "desc": "Launches Arcane Missiles at the enemy, causing 8 Arcane damage each second for 3 sec."
+      "desc": "Launches Arcane Missiles at the enemy, causing $d Arcane damage each second for 3 sec."
     },
     {
       "id": "polymorph",

@@ -269,8 +269,8 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/old_cragmaws_pelt.png" width="22" alt=""> ⚪ Old Cragmaw's Pelt | Junk | 100% | sells for 300c |
-| <img src="../_loot-icons/cragmaw_prowlboots.png" width="22" alt=""> 🔵 Cragmaw Prowlboots | Armor — Feet · 58 armor, +5 Agi, +3 Sta | 30% |  |
-| <img src="../_loot-icons/cragmaw_huntcord.png" width="22" alt=""> 🔵 Cragmaw's Huntcord | Armor — Waist · 44 armor, +5 Agi, +3 Sta | 25% |  |
+| <img src="../_loot-icons/cragmaw_prowlboots.png" width="22" alt=""> 🔵 Cragmaw Prowlboots | Leather armor — Feet · 58 armor, +5 Agi, +3 Sta | 30% |  |
+| <img src="../_loot-icons/cragmaw_huntcord.png" width="22" alt=""> 🔵 Cragmaw's Huntcord | Leather armor — Waist · 44 armor, +5 Agi, +3 Sta | 25% |  |
 
 <a id="mob-ironvein_foreman"></a>
 
@@ -309,7 +309,7 @@
 | <img src="../_loot-icons/ironvein_pickblade.png" width="22" alt=""> 🟢 Ironvein Pickblade | Weapon — Main hand · 13–21 dmg @ 1.8s (~9 DPS), +7 Agi, +2 Sta | 25% |  |
 | <img src="../_loot-icons/ironvein_lantern_staff.png" width="22" alt=""> 🟢 Ironvein Lantern Staff | Weapon — Main hand · 19–31 dmg @ 3s (~8 DPS), +7 Int, +3 Spi | 25% |  |
 | <img src="../_loot-icons/gutripper_shiv.png" width="22" alt=""> 🔵 Gutripper Shiv | Weapon — Main hand · 14–22 dmg @ 1.7s (~11 DPS), +8 Agi, +3 Sta | 25% | exclusive set † |
-| <img src="../_loot-icons/deathlord_sabatons.png" width="22" alt=""> 🟣 Deathlord Sabatons | Armor — Feet · 205 armor, +7 Str, +8 Sta | 25% | exclusive set † |
+| <img src="../_loot-icons/deathlord_sabatons.png" width="22" alt=""> 🟣 Deathlord Sabatons | Mail armor — Feet · 205 armor, +7 Str, +8 Sta | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -373,7 +373,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/cracked_ogre_tusk.png" width="22" alt=""> ⚫ Cracked Ogre Tusk | Junk | 100% | sells for 42c |
-| <img src="../_loot-icons/skullsmasher_warbelt.png" width="22" alt=""> 🟢 Skullsmasher's Warbelt | Armor — Chest · 96 armor, +3 Str, +5 Sta | 30% |  |
+| <img src="../_loot-icons/skullsmasher_warbelt.png" width="22" alt=""> 🟢 Skullsmasher's Warbelt | Mail armor — Chest · 96 armor, +3 Str, +5 Sta | 30% |  |
 | <img src="../_loot-icons/brutoks_maul.png" width="22" alt=""> 🔵 Brutok's Maul | Weapon — Main hand · 24–37 dmg @ 2.7s (~11 DPS), +8 Str, +3 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/crag_warden_cudgel.png" width="22" alt=""> 🔵 Crag Warden Cudgel | Weapon — Main hand · 23–36 dmg @ 3s (~10 DPS), +8 Int, +4 Spi | 25% | exclusive set † |
 | <img src="../_loot-icons/skullsplitter_dirk.png" width="22" alt=""> 🔵 Skullsplitter Dirk | Weapon — Main hand · 15–23 dmg @ 1.7s (~11 DPS), +8 Agi, +3 Sta | 25% | exclusive set † |
@@ -414,8 +414,8 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 100% | sells for 7c |
-| <img src="../_loot-icons/marrowlord_boneboots.png" width="22" alt=""> 🟢 Marrowlord Boneboots | Armor — Feet · 90 armor, +2 Str, +5 Sta | 30% |  |
-| <img src="../_loot-icons/necromancers_legwraps.png" width="22" alt=""> 🟣 Necromancer's Legwraps | Armor — Legs · 86 armor, +13 Int, +7 Spi | 25% | exclusive set † |
+| <img src="../_loot-icons/marrowlord_boneboots.png" width="22" alt=""> 🟢 Marrowlord Boneboots | Mail armor — Feet · 90 armor, +2 Str, +5 Sta | 30% |  |
+| <img src="../_loot-icons/necromancers_legwraps.png" width="22" alt=""> 🟣 Necromancer's Legwraps | Cloth armor — Legs · 86 armor, +13 Int, +7 Spi | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -447,8 +447,8 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 60% | sells for 7c |
-| <img src="../_loot-icons/boundstone_helm.png" width="22" alt=""> 🔵 Boundstone Helm | Armor — Head · 105 armor, +3 Str, +4 Sta | 4% | exclusive set † |
-| <img src="../_loot-icons/boundstone_girdle.png" width="22" alt=""> 🔵 Boundstone Girdle | Armor — Waist · 60 armor, +2 Str, +4 Sta | 4% | exclusive set † |
+| <img src="../_loot-icons/boundstone_helm.png" width="22" alt=""> 🔵 Boundstone Helm | Mail armor — Head · 105 armor, +5 Str, +6 Sta | 4% | exclusive set † |
+| <img src="../_loot-icons/boundstone_girdle.png" width="22" alt=""> 🔵 Boundstone Girdle | Mail armor — Waist · 60 armor, +3 Str, +6 Sta | 4% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -480,8 +480,8 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/cracked_wyrm_scale.png" width="22" alt=""> ⚫ Cracked Wyrm Scale | Junk | 50% | sells for 35c |
-| <img src="../_loot-icons/gravewyrm_mantle.png" width="22" alt=""> 🔵 Gravewyrm Mantle | Armor — Shoulder · 82 armor, +4 Agi, +2 Sta | 5% | exclusive set † |
-| <img src="../_loot-icons/gravewyrm_gauntlets.png" width="22" alt=""> 🔵 Gravewyrm Gauntlets | Armor — Hands · 72 armor, +3 Str, +2 Sta | 5% | exclusive set † |
+| <img src="../_loot-icons/gravewyrm_mantle.png" width="22" alt=""> 🔵 Gravewyrm Mantle | Mail armor — Shoulder · 82 armor, +7 Agi, +3 Sta | 5% | exclusive set † |
+| <img src="../_loot-icons/gravewyrm_gauntlets.png" width="22" alt=""> 🔵 Gravewyrm Gauntlets | Mail armor — Hands · 72 armor, +5 Str, +4 Sta | 5% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -518,7 +518,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/emberwing_cinderscale.png" width="22" alt=""> ⚪ Emberwing Cinderscale | Junk | 100% | sells for 320c |
-| <img src="../_loot-icons/emberwing_legguards.png" width="22" alt=""> 🔵 Emberwing Legguards | Armor — Legs · 120 armor, +4 Str, +6 Sta | 25% | exclusive set † |
+| <img src="../_loot-icons/emberwing_legguards.png" width="22" alt=""> 🔵 Emberwing Legguards | Mail armor — Legs · 120 armor, +4 Str, +6 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/emberfang_warblade.png" width="22" alt=""> 🔵 Emberfang Warblade | Weapon — Main hand · 26–41 dmg @ 2.5s (~13 DPS), +8 Str, +3 Sta | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
@@ -550,17 +550,17 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/boneplate_vest.png" width="22" alt=""> 🟢 Boneplate Vest | Armor — Chest · 170 armor, +3 Str, +6 Sta | 34% | exclusive set 1 † |
-| <img src="../_loot-icons/revenant_silk_robe.png" width="22" alt=""> 🟢 Revenant Silk Robe | Armor — Chest · 60 armor, +7 Int, +4 Spi | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/nightwalk_jerkin.png" width="22" alt=""> 🟢 Nightwalk Jerkin | Armor — Chest · 105 armor, +7 Agi, +2 Sta | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/emberwood_staff.png" width="22" alt=""> 🟢 Emberwood Staff | Weapon — Main hand · 20–33 dmg @ 3s (~9 DPS), +8 Int, +3 Spi | 20% | exclusive set 2 † |
-| <img src="../_loot-icons/boneguard_breastplate.png" width="22" alt=""> 🔵 Boneguard Breastplate | Armor — Chest · 210 armor, +4 Str, +7 Sta | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/shadowmeld_tunic.png" width="22" alt=""> 🔵 Shadowmeld Tunic | Armor — Chest · 130 armor, +9 Agi, +4 Sta | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/staff_of_velkhar.png" width="22" alt=""> 🔵 Staff of Velkhar | Weapon — Main hand · 27–43 dmg @ 3s (~12 DPS), +10 Int, +5 Spi | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/gravewyrm_stalkers_treads.png" width="22" alt=""> 🔵 Gravewyrm Stalker's Treads | Armor — Feet · 105 armor, +10 Agi, +5 Sta | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/deathlord_legguards.png" width="22" alt=""> 🟣 Deathlord Legguards | Armor — Legs · 240 armor, +8 Str, +9 Sta | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/necromancers_soulsteps.png" width="22" alt=""> 🟣 Necromancer's Soulsteps | Armor — Feet · 80 armor, +12 Int, +7 Spi | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/wyrmshadow_legguards.png" width="22" alt=""> 🟣 Wyrmshadow Legguards | Armor — Legs · 155 armor, +12 Agi, +7 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/boneplate_vest.png" width="22" alt=""> 🟢 Boneplate Vest | Mail armor — Chest · 170 armor, +3 Str, +5 Sta | 34% | exclusive set 1 † |
+| <img src="../_loot-icons/revenant_silk_robe.png" width="22" alt=""> 🟢 Revenant Silk Robe | Cloth armor — Chest · 60 armor, +5 Int, +3 Spi | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/nightwalk_jerkin.png" width="22" alt=""> 🟢 Nightwalk Jerkin | Leather armor — Chest · 105 armor, +6 Agi, +2 Sta | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/emberwood_staff.png" width="22" alt=""> 🟢 Emberwood Staff | Weapon — Main hand · 20–33 dmg @ 3s (~9 DPS), +6 Int, +2 Spi | 20% | exclusive set 2 † |
+| <img src="../_loot-icons/boneguard_breastplate.png" width="22" alt=""> 🔵 Boneguard Breastplate | Mail armor — Chest · 210 armor, +5 Str, +8 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/shadowmeld_tunic.png" width="22" alt=""> 🔵 Shadowmeld Tunic | Leather armor — Chest · 130 armor, +9 Agi, +4 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/staff_of_velkhar.png" width="22" alt=""> 🔵 Staff of Velkhar | Weapon — Main hand · 27–43 dmg @ 3s (~12 DPS), +9 Int, +4 Spi | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/gravewyrm_stalkers_treads.png" width="22" alt=""> 🔵 Gravewyrm Stalker's Treads | Leather armor — Feet · 105 armor, +5 Agi, +3 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/deathlord_legguards.png" width="22" alt=""> 🟣 Deathlord Legguards | Mail armor — Legs · 240 armor, +8 Str, +8 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/necromancers_soulsteps.png" width="22" alt=""> 🟣 Necromancer's Soulsteps | Cloth armor — Feet · 80 armor, +8 Int, +4 Spi | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/wyrmshadow_legguards.png" width="22" alt=""> 🟣 Wyrmshadow Legguards | Leather armor — Legs · 155 armor, +10 Agi, +6 Sta | 5% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 
@@ -592,19 +592,19 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/boneplate_vest.png" width="22" alt=""> 🟢 Boneplate Vest | Armor — Chest · 170 armor, +3 Str, +6 Sta | 34% | exclusive set 1 † |
-| <img src="../_loot-icons/revenant_silk_robe.png" width="22" alt=""> 🟢 Revenant Silk Robe | Armor — Chest · 60 armor, +7 Int, +4 Spi | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/nightwalk_jerkin.png" width="22" alt=""> 🟢 Nightwalk Jerkin | Armor — Chest · 105 armor, +7 Agi, +2 Sta | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/zealotsbane_blade.png" width="22" alt=""> 🟢 Zealotsbane Blade | Weapon — Main hand · 18–29 dmg @ 2.3s (~10 DPS), +6 Str, +2 Sta | 20% | exclusive set 2 † |
-| <img src="../_loot-icons/korgaths_chainwraps.png" width="22" alt=""> 🔵 Korgath's Chainwraps | Armor — Legs · 125 armor, +6 Sta | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/staff_of_velkhar.png" width="22" alt=""> 🔵 Staff of Velkhar | Weapon — Main hand · 27–43 dmg @ 3s (~12 DPS), +10 Int, +5 Spi | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/shadowmeld_tunic.png" width="22" alt=""> 🔵 Shadowmeld Tunic | Armor — Chest · 130 armor, +9 Agi, +4 Sta | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/wyrmcult_grand_robe.png" width="22" alt=""> 🔵 Wyrmcult Grand Robe | Armor — Chest · 75 armor, +11 Int, +5 Spi | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/gravewyrm_sabatons.png" width="22" alt=""> 🔵 Gravewyrm Sabatons | Armor — Feet · 145 armor, +5 Str, +6 Sta | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/wyrmcult_soulsteps.png" width="22" alt=""> 🔵 Wyrmcult Soulsteps | Armor — Feet · 68 armor, +9 Int, +5 Spi | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/boundstone_helm.png" width="22" alt=""> 🔵 Boundstone Helm | Armor — Head · 105 armor, +3 Str, +4 Sta | 8% | exclusive set 2 † |
-| <img src="../_loot-icons/gravewyrm_mantle.png" width="22" alt=""> 🔵 Gravewyrm Mantle | Armor — Shoulder · 82 armor, +4 Agi, +2 Sta | 8% | exclusive set 2 † |
-| <img src="../_loot-icons/wyrmshadow_treads.png" width="22" alt=""> 🟣 Wyrmshadow Treads | Armor — Feet · 145 armor, +11 Agi, +7 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/boneplate_vest.png" width="22" alt=""> 🟢 Boneplate Vest | Mail armor — Chest · 170 armor, +3 Str, +5 Sta | 34% | exclusive set 1 † |
+| <img src="../_loot-icons/revenant_silk_robe.png" width="22" alt=""> 🟢 Revenant Silk Robe | Cloth armor — Chest · 60 armor, +5 Int, +3 Spi | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/nightwalk_jerkin.png" width="22" alt=""> 🟢 Nightwalk Jerkin | Leather armor — Chest · 105 armor, +6 Agi, +2 Sta | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/zealotsbane_blade.png" width="22" alt=""> 🟢 Zealotsbane Blade | Weapon — Main hand · 18–29 dmg @ 2.3s (~10 DPS), +6 Str, +2 Sta | 19% | exclusive set 2 † |
+| <img src="../_loot-icons/korgaths_chainwraps.png" width="22" alt=""> 🔵 Korgath's Chainwraps | Cloth armor — Legs · 125 armor, +12 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/staff_of_velkhar.png" width="22" alt=""> 🔵 Staff of Velkhar | Weapon — Main hand · 27–43 dmg @ 3s (~12 DPS), +9 Int, +4 Spi | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/shadowmeld_tunic.png" width="22" alt=""> 🔵 Shadowmeld Tunic | Leather armor — Chest · 130 armor, +9 Agi, +4 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/wyrmcult_grand_robe.png" width="22" alt=""> 🔵 Wyrmcult Grand Robe | Cloth armor — Chest · 75 armor, +9 Int, +4 Spi | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/gravewyrm_sabatons.png" width="22" alt=""> 🔵 Gravewyrm Sabatons | Mail armor — Feet · 145 armor, +4 Str, +4 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/wyrmcult_soulsteps.png" width="22" alt=""> 🔵 Wyrmcult Soulsteps | Cloth armor — Feet · 68 armor, +5 Int, +3 Spi | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/boundstone_helm.png" width="22" alt=""> 🔵 Boundstone Helm | Mail armor — Head · 105 armor, +5 Str, +6 Sta | 8% | exclusive set 2 † |
+| <img src="../_loot-icons/gravewyrm_mantle.png" width="22" alt=""> 🔵 Gravewyrm Mantle | Mail armor — Shoulder · 82 armor, +7 Agi, +3 Sta | 8% | exclusive set 2 † |
+| <img src="../_loot-icons/wyrmshadow_treads.png" width="22" alt=""> 🟣 Wyrmshadow Treads | Leather armor — Feet · 145 armor, +7 Agi, +5 Sta | 5% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 
@@ -638,7 +638,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/drogmar_warboots.png" width="22" alt=""> 🟢 Drogmar's Warboots | Armor — Feet · 85 armor, +3 Str, +4 Sta | 30% |  |
+| <img src="../_loot-icons/drogmar_warboots.png" width="22" alt=""> 🟢 Drogmar's Warboots | Mail armor — Feet · 85 armor, +3 Str, +4 Sta | 30% |  |
 | <img src="../_loot-icons/drogmars_skullcleaver.png" width="22" alt=""> 🔵 Drogmar's Skullcleaver | Weapon — Main hand · 22–35 dmg @ 2.6s (~11 DPS), +7 Str, +4 Sta | 25% |  |
 
 <a id="mob-korzul_the_gravewyrm"></a>
@@ -669,21 +669,21 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/boneplate_vest.png" width="22" alt=""> 🟢 Boneplate Vest | Armor — Chest · 170 armor, +3 Str, +6 Sta | 34% | exclusive set 1 † |
-| <img src="../_loot-icons/revenant_silk_robe.png" width="22" alt=""> 🟢 Revenant Silk Robe | Armor — Chest · 60 armor, +7 Int, +4 Spi | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/nightwalk_jerkin.png" width="22" alt=""> 🟢 Nightwalk Jerkin | Armor — Chest · 105 armor, +7 Agi, +2 Sta | 33% | exclusive set 1 † |
-| <img src="../_loot-icons/cultist_flayer.png" width="22" alt=""> 🟢 Cultist Flayer | Weapon — Main hand · 12–19 dmg @ 1.7s (~9 DPS), +7 Agi | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/wyrmfang_greatblade.png" width="22" alt=""> 🟣 Wyrmfang Greatblade | Weapon — Main hand · 30–48 dmg @ 2.6s (~15 DPS), +10 Str, +6 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/boneplate_vest.png" width="22" alt=""> 🟢 Boneplate Vest | Mail armor — Chest · 170 armor, +3 Str, +5 Sta | 34% | exclusive set 1 † |
+| <img src="../_loot-icons/revenant_silk_robe.png" width="22" alt=""> 🟢 Revenant Silk Robe | Cloth armor — Chest · 60 armor, +5 Int, +3 Spi | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/nightwalk_jerkin.png" width="22" alt=""> 🟢 Nightwalk Jerkin | Leather armor — Chest · 105 armor, +6 Agi, +2 Sta | 33% | exclusive set 1 † |
+| <img src="../_loot-icons/cultist_flayer.png" width="22" alt=""> 🟢 Cultist Flayer | Weapon — Main hand · 12–19 dmg @ 1.7s (~9 DPS), +8 Agi | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/wyrmfang_greatblade.png" width="22" alt=""> 🟣 Wyrmfang Greatblade | Weapon — Main hand · 30–48 dmg @ 2.6s (~15 DPS), +11 Str, +7 Sta | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/staff_of_the_gravewyrm.png" width="22" alt=""> 🟣 Staff of the Gravewyrm | Weapon — Main hand · 32–52 dmg @ 3s (~14 DPS), +12 Int, +6 Spi | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/fang_of_korzul.png" width="22" alt=""> 🟣 Fang of Korzul | Weapon — Main hand · 19–30 dmg @ 1.7s (~14 DPS), +11 Agi, +5 Sta | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/deathlord_warplate.png" width="22" alt=""> 🟣 Deathlord Warplate | Armor — Chest · 270 armor, +8 Str, +10 Sta | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/necromancers_starshroud.png" width="22" alt=""> 🟣 Necromancer's Starshroud | Armor — Chest · 92 armor, +14 Int, +8 Spi | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/wyrmshadow_harness.png" width="22" alt=""> 🟣 Wyrmshadow Harness | Armor — Chest · 170 armor, +13 Agi, +7 Sta | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/boundstone_girdle.png" width="22" alt=""> 🔵 Boundstone Girdle | Armor — Waist · 60 armor, +2 Str, +4 Sta | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/gravewyrm_gauntlets.png" width="22" alt=""> 🔵 Gravewyrm Gauntlets | Armor — Hands · 72 armor, +3 Str, +2 Sta | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/deathlords_dread_visage.png" width="22" alt=""> 🟣 Deathlord's Dread Visage | Armor — Head · 245 armor, +7 Str, +9 Sta | 4% | exclusive set 2 † |
-| <img src="../_loot-icons/necromancers_soulspire_mantle.png" width="22" alt=""> 🟣 Necromancer's Soulspire Mantle | Armor — Shoulder · 70 armor, +11 Int, +6 Spi | 4% | exclusive set 2 † |
-| <img src="../_loot-icons/wyrmshadow_talongrips.png" width="22" alt=""> 🟣 Wyrmshadow Talongrips | Armor — Hands · 110 armor, +10 Agi, +5 Sta | 4% | exclusive set 2 † |
+| <img src="../_loot-icons/fang_of_korzul.png" width="22" alt=""> 🟣 Fang of Korzul | Weapon — Main hand · 19–30 dmg @ 1.7s (~14 DPS), +12 Agi, +6 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/deathlord_warplate.png" width="22" alt=""> 🟣 Deathlord Warplate | Mail armor — Chest · 270 armor, +8 Str, +10 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/necromancers_starshroud.png" width="22" alt=""> 🟣 Necromancer's Starshroud | Cloth armor — Chest · 92 armor, +11 Int, +7 Spi | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/wyrmshadow_harness.png" width="22" alt=""> 🟣 Wyrmshadow Harness | Leather armor — Chest · 170 armor, +12 Agi, +6 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/boundstone_girdle.png" width="22" alt=""> 🔵 Boundstone Girdle | Mail armor — Waist · 60 armor, +3 Str, +6 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/gravewyrm_gauntlets.png" width="22" alt=""> 🔵 Gravewyrm Gauntlets | Mail armor — Hands · 72 armor, +5 Str, +4 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/deathlords_dread_visage.png" width="22" alt=""> 🟣 Deathlord's Dread Visage | Mail armor — Head · 245 armor, +7 Str, +8 Sta | 4% | exclusive set 2 † |
+| <img src="../_loot-icons/necromancers_soulspire_mantle.png" width="22" alt=""> 🟣 Necromancer's Soulspire Mantle | Cloth armor — Shoulder · 70 armor, +9 Int, +5 Spi | 4% | exclusive set 2 † |
+| <img src="../_loot-icons/wyrmshadow_talongrips.png" width="22" alt=""> 🟣 Wyrmshadow Talongrips | Leather armor — Hands · 110 armor, +9 Agi, +4 Sta | 4% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 
@@ -715,31 +715,31 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Armor — Head · 310 armor, +12 Str, +14 Sta | 17% | exclusive set 1 † |
-| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Crownforged Warspaulders | Armor — Shoulder · 260 armor, +10 Str, +12 Sta | 17% | exclusive set 2 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Armor — Head · 310 armor, +12 Str, +14 Sta | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Armor — Head · 190 armor, +16 Agi, +10 Sta | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Soulflame Cowl | Armor — Head · 105 armor, +10 Sta, +17 Int | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Stormcaller's Crown | Armor — Head · 225 armor, +12 Sta, +16 Int | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Armor — Shoulder · 92 armor, +9 Sta, +15 Int | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Crownforged Warspaulders | Armor — Shoulder · 260 armor, +10 Str, +12 Sta | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Armor — Shoulder · 165 armor, +14 Agi, +9 Sta | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Stormcaller's Spaulders | Armor — Shoulder · 190 armor, +11 Sta, +14 Int | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Armor — Head · 190 armor, +16 Agi, +10 Sta | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Soulflame Cowl | Armor — Head · 105 armor, +10 Sta, +17 Int | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Stormcaller's Crown | Armor — Head · 225 armor, +12 Sta, +16 Int | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Armor — Shoulder · 165 armor, +14 Agi, +9 Sta | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Armor — Shoulder · 92 armor, +9 Sta, +15 Int | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Armor — Shoulder · 165 armor, +14 Agi, +9 Sta | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Armor — Shoulder · 92 armor, +9 Sta, +15 Int | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Armor — Head · 310 armor, +12 Str, +14 Sta | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Armor — Head · 190 armor, +16 Agi, +10 Sta | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Stormcaller's Spaulders | Armor — Shoulder · 190 armor, +11 Sta, +14 Int | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Armor — Shoulder · 165 armor, +14 Agi, +9 Sta | 16% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Armor — Shoulder · 92 armor, +9 Sta, +15 Int | 16% | exclusive set 3 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Armor — Head · 310 armor, +12 Str, +14 Sta | 16% | exclusive set 4 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Armor — Head · 190 armor, +16 Agi, +10 Sta | 16% | exclusive set 4 † |
-| <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> 🟠 Heartwood of the Deathless Crown | Weapon — Main hand · 42–68 dmg @ 3.2s (~17 DPS), +24 Agi, +18 Sta, +20 Int | 3% | exclusive set 1 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 17% | exclusive set 1 † |
+| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Crownforged Warspaulders | Mail armor — Shoulder · 260 armor, +7 Str, +8 Sta | 17% | exclusive set 2 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 17% | exclusive set 3 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 17% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Soulflame Cowl | Cloth armor — Head · 105 armor, +6 Sta, +11 Int | 17% | exclusive set 3 † |
+| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Stormcaller's Crown | Mail armor — Head · 225 armor, +7 Sta, +10 Int | 17% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 17% | exclusive set 4 † |
+| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Crownforged Warspaulders | Mail armor — Shoulder · 260 armor, +7 Str, +8 Sta | 17% | exclusive set 4 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta | 17% | exclusive set 4 † |
+| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Stormcaller's Spaulders | Mail armor — Shoulder · 190 armor, +7 Sta, +8 Int | 17% | exclusive set 4 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Soulflame Cowl | Cloth armor — Head · 105 armor, +6 Sta, +11 Int | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Stormcaller's Crown | Mail armor — Head · 225 armor, +7 Sta, +10 Int | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 16% | exclusive set 1 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Stormcaller's Spaulders | Mail armor — Shoulder · 190 armor, +7 Sta, +8 Int | 16% | exclusive set 2 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Nighttalon Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta | 16% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Soulflame Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 16% | exclusive set 3 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Crownforged Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 16% | exclusive set 4 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Nighttalon Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 16% | exclusive set 4 † |
+| <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> 🟠 Heartwood of the Deathless Crown | Weapon — Main hand · 42–68 dmg @ 3.2s (~17 DPS), +17 Agi, +13 Sta, +14 Int | 3% | exclusive set 1 † |
 | <img src="../_loot-icons/kingsbane_last_oath.png" width="22" alt=""> 🟠 Kingsbane, Last Oath of Thornpeak | Weapon — Main hand · 46–74 dmg @ 2.8s (~21 DPS), +24 Str, +20 Sta | 3% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
