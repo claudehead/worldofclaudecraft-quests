@@ -6,7 +6,7 @@
   <title>World of Claudecraft — Field Guide</title>
   <meta name="description" content="The complete field guide to World of Claudecraft — quests, bestiary, classes, dungeons and delves.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=63">
+  <link rel="stylesheet" href="styles.css?v=64">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -96,13 +96,8 @@
           <a class="link" data-go="#/doc/reference%2Fencounters.md">Bosses &amp; encounters</a>
         </div>
       </div>
-      <div class="navgroup">
-        <button type="button" class="navgroupbtn">More</button>
-        <div class="navdropdown">
-          <a class="link" data-go="#/patches">🆕 Patch notes</a>
-          <a class="link" data-go="#/doc/reference%2Fsneak-peek.md">🔭 Sneak peek</a>
-        </div>
-      </div>
+      <a class="link" data-go="#/patches">🆕 Patch notes</a>
+      <a class="link" data-go="#/doc/reference%2Fsneak-peek.md">🔭 Sneak peek</a>
       <a class="link navsearch" id="navsearch" title="Search ( / )">🔍 <span class="navctl-label">Search</span></a>
       <span class="langwrap" title="Language">🌐 <select class="navlang" id="navlang" aria-label="Language"></select></span>
       <a class="link navtheme" id="navtheme" title="Toggle theme">🌙 <span class="navctl-label">Theme</span></a>
@@ -143,7 +138,7 @@
       document.head.appendChild(s);
     }
   </script>
-  <script src="app.js?v=63"></script>
+  <script src="app.js?v=64"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});
