@@ -6,7 +6,7 @@
   <title>World of Claudecraft — Field Guide</title>
   <meta name="description" content="The complete field guide to World of Claudecraft — quests, bestiary, classes, dungeons and delves.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=62">
+  <link rel="stylesheet" href="styles.css?v=63">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,40 +23,53 @@
     <div class="navlinks" id="navlinks">
       <a class="link" data-go="#/doc/reference%2Fgetting-started.md">Start here</a>
       <a class="link" data-go="#/quests">Quests</a>
+      <a class="link" data-go="#/bis">BiS</a>
       <div class="navgroup">
         <button type="button" class="navgroupbtn">World</button>
         <div class="navdropdown">
           <a class="link" data-go="#/map">Map</a>
           <a class="link" data-go="#/atlas">Interactive map</a>
-          <a class="link" data-go="#/route">Leveling route</a>
-          <a class="link" data-go="#/farming">Farming calculator</a>
-          <a class="link" data-go="#/leveltime">Time to max level</a>
-          <a class="link" data-go="#/questroute">Quest paths 3D</a>
-          <a class="link" data-go="#/chains">Quest chains</a>
           <a class="link" data-go="#/bestiary">Bestiary</a>
           <a class="link" data-go="#/bosses">Boss strategies</a>
           <a class="link" data-go="#/npcs">NPCs</a>
           <a class="link" data-go="#/dungeons">Dungeons</a>
-          <a class="link" data-go="#/zone3d">Zones 3D</a>
-          <a class="link" data-go="#/zone3d/00-world">Whole world 3D</a>
-          <a class="link" data-go="#/explore">Explore 3D</a>
           <a class="link" data-go="#/delves">Delves</a>
+          <a class="link" data-go="#/route">Leveling route</a>
+          <a class="link" data-go="#/chains">Quest chains</a>
         </div>
       </div>
-      <a class="link" data-go="#/bis">BiS</a>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">3D</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/questroute">Quest paths 3D</a>
+          <a class="link" data-go="#/zone3d">Zones 3D</a>
+          <a class="link" data-go="#/zone3d/00-world">Whole world 3D</a>
+          <a class="link" data-go="#/explore">Explore 3D (VR)</a>
+          <a class="link" data-go="#/assets">3D Assets</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Tools</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/farming">Farming calculator</a>
+          <a class="link" data-go="#/leveltime">Time to max level</a>
+          <a class="link" data-go="#/solo">Can I solo this?</a>
+          <a class="link" data-go="#/calc">DPS &amp; survivability</a>
+          <a class="link" data-go="#/upgrades">Gear upgrade finder</a>
+          <a class="link" data-go="#/compare">Compare gear</a>
+          <a class="link" data-go="#/drops">Where to get items</a>
+        </div>
+      </div>
       <div class="navgroup">
         <button type="button" class="navgroupbtn">Items</button>
         <div class="navdropdown">
           <a class="link" data-go="#/gear">Gear</a>
           <a class="link" data-go="#/sets">Item sets</a>
-          <a class="link" data-go="#/upgrades">Upgrade finder</a>
-          <a class="link" data-go="#/compare">Compare gear</a>
-          <a class="link" data-go="#/drops">Where to get items</a>
           <a class="link" data-go="#/consumables">Consumables</a>
-          <a class="link" data-go="#/doc/reference%2Fmaterials.md">Drops & materials</a>
-          <a class="link" data-go="#/doc/reference%2Fworld-market.md">World Market</a>
           <a class="link" data-go="#/augments">Augments</a>
           <a class="link" data-go="#/cosmetics">Cosmetics</a>
+          <a class="link" data-go="#/doc/reference%2Fworld-market.md">World Market</a>
+          <a class="link" data-go="#/doc/reference%2Fmaterials.md">Drops & materials</a>
         </div>
       </div>
       <div class="navgroup">
@@ -65,8 +78,6 @@
           <a class="link" data-go="#/classes">Classes</a>
           <a class="link" data-go="#/abilities">Abilities</a>
           <a class="link" data-go="#/talents">Talents</a>
-          <a class="link" data-go="#/calc">DPS &amp; survivability</a>
-          <a class="link" data-go="#/solo">Can I solo this?</a>
         </div>
       </div>
       <div class="navgroup">
@@ -88,8 +99,7 @@
       <div class="navgroup">
         <button type="button" class="navgroupbtn">More</button>
         <div class="navdropdown">
-          <a class="link" data-go="#/assets">3D Assets</a>
-          <a class="link" data-go="#/patches">Patch notes</a>
+          <a class="link" data-go="#/patches">🆕 Patch notes</a>
           <a class="link" data-go="#/doc/reference%2Fsneak-peek.md">🔭 Sneak peek</a>
         </div>
       </div>
@@ -133,7 +143,7 @@
       document.head.appendChild(s);
     }
   </script>
-  <script src="app.js?v=62"></script>
+  <script src="app.js?v=63"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});
