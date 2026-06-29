@@ -165,4 +165,7 @@ node $TOOLS/generate-patch-notes.mjs docs/patches.json
 echo "==> sneak peek (upstream branches)"
 node $TOOLS/generate-sneak-peek.mjs reference/sneak-peek.md || echo "  (skipped: GitHub API unavailable)"
 
+echo "==> validate generated output (fails the build on regressions)"
+node --test $TOOLS/validate-output.test.mjs
+
 echo "==> done"
