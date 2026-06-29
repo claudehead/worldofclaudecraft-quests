@@ -101,6 +101,9 @@ rm -f consumables/consumable-icons.json
 echo "==> best-in-slot (reuses gear icons)"
 $TSX $TOOLS/generate-bis.ts gear/bis.json
 
+echo "==> item sets (v0.16)"
+$TSX $TOOLS/generate-itemsets.ts docs/itemsets.json
+
 echo "==> world map data"
 $TSX $TOOLS/generate-worldmap.ts docs/world-map.json
 

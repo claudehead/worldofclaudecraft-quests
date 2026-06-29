@@ -1845,7 +1845,7 @@ async function upgradesView() {
       .map((g) => ({ g, score: gearScore(g) })).sort((a, b) => b.score - a.score).slice(0, 20);
     const rows = list.map((x, i) => { const g = x.g; const stats = Object.entries(g.bonuses || {}).map(([k, v]) => `+${v} ${STAT_LABEL[k] || k}`).join(', ');
       const wp = g.weapon ? `${g.weapon.min}–${g.weapon.max} @ ${g.weapon.speed}s (${wDps(g.weapon).toFixed(1)} dps)` : '';
-      return `<tr${i === 0 ? ' style="background:rgba(255,210,80,.14);font-weight:600"' : ''}><td style="color:${QCOL[g.quality] || '#fff'}">${i === 0 ? '⭐ ' : ''}${esc(g.name)}</td><td>${esc([wp, stats].filter(Boolean).join(' · ')) || '—'}</td><td class="meta">${esc(srcText(g))}</td></tr>`; }).join('');
+      return `<tr${i === 0 ? ' style="background:rgba(255,210,80,.14);font-weight:600"' : ''}><td style="color:${QCOL[g.quality] || '#fff'}">${i === 0 ? '⭐ ' : ''}${esc(g.name)}${g.set ? ' <span class="pill" style="background:#a335ee;color:#fff;padding:1px 7px">set</span>' : ''}</td><td>${esc([wp, stats].filter(Boolean).join(' · ')) || '—'}</td><td class="meta">${esc(srcText(g))}</td></tr>`; }).join('');
     app.querySelector('#uout').innerHTML = `<div style="overflow-x:auto"><table id="utbl" style="width:100%;border-collapse:collapse;font-size:.93rem"><thead><tr style="text-align:left"><th>Item</th><th>Stats</th><th>Where</th></tr></thead><tbody>${rows || '<tr><td colspan=3 class="meta">No gear for this class in this slot.</td></tr>'}</tbody></table></div>`;
     app.querySelectorAll('#utbl td, #utbl th').forEach((c) => { c.style.padding = '5px 8px'; c.style.borderBottom = '1px solid var(--line,#2a2a2a)'; });
   }
@@ -1974,6 +1974,27 @@ async function atlasView(dir) {
   reveal();
 }
 
+// ---------- item sets (v0.16) ----------
+let setData = null;
+async function itemSetsView() {
+  app.innerHTML = '';
+  if (!setData) {
+    try { setData = await (await fetch(cb('itemsets.json'))).json(); }
+    catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load item sets (${esc(e.message)})</p></div></section>`)); return; }
+  }
+  const cards = setData.sets.map((s) => `<div class="card reveal" style="margin-bottom:16px;padding:16px 18px">
+    <h3 style="margin:0 0 4px;color:${QCOL.epic}">${esc(s.name)} <span class="meta" style="font-weight:400">· ${s.pieces.length} pieces</span></h3>
+    <div class="meta" style="margin:6px 0 10px">${s.pieces.map((p) => `${esc(p.name)} <span style="opacity:.6">(${esc(p.slotLabel)})</span>`).join(' · ')}</div>
+    <ul style="margin:0;padding-left:18px;line-height:1.7">${s.bonuses.map((b) => `<li><b style="color:var(--gold)">(${b.pieces})</b> ${esc(b.text)}</li>`).join('')}</ul>
+  </div>`).join('');
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Items · sets</span><h2>Item sets</h2>
+      <p>Collect pieces of a set to unlock tiered bonuses (new in v0.16). Each tier activates once you're wearing that many pieces.</p></div>
+    ${cards}
+  </div></section>`));
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -1994,6 +2015,7 @@ function router() {
   if (head === 'bosses') return bossesView();
   if (head === 'leveltime') return levelTimeView(parts[1]);
   if (head === 'atlas') return atlasView(parts[1]);
+  if (head === 'sets') return itemSetsView();
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();
