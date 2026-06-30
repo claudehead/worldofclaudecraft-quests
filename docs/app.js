@@ -1998,7 +1998,8 @@ async function itemSetsView() {
 // ---------- lockpicking practice: "Tumbler's Path" (faithful port of woc/src/sim/lockpick.ts) ----------
 const LP_DELTA = { hardSet: -2, set: -1, steady: 0, ease: 1, drop: 2 };
 const LP_ACTIONS = ['hardSet', 'set', 'steady', 'ease', 'drop'];
-const LP_LABEL = { hardSet: 'Hard Set ▲▲', set: 'Set ▲', steady: 'Steady ■', ease: 'Ease ▼', drop: 'Drop ▼▼' };
+const LP_LABEL = { hardSet: 'Hard Set', set: 'Set', steady: 'Steady', ease: 'Ease', drop: 'Drop' };
+const LP_GLYPH = { hardSet: '⤒', set: '↑', steady: '—', ease: '↓', drop: '⤓' };
 const LP_TIERS = {
   normal: { cols: 12, rows: 6, width: 1, gateCount: 2, window: 4, trapCount: 3 },
   heroic: { cols: 16, rows: 6, width: 1, gateCount: 3, window: 3, trapCount: 5 },
@@ -2052,7 +2053,15 @@ function lockpickView() {
   const diffHost = $('#lpdiff');
   Object.entries(LP_DIFF).forEach(([k, d]) => { const p = el(`<span class="pill${k === diff ? ' active' : ''}">${d.label}</span>`); p.onclick = () => { diff = k; diffHost.querySelectorAll('.pill').forEach((x) => x.classList.remove('active')); p.classList.add('active'); newLock(); }; diffHost.append(p); });
   const actHost = $('#lpactions');
-  LP_ACTIONS.forEach((a, i) => { const p = el(`<span class="pill">${i + 1}. ${LP_LABEL[a]}</span>`); p.onclick = () => move(a); actHost.append(p); });
+  actHost.style.cssText = 'display:flex;gap:6px;flex-wrap:wrap';
+  LP_ACTIONS.forEach((a, i) => {
+    const btn = el(`<button style="flex:1;min-width:60px;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:6px 2px;background:#1a1410;border:1px solid #463a1c;border-radius:6px;color:#d4af37;cursor:pointer;font-family:inherit">
+      <span style="font-size:10px;color:#c9b27a">${i + 1}</span><span style="font-size:19px;line-height:1">${LP_GLYPH[a]}</span><span style="font-size:10px">${LP_LABEL[a]}</span></button>`);
+    btn.onmouseenter = () => { btn.style.borderColor = '#d4af37'; btn.style.background = '#2a2010'; };
+    btn.onmouseleave = () => { btn.style.borderColor = '#463a1c'; btn.style.background = '#1a1410'; };
+    btn.onclick = () => move(a);
+    actHost.append(btn);
+  });
   function clearTimer() { if (timer) { clearInterval(timer); timer = null; } }
   function armTimer() {
     clearTimer(); const ms = LP_DIFF[diff].ms; deadline = performance.now() + ms;
@@ -2078,28 +2087,41 @@ function lockpickView() {
   }
   function updTries() { $('#lptries').innerHTML = `Difficulty: <b>${LP_DIFF[diff].label}</b> · Tries left: <b style="color:${tries <= 1 ? '#e0526a' : '#e6bb6a'}">${'◆'.repeat(Math.max(0, tries))}${'◇'.repeat(Math.max(0, LP_DIFF[diff].tries - tries))}</b>`; }
   function render() {
+    // "Tumbler's Path" board: a row of brass pin-tracks (one per lock column).
+    // Only lit wards (open notch / gate / seat / trap) show; the rest is solid
+    // metal; fogged columns are covered plates. Matches the in-game lp-board look.
     updTries();
-    const W = spec.tier.cols, H = spec.tier.rows, win = spec.tier.window;
-    const cell = 26, gap = 3, maxC = Math.min(W - 1, col + win);
-    const rows = [];
-    for (let r = 0; r < H; r++) {
-      const cells = [];
-      for (let c = 0; c < W; c++) {
-        let bg = 'var(--glass)', txt = '', bd = '1px solid var(--line)', op = '1';
-        if (c > maxC) { bg = 'rgba(255,255,255,.02)'; txt = '▓'; op = '.5'; }
-        else if (spec.open[c].includes(r)) {
-          const isSeat = c === W - 1, isGate = spec.gates.includes(c), isTrap = spec.traps[c] && spec.traps[c].includes(r);
-          if (isSeat) { bg = 'rgba(54,194,117,.22)'; bd = '1px solid #36c275'; txt = '⚿'; }
-          else if (isGate) { bg = 'rgba(230,187,106,.20)'; bd = '1px solid #e6bb6a'; txt = '◈'; }
-          else if (isTrap) { bg = 'rgba(224,82,106,.18)'; bd = '1px solid #e0526a'; txt = '☠'; }
-          else { bg = 'rgba(255,255,255,.06)'; }
-        } else { bg = 'transparent'; bd = '1px solid transparent'; }
-        const here = c === col && r === row;
-        cells.push(`<div style="width:${cell}px;height:${cell}px;border-radius:5px;background:${bg};border:${bd};opacity:${op};display:grid;place-items:center;font-size:13px;color:#cfe3d6;${here ? 'box-shadow:0 0 0 2px #fff inset, 0 0 10px rgba(255,255,255,.5);background:#fff;color:#111;font-weight:700' : ''}">${here ? '◆' : txt}</div>`);
+    const W = spec.tier.cols, H = spec.tier.rows, win = spec.tier.window, BH = 188;
+    const maxC = Math.min(W - 1, col + win);
+    const topPct = (r) => (H <= 1 ? 50 : (r / (H - 1)) * 100);
+    const tracks = [];
+    for (let c = 0; c < W; c++) {
+      const state = c < col ? 'set' : c === col ? 'active' : c <= maxC ? 'ahead' : 'fog';
+      const isGate = spec.gates.includes(c);
+      let track = 'position:relative;border-radius:3px;background:#1c160e;border:1px solid #2c2414;';
+      if (state === 'set') track += 'background:#181208;opacity:.7;';
+      else if (state === 'active') track += 'background:#241a0d;border-color:#d4af37;box-shadow:inset 0 0 8px rgba(212,175,55,.25),0 0 7px rgba(212,175,55,.35);';
+      else if (isGate) track += 'border-color:rgba(212,175,55,.5);';
+      let inner;
+      if (state === 'fog') {
+        inner = '<div style="position:absolute;inset:6px 0;border-radius:2px;background:repeating-linear-gradient(45deg,#0f0c08,#0f0c08 4px,#15110a 4px,#15110a 8px)"></div>';
+      } else {
+        let notches = '';
+        for (const r of spec.open[c]) {
+          const t = topPct(r), isSeat = c === W - 1, trap = spec.traps[c] && spec.traps[c].includes(r);
+          let n;
+          if (isSeat) n = `left:6%;right:6%;height:10px;background:#7fdc4f;box-shadow:0 0 7px #4f8c2f`;
+          else if (trap) n = `left:8%;right:8%;height:8px;background:repeating-linear-gradient(90deg,#ff5a3a,#ff5a3a 3px,#7a1a0c 3px,#7a1a0c 6px);box-shadow:0 0 6px rgba(255,60,30,.6)`;
+          else if (isGate) n = `left:6%;right:6%;height:9px;background:linear-gradient(90deg,#d4af37 0 44%,#1a1208 44% 56%,#d4af37 56% 100%);box-shadow:0 0 6px rgba(212,175,55,.5)`;
+          else n = `left:14%;right:14%;height:7px;background:#5a4a28`;
+          notches += `<div style="position:absolute;border-radius:3px;transform:translateY(-50%);top:${t}%;${n}"></div>`;
+        }
+        if (c === col) notches += `<div style="position:absolute;left:-3px;right:-3px;height:5px;border-radius:3px;transform:translateY(-50%);top:${topPct(row)}%;background:#fff;box-shadow:0 0 9px #fff,0 0 3px #000;z-index:2"></div>`;
+        inner = `<div style="position:absolute;inset:6px 0">${notches}</div>`;
       }
-      rows.push(`<div style="display:flex;gap:${gap}px">${cells.join('')}</div>`);
+      tracks.push(`<div style="${track}">${inner}</div>`);
     }
-    $('#lpgrid').innerHTML = `<div style="display:flex;flex-direction:column;gap:${gap}px;min-width:${W * (cell + gap)}px">${rows.join('')}</div>`;
+    $('#lpgrid').innerHTML = `<div style="display:grid;grid-template-columns:repeat(${W},1fr);gap:4px;padding:8px;height:${BH}px;background:linear-gradient(#0d0a07,#161009);border:1px solid #463a1c;border-radius:6px;min-width:${W * 20}px">${tracks.join('')}</div>`;
   }
   document.onkeydown = (e) => { if (!app.contains($('#lpgrid'))) { document.onkeydown = null; return; } const n = parseInt(e.key, 10); if (n >= 1 && n <= 5) { move(LP_ACTIONS[n - 1]); e.preventDefault(); } };
   $('#lpnew').onclick = newLock;
