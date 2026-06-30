@@ -1796,33 +1796,60 @@ async function ensureGear() { if (!gearAll) gearAll = await (await fetch(cb(raw(
 async function compareView() {
   app.innerHTML = '';
   try { await ensureGear(); } catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load gear (${esc(e.message)})</p></div></section>`)); return; }
-  const opts = gearAll.gear.map((g) => `<option value="${g.id}">${esc(g.name)} (${esc(g.slotLabel)})</option>`).join('');
+  const SEL = 'padding:8px 10px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light';
+  const slotOpts = `<option value="all">All slots</option>` + gearAll.slots.map((s) => `<option value="${s.id}">${esc(s.label)}</option>`).join('');
   app.append(el(`<section class="block"><div class="wrap">
-    <div class="shead reveal"><span class="eyebrow">Items · compare</span><h2>Compare gear</h2><p>Pick two pieces to see their stats side by side — the higher value in each row is highlighted.</p></div>
-    <div class="controls reveal" style="gap:14px;flex-wrap:wrap">
-      <select id="cmpA" style="min-width:240px;max-width:46%;padding:8px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light">${opts}</select>
-      <select id="cmpB" style="min-width:240px;max-width:46%;padding:8px;border-radius:8px;border:1px solid #888;background:#fff;color:#111;color-scheme:light">${opts}</select>
+    <div class="shead reveal"><span class="eyebrow">Items · compare</span><h2>Compare gear</h2><p>Pick a slot to narrow the lists, choose two pieces, and read the <b>Δ</b> column: green ▲ = the right item wins that stat, red ▼ = it loses.</p></div>
+    <div class="controls reveal" style="gap:12px;flex-wrap:wrap;align-items:center">
+      <label class="meta">Slot <select id="cmpslot" style="${SEL}">${slotOpts}</select></label>
+      <select id="cmpA" style="${SEL};min-width:200px"></select>
+      <span class="pill" id="cmpswap" title="Swap">⇄</span>
+      <select id="cmpB" style="${SEL};min-width:200px"></select>
     </div>
-    <div id="cmpOut" class="reveal" style="margin-top:10px"></div>
+    <div id="cmpOut" class="reveal" style="margin-top:12px"></div>
   </div></section>`));
-  const A = app.querySelector('#cmpA'), B = app.querySelector('#cmpB');
-  B.selectedIndex = Math.min(1, gearAll.gear.length - 1);
+  const slotSel = app.querySelector('#cmpslot'), A = app.querySelector('#cmpA'), B = app.querySelector('#cmpB');
   const find = (id) => gearAll.gear.find((g) => g.id === id);
+  const listFor = () => gearAll.gear.filter((g) => slotSel.value === 'all' || g.slot === slotSel.value);
+  function fill(keepA, keepB) {
+    const items = listFor();
+    const opts = items.map((g) => `<option value="${g.id}">${esc(g.name)} · ${esc(g.qualityName)}</option>`).join('');
+    A.innerHTML = opts; B.innerHTML = opts;
+    A.value = keepA && items.some((g) => g.id === keepA) ? keepA : (items[0]?.id || '');
+    B.value = keepB && items.some((g) => g.id === keepB) ? keepB : (items[Math.min(1, items.length - 1)]?.id || '');
+    render();
+  }
+  const card = (g) => `<div class="card" style="padding:14px 16px;cursor:default">
+    <div style="font-weight:700;font-size:16px;color:${QCOL[g.quality] || '#fff'}">${esc(g.name)}${g.set ? ' <span class="pill" style="background:#a335ee;color:#fff;padding:1px 7px">set</span>' : ''}</div>
+    <div class="meta" style="margin-top:3px">${esc(g.slotLabel)} · ${esc(g.qualityName)}${g.armorType ? ' · ' + esc(g.armorType) : ''}</div>
+    <div class="meta" style="margin-top:4px">${g.usable ? esc(g.usable.join(', ')) : 'All classes'}</div>
+    <div class="meta" style="margin-top:10px;border-top:1px solid var(--line,#262626);padding-top:8px">${esc(srcText(g))}</div></div>`;
   function render() {
-    const a = find(A.value), b = find(B.value); if (!a || !b) return;
-    const keys = [...new Set([...Object.keys(a.bonuses || {}), ...Object.keys(b.bonuses || {})])];
+    const a = find(A.value), b = find(B.value); if (!a || !b) { app.querySelector('#cmpOut').innerHTML = ''; return; }
+    const keys = [...new Set([...Object.keys(a.bonuses || {}), ...Object.keys(b.bonuses || {})])].sort();
     if (a.weapon || b.weapon) keys.unshift('__dps');
-    const hi = 'background:rgba(54,194,117,.18);font-weight:700';
-    const cell = (g) => `<td style="text-align:center;color:${QCOL[g.quality] || '#fff'}"><b>${esc(g.name)}</b><br><span class="meta">${esc(g.slotLabel)} · ${esc(g.qualityName)}${g.usable ? ' · ' + g.usable.join('/') : ''}</span></td>`;
     const valA = (k) => k === '__dps' ? +wDps(a.weapon).toFixed(1) : (a.bonuses?.[k] || 0);
     const valB = (k) => k === '__dps' ? +wDps(b.weapon).toFixed(1) : (b.bonuses?.[k] || 0);
-    const rows = keys.map((k) => { const x = valA(k), y = valB(k); return `<tr><td style="${x > y ? hi : ''};text-align:right">${x || '—'}</td><td style="text-align:center;color:var(--muted,#999)">${k === '__dps' ? 'Weapon DPS' : STAT_LABEL[k] || k}</td><td style="${y > x ? hi : ''}">${y || '—'}</td></tr>`; }).join('');
-    app.querySelector('#cmpOut').innerHTML = `<table id="cmpTbl" style="width:100%;border-collapse:collapse;font-size:.95rem"><thead><tr><td></td>${cell(a)}${cell(b)}</tr></thead></table>
-      <table id="cmpTbl2" style="width:100%;border-collapse:collapse;font-size:.95rem"><tbody>${rows}</tbody></table>
-      <p class="meta" style="margin-top:8px">${esc(a.name)} where: ${esc(srcText(a))}<br>${esc(b.name)} where: ${esc(srcText(b))}</p>`;
-    app.querySelectorAll('#cmpTbl2 td').forEach((c) => { c.style.padding = '5px 10px'; c.style.borderBottom = '1px solid var(--line,#2a2a2a)'; });
+    let aw = 0, bw = 0;
+    const rows = keys.map((k) => {
+      const x = valA(k), y = valB(k), d = +(y - x).toFixed(1);
+      if (d > 0) bw++; else if (d < 0) aw++;
+      const chip = d === 0 ? '<span class="meta">—</span>' : `<span style="color:${d > 0 ? '#36c275' : '#e0526a'};font-weight:700">${d > 0 ? '▲ +' + d : '▼ ' + d}</span>`;
+      return `<tr><td>${k === '__dps' ? 'Weapon DPS' : STAT_LABEL[k] || k}</td><td style="text-align:right">${x || '—'}</td><td style="text-align:right">${y || '—'}</td><td style="text-align:right">${chip}</td></tr>`;
+    }).join('');
+    const verdict = !keys.length ? 'No stats to compare.' : bw && !aw ? `<b style="color:#36c275">${esc(b.name)} is a straight upgrade</b> over ${esc(a.name)}.` : aw && !bw ? `<b style="color:#36c275">${esc(a.name)} is a straight upgrade</b> over ${esc(b.name)}.` : `Mixed — ${esc(a.name)} wins ${aw} stat${aw === 1 ? '' : 's'}, ${esc(b.name)} wins ${bw}.`;
+    app.querySelector('#cmpOut').innerHTML = `
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">${card(a)}${card(b)}</div>
+      <div style="overflow-x:auto"><table id="cmpTbl" style="width:100%;border-collapse:collapse;font-size:.95rem">
+        <thead><tr style="text-align:left"><th>Stat</th><th style="text-align:right;max-width:40%">${esc(a.name.split(',')[0])}</th><th style="text-align:right">${esc(b.name.split(',')[0])}</th><th style="text-align:right">Δ</th></tr></thead>
+        <tbody>${rows || '<tr><td colspan=4 class="meta">Neither item has stats.</td></tr>'}</tbody></table></div>
+      <p class="meta" style="margin-top:10px">${verdict}</p>`;
+    app.querySelectorAll('#cmpTbl td, #cmpTbl th').forEach((c) => { c.style.padding = '6px 10px'; c.style.borderBottom = '1px solid var(--line,#2a2a2a)'; });
   }
-  A.onchange = render; B.onchange = render; render();
+  slotSel.onchange = () => fill();
+  A.onchange = render; B.onchange = render;
+  app.querySelector('#cmpswap').onclick = () => { const t = A.value; A.value = B.value; B.value = t; render(); };
+  fill();
   reveal();
 }
 
