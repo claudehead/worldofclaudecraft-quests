@@ -1995,6 +1995,118 @@ async function itemSetsView() {
   reveal();
 }
 
+// ---------- lockpicking practice: "Tumbler's Path" (faithful port of woc/src/sim/lockpick.ts) ----------
+const LP_DELTA = { hardSet: -2, set: -1, steady: 0, ease: 1, drop: 2 };
+const LP_ACTIONS = ['hardSet', 'set', 'steady', 'ease', 'drop'];
+const LP_LABEL = { hardSet: 'Hard Set ▲▲', set: 'Set ▲', steady: 'Steady ■', ease: 'Ease ▼', drop: 'Drop ▼▼' };
+const LP_TIERS = {
+  normal: { cols: 12, rows: 6, width: 1, gateCount: 2, window: 4, trapCount: 3 },
+  heroic: { cols: 16, rows: 6, width: 1, gateCount: 3, window: 3, trapCount: 5 },
+};
+const LP_DIFF = {
+  easy: { tier: 'normal', ms: 9000, tries: 3, label: 'Easy' },
+  medium: { tier: 'normal', ms: 6000, tries: 2, label: 'Medium' },
+  hard: { tier: 'heroic', ms: 3000, tries: 1, label: 'Hard' },
+};
+function lpRng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6d2b79f5) >>> 0; let t = Math.imul(s ^ (s >>> 15), 1 | s); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function lpInt(rnd, a, b) { return a + Math.floor(rnd() * (b - a + 1)); }
+function lpGenerate(seed, tier) {
+  const rnd = lpRng(seed), H = tier.rows, W = tier.cols, deltas = LP_ACTIONS.map((a) => LP_DELTA[a]);
+  const path = new Array(W); path[0] = lpInt(rnd, 0, H - 1);
+  for (let c = 1; c < W; c++) { const legal = deltas.filter((d) => path[c - 1] + d >= 0 && path[c - 1] + d <= H - 1); path[c] = path[c - 1] + (legal.length ? legal[Math.floor(rnd() * legal.length)] : 0); }
+  const cand = []; for (let c = 1; c <= W - 2; c++) cand.push(c);
+  for (let i = cand.length - 1; i > 0; i--) { const j = lpInt(rnd, 0, i);[cand[i], cand[j]] = [cand[j], cand[i]]; }
+  const gates = cand.slice(0, Math.max(0, Math.min(tier.gateCount, cand.length))).sort((a, b) => a - b), gateSet = new Set(gates);
+  const open = new Array(W);
+  for (let c = 0; c < W; c++) { if (c === W - 1 || gateSet.has(c)) open[c] = [path[c]]; else { const band = []; for (let r = path[c] - tier.width; r <= path[c] + tier.width; r++) if (r >= 0 && r <= H - 1) band.push(r); open[c] = band; } }
+  for (let c = 1; c < W; c++) { const prev = open[c - 1]; open[c] = open[c].filter((r) => prev.some((pr) => deltas.includes(r - pr))); }
+  for (let c = W - 2; c >= 0; c--) { const next = open[c + 1]; open[c] = open[c].filter((r) => next.some((nr) => deltas.includes(nr - r))); }
+  const traps = open.map(() => []), budget = Math.max(0, tier.trapCount || 0);
+  if (budget > 0) { const tc = []; for (let c = 1; c < W - 1; c++) { if (gateSet.has(c)) continue; for (const r of open[c]) if (r !== path[c]) tc.push([c, r]); }
+    for (let i = tc.length - 1; i > 0; i--) { const j = lpInt(rnd, 0, i);[tc[i], tc[j]] = [tc[j], tc[i]]; }
+    for (const [c, r] of tc.slice(0, Math.min(budget, tc.length))) traps[c].push(r); traps.forEach((t) => t.sort((a, b) => a - b)); }
+  return { tier, open, gates, traps, startRow: path[0], seatRow: path[W - 1] };
+}
+function lpStep(spec, col, row, action) {
+  const H = spec.tier.rows, newRow = Math.max(0, Math.min(H - 1, row + LP_DELTA[action])), newCol = col + 1, colOpen = spec.open[newCol];
+  if (!colOpen || !colOpen.includes(newRow)) return { result: spec.gates.includes(newCol) ? 'bind' : 'slip', col, row };
+  if (spec.traps[newCol] && spec.traps[newCol].includes(newRow)) return { result: 'trap', col, row };
+  if (newCol === spec.open.length - 1 && newRow === spec.seatRow) return { result: 'success', col: newCol, row: newRow };
+  return { result: 'advanced', col: newCol, row: newRow };
+}
+
+function lockpickView() {
+  app.innerHTML = '';
+  let diff = 'easy', spec = null, col = 0, row = 0, tries = 0, done = false, timer = null, deadline = 0;
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Tools · practice</span><h2>Lockpicking — Tumbler's Path</h2>
+      <p>Practice the delve lockpicking minigame. Thread the pick along the open channel (lit cells), seat it on each <b style="color:#e6bb6a">gold tumbler gate</b>, dodge the <b style="color:#e0526a">red ward-traps</b>, and reach the <b style="color:#36c275">green bolt seat</b>. Each move advances one column; pick a depth. You have a few seconds per move.</p></div>
+    <div class="controls reveal"><div class="pills" id="lpdiff"></div><span class="pill" id="lpnew">↻ New lock</span></div>
+    <div class="reveal" style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:-6px 0 8px"><span class="meta" id="lptries"></span><span class="meta" id="lpmsg" style="font-weight:600"></span></div>
+    <div class="reveal" style="height:6px;border-radius:3px;background:var(--glass);overflow:hidden;margin-bottom:12px"><div id="lpbar" style="height:100%;width:100%;background:linear-gradient(90deg,#36c275,#e6bb6a,#e0526a);transition:width .1s linear"></div></div>
+    <div id="lpgrid" class="reveal" style="overflow-x:auto;padding:6px 0;margin-bottom:14px"></div>
+    <div class="controls reveal" id="lpactions"></div>
+    <p class="meta reveal" style="margin-top:10px;opacity:.75">Keys: <b>1–5</b> for the depth actions. Fogged columns (▓) reveal as you advance. A slip, bind, trap, or timeout burns one try and resets the board.</p>
+  </div></section>`));
+  const $ = (s) => app.querySelector(s);
+  const diffHost = $('#lpdiff');
+  Object.entries(LP_DIFF).forEach(([k, d]) => { const p = el(`<span class="pill${k === diff ? ' active' : ''}">${d.label}</span>`); p.onclick = () => { diff = k; diffHost.querySelectorAll('.pill').forEach((x) => x.classList.remove('active')); p.classList.add('active'); newLock(); }; diffHost.append(p); });
+  const actHost = $('#lpactions');
+  LP_ACTIONS.forEach((a, i) => { const p = el(`<span class="pill">${i + 1}. ${LP_LABEL[a]}</span>`); p.onclick = () => move(a); actHost.append(p); });
+  function clearTimer() { if (timer) { clearInterval(timer); timer = null; } }
+  function armTimer() {
+    clearTimer(); const ms = LP_DIFF[diff].ms; deadline = performance.now() + ms;
+    timer = setInterval(() => { const left = deadline - performance.now(); $('#lpbar').style.width = Math.max(0, (left / ms) * 100) + '%'; if (left <= 0) { clearTimer(); fail('⏱ Too slow — the pick slipped.'); } }, 80);
+  }
+  function newLock() { clearTimer(); spec = lpGenerate((Math.random() * 2 ** 31) >>> 0, LP_TIERS[LP_DIFF[diff].tier]); col = 0; row = spec.startRow; tries = LP_DIFF[diff].tries; done = false; $('#lpmsg').textContent = ''; render(); armTimer(); }
+  function resetBoard() { col = 0; row = spec.startRow; render(); armTimer(); }
+  function fail(msg) {
+    tries--; clearTimer();
+    if (tries <= 0) { done = true; $('#lpmsg').innerHTML = `<span style="color:#e0526a">✖ ${msg} The lock jammed for good.</span>`; render(); }
+    else { $('#lpmsg').innerHTML = `<span style="color:#e0a23a">${msg} ${tries} ${tries === 1 ? 'try' : 'tries'} left — board reset.</span>`; resetBoard(); }
+    updTries();
+  }
+  function move(a) {
+    if (done || !spec) return;
+    const r = lpStep(spec, col, row, a);
+    if (r.result === 'slip') return fail('⟂ Ward slip — that depth is solid wall.');
+    if (r.result === 'bind') return fail('⊗ Bind — you missed the tumbler gate.');
+    if (r.result === 'trap') return fail('☠ Ward-trap — the lock seized.');
+    col = r.col; row = r.row;
+    if (r.result === 'success') { done = true; clearTimer(); $('#lpmsg').innerHTML = `<span style="color:#36c275">✔ The bolt turns — lock open!</span>`; $('#lpbar').style.width = '100%'; render(); return; }
+    render(); armTimer();
+  }
+  function updTries() { $('#lptries').innerHTML = `Difficulty: <b>${LP_DIFF[diff].label}</b> · Tries left: <b style="color:${tries <= 1 ? '#e0526a' : '#e6bb6a'}">${'◆'.repeat(Math.max(0, tries))}${'◇'.repeat(Math.max(0, LP_DIFF[diff].tries - tries))}</b>`; }
+  function render() {
+    updTries();
+    const W = spec.tier.cols, H = spec.tier.rows, win = spec.tier.window;
+    const cell = 26, gap = 3, maxC = Math.min(W - 1, col + win);
+    const rows = [];
+    for (let r = 0; r < H; r++) {
+      const cells = [];
+      for (let c = 0; c < W; c++) {
+        let bg = 'var(--glass)', txt = '', bd = '1px solid var(--line)', op = '1';
+        if (c > maxC) { bg = 'rgba(255,255,255,.02)'; txt = '▓'; op = '.5'; }
+        else if (spec.open[c].includes(r)) {
+          const isSeat = c === W - 1, isGate = spec.gates.includes(c), isTrap = spec.traps[c] && spec.traps[c].includes(r);
+          if (isSeat) { bg = 'rgba(54,194,117,.22)'; bd = '1px solid #36c275'; txt = '⚿'; }
+          else if (isGate) { bg = 'rgba(230,187,106,.20)'; bd = '1px solid #e6bb6a'; txt = '◈'; }
+          else if (isTrap) { bg = 'rgba(224,82,106,.18)'; bd = '1px solid #e0526a'; txt = '☠'; }
+          else { bg = 'rgba(255,255,255,.06)'; }
+        } else { bg = 'transparent'; bd = '1px solid transparent'; }
+        const here = c === col && r === row;
+        cells.push(`<div style="width:${cell}px;height:${cell}px;border-radius:5px;background:${bg};border:${bd};opacity:${op};display:grid;place-items:center;font-size:13px;color:#cfe3d6;${here ? 'box-shadow:0 0 0 2px #fff inset, 0 0 10px rgba(255,255,255,.5);background:#fff;color:#111;font-weight:700' : ''}">${here ? '◆' : txt}</div>`);
+      }
+      rows.push(`<div style="display:flex;gap:${gap}px">${cells.join('')}</div>`);
+    }
+    $('#lpgrid').innerHTML = `<div style="display:flex;flex-direction:column;gap:${gap}px;min-width:${W * (cell + gap)}px">${rows.join('')}</div>`;
+  }
+  document.onkeydown = (e) => { if (!app.contains($('#lpgrid'))) { document.onkeydown = null; return; } const n = parseInt(e.key, 10); if (n >= 1 && n <= 5) { move(LP_ACTIONS[n - 1]); e.preventDefault(); } };
+  $('#lpnew').onclick = newLock;
+  newLock();
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -2016,6 +2128,7 @@ function router() {
   if (head === 'leveltime') return levelTimeView(parts[1]);
   if (head === 'atlas') return atlasView(parts[1]);
   if (head === 'sets') return itemSetsView();
+  if (head === 'lockpick') return lockpickView();
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();
