@@ -1,6 +1,8 @@
 # Lockpicking — Tumbler's Path
 
-Locked chests inside [delves](../delves/README.md) are opened with **Tumbler's Path**, a skill minigame. You guide a pin across columns — through the **gate**, then onto the **bolt seat** — without slipping or hitting a trap. Clear it and the chest pays out; fail and it jams.
+Locked chests inside [delves](../delves/README.md) are opened with **Tumbler's Path**, a skill minigame. The board is a row of brass **tumbler tracks** (one per column); only the lit wards show — an open notch, a gold **gate**, the green **bolt seat**, or a red **ward-trap**. You drive the pick one column at a time, threading the open channel, seating on each gate and dodging traps, until it reaches the bolt seat. Clear it and the chest pays out; fail and it jams.
+
+> 🔓 **Practice it free, no chest required:** open the [**interactive Tumbler's Path trainer →**](#/lockpick) — the exact same board and rules, with Easy / Medium / Hard modes, so you can get the feel before you risk a real cache.
 
 ## Ante = risk vs reward
 
