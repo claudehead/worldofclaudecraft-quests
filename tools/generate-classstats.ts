@@ -1,7 +1,7 @@
 // Emits docs/classstats.json — base class stats + growth + the AP rule per class,
 // so the DPS/EHP calculator can reproduce the game's combat math client-side.
 import { CLASSES } from '../woc/src/sim/content/classes.ts';
-import { MAX_LEVEL } from '../woc/src/sim/types.ts';
+import { MAX_LEVEL, SPELL_POWER_PER_INT } from '../woc/src/sim/types.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || 'docs/classstats.json';
@@ -22,7 +22,7 @@ for (const [id, c] of Object.entries(CLASSES) as any[]) {
 fs.writeFileSync(OUT, JSON.stringify({
   maxLevel: MAX_LEVEL,
   // constants from woc/src/sim/types.ts + entity.ts
-  constants: { apToDamageDivisor: 14, baseCrit: 0.05, critPerAgi: 0.0005, spellCritPerInt: 0.0008, meleeCritMult: 2, spellCritMult: 1.5, armorPerAgi: 2, armorCap: 0.75, armorA: 85, armorB: 400, staLowCap: 20, staHpLow: 1, staHpHigh: 10 },
+  constants: { apToDamageDivisor: 14, baseCrit: 0.05, critPerAgi: 0.0005, spellCritPerInt: 0.0008, meleeCritMult: 2, spellCritMult: 1.5, armorPerAgi: 2, armorCap: 0.75, armorA: 85, armorB: 400, staLowCap: 20, staHpLow: 1, staHpHigh: 10, spellPowerPerInt: SPELL_POWER_PER_INT },
   classes,
 }));
 console.log(`wrote classstats.json (${Object.keys(classes).length} classes) to ${OUT}`);

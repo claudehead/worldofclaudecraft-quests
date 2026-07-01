@@ -1703,7 +1703,7 @@ async function calcView() {
     const row = (a, b) => `<div style="display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-bottom:1px solid var(--line,#262626)"><span class="meta">${a}</span><b>${b}</b></div>`;
     app.querySelector('#cout').innerHTML = `<h3 style="margin:0 0 10px">${esc(c.name)} · level ${L}</h3>
       ${row('Strength / Agility', `${str} / ${agi}`)}${row('Stamina / Intellect', `${sta} / ${int}`)}
-      ${row('Attack power', Math.round(ap))}${row('Melee crit', (crit * 100).toFixed(1) + '%')}${c.caster ? row('Spell crit', (spellCrit * 100).toFixed(1) + '%') : ''}
+      ${row('Attack power', Math.round(ap))}${row('Melee crit', (crit * 100).toFixed(1) + '%')}${c.caster ? row('Spell crit', (spellCrit * 100).toFixed(1) + '%') + row('Spell power', Math.round(int * (K.spellPowerPerInt || 0.5))) : ''}
       ${row('Health', Math.round(hp))}${row('Armor', Math.round(armor))}${row('Mitigation (vs lv ' + L + ')', (mit * 100).toFixed(1) + '%')}${row('Effective HP', Math.round(ehp))}
       ${row('White-hit damage', Math.round(perHit))}${row('White DPS (with crit)', dps.toFixed(1))}
       <p class="meta" style="margin:10px 0 0;opacity:.75">DPS is raw weapon/auto-attack output before the target's armor; abilities and ${c.caster ? 'spell coefficients' : 'rotation'} add more. Talents not included.</p>`;
@@ -2156,6 +2156,32 @@ function lockpickView() {
   reveal();
 }
 
+// ---------- developer badges (v0.18) ----------
+let badgeData = null;
+async function badgesView() {
+  app.innerHTML = '';
+  if (!badgeData) {
+    try { badgeData = await (await fetch(cb('devbadges.json'))).json(); }
+    catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load badges (${esc(e.message)})</p></div></section>`)); return; }
+  }
+  const badge = (t) => `<svg width="64" height="64" viewBox="0 0 64 64" style="flex:none">
+    <circle cx="32" cy="32" r="26" fill="#14110c" stroke="${t.ring}" stroke-width="4"${t.significant ? ` style="filter:drop-shadow(0 0 5px ${t.glow})"` : ''}/>
+    ${Array.from({ length: t.index + 1 }, (_, i) => `<circle cx="32" cy="${18 + i * 8}" r="2.6" fill="#fff6df"/>`).join('')}
+    <line x1="32" y1="18" x2="32" y2="${18 + t.index * 8}" stroke="#fff6df" stroke-width="1.4" opacity=".6"/></svg>`;
+  const cards = badgeData.tiers.map((t) => `<div class="card reveal" style="display:flex;gap:16px;align-items:center;padding:14px 16px;margin-bottom:12px;cursor:default">
+    ${badge(t)}
+    <div><div style="font-weight:700;font-size:17px;color:${t.ring}">${esc(t.name)} <span class="meta" style="font-weight:400">· ${t.threshold}+ merged PRs</span></div>
+    <div class="meta" style="margin-top:3px;font-style:italic">${esc(t.flavor)}</div>
+    ${t.significant ? `<div class="meta" style="margin-top:4px;color:${t.ring}">✦ Also grants a glowing nameplate outline in-game.</div>` : ''}</div></div>`).join('');
+  app.append(el(`<section class="block"><div class="wrap">
+    <div class="shead reveal"><span class="eyebrow">Community</span><h2>Developer badges</h2>
+      <p>New in v0.18: contributors who land merged pull requests in the <a href="https://github.com/levy-street/world-of-claudecraft" target="_blank" rel="noopener" style="color:var(--gold)">open-source game repo</a> earn cosmetic badges, shown next to their nameplate and on a "Developers" leaderboard. Five rungs, by merged-PR count:</p></div>
+    ${cards}
+    <p class="meta reveal" style="opacity:.8">Link a verified GitHub account in-game (the "Link GitHub" control) to claim your rung. Counts come from GitHub's public contributor stats for the repo.</p>
+  </div></section>`));
+  reveal();
+}
+
 // ---------- router ----------
 function router() {
   const h = location.hash || '#/';
@@ -2178,6 +2204,7 @@ function router() {
   if (head === 'atlas') return atlasView(parts[1]);
   if (head === 'sets') return itemSetsView();
   if (head === 'lockpick') return lockpickView();
+  if (head === 'badges') return badgesView();
   if (head === 'patches') return patchesView();
   if (head === 'augments') return augmentsView();
   if (head === 'cosmetics') return cosmeticsView();

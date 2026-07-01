@@ -76,6 +76,7 @@ out.push({ t: 'Tool', n: 'Interactive map (atlas)', go: '#/atlas' });
 out.push({ t: 'Tool', n: 'Whole world in 3D', go: '#/zone3d/00-world' });
 out.push({ t: 'Tool', n: 'Item sets', go: '#/sets' });
 out.push({ t: 'Tool', n: 'Lockpicking practice (Tumblers Path)', go: '#/lockpick' });
+out.push({ t: 'Reference', n: 'Developer badges', go: '#/badges' });
 
 // quest items / tools / trade goods -> materials page (anchored)
 for (const i of Object.values(ITEMS) as any[]) {
