@@ -4,6 +4,8 @@ import { DELVE_MOBS, DELVE_SHOPS } from '../woc/src/sim/content/delves/index.ts'
 import { quality, statLine } from './iteminfo.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
 import { canEquipItem, armorTypeForItem } from '../woc/src/sim/equipment_rules.ts';
+import { requiredLevelFor } from '../woc/src/sim/item_level_req.ts';
+import { itemLevel } from '../woc/src/sim/item_level.ts';
 import { ALL_CLASSES } from '../woc/src/sim/types.ts';
 import * as fs from 'node:fs';
 
@@ -81,6 +83,8 @@ const gear = (Object.values(ITEMS) as any[])
       bonuses: i.stats || {},
       weapon: i.weapon || null,
       set: i.set || null,
+      reqLevel: requiredLevelFor(i),
+      ilvl: itemLevel(i) ?? null,
       icon: `gear/_icons/${i.id}.png`,
       usable: (() => { const u = usableBy(i); return u.length >= (ALL_CLASSES as string[]).length ? null : u.map(cap); })(),
       restrict: restrictLabel(i, usableBy(i)),

@@ -343,7 +343,7 @@ async function gearView() {
             <div class="meta">${esc(g.qualityName)} · ${esc(g.slotLabel)}${g.armorType ? ' · ' + esc(g.armorType[0].toUpperCase() + g.armorType.slice(1)) : ''}</div></div>
         </div>
         ${g.stats ? `<div class="gstats">${esc(g.stats)}</div>` : ''}
-        <div class="grestrict">${g.restrict ? '🔒 ' + esc(g.restrict) : 'Usable by all classes'}</div>
+        <div class="grestrict">${g.restrict ? '🔒 ' + esc(g.restrict) : 'Usable by all classes'}${g.reqLevel ? ' · Requires level ' + g.reqLevel : ''}${g.ilvl ? ' · ilvl ' + g.ilvl : ''}</div>
         <div class="gsrc">${src}</div>
       </div>`);
       grid.append(card);
@@ -1821,7 +1821,7 @@ async function compareView() {
   }
   const card = (g) => `<div class="card" style="padding:14px 16px;cursor:default">
     <div style="font-weight:700;font-size:16px;color:${QCOL[g.quality] || '#fff'}">${esc(g.name)}${g.set ? ' <span class="pill" style="background:#a335ee;color:#fff;padding:1px 7px">set</span>' : ''}</div>
-    <div class="meta" style="margin-top:3px">${esc(g.slotLabel)} · ${esc(g.qualityName)}${g.armorType ? ' · ' + esc(g.armorType) : ''}</div>
+    <div class="meta" style="margin-top:3px">${esc(g.slotLabel)} · ${esc(g.qualityName)}${g.armorType ? ' · ' + esc(g.armorType) : ''}${g.reqLevel ? ' · Req lvl ' + g.reqLevel : ''}${g.ilvl ? ' · ilvl ' + g.ilvl : ''}</div>
     <div class="meta" style="margin-top:4px">${g.usable ? esc(g.usable.join(', ')) : 'All classes'}</div>
     <div class="meta" style="margin-top:10px;border-top:1px solid var(--line,#262626);padding-top:8px">${esc(srcText(g))}</div></div>`;
   function render() {
@@ -1872,7 +1872,7 @@ async function upgradesView() {
       .map((g) => ({ g, score: gearScore(g) })).sort((a, b) => b.score - a.score).slice(0, 20);
     const rows = list.map((x, i) => { const g = x.g; const stats = Object.entries(g.bonuses || {}).map(([k, v]) => `+${v} ${STAT_LABEL[k] || k}`).join(', ');
       const wp = g.weapon ? `${g.weapon.min}–${g.weapon.max} @ ${g.weapon.speed}s (${wDps(g.weapon).toFixed(1)} dps)` : '';
-      return `<tr${i === 0 ? ' style="background:rgba(255,210,80,.14);font-weight:600"' : ''}><td style="color:${QCOL[g.quality] || '#fff'}">${i === 0 ? '⭐ ' : ''}${esc(g.name)}${g.set ? ' <span class="pill" style="background:#a335ee;color:#fff;padding:1px 7px">set</span>' : ''}</td><td>${esc([wp, stats].filter(Boolean).join(' · ')) || '—'}</td><td class="meta">${esc(srcText(g))}</td></tr>`; }).join('');
+      return `<tr${i === 0 ? ' style="background:rgba(255,210,80,.14);font-weight:600"' : ''}><td style="color:${QCOL[g.quality] || '#fff'}">${i === 0 ? '⭐ ' : ''}${esc(g.name)}${g.set ? ' <span class="pill" style="background:#a335ee;color:#fff;padding:1px 7px">set</span>' : ''}${g.reqLevel ? ` <span class="meta" style="font-weight:400">· lvl ${g.reqLevel}</span>` : ''}</td><td>${esc([wp, stats].filter(Boolean).join(' · ')) || '—'}</td><td class="meta">${esc(srcText(g))}</td></tr>`; }).join('');
     app.querySelector('#uout').innerHTML = `<div style="overflow-x:auto"><table id="utbl" style="width:100%;border-collapse:collapse;font-size:.93rem"><thead><tr style="text-align:left"><th>Item</th><th>Stats</th><th>Where</th></tr></thead><tbody>${rows || '<tr><td colspan=3 class="meta">No gear for this class in this slot.</td></tr>'}</tbody></table></div>`;
     app.querySelectorAll('#utbl td, #utbl th').forEach((c) => { c.style.padding = '5px 8px'; c.style.borderBottom = '1px solid var(--line,#2a2a2a)'; });
   }
