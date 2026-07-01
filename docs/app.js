@@ -50,6 +50,30 @@ function reveal(scope) {
   (scope || document).querySelectorAll('.reveal').forEach(n => io.observe(n));
 }
 
+// ---------- extension registry ----------
+// Self-contained tool views live in docs/features/*.js (loaded after this file)
+// and register themselves here, so each is an isolated file with no merge
+// conflicts. router() dispatches #/<hash> to the registered render fn.
+const EXT_VIEWS = Object.create(null);
+function registerView(hash, fn) { EXT_VIEWS[hash] = fn; }
+// Load a JSON file with the per-load cache-buster. Pass {raw:true} for files that
+// live in the source repo (served from raw.githubusercontent) rather than docs/.
+async function loadJSON(path, opts) {
+  const url = opts && opts.raw ? raw(path) : path;
+  const res = await fetch(cb(url));
+  if (!res.ok) throw new Error(`${res.status} ${path}`);
+  return res.json();
+}
+// Public toolkit for feature files (also available via shared top-level scope).
+window.WOC = {
+  el, esc, cb, raw, reveal, registerView, loadJSON, app,
+  get RAW() { return RAW; },
+  // Shared colour maps (kept in sync with the ones used across the app).
+  QUALITY_COLOR: { legendary: '#e6803a', epic: '#a86bd6', rare: '#46b8da', uncommon: '#5cb85c', common: '#c8c8cf', poor: '#7a7a82' },
+  RANK_COLOR: { boss: '#e6bb6a', elite: '#e6803a', rare: '#46b8da', normal: '#c8c8cf' },
+  STAT_LABEL: { str: 'Strength', agi: 'Agility', sta: 'Stamina', int: 'Intellect', spi: 'Spirit', armor: 'Armor', ap: 'Attack Power', crit: 'Crit', dodge: 'Dodge' },
+};
+
 // ---------- markdown rendering ----------
 function renderMarkdown(container, md, docPath) {
   const base = dirOf(docPath);
@@ -2297,6 +2321,7 @@ function router() {
   if (head === 'delves') return simpleListView('Delves', 'Replayable', 'Scalable mini-instances with tiers, affixes, companions and a Marks vendor.',
     M.delves.map(d => ({ name: d.name, file: d.file, meta: `Minimum level ${d.minLevel}`, tags: ['Tiers', 'Vendor'] })));
   if (head === 'doc') return docView(decodeURIComponent(parts[1] || ''), parts[2] ? decodeURIComponent(parts[2]) : '');
+  if (EXT_VIEWS[head]) return EXT_VIEWS[head](parts.slice(1));
   return home();
 }
 

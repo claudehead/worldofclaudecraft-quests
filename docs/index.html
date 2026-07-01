@@ -6,7 +6,7 @@
   <title>World of Claudecraft — Field Guide</title>
   <meta name="description" content="The complete field guide to World of Claudecraft — quests, bestiary, classes, dungeons and delves.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=75">
+  <link rel="stylesheet" href="styles.css?v=76">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,6 +51,11 @@
       <div class="navgroup">
         <button type="button" class="navgroupbtn">Tools</button>
         <div class="navdropdown">
+          <a class="link" data-go="#/planner">🌿 Talent / build planner</a>
+          <a class="link" data-go="#/loadout">🛡 Loadout simulator</a>
+          <a class="link" data-go="#/combatlog">⚔ Combat log simulator</a>
+          <a class="link" data-go="#/droplab">🎲 Drop-rate lab</a>
+          <a class="link" data-go="#/pathfinder">🧭 Leveling pathfinder</a>
           <a class="link" data-go="#/farming">Farming calculator</a>
           <a class="link" data-go="#/leveltime">Time to max level</a>
           <a class="link" data-go="#/solo">Can I solo this?</a>
@@ -141,7 +146,13 @@
       document.head.appendChild(s);
     }
   </script>
-  <script src="app.js?v=75"></script>
+  <script src="app.js?v=76"></script>
+  <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
+  <script src="features/planner.js?v=76"></script>
+  <script src="features/loadout.js?v=76"></script>
+  <script src="features/combatlog.js?v=76"></script>
+  <script src="features/droplab.js?v=76"></script>
+  <script src="features/pathfinder.js?v=76"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});
