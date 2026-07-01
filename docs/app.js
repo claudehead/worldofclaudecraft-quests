@@ -1471,12 +1471,19 @@ async function quest3dView(id) {
   const cache = {}; const loadGLTF = (u) => cache[u] || (cache[u] = loader.loadAsync(MODEL_BASE + u).catch(() => null));
   const canvas = app.querySelector('#qrcanvas');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.12;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   const b = q.bounds, cx = (b.x0 + b.x1) / 2, cz = (b.z0 + b.z1) / 2, span = Math.max(b.x1 - b.x0, b.z1 - b.z0);
-  const sky = 0x9fbcd6;
-  const scene = new THREE.Scene(); scene.background = new THREE.Color(sky); scene.fog = new THREE.Fog(sky, span * 1.8, span * 4.5);
+  const scene = new THREE.Scene();
+  const skc = document.createElement('canvas'); skc.width = 2; skc.height = 256; const sgx = skc.getContext('2d');
+  const grd = sgx.createLinearGradient(0, 0, 0, 256); grd.addColorStop(0, '#4a6ea5'); grd.addColorStop(0.55, '#a9b6b2'); grd.addColorStop(1, '#ecd6a4'); sgx.fillStyle = grd; sgx.fillRect(0, 0, 2, 256);
+  const skyTex = new THREE.CanvasTexture(skc); try { skyTex.colorSpace = THREE.SRGBColorSpace; } catch (e) {}
+  scene.background = skyTex; scene.fog = new THREE.Fog(0xe0d0a6, span * 1.4, span * 4.2);
   const cam = new THREE.PerspectiveCamera(58, 1, 0.5, span * 8);
-  scene.add(new THREE.HemisphereLight(0xcfe2f2, 0x40392c, 1.05));
-  const sun = new THREE.DirectionalLight(0xfff2d8, 1.0); sun.position.set(span * 0.3, span * 0.7, span * 0.2); scene.add(sun);
+  scene.add(new THREE.HemisphereLight(0xffe9c8, 0x3a2f1e, 1.0));
+  const sun = new THREE.DirectionalLight(0xffdca0, 1.4); sun.position.set(cx - span * 0.5, span * 0.5, cz - span * 0.32); sun.target.position.set(cx, 0, cz); scene.add(sun); scene.add(sun.target);
+  sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0006;
+  { const sc = sun.shadow.camera, R = span * 0.72; sc.left = -R; sc.right = R; sc.top = R; sc.bottom = -R; sc.near = span * 0.05; sc.far = span * 2.4; sc.updateProjectionMatrix(); }
   // real baked terrain (matches the live overworld) + bilinear sampler
   const T = q.terrain;
   const sampleH = (x, z) => {
@@ -1493,7 +1500,7 @@ async function quest3dView(id) {
   const ground = new THREE.Mesh(gGeo, new THREE.MeshStandardMaterial({ color: q.biome || '#3f5a33', roughness: 1, flatShading: true }));
   ground.rotation.x = -Math.PI / 2; ground.position.set(cx, 0, cz); scene.add(ground);
   // lakes + roads
-  for (const l of (q.lakes || [])) { const m = new THREE.Mesh(new THREE.CircleGeometry(l.r, 32), new THREE.MeshStandardMaterial({ color: 0x2b6fa6, transparent: true, opacity: 0.85, roughness: 0.15 })); m.rotation.x = -Math.PI / 2; m.position.set(l.x, sampleH(l.x, l.z) + 0.3, l.z); scene.add(m); }
+  for (const l of (q.lakes || [])) { const m = new THREE.Mesh(new THREE.CircleGeometry(l.r, 40), new THREE.MeshStandardMaterial({ color: 0x2f6a86, transparent: true, opacity: 0.82, roughness: 0.05, metalness: 0.45 })); m.rotation.x = -Math.PI / 2; m.position.set(l.x, sampleH(l.x, l.z) + 0.3, l.z); m.receiveShadow = true; scene.add(m); }
   for (const r of (q.roads || [])) { if (r.length < 2) continue; const c = new THREE.CatmullRomCurve3(r.map(p => new THREE.Vector3(p.x, sampleH(p.x, p.z) + 0.4, p.z))); scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, Math.max(20, r.length * 8), 0.9, 6, false), new THREE.MeshStandardMaterial({ color: 0x9c8157, roughness: 1 }))); }
   // model placement helper (clone + tint + scale to height)
   async function place(url, x, z, { targetH = 2, tint = null, ts = 0, rotY = 0 } = {}) {
@@ -1556,6 +1563,7 @@ async function zone3dView(dir) {
     <div style="position:relative;z-index:1;border:1px solid var(--line,#222);border-radius:12px;overflow:hidden;background:#9fbcd6">
       <canvas id="z3canvas" style="display:block;width:100%;height:70vh;touch-action:none"></canvas>
       <div id="z3load" style="position:absolute;left:10px;top:10px;font:600 12px system-ui;color:#fff;background:rgba(0,0,0,.5);padding:4px 8px;border-radius:6px">Building the zone…</div>
+      <div style="position:absolute;left:10px;bottom:10px;z-index:5;display:flex;gap:14px;flex-wrap:wrap;font:600 11px system-ui;color:#fbf3dd;background:rgba(12,19,14,.5);padding:6px 11px;border-radius:8px;backdrop-filter:blur(4px)"><span>🟡 NPC</span><span>🔴 Mob camp</span><span>🏷️ Place</span><span style="opacity:.75;font-weight:400">drag · scroll/pinch to zoom</span></div>
     </div>
   </div></section>`));
   if (!zone3dData) {
@@ -1574,20 +1582,30 @@ async function zone3dView(dir) {
   const cache = {}; const loadGLTF = (u) => cache[u] || (cache[u] = loader.loadAsync(MODEL_BASE + u).catch(() => null));
   const canvas = app.querySelector('#z3canvas');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  const b = q.bounds, cx = (b.x0 + b.x1) / 2, cz = (b.z0 + b.z1) / 2, span = Math.max(b.x1 - b.x0, b.z1 - b.z0), sky = 0x9fbcd6;
-  const scene = new THREE.Scene(); scene.background = new THREE.Color(sky); scene.fog = new THREE.Fog(sky, span * 0.9, span * 2.4);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.12;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  const b = q.bounds, cx = (b.x0 + b.x1) / 2, cz = (b.z0 + b.z1) / 2, span = Math.max(b.x1 - b.x0, b.z1 - b.z0);
+  const scene = new THREE.Scene();
+  // golden-hour gradient sky + warm atmospheric haze
+  const skc = document.createElement('canvas'); skc.width = 2; skc.height = 256; const sgx = skc.getContext('2d');
+  const grd = sgx.createLinearGradient(0, 0, 0, 256); grd.addColorStop(0, '#4a6ea5'); grd.addColorStop(0.55, '#a9b6b2'); grd.addColorStop(1, '#ecd6a4'); sgx.fillStyle = grd; sgx.fillRect(0, 0, 2, 256);
+  const skyTex = new THREE.CanvasTexture(skc); try { skyTex.colorSpace = THREE.SRGBColorSpace; } catch (e) {}
+  scene.background = skyTex; scene.fog = new THREE.Fog(0xe0d0a6, span * 0.7, span * 2.2);
   const cam = new THREE.PerspectiveCamera(58, 1, 0.5, span * 8);
-  scene.add(new THREE.HemisphereLight(0xcfe2f2, 0x40392c, 1.05));
-  const sun = new THREE.DirectionalLight(0xfff2d8, 1.0); sun.position.set(span * 0.3, span * 0.7, span * 0.2); scene.add(sun);
+  scene.add(new THREE.HemisphereLight(0xffe9c8, 0x3a2f1e, 1.0));
+  const sun = new THREE.DirectionalLight(0xffdca0, 1.4); sun.position.set(cx - span * 0.5, span * 0.5, cz - span * 0.32); sun.target.position.set(cx, 0, cz); scene.add(sun); scene.add(sun.target);
+  sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0006;
+  { const sc = sun.shadow.camera, R = span * 0.72; sc.left = -R; sc.right = R; sc.top = R; sc.bottom = -R; sc.near = span * 0.05; sc.far = span * 2.4; sc.updateProjectionMatrix(); }
   const T = q.terrain;
   const sampleH = (x, z) => { if (!T) return 0; const fx = Math.max(0, Math.min(T.res - 1.001, (x - T.x0) / (T.x1 - T.x0) * (T.res - 1))), fz = Math.max(0, Math.min(T.res - 1.001, (z - T.z0) / (T.z1 - T.z0) * (T.res - 1))); const j = Math.floor(fx), i = Math.floor(fz), tj = fx - j, ti = fz - i, w = T.res, H = T.heights; return (H[i * w + j] * (1 - tj) + H[i * w + j + 1] * tj) * (1 - ti) + (H[(i + 1) * w + j] * (1 - tj) + H[(i + 1) * w + j + 1] * tj) * ti; };
   const gGeo = new THREE.PlaneGeometry(T.x1 - T.x0, T.z1 - T.z0, T.res - 1, T.res - 1); const gp = gGeo.attributes.position;
   for (let k = 0; k < gp.count; k++) gp.setZ(k, sampleH(cx + gp.getX(k), cz - gp.getY(k)));
   gGeo.computeVertexNormals();
-  const ground = new THREE.Mesh(gGeo, new THREE.MeshStandardMaterial({ color: q.biome || '#3f5a33', roughness: 1, flatShading: true })); ground.rotation.x = -Math.PI / 2; ground.position.set(cx, 0, cz); scene.add(ground);
-  for (const l of (q.lakes || [])) { const m = new THREE.Mesh(new THREE.CircleGeometry(l.r, 32), new THREE.MeshStandardMaterial({ color: 0x2b6fa6, transparent: true, opacity: 0.85, roughness: 0.15 })); m.rotation.x = -Math.PI / 2; m.position.set(l.x, sampleH(l.x, l.z) + 0.3, l.z); scene.add(m); }
+  { const gp2 = gGeo.attributes.position; let mn = 1e9, mx = -1e9; for (let k = 0; k < gp2.count; k++) { const y = gp2.getZ(k); if (y < mn) mn = y; if (y > mx) mx = y; } const rng = (mx - mn) || 1; const cA = new THREE.Color('#4c6b33'), cB = new THREE.Color('#6d6238'), cC = new THREE.Color('#918776'), tc = new THREE.Color(); const carr = new Float32Array(gp2.count * 3); for (let k = 0; k < gp2.count; k++) { const t = (gp2.getZ(k) - mn) / rng; if (t < 0.5) tc.copy(cA).lerp(cB, t * 2); else tc.copy(cB).lerp(cC, (t - 0.5) * 2); carr[k * 3] = tc.r; carr[k * 3 + 1] = tc.g; carr[k * 3 + 2] = tc.b; } gGeo.setAttribute('color', new THREE.BufferAttribute(carr, 3)); }
+  const ground = new THREE.Mesh(gGeo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 1, flatShading: true })); ground.rotation.x = -Math.PI / 2; ground.position.set(cx, 0, cz); ground.receiveShadow = true; scene.add(ground);
+  for (const l of (q.lakes || [])) { const m = new THREE.Mesh(new THREE.CircleGeometry(l.r, 40), new THREE.MeshStandardMaterial({ color: 0x2f6a86, transparent: true, opacity: 0.82, roughness: 0.05, metalness: 0.45 })); m.rotation.x = -Math.PI / 2; m.position.set(l.x, sampleH(l.x, l.z) + 0.3, l.z); m.receiveShadow = true; scene.add(m); }
   for (const r of (q.roads || [])) { if (r.length < 2) continue; const c = new THREE.CatmullRomCurve3(r.map(p => new THREE.Vector3(p.x, sampleH(p.x, p.z) + 0.4, p.z))); scene.add(new THREE.Mesh(new THREE.TubeGeometry(c, Math.max(20, r.length * 8), 0.9, 6, false), new THREE.MeshStandardMaterial({ color: 0x9c8157, roughness: 1 }))); }
-  async function place(url, x, z, { targetH = 2, tint = null, ts = 0, rotY = 0 } = {}) { const g = await loadGLTF(url); if (!g) return; const o = SkeletonUtils.clone(g.scene); if (tint) { const tc = new THREE.Color(tint); o.traverse(n => { if (n.isMesh && n.material) { n.material = Array.isArray(n.material) ? n.material.map(m => m.clone()) : n.material.clone(); (Array.isArray(n.material) ? n.material : [n.material]).forEach(m => { if (m.color) m.color.lerp(tc, ts); }); } }); } let bx = new THREE.Box3().setFromObject(o); const h = (bx.max.y - bx.min.y) || 1; o.scale.setScalar(targetH / h); bx = new THREE.Box3().setFromObject(o); o.position.set(x, sampleH(x, z) - bx.min.y, z); o.rotation.y = rotY; scene.add(o); }
+  async function place(url, x, z, { targetH = 2, tint = null, ts = 0, rotY = 0 } = {}) { const g = await loadGLTF(url); if (!g) return; const o = SkeletonUtils.clone(g.scene); if (tint) { const tc = new THREE.Color(tint); o.traverse(n => { if (n.isMesh && n.material) { n.material = Array.isArray(n.material) ? n.material.map(m => m.clone()) : n.material.clone(); (Array.isArray(n.material) ? n.material : [n.material]).forEach(m => { if (m.color) m.color.lerp(tc, ts); }); } }); } let bx = new THREE.Box3().setFromObject(o); const h = (bx.max.y - bx.min.y) || 1; o.scale.setScalar(targetH / h); bx = new THREE.Box3().setFromObject(o); o.position.set(x, sampleH(x, z) - bx.min.y, z); o.rotation.y = rotY; o.traverse((n) => { if (n.isMesh) n.castShadow = true; }); scene.add(o); }
   const LBL = Math.max(4, Math.min(11, span * 0.012));
   const textLabel = (text, fg, bg) => { const font = 'bold 30px system-ui'; const mc = document.createElement('canvas').getContext('2d'); mc.font = font; const w = Math.ceil(mc.measureText(text).width) + 24, h = 46; const cv = document.createElement('canvas'); cv.width = w; cv.height = h; const x = cv.getContext('2d'); x.fillStyle = bg; x.fillRect(0, 0, w, h); x.font = font; x.fillStyle = fg; x.textBaseline = 'middle'; x.textAlign = 'center'; x.fillText(text, w / 2, h / 2 + 1); const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(cv), depthTest: false, transparent: true })); sp.scale.set(LBL * (w / h), LBL, 1); return sp; };
   const addLabel = (text, x, y, z, fg, bg = 'rgba(0,0,0,.6)', f = 1) => { const s = textLabel(text, fg, bg); s.scale.multiplyScalar(f); s.position.set(x, y, z); scene.add(s); };
