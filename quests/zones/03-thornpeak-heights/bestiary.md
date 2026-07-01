@@ -132,7 +132,7 @@
 | Health | 414–458 HP |
 | Armor (physical mitigation) | 320–360 (~15% vs a same-level attacker) |
 | Melee damage | 44–76 per hit @ 2s swing (~28–31 DPS) |
-| Location | Thornpeak Heights · ~x:55, z:820 · ~x:25, z:845 · ~x:80, z:845 — [🗺️ show on map](#/map/55/820) |
+| Location | Thornpeak Heights · ~x:55, z:820 · ~x:34, z:845 · ~x:80, z:845 — [🗺️ show on map](#/map/55/820) |
 
 **Best way to kill:**
 
@@ -161,7 +161,7 @@
 | Health | 457–480 HP |
 | Armor (physical mitigation) | 306–324 (~14% vs a same-level attacker) |
 | Melee damage | 46–76 per hit @ 2.3s swing (~26–27 DPS) |
-| Location | Thornpeak Heights · ~x:-40, z:830 · ~x:-15, z:860 — [🗺️ show on map](#/map/-40/830) |
+| Location | Thornpeak Heights · ~x:-40, z:830 · ~x:-40, z:838 — [🗺️ show on map](#/map/-40/830) |
 
 **Best way to kill:**
 

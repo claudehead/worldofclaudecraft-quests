@@ -17,7 +17,7 @@
 
 - **Kill 14× [Boneclad Revenant](bestiary.md#mob-boneclad_revenant)** (level 18–19)
   - Found in the open world at ~x:-40, z:830 (8 mobs, radius 20)
-  - Found in the open world at ~x:-15, z:860 (6 mobs, radius 16)
+  - Found in the open world at ~x:-40, z:838 (6 mobs, radius 16)
   - _Tracker: Boneclad Revenant slain_
 
 Then return to **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ to turn in.

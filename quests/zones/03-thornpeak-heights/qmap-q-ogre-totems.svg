@@ -21,10 +21,10 @@
 <circle cx="863.0" cy="2287.7" r="4" fill="#3a4a42"/>
 <circle cx="890.4" cy="2342.5" r="4" fill="#3a4a42"/>
 <circle cx="643.8" cy="2356.2" r="4" fill="#3a4a42"/>
-<circle cx="561.6" cy="2424.7" r="4" fill="#3a4a42"/>
+<circle cx="586.3" cy="2424.7" r="4" fill="#3a4a42"/>
 <circle cx="602.7" cy="2452.1" r="4" fill="#3a4a42"/>
 <circle cx="383.6" cy="2383.6" r="4" fill="#3a4a42"/>
-<circle cx="452.1" cy="2465.8" r="4" fill="#3a4a42"/>
+<circle cx="383.6" cy="2405.5" r="4" fill="#3a4a42"/>
 <circle cx="400.0" cy="2416.4" r="4" fill="#3a4a42"/>
 <circle cx="712.3" cy="2424.7" r="4" fill="#3a4a42"/>
 <circle cx="712.3" cy="2424.7" r="4" fill="#3a4a42"/>
@@ -35,6 +35,7 @@
 <circle cx="479.5" cy="1939.7" r="4" fill="#3a4a42"/>
 <circle cx="487.7" cy="1950.7" r="4" fill="#3a4a42"/>
 <circle cx="526.0" cy="1904.1" r="4" fill="#3a4a42"/>
+<circle cx="537.0" cy="1934.2" r="4" fill="#3a4a42"/>
 <text x="493.2" y="1917.8" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Highwatch</text>
 <text x="356.2" y="1726.0" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Stalker Ridge</text>
 <text x="726.0" y="1794.5" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Deeprock Burrows</text>

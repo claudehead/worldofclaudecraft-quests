@@ -15,7 +15,7 @@
 ## How to complete
 
 - **Collect 10× Runed Bone Shard**
-  - Drops from [**Boneclad Revenant**](bestiary.md#mob-boneclad_revenant) (70% chance) — Found in the open world at ~x:-40, z:830 (8 mobs, radius 20); Found in the open world at ~x:-15, z:860 (6 mobs, radius 16)
+  - Drops from [**Boneclad Revenant**](bestiary.md#mob-boneclad_revenant) (70% chance) — Found in the open world at ~x:-40, z:830 (8 mobs, radius 20); Found in the open world at ~x:-40, z:838 (6 mobs, radius 16)
   - _Tracker: Runed Bone Shard_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to turn in.

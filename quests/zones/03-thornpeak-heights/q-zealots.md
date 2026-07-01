@@ -16,7 +16,7 @@
 
 - **Kill 12× [Wyrmcult Zealot](bestiary.md#mob-wyrmcult_zealot)** (level 17–19)
   - Found in the open world at ~x:55, z:820 (8 mobs, radius 20)
-  - Found in the open world at ~x:25, z:845 (6 mobs, radius 16)
+  - Found in the open world at ~x:34, z:845 (6 mobs, radius 16)
   - Found in the open world at ~x:80, z:845 (2 mobs, radius 7)
   - _Tracker: Wyrmcult Zealot slain_
 

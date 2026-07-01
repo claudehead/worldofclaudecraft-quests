@@ -255,7 +255,6 @@
 
 - **Grave Blight:** Can blanket you in a heal-absorb — burst-heal through it or wait it out.
 - **Silencing Shriek:** Silences casters — melee/wand it down, or LoS the cast.
-- **Wail of the Grave:** Stacks a fear/dread debuff — don't let the fight drag.
 
 **Loot:**
 
