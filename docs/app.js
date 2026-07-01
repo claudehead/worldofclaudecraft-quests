@@ -226,6 +226,7 @@ async function mobsView() {
       <p>Every creature with its model render, level, health, where it lives, and loot. Filter by zone, type, or rank — or <a href="#/zones">browse by zone</a>.</p></div>
     <div class="controls reveal">
       <input class="search" id="msearch" placeholder="Search creatures…">
+      <select id="msort" style="padding:9px 12px;border-radius:12px;border:1px solid #888;background:#fff;color:#111;color-scheme:light"><option value="level">Sort: Level ↑</option><option value="levelDown">Level ↓</option><option value="name">Name A–Z</option></select>
       <div class="pills" id="mzones"></div>
     </div>
     <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="mfams"></div></div>
@@ -237,8 +238,13 @@ async function mobsView() {
     try { bestiaryData = await (await fetch(cb(raw('bestiary/bestiary.json')))).json(); }
     catch (e) { app.querySelector('#mgrid').innerHTML = `<div class="meta">Couldn't load bestiary (${esc(e.message)}).</div>`; return; }
   }
+  try { if (!mobStatData) mobStatData = await (await fetch(cb('mobstats.json'))).json(); } catch (e) {}
+  try { if (!bossData) bossData = await (await fetch(cb('bosses.json'))).json(); } catch (e) {}
+  const mobStatMap = {}; (mobStatData?.mobs || []).forEach((x) => { mobStatMap[x.id] = x; });
+  const bossMap = {}; (bossData?.bosses || []).forEach((x) => { bossMap[x.id] = x; });
   const grid = app.querySelector('#mgrid'), count = app.querySelector('#mcount');
-  let zone = 'all', fam = 'all', rank = 'all', term = '';
+  let zone = 'all', fam = 'all', rank = 'all', term = '', sortBy = 'level';
+  app.querySelector('#msort').onchange = (e) => { sortBy = e.target.value; draw(); };
   const mkPills = (host, items, onPick) => { items.forEach(([id, label], i) => { const p = el(`<span class="pill ${i === 0 ? 'active' : ''}">${esc(label)}</span>`); p.onclick = () => { host.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); onPick(id); }; host.append(p); }); };
   mkPills(app.querySelector('#mzones'), [['all', 'All zones'], ...bestiaryData.zones], v => { zone = v; draw(); });
   mkPills(app.querySelector('#mfams'), [['all', 'All types'], ...bestiaryData.families], v => { fam = v; draw(); });
@@ -250,22 +256,25 @@ async function mobsView() {
       .filter(m => fam === 'all' || m.family === fam)
       .filter(m => rank === 'all' || m.rank === rank)
       .filter(m => !term || m.name.toLowerCase().includes(term));
+    list.sort((a, b) => sortBy === 'name' ? a.name.localeCompare(b.name) : (sortBy === 'levelDown' ? (b.level - a.level) : (a.level - b.level)) || a.name.localeCompare(b.name));
     count.textContent = `${list.length} of ${bestiaryData.count} creatures`;
     grid.innerHTML = '';
     list.slice(0, 240).forEach(m => {
       const col = RANK_COLOR[m.rank] || '#ccc';
       const rankTag = m.rank !== 'normal' ? `<span class="tag" style="color:${col}">${m.rank[0].toUpperCase() + m.rank.slice(1)}</span>` : '';
       const loot = m.loot.length ? ('Drops: ' + m.loot.slice(0, 3).map(l => esc(l.name) + (l.chance ? ` <span class="droppct">${Math.round(l.chance * 100)}%</span>` : '')).join(', ') + (m.loot.length > 3 ? ` +${m.loot.length - 3}` : '')) : 'No notable drops';
-      const link = m.detailFile ? `#/doc/${encodeURIComponent(m.detailFile)}${m.detailAnchor ? '/' + encodeURIComponent(m.detailAnchor) : ''}` : '';
-      const card = el(`<div class="card gearcard"${link ? ` data-go="${link}"` : ' style="cursor:default"'}>
+      const st = mobStatMap[m.id];
+      const lvl = m.minLevel === m.maxLevel ? ('Lvl ' + m.level) : ('Lvl ' + m.minLevel + '–' + m.maxLevel);
+      const card = el(`<div class="card gearcard" style="cursor:pointer">
         <div class="gearhead">
           ${m.render ? `<img class="gicon" src="${raw(m.render)}" alt="" loading="lazy" style="border-color:${col}">` : `<div class="gicon" style="border-color:${col}"></div>`}
           <div><h3 style="color:${col}">${esc(m.name)}</h3>
-            <div class="meta">Lvl ${esc(m.level)} · ${m.hp} HP · ${esc(m.familyLabel)}</div></div>
+            <div class="meta">${lvl}${m.rank !== 'normal' ? ' · ' + m.rank[0].toUpperCase() + m.rank.slice(1) : ''} · ${esc(m.familyLabel)}</div></div>
         </div>
-        <div class="gstats">📍 ${esc(m.zoneTitle || '—')}${m.location && m.mapXZ ? ` · ${esc(m.location)}` : ''}</div>
-        <div class="gsrc">${loot} ${rankTag}</div>
+        <div class="gstats">❤ ${m.hp} HP${st ? ` · ⚔ ${st.dmgMin}–${st.dmgMax} · ${st.dps} dps` : ''}</div>
+        <div class="gsrc">📍 ${esc(m.zoneTitle || (st && st.zones ? st.zones.join(', ') : '—'))}${m.loot.length ? ` · ${m.loot.length} drop${m.loot.length === 1 ? '' : 's'}` : ''} ${rankTag}</div>
       </div>`);
+      card.onclick = () => openMobDetail(m, mobStatMap[m.id], bossMap[m.id]);
       grid.append(card);
     });
     if (!list.length) grid.append(el('<div class="meta">No creatures match.</div>'));
@@ -275,6 +284,49 @@ async function mobsView() {
 }
 
 const QUALITY_COLOR = { legendary: '#e6803a', epic: '#a86bd6', rare: '#46b8da', uncommon: '#5cb85c', common: '#c8c8cf', poor: '#7a7a82' };
+
+// Bestiary creature detail — a modal pulling together portrait, combat stats,
+// full loot, and (for bosses) mechanics.
+function openMobDetail(m, st, boss) {
+  const col = RANK_COLOR[m.rank] || '#ccc';
+  const lvl = m.minLevel === m.maxLevel ? ('Level ' + m.level) : ('Level ' + m.minLevel + '–' + m.maxLevel);
+  const sRow = (k, v) => `<div style="display:flex;justify-content:space-between;gap:12px;padding:4px 0;border-bottom:1px solid var(--line,#262626)"><span class="meta">${k}</span><b>${v}</b></div>`;
+  const combat = st
+    ? sRow('Health', st.hp + ' HP') + sRow('Damage', st.dmgMin + '–' + st.dmgMax + ' @ ' + st.attackSpeed + 's') + sRow('DPS', st.dps) + sRow('Armor', st.armor) + (st.spawns ? sRow('Spawns in world', st.spawns) : '')
+    : (m.hp ? sRow('Health', m.hp + ' HP') + '<p class="meta" style="margin:6px 0 0">Detailed damage/armor stats aren\'t published for dungeon-only mobs.</p>' : '<p class="meta" style="margin:4px 0">No combat stats.</p>');
+  const loot = m.loot && m.loot.length
+    ? m.loot.map((l) => `<li style="color:${QUALITY_COLOR[l.quality] || '#fff'}">${esc(l.name)}${l.chance ? ` <span class="meta" style="color:var(--muted-2,#888)">${Math.round(l.chance * 100)}%</span>` : ''}</li>`).join('')
+    : '<li class="meta">No notable drops</li>';
+  const mech = boss && boss.tips && boss.tips.length
+    ? `<h4 style="margin:16px 0 6px;font-size:15px">Mechanics</h4><ul style="margin:0;padding-left:18px;line-height:1.7">${boss.tips.map((t) => `<li>${esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}</li>`).join('')}</ul>`
+    : '';
+  const ov = el(`<div style="position:fixed;inset:0;z-index:120;background:rgba(6,8,6,.72);backdrop-filter:blur(6px);display:flex;justify-content:center;align-items:flex-start;padding:7vh 16px;overflow-y:auto">
+    <div class="card" style="width:min(560px,94vw);cursor:default;padding:20px 22px">
+      <div style="display:flex;gap:16px;align-items:flex-start">
+        ${m.render ? `<img src="${raw(m.render)}" alt="" loading="lazy" style="width:96px;height:96px;object-fit:contain;border:2px solid ${col};border-radius:12px;background:rgba(0,0,0,.25);flex:none">` : ''}
+        <div style="min-width:0"><h2 style="margin:0;color:${col};font-size:22px">${esc(m.name)}</h2>
+          <div class="meta" style="margin-top:4px">${lvl} · ${m.rank[0].toUpperCase() + m.rank.slice(1)} · ${esc(m.familyLabel)}</div>
+          <div class="meta" style="margin-top:2px">📍 ${esc(m.zoneTitle || (st && st.zones ? st.zones.join(', ') : '—'))}${m.location ? ' · ' + esc(m.location) : ''}</div></div>
+      </div>
+      <h4 style="margin:16px 0 6px;font-size:15px">Combat</h4>${combat}
+      <h4 style="margin:16px 0 6px;font-size:15px">Loot ${m.loot && m.loot.length ? `<span class="meta" style="font-weight:400">(${m.loot.length})</span>` : ''}</h4>
+      <ul style="margin:0;padding-left:18px;line-height:1.75">${loot}</ul>
+      ${mech}
+      <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+        <span class="btn ghost" data-go="#/solo" style="font-size:13px;padding:8px 14px">⚔ Can I solo this?</span>
+        <span class="btn ghost mobclose" style="font-size:13px;padding:8px 14px">Close ✕</span>
+      </div>
+    </div></div>`);
+  const box = ov.querySelector('.card');
+  box.onclick = (e) => e.stopPropagation();
+  const close = () => { ov.remove(); document.removeEventListener('keydown', onKey); };
+  ov.onclick = close;
+  ov.querySelector('.mobclose').onclick = close;
+  ov.querySelectorAll('[data-go]').forEach((x) => x.addEventListener('click', close));
+  const onKey = (e) => { if (e.key === 'Escape') close(); };
+  document.addEventListener('keydown', onKey);
+  document.body.append(ov);
+}
 // Render an item source; for drops, link each mob to its bestiary entry.
 function sourceHTML(src) {
   if (!src) return '';
