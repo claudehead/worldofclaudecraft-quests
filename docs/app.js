@@ -317,12 +317,13 @@ function openMobDetail(m, st, boss) {
         <span class="btn ghost mobclose" style="font-size:13px;padding:8px 14px">Close ✕</span>
       </div>
     </div></div>`);
-  const box = ov.querySelector('.card');
-  box.onclick = (e) => e.stopPropagation();
   const close = () => { ov.remove(); document.removeEventListener('keydown', onKey); };
-  ov.onclick = close;
+  // close only on a true backdrop click — don't stopPropagation inside the card,
+  // or the global [data-go] navigation handler on document never fires.
+  ov.onclick = (e) => { if (e.target === ov) close(); };
   ov.querySelector('.mobclose').onclick = close;
-  ov.querySelectorAll('[data-go]').forEach((x) => x.addEventListener('click', close));
+  // the data-go link navigates via the global handler; just dismiss the modal too
+  ov.querySelector('[data-go]').addEventListener('click', close);
   const onKey = (e) => { if (e.key === 'Escape') close(); };
   document.addEventListener('keydown', onKey);
   document.body.append(ov);
