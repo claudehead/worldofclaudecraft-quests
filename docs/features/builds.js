@@ -115,15 +115,29 @@
     ] },
   ];
 
-  const DPS_MAX = 70, HPS_MAX = 100;
+  // Theoretical level-20 output, computed from base stats + the real combat model,
+  // keyed by class/spec/role. base = leveling greens; bis = full best-in-slot.
+  // metric: DPS (damage) · HPS (healing) · EHP (tank effective health).
+  const NUMS = {
+    'warrior/arms/DPS': { base: 35, bis: 73, metric: 'DPS' }, 'warrior/fury/DPS': { base: 36, bis: 77, metric: 'DPS' }, 'warrior/prot/Tank': { base: 950, bis: 2885, metric: 'EHP' },
+    'paladin/retribution/DPS': { base: 30, bis: 64, metric: 'DPS' }, 'paladin/protection/Tank': { base: 929, bis: 2851, metric: 'EHP' }, 'paladin/holy/Healer': { base: 84, bis: 94, metric: 'HPS' },
+    'hunter/marksmanship/DPS': { base: 34, bis: 68, metric: 'DPS' }, 'hunter/beast_mastery/DPS': { base: 30, bis: 60, metric: 'DPS' }, 'hunter/survival/DPS': { base: 28, bis: 60, metric: 'DPS' },
+    'rogue/assassination/DPS': { base: 39, bis: 81, metric: 'DPS' }, 'rogue/combat/DPS': { base: 34, bis: 73, metric: 'DPS' }, 'rogue/subtlety/DPS': { base: 37, bis: 77, metric: 'DPS' },
+    'priest/shadow/DPS': { base: 78, bis: 92, metric: 'DPS' }, 'priest/discipline/Healer': { base: 92, bis: 103, metric: 'HPS' }, 'priest/holy/Healer': { base: 101, bis: 113, metric: 'HPS' },
+    'shaman/elemental/DPS': { base: 60, bis: 67, metric: 'DPS' }, 'shaman/enhancement/DPS': { base: 25, bis: 58, metric: 'DPS' }, 'shaman/restoration/Healer': { base: 71, bis: 80, metric: 'HPS' },
+    'mage/fire/DPS': { base: 60, bis: 72, metric: 'DPS' }, 'mage/frost/DPS': { base: 64, bis: 75, metric: 'DPS' }, 'mage/arcane/DPS': { base: 61, bis: 73, metric: 'DPS' },
+    'warlock/affliction/DPS': { base: 77, bis: 93, metric: 'DPS' }, 'warlock/demonology/DPS': { base: 60, bis: 72, metric: 'DPS' }, 'warlock/destruction/DPS': { base: 63, bis: 76, metric: 'DPS' },
+    'druid/balance/DPS': { base: 70, bis: 78, metric: 'DPS' }, 'druid/feral/DPS': { base: 30, bis: 41, metric: 'DPS' }, 'druid/feral/Tank': { base: 729, bis: 1908, metric: 'EHP' }, 'druid/restoration/Healer': { base: 81, bis: 91, metric: 'HPS' },
+  };
+  const METRIC_MAX = { DPS: 85, HPS: 115, EHP: 2900 };
+  const numFor = (cls, b) => NUMS[`${cls.id}/${b.spec}/${b.role}`] || { base: 0, bis: 0, metric: 'DPS' };
+  const fmtN = (v, m) => m === 'EHP' ? v.toLocaleString() : `~${v} ${m}`;
 
-  function card(cls, b) {
+  function card(cls, b, bisMode) {
     const rc = ROLE_COLOR[b.role];
-    const metric = b.role === 'DPS'
-      ? { label: `~${b.dps} DPS`, w: Math.min(100, (b.dps / DPS_MAX) * 100) }
-      : b.role === 'Healer'
-        ? { label: `~${b.hps} HPS`, w: Math.min(100, (b.hps / HPS_MAX) * 100) }
-        : { label: 'Tank', w: 100 };
+    const n = numFor(cls, b);
+    const sel = bisMode ? n.bis : n.base, alt = bisMode ? n.base : n.bis;
+    const w = Math.min(100, (sel / (METRIC_MAX[n.metric] || 100)) * 100);
     return `<div class="card build-card" data-role="${b.role}" style="padding:15px 16px;display:flex;flex-direction:column;gap:9px">
       <div style="display:flex;align-items:baseline;gap:9px">
         <span style="font-size:1.5rem;line-height:1">${b.icon}</span>
@@ -134,8 +148,9 @@
         <span class="pill" style="background:${rc};color:#0c130e;font-weight:700;align-self:flex-start">${esc(b.role)}</span>
       </div>
       <div>
-        <div style="display:flex;justify-content:space-between;font-size:.8rem" class="meta"><span>${b.role === 'Tank' ? 'Role' : 'Theoretical L20'}</span><b style="color:${rc}">${metric.label}</b></div>
-        <div style="height:7px;border-radius:4px;background:var(--line,#26201a);overflow:hidden;margin-top:3px"><div style="height:100%;width:${metric.w}%;background:linear-gradient(90deg,${rc},${rc}aa);border-radius:4px"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:.8rem" class="meta"><span>${bisMode ? 'BiS geared' : 'Leveling greens'} · L20</span><b style="color:${rc}">${fmtN(sel, n.metric)}</b></div>
+        <div style="height:7px;border-radius:4px;background:var(--line,#26201a);overflow:hidden;margin-top:3px"><div style="height:100%;width:${w}%;background:linear-gradient(90deg,${rc},${rc}aa);border-radius:4px"></div></div>
+        <div class="meta" style="font-size:.72rem;text-align:right;margin-top:2px">${bisMode ? 'greens' : 'BiS'} ${fmtN(alt, n.metric).replace(/^~/, '')}</div>
       </div>
       <div class="meta" style="font-size:.83rem;line-height:1.4">🌿 ${esc(b.talents)}</div>
       <details class="build-rot">
@@ -151,7 +166,7 @@
     app.innerHTML = '';
     app.append(el(`<section class="block"><div class="wrap">
       <div class="shead reveal"><span class="eyebrow">Guide · theorycraft</span><h2>Build compendium</h2>
-        <p>Named top builds for every class — DPS, healer and tank — each with a talent summary, a priority rotation (top&nbsp;=&nbsp;cast first), and a one-click link into the planner. DPS/HPS are <b>theoretical single-target at level&nbsp;20</b> (white-hits + rotation, no misses) — read them as relative yardsticks; crit, gear and cooldowns push them higher.</p></div>
+        <p>Named top builds for every class — DPS, healer and tank — each with a talent summary, a priority rotation (top&nbsp;=&nbsp;cast first), and a one-click link into the planner. Numbers are <b>theoretical at level&nbsp;20</b> (rotation, no misses) — DPS for damage, HPS for healers, effective-HP for tanks. Toggle <b>BiS gear</b> vs <b>leveling greens</b> to see the range; each card shows both. Read them as relative yardsticks.</p></div>
       <div class="controls reveal" style="gap:14px;flex-wrap:wrap;align-items:flex-end">
         <div class="pills" id="bd-filter">
           ${['All', 'DPS', 'Healer', 'Tank'].map((r, i) => `<span class="pill${i === 0 ? ' active' : ''}" data-f="${r}">${r === 'All' ? 'All roles' : r}</span>`).join('')}
@@ -168,6 +183,10 @@
             <option value="name">Name (A–Z)</option>
             <option value="role">Role</option>
           </select></label>
+        <div class="pills" id="bd-gear" title="Toggle gear level">
+          <span class="pill active" data-g="bis">BiS gear</span>
+          <span class="pill" data-g="base">Leveling greens</span>
+        </div>
         <span class="meta" id="bd-count" style="padding-bottom:8px"></span>
       </div>
       <div id="bd-body" class="reveal"></div>
@@ -175,9 +194,10 @@
 
     const body = app.querySelector('#bd-body');
     const countEl = app.querySelector('#bd-count');
-    const st = { role: 'All', cls: 'All', sort: 'class' };
+    const st = { role: 'All', cls: 'All', sort: 'class', bis: true };
     const grid = inner => `<div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))">${inner}</div>`;
-    const power = x => (x.b.role === 'Healer' ? x.b.hps : x.b.role === 'DPS' ? x.b.dps : 0) || 0;
+    // sort power: DPS/HPS at the selected gear level; tanks (EHP) sink to 0 in a damage/healing sort
+    const power = x => { const n = numFor(x.cls, x.b); return n.metric === 'EHP' ? 0 : (st.bis ? n.bis : n.base); };
 
     function render() {
       // flat list of {cls,b} passing the role + class filters
@@ -197,7 +217,7 @@
           if (!cards.length) return '';
           return `<div class="build-class" style="margin-top:22px">
             <div class="shead" style="margin-bottom:10px"><h3 style="margin:0">${esc(cls.name)} <span class="meta" style="font-weight:400;font-size:.8rem">· ${esc(cls.resource)}</span></h3></div>
-            ${grid(cards.map(x => card(x.cls, x.b)).join(''))}</div>`;
+            ${grid(cards.map(x => card(x.cls, x.b, st.bis)).join(''))}</div>`;
         }).join('');
       } else {
         const cmp = {
@@ -207,7 +227,7 @@
           role: (a, z) => a.b.role.localeCompare(z.b.role) || power(z) - power(a),
         }[st.sort];
         list.sort(cmp);
-        body.innerHTML = `<div style="margin-top:22px">${grid(list.map(x => card(x.cls, x.b)).join(''))}</div>`;
+        body.innerHTML = `<div style="margin-top:22px">${grid(list.map(x => card(x.cls, x.b, st.bis)).join(''))}</div>`;
       }
       reveal(body);
     }
@@ -223,6 +243,15 @@
     });
     app.querySelector('#bd-class').onchange = e => { st.cls = e.target.value; render(); };
     app.querySelector('#bd-sort').onchange = e => { st.sort = e.target.value; render(); };
+    const gearHost = app.querySelector('#bd-gear');
+    gearHost.querySelectorAll('.pill').forEach(p => {
+      p.onclick = () => {
+        gearHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        st.bis = p.getAttribute('data-g') === 'bis';
+        render();
+      };
+    });
     render();
     reveal();
   }
