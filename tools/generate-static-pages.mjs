@@ -101,9 +101,30 @@ function writePage(route, title, description, contentHtml, kind) {
 
 const urls = ['/']; // homepage already exists (index.html)
 
+// Rich content: turn thin section stubs into real lists of named, linked entities,
+// sourced from search.json (regenerated each build → stays in sync, no UI coupling).
+let byType = {};
+try {
+  const search = JSON.parse(fs.readFileSync(path.join(DOCS, 'search.json'), 'utf8'));
+  for (const e of search) (byType[e.t] ||= []).push(e);
+} catch { /* search.json optional */ }
+const SECTION_TYPES = {
+  quests: ['Quest'], gear: ['Gear'], bis: ['Gear'], abilities: ['Ability'],
+  bestiary: ['Mob', 'Boss'], bosses: ['Boss'], consumables: ['Consumable'],
+  classes: ['Class'], dungeons: ['Dungeon'], delves: ['Delve'], augments: ['Power-up'],
+};
+
 // sections (trailing slash = the URL GitHub Pages serves 200 for, no 301 redirect)
 for (const [slug, title, desc] of SECTIONS) {
-  const content = `<section class="block"><div class="wrap"><span class="eyebrow">World of Claudecraft</span><h1>${esc(title)}</h1><p class="sub">${esc(desc)}</p><p class="meta">Loading the interactive guide… <a href="/">open the full guide</a>.</p></div></section>`;
+  const types = SECTION_TYPES[slug];
+  const items = types ? types.flatMap((t) => byType[t] || []) : [];
+  let content;
+  if (items.length) {
+    const list = items.map((e) => `<li><a href="${esc((e.go || '#/').replace(/^#/, ''))}">${esc(e.n)}</a></li>`).join('');
+    content = `<section class="block"><div class="wrap"><span class="eyebrow">World of Claudecraft</span><h1>${esc(title)}</h1><p class="sub">${esc(desc)}</p><p class="meta">${items.length} entries — open the full guide for filters, stats and maps.</p><ul class="prelist">${list}</ul></div></section>`;
+  } else {
+    content = `<section class="block"><div class="wrap"><span class="eyebrow">World of Claudecraft</span><h1>${esc(title)}</h1><p class="sub">${esc(desc)}</p><p class="meta">Loading the interactive guide… <a href="/">open the full guide</a>.</p></div></section>`;
+  }
   writePage('/' + slug + '/', title, desc, content, 'section');
   urls.push('/' + slug + '/');
 }

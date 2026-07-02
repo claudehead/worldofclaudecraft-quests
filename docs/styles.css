@@ -522,3 +522,9 @@ body::after {
 .doc blockquote::before { content: "\201C"; font-family: var(--display); position: absolute; left: 5px; top: -8px; color: rgba(232,200,106,.35); font-size: 34px; }
 /* a small mark before the brand */
 nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
+/* prerendered section lists (shown briefly before the SPA hydrates; also what crawlers read) */
+.prelist{list-style:none;padding:0;margin:1rem 0;columns:2;column-gap:1.5rem}
+@media(min-width:800px){.prelist{columns:3}}
+.prelist li{break-inside:avoid;margin:.15rem 0}
+.prelist a{color:var(--link,#7db3ff);text-decoration:none}
+.prelist a:hover{text-decoration:underline}
