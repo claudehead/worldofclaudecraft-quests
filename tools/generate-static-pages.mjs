@@ -14,6 +14,7 @@ const SITE = 'World of Claudecraft';
 const OG_IMG = DOMAIN + '/icon-512.png';
 
 const tpl = fs.readFileSync(path.join(DOCS, 'index.html'), 'utf8');
+const BUILD_DATE = new Date().toISOString().slice(0, 10); // sitemap lastmod (rebuilds only on upstream change)
 
 // ---- main section routes: clean SEO title + description ----
 const SECTIONS = [
@@ -46,8 +47,26 @@ const SECTIONS = [
   ['planner', 'Talent / Build Planner', 'Plan and share full character builds — talents, gear and stats.'],
 ];
 
+// ---- JSON-LD structured data (breadcrumbs + page type) ----
+function jsonLd(route, title, description, kind) {
+  const url = DOMAIN + route;
+  const crumbs = [{ '@type': 'ListItem', position: 1, name: 'Home', item: DOMAIN + '/' }];
+  if (kind === 'doc') crumbs.push({ '@type': 'ListItem', position: 2, name: 'Guides', item: DOMAIN + '/' });
+  crumbs.push({ '@type': 'ListItem', position: crumbs.length + 1, name: title, item: url });
+  const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs };
+  const page = {
+    '@context': 'https://schema.org',
+    '@type': kind === 'doc' ? 'Article' : 'WebPage',
+    [kind === 'doc' ? 'headline' : 'name']: `${title} — ${SITE}`,
+    description, url,
+    isPartOf: { '@type': 'WebSite', name: SITE, url: DOMAIN + '/' },
+    publisher: { '@type': 'Organization', name: SITE, url: DOMAIN + '/' },
+  };
+  return `<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>\n<script type="application/ld+json">${JSON.stringify(page)}</script>`;
+}
+
 // ---- head injection ----
-function pageHtml(route, title, description, contentHtml) {
+function pageHtml(route, title, description, contentHtml, kind) {
   const url = DOMAIN + route;
   const fullTitle = `${title} — ${SITE}`;
   const desc = (description || '').replace(/"/g, '&quot;').replace(/\s+/g, ' ').trim().slice(0, 300);
@@ -68,15 +87,16 @@ function pageHtml(route, title, description, contentHtml) {
   let html = tpl
     .replace(/<title>[\s\S]*?<\/title>/, '') // drop original title
     .replace(/<meta name="description"[^>]*>/, head) // swap description block for full head
-    .replace('<main id="app"><div class="spinner"></div></main>', `<main id="app">${contentHtml}</main>`);
+    .replace('<main id="app"><div class="spinner"></div></main>', `<main id="app">${contentHtml}</main>`)
+    .replace('</body>', `${jsonLd(route, title, description, kind)}\n</body>`);
   return html;
 }
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-function writePage(route, title, description, contentHtml) {
+function writePage(route, title, description, contentHtml, kind) {
   const dir = path.join(DOCS, route.replace(/^\//, ''));
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), pageHtml(route, title, description, contentHtml));
+  fs.writeFileSync(path.join(dir, 'index.html'), pageHtml(route, title, description, contentHtml, kind));
 }
 
 const urls = ['/']; // homepage already exists (index.html)
@@ -84,7 +104,7 @@ const urls = ['/']; // homepage already exists (index.html)
 // sections (trailing slash = the URL GitHub Pages serves 200 for, no 301 redirect)
 for (const [slug, title, desc] of SECTIONS) {
   const content = `<section class="block"><div class="wrap"><span class="eyebrow">World of Claudecraft</span><h1>${esc(title)}</h1><p class="sub">${esc(desc)}</p><p class="meta">Loading the interactive guide… <a href="/">open the full guide</a>.</p></div></section>`;
-  writePage('/' + slug + '/', title, desc, content);
+  writePage('/' + slug + '/', title, desc, content, 'section');
   urls.push('/' + slug + '/');
 }
 
@@ -101,7 +121,7 @@ for (const d of DOC_DIRS) {
     const firstPara = (md.replace(/^#.*$/m, '').match(/^\s*([^\n#>|*\-].{20,})$/m) || [])[1] || `${h1} — a World of Claudecraft guide.`;
     const bodyHtml = marked.parse(md, { mangle: false, headerIds: true });
     const route = `/doc/${d}/${f.replace(/\.md$/, '')}/`;
-    writePage(route, h1.trim(), firstPara.trim(), `<article class="doc"><div class="wrap">${bodyHtml}</div></article>`);
+    writePage(route, h1.trim(), firstPara.trim(), `<article class="doc"><div class="wrap">${bodyHtml}</div></article>`, 'doc');
     urls.push(route);
     docCount++;
   }
@@ -109,7 +129,7 @@ for (const d of DOC_DIRS) {
 
 // sitemap.xml + robots.txt
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  urls.map((u) => `  <url><loc>${DOMAIN}${u}</loc></url>`).join('\n') + `\n</urlset>\n`;
+  urls.map((u) => `  <url><loc>${DOMAIN}${u}</loc><lastmod>${BUILD_DATE}</lastmod></url>`).join('\n') + `\n</urlset>\n`;
 fs.writeFileSync(path.join(DOCS, 'sitemap.xml'), sitemap);
 fs.writeFileSync(path.join(DOCS, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
 
