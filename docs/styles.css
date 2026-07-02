@@ -528,3 +528,38 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .prelist li{break-inside:avoid;margin:.15rem 0}
 .prelist a{color:var(--link,#7db3ff);text-decoration:none}
 .prelist a:hover{text-decoration:underline}
+/* Progress tracker */
+.trk-tools{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.trk-overall{font-weight:600;margin:.5rem 0 1.5rem;display:flex;align-items:center;gap:.6rem}
+.trk-bar{display:inline-block;flex:1;min-width:120px;max-width:340px;height:10px;border-radius:6px;background:rgba(128,128,128,.25);overflow:hidden;vertical-align:middle}
+.trk-fill{height:100%;background:linear-gradient(90deg,#4a90d9,#7db3ff);transition:width .3s}
+.trk-pct{font-size:12px;color:var(--muted,#9aa)}
+.trk-zone{margin:1.2rem 0;border:1px solid var(--line,rgba(128,128,128,.2));border-radius:12px;padding:.8rem 1rem}
+.trk-zhead{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.5rem}
+.trk-zbar{display:flex;align-items:center;gap:.5rem;margin-left:auto;min-width:180px}
+.trk-qlist{display:grid;gap:.15rem}
+.trk-q{display:flex;align-items:center;gap:.5rem;padding:.25rem .3rem;border-radius:7px}
+.trk-q:hover{background:rgba(128,128,128,.08)}
+.trk-q.done a{opacity:.55;text-decoration:line-through}
+.trk-q input{width:16px;height:16px;flex:none}
+.trk-lv{font-size:11px;color:var(--muted,#9aa);min-width:34px}
+.pill.tiny{font-size:10px;padding:.05rem .35rem}
+/* Leveling coach + zone guides */
+.coach-in{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0}
+.coach-in label{display:flex;flex-direction:column;gap:.25rem;font-size:13px;color:var(--muted,#9aa)}
+.coach-in select,.coach-in input{padding:.4rem .5rem;border-radius:8px;border:1px solid var(--line,rgba(128,128,128,.3));background:var(--panel,#12190f);color:inherit;font:inherit;min-width:150px}
+.coach-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1rem 0}
+.coach-card{border:1px solid var(--line,rgba(128,128,128,.2));border-radius:12px;padding:.9rem 1.1rem}
+.coach-card h2{margin:.1rem 0}
+.coach-quests,.zone-quests{list-style:none;padding:0;margin:.6rem 0}
+.coach-quests li,.zone-quests li{padding:.2rem 0;display:flex;align-items:center;gap:.5rem}
+.coach-next{margin:1rem 0;padding:.7rem 1rem;border-left:3px solid #7db3ff;background:rgba(125,179,255,.08);border-radius:0 8px 8px 0}
+.zone-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.2rem 0}
+.zone-card{display:flex;flex-direction:column;gap:.25rem;padding:1rem 1.1rem;border:1px solid var(--line,rgba(128,128,128,.2));border-radius:12px;text-decoration:none;color:inherit;transition:border-color .2s}
+.zone-card:hover{border-color:#7db3ff}
+.zone-card b{font-size:1.1rem}
+.zone-map{max-width:100%;border-radius:12px;margin:1rem 0;border:1px solid var(--line,rgba(128,128,128,.2))}
+.zone-nav{display:flex;justify-content:space-between;margin-top:1.5rem}
+/* community comments */
+.comments{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line,rgba(128,128,128,.2))}
+.comments h3{margin:0 0 1rem}

@@ -1,4 +1,4 @@
-<!doctype html><!-- rebuild -->
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="How combat works — World of Claudecraft">
   <meta name="twitter:description" content="The exact maths the game runs, pulled straight from its source — so the bestiary and gear numbers add up.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=77">
+  <link rel="stylesheet" href="styles.css?v=78">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,6 +39,7 @@
       <div class="navgroup">
         <button type="button" class="navgroupbtn">World</button>
         <div class="navdropdown">
+          <a class="link" data-go="#/zone">🗺️ Zone guides</a>
           <a class="link" data-go="#/map">Map</a>
           <a class="link" data-go="#/atlas">Interactive map</a>
           <a class="link" data-go="#/bestiary">Bestiary</a>
@@ -63,6 +64,8 @@
       <div class="navgroup">
         <button type="button" class="navgroupbtn">Tools</button>
         <div class="navdropdown">
+          <a class="link" data-go="#/tracker">✅ Progress tracker</a>
+          <a class="link" data-go="#/coach">🧭 Leveling coach</a>
           <a class="link" data-go="#/builds">📖 Build compendium</a>
           <a class="link" data-go="#/planner">🌿 Talent / build planner</a>
           <a class="link" data-go="#/loadout">🛡 Loadout simulator</a>
@@ -303,6 +306,9 @@ Armor  = round(armorPerLevel·(L−1))
          2. Settings → tick "Allow viewing without login" (enables the footer counter).
          3. Set ANALYTICS_CODE to your <code> (e.g. "claudehead"). Dashboard: https://<code>.goatcounter.com -->
   <script>
+    // Community comments (Giscus / GitHub Discussions). Fill repoId + categoryId from
+    // https://giscus.app after enabling Discussions and installing the Giscus app. "" = off.
+    window.GISCUS = { repo: "claudehead/worldofclaudecraft-quests", repoId: "", category: "General", categoryId: "" };
     window.CF_BEACON_TOKEN = "95a0cf6d95fa430e830349daeff26c6b"; // Cloudflare Web Analytics token ("" = off)
     window.ANALYTICS_CODE = "";  // GoatCounter subdomain ("" = off), e.g. "claudehead"
     if (window.CF_BEACON_TOKEN) {
@@ -321,14 +327,17 @@ Armor  = round(armorPerLevel·(L−1))
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
-  <script src="app.js?v=77"></script>
+  <script src="app.js?v=78"></script>
   <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
-  <script src="features/planner.js?v=77"></script>
-  <script src="features/loadout.js?v=77"></script>
-  <script src="features/combatlog.js?v=77"></script>
-  <script src="features/droplab.js?v=77"></script>
-  <script src="features/pathfinder.js?v=77"></script>
+  <script src="features/planner.js?v=78"></script>
+  <script src="features/loadout.js?v=78"></script>
+  <script src="features/combatlog.js?v=78"></script>
+  <script src="features/droplab.js?v=78"></script>
+  <script src="features/pathfinder.js?v=78"></script>
   <script src="features/builds.js?v=80"></script>
+  <script src="features/tracker.js?v=78"></script>
+  <script src="features/coach.js?v=78"></script>
+  <script src="features/zoneguide.js?v=78"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});

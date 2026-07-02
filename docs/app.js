@@ -1190,6 +1190,26 @@ async function enhanceVoice(body, docPath) {
   if (h1) h1.after(panel); else body.prepend(panel);
 }
 
+// Community comments via Giscus (GitHub Discussions). Off until window.GISCUS
+// has repoId + categoryId (set them in index.html after giscus.app setup).
+function mountComments(host) {
+  const g = window.GISCUS;
+  if (!g || !g.repoId || !g.categoryId || !host) return;
+  const box = el('<div class="comments"><h3>💬 Comments &amp; tips</h3><div class="giscus"></div></div>');
+  host.append(box);
+  const s = document.createElement('script');
+  s.src = 'https://giscus.app/client.js';
+  s.setAttribute('data-repo', g.repo);
+  s.setAttribute('data-repo-id', g.repoId);
+  s.setAttribute('data-category', g.category || 'General');
+  s.setAttribute('data-category-id', g.categoryId);
+  s.setAttribute('data-mapping', 'pathname');
+  s.setAttribute('data-reactions-enabled', '1');
+  s.setAttribute('data-theme', document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+  s.setAttribute('crossorigin', 'anonymous');
+  s.async = true;
+  box.querySelector('.giscus').append(s);
+}
 async function docView(path, anchor) {
   app.innerHTML = '<div class="spinner"></div>';
   let md;
@@ -1204,6 +1224,7 @@ async function docView(path, anchor) {
   window.scrollTo(0, 0);
   enhanceVoice(body, path);
   enhanceQuestMap(body);
+  mountComments(wrap.querySelector('.wrap'));
   if (anchor) {
     const t = document.getElementById(anchor);
     if (t) setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
