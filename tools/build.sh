@@ -174,4 +174,7 @@ node --test $TOOLS/validate-output.test.mjs
 echo "==> 404 SPA fallback"
 cp docs/index.html docs/404.html
 
+echo "==> prerender SEO pages + sitemap + robots"
+node $TOOLS/generate-static-pages.mjs
+
 echo "==> done"

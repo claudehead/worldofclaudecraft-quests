@@ -2326,7 +2326,13 @@ function router() {
     M.dungeons.map(d => ({ name: d.name, file: d.file, meta: d.suggestedPlayers ? `Suggested players: ${d.suggestedPlayers}` : '', tags: d.hasMap ? ['Map', 'Roster'] : ['Roster'] })));
   if (head === 'delves') return simpleListView('Delves', 'Replayable', 'Scalable mini-instances with tiers, affixes, companions and a Marks vendor.',
     M.delves.map(d => ({ name: d.name, file: d.file, meta: `Minimum level ${d.minLevel}`, tags: ['Tiers', 'Vendor'] })));
-  if (head === 'doc') return docView(decodeURIComponent(parts[1] || ''), parts[2] ? decodeURIComponent(parts[2]) : '');
+  if (head === 'doc') { // legacy: /doc/<encoded path.md>[/anchor] · clean: /doc/dir/dir/name
+    const rest = parts.slice(1).map(s => decodeURIComponent(s));
+    let file, anchor = '';
+    if (/\.md$/.test(rest[0])) { file = rest[0]; anchor = rest[1] || ''; }        // legacy single encoded segment
+    else { const joined = rest.join('/'); file = /\.md$/.test(joined) ? joined : joined + '.md'; } // clean multi-segment
+    return docView(file, anchor);
+  }
   if (EXT_VIEWS[head]) return EXT_VIEWS[head](parts.slice(1));
   return home();
 }
