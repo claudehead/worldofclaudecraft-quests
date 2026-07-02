@@ -81,11 +81,11 @@ function writePage(route, title, description, contentHtml) {
 
 const urls = ['/']; // homepage already exists (index.html)
 
-// sections
+// sections (trailing slash = the URL GitHub Pages serves 200 for, no 301 redirect)
 for (const [slug, title, desc] of SECTIONS) {
   const content = `<section class="block"><div class="wrap"><span class="eyebrow">World of Claudecraft</span><h1>${esc(title)}</h1><p class="sub">${esc(desc)}</p><p class="meta">Loading the interactive guide… <a href="/">open the full guide</a>.</p></div></section>`;
-  writePage('/' + slug, title, desc, content);
-  urls.push('/' + slug);
+  writePage('/' + slug + '/', title, desc, content);
+  urls.push('/' + slug + '/');
 }
 
 // doc pages (rendered markdown → real crawlable content)
@@ -100,7 +100,7 @@ for (const d of DOC_DIRS) {
     const h1 = (md.match(/^#\s+(.+)$/m) || [])[1] || f.replace(/\.md$/, '').replace(/[-_]/g, ' ');
     const firstPara = (md.replace(/^#.*$/m, '').match(/^\s*([^\n#>|*\-].{20,})$/m) || [])[1] || `${h1} — a World of Claudecraft guide.`;
     const bodyHtml = marked.parse(md, { mangle: false, headerIds: true });
-    const route = `/doc/${d}/${f.replace(/\.md$/, '')}`;
+    const route = `/doc/${d}/${f.replace(/\.md$/, '')}/`;
     writePage(route, h1.trim(), firstPara.trim(), `<article class="doc"><div class="wrap">${bodyHtml}</div></article>`);
     urls.push(route);
     docCount++;
