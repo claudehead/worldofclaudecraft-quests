@@ -152,24 +152,63 @@
     app.append(el(`<section class="block"><div class="wrap">
       <div class="shead reveal"><span class="eyebrow">Guide · theorycraft</span><h2>Build compendium</h2>
         <p>Named top builds for every class — DPS, healer and tank — each with a talent summary, a priority rotation (top&nbsp;=&nbsp;cast first), and a one-click link into the planner. DPS/HPS are <b>theoretical single-target at level&nbsp;20</b> (white-hits + rotation, no misses) — read them as relative yardsticks; crit, gear and cooldowns push them higher.</p></div>
-      <div class="controls reveal" style="gap:8px;flex-wrap:wrap">
+      <div class="controls reveal" style="gap:14px;flex-wrap:wrap;align-items:flex-end">
         <div class="pills" id="bd-filter">
           ${['All', 'DPS', 'Healer', 'Tank'].map((r, i) => `<span class="pill${i === 0 ? ' active' : ''}" data-f="${r}">${r === 'All' ? 'All roles' : r}</span>`).join('')}
         </div>
+        <label class="meta" style="display:flex;flex-direction:column;gap:3px">Class
+          <select id="bd-class" style="padding:7px 9px;border-radius:7px;border:1px solid #888;background:#fff;color:#111;color-scheme:light">
+            <option value="All">All classes</option>${CLASSES.map(c => `<option value="${c.id}">${esc(c.name)}</option>`).join('')}
+          </select></label>
+        <label class="meta" style="display:flex;flex-direction:column;gap:3px">Sort by
+          <select id="bd-sort" style="padding:7px 9px;border-radius:7px;border:1px solid #888;background:#fff;color:#111;color-scheme:light">
+            <option value="class">Class (grouped)</option>
+            <option value="power">Damage / Healing — high → low</option>
+            <option value="powerAsc">Damage / Healing — low → high</option>
+            <option value="name">Name (A–Z)</option>
+            <option value="role">Role</option>
+          </select></label>
+        <span class="meta" id="bd-count" style="padding-bottom:8px"></span>
       </div>
       <div id="bd-body" class="reveal"></div>
     </div></section>`));
 
     const body = app.querySelector('#bd-body');
-    function render(filter) {
-      body.innerHTML = CLASSES.map(cls => {
-        const cards = cls.builds.filter(b => filter === 'All' || b.role === filter);
-        if (!cards.length) return '';
-        return `<div class="build-class" style="margin-top:22px">
-          <div class="shead" style="margin-bottom:10px"><h3 style="margin:0">${esc(cls.name)} <span class="meta" style="font-weight:400;font-size:.8rem">· ${esc(cls.resource)}</span></h3></div>
-          <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))">${cards.map(b => card(cls, b)).join('')}</div>
-        </div>`;
-      }).join('');
+    const countEl = app.querySelector('#bd-count');
+    const st = { role: 'All', cls: 'All', sort: 'class' };
+    const grid = inner => `<div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))">${inner}</div>`;
+    const power = x => (x.b.role === 'Healer' ? x.b.hps : x.b.role === 'DPS' ? x.b.dps : 0) || 0;
+
+    function render() {
+      // flat list of {cls,b} passing the role + class filters
+      const list = [];
+      CLASSES.forEach(cls => cls.builds.forEach(b => {
+        if (st.role !== 'All' && b.role !== st.role) return;
+        if (st.cls !== 'All' && cls.id !== st.cls) return;
+        list.push({ cls, b });
+      }));
+      countEl.textContent = `${list.length} build${list.length === 1 ? '' : 's'}`;
+
+      if (!list.length) { body.innerHTML = `<p class="meta" style="margin-top:20px">No builds match those filters.</p>`; return; }
+
+      if (st.sort === 'class') {
+        body.innerHTML = CLASSES.map(cls => {
+          const cards = list.filter(x => x.cls.id === cls.id);
+          if (!cards.length) return '';
+          return `<div class="build-class" style="margin-top:22px">
+            <div class="shead" style="margin-bottom:10px"><h3 style="margin:0">${esc(cls.name)} <span class="meta" style="font-weight:400;font-size:.8rem">· ${esc(cls.resource)}</span></h3></div>
+            ${grid(cards.map(x => card(x.cls, x.b)).join(''))}</div>`;
+        }).join('');
+      } else {
+        const cmp = {
+          power: (a, z) => power(z) - power(a),
+          powerAsc: (a, z) => power(a) - power(z),
+          name: (a, z) => a.b.name.localeCompare(z.b.name),
+          role: (a, z) => a.b.role.localeCompare(z.b.role) || power(z) - power(a),
+        }[st.sort];
+        list.sort(cmp);
+        body.innerHTML = `<div style="margin-top:22px">${grid(list.map(x => card(x.cls, x.b)).join(''))}</div>`;
+      }
       reveal(body);
     }
 
@@ -178,10 +217,13 @@
       p.onclick = () => {
         filterHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active'));
         p.classList.add('active');
-        render(p.getAttribute('data-f'));
+        st.role = p.getAttribute('data-f');
+        render();
       };
     });
-    render('All');
+    app.querySelector('#bd-class').onchange = e => { st.cls = e.target.value; render(); };
+    app.querySelector('#bd-sort').onchange = e => { st.sort = e.target.value; render(); };
+    render();
     reveal();
   }
 
