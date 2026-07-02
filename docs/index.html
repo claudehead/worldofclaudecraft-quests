@@ -51,6 +51,7 @@
       <div class="navgroup">
         <button type="button" class="navgroupbtn">Tools</button>
         <div class="navdropdown">
+          <a class="link" data-go="#/builds">📖 Build compendium</a>
           <a class="link" data-go="#/planner">🌿 Talent / build planner</a>
           <a class="link" data-go="#/loadout">🛡 Loadout simulator</a>
           <a class="link" data-go="#/combatlog">⚔ Combat log simulator</a>
@@ -153,6 +154,7 @@
   <script src="features/combatlog.js?v=76"></script>
   <script src="features/droplab.js?v=76"></script>
   <script src="features/pathfinder.js?v=76"></script>
+  <script src="features/builds.js?v=77"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});
