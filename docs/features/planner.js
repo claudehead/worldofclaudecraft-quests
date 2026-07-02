@@ -235,7 +235,7 @@
     lvRange.oninput = draw;
     app.querySelector('#pl-reset').onclick = () => { alloc = {}; draw(); };
     app.querySelector('#pl-share').onclick = () => {
-      const url = location.origin + location.pathname + buildHash();
+      const url = location.origin + buildHash().replace(/^#/, '');
       navigator.clipboard?.writeText(url).then(() => {
         const t = el('<div class="toast in">Build link copied</div>');
         document.body.append(t);

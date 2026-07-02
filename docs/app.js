@@ -89,7 +89,7 @@ function renderMarkdown(container, md, docPath) {
     const href = a.getAttribute('href') || '';
     if (!href || href.startsWith('#/')) return;
     if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; return; }
-    if (href.startsWith('#')) return; // same-doc anchor (handled by ids)
+    if (href.startsWith('#')) { a.addEventListener('click', (e) => { e.preventDefault(); const id = decodeURIComponent(href.slice(1)); const tg = document.getElementById(id) || container.querySelector(`[name="${CSS.escape(id)}"]`); if (tg) tg.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); return; } // same-doc anchor — scroll in place (base href would otherwise send it to root)
     const [pathPart, anchor] = href.split('#');
     if (/\.md$/.test(pathPart)) {
       const tgt = resolvePath(base, pathPart);
@@ -688,7 +688,7 @@ async function talentsView(initClass, initSpec, initAlloc) {
   // share + save
   app.querySelector('#tshare').onclick = () => {
     const hash = buildHash();
-    history.replaceState(null, '', hash);
+    history.replaceState(null, '', pathFromHash(hash));
     const url = location.href;
     navigator.clipboard?.writeText(url).then(() => toast('Build link copied')).catch(() => toast('Link in address bar'));
   };
@@ -2278,10 +2278,16 @@ async function badgesView() {
 }
 
 // ---------- router ----------
+// Real-path routing (History API). Legacy '#/route' links still work: they are
+// converted to clean '/route' paths. In-page '#anchor' links are left untouched.
+function pathFromHash(x) { let p = String(x).replace(/^#/, ''); if (!p.startsWith('/')) p = '/' + p; return p; }
+function navigate(to) { const p = to.startsWith('#') ? pathFromHash(to) : (to.startsWith('/') ? to : '/' + to); if (location.pathname !== p) history.pushState(null, '', p); router(); window.scrollTo(0, 0); }
 function router() {
-  const h = location.hash || '#/';
+  if (location.hash.startsWith('#/')) history.replaceState(null, '', pathFromHash(location.hash)); // legacy route hash -> clean path
+  const path = location.pathname && location.pathname !== '/' ? location.pathname : '/';
+  const h = '#' + (path === '/' ? '/' : path); // downstream views expect the hash form
   setActiveNav(h);
-  if (window.goatcounter && window.goatcounter.count) { try { window.goatcounter.count({ path: location.pathname + h, title: document.title }); } catch (e) {} }
+  if (window.goatcounter && window.goatcounter.count) { try { window.goatcounter.count({ path, title: document.title }); } catch (e) {} }
   const parts = h.slice(2).split('/');
   const head = parts[0] || '';
   if (head === 'quests') return questsView();
@@ -2401,7 +2407,7 @@ document.getElementById('navlang')?.addEventListener('change', closeMenu);
 // global click handler for [data-go]
 document.addEventListener('click', (e) => {
   const t = e.target.closest('[data-go]');
-  if (t) { e.preventDefault(); closeMenu(); location.hash = t.getAttribute('data-go'); }
+  if (t) { e.preventDefault(); closeMenu(); navigate(t.getAttribute('data-go')); }
   else if (e.target.closest('#navsearch, #navtheme')) closeMenu();
 });
 document.getElementById('navsearch')?.addEventListener('click', openSearch);
@@ -2412,7 +2418,9 @@ document.getElementById('navsearch')?.addEventListener('click', openSearch);
   set(cur);
   btn?.addEventListener('click', () => { cur = cur === 'light' ? 'dark' : 'light'; set(cur); });
 })();
-window.addEventListener('hashchange', router);
+window.addEventListener('popstate', router);
+// legacy `location.hash = '#/route'` assignments still navigate: convert to a path
+window.addEventListener('hashchange', () => { if (location.hash.startsWith('#/')) router(); });
 window.addEventListener('scroll', () => document.body.classList.toggle('scrolled', window.scrollY > 10));
 
 // live visitor counter in the footer (GoatCounter public total; needs "allow viewing without login")

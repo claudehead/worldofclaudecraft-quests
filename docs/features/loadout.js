@@ -309,7 +309,7 @@
     app.querySelector('#lo-clear').onclick = () => { st.equip = {}; draw(); };
     app.querySelector('#lo-bis').onclick = () => { st.equip = bisEquip(st.classId, st.level, st.bisBuild); draw(); };
     app.querySelector('#lo-share').onclick = () => {
-      const url = location.origin + location.pathname + buildHash();
+      const url = location.origin + buildHash().replace(/^#/, '');
       navigator.clipboard?.writeText(url).then(() => {
         const t = el('<div class="toast in">Loadout link copied</div>');
         document.body.append(t);
