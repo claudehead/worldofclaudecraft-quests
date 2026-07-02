@@ -189,7 +189,7 @@
         </div>
         <span class="meta" id="bd-count" style="padding-bottom:8px"></span>
       </div>
-      <div id="bd-body" class="reveal"></div>
+      <div id="bd-body"></div>
     </div></section>`));
 
     const body = app.querySelector('#bd-body');
