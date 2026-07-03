@@ -645,6 +645,39 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .ask-badge{font-size:.7rem;vertical-align:middle;padding:.2rem .5rem;border-radius:20px;background:rgba(78,199,126,.15);border:1px solid rgba(78,199,126,.4);color:#4ec77e;font-family:inherit;font-weight:600}
 .ask-bar{display:inline-block;width:120px;height:.5rem;border-radius:4px;background:rgba(128,128,128,.25);vertical-align:middle;overflow:hidden;margin-left:.3rem}
 .ask-bar i{display:block;height:100%;background:var(--gold,#e8c86a);transition:width .3s}
+/* tier lists */
+.tier-controls{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin:1.2rem 0}
+.tier-lenses{display:flex;gap:.4rem;flex-wrap:wrap}
+.tier-lens{padding:.45rem .9rem;border-radius:20px;border:1px solid var(--line,rgba(128,128,128,.3));background:rgba(128,128,128,.04);color:inherit;font:inherit;cursor:pointer;transition:border-color .15s,background .15s}
+.tier-lens:hover{border-color:var(--gold,#e8c86a)}
+.tier-lens.on{border-color:var(--gold,#e8c86a);background:rgba(232,200,106,.15);font-weight:700}
+.tier-lvl{display:flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--muted,#9aa)}
+.tier-lvl input{accent-color:var(--gold,#e8c86a)}
+.tier-note{margin:.2rem 0 1rem}
+.tier-row{display:flex;gap:.8rem;align-items:stretch;margin-bottom:.6rem;border:1px solid var(--line,rgba(128,128,128,.2));border-radius:12px;overflow:hidden}
+.tier-rank{flex:none;width:56px;display:flex;align-items:center;justify-content:center;font-family:'IM Fell English SC',serif;font-size:1.8rem;font-weight:700;color:#111}
+.tier-S .tier-rank{background:#e6803a}.tier-A .tier-rank{background:#e6bb6a}.tier-B .tier-rank{background:#7fbf6a}.tier-C .tier-rank{background:#7a8a9a}
+.tier-cards{display:flex;flex-wrap:wrap;gap:.5rem;padding:.6rem;flex:1}
+.tier-card{display:flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border-radius:10px;border:1px solid var(--cc);background:color-mix(in srgb,var(--cc) 12%,transparent);cursor:pointer;transition:transform .12s}
+.tier-card:hover{transform:translateY(-2px)}
+.tier-dot{width:.7rem;height:.7rem;border-radius:50%;background:var(--cc);flex:none}
+.tier-name{font-weight:600}.tier-pct{font-size:.75rem;color:var(--muted,#9aa)}
+.tier-how{margin:1rem 0}.tier-how summary{cursor:pointer;color:var(--gold,#e8c86a)}
+.tier-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.9rem}
+.tier-table th,.tier-table td{text-align:right;padding:.4rem .6rem;border-bottom:1px solid rgba(128,128,128,.15)}
+.tier-table th:first-child,.tier-table td:first-child,.tier-table td:nth-child(2){text-align:left}
+/* stats dashboard */
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;margin-top:1.2rem}
+.dash-card{border:1px solid var(--line,rgba(128,128,128,.22));border-radius:14px;padding:1.1rem 1.2rem;background:rgba(128,128,128,.04)}
+.dash-card h3{margin:0 0 .3rem;font-family:'IM Fell English SC',serif;font-weight:400}
+.dash-card>.meta{margin:0 0 .8rem}
+.dash-bars{display:flex;flex-direction:column;gap:.4rem}
+.dash-brow{display:flex;align-items:center;gap:.6rem}
+.dash-blabel{flex:none;width:34%;font-size:.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dash-btrack{position:relative;flex:1;height:.9rem;border-radius:5px;background:rgba(128,128,128,.14);overflow:hidden}
+.dash-bfill{position:absolute;left:0;top:0;height:100%;border-radius:5px}
+.dash-bseg{position:absolute;top:0;height:100%;border-radius:5px}
+.dash-bval{flex:none;width:4.5rem;text-align:right;font-size:.8rem;font-variant-numeric:tabular-nums}
 /* $WOC token hub */
 .woc-sym{font-size:1rem;color:var(--muted,#9aa);font-family:inherit;font-weight:400}
 .woc-hero{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;margin:1.4rem 0 1.2rem;padding:1.4rem 1.6rem;border:1px solid var(--line,rgba(128,128,128,.25));border-radius:16px;background:rgba(128,128,128,.05)}
