@@ -678,6 +678,27 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .dash-bfill{position:absolute;left:0;top:0;height:100%;border-radius:5px}
 .dash-bseg{position:absolute;top:0;height:100%;border-radius:5px}
 .dash-bval{flex:none;width:4.5rem;text-align:right;font-size:.8rem;font-variant-numeric:tabular-nums}
+/* earn SOL guide */
+.earn-steps{display:grid;gap:.8rem;margin:1.4rem 0}
+.earn-step{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.2rem;border:1px solid var(--line,rgba(128,128,128,.22));border-radius:14px;background:rgba(128,128,128,.04)}
+.earn-num{flex:none;font-size:1.8rem;line-height:1;color:var(--gold,#e8c86a)}
+.earn-step h3{margin:0 0 .3rem;font-family:'IM Fell English SC',serif;font-weight:400}
+.earn-step p{margin:0}
+.earn-check{margin:1.6rem 0;padding:1.3rem 1.4rem;border:1px solid var(--gold,#e8c86a);border-radius:16px;background:rgba(232,200,106,.06)}
+.earn-check h3{margin:0 0 .3rem;font-family:'IM Fell English SC',serif;font-weight:400}
+.earn-checkrow{display:flex;gap:.5rem;flex-wrap:wrap;margin:.8rem 0}
+.earn-checkrow input{flex:1;min-width:220px;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--line,rgba(128,128,128,.3));background:var(--panel,#12190f);color:inherit;font:inherit}
+.earn-result{margin-top:.9rem;padding:1rem 1.2rem;border-radius:12px;border:1px solid var(--line,rgba(128,128,128,.3))}
+.earn-result.ok{border-color:#4ec77e;background:rgba(78,199,126,.08)}
+.earn-result.no{border-color:#e0a066;background:rgba(224,160,102,.08)}
+.earn-big{font-size:1.3rem;font-weight:700;margin-bottom:.6rem}
+.earn-rows{display:flex;gap:1.6rem;flex-wrap:wrap;margin-bottom:.5rem}
+.earn-rows div{display:flex;flex-direction:column}
+.earn-rows b{font-size:1.15rem}
+.earn-faq{border-bottom:1px solid rgba(128,128,128,.15);padding:.5rem 0}
+.earn-faq summary{cursor:pointer;font-weight:600}
+.earn-faq p{margin:.5rem 0 0}
+.earn-disc{margin:1.6rem 0 0;padding:1rem 1.2rem;border-radius:12px;border:1px dashed rgba(224,160,102,.5);background:rgba(224,160,102,.06);font-size:.86rem;line-height:1.55;color:var(--muted,#9aa)}
 /* $WOC token hub */
 .woc-sym{font-size:1rem;color:var(--muted,#9aa);font-family:inherit;font-weight:400}
 .woc-hero{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;margin:1.4rem 0 1.2rem;padding:1.4rem 1.6rem;border:1px solid var(--line,rgba(128,128,128,.25));border-radius:16px;background:rgba(128,128,128,.05)}

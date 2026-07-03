@@ -42,6 +42,7 @@ const SECTIONS = [
   ['supporters', 'Supporters Wall', 'Live from Solana — everyone who has tipped the World of Claudecraft guide, with a supporter leaderboard and recent tips.'],
   ['ask', 'Ask the Guide', 'Ask the World of Claudecraft AI guide anything — quests, classes, gear, zones. Answers drawn straight from the field guide.'],
   ['woc', '$WOC Token', 'The $WOC community token for World of Claudecraft on Solana — live price, chart, market cap and where to buy.'],
+  ['earn', 'Earn SOL by Playing', 'How to earn SOL rewards by holding $20+ of $WOC and playing World of Claudecraft — steps, live eligibility checker and FAQ.'],
   ['tiers', 'Class Tier Lists', 'World of Claudecraft class tier lists (DPS, tank, healer) computed from the real combat formulas at every level.'],
   ['stats', 'Stats Dashboard', 'World of Claudecraft by the numbers — zone level ranges, quest XP, mob threat and class stats, charted.'],
   ['badges', 'Developer Badges', 'The World of Claudecraft developer badges and how they were earned.'],
