@@ -76,8 +76,10 @@
     } else setMsg('📜 ' + G.quest.have + '/' + G.quest.need + ' ' + G.quest.name + ' slain.');
   }
 
+  const AGGRO = 58, LEASH = 150; // small aggro radius + leash so mobs don't swarm the whole map
   function update() {
     const p = G.p;
+    const townSafe = D.map.markers.some(m => m.type === 'town' && (m.x - p.x) ** 2 + (m.z - p.z) ** 2 < (m.r + 24) ** 2);
     let vx = (keys['d'] || keys['arrowright'] ? 1 : 0) - (keys['a'] || keys['arrowleft'] ? 1 : 0);
     let vz = (keys['s'] || keys['arrowdown'] ? 1 : 0) - (keys['w'] || keys['arrowup'] ? 1 : 0);
     if (vx || vz) { const m = Math.hypot(vx, vz) || 1, spd = 2.6; const nx = p.x + vx / m * spd, nz = p.z + vz / m * spd; if (!inLake(nx, p.z)) p.x = nx; if (!inLake(p.x, nz)) p.z = nz; if (vx) p.face = Math.sign(vx); }
@@ -91,8 +93,16 @@
     for (const mb of G.mobs) {
       if (!mb.alive) continue;
       const d2 = (mb.x - p.x) ** 2 + (mb.z - p.z) ** 2;
-      if (d2 < 130 * 130) { mb.state = 'chase'; const a = Math.atan2(p.z - mb.z, p.x - mb.x), sp = 1.1 + mb.lvl * 0.03; mb.x += Math.cos(a) * sp; mb.z += Math.sin(a) * sp; }
-      else { mb.wcd--; if (mb.wcd <= 0) { mb.vx = (Math.random() - .5) * 1.2; mb.vz = (Math.random() - .5) * 1.2; mb.wcd = 40 + Math.random() * 60; } const nx = mb.x + mb.vx, nz = mb.z + mb.vz; if (!inLake(nx, nz) && (nx - mb.hx) ** 2 + (nz - mb.hz) ** 2 < 90 * 90) { mb.x = nx; mb.z = nz; } else { mb.wcd = 0; } }
+      const homeD2 = (mb.x - mb.hx) ** 2 + (mb.z - mb.hz) ** 2;
+      if (!townSafe && d2 < AGGRO * AGGRO && homeD2 < LEASH * LEASH) {
+        // chase the player
+        mb.state = 'chase'; const a = Math.atan2(p.z - mb.z, p.x - mb.x), sp = 0.9 + mb.lvl * 0.02; mb.x += Math.cos(a) * sp; mb.z += Math.sin(a) * sp;
+      } else if (mb.state === 'chase' && homeD2 > 16) {
+        // leashed / lost aggro → walk back home
+        const a = Math.atan2(mb.hz - mb.z, mb.hx - mb.x); mb.x += Math.cos(a) * 1.2; mb.z += Math.sin(a) * 1.2; if (homeD2 < 25) mb.state = 'idle';
+      } else {
+        mb.state = 'idle'; mb.wcd--; if (mb.wcd <= 0) { mb.vx = (Math.random() - .5) * 1.2; mb.vz = (Math.random() - .5) * 1.2; mb.wcd = 40 + Math.random() * 60; } const nx = mb.x + mb.vx, nz = mb.z + mb.vz; if (!inLake(nx, nz) && (nx - mb.hx) ** 2 + (nz - mb.hz) ** 2 < 70 * 70) { mb.x = nx; mb.z = nz; } else { mb.wcd = 0; }
+      }
       // player melee / shots hit mob
       const melee = !G.ranged && p.atk > 0 && Math.abs(mb.x - (p.x + p.face * 20)) < 26 && Math.abs(mb.z - p.z) < 26;
       const shot = G.shots.find(s => s.alive && (s.x - mb.x) ** 2 + (s.z - mb.z) ** 2 < 20 * 20);
