@@ -744,6 +744,11 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .play-over{text-align:center;display:flex;flex-direction:column;gap:.8rem;align-items:center}
 .play-msg{font-family:'IM Fell English SC',serif;font-size:2rem}
 .play-over.win .play-msg{color:#e8c86a}.play-over.lose .play-msg{color:#e06666}
+.play-foot{display:flex;justify-content:flex-end;margin-top:.5rem;max-width:900px}
+.play-touch{position:absolute;left:0;right:0;bottom:8px;display:flex;align-items:center;gap:.5rem;padding:0 10px;pointer-events:none}
+.play-touch .tc{pointer-events:auto;width:56px;height:56px;border-radius:50%;border:2px solid rgba(255,255,255,.4);background:rgba(0,0,0,.4);color:#fff;font-size:1.3rem;touch-action:none;user-select:none}
+.play-touch .tc-jump{background:rgba(232,200,106,.35)}
+.play-touch .tc-sp{flex:1}
 /* $WOC token hub */
 .woc-sym{font-size:1rem;color:var(--muted,#9aa);font-family:inherit;font-weight:400}
 .woc-hero{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;margin:1.4rem 0 1.2rem;padding:1.4rem 1.6rem;border:1px solid var(--line,rgba(128,128,128,.25));border-radius:16px;background:rgba(128,128,128,.05)}
