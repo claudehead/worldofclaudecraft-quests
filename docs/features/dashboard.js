@@ -13,7 +13,8 @@
     return `<div class="dash-bars">${items.map(i => `<div class="dash-brow"><span class="dash-blabel">${esc(i.label)}</span><span class="dash-btrack"><span class="dash-bfill" style="width:${(i.value / max * 100).toFixed(1)}%;background:${i.color || 'var(--gold,#e8c86a)'}"></span></span><span class="dash-bval">${fmt ? fmt(i.value) : i.value}</span></div>`).join('')}</div>`;
   };
   const rangeRows = (items, scaleMax) => `<div class="dash-bars">${items.map(i => `<div class="dash-brow"><span class="dash-blabel">${esc(i.label)}</span><span class="dash-btrack"><span class="dash-bseg" style="left:${((i.min - 1) / scaleMax * 100).toFixed(1)}%;width:${((i.max - i.min + 1) / scaleMax * 100).toFixed(1)}%;background:${i.color}"></span></span><span class="dash-bval">${i.min}–${i.max}</span></div>`).join('')}</div>`;
-  const card = (title, sub, body) => `<div class="dash-card"><h3>${esc(title)}</h3>${sub ? `<p class="meta">${esc(sub)}</p>` : ''}${body}</div>`;
+  // sub may contain trusted inline HTML (static strings we author, e.g. an in-app link)
+  const card = (title, sub, body) => `<div class="dash-card"><h3>${esc(title)}</h3>${sub ? `<p class="meta">${sub}</p>` : ''}${body}</div>`;
 
   function deriveClass(c, K, L) {
     const s = {}; for (const k of ['str', 'agi', 'sta', 'int', 'armor']) s[k] = (c.baseStats[k] || 0) + (c.statsPerLevel[k] || 0) * (L - 1);
