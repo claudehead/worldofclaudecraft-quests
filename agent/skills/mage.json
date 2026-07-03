@@ -176,6 +176,18 @@
       "school": "fire",
       "requiresTarget": true,
       "desc": "Hurls an immense fiery boulder that causes $d Fire damage plus additional damage over time."
+    },
+    {
+      "id": "flamestrike",
+      "name": "Flamestrike",
+      "learnLevel": 20,
+      "cost": 80,
+      "cooldown": 12,
+      "range": 30,
+      "castTime": 0,
+      "school": "fire",
+      "requiresTarget": false,
+      "desc": "Calls down a burst of flame at the target area, dealing $d Fire damage to enemies caught in the blast."
     }
   ],
   "rotation": [
@@ -194,7 +206,8 @@
     "polymorph",
     "frost_nova",
     "arcane_explosion",
-    "ice_barrier"
+    "ice_barrier",
+    "flamestrike"
   ],
   "playbook": [
     "You are playing a Mage (mana-based, ranged).",

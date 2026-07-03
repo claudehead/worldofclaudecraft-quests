@@ -16,7 +16,7 @@
 
 ## Abilities
 
-14 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+15 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -33,6 +33,7 @@
 | Wing Clip | 10 | 20 | Instant | — | Melee | Physical | Inflicts a wound that slows the enemy by 40% for 10 sec. |
 | Aspect of the Cheetah | 14 | 20 | Instant | — | Melee | Nature | Take on the aspect of the cheetah, increasing movement speed by 30% for 30 min. |
 | Aimed Shot | 16 | 50 | 3s | 6s | 35 | Physical | A carefully aimed shot that deals X damage. |
+| Volley | 18 | 60 | Instant | 8s | 35 | Physical | Rains arrows on the target area, dealing X damage to enemies caught in it. |
 | Rapid Fire | 20 | — | Instant | 5 min | Melee | Physical | Increases your attack speed by 40% for 15 sec. |
 
 ---

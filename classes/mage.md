@@ -16,7 +16,7 @@
 
 ## Abilities
 
-14 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+15 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -32,6 +32,7 @@
 | Frost Nova | 10 _(ranks: 16)_ | 35 | Instant | 22s | Melee | Frost | Freezes all nearby enemies in place for up to 8 sec, dealing X Frost damage. |
 | Arcane Explosion | 14 | 60 | Instant | — | Melee | Arcane | A burst of Arcane energy hits all nearby enemies for X Arcane damage. |
 | Scorch | 16 | 35 | 1.5s | — | 30 | Fire | Scorches the enemy for X Fire damage. Quick to cast. |
+| Flamestrike | 20 | 80 | Instant | 12s | 30 | Fire | Calls down a burst of flame at the target area, dealing X Fire damage to enemies caught in the blast. |
 | Ice Barrier | 20 | 90 | Instant | 30s | Melee | Frost | Shields you in ice, absorbing 130 damage for 60 sec. |
 | Pyroblast | 20 | 125 | 6s | — | 30 | Fire | Hurls an immense fiery boulder that causes X Fire damage plus additional damage over time. |
 

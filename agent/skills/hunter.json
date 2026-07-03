@@ -176,6 +176,18 @@
       "school": "physical",
       "requiresTarget": false,
       "desc": "Increases your attack speed by 40% for 15 sec."
+    },
+    {
+      "id": "volley",
+      "name": "Volley",
+      "learnLevel": 18,
+      "cost": 60,
+      "cooldown": 8,
+      "range": 35,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": false,
+      "desc": "Rains arrows on the target area, dealing $d damage to enemies caught in it."
     }
   ],
   "rotation": [
@@ -194,7 +206,8 @@
     "revive_pet",
     "aspect_of_the_monkey",
     "aspect_of_the_cheetah",
-    "rapid_fire"
+    "rapid_fire",
+    "volley"
   ],
   "playbook": [
     "You are playing a Hunter (mana-based, ranged).",

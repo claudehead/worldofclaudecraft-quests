@@ -16,7 +16,7 @@
 
 ## Abilities
 
-31 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+32 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -46,6 +46,7 @@
 | Dash | 18 | — | Instant | 1 min | Melee | Physical | Sprint forward, increasing movement speed by 50% for 15 sec. Wolf Form only. |
 | Faerie Fire | 18 | 30 | Instant | — | 30 | Nature | Decreases the target's armor by 35 for 40 sec. |
 | Hibernate | 18 | 50 | 1.5s | — | 30 | Nature | Forces the target into a deep sleep for up to 8 sec. Any damage will awaken it. |
+| Hurricane | 18 | 90 | Instant | 12s | 30 | Nature | Calls a hurricane onto the target area, battering enemies for X Nature damage. |
 | Pounce | 18 | 50 | Instant | — | 8 | Physical | A stealth opener that stuns the target for 2 sec. Awards 1 combo point. Wolf Form only. |
 | Starfire | 18 | 80 | 3s | — | 30 | Arcane | Calls down a bolt of stellar fire, causing X Arcane damage. |
 | Insect Swarm | 20 | 45 | Instant | — | 30 | Nature | The enemy is swarmed by insects, taking X Nature damage over 12 sec. |

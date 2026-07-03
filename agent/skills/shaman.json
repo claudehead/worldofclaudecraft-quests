@@ -140,6 +140,18 @@
       "school": "physical",
       "requiresTarget": true,
       "desc": "Channels the storm through your weapon, instantly striking for weapon damage plus $d."
+    },
+    {
+      "id": "earthquake",
+      "name": "Earthquake",
+      "learnLevel": 18,
+      "cost": 80,
+      "cooldown": 12,
+      "range": 30,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Shakes the target area, battering enemies for $d Nature damage."
     }
   ],
   "rotation": [
@@ -155,7 +167,8 @@
     "lightning_shield",
     "flametongue_weapon",
     "frostbrand_weapon",
-    "ghost_wolf"
+    "ghost_wolf",
+    "earthquake"
   ],
   "playbook": [
     "You are playing a Shaman (mana-based, melee).",

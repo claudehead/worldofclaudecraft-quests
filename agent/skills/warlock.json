@@ -212,6 +212,18 @@
       "school": "shadow",
       "requiresTarget": false,
       "desc": "Binds a Doomguard to your will — an elite demon that rains heavy Shadow damage from afar. A long cooldown gates its devastating power. Summoning a new demon dismisses your current one. You may have one demon at a time."
+    },
+    {
+      "id": "rain_of_fire",
+      "name": "Rain of Fire",
+      "learnLevel": 18,
+      "cost": 85,
+      "cooldown": 10,
+      "range": 30,
+      "castTime": 0,
+      "school": "fire",
+      "requiresTarget": false,
+      "desc": "Calls a rain of fire onto the target area, burning enemies for $d Fire damage."
     }
   ],
   "rotation": [
@@ -233,7 +245,8 @@
     "summon_felhunter",
     "summon_felguard",
     "summon_infernal",
-    "summon_doomguard"
+    "summon_doomguard",
+    "rain_of_fire"
   ],
   "playbook": [
     "You are playing a Warlock (mana-based, ranged).",

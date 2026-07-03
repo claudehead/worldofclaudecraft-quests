@@ -380,6 +380,18 @@
       "school": "physical",
       "requiresTarget": true,
       "desc": "Finishing move that causes Bleed damage over 12 sec. Consumes combo points. Wolf Form only."
+    },
+    {
+      "id": "hurricane",
+      "name": "Hurricane",
+      "learnLevel": 18,
+      "cost": 90,
+      "cooldown": 12,
+      "range": 30,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Calls a hurricane onto the target area, battering enemies for $d Nature damage."
     }
   ],
   "rotation": [
@@ -415,7 +427,8 @@
     "travel_form",
     "enrage",
     "dash",
-    "tigers_fury"
+    "tigers_fury",
+    "hurricane"
   ],
   "playbook": [
     "You are playing a Druid (mana-based, melee).",

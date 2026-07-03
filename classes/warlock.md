@@ -16,7 +16,7 @@
 
 ## Abilities
 
-17 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+18 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -34,6 +34,7 @@
 | Summon Felhunter | 14 | 120 | 5s | — | Melee | Shadow | Summons a Felhunter under the command of the Warlock. The Felhunter harries enemies from range with Shadow Bite and excels at hunting spellcasters. Summoning a new demon dismisses your current one. You may have one demon at a time. |
 | Searing Pain | 16 | 35 | 1.5s | — | 30 | Fire | Sears the enemy with agonizing fire for X Fire damage. Quick to cast. |
 | Summon Felguard | 16 | 150 | 5s | — | Melee | Shadow | Summons a Felguard under the command of the Warlock. The Felguard is a durable melee demon that wades into battle and holds its own. Summoning a new demon dismisses your current one. You may have one demon at a time. |
+| Rain of Fire | 18 | 85 | Instant | 10s | 30 | Fire | Calls a rain of fire onto the target area, burning enemies for X Fire damage. |
 | Summon Infernal | 18 | 140 | 6s | 3 min | Melee | Fire | Binds an Infernal to your will — a hulking juggernaut with crushing melee and the deepest health and armor of any demon. A long cooldown gates its raw power. Summoning a new demon dismisses your current one. You may have one demon at a time. |
 | Shadowburn | 20 | 70 | Instant | 15s | 20 | Shadow | Instantly blasts the target with Shadow Flame for X Shadow damage. |
 | Summon Doomguard | 20 | 150 | 6s | 3 min | Melee | Shadow | Binds a Doomguard to your will — an elite demon that rains heavy Shadow damage from afar. A long cooldown gates its devastating power. Summoning a new demon dismisses your current one. You may have one demon at a time. |

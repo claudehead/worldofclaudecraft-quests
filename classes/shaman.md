@@ -16,7 +16,7 @@
 
 ## Abilities
 
-11 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+12 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -30,6 +30,7 @@
 | Frostbrand Weapon | 12 _(ranks: 20)_ | 25 | Instant | — | Melee | Frost | Imbues your weapon with biting frost: each swing deals 8 additional damage for 5 min. |
 | Frost Shock | 14 | 50 | Instant | 6s | 20 | Frost | Instantly shocks the target with frost for X Frost damage and slows its movement by 50% for 8 sec. |
 | Ghost Wolf | 16 | 35 | 2s | — | Melee | Nature | Turns you into a Ghost Wolf, increasing movement speed by 40%. Cast again to return to normal form. |
+| Earthquake | 18 | 80 | Instant | 12s | 30 | Nature | Shakes the target area, battering enemies for X Nature damage. |
 | Stormstrike | 20 | 40 | Instant | 12s | Melee | Physical | Channels the storm through your weapon, instantly striking for weapon damage plus X. |
 
 ---
