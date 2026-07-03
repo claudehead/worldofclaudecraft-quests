@@ -1,8 +1,8 @@
 // Service worker: network-first for everything so online visitors always get
 // the latest build; cached copies are kept only as an offline fallback. The
 // shell is precached on install so the app still opens with no connection.
-const CACHE = 'woc-v95';
-const SHELL_FILES = ['./', 'index.html', 'app.js?v=91', 'styles.css?v=91', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
+const CACHE = 'woc-v96';
+const SHELL_FILES = ['./', 'index.html', 'app.js?v=92', 'styles.css?v=92', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL_FILES)).then(() => self.skipWaiting()));
@@ -14,6 +14,12 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
+  // Only handle same-origin requests. Never intercept cross-origin ones (CDN assets,
+  // the HuggingFace model weights for the in-browser AI, raw.githubusercontent data):
+  // wrapping them can hand back redirected/opaque responses that break Cache.add/put
+  // ("encountered a network error"), and we'd otherwise try to cache hundreds of MB of
+  // model shards. Let the browser fetch those natively.
+  if (new URL(req.url).origin !== self.location.origin) return;
   // network-first: fresh when online, fall back to cache when offline
   e.respondWith(
     fetch(req).then(r => {
