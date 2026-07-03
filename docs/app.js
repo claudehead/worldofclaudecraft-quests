@@ -2358,7 +2358,7 @@ function router() {
   if (head === 'delves') return simpleListView('Delves', 'Replayable', 'Scalable mini-instances with tiers, affixes, companions and a Marks vendor.',
     M.delves.map(d => ({ name: d.name, file: d.file, meta: `Minimum level ${d.minLevel}`, tags: ['Tiers', 'Vendor'] })));
   if (head === 'doc') { // legacy: /doc/<encoded path.md>[/anchor] · clean: /doc/dir/dir/name
-    const rest = parts.slice(1).map(s => decodeURIComponent(s));
+    const rest = parts.slice(1).map(s => decodeURIComponent(s)).filter(Boolean); // drop trailing-slash empties
     let file, anchor = '';
     if (/\.md$/.test(rest[0])) { file = rest[0]; anchor = rest[1] || ''; }        // legacy single encoded segment
     else { const joined = rest.join('/'); file = /\.md$/.test(joined) ? joined : joined + '.md'; } // clean multi-segment
