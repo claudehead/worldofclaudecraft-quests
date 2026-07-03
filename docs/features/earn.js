@@ -33,7 +33,9 @@
   }
   const validAddr = (a) => /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(a);
 
-  async function check(addr, out) {
+  async function check(addr) {
+    const out = document.getElementById('earnOut');
+    if (!out) return;
     out.innerHTML = '<div class="spinner"></div>';
     if (!validAddr(addr)) { out.innerHTML = '<p class="meta">That doesn\'t look like a Solana address.</p>'; return; }
     const [price, bal] = await Promise.all([wocPrice(), wocBalance(addr).catch(() => null)]);
@@ -98,11 +100,11 @@
       </div>
     </div></section>`));
 
-    const addr = document.getElementById('earnAddr'), out = document.getElementById('earnOut');
-    document.getElementById('earnBtn').onclick = () => check(addr.value.trim(), out);
-    addr.addEventListener('keydown', e => { if (e.key === 'Enter') check(addr.value.trim(), out); });
+    const addr = document.getElementById('earnAddr');
+    document.getElementById('earnBtn').onclick = () => check(addr.value.trim());
+    addr.addEventListener('keydown', e => { if (e.key === 'Enter') check(addr.value.trim()); });
     const ph = document.getElementById('earnPhantom');
-    if (ph) ph.onclick = async () => { try { const r = await window.solana.connect(); addr.value = r.publicKey.toString(); check(addr.value, out); } catch (e) {} };
+    if (ph) ph.onclick = async () => { try { const r = await window.solana.connect(); addr.value = r.publicKey.toString(); check(addr.value); } catch (e) {} };
   }
   registerView('earn', view);
 })();
