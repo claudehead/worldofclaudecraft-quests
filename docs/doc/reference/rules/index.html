@@ -121,6 +121,7 @@
       <a class="link" data-go="#/patches">🆕 Patch notes</a>
       <a class="link" data-go="#/doc/reference%2Fsneak-peek.md">🔭 Sneak peek</a>
       <a class="link" data-go="#/badges">🏅 Dev badges</a>
+      <a class="link" data-go="#/donate">💜 Donate</a>
       <a class="link" href="https://claudehead.github.io/woc-play/" target="_blank" rel="noopener">▶ Play offline</a>
       <a class="link navsearch" id="navsearch" title="Search ( / )">🔍 <span class="navctl-label">Search</span></a>
       <span class="langwrap" title="Language">🌐 <select class="navlang" id="navlang" aria-label="Language"></select></span>
@@ -151,6 +152,7 @@
   <footer>
     Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
     A fan-made guide — not affiliated with the upstream project.
+    · <a data-go="#/donate" style="cursor:pointer">💜 Donate (SOL / $WOC)</a>
     <span id="visitcount" class="visitcount" hidden></span>
   </footer>
   <!-- Privacy-friendly visitor analytics — pick ONE (or neither). Both are free, cookieless, GDPR-safe.
@@ -198,6 +200,7 @@
   <script src="features/tracker.js?v=78"></script>
   <script src="features/coach.js?v=78"></script>
   <script src="features/zoneguide.js?v=78"></script>
+  <script src="features/donate.js?v=78"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});

@@ -38,6 +38,7 @@ const SECTIONS = [
   ['abilities', 'Abilities', 'Every class ability in World of Claudecraft with ranks, costs and effects.'],
   ['talents', 'Talent Calculator', 'Interactive talent calculator — plan builds across class and spec trees.'],
   ['patches', 'Patch Notes', 'Official release notes for every version of World of Claudecraft.'],
+  ['donate', 'Donate', 'Support the free World of Claudecraft field guide — tip in SOL or $WOC on Solana.'],
   ['badges', 'Developer Badges', 'The World of Claudecraft developer badges and how they were earned.'],
   ['drops', 'Item Finder', 'Where every item drops in World of Claudecraft and how to farm it.'],
   ['farming', 'Farming Calculator', 'Plan farming runs — drop rates, expected time and best routes.'],
