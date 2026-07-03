@@ -85,7 +85,10 @@
       // OPFS is built for large binary files and avoids both. The selector is
       // `cacheBackend` ("cache" | "indexeddb" | "cross-origin" | "opfs") in current WebLLM.
       const appConfig = { ...webllm.prebuiltAppConfig, cacheBackend: 'opfs' };
-      engine = await webllm.CreateMLCEngine(MODEL, {
+      // Run inference in a Web Worker (ask-worker.js) to keep the WebGPU work off the
+      // main thread — avoids the "Buffer was unmapped…" race on the page/when unfocused.
+      const worker = new Worker('features/ask-worker.js?v=96', { type: 'module' });
+      engine = await webllm.CreateWebWorkerMLCEngine(worker, MODEL, {
         appConfig,
         initProgressCallback: (r) => setStatus(esc(r.text || 'Loading…'), typeof r.progress === 'number' ? r.progress : null),
       });
