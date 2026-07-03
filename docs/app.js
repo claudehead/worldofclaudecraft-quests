@@ -155,17 +155,16 @@ function home() {
       <div class="arrow">Explore →</div></div>`);
     grid.append(card);
   });
-  app.append(sec);
-  app.append(el(`<section class="block"><div class="wrap">
-    <div class="tipjar reveal" data-go="#/donate" role="link" tabindex="0" title="Support the guide">
-      <div class="tipjar-jar">🫙<span class="tipjar-coin">🪙</span></div>
-      <div class="tipjar-body">
-        <h3>Enjoying the guide?</h3>
-        <p class="meta">It's free, and always will be. If it's saved you time, drop a coin in the jar — <b>SOL</b> or <b>$WOC</b> on Solana.</p>
-      </div>
-      <span class="btn primary tipjar-btn">💜 Leave a tip</span>
+  // tip jar — pinned to the top so it's seen right away
+  app.append(el(`<div class="wrap"><div class="tipjar tipjar-top reveal" data-go="#/donate" role="link" tabindex="0" title="Support the guide">
+    <div class="tipjar-jar">🫙<span class="tipjar-coin">🪙</span></div>
+    <div class="tipjar-body">
+      <h3>Enjoying the guide?</h3>
+      <p class="meta">It's free — tips cover the monthly AI &amp; hosting bills. Add a note with your name when you tip. <b>SOL</b> or <b>$WOC</b> on Solana.</p>
     </div>
-  </div></section>`));
+    <span class="btn primary tipjar-btn">💜 Leave a tip</span>
+  </div></div>`));
+  app.append(sec);
   reveal();
 }
 
