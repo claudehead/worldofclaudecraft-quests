@@ -617,3 +617,25 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .sup-recent a:hover .sup-name{color:var(--gold,#e8c86a)}
 .sup-recent .sup-name{font-weight:600}
 .sup-msg{font-style:italic;color:var(--muted,#9aa);font-size:.9rem;margin-top:.15rem;padding-left:.2rem}
+/* ask the guide */
+.ask-box{max-width:680px;margin:1.4rem auto 0}
+.ask-log{display:flex;flex-direction:column;gap:.7rem;min-height:60px;margin-bottom:1rem}
+.ask-msg{display:flex}
+.ask-user{justify-content:flex-end}
+.ask-bub{max-width:85%;padding:.6rem .9rem;border-radius:14px;line-height:1.5}
+.ask-user .ask-bub{background:rgba(232,200,106,.14);border:1px solid rgba(232,200,106,.3);border-bottom-right-radius:4px}
+.ask-bot .ask-bub{background:rgba(128,128,128,.08);border:1px solid var(--line,rgba(128,128,128,.22));border-bottom-left-radius:4px}
+.ask-bub p:first-child{margin-top:0}.ask-bub p:last-child{margin-bottom:0}
+.ask-bub ul,.ask-bub ol{margin:.4rem 0;padding-left:1.2rem}
+.ask-src{margin-top:.6rem;padding-top:.5rem;border-top:1px dashed rgba(128,128,128,.25);font-size:.82rem;color:var(--muted,#9aa)}
+.ask-src a{cursor:pointer}
+.ask-typing{display:inline-flex;gap:.25rem}
+.ask-typing i{width:.5rem;height:.5rem;border-radius:50%;background:var(--muted,#9aa);animation:askblink 1.2s infinite both}
+.ask-typing i:nth-child(2){animation-delay:.2s}.ask-typing i:nth-child(3){animation-delay:.4s}
+@keyframes askblink{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.ask-suggest{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.9rem}
+.ask-chip{padding:.4rem .8rem;border-radius:20px;border:1px solid var(--line,rgba(128,128,128,.3));background:rgba(128,128,128,.04);color:inherit;font:inherit;font-size:.85rem;cursor:pointer;transition:border-color .15s}
+.ask-chip:hover{border-color:var(--gold,#e8c86a)}
+.ask-form{display:flex;gap:.5rem}
+.ask-form input{flex:1;padding:.65rem .9rem;border-radius:12px;border:1px solid var(--line,rgba(128,128,128,.3));background:var(--panel,#12190f);color:inherit;font:inherit}
+.ask-note{margin-top:.7rem;text-align:center}

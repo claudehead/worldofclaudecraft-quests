@@ -40,6 +40,7 @@ const SECTIONS = [
   ['patches', 'Patch Notes', 'Official release notes for every version of World of Claudecraft.'],
   ['donate', 'Donate', 'Support the free World of Claudecraft field guide — tip in SOL or $WOC on Solana.'],
   ['supporters', 'Supporters Wall', 'Live from Solana — everyone who has tipped the World of Claudecraft guide, with a supporter leaderboard and recent tips.'],
+  ['ask', 'Ask the Guide', 'Ask the World of Claudecraft AI guide anything — quests, classes, gear, zones. Answers drawn straight from the field guide.'],
   ['badges', 'Developer Badges', 'The World of Claudecraft developer badges and how they were earned.'],
   ['drops', 'Item Finder', 'Where every item drops in World of Claudecraft and how to farm it.'],
   ['farming', 'Farming Calculator', 'Plan farming runs — drop rates, expected time and best routes.'],

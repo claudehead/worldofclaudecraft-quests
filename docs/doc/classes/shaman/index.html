@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Shaman — World of Claudecraft">
   <meta name="twitter:description" content="<img src=&quot;_class-renders/shaman.png&quot; width=&quot;170&quot; align=&quot;right&quot; alt=&quot;Shaman&quot;>">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=87">
+  <link rel="stylesheet" href="styles.css?v=88">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -123,6 +123,7 @@
       <a class="link" data-go="#/badges">🏅 Dev badges</a>
       <a class="link" data-go="#/donate">💜 Donate</a>
       <a class="link" data-go="#/supporters">🏆 Supporters</a>
+      <a class="link" data-go="#/ask">🔮 Ask the Guide</a>
       <a class="link" href="https://claudehead.github.io/woc-play/" target="_blank" rel="noopener">▶ Play offline</a>
       <a class="link navsearch" id="navsearch" title="Search ( / )">🔍 <span class="navctl-label">Search</span></a>
       <span class="langwrap" title="Language">🌐 <select class="navlang" id="navlang" aria-label="Language"></select></span>
@@ -309,6 +310,9 @@
     // Community comments (Giscus / GitHub Discussions). Fill repoId + categoryId from
     // https://giscus.app after enabling Discussions and installing the Giscus app. "" = off.
     window.GISCUS = { repo: "claudehead/worldofclaudecraft-quests", repoId: "R_kgDOTEKczA", category: "Announcements", categoryId: "DIC_kwDOTEKczM4DAZYO" };
+    // "Ask the Guide" AI endpoint — the Cloudflare Worker in /cloudflare/ask-worker.js
+    // (holds the OpenRouter key). Set this to the deployed Worker URL to switch the AI on.
+    window.ASK_ENDPOINT = "";
     window.CF_BEACON_TOKEN = "95a0cf6d95fa430e830349daeff26c6b"; // Cloudflare Web Analytics token ("" = off)
     window.ANALYTICS_CODE = "";  // GoatCounter subdomain ("" = off), e.g. "claudehead"
     if (window.CF_BEACON_TOKEN) {
@@ -327,19 +331,20 @@
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
-  <script src="app.js?v=87"></script>
+  <script src="app.js?v=88"></script>
   <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
-  <script src="features/planner.js?v=87"></script>
-  <script src="features/loadout.js?v=87"></script>
-  <script src="features/combatlog.js?v=87"></script>
-  <script src="features/droplab.js?v=87"></script>
-  <script src="features/pathfinder.js?v=87"></script>
-  <script src="features/builds.js?v=87"></script>
-  <script src="features/tracker.js?v=87"></script>
-  <script src="features/coach.js?v=87"></script>
-  <script src="features/zoneguide.js?v=87"></script>
-  <script src="features/donate.js?v=87"></script>
-  <script src="features/supporters.js?v=87"></script>
+  <script src="features/planner.js?v=88"></script>
+  <script src="features/loadout.js?v=88"></script>
+  <script src="features/combatlog.js?v=88"></script>
+  <script src="features/droplab.js?v=88"></script>
+  <script src="features/pathfinder.js?v=88"></script>
+  <script src="features/builds.js?v=88"></script>
+  <script src="features/tracker.js?v=88"></script>
+  <script src="features/coach.js?v=88"></script>
+  <script src="features/zoneguide.js?v=88"></script>
+  <script src="features/donate.js?v=88"></script>
+  <script src="features/supporters.js?v=88"></script>
+  <script src="features/ask.js?v=88"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});

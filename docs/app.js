@@ -66,7 +66,7 @@ async function loadJSON(path, opts) {
 }
 // Public toolkit for feature files (also available via shared top-level scope).
 window.WOC = {
-  el, esc, cb, raw, reveal, registerView, loadJSON, app,
+  el, esc, cb, raw, reveal, registerView, loadJSON, getMd, app,
   get RAW() { return RAW; },
   // Shared colour maps (kept in sync with the ones used across the app).
   QUALITY_COLOR: { legendary: '#e6803a', epic: '#a86bd6', rare: '#46b8da', uncommon: '#5cb85c', common: '#c8c8cf', poor: '#7a7a82' },
