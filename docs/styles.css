@@ -699,6 +699,44 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .earn-faq summary{cursor:pointer;font-weight:600}
 .earn-faq p{margin:.5rem 0 0}
 .earn-disc{margin:1.6rem 0 0;padding:1rem 1.2rem;border-radius:12px;border:1px dashed rgba(224,160,102,.5);background:rgba(224,160,102,.06);font-size:.86rem;line-height:1.55;color:var(--muted,#9aa)}
+/* trading cards */
+.card-gen{display:grid;gap:1.4rem;margin-top:1.4rem;justify-items:center}
+.card-controls{display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end;justify-content:center}
+.card-controls label{display:flex;flex-direction:column;gap:.3rem}
+.card-controls select{padding:.5rem .7rem;border-radius:10px;border:1px solid var(--line,rgba(128,128,128,.3));background:var(--panel,#12190f);color:inherit;font:inherit;min-width:220px}
+.card-btns{display:flex;gap:.5rem}
+.card-stage{perspective:900px}
+.trade-card{border-radius:22px;box-shadow:0 20px 50px rgba(0,0,0,.5);transition:transform .2s;max-width:100%}
+.trade-card:hover{transform:rotateY(6deg) rotateX(3deg)}
+/* arena + adventure shared pick buttons */
+.ar-pick{padding:.5rem .8rem;border-radius:10px;border:1px solid var(--cc,#888);background:color-mix(in srgb,var(--cc,#888) 10%,transparent);color:inherit;font:inherit;cursor:pointer;transition:transform .12s}
+.ar-pick:hover{transform:translateY(-2px)}
+.ar-pick.on{outline:2px solid var(--cc,#e8c86a);font-weight:700}
+.ar-setup{display:grid;gap:1.2rem;margin-top:1.2rem}
+.ar-setup h3,.adv-setup h3{font-family:'IM Fell English SC',serif;font-weight:400;margin:0 0 .6rem}
+.ar-picks,.adv-picks{display:flex;flex-wrap:wrap;gap:.5rem}
+.ar-setup select{padding:.55rem .7rem;border-radius:10px;border:1px solid var(--line,rgba(128,128,128,.3));background:var(--panel,#12190f);color:inherit;font:inherit;width:100%;max-width:420px}
+.ar-fight{max-width:200px}
+.ar-field{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1.2rem 0}
+.ar-side{flex:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.ar-ava{font-size:2.6rem;width:5rem;height:5rem;display:flex;align-items:center;justify-content:center;border:3px solid #888;border-radius:50%;background:rgba(128,128,128,.08)}
+.ar-vs{font-family:'IM Fell English SC',serif;font-size:1.4rem;color:var(--muted,#9aa)}
+.ar-bar{width:100%;max-width:180px;height:.8rem;border-radius:5px;background:rgba(128,128,128,.2);overflow:hidden}
+.ar-bar span{display:block;height:100%;transition:width .3s}
+.ar-hp{font-size:.8rem;color:var(--muted,#9aa)}
+.ar-actions{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:1rem 0}
+.ar-result{text-align:center;font-family:'IM Fell English SC',serif;font-size:1.8rem;margin:1rem 0}
+.ar-result.win{color:#4ec77e}.ar-result.lose{color:#e06666}
+.ar-log{border:1px solid var(--line,rgba(128,128,128,.2));border-radius:12px;padding:.8rem 1rem;background:rgba(0,0,0,.2);font-size:.9rem;line-height:1.7}
+.ar-log div:first-child{color:var(--gold,#e8c86a)}
+/* adventure */
+.adv-hud{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;padding:.6rem .9rem;border:1px solid var(--line,rgba(128,128,128,.25));border-radius:10px;margin:1rem 0;font-size:.9rem}
+.adv-bar{display:inline-block;width:110px;height:.7rem;border-radius:4px;background:rgba(128,128,128,.25);overflow:hidden;vertical-align:middle}
+.adv-bar i{display:block;height:100%;transition:width .3s}
+.adv-story{max-height:340px;overflow-y:auto;border:1px solid var(--line,rgba(128,128,128,.2));border-radius:12px;padding:1rem 1.2rem;background:rgba(0,0,0,.2);line-height:1.6}
+.adv-story p{margin:0 0 .7rem}
+.adv-story .adv-h{color:var(--gold,#e8c86a);font-family:'IM Fell English SC',serif;font-size:1.05rem}
+.adv-choices{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
 /* $WOC token hub */
 .woc-sym{font-size:1rem;color:var(--muted,#9aa);font-family:inherit;font-weight:400}
 .woc-hero{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;margin:1.4rem 0 1.2rem;padding:1.4rem 1.6rem;border:1px solid var(--line,rgba(128,128,128,.25));border-radius:16px;background:rgba(128,128,128,.05)}
