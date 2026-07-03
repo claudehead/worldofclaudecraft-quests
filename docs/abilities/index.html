@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Abilities — World of Claudecraft">
   <meta name="twitter:description" content="Every class ability in World of Claudecraft with ranks, costs and effects.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=100">
+  <link rel="stylesheet" href="styles.css?v=101">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -160,6 +160,9 @@
     // "Ask the Guide" AI endpoint — the Cloudflare Worker in /cloudflare/ask-worker.js
     // (holds the OpenRouter key). Set this to the deployed Worker URL to switch the AI on.
     window.ASK_ENDPOINT = "";
+    // Optional Solana RPC for the "Earn SOL" eligibility checker. Leave "" to use public
+    // endpoints (best-effort); set a free Helius/QuickNode URL for a reliable live check.
+    window.SOLANA_RPC = "";
     window.CF_BEACON_TOKEN = "95a0cf6d95fa430e830349daeff26c6b"; // Cloudflare Web Analytics token ("" = off)
     window.ANALYTICS_CODE = "";  // GoatCounter subdomain ("" = off), e.g. "claudehead"
     if (window.CF_BEACON_TOKEN) {
@@ -178,24 +181,24 @@
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
-  <script src="app.js?v=100"></script>
+  <script src="app.js?v=101"></script>
   <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
-  <script src="features/planner.js?v=100"></script>
-  <script src="features/loadout.js?v=100"></script>
-  <script src="features/combatlog.js?v=100"></script>
-  <script src="features/droplab.js?v=100"></script>
-  <script src="features/pathfinder.js?v=100"></script>
-  <script src="features/builds.js?v=100"></script>
-  <script src="features/tracker.js?v=100"></script>
-  <script src="features/coach.js?v=100"></script>
-  <script src="features/zoneguide.js?v=100"></script>
-  <script src="features/donate.js?v=100"></script>
-  <script src="features/supporters.js?v=100"></script>
-  <script src="features/ask.js?v=100"></script>
-  <script src="features/woc.js?v=100"></script>
-  <script src="features/earn.js?v=100"></script>
-  <script src="features/tiers.js?v=100"></script>
-  <script src="features/dashboard.js?v=100"></script>
+  <script src="features/planner.js?v=101"></script>
+  <script src="features/loadout.js?v=101"></script>
+  <script src="features/combatlog.js?v=101"></script>
+  <script src="features/droplab.js?v=101"></script>
+  <script src="features/pathfinder.js?v=101"></script>
+  <script src="features/builds.js?v=101"></script>
+  <script src="features/tracker.js?v=101"></script>
+  <script src="features/coach.js?v=101"></script>
+  <script src="features/zoneguide.js?v=101"></script>
+  <script src="features/donate.js?v=101"></script>
+  <script src="features/supporters.js?v=101"></script>
+  <script src="features/ask.js?v=101"></script>
+  <script src="features/woc.js?v=101"></script>
+  <script src="features/earn.js?v=101"></script>
+  <script src="features/tiers.js?v=101"></script>
+  <script src="features/dashboard.js?v=101"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});

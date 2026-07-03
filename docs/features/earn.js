@@ -7,28 +7,40 @@
   const { el, esc, registerView, app } = window.WOC;
   const MINT = '3WjLscH2JsXLEFJZRA9z8ti8yRGxWGKbqymPd7UicRth';
   const THRESHOLD = 20; // USD of $WOC to be eligible
-  const RPCS = ['https://api.mainnet-beta.solana.com', 'https://solana-rpc.publicnode.com'];
+  // window.SOLANA_RPC lets the site owner drop in a reliable keyed RPC (e.g. a free
+  // Helius URL) for a rock-solid live check; the public endpoints are best-effort.
+  const RPCS = [window.SOLANA_RPC, 'https://api.mainnet-beta.solana.com', 'https://solana-rpc.publicnode.com'].filter(Boolean);
 
   async function rpc(method, params) {
     for (const url of RPCS) {
-      try { const r = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }) }); const j = await r.json(); if (!j.error) return j.result; } catch (e) {}
+      try {
+        const r = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }) });
+        if (!r.ok) continue;
+        const j = await r.json();
+        if (!j.error) return { ok: true, result: j.result };
+      } catch (e) {}
     }
-    return null;
+    return { ok: false };
   }
   async function wocPrice() {
     try { const j = await (await fetch('https://api.dexscreener.com/latest/dex/tokens/' + MINT)).json(); const p = (j.pairs || []).sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0))[0]; return p ? +p.priceUsd : null; } catch (e) { return null; }
   }
+  // returns a number (balance) on success, or null if every RPC failed (≠ 0 balance)
   async function wocBalance(owner) {
     const res = await rpc('getTokenAccountsByOwner', [owner, { mint: MINT }, { encoding: 'jsonParsed' }]);
-    if (!res || !res.value) return 0;
-    return res.value.reduce((s, a) => s + (a.account.data.parsed.info.tokenAmount.uiAmount || 0), 0);
+    if (!res.ok) return null;
+    return (res.result.value || []).reduce((s, a) => s + (a.account.data.parsed.info.tokenAmount.uiAmount || 0), 0);
   }
   const validAddr = (a) => /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(a);
 
   async function check(addr, out) {
     out.innerHTML = '<div class="spinner"></div>';
     if (!validAddr(addr)) { out.innerHTML = '<p class="meta">That doesn\'t look like a Solana address.</p>'; return; }
-    const [price, bal] = await Promise.all([wocPrice(), wocBalance(addr).catch(() => 0)]);
+    const [price, bal] = await Promise.all([wocPrice(), wocBalance(addr).catch(() => null)]);
+    if (bal === null) {
+      out.innerHTML = `<div class="earn-result no"><div class="earn-big">⚠ Couldn't reach Solana</div><p class="meta">The public network endpoint is busy right now. Check your $WOC balance directly on <a href="https://solscan.io/account/${esc(addr)}#portfolio" target="_blank" rel="noopener">Solscan →</a> — you're eligible if it's worth $${THRESHOLD} or more.</p></div>`;
+      return;
+    }
     if (price == null) { out.innerHTML = '<p class="meta">Couldn\'t fetch the $WOC price right now — try again shortly.</p>'; return; }
     const usd = bal * price;
     const ok = usd >= THRESHOLD;
