@@ -3,8 +3,9 @@
 .env.*
 
 # Generator working dirs (local clones / temp output)
-woc/
-world-of-claudecraft/
+# Root-anchored so they don't also ignore docs/woc/ (the $WOC token hub page)
+/woc/
+/world-of-claudecraft/
 tools/node_modules/
 node_modules/
 
