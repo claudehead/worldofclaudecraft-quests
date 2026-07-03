@@ -3,7 +3,17 @@
 // bosses and mobs entirely on a <canvas> (procedural — no external images, so PNG
 // export never taints) and lets you download them. Built to be screenshotted + shared.
 (function () {
-  const { el, esc, registerView, loadJSON, app } = window.WOC;
+  const { el, esc, registerView, loadJSON, raw, app } = window.WOC;
+  const imgCache = {};
+  function loadImg(url) {
+    return new Promise(res => {
+      if (url in imgCache) return res(imgCache[url]);
+      const im = new Image(); im.crossOrigin = 'anonymous';
+      im.onload = () => { imgCache[url] = im; res(im); };
+      im.onerror = () => { imgCache[url] = null; res(null); };
+      im.src = url;
+    });
+  }
   const CLASS_COLOR = { warrior: '#C79C6E', mage: '#69CCF0', rogue: '#FFF569', paladin: '#F58CBA', hunter: '#ABD473', priest: '#E7E7E7', shaman: '#3390DE', warlock: '#9482C9', druid: '#FF7D0A' };
   const CLASS_EMOJI = { warrior: '⚔️', mage: '🔮', rogue: '🗡️', paladin: '🛡️', hunter: '🏹', priest: '✨', shaman: '🌊', warlock: '😈', druid: '🐻' };
   const FAMILY_EMOJI = { beast: '🐺', undead: '💀', dragon: '🐉', humanoid: '🧍', elemental: '🔥', demon: '👹', construct: '🗿', aberration: '🦑', giant: '🗿', critter: '🐁' };
@@ -28,24 +38,26 @@
       const hpSta = Math.min(c.baseStats.sta + c.statsPerLevel.sta * (L - 1), K.staLowCap) * K.staHpLow + Math.max(0, (c.baseStats.sta + c.statsPerLevel.sta * (L - 1)) - K.staLowCap) * K.staHpHigh;
       const hp = Math.round(c.baseHp + c.hpPerLevel * (L - 1) + hpSta);
       const roles = (DATA.roles[c.id] || {}).roles || [];
-      list.push({ kind: 'Class', id: c.id, name: c.name, color: CLASS_COLOR[c.id], emoji: CLASS_EMOJI[c.id] || '⭐', rarity: 'epic', flavor: roles.join(' · ') || 'Adventurer', stats: [['Level', L], ['Health', hp], ['Offense', deriveOffense(c, K, L)], ['Roles', roles.length]] });
+      const render = (DATA.roles[c.id] || {}).render;
+      list.push({ kind: 'Class', id: c.id, name: c.name, color: CLASS_COLOR[c.id], emoji: CLASS_EMOJI[c.id] || '⭐', img: render ? raw(render) : null, rarity: 'epic', flavor: roles.join(' · ') || 'Adventurer', stats: [['Level', L], ['Health', hp], ['Offense', deriveOffense(c, K, L)], ['Roles', roles.length]] });
     }
+    const bRender = (id, name) => { const p = DATA.bRender[id] || DATA.bRender[(name || '').toLowerCase()]; return p ? raw(p) : null; };
     // bosses
     for (const b of (DATA.bosses.bosses || [])) {
       const mob = (DATA.mobs.mobs || []).find(m => m.name === b.name || m.id === b.id);
-      list.push({ kind: 'Boss', id: b.id, name: b.name, color: RARITY.legendary[0], emoji: mob && FAMILY_EMOJI[mob.family] || '👑', rarity: 'legendary', flavor: 'Boss · ' + (b.where || 'Unknown'), stats: [['Level', b.level], ['Health', b.hp], ['DPS', mob ? Math.round(mob.dps) : '—'], ['Zone', b.where || '—']] });
+      list.push({ kind: 'Boss', id: b.id, name: b.name, color: RARITY.legendary[0], emoji: mob && FAMILY_EMOJI[mob.family] || '👑', img: bRender(b.id, b.name), rarity: 'legendary', flavor: 'Boss · ' + (b.where || 'Unknown'), stats: [['Level', b.level], ['Health', b.hp], ['DPS', mob ? Math.round(mob.dps) : '—'], ['Zone', b.where || '—']] });
     }
-    // notable mobs (elite/rare)
+    // notable mobs (elite/rare) — prefer those that have real art
     for (const m of (DATA.mobs.mobs || []).filter(m => (m.elite || m.rare) && !m.boss).slice(0, 30)) {
       const rar = m.rare ? 'rare' : 'uncommon';
-      list.push({ kind: 'Mob', id: m.id, name: m.name, color: RARITY[rar][0], emoji: FAMILY_EMOJI[m.family] || '🐾', rarity: rar, flavor: (m.elite ? 'Elite ' : '') + (m.family || 'creature'), stats: [['Level', m.level], ['Health', m.hp], ['DPS', Math.round(m.dps)], ['Armor', m.armor]] });
+      list.push({ kind: 'Mob', id: m.id, name: m.name, color: RARITY[rar][0], emoji: FAMILY_EMOJI[m.family] || '🐾', img: bRender(m.id, m.name), rarity: rar, flavor: (m.elite ? 'Elite ' : '') + (m.family || 'creature'), stats: [['Level', m.level], ['Health', m.hp], ['DPS', Math.round(m.dps)], ['Armor', m.armor]] });
     }
     return list;
   }
 
   function roundRect(ctx, x, y, w, h, r) { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
 
-  function draw(cv, s) {
+  function draw(cv, s, img) {
     const dpr = 2, ctx = cv.getContext('2d');
     cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px';
     ctx.scale(dpr, dpr);
@@ -71,12 +83,19 @@
     ctx.textAlign = 'left'; ctx.font = '700 11px system-ui, sans-serif'; ctx.fillStyle = mix(col, '#000', 0.2);
     roundRect(ctx, 26, 62, ctx.measureText(s.kind.toUpperCase()).width + 20, 20, 10); ctx.fill();
     ctx.fillStyle = '#111'; ctx.fillText(s.kind.toUpperCase(), 36, 73);
-    // art circle with emoji
+    // art circle — real game render if available, else emoji
     const cx = W / 2, cy = 200, rr = 92;
     const rg = ctx.createRadialGradient(cx, cy - 20, 10, cx, cy, rr); rg.addColorStop(0, mix(col, '#fff', 0.5)); rg.addColorStop(1, mix(col, '#0a0a10', 0.6));
     ctx.fillStyle = rg; ctx.beginPath(); ctx.arc(cx, cy, rr, 0, 7); ctx.fill();
-    ctx.lineWidth = 3; ctx.strokeStyle = col; ctx.stroke();
-    ctx.font = '96px system-ui'; ctx.textAlign = 'center'; ctx.fillStyle = '#fff'; ctx.fillText(s.emoji, cx, cy + 4);
+    if (img) {
+      ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, rr - 3, 0, 7); ctx.clip();
+      const scale = Math.max((rr * 2) / img.width, (rr * 2) / img.height);
+      const iw = img.width * scale, ih = img.height * scale;
+      ctx.drawImage(img, cx - iw / 2, cy - ih / 2, iw, ih); ctx.restore();
+    } else {
+      ctx.font = '96px system-ui'; ctx.textAlign = 'center'; ctx.fillStyle = '#fff'; ctx.fillText(s.emoji, cx, cy + 4);
+    }
+    ctx.lineWidth = 3; ctx.strokeStyle = col; ctx.beginPath(); ctx.arc(cx, cy, rr, 0, 7); ctx.stroke();
     // flavor
     ctx.font = 'italic 15px Georgia, serif'; ctx.fillStyle = 'rgba(255,255,255,.8)'; ctx.textAlign = 'center';
     ctx.fillText(s.flavor, cx, 318);
@@ -97,7 +116,11 @@
   function mix(a, b, t) { const pa = hex(a), pb = hex(b); return `rgb(${Math.round(pa[0] * (1 - t) + pb[0] * t)},${Math.round(pa[1] * (1 - t) + pb[1] * t)},${Math.round(pa[2] * (1 - t) + pb[2] * t)})`; }
   function hex(c) { if (c[0] === '#') { const n = c.length === 4 ? c.replace(/#(.)(.)(.)/, '#$1$1$2$2$3$3') : c; return [parseInt(n.slice(1, 3), 16), parseInt(n.slice(3, 5), 16), parseInt(n.slice(5, 7), 16)]; } const m = c.match(/\d+/g); return m ? m.map(Number) : [128, 128, 128]; }
 
-  function show(s) { current = s; const cv = document.getElementById('cardCanvas'); draw(cv, s); }
+  async function show(s) {
+    current = s; const cv = document.getElementById('cardCanvas');
+    draw(cv, s, s.img ? imgCache[s.img] : null); // instant draw (emoji or cached art)
+    if (s.img && !(s.img in imgCache)) { const im = await loadImg(s.img); if (current === s) draw(cv, s, im); }
+  }
 
   async function view() {
     app.innerHTML = '';
@@ -118,8 +141,13 @@
     </div></section>`));
 
     if (!DATA) {
-      const [cs, mf, bosses, mobs] = await Promise.all([loadJSON('classstats.json'), loadJSON('manifest.json'), loadJSON('bosses.json'), loadJSON('mobstats.json')]);
-      const roles = {}; (mf.classes || []).forEach(c => roles[c.id] = { roles: c.roles }); DATA = { cs, roles, bosses, mobs };
+      const [cs, mf, bosses, mobs, bestiary] = await Promise.all([
+        loadJSON('classstats.json'), loadJSON('manifest.json'), loadJSON('bosses.json'), loadJSON('mobstats.json'),
+        loadJSON('bestiary/bestiary.json', { raw: true }).catch(() => ({ mobs: [] })),
+      ]);
+      const roles = {}; (mf.classes || []).forEach(c => roles[c.id] = { roles: c.roles, render: c.render });
+      const bRender = {}; (bestiary.mobs || []).forEach(m => { if (m.render) { bRender[m.id] = m.render; bRender[m.name.toLowerCase()] = m.render; } });
+      DATA = { cs, roles, bosses, mobs, bRender };
     }
     const list = subjects();
     const sel = document.getElementById('cardSel');

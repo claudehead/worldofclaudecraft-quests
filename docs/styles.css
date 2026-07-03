@@ -737,6 +737,13 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .adv-story p{margin:0 0 .7rem}
 .adv-story .adv-h{color:var(--gold,#e8c86a);font-family:'IM Fell English SC',serif;font-size:1.05rem}
 .adv-choices{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+/* platformer */
+.play-wrap{position:relative;margin-top:1rem;max-width:900px}
+.play-cv{width:100%;height:auto;border:2px solid var(--line,rgba(128,128,128,.3));border-radius:12px;background:#0c1020;display:block;touch-action:none}
+.play-overlay{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(6,6,12,.7);border-radius:12px}
+.play-over{text-align:center;display:flex;flex-direction:column;gap:.8rem;align-items:center}
+.play-msg{font-family:'IM Fell English SC',serif;font-size:2rem}
+.play-over.win .play-msg{color:#e8c86a}.play-over.lose .play-msg{color:#e06666}
 /* $WOC token hub */
 .woc-sym{font-size:1rem;color:var(--muted,#9aa);font-family:inherit;font-weight:400}
 .woc-hero{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;margin:1.4rem 0 1.2rem;padding:1.4rem 1.6rem;border:1px solid var(--line,rgba(128,128,128,.25));border-radius:16px;background:rgba(128,128,128,.05)}
