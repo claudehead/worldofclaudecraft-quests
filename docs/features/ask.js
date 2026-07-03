@@ -74,8 +74,10 @@
       // Cache weights in IndexedDB, NOT the Cache API. HuggingFace serves the model
       // shards via a redirect to its CDN, and Cache.add()/put() rejects redirected
       // responses ("Cache.add() encountered a network error"). IndexedDB stores the
-      // raw bytes and avoids that entirely.
-      const appConfig = { ...webllm.prebuiltAppConfig, useIndexedDBCache: true };
+      // raw bytes and avoids that entirely. NOTE: the selector is `cacheBackend`
+      // ("cache" | "indexeddb" | "cross-origin" | "opfs") in current WebLLM — the old
+      // `useIndexedDBCache` flag is gone and was silently ignored.
+      const appConfig = { ...webllm.prebuiltAppConfig, cacheBackend: 'indexeddb' };
       engine = await webllm.CreateMLCEngine(MODEL, {
         appConfig,
         initProgressCallback: (r) => setStatus(esc(r.text || 'Loading…'), typeof r.progress === 'number' ? r.progress : null),
