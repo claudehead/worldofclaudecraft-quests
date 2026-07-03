@@ -600,3 +600,20 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .donate-fields{display:grid;gap:.55rem;margin:.4rem 0 1rem;text-align:left}
 .donate-fields input{width:100%;padding:.55rem .7rem;border-radius:10px;border:1px solid var(--line,rgba(128,128,128,.3));background:var(--panel,#12190f);color:inherit;font:inherit}
 .donate-send{display:inline-block;width:100%;text-align:center;margin-bottom:.4rem}
+/* supporters wall */
+.sup-summary{text-align:center;font-size:1.15rem;margin:.4rem 0 1.4rem;color:var(--muted,#9aa)}
+.sup-summary b{color:var(--gold,#e8c86a)}
+.sup-cols{display:grid;grid-template-columns:1fr 1.3fr;gap:1.6rem}
+@media(max-width:640px){.sup-cols{grid-template-columns:1fr}}
+.sup-col h3{font-family:'IM Fell English SC',serif;font-weight:400;margin:0 0 .7rem;border-bottom:1px solid var(--line,rgba(128,128,128,.25));padding-bottom:.4rem}
+.sup-board{margin:0;padding:0;list-style:none;counter-reset:sup}
+.sup-board li{counter-increment:sup;display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.5rem .3rem;border-bottom:1px solid rgba(128,128,128,.12)}
+.sup-board li::before{content:counter(sup);flex:none;width:1.5rem;text-align:center;font-weight:700;color:var(--gold,#e8c86a)}
+.sup-board .sup-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sup-amt{font-weight:700;color:var(--gold,#e8c86a);white-space:nowrap}
+.sup-recent{margin:0;padding:0;list-style:none}
+.sup-recent li{padding:.5rem .3rem;border-bottom:1px solid rgba(128,128,128,.12)}
+.sup-recent a{display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap;text-decoration:none;color:inherit}
+.sup-recent a:hover .sup-name{color:var(--gold,#e8c86a)}
+.sup-recent .sup-name{font-weight:600}
+.sup-msg{font-style:italic;color:var(--muted,#9aa);font-size:.9rem;margin-top:.15rem;padding-left:.2rem}
