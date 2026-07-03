@@ -570,3 +570,20 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .donate-actions{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem}
 .donate-qr{width:200px;height:200px;border-radius:12px;background:#fff;padding:8px;image-rendering:pixelated}
 .donate-note{margin-top:1rem;max-width:400px;margin-left:auto;margin-right:auto}
+/* front-page tip jar */
+.tipjar{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;margin:2rem 0 1rem;padding:1.4rem 1.6rem;cursor:pointer;
+  border:1px solid var(--gold,#e8c86a);border-radius:18px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(232,200,106,.10),rgba(201,164,60,.04) 60%,transparent);
+  transition:transform .18s ease,box-shadow .18s ease}
+.tipjar:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,164,60,.22)}
+.tipjar::after{content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;
+  box-shadow:inset 0 0 40px rgba(232,200,106,.08)}
+.tipjar-jar{position:relative;font-size:2.4rem;line-height:1;flex:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.tipjar-coin{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);font-size:1.1rem;animation:tipdrop 3.2s ease-in-out infinite}
+@keyframes tipdrop{0%,60%{transform:translate(-50%,-120%);opacity:0}72%{opacity:1}100%{transform:translate(-50%,-50%);opacity:1}}
+.tipjar-body{flex:1;min-width:200px}
+.tipjar-body h3{margin:0 0 .25rem;font-family:'IM Fell English SC',serif;font-weight:400;font-size:1.35rem;
+  background:linear-gradient(180deg,#fff6df,var(--gold,#e8c86a) 70%,var(--gold-d,#c9a43c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tipjar-body .meta{margin:0;line-height:1.5}
+.tipjar-btn{flex:none;white-space:nowrap}
+@media(max-width:560px){.tipjar{text-align:center;justify-content:center}.tipjar-btn{width:100%}}
