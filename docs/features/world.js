@@ -9,8 +9,19 @@
   const CLASS_EMOJI = { warrior: '⚔️', mage: '🔮', rogue: '🗡️', paladin: '🛡️', hunter: '🏹', priest: '✨', shaman: '🌊', warlock: '😈', druid: '🐻' };
   const RANGED = new Set(['mage', 'hunter', 'warlock', 'priest']);
   const BIOME = { 'Eastbrook Vale': '#2f4326', 'Mirefen Marsh': '#2b3a2a', 'Thornpeak Heights': '#3c3340' };
-  const CVW = 900, CVH = 520, S = 2.3; // world units → px
+  let CVW = 900, CVH = 520, S = 2.6, dpr = 1; // canvas logical size + zoom (world→px)
+  const touch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
   const imgs = {}; let D = null, keys = {}, raf = 0, G = null, ac = null, muted = false;
+
+  function layout() {
+    const cv = document.getElementById('wCv'); if (!cv) return;
+    const view = cv.parentElement;
+    CVW = Math.round(view.clientWidth); CVH = Math.round(view.clientHeight);
+    dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = CVW * dpr; cv.height = CVH * dpr; cv.style.width = CVW + 'px'; cv.style.height = CVH + 'px';
+    // Zelda-style zoom: keep the hero a healthy fraction of the shorter screen edge.
+    S = Math.max(2.6, Math.min(4.6, Math.min(CVW, CVH) / 150));
+  }
 
   const img = (u) => imgs[u] || (imgs[u] = Object.assign(new Image(), { src: u }));
   function beep(f, d, t) { if (muted) return; try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); const o = ac.createOscillator(), g = ac.createGain(); o.type = t || 'square'; o.frequency.value = f; g.gain.value = 0.05; o.connect(g); g.connect(ac.destination); o.start(); g.gain.exponentialRampToValueAtTime(0.0001, ac.currentTime + d); o.stop(ac.currentTime + d); } catch (e) {} }
@@ -122,6 +133,7 @@
   // ---- render ----
   function draw(ctx) {
     const p = G.p;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = '#0c1414'; ctx.fillRect(0, 0, CVW, CVH);
     ctx.save(); ctx.translate(CVW / 2, CVH / 2); ctx.scale(S, S); ctx.translate(-p.x, -p.z);
     // zone bands
@@ -199,6 +211,15 @@
     document.getElementById('wAgain').onclick = () => { host.style.display = 'none'; const t = D.map.markers.find(m => m.type === 'town'); G.p.x = t.x; G.p.z = t.z + 20; G.hp = G.maxHp; G.p.inv = 60; G.state = 'play'; loop(); };
   }
 
+  function wireTouch() {
+    document.querySelectorAll('.gp').forEach(bt => {
+      const k = bt.dataset.k;
+      const on = e => { e.preventDefault(); keys[k] = true; if (k === 'j') attack(); if (k === 'e') interact(); };
+      const off = e => { e.preventDefault(); keys[k] = false; };
+      bt.addEventListener('pointerdown', on); bt.addEventListener('pointerup', off);
+      bt.addEventListener('pointerleave', off); bt.addEventListener('pointercancel', off);
+    });
+  }
   function attack() { if (G && G.state === 'play' && !G.ranged && G.p.atk <= 0) { G.p.atk = 12; SFX.shoot(); } }
   function onKey(e, down) {
     const k = e.key.toLowerCase();
@@ -213,9 +234,28 @@
     host.innerHTML = `<div class="ar-setup"><h3>Choose your hero</h3><div class="ar-picks">${classes.map(c => `<button class="ar-pick" data-cls="${c.id}" style="--cc:${CLASS_COLOR[c.id]}">${CLASS_EMOJI[c.id]} ${esc(c.name)}${RANGED.has(c.id) ? ' 🏹' : ' ⚔️'}</button>`).join('')}</div>
       <p class="meta"><b>WASD</b>/<b>arrows</b> walk · <b>J/Space</b> attack (ranged 🏹 fire · melee ⚔️ swing) · <b>E</b> talk to ❗NPCs &amp; rest in 🏰 towns. Roam the real world of Claudecraft, level up, and clear kill-quests.</p></div>`;
     host.querySelectorAll('.ar-pick').forEach(b => b.onclick = () => {
-      host.innerHTML = `<div class="play-wrap"><canvas id="wCv" width="${CVW}" height="${CVH}" class="play-cv"></canvas><div id="wOver" class="play-overlay"></div></div>
-        <div class="play-foot"><button class="btn ghost" id="wMute">🔊 Sound</button></div>`;
-      document.getElementById('wMute').onclick = (e) => { muted = !muted; e.target.textContent = muted ? '🔇 Muted' : '🔊 Sound'; };
+      host.innerHTML = `<div class="gm ${touch ? 'gm-mobile' : ''}">
+        <div class="gm-view">
+          <canvas id="wCv" class="gm-cv"></canvas>
+          <div id="wOver" class="play-overlay"></div>
+          <button class="gm-corner gm-exit" id="wExit" title="Exit">✕</button>
+          <button class="gm-corner gm-mute" id="wMute" title="Sound">🔊</button>
+        </div>
+        ${touch ? `<div class="gm-pad">
+          <div class="gm-dpad">
+            <button class="gp gp-up" data-k="arrowup">▲</button>
+            <button class="gp gp-left" data-k="arrowleft">◀</button>
+            <button class="gp gp-right" data-k="arrowright">▶</button>
+            <button class="gp gp-down" data-k="arrowdown">▼</button>
+          </div>
+          <div class="gm-acts">
+            <button class="gp gp-b" data-k="e">💬</button>
+            <button class="gp gp-a" data-k="j">⚔️</button>
+          </div></div>` : ''}
+      </div>`;
+      layout(); wireTouch();
+      document.getElementById('wMute').onclick = (e) => { muted = !muted; e.currentTarget.textContent = muted ? '🔇' : '🔊'; };
+      document.getElementById('wExit').onclick = () => { cancelAnimationFrame(raf); G = null; setup(); };
       start(b.dataset.cls);
     });
   }
@@ -241,5 +281,7 @@
   }
   addEventListener('keydown', e => onKey(e, true));
   addEventListener('keyup', e => onKey(e, false));
+  addEventListener('resize', layout);
+  addEventListener('orientationchange', () => setTimeout(layout, 250));
   registerView('world', view);
 })();
