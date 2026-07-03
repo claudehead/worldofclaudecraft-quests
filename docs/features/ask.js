@@ -77,13 +77,14 @@
     setStatus('Loading the local guide model… first time downloads ~350 MB (cached after).', 0);
     try {
       const webllm = await import(WEBLLM_CDN);
-      // Cache weights in IndexedDB, NOT the Cache API. HuggingFace serves the model
-      // shards via a redirect to its CDN, and Cache.add()/put() rejects redirected
-      // responses ("Cache.add() encountered a network error"). IndexedDB stores the
-      // raw bytes and avoids that entirely. NOTE: the selector is `cacheBackend`
-      // ("cache" | "indexeddb" | "cross-origin" | "opfs") in current WebLLM — the old
-      // `useIndexedDBCache` flag is gone and was silently ignored.
-      const appConfig = { ...webllm.prebuiltAppConfig, cacheBackend: 'indexeddb' };
+      // Cache weights in OPFS (Origin Private File System). Why not the alternatives:
+      //   • "cache" (Cache API) rejects HuggingFace's redirected shard responses
+      //     → "Cache.add() encountered a network error".
+      //   • "indexeddb" can store the weights but fails to read very large blobs back
+      //     → "Failed to read large IndexedDB value" (a Chromium limitation).
+      // OPFS is built for large binary files and avoids both. The selector is
+      // `cacheBackend` ("cache" | "indexeddb" | "cross-origin" | "opfs") in current WebLLM.
+      const appConfig = { ...webllm.prebuiltAppConfig, cacheBackend: 'opfs' };
       engine = await webllm.CreateMLCEngine(MODEL, {
         appConfig,
         initProgressCallback: (r) => setStatus(esc(r.text || 'Loading…'), typeof r.progress === 'number' ? r.progress : null),
