@@ -71,7 +71,13 @@
     setStatus('Loading the local guide model… first time downloads ~350 MB (cached after).', 0);
     try {
       const webllm = await import(WEBLLM_CDN);
+      // Cache weights in IndexedDB, NOT the Cache API. HuggingFace serves the model
+      // shards via a redirect to its CDN, and Cache.add()/put() rejects redirected
+      // responses ("Cache.add() encountered a network error"). IndexedDB stores the
+      // raw bytes and avoids that entirely.
+      const appConfig = { ...webllm.prebuiltAppConfig, useIndexedDBCache: true };
       engine = await webllm.CreateMLCEngine(MODEL, {
+        appConfig,
         initProgressCallback: (r) => setStatus(esc(r.text || 'Loading…'), typeof r.progress === 'number' ? r.progress : null),
       });
       engineState = 'ready';
