@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Consumables — World of Claudecraft">
   <meta name="twitter:description" content="Food, drink, potions and elixirs — what they restore and where to buy them.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=105">
+  <link rel="stylesheet" href="styles.css?v=106">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -123,6 +123,7 @@
       <div class="navgroup">
         <button type="button" class="navgroupbtn">🎮 Play</button>
         <div class="navdropdown">
+          <a class="link" data-go="#/world">🗺️ Top-down RPG</a>
           <a class="link" data-go="#/play">🎮 Claudecraft Runner</a>
           <a class="link" data-go="#/arena">⚔️ Boss battle</a>
           <a class="link" data-go="#/adventure">📖 Play the lore</a>
@@ -190,28 +191,29 @@
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
-  <script src="app.js?v=105"></script>
+  <script src="app.js?v=106"></script>
   <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
-  <script src="features/planner.js?v=105"></script>
-  <script src="features/loadout.js?v=105"></script>
-  <script src="features/combatlog.js?v=105"></script>
-  <script src="features/droplab.js?v=105"></script>
-  <script src="features/pathfinder.js?v=105"></script>
-  <script src="features/builds.js?v=105"></script>
-  <script src="features/tracker.js?v=105"></script>
-  <script src="features/coach.js?v=105"></script>
-  <script src="features/zoneguide.js?v=105"></script>
-  <script src="features/donate.js?v=105"></script>
-  <script src="features/supporters.js?v=105"></script>
-  <script src="features/ask.js?v=105"></script>
-  <script src="features/woc.js?v=105"></script>
-  <script src="features/earn.js?v=105"></script>
-  <script src="features/cards.js?v=105"></script>
-  <script src="features/arena.js?v=105"></script>
-  <script src="features/adventure.js?v=105"></script>
-  <script src="features/play.js?v=105"></script>
-  <script src="features/tiers.js?v=105"></script>
-  <script src="features/dashboard.js?v=105"></script>
+  <script src="features/planner.js?v=106"></script>
+  <script src="features/loadout.js?v=106"></script>
+  <script src="features/combatlog.js?v=106"></script>
+  <script src="features/droplab.js?v=106"></script>
+  <script src="features/pathfinder.js?v=106"></script>
+  <script src="features/builds.js?v=106"></script>
+  <script src="features/tracker.js?v=106"></script>
+  <script src="features/coach.js?v=106"></script>
+  <script src="features/zoneguide.js?v=106"></script>
+  <script src="features/donate.js?v=106"></script>
+  <script src="features/supporters.js?v=106"></script>
+  <script src="features/ask.js?v=106"></script>
+  <script src="features/woc.js?v=106"></script>
+  <script src="features/earn.js?v=106"></script>
+  <script src="features/cards.js?v=106"></script>
+  <script src="features/arena.js?v=106"></script>
+  <script src="features/adventure.js?v=106"></script>
+  <script src="features/play.js?v=106"></script>
+  <script src="features/world.js?v=106"></script>
+  <script src="features/tiers.js?v=106"></script>
+  <script src="features/dashboard.js?v=106"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});

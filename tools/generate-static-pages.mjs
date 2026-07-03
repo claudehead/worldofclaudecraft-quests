@@ -43,6 +43,7 @@ const SECTIONS = [
   ['ask', 'Ask the Guide', 'Ask the World of Claudecraft AI guide anything — quests, classes, gear, zones. Answers drawn straight from the field guide.'],
   ['woc', '$WOC Token', 'The $WOC community token for World of Claudecraft on Solana — live price, chart, market cap and where to buy.'],
   ['earn', 'Earn SOL by Playing', 'How to earn SOL rewards by holding $20+ of $WOC and playing World of Claudecraft — steps, live eligibility checker and FAQ.'],
+  ['world', 'Claudecraft Top-Down RPG', 'Play World of Claudecraft as a 2D top-down RPG — explore the real world map, fight creatures where they live, take quests and level up.'],
   ['play', 'Claudecraft Runner', 'A side-scrolling platformer set in World of Claudecraft — run, jump and stomp through a level as your class to reach the portal.'],
   ['arena', 'Boss Battle', 'Play a turn-based boss battle in the browser — pick a class, duel a real boss from the World of Claudecraft bestiary.'],
   ['cards', 'Trading Card Generator', 'Generate and download collectible holo-style trading cards for World of Claudecraft classes, bosses and creatures.'],
