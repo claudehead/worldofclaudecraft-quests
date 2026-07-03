@@ -24,6 +24,7 @@
   const history = [];
 
   const tokens = (s) => (s.toLowerCase().match(/[a-z0-9']+/g) || []).filter(w => w.length > 1 && !STOP.has(w));
+  const errMsg = (e) => (e && (e.message || e.name || (e.toString && e.toString()))) || (typeof e === 'string' ? e : (() => { try { return JSON.stringify(e); } catch { return 'unknown error'; } })());
 
   function retrieve(q) {
     const qt = tokens(q); if (!qt.length) return [];
@@ -87,7 +88,7 @@
       const appConfig = { ...webllm.prebuiltAppConfig, cacheBackend: 'opfs' };
       // Run inference in a Web Worker (ask-worker.js) to keep the WebGPU work off the
       // main thread — avoids the "Buffer was unmapped…" race on the page/when unfocused.
-      const worker = new Worker('features/ask-worker.js?v=96', { type: 'module' });
+      const worker = new Worker('features/ask-worker.js?v=97', { type: 'module' });
       engine = await webllm.CreateWebWorkerMLCEngine(worker, MODEL, {
         appConfig,
         initProgressCallback: (r) => setStatus(esc(r.text || 'Loading…'), typeof r.progress === 'number' ? r.progress : null),
@@ -108,12 +109,20 @@
     if (wantLocal) {
       if (engineState !== 'ready') { await loadLocal(); if (engineState !== 'ready') throw new Error('Local model not loaded yet — tap “Run AI locally”.'); }
       const { ctx, sources } = await buildContext(q, 4000);
-      const stream = await engine.chat.completions.create({ messages: messagesFor(q, ctx), temperature: 0.3, max_tokens: 640, stream: true });
-      let acc = '';
       const bub = thinking.querySelector('.ask-bub');
-      for await (const chunk of stream) { acc += chunk.choices?.[0]?.delta?.content || ''; bub.innerHTML = render(acc); thinking.scrollIntoView({ block: 'end' }); }
-      history.push({ role: 'assistant', content: acc });
-      bub.innerHTML = render(acc) + srcLine(sources);
+      // Non-streaming: streaming over the Web Worker channel is fragile. One request,
+      // one reply — more robust across browsers/GPUs.
+      let ans = '';
+      try {
+        const r = await engine.chat.completions.create({ messages: messagesFor(q, ctx), temperature: 0.3, max_tokens: 640, stream: false });
+        ans = r?.choices?.[0]?.message?.content || '';
+      } catch (err) {
+        console.error('[ask] local generate failed:', err);
+        throw new Error(errMsg(err));
+      }
+      if (!ans) throw new Error('The model returned an empty reply — try again, or pick a larger model.');
+      history.push({ role: 'assistant', content: ans });
+      bub.innerHTML = render(ans) + srcLine(sources);
       return;
     }
     // remote
@@ -132,7 +141,7 @@
     history.push({ role: 'user', content: q });
     const thinking = bubble('bot', '<span class="ask-typing"><i></i><i></i><i></i></span>');
     try { await generate(q, thinking); }
-    catch (e) { thinking.querySelector('.ask-bub').innerHTML = `<span class="meta">⚠ ${esc(e.message)}</span>`; }
+    catch (e) { console.error('[ask]', e); thinking.querySelector('.ask-bub').innerHTML = `<span class="meta">⚠ ${esc(errMsg(e))}</span>`; }
   }
 
   const SUGGEST = ['Where do I start as a new Warrior?', 'What quests are in Eastbrook Vale?', 'Best gear for a level 20 Mage?', 'How does lockpicking work?'];
