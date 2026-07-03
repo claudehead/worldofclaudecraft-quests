@@ -9,7 +9,13 @@
 (function () {
   const { el, esc, registerView, loadJSON, getMd, app } = window.WOC;
   const ENDPOINT = window.ASK_ENDPOINT || '';
-  const MODEL = 'Qwen2.5-0.5B-Instruct-q4f16_1-MLC';
+  const MODELS = [
+    { id: 'SmolLM2-360M-Instruct-q4f16_1-MLC', label: 'Tiny — SmolLM2 360M (~180 MB, fastest)' },
+    { id: 'Qwen2.5-0.5B-Instruct-q4f16_1-MLC', label: 'Small — Qwen2.5 0.5B (~270 MB, default)' },
+    { id: 'Llama-3.2-1B-Instruct-q4f16_1-MLC', label: 'Medium — Llama 3.2 1B (~600 MB)' },
+    { id: 'Qwen2.5-1.5B-Instruct-q4f16_1-MLC', label: 'Best — Qwen2.5 1.5B (~950 MB)' },
+  ];
+  let MODEL = localStorage.getItem('wc_ai_model') || 'Qwen2.5-0.5B-Instruct-q4f16_1-MLC';
   const WEBLLM_CDN = 'https://esm.run/@mlc-ai/web-llm';
   const STOP = new Set('the a an of to in for and or is are how do i what where which when who whats can with on at get best my me you it this that as by from'.split(' '));
   const SYSTEM = `You are the friendly in-game guide for "World of Claudecraft", a fantasy MMORPG. Answer the player's question using ONLY the CONTEXT provided, which is drawn from the official field guide. Be concise and specific — quote item names, zones, levels and quest names exactly. If the context doesn't contain the answer, say you don't have that in the guide yet. Never invent stats, drops or coordinates. Use short paragraphs or bullets. Do not mention "context".`;
@@ -136,8 +142,9 @@
       <p class="sub reveal">Ask anything about World of Claudecraft — quests, classes, gear, zones. Answers come straight from this field guide${gpu ? ', and can run <b>100% private in your browser</b>' : ''}.</p>
       <div class="ask-box">
         <div class="ask-runner">
-          <button class="btn ${ENDPOINT ? 'ghost' : 'primary'}" id="askLoad">🖥️ Run AI locally ${gpu ? '(~350 MB, one-time)' : '(needs WebGPU)'}</button>
-          <span class="meta" id="askStatus">${gpu ? 'Loads a tiny model into your browser — no account, no server, fully private.' : 'Local AI needs a recent desktop Chrome/Edge (WebGPU).' + (ENDPOINT ? '' : ' The remote guide isn\'t configured yet.')}</span>
+          ${gpu ? `<select id="askModel" class="ask-model">${MODELS.map(m => `<option value="${m.id}"${m.id === MODEL ? ' selected' : ''}>${esc(m.label)}</option>`).join('')}</select>` : ''}
+          <button class="btn ${ENDPOINT ? 'ghost' : 'primary'}" id="askLoad">🖥️ Run AI locally ${gpu ? '' : '(needs WebGPU)'}</button>
+          <span class="meta" id="askStatus">${gpu ? 'Loads the model into your browser — no account, no server, fully private. Weights are cached, so switching sizes only downloads once each.' : 'Local AI needs a recent desktop Chrome/Edge (WebGPU).' + (ENDPOINT ? '' : ' The remote guide isn\'t configured yet.')}</span>
         </div>
         <div class="ask-log" id="askLog"></div>
         <div class="ask-suggest" id="askSuggest">${SUGGEST.map(s => `<button class="ask-chip">${esc(s)}</button>`).join('')}</div>
@@ -152,6 +159,13 @@
     if (!INDEX) { try { INDEX = await loadJSON('search.json'); } catch (e) { INDEX = []; } }
     if (!Array.isArray(INDEX)) INDEX = INDEX.items || INDEX.entries || [];
 
+    const sel = document.getElementById('askModel');
+    if (sel) sel.addEventListener('change', () => {
+      MODEL = sel.value; localStorage.setItem('wc_ai_model', MODEL);
+      engine = null; engineState = 'none';
+      const b = document.getElementById('askBadge'); if (b) b.hidden = true;
+      setStatus('Model changed — tap “Run AI locally” to load ' + esc(sel.options[sel.selectedIndex].text.split('—')[1] || MODEL) + '.');
+    });
     document.getElementById('askLoad').addEventListener('click', loadLocal);
     const form = document.getElementById('askForm'), input = document.getElementById('askInput');
     form.addEventListener('submit', e => { e.preventDefault(); const q = input.value; input.value = ''; document.getElementById('askSuggest').style.display = 'none'; send(q); });

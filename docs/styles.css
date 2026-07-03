@@ -641,6 +641,7 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .ask-note{margin-top:.7rem;text-align:center}
 .ask-runner{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-bottom:1rem;padding:.8rem 1rem;border:1px dashed var(--line,rgba(128,128,128,.3));border-radius:12px;background:rgba(128,128,128,.03)}
 .ask-runner .meta{flex:1;min-width:180px}
+.ask-model{padding:.5rem .6rem;border-radius:10px;border:1px solid var(--line,rgba(128,128,128,.3));background:var(--panel,#12190f);color:inherit;font:inherit}
 .ask-badge{font-size:.7rem;vertical-align:middle;padding:.2rem .5rem;border-radius:20px;background:rgba(78,199,126,.15);border:1px solid rgba(78,199,126,.4);color:#4ec77e;font-family:inherit;font-weight:600}
 .ask-bar{display:inline-block;width:120px;height:.5rem;border-radius:4px;background:rgba(128,128,128,.25);vertical-align:middle;overflow:hidden;margin-left:.3rem}
 .ask-bar i{display:block;height:100%;background:var(--gold,#e8c86a);transition:width .3s}
