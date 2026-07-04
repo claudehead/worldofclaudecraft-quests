@@ -33,12 +33,13 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> ⚫ Cracked Wolf Fang | Junk | 45% | sells for 4c |
 | <img src="../_loot-icons/milepost_boots.png" width="22" alt=""> 🟢 Milepost Boots | Leather armor — Feet · 30 armor, +1 Agi, +1 Sta | 10% |  |
+| <img src="../_loot-icons/wolfhide_satchel.png" width="22" alt=""> 🟢 Wolfhide Satchel | bag | 2% |  |
 
 <a id="mob-webwood_spider"></a>
 
-### Webwood Lurker
+### Sableweb Lurker
 
-<img src="../_mob-renders/webwood_spider.png" width="150" align="right" alt="Webwood Lurker">
+<img src="../_mob-renders/webwood_spider.png" width="150" align="right" alt="Sableweb Lurker">
 
 | Stat | Value |
 |---|---|
@@ -60,7 +61,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/webwood_silk.png" width="22" alt="">  Webwood Silk Gland | Quest item | 55% | quest item — only drops while on _Webwood Menace_ |
+| <img src="../_loot-icons/webwood_silk.png" width="22" alt="">  Sableweb Silk Gland | Quest item | 55% | quest item — only drops while on _Sableweb Menace_ |
 | <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚫ Twitching Spider Leg | Junk | 40% | sells for 4c |
 
 <a id="mob-wild_boar"></a>
@@ -88,8 +89,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/boar_hide.png" width="22" alt="">  Bristly Boar Hide | Quest item | 60% | quest item — only drops while on _Bristleback Hides_ |
-| <img src="../_loot-icons/tough_jerky.png" width="22" alt=""> ⚪ Tough Jerky | Food · restores 61 HP (over time) | 30% |  |
+| <img src="../_loot-icons/boar_hide.png" width="22" alt="">  Bristly Boar Hide | Quest item | 60% | quest item — only drops while on _Bristly Boar Hides_ |
+| <img src="../_loot-icons/tough_jerky.png" width="22" alt=""> ⚪ Salted Jerky | Food · restores 61 HP (over time) | 30% |  |
 | <img src="../_loot-icons/trail_leggings.png" width="22" alt=""> 🟢 Trailworn Leggings | Leather armor — Legs · 45 armor, +2 Agi | 10% |  |
 
 <a id="mob-mudfin_murloc"></a>
@@ -101,7 +102,7 @@
 | Stat | Value |
 |---|---|
 | Level | 3–5 |
-| Family | Murloc |
+| Family | mudfin |
 | Health | 70–104 HP |
 | Armor (physical mitigation) | 24–48 (~4–5% vs a same-level attacker) |
 | Melee damage | 7–16 per hit @ 1.9s swing (~5–7 DPS) |
@@ -117,7 +118,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Murloc Scale | Junk | 50% | sells for 5c |
+| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Mudfin Scale | Junk | 50% | sells for 5c |
 | <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 20% | sells for 3c |
 
 <a id="mob-vale_bandit"></a>
@@ -148,6 +149,36 @@
 | <img src="../_loot-icons/bandit_bandana.png" width="22" alt=""> ⚫ Red Bandana | Junk | 50% | sells for 6c |
 | <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 30% | sells for 3c |
 
+<a id="mob-tunnel_rat"></a>
+
+### Deeprock Digger
+
+<img src="../_mob-renders/tunnel_rat.png" width="150" align="right" alt="Deeprock Digger">
+
+| Stat | Value |
+|---|---|
+| Level | 4–6 |
+| Family | burrower |
+| Health | 96–132 HP |
+| Armor (physical mitigation) | 48–80 (~6–8% vs a same-level attacker) |
+| Melee damage | 10–20 per hit @ 2.1s swing (~6–8 DPS) |
+| Location | Eastbrook Vale · ~x:-82, z:-62 — [🗺️ show on map](#/map/-82/-62) |
+
+**Best way to kill:**
+
+- Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+**Loot:**
+
+- Coins: 22 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 60% | sells for 5c |
+| <img src="../_loot-icons/blessed_wax.png" width="22" alt="">  Blessed Tallow | Quest item | 45% | quest item — only drops while on _The Binding Rite_ |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 25% | sells for 3c |
+| <img src="../_loot-icons/mossy_handwraps.png" width="22" alt=""> 🟢 Mossgrown Handwraps | Cloth armor — Hands · 12 armor, +1 Int, +2 Spi | 15% |  |
+
 <a id="mob-old_greyjaw"></a>
 
 ### Old Greyjaw — _Rare_
@@ -177,36 +208,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/greyjaw_fang.png" width="22" alt="">  Old Greyjaw's Fang | Quest item | 100% | quest item — only drops while on _The Old Wolf_ |
 | <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> ⚫ Cracked Wolf Fang | Junk | 100% | sells for 4c |
-
-<a id="mob-tunnel_rat"></a>
-
-### Tunnel Rat Digger
-
-<img src="../_mob-renders/tunnel_rat.png" width="150" align="right" alt="Tunnel Rat Digger">
-
-| Stat | Value |
-|---|---|
-| Level | 4–6 |
-| Family | Kobold |
-| Health | 96–132 HP |
-| Armor (physical mitigation) | 48–80 (~6–8% vs a same-level attacker) |
-| Melee damage | 10–20 per hit @ 2.1s swing (~6–8 DPS) |
-| Location | Eastbrook Vale · ~x:-82, z:-62 — [🗺️ show on map](#/map/-82/-62) |
-
-**Best way to kill:**
-
-- Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
-
-**Loot:**
-
-- Coins: 22 copper (always drops)
-
-| Item | Type | Drop chance | Notes |
-|---|---|---:|---|
-| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Tallow Candle | Junk | 60% | sells for 5c |
-| <img src="../_loot-icons/blessed_wax.png" width="22" alt="">  Blessed Tallow | Quest item | 45% | quest item — only drops while on _The Binding Rite_ |
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 25% | sells for 3c |
-| <img src="../_loot-icons/mossy_handwraps.png" width="22" alt=""> 🟢 Mossgrown Handwraps | Cloth armor — Hands · 12 armor, +1 Int, +2 Spi | 15% |  |
+| <img src="../_loot-icons/wolfhide_satchel.png" width="22" alt=""> 🟢 Wolfhide Satchel | bag | 35% |  |
 
 <a id="mob-restless_bones"></a>
 
@@ -275,7 +277,7 @@
 | <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 100% | sells for 3c |
 | <img src="../_loot-icons/moggers_stomper_boots.png" width="22" alt=""> 🟢 Mogger's Stomper Boots | Leather armor — Feet · 32 armor, +2 Agi, +1 Sta | 30% |  |
 | <img src="../_loot-icons/moggers_shiv.png" width="22" alt=""> 🔵 Mogger's Shiv | Weapon — Main hand · 6–11 dmg @ 1.7s (~5 DPS), +4 Agi, +2 Sta | 25% | exclusive set † |
-| <img src="../_loot-icons/cryptstalker_jerkin.png" width="22" alt=""> 🔵 Cryptstalker Jerkin | Leather armor — Chest · 65 armor, +4 Agi, +2 Sta | 25% | exclusive set † |
+| <img src="../_loot-icons/cryptstalker_jerkin.png" width="22" alt=""> 🔵 Gravestalker Jerkin | Leather armor — Chest · 65 armor, +4 Agi, +2 Sta | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -500,6 +502,7 @@
 | <img src="../_loot-icons/quilted_trousers.png" width="22" alt=""> 🟢 Quilted Trousers | Cloth armor — Legs · 30 armor, +2 Sta | 33% | exclusive set 1 † |
 | <img src="../_loot-icons/oiled_boots.png" width="22" alt=""> 🟢 Oiled Leather Boots | Leather armor — Feet · 25 armor, +1 Agi | 33% | exclusive set 1 † |
 | <img src="../_loot-icons/greyjaw_hide_boots.png" width="22" alt=""> 🟢 Greyjaw Hide Boots | Leather armor — Feet · 28 armor, +1 Agi, +1 Sta | 25% | exclusive set 2 † |
+| <img src="../_loot-icons/gravewoven_bag.png" width="22" alt=""> 🔵 Gravewoven Bag | bag | 20% | exclusive set 2 † |
 | <img src="../_loot-icons/cryptbone_helm.png" width="22" alt=""> 🟢 Cryptbone Helm | Mail armor — Head · 48 armor, +3 Sta | 18% | exclusive set 2 † |
 | <img src="../_loot-icons/cryptbone_pauldrons.png" width="22" alt=""> 🟢 Cryptbone Pauldrons | Mail armor — Shoulder · 36 armor, +2 Sta | 18% | exclusive set 2 † |
 

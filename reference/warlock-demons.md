@@ -2,13 +2,12 @@
 
 The Warlock fights alongside a summoned demon. Each fills a different role — pick by what the fight needs. Stats below are the demon's base; they scale with you as you level.
 
-<a id="demon-imp"></a>
+<a id="demon-emberkin"></a>
 
-## Imp
+## Emberkin
 
-<img src="_demon-renders/imp.png" width="150" align="right" alt="Imp">
+<img src="_demon-renders/emberkin.png" width="150" align="right" alt="Emberkin">
 
-**Ranged nuker — a fragile Firebolt caster for steady damage.**
 
 | Stat | Value |
 |---|---|
@@ -16,13 +15,12 @@ The Warlock fights alongside a summoned demon. Each fills a different role — p
 | Base damage | 5 (+1.1/level) @ 2s |
 | Size | tiny (×0.55) |
 
-<a id="demon-voidwalker"></a>
+<a id="demon-gloomshade"></a>
 
-## Voidwalker
+## Gloomshade
 
-<img src="_demon-renders/voidwalker.png" width="150" align="right" alt="Voidwalker">
+<img src="_demon-renders/gloomshade.png" width="150" align="right" alt="Gloomshade">
 
-**Tank — soaks hits and taunts so you can cast in peace.**
 
 | Stat | Value |
 |---|---|
@@ -30,13 +28,12 @@ The Warlock fights alongside a summoned demon. Each fills a different role — p
 | Base damage | 4 (+0.75/level) @ 2s |
 | Size | large (×1.15) |
 
-<a id="demon-succubus"></a>
+<a id="demon-duskborn"></a>
 
-## Succubus
+## Duskborn
 
-<img src="_demon-renders/succubus.png" width="150" align="right" alt="Succubus">
+<img src="_demon-renders/duskborn.png" width="150" align="right" alt="Duskborn">
 
-**Burst/CC — high single-target damage with a seduction lockdown.**
 
 | Stat | Value |
 |---|---|
@@ -44,13 +41,12 @@ The Warlock fights alongside a summoned demon. Each fills a different role — p
 | Base damage | 7 (+2.1/level) @ 1.7s |
 | Size | normal (×0.95) |
 
-<a id="demon-felhunter"></a>
+<a id="demon-spellhound"></a>
 
-## Felhunter
+## Spellhound
 
-<img src="_demon-renders/felhunter.png" width="150" align="right" alt="Felhunter">
+<img src="_demon-renders/spellhound.png" width="150" align="right" alt="Spellhound">
 
-**Anti-caster — eats enemy buffs and locks out spellcasters.**
 
 | Stat | Value |
 |---|---|
@@ -58,13 +54,12 @@ The Warlock fights alongside a summoned demon. Each fills a different role — p
 | Base damage | 6 (+1.7/level) @ 2s |
 | Size | normal (×1) |
 
-<a id="demon-felguard"></a>
+<a id="demon-warfiend"></a>
 
-## Felguard
+## Warfiend
 
-<img src="_demon-renders/felguard.png" width="150" align="right" alt="Felguard">
+<img src="_demon-renders/warfiend.png" width="150" align="right" alt="Warfiend">
 
-**Melee bruiser — the durable all-rounder once you can summon it.**
 
 | Stat | Value |
 |---|---|
@@ -72,13 +67,12 @@ The Warlock fights alongside a summoned demon. Each fills a different role — p
 | Base damage | 7 (+2/level) @ 2.2s |
 | Size | large (×1.25) |
 
-<a id="demon-infernal"></a>
+<a id="demon-pyre_colossus"></a>
 
-## Infernal
+## Pyre Colossus
 
-<img src="_demon-renders/infernal.png" width="150" align="right" alt="Infernal">
+<img src="_demon-renders/pyre_colossus.png" width="150" align="right" alt="Pyre Colossus">
 
-**AoE juggernaut — a huge, slow-summon powerhouse that pulses fire.**
 
 | Stat | Value |
 |---|---|
@@ -86,13 +80,12 @@ The Warlock fights alongside a summoned demon. Each fills a different role — p
 | Base damage | 10 (+2.6/level) @ 2.8s |
 | Size | huge (×1.7) |
 
-<a id="demon-doomguard"></a>
+<a id="demon-wraithborn"></a>
 
-## Doomguard
+## Wraithborn
 
-<img src="_demon-renders/doomguard.png" width="150" align="right" alt="Doomguard">
+<img src="_demon-renders/wraithborn.png" width="150" align="right" alt="Wraithborn">
 
-**Burst power-summon — the biggest hitter on a long cooldown.**
 
 | Stat | Value |
 |---|---|

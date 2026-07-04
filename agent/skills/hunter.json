@@ -11,7 +11,7 @@
   "abilities": [
     {
       "id": "raptor_strike",
-      "name": "Raptor Strike",
+      "name": "Gutting Strike",
       "learnLevel": 1,
       "cost": 15,
       "cooldown": 6,
@@ -23,7 +23,7 @@
     },
     {
       "id": "aspect_of_the_hawk",
-      "name": "Aspect of the Hawk",
+      "name": "Harrier's Guise",
       "learnLevel": 4,
       "cost": 20,
       "cooldown": 0,
@@ -35,7 +35,7 @@
     },
     {
       "id": "serpent_sting",
-      "name": "Serpent Sting",
+      "name": "Venom Barb",
       "learnLevel": 4,
       "cost": 15,
       "cooldown": 0,
@@ -47,7 +47,7 @@
     },
     {
       "id": "arcane_shot",
-      "name": "Arcane Shot",
+      "name": "Fell Shot",
       "learnLevel": 6,
       "cost": 25,
       "cooldown": 6,
@@ -59,7 +59,7 @@
     },
     {
       "id": "concussive_shot",
-      "name": "Concussive Shot",
+      "name": "Rattling Shot",
       "learnLevel": 8,
       "cost": 20,
       "cooldown": 12,
@@ -71,7 +71,7 @@
     },
     {
       "id": "mongoose_bite",
-      "name": "Mongoose Bite",
+      "name": "Counterfang",
       "learnLevel": 10,
       "cost": 10,
       "cooldown": 5,
@@ -83,7 +83,7 @@
     },
     {
       "id": "wing_clip",
-      "name": "Wing Clip",
+      "name": "Fettering Slash",
       "learnLevel": 10,
       "cost": 20,
       "cooldown": 0,
@@ -95,7 +95,7 @@
     },
     {
       "id": "tame_beast",
-      "name": "Tame Beast",
+      "name": "Wildbond",
       "learnLevel": 10,
       "cost": 0,
       "cooldown": 0,
@@ -107,7 +107,7 @@
     },
     {
       "id": "dismiss_pet",
-      "name": "Dismiss Pet",
+      "name": "Release Companion",
       "learnLevel": 10,
       "cost": 0,
       "cooldown": 0,
@@ -131,7 +131,7 @@
     },
     {
       "id": "aspect_of_the_monkey",
-      "name": "Aspect of the Monkey",
+      "name": "Marten's Guise",
       "learnLevel": 10,
       "cost": 20,
       "cooldown": 0,
@@ -143,7 +143,7 @@
     },
     {
       "id": "aspect_of_the_cheetah",
-      "name": "Aspect of the Cheetah",
+      "name": "Courser's Guise",
       "learnLevel": 14,
       "cost": 20,
       "cooldown": 0,
@@ -155,7 +155,7 @@
     },
     {
       "id": "aimed_shot",
-      "name": "Aimed Shot",
+      "name": "Long Draw",
       "learnLevel": 16,
       "cost": 50,
       "cooldown": 6,
@@ -167,7 +167,7 @@
     },
     {
       "id": "rapid_fire",
-      "name": "Rapid Fire",
+      "name": "Fevered Draw",
       "learnLevel": 20,
       "cost": 0,
       "cooldown": 300,

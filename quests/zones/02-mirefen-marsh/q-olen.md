@@ -12,7 +12,7 @@
 
 ## Story
 
-> Knight-Commander Olen held the Bastion when it sank — drowned at his post rather than abandon it. Every warden learns his name with pride. Now the Mistcaller has raised him as a puppet to guard the very door he died defending. That shame ends, <your name>. Take four companions below and grant Olen the rest he earned.
+> Knight-Commander Olen held the Bastion when it sank — drowned at his post rather than abandon it. Every warden learns his name with pride. Now the Fogbinder has raised him as a puppet to guard the very door he died defending. That shame ends, <your name>. Take four companions below and grant Olen the rest he earned.
 
 ## How to complete
 

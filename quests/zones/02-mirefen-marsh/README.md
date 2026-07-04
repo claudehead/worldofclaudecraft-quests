@@ -32,4 +32,4 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 11 | [Robes in the Reeds](q-cult-camp.md) | Scout Maren | kill |
 | 12 | [The Sunken Bastion](q-bastion-door.md) | Brother Aldric | collect |
 | 12 | [The Knight-Commander's Shame](q-olen.md) 👥 | Scout Maren | kill |
-| 12 | [The Mistcaller](q-mistcaller.md) 👥 | Brother Aldric | kill |
+| 12 | [The Fogbinder](q-mistcaller.md) 👥 | Brother Aldric | kill |

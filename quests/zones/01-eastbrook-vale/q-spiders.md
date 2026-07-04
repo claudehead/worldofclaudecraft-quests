@@ -1,4 +1,4 @@
-# Webwood Menace
+# Sableweb Menace
 
 > Quest ID: `q_spiders` · Zone 1 — Eastbrook Vale
 
@@ -10,16 +10,16 @@
 
 ## Story
 
-> The lurkers in the eastern woods spin a silk I need for my poultices — and they have grown far too numerous besides. Cull 6 Webwood Lurkers and cut 4 silk glands from their bellies.
+> The lurkers in the eastern woods spin a silk I need for my poultices — and they have grown far too numerous besides. Cull 6 Sableweb Lurkers and cut 4 silk glands from their bellies.
 
 ## How to complete
 
-- **Kill 6× [Webwood Lurker](bestiary.md#mob-webwood_spider)** (level 2–4)
+- **Kill 6× [Sableweb Lurker](bestiary.md#mob-webwood_spider)** (level 2–4)
   - Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
-  - _Tracker: Webwood Lurker slain_
-- **Collect 4× Webwood Silk Gland**
-  - Drops from [**Webwood Lurker**](bestiary.md#mob-webwood_spider) (55% chance) — Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
-  - _Tracker: Webwood Silk Gland_
+  - _Tracker: Sableweb Lurker slain_
+- **Collect 4× Sableweb Silk Gland**
+  - Drops from [**Sableweb Lurker**](bestiary.md#mob-webwood_spider) (55% chance) — Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
+  - _Tracker: Sableweb Silk Gland_
 
 Then return to **Apothecary Lin**, Herbalist _(at ~x:11, z:-3)_ to turn in.
 
@@ -34,7 +34,7 @@ Then return to **Apothecary Lin**, Herbalist _(at ~x:11, z:-3)_ to turn in.
 
 ## Where to go
 
-![Where to go for Webwood Menace](qmap-q-spiders.svg)
+![Where to go for Sableweb Menace](qmap-q-spiders.svg)
 
 **[🧭 Open this route in 3D →](#/questroute/q_spiders)**
 

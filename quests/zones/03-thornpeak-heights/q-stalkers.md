@@ -30,6 +30,10 @@ Then return to **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ to tur
 
 > Twelve fewer shadows on the ridge. The patrols will breathe easier tonight.
 
+## Leads to
+
+- The Stalkers Return (`q_stalkers_return`)
+
 ## Where to go
 
 ![Where to go for Stalkers on the Ridge](qmap-q-stalkers.svg)

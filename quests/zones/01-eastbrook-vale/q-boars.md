@@ -1,4 +1,4 @@
-# Bristleback Hides
+# Bristly Boar Hides
 
 > Quest ID: `q_boars` · Zone 1 — Eastbrook Vale
 
@@ -31,7 +31,7 @@ Then return to **Trader Wilkes**, Provisioner _(at ~x:-7, z:3)_ to turn in.
 
 ## Where to go
 
-![Where to go for Bristleback Hides](qmap-q-boars.svg)
+![Where to go for Bristly Boar Hides](qmap-q-boars.svg)
 
 **[🧭 Open this route in 3D →](#/questroute/q_boars)**
 

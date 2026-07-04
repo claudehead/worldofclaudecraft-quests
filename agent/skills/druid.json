@@ -11,7 +11,7 @@
   "abilities": [
     {
       "id": "wrath",
-      "name": "Wrath",
+      "name": "Wildbolt",
       "learnLevel": 1,
       "cost": 20,
       "cooldown": 0,
@@ -23,7 +23,7 @@
     },
     {
       "id": "healing_touch",
-      "name": "Healing Touch",
+      "name": "Wildmend",
       "learnLevel": 1,
       "cost": 25,
       "cooldown": 0,
@@ -35,7 +35,7 @@
     },
     {
       "id": "mark_of_the_wild",
-      "name": "Mark of the Wild",
+      "name": "Wildward",
       "learnLevel": 1,
       "cost": 20,
       "cooldown": 0,
@@ -43,11 +43,11 @@
       "castTime": 0,
       "school": "nature",
       "requiresTarget": true,
-      "desc": "Places the Mark of the Wild on a friendly target, increasing armor by 25 for 30 min."
+      "desc": "Places the Wildward on a friendly target, increasing armor by 25 for 30 min."
     },
     {
       "id": "moonfire",
-      "name": "Moonfire",
+      "name": "Lunar Tempest",
       "learnLevel": 4,
       "cost": 25,
       "cooldown": 0,
@@ -59,7 +59,7 @@
     },
     {
       "id": "rejuvenation",
-      "name": "Rejuvenation",
+      "name": "Wildbloom",
       "learnLevel": 4,
       "cost": 25,
       "cooldown": 0,
@@ -71,7 +71,7 @@
     },
     {
       "id": "thorns",
-      "name": "Thorns",
+      "name": "Briarguard",
       "learnLevel": 6,
       "cost": 20,
       "cooldown": 0,
@@ -83,7 +83,7 @@
     },
     {
       "id": "entangling_roots",
-      "name": "Entangling Roots",
+      "name": "Gripping Roots",
       "learnLevel": 8,
       "cost": 35,
       "cooldown": 0,
@@ -95,7 +95,7 @@
     },
     {
       "id": "bear_form",
-      "name": "Bear Form",
+      "name": "Bruin Form",
       "learnLevel": 10,
       "cost": 30,
       "cooldown": 0,
@@ -107,7 +107,7 @@
     },
     {
       "id": "bear_charge",
-      "name": "Bear Charge",
+      "name": "Bruin Rush",
       "learnLevel": 10,
       "cost": 0,
       "cooldown": 15,
@@ -115,11 +115,11 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Charge an enemy, generating 9 rage and stunning it for 1 sec. 8-25 yd range. Bear Form only."
+      "desc": "Charge an enemy, generating 9 rage and stunning it for 1 sec. 8-25 yd range. Bruin Form only."
     },
     {
       "id": "maul",
-      "name": "Maul",
+      "name": "Bonecrush",
       "learnLevel": 10,
       "cost": 15,
       "cooldown": 0,
@@ -127,11 +127,11 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "A mauling attack that increases melee damage by $d and causes a high amount of threat. Activates on your next swing. Bear Form only."
+      "desc": "A mauling attack that increases melee damage by $d and causes a high amount of threat. Activates on your next swing. Bruin Form only."
     },
     {
       "id": "growl",
-      "name": "Growl",
+      "name": "Menace",
       "learnLevel": 10,
       "cost": 0,
       "cooldown": 10,
@@ -139,11 +139,11 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Growls at the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec. Bear Form only."
+      "desc": "Growls at the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec. Bruin Form only."
     },
     {
       "id": "demoralizing_roar",
-      "name": "Demoralizing Roar",
+      "name": "Craven Roar",
       "learnLevel": 10,
       "cost": 10,
       "cooldown": 0,
@@ -151,7 +151,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Demoralizes nearby enemies, reducing their attack power by 20 for 20 sec. Bear Form only."
+      "desc": "Demoralizes nearby enemies, reducing their attack power by 20 for 20 sec. Bruin Form only."
     },
     {
       "id": "cat_form",
@@ -167,7 +167,7 @@
     },
     {
       "id": "prowl",
-      "name": "Prowl",
+      "name": "Stalk",
       "learnLevel": 12,
       "cost": 0,
       "cooldown": 0,
@@ -179,7 +179,7 @@
     },
     {
       "id": "rake",
-      "name": "Rake",
+      "name": "Flense",
       "learnLevel": 12,
       "cost": 35,
       "cooldown": 0,
@@ -203,7 +203,7 @@
     },
     {
       "id": "regrowth",
-      "name": "Regrowth",
+      "name": "Second Bloom",
       "learnLevel": 14,
       "cost": 55,
       "cooldown": 0,
@@ -215,7 +215,7 @@
     },
     {
       "id": "ferocious_bite",
-      "name": "Ferocious Bite",
+      "name": "Gorebite",
       "learnLevel": 14,
       "cost": 35,
       "cooldown": 0,
@@ -227,7 +227,7 @@
     },
     {
       "id": "barkskin",
-      "name": "Barkskin",
+      "name": "Oakhide",
       "learnLevel": 16,
       "cost": 30,
       "cooldown": 60,
@@ -239,7 +239,7 @@
     },
     {
       "id": "swipe",
-      "name": "Swipe",
+      "name": "Sweeping Claws",
       "learnLevel": 16,
       "cost": 20,
       "cooldown": 0,
@@ -247,11 +247,11 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Swipe nearby enemies for $d damage. Causes extra threat. Bear Form only."
+      "desc": "Swipe nearby enemies for $d damage. Causes extra threat. Bruin Form only."
     },
     {
       "id": "starfire",
-      "name": "Starfire",
+      "name": "Skyfall",
       "learnLevel": 18,
       "cost": 80,
       "cooldown": 0,
@@ -263,7 +263,7 @@
     },
     {
       "id": "travel_form",
-      "name": "Travel Form",
+      "name": "Fleet Form",
       "learnLevel": 16,
       "cost": 30,
       "cooldown": 0,
@@ -275,7 +275,7 @@
     },
     {
       "id": "enrage",
-      "name": "Enrage",
+      "name": "Stoke",
       "learnLevel": 16,
       "cost": 0,
       "cooldown": 60,
@@ -283,11 +283,11 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Generates 20 rage instantly. Bear Form only."
+      "desc": "Generates 20 rage instantly. Bruin Form only."
     },
     {
       "id": "bash",
-      "name": "Bash",
+      "name": "Concuss",
       "learnLevel": 16,
       "cost": 10,
       "cooldown": 60,
@@ -295,11 +295,11 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Stuns the target for 2 sec. Bear Form only."
+      "desc": "Stuns the target for 2 sec. Bruin Form only."
     },
     {
       "id": "faerie_fire",
-      "name": "Faerie Fire",
+      "name": "Witchlight",
       "learnLevel": 18,
       "cost": 30,
       "cooldown": 0,
@@ -311,7 +311,7 @@
     },
     {
       "id": "hibernate",
-      "name": "Hibernate",
+      "name": "Slumber",
       "learnLevel": 18,
       "cost": 50,
       "cooldown": 0,
@@ -335,7 +335,7 @@
     },
     {
       "id": "pounce",
-      "name": "Pounce",
+      "name": "Slinkstrike",
       "learnLevel": 18,
       "cost": 50,
       "cooldown": 0,
@@ -347,7 +347,7 @@
     },
     {
       "id": "insect_swarm",
-      "name": "Insect Swarm",
+      "name": "Stinging Swarm",
       "learnLevel": 20,
       "cost": 45,
       "cooldown": 0,
@@ -359,7 +359,7 @@
     },
     {
       "id": "tigers_fury",
-      "name": "Tiger's Fury",
+      "name": "Wolfsblood",
       "learnLevel": 20,
       "cost": 30,
       "cooldown": 0,
@@ -396,6 +396,7 @@
   ],
   "rotation": [
     "bash",
+    "bear_charge",
     "growl",
     "pounce",
     "claw",
@@ -418,7 +419,6 @@
   "utility": [
     "healing_touch",
     "bear_form",
-    "bear_charge",
     "demoralizing_roar",
     "cat_form",
     "prowl",

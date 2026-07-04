@@ -16,6 +16,7 @@
 
 - **Collect 8× Ridge Stalker Pelt**
   - Drops from [**Ridge Stalker**](bestiary.md#mob-ridge_stalker) (60% chance) — Found in the open world at ~x:-50, z:590 (7 mobs, radius 22); Found in the open world at ~x:45, z:600 (6 mobs, radius 20)
+  - Drops from [**Ridge Stalker**](bestiary.md#mob-ridge_stalker) (60% chance) — Found in the open world at ~x:-50, z:590 (7 mobs, radius 22); Found in the open world at ~x:45, z:600 (6 mobs, radius 20)
   - _Tracker: Ridge Stalker Pelt_
 
 Then return to **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668)_ to turn in.
@@ -30,6 +31,10 @@ Then return to **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668
 ## On completion
 
 > Thick as my arm, these. The watch will not freeze this year — take these treads for your trouble.
+
+## Leads to
+
+- Cloaks for the Watch (`q_stalker_cloaks`)
 
 ## Where to go
 

@@ -115,8 +115,8 @@
 <text x="112.3" y="2275.8" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Grave of Royal Assassin Voss</text>
 <rect x="675.5" y="2297.4" width="8" height="8" transform="rotate(45 679.5 2301.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
 <text x="679.5" y="2311.4" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ritual Circle</text>
-<rect x="486.2" y="2513.5" width="14" height="14" fill="#9b59b6" stroke="#11160f" stroke-width="1.5"/>
-<text x="493.2" y="2512.5" fill="#d6a7e3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">⚔ Gravewyrm Sanctum</text>
+<rect x="486.2" y="2453.3" width="14" height="14" fill="#9b59b6" stroke="#11160f" stroke-width="1.5"/>
+<text x="493.2" y="2452.3" fill="#d6a7e3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">⚔ Gravewyrm Sanctum</text>
 <circle cx="504.1" cy="1928.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
 <text x="504.1" y="1920.8" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Captain Thessaly</text>
 <circle cx="465.8" cy="1906.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>

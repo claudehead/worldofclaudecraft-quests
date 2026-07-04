@@ -11,7 +11,7 @@
   "abilities": [
     {
       "id": "fireball",
-      "name": "Fireball",
+      "name": "Cinderbolt",
       "learnLevel": 1,
       "cost": 30,
       "cooldown": 0,
@@ -23,7 +23,7 @@
     },
     {
       "id": "frost_armor",
-      "name": "Frost Armor",
+      "name": "Hoarfrost Mantle",
       "learnLevel": 1,
       "cost": 20,
       "cooldown": 0,
@@ -35,7 +35,7 @@
     },
     {
       "id": "arcane_intellect",
-      "name": "Arcane Intellect",
+      "name": "Aether Insight",
       "learnLevel": 1,
       "cost": 25,
       "cooldown": 0,
@@ -47,7 +47,7 @@
     },
     {
       "id": "frostbolt",
-      "name": "Frostbolt",
+      "name": "Rimelance",
       "learnLevel": 4,
       "cost": 25,
       "cooldown": 0,
@@ -59,7 +59,7 @@
     },
     {
       "id": "conjure_water",
-      "name": "Conjure Water",
+      "name": "Waterbind",
       "learnLevel": 4,
       "cost": 40,
       "cooldown": 0,
@@ -71,7 +71,7 @@
     },
     {
       "id": "conjure_food",
-      "name": "Conjure Food",
+      "name": "Breadbind",
       "learnLevel": 6,
       "cost": 45,
       "cooldown": 0,
@@ -83,7 +83,7 @@
     },
     {
       "id": "fire_blast",
-      "name": "Fire Blast",
+      "name": "Cinderfall",
       "learnLevel": 6,
       "cost": 40,
       "cooldown": 8,
@@ -95,7 +95,7 @@
     },
     {
       "id": "arcane_missiles",
-      "name": "Arcane Missiles",
+      "name": "Aether Darts",
       "learnLevel": 8,
       "cost": 50,
       "cooldown": 0,
@@ -103,11 +103,11 @@
       "castTime": 0,
       "school": "arcane",
       "requiresTarget": true,
-      "desc": "Launches Arcane Missiles at the enemy, causing $d Arcane damage each second for 3 sec."
+      "desc": "Launches Aether Darts at the enemy, causing $d Arcane damage each second for 3 sec."
     },
     {
       "id": "polymorph",
-      "name": "Polymorph",
+      "name": "Bewitch",
       "learnLevel": 8,
       "cost": 50,
       "cooldown": 0,
@@ -115,11 +115,11 @@
       "castTime": 1.5,
       "school": "arcane",
       "requiresTarget": true,
-      "desc": "Transforms the enemy into a sheep for up to 15 sec. The sheep wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only."
+      "desc": "Transforms the enemy into a toad for up to 15 sec. The toad wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only."
     },
     {
       "id": "frost_nova",
-      "name": "Frost Nova",
+      "name": "Icebind",
       "learnLevel": 10,
       "cost": 35,
       "cooldown": 22,
@@ -131,7 +131,7 @@
     },
     {
       "id": "arcane_explosion",
-      "name": "Arcane Explosion",
+      "name": "Aetherburst",
       "learnLevel": 14,
       "cost": 60,
       "cooldown": 0,
@@ -143,7 +143,7 @@
     },
     {
       "id": "scorch",
-      "name": "Scorch",
+      "name": "Scald",
       "learnLevel": 16,
       "cost": 35,
       "cooldown": 0,
@@ -155,7 +155,7 @@
     },
     {
       "id": "ice_barrier",
-      "name": "Ice Barrier",
+      "name": "Frostveil",
       "learnLevel": 20,
       "cost": 90,
       "cooldown": 30,
@@ -167,7 +167,7 @@
     },
     {
       "id": "pyroblast",
-      "name": "Pyroblast",
+      "name": "Pyrelance",
       "learnLevel": 20,
       "cost": 125,
       "cooldown": 0,
@@ -193,6 +193,7 @@
   "rotation": [
     "fire_blast",
     "arcane_missiles",
+    "polymorph",
     "scorch",
     "fireball",
     "frostbolt",
@@ -203,7 +204,6 @@
     "arcane_intellect",
     "conjure_water",
     "conjure_food",
-    "polymorph",
     "frost_nova",
     "arcane_explosion",
     "ice_barrier",

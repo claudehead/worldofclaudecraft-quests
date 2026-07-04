@@ -11,7 +11,7 @@
   "abilities": [
     {
       "id": "sinister_strike",
-      "name": "Sinister Strike",
+      "name": "Wicked Slash",
       "learnLevel": 1,
       "cost": 45,
       "cooldown": 0,
@@ -23,7 +23,7 @@
     },
     {
       "id": "eviscerate",
-      "name": "Eviscerate",
+      "name": "Dirt Nap",
       "learnLevel": 1,
       "cost": 35,
       "cooldown": 0,
@@ -35,7 +35,7 @@
     },
     {
       "id": "garrote",
-      "name": "Garrote",
+      "name": "Throat Wire",
       "learnLevel": 1,
       "cost": 50,
       "cooldown": 0,
@@ -47,7 +47,7 @@
     },
     {
       "id": "backstab",
-      "name": "Backstab",
+      "name": "Craven Thrust",
       "learnLevel": 4,
       "cost": 60,
       "cooldown": 0,
@@ -59,7 +59,7 @@
     },
     {
       "id": "gouge",
-      "name": "Gouge",
+      "name": "Eye Jab",
       "learnLevel": 6,
       "cost": 45,
       "cooldown": 10,
@@ -71,7 +71,7 @@
     },
     {
       "id": "cheap_shot",
-      "name": "Cheap Shot",
+      "name": "Gut Punch",
       "learnLevel": 8,
       "cost": 60,
       "cooldown": 0,
@@ -83,7 +83,7 @@
     },
     {
       "id": "evasion",
-      "name": "Evasion",
+      "name": "Ghostfoot",
       "learnLevel": 8,
       "cost": 0,
       "cooldown": 300,
@@ -107,7 +107,7 @@
     },
     {
       "id": "slice_and_dice",
-      "name": "Slice and Dice",
+      "name": "Cutthroat Tempo",
       "learnLevel": 10,
       "cost": 25,
       "cooldown": 0,
@@ -119,7 +119,7 @@
     },
     {
       "id": "sprint",
-      "name": "Sprint",
+      "name": "Swift Heels",
       "learnLevel": 10,
       "cost": 0,
       "cooldown": 300,
@@ -131,7 +131,7 @@
     },
     {
       "id": "crippling_poison",
-      "name": "Crippling Poison",
+      "name": "Leaden Venom",
       "learnLevel": 12,
       "cost": 40,
       "cooldown": 0,
@@ -143,7 +143,7 @@
     },
     {
       "id": "kidney_shot",
-      "name": "Kidney Shot",
+      "name": "Low Blow",
       "learnLevel": 14,
       "cost": 25,
       "cooldown": 20,
@@ -155,7 +155,7 @@
     },
     {
       "id": "expose_armor",
-      "name": "Expose Armor",
+      "name": "Armor Breach",
       "learnLevel": 14,
       "cost": 25,
       "cooldown": 0,
@@ -167,7 +167,7 @@
     },
     {
       "id": "ambush",
-      "name": "Ambush",
+      "name": "Lurker's Strike",
       "learnLevel": 16,
       "cost": 60,
       "cooldown": 0,
@@ -179,7 +179,7 @@
     },
     {
       "id": "rupture",
-      "name": "Rupture",
+      "name": "Bleed Out",
       "learnLevel": 16,
       "cost": 25,
       "cooldown": 0,
@@ -191,7 +191,7 @@
     },
     {
       "id": "vanish",
-      "name": "Vanish",
+      "name": "Smokestep",
       "learnLevel": 18,
       "cost": 0,
       "cooldown": 300,
@@ -199,11 +199,11 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Vanish from sight, entering Stealth even in combat. You move 50% slower while hidden. Lasts up to 10 sec."
+      "desc": "Vanish from sight, entering Duskveil even in combat. You move 50% slower while hidden. Lasts up to 10 sec."
     },
     {
       "id": "instant_poison",
-      "name": "Instant Poison",
+      "name": "Adder's Bite",
       "learnLevel": 18,
       "cost": 40,
       "cooldown": 0,
@@ -215,7 +215,7 @@
     },
     {
       "id": "adrenaline_rush",
-      "name": "Adrenaline Rush",
+      "name": "Quickened Blood",
       "learnLevel": 20,
       "cost": 0,
       "cooldown": 180,
@@ -227,7 +227,7 @@
     },
     {
       "id": "deadly_poison",
-      "name": "Deadly Poison",
+      "name": "Festering Venom",
       "learnLevel": 20,
       "cost": 40,
       "cooldown": 0,
@@ -239,7 +239,7 @@
     },
     {
       "id": "blind",
-      "name": "Blind",
+      "name": "Dirt Toss",
       "learnLevel": 20,
       "cost": 50,
       "cooldown": 120,
@@ -251,7 +251,7 @@
     },
     {
       "id": "stealth",
-      "name": "Stealth",
+      "name": "Duskveil",
       "learnLevel": 2,
       "cost": 0,
       "cooldown": 10,
@@ -259,10 +259,11 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Conceals you in the shadows: enemies barely notice you, but you move 50% slower. Attacking or taking damage breaks Stealth. Cast again to step out."
+      "desc": "Conceals you in the shadows: enemies barely notice you, but you move 50% slower. Attacking or taking damage breaks Duskveil. Cast again to step out."
     }
   ],
   "rotation": [
+    "blind",
     "kidney_shot",
     "gouge",
     "backstab",
@@ -284,7 +285,6 @@
     "instant_poison",
     "adrenaline_rush",
     "deadly_poison",
-    "blind",
     "stealth"
   ],
   "playbook": [

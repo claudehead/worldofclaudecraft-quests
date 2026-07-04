@@ -11,7 +11,7 @@
 
 ## Story
 
-> The Sunken Bastion — a knight's hold that drowned in the fen a century ago — is where Voss's letters point, and where this Mistcaller sings his drowning hymns. The cult has warded its door with grave-stones. Bring me one of the ward stones, <your name>, and I will unweave the seal.
+> The Sunken Bastion — a knight's hold that drowned in the fen a century ago — is where Voss's letters point, and where this Fogbinder sings his drowning hymns. The cult has warded its door with grave-stones. Bring me one of the ward stones, <your name>, and I will unweave the seal.
 
 ## How to complete
 
@@ -33,7 +33,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 ## Leads to
 
 - The Knight-Commander's Shame (`q_olen`)
-- The Mistcaller (`q_mistcaller`)
+- The Fogbinder (`q_mistcaller`)
 
 ## Where to go
 

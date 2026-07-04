@@ -7,6 +7,7 @@ Companions are hired allies that fight alongside you in [delves](../delves/READM
 | Companion | Role | Notes |
 |---|---|---|
 | **Acolyte Tessa** | 💚 Healer | Keeps you alive on long delve runs. |
+| **Edda Reedhand** | 💚 Healer | Keeps you alive on long delve runs. |
 
 ## Ranks & upgrade costs
 

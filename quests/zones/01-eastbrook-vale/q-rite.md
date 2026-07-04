@@ -11,12 +11,12 @@
 
 ## Story
 
-> The crypt beneath the chapel must be unsealed if we are to stop the Gravecaller — but only a binding rite will let the living pass. I need 4 lumps of Blessed Tallow — the kobold diggers hoard candles by the crate — and 6 Ghostly Essences from the restless dead.
+> The crypt beneath the chapel must be unsealed if we are to stop the Gravecaller — but only a binding rite will let the living pass. I need 4 lumps of Blessed Tallow — the mine's burrowers hoard tallow by the crate — and 6 Ghostly Essences from the restless dead.
 
 ## How to complete
 
 - **Collect 4× Blessed Tallow**
-  - Drops from [**Tunnel Rat Digger**](bestiary.md#mob-tunnel_rat) (45% chance) — Found in the open world at ~x:-82, z:-62 (9 mobs, radius 20)
+  - Drops from [**Deeprock Digger**](bestiary.md#mob-tunnel_rat) (45% chance) — Found in the open world at ~x:-82, z:-62 (9 mobs, radius 20)
   - _Tracker: Blessed Tallow_
 - **Collect 6× Ghostly Essence**
   - Drops from [**Restless Bones**](bestiary.md#mob-restless_bones) (55% chance) — Found in the open world at ~x:80, z:78 (8 mobs, radius 18); Found in the open world at ~x:88, z:90 (2 mobs, radius 6)

@@ -11,7 +11,7 @@
   "abilities": [
     {
       "id": "heroic_strike",
-      "name": "Heroic Strike",
+      "name": "Reaver Strike",
       "learnLevel": 1,
       "cost": 15,
       "cooldown": 0,
@@ -23,7 +23,7 @@
     },
     {
       "id": "battle_shout",
-      "name": "Battle Shout",
+      "name": "Iron Bellow",
       "learnLevel": 1,
       "cost": 10,
       "cooldown": 0,
@@ -35,7 +35,7 @@
     },
     {
       "id": "commanding_shout",
-      "name": "Commanding Shout",
+      "name": "Bolstering Cry",
       "learnLevel": 14,
       "cost": 10,
       "cooldown": 0,
@@ -47,7 +47,7 @@
     },
     {
       "id": "charge",
-      "name": "Charge",
+      "name": "Onrush",
       "learnLevel": 4,
       "cost": 0,
       "cooldown": 15,
@@ -59,7 +59,7 @@
     },
     {
       "id": "rend",
-      "name": "Rend",
+      "name": "Deep Gash",
       "learnLevel": 4,
       "cost": 10,
       "cooldown": 0,
@@ -71,7 +71,7 @@
     },
     {
       "id": "thunder_clap",
-      "name": "Thunder Clap",
+      "name": "Quaking Blow",
       "learnLevel": 6,
       "cost": 20,
       "cooldown": 4,
@@ -83,7 +83,7 @@
     },
     {
       "id": "hamstring",
-      "name": "Hamstring",
+      "name": "Hobbling Cut",
       "learnLevel": 8,
       "cost": 10,
       "cooldown": 0,
@@ -95,7 +95,7 @@
     },
     {
       "id": "bloodrage",
-      "name": "Bloodrage",
+      "name": "Blood Toll",
       "learnLevel": 10,
       "cost": 0,
       "cooldown": 60,
@@ -107,7 +107,7 @@
     },
     {
       "id": "overpower",
-      "name": "Overpower",
+      "name": "Redhand",
       "learnLevel": 10,
       "cost": 5,
       "cooldown": 5,
@@ -119,7 +119,7 @@
     },
     {
       "id": "execute",
-      "name": "Execute",
+      "name": "Early Grave",
       "learnLevel": 14,
       "cost": 15,
       "cooldown": 0,
@@ -131,7 +131,7 @@
     },
     {
       "id": "slam",
-      "name": "Slam",
+      "name": "Brute Swing",
       "learnLevel": 16,
       "cost": 15,
       "cooldown": 0,
@@ -143,7 +143,7 @@
     },
     {
       "id": "cleave",
-      "name": "Cleave",
+      "name": "Reaping Arc",
       "learnLevel": 18,
       "cost": 20,
       "cooldown": 0,
@@ -155,7 +155,7 @@
     },
     {
       "id": "defensive_stance",
-      "name": "Defensive Stance",
+      "name": "Guarded Stance",
       "learnLevel": 10,
       "cost": 0,
       "cooldown": 1,
@@ -167,7 +167,7 @@
     },
     {
       "id": "demoralizing_shout",
-      "name": "Demoralizing Shout",
+      "name": "Direhowl",
       "learnLevel": 14,
       "cost": 10,
       "cooldown": 0,
@@ -179,7 +179,7 @@
     },
     {
       "id": "sunder_armor",
-      "name": "Sunder Armor",
+      "name": "Armor Shear",
       "learnLevel": 10,
       "cost": 15,
       "cooldown": 0,
@@ -191,7 +191,7 @@
     },
     {
       "id": "taunt",
-      "name": "Taunt",
+      "name": "Goad",
       "learnLevel": 10,
       "cost": 0,
       "cooldown": 10,
@@ -203,6 +203,7 @@
     }
   ],
   "rotation": [
+    "charge",
     "taunt",
     "overpower",
     "heroic_strike",
@@ -214,7 +215,6 @@
   "utility": [
     "battle_shout",
     "commanding_shout",
-    "charge",
     "thunder_clap",
     "bloodrage",
     "cleave",

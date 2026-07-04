@@ -28,7 +28,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to tu
 
 ## On completion
 
-> Morthen wrote to a 'Mistcaller' in the northern fen. The sect is not dead, $N — it has merely been patient.
+> Morthen wrote to a 'Fogbinder' in the northern fen. The sect is not dead, $N — it has merely been patient.
 
 ## Leads to
 

@@ -10,13 +10,13 @@
 
 ## Story
 
-> We struck a fine copper vein and then those kobold vermin came boiling out of the hillside. My crew will not set foot in the dig until it is cleared. Put down 10 Tunnel Rat Diggers.
+> We struck a fine copper vein and then those burrowing vermin came boiling out of the hillside. My crew will not set foot in the dig until it is cleared. Put down 10 Deeprock Diggers.
 
 ## How to complete
 
-- **Kill 10× [Tunnel Rat Digger](bestiary.md#mob-tunnel_rat)** (level 4–6)
+- **Kill 10× [Deeprock Digger](bestiary.md#mob-tunnel_rat)** (level 4–6)
   - Found in the open world at ~x:-82, z:-62 (9 mobs, radius 20)
-  - _Tracker: Tunnel Rat Digger slain_
+  - _Tracker: Deeprock Digger slain_
 
 Then return to **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ to turn in.
 

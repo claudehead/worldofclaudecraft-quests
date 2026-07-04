@@ -1,4 +1,4 @@
-# The Mistcaller
+# The Fogbinder
 
 > Quest ID: `q_mistcaller` · Zone 2 — Mirefen Marsh
 
@@ -12,13 +12,13 @@
 
 ## Story
 
-> At the bottom of the Bastion waits Vael the Mistcaller — Morthen's master, Voss's master, the voice that has drowned a hundred travelers to raise itself an army. He is far beyond any one hero: take four companions, no fewer. End him, <your name>, and the fen's dead may finally lie still.
+> At the bottom of the Bastion waits Vael the Fogbinder — Morthen's master, Voss's master, the voice that has drowned a hundred travelers to raise itself an army. He is far beyond any one hero: take four companions, no fewer. End him, <your name>, and the fen's dead may finally lie still.
 
 ## How to complete
 
-- **Kill 1× [Vael the Mistcaller](bestiary.md#mob-vael_the_mistcaller)** (level 13–13, **Boss**, **Elite**)
+- **Kill 1× [Vael the Fogbinder](bestiary.md#mob-vael_the_mistcaller)** (level 13–13, **Boss**, **Elite**)
   - Inside dungeon [**The Sunken Bastion**](../../../dungeons/sunken_bastion.md) (entrance portal ~x:45, z:515)
-  - _Tracker: Vael the Mistcaller slain_
+  - _Tracker: Vael the Fogbinder slain_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.
 
@@ -27,7 +27,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 - **XP:** 2800
 - **Money:** 2500 copper
 - **Item reward (by class):**
-  - <img src="../_loot-icons/mistcallers_edge.png" width="20" alt=""> 🔵 Mistcaller's Edge — _warrior_ · 14–23 dmg @ 2.3s (~8 DPS), +4 Str, +3 Sta
+  - <img src="../_loot-icons/mistcallers_edge.png" width="20" alt=""> 🔵 Fogbinder's Edge — _warrior_ · 14–23 dmg @ 2.3s (~8 DPS), +4 Str, +3 Sta
   - <img src="../_loot-icons/vaels_mist_staff.png" width="20" alt=""> 🔵 Vael's Mist-Staff — _mage_ · 15–26 dmg @ 3s (~7 DPS), +6 Int, +3 Spi
   - <img src="../_loot-icons/riptide_dirk.png" width="20" alt=""> 🔵 Riptide Dirk — _rogue_ · 9–15 dmg @ 1.7s (~7 DPS), +5 Agi, +2 Sta
 
@@ -37,7 +37,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 
 ## Where to go
 
-![Where to go for The Mistcaller](qmap-q-mistcaller.svg)
+![Where to go for The Fogbinder](qmap-q-mistcaller.svg)
 
 **[🧭 Open this route in 3D →](#/questroute/q_mistcaller)**
 

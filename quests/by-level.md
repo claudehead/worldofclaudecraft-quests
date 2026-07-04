@@ -8,7 +8,7 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 |-------|------|-------|
 | [Wolves at the Door](zones/01-eastbrook-vale/q-wolves.md) | Zone 1 — Eastbrook Vale |  |
 | [The Old Wolf](zones/01-eastbrook-vale/q-greyjaw.md) | Zone 1 — Eastbrook Vale | chain |
-| [Bristleback Hides](zones/01-eastbrook-vale/q-boars.md) | Zone 1 — Eastbrook Vale |  |
+| [Bristly Boar Hides](zones/01-eastbrook-vale/q-boars.md) | Zone 1 — Eastbrook Vale |  |
 | [Whispers Below](zones/01-eastbrook-vale/q-whispers.md) | Zone 1 — Eastbrook Vale | chain |
 | [The Names of the Dead](zones/01-eastbrook-vale/q-names-of-the-dead.md) | Zone 1 — Eastbrook Vale | chain |
 | [Silence the Call](zones/01-eastbrook-vale/q-silence-the-call.md) | Zone 1 — Eastbrook Vale | chain |
@@ -23,7 +23,7 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 
 | Quest | Zone | Notes |
 |-------|------|-------|
-| [Webwood Menace](zones/01-eastbrook-vale/q-spiders.md) | Zone 1 — Eastbrook Vale |  |
+| [Sableweb Menace](zones/01-eastbrook-vale/q-spiders.md) | Zone 1 — Eastbrook Vale |  |
 
 ## Level 3+
 
@@ -101,7 +101,7 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 |-------|------|-------|
 | [The Sunken Bastion](zones/02-mirefen-marsh/q-bastion-door.md) | Zone 2 — Mirefen Marsh | chain |
 | [The Knight-Commander's Shame](zones/02-mirefen-marsh/q-olen.md) 👥 | Zone 2 — Mirefen Marsh | chain |
-| [The Mistcaller](zones/02-mirefen-marsh/q-mistcaller.md) 👥 | Zone 2 — Mirefen Marsh | chain |
+| [The Fogbinder](zones/02-mirefen-marsh/q-mistcaller.md) 👥 | Zone 2 — Mirefen Marsh | chain |
 | [The Watch on the Peaks](zones/03-thornpeak-heights/q-highwatch-summons.md) | Zone 3 — Thornpeak Heights |  |
 
 ## Level 13+
@@ -110,6 +110,9 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 |-------|------|-------|
 | [Stalkers on the Ridge](zones/03-thornpeak-heights/q-stalkers.md) | Zone 3 — Thornpeak Heights |  |
 | [Winter Is Coming to Highwatch](zones/03-thornpeak-heights/q-stalker-pelts.md) | Zone 3 — Thornpeak Heights |  |
+| [The Stalkers Return](zones/03-thornpeak-heights/q-stalkers-return.md) | Zone 3 — Thornpeak Heights | chain |
+| [Cloaks for the Watch](zones/03-thornpeak-heights/q-stalker-cloaks.md) | Zone 3 — Thornpeak Heights | chain |
+| [Old Cragmaw](zones/03-thornpeak-heights/q-old-cragmaw.md) 👥 | Zone 3 — Thornpeak Heights | chain |
 | [Strange Wax](zones/03-thornpeak-heights/q-glowing-wax.md) | Zone 3 — Thornpeak Heights | chain |
 | [Totems of War](zones/03-thornpeak-heights/q-ogre-totems.md) | Zone 3 — Thornpeak Heights | chain |
 | [The Captain's Bounty](zones/03-thornpeak-heights/q-ogre-bounty.md) | Zone 3 — Thornpeak Heights | chain |

@@ -2,7 +2,7 @@
   "repo": "claudehead/worldofclaudecraft-quests",
   "branch": "main",
   "counts": {
-    "quests": 77,
+    "quests": 80,
     "zones": 4,
     "classes": 9,
     "dungeons": 5,
@@ -44,7 +44,7 @@
         },
         {
           "id": "q_boars",
-          "name": "Bristleback Hides",
+          "name": "Bristly Boar Hides",
           "level": 1,
           "group": false,
           "chain": false,
@@ -124,7 +124,7 @@
         },
         {
           "id": "q_spiders",
-          "name": "Webwood Menace",
+          "name": "Sableweb Menace",
           "level": 2,
           "group": false,
           "chain": false,
@@ -363,7 +363,7 @@
         },
         {
           "id": "q_mistcaller",
-          "name": "The Mistcaller",
+          "name": "The Fogbinder",
           "level": 12,
           "group": true,
           "chain": true,
@@ -407,6 +407,30 @@
           "group": false,
           "chain": false,
           "file": "quests/zones/03-thornpeak-heights/q-stalker-pelts.md"
+        },
+        {
+          "id": "q_stalkers_return",
+          "name": "The Stalkers Return",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-stalkers-return.md"
+        },
+        {
+          "id": "q_stalker_cloaks",
+          "name": "Cloaks for the Watch",
+          "level": 13,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-stalker-cloaks.md"
+        },
+        {
+          "id": "q_old_cragmaw",
+          "name": "Old Cragmaw",
+          "level": 13,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/03-thornpeak-heights/q-old-cragmaw.md"
         },
         {
           "id": "q_glowing_wax",
@@ -700,9 +724,9 @@
         "dps"
       ],
       "specs": [
-        "Arms",
-        "Fury",
-        "Protection"
+        "Battlecraft",
+        "Bloodrush",
+        "Ironguard"
       ],
       "file": "classes/warrior.md",
       "render": "classes/_class-renders/warrior.png"
@@ -717,9 +741,9 @@
         "dps"
       ],
       "specs": [
-        "Holy",
-        "Protection",
-        "Retribution"
+        "Sacrament",
+        "Vigil",
+        "Requital"
       ],
       "file": "classes/paladin.md",
       "render": "classes/_class-renders/paladin.png"
@@ -732,9 +756,9 @@
         "dps"
       ],
       "specs": [
-        "Beast Mastery",
-        "Marksmanship",
-        "Survival"
+        "Packlord",
+        "Coldsight",
+        "Fieldcraft"
       ],
       "file": "classes/hunter.md",
       "render": "classes/_class-renders/hunter.png"
@@ -747,9 +771,9 @@
         "dps"
       ],
       "specs": [
-        "Assassination",
-        "Combat",
-        "Subtlety"
+        "Knifework",
+        "Thuggery",
+        "Skulduggery"
       ],
       "file": "classes/rogue.md",
       "render": "classes/_class-renders/rogue.png"
@@ -763,9 +787,9 @@
         "dps"
       ],
       "specs": [
-        "Discipline",
-        "Holy",
-        "Shadow"
+        "Doctrine",
+        "Benison",
+        "Vespers"
       ],
       "file": "classes/priest.md",
       "render": "classes/_class-renders/priest.png"
@@ -779,9 +803,9 @@
         "dps"
       ],
       "specs": [
-        "Elemental",
-        "Enhancement",
-        "Restoration"
+        "Thundercall",
+        "Warspirit",
+        "Spiritmend"
       ],
       "file": "classes/shaman.md",
       "render": "classes/_class-renders/shaman.png"
@@ -794,9 +818,9 @@
         "dps"
       ],
       "specs": [
-        "Arcane",
-        "Fire",
-        "Frost"
+        "Aethermancy",
+        "Pyromancy",
+        "Cryomancy"
       ],
       "file": "classes/mage.md",
       "render": "classes/_class-renders/mage.png"
@@ -809,9 +833,9 @@
         "dps"
       ],
       "specs": [
-        "Affliction",
-        "Demonology",
-        "Destruction"
+        "Hexcraft",
+        "Pactbound",
+        "Ruination"
       ],
       "file": "classes/warlock.md",
       "render": "classes/_class-renders/warlock.png"
@@ -826,9 +850,9 @@
         "dps"
       ],
       "specs": [
-        "Balance",
-        "Feral",
-        "Restoration"
+        "Moongrove",
+        "Wildfang",
+        "Groveheart"
       ],
       "file": "classes/druid.md",
       "render": "classes/_class-renders/druid.png"

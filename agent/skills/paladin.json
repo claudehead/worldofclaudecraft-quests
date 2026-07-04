@@ -11,7 +11,7 @@
   "abilities": [
     {
       "id": "seal_of_righteousness",
-      "name": "Seal of Righteousness",
+      "name": "Oathbrand",
       "learnLevel": 1,
       "cost": 25,
       "cooldown": 0,
@@ -19,11 +19,11 @@
       "castTime": 0,
       "school": "holy",
       "requiresTarget": false,
-      "desc": "Fills you with Holy power for 30 sec, causing each of your melee swings to deal 4 additional Holy damage. Unleash with Judgement."
+      "desc": "Fills you with Holy power for 30 sec, causing each of your melee swings to deal 4 additional Holy damage. Unleash with Verdict."
     },
     {
       "id": "holy_light",
-      "name": "Holy Light",
+      "name": "Mending Light",
       "learnLevel": 1,
       "cost": 35,
       "cooldown": 0,
@@ -35,7 +35,7 @@
     },
     {
       "id": "devotion_aura",
-      "name": "Devotion Aura",
+      "name": "Steadfast Aura",
       "learnLevel": 1,
       "cost": 0,
       "cooldown": 0,
@@ -47,7 +47,7 @@
     },
     {
       "id": "judgement",
-      "name": "Judgement",
+      "name": "Verdict",
       "learnLevel": 4,
       "cost": 30,
       "cooldown": 10,
@@ -59,7 +59,7 @@
     },
     {
       "id": "blessing_of_might",
-      "name": "Blessing of Might",
+      "name": "Oath of Iron",
       "learnLevel": 4,
       "cost": 25,
       "cooldown": 0,
@@ -71,7 +71,7 @@
     },
     {
       "id": "divine_protection",
-      "name": "Divine Protection",
+      "name": "Ward of Faith",
       "learnLevel": 6,
       "cost": 15,
       "cooldown": 180,
@@ -83,7 +83,7 @@
     },
     {
       "id": "hammer_of_justice",
-      "name": "Hammer of Justice",
+      "name": "Sundering Gavel",
       "learnLevel": 8,
       "cost": 30,
       "cooldown": 60,
@@ -95,7 +95,7 @@
     },
     {
       "id": "lay_on_hands",
-      "name": "Lay on Hands",
+      "name": "Last Rite",
       "learnLevel": 10,
       "cost": 0,
       "cooldown": 600,
@@ -107,7 +107,7 @@
     },
     {
       "id": "flash_of_light",
-      "name": "Flash of Light",
+      "name": "Lightmend",
       "learnLevel": 12,
       "cost": 35,
       "cooldown": 0,
@@ -119,7 +119,7 @@
     },
     {
       "id": "exorcism",
-      "name": "Exorcism",
+      "name": "Rite of Expulsion",
       "learnLevel": 14,
       "cost": 55,
       "cooldown": 15,
@@ -131,7 +131,7 @@
     },
     {
       "id": "consecration",
-      "name": "Consecration",
+      "name": "Holy Ground",
       "learnLevel": 18,
       "cost": 60,
       "cooldown": 8,
@@ -143,7 +143,7 @@
     },
     {
       "id": "righteous_fury",
-      "name": "Righteous Fury",
+      "name": "Burning Oath",
       "learnLevel": 16,
       "cost": 30,
       "cooldown": 0,
@@ -155,7 +155,7 @@
     },
     {
       "id": "retribution_aura",
-      "name": "Retribution Aura",
+      "name": "Requital Aura",
       "learnLevel": 16,
       "cost": 0,
       "cooldown": 0,
@@ -171,14 +171,14 @@
     "hammer_of_justice",
     "exorcism",
     "judgement",
-    "flash_of_light",
-    "holy_light"
+    "blessing_of_might"
   ],
   "utility": [
     "seal_of_righteousness",
+    "holy_light",
     "devotion_aura",
-    "blessing_of_might",
     "divine_protection",
+    "flash_of_light",
     "consecration",
     "righteous_fury",
     "retribution_aura"

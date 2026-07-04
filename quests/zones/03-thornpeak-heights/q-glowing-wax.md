@@ -11,7 +11,7 @@
 
 ## Story
 
-> Caddis showed me a candle taken off one of those tunnelers — the wax glows, <your name>, and it is warm as a heartbeat. He wants more for study, and I want it off my requisition list. Bring back six lumps of the glowing wax.
+> Caddis showed me a lump of wax taken off one of those tunnelers — it glows, <your name>, and it is warm as a heartbeat. He wants more for study, and I want it off my requisition list. Bring back six lumps of the glowing wax.
 
 ## How to complete
 

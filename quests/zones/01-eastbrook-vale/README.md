@@ -12,7 +12,7 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 |----:|-------|-------|------|
 | 1 | [Wolves at the Door](q-wolves.md) | Marshal Redbrook | kill |
 | 1 | [The Old Wolf](q-greyjaw.md) | Marshal Redbrook | collect |
-| 1 | [Bristleback Hides](q-boars.md) | Trader Wilkes | collect |
+| 1 | [Bristly Boar Hides](q-boars.md) | Trader Wilkes | collect |
 | 1 | [Whispers Below](q-whispers.md) | Brother Aldric | collect |
 | 1 | [The Names of the Dead](q-names-of-the-dead.md) | Brother Aldric | collect |
 | 1 | [Silence the Call](q-silence-the-call.md) | Brother Aldric | kill |
@@ -22,7 +22,7 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 1 | [The Gravecaller's Trail](q-gravecallers-trail.md) | Brother Aldric | collect |
 | 1 | [Bandits of the Vale](q-bandits.md) | Marshal Redbrook | kill |
 | 1 | [The Ringleader](q-ringleader.md) | Marshal Redbrook | kill |
-| 2 | [Webwood Menace](q-spiders.md) | Apothecary Lin | kill/collect |
+| 2 | [Sableweb Menace](q-spiders.md) | Apothecary Lin | kill/collect |
 | 3 | [Trouble at the Lake](q-murlocs.md) | Fisherman Brandt | kill |
 | 3 | [Stolen Supplies](q-supplies.md) | Trader Wilkes | collect |
 | 4 | [Rats in the Mine](q-mine.md) | Foreman Odell | kill |

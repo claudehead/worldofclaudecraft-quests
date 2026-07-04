@@ -1,6 +1,6 @@
 # Zone 3 — Thornpeak Heights
 
-Level range: **13–20** · Hub: Highwatch · 30 quests
+Level range: **13–20** · Hub: Highwatch · 33 quests
 
 ![Map of Zone 3 — Thornpeak Heights](map.svg)
 
@@ -13,6 +13,9 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 12 | [The Watch on the Peaks](q-highwatch-summons.md) | Brother Aldric | collect |
 | 13 | [Stalkers on the Ridge](q-stalkers.md) | Captain Thessaly | kill |
 | 13 | [Winter Is Coming to Highwatch](q-stalker-pelts.md) | Quartermaster Bree | collect |
+| 13 | [The Stalkers Return](q-stalkers-return.md) | Captain Thessaly | kill |
+| 13 | [Cloaks for the Watch](q-stalker-cloaks.md) | Quartermaster Bree | collect |
+| 13 | [Old Cragmaw](q-old-cragmaw.md) 👥 | Captain Thessaly | kill |
 | 13 | [Strange Wax](q-glowing-wax.md) | Quartermaster Bree | collect |
 | 13 | [Totems of War](q-ogre-totems.md) | Scout Maren | collect |
 | 13 | [The Captain's Bounty](q-ogre-bounty.md) | Captain Thessaly | kill |

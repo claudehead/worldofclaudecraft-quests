@@ -32,7 +32,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 
 ## On completion
 
-> Every cipher is countersigned 'Deacon Voss' — and addressed onward to a 'Mistcaller' in the Bastion. Morthen's master, $N. We have found him.
+> Every cipher is countersigned 'Deacon Voss' — and addressed onward to a 'Fogbinder' in the Bastion. Morthen's master, $N. We have found him.
 
 ## Leads to
 

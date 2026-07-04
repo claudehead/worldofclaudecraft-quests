@@ -10,7 +10,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 18 · 984 HP · Dragonkin**
 
-**Drops:** Ysolei's Pearl Greaves _(50%)_, Moonshroud Breastplate _(34%)_, Moonshroud Robe _(33%)_, Moonshroud Tunic _(33%)_
+**Drops:** Ysolei's Pearl Greaves _(50%)_, Moonwrack Breastplate _(34%)_, Moonwrack Robe _(33%)_, Moonwrack Tunic _(33%)_
 
 <br clear="all">
 
@@ -26,6 +26,16 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
+<a id="mob-thunzharr_waking_peak"></a>
+
+### Thunzharr, the Waking Peak 🟡 Boss
+
+**Level 20 · 20000 HP · Elemental**
+
+**Drops:** Inert Storm Shard _(100%)_, Crownforged Gauntlets _(8%)_, Nighttalon Grips _(8%)_, Soulflame Gloves _(8%)_, Stormcaller's Handguards _(8%)_, Crownforged Girdle _(8%)_
+
+<br clear="all">
+
 <a id="mob-mogger_lackey"></a>
 
 ### Mogger Lackey
@@ -38,9 +48,9 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 ### Grix the Tunnelking 🔶 Elite
 
-**Level 7 · 644 HP · Kobold**
+**Level 7 · 644 HP · Burrower**
 
-**Drops:** Tallow Candle _(100%)_, Lesser Healing Potion _(100%)_, Tunnelking's Spade _(30%)_, Mogger's Copper Cudgel _(25%)_, Hollowbone Hauberk _(25%)_
+**Drops:** Greasy Tallow Lump _(100%)_, Lesser Healing Potion _(100%)_, Tunnelking's Spade _(30%)_, Mogger's Copper Cudgel _(25%)_, Hollowbone Hauberk _(25%)_
 
 <br clear="all">
 
@@ -50,7 +60,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 7 · 740 HP · Undead**
 
-**Drops:** Bone Fragments _(100%)_, Maldrec's Soulbinder _(25%)_, Hollowbone Hauberk _(25%)_, Gravewoven Raiment _(25%)_, Cryptstalker Jerkin _(25%)_
+**Drops:** Bone Fragments _(100%)_, Maldrec's Soulbinder _(25%)_, Hollowbone Hauberk _(25%)_, Gravewoven Raiment _(25%)_, Gravestalker Jerkin _(25%)_
 
 <br clear="all">
 
@@ -58,7 +68,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 ### Mirejaw Frenzy
 
-**Level 9–10 · 228 HP · Murloc**
+**Level 9–10 · 228 HP · Mudfin**
 
 <br clear="all">
 
@@ -82,7 +92,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 ### Ironvein Sapper
 
-**Level 15–16 · 378 HP · Kobold**
+**Level 15–16 · 378 HP · Burrower**
 
 <br clear="all">
 
@@ -110,7 +120,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 ### Moonspawn
 
-**Level 16 · 284 HP · Murloc**
+**Level 16 · 284 HP · Mudfin**
 
 <br clear="all">
 
@@ -159,6 +169,14 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Varkas Boneguard
 
 **Level 18–19 · 482 HP · Undead**
+
+<br clear="all">
+
+<a id="mob-thunzharr_stormling"></a>
+
+### Roused Stormling
+
+**Level 19–20 · 550 HP · Elemental**
 
 <br clear="all">
 

@@ -17,7 +17,7 @@
 ## How to complete
 
 - **Kill 1× [Korzul the Gravewyrm](bestiary.md#mob-korzul_the_gravewyrm)** (level 20–20, **Boss**, **Elite**)
-  - Inside dungeon [**Gravewyrm Sanctum**](../../../dungeons/gravewyrm_sanctum.md) (entrance portal ~x:0, z:880)
+  - Inside dungeon [**Gravewyrm Sanctum**](../../../dungeons/gravewyrm_sanctum.md) (entrance portal ~x:0, z:858)
   - _Tracker: Korzul the Gravewyrm slain_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to turn in.

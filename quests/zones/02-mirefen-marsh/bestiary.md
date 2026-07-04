@@ -44,7 +44,7 @@
 | Stat | Value |
 |---|---|
 | Level | 8–9 |
-| Family | Murloc |
+| Family | mudfin |
 | Health | 181–200 HP |
 | Armor (physical mitigation) | 84–96 (~7–8% vs a same-level attacker) |
 | Melee damage | 18–31 per hit @ 1.9s swing (~12–13 DPS) |
@@ -62,7 +62,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/waterlogged_idol.png" width="22" alt="">  Waterlogged Idol | Quest item | 50% | quest item — only drops while on _Idols of the Deep_ |
-| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Murloc Scale | Junk | 40% | sells for 5c |
+| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Mudfin Scale | Junk | 40% | sells for 5c |
 
 <a id="mob-mire_widow"></a>
 
@@ -175,7 +175,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 30% | sells for 3c |
-| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Tallow Candle | Junk | 30% | sells for 5c |
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 30% | sells for 5c |
 
 <a id="mob-fen_troll"></a>
 
@@ -234,7 +234,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/cult_cipher.png" width="22" alt="">  Gravecaller Cipher | Quest item | 40% | quest item — only drops while on _Stopping the Summoning_ |
-| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Tallow Candle | Junk | 30% | sells for 5c |
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 30% | sells for 5c |
 
 <a id="mob-gravecaller_summoner"></a>
 
@@ -283,7 +283,7 @@
 **Best way to kill:**
 
 - **Rare** — a tougher roaming spawn; worth killing for loot, but pull it solo.
-- **Devour Magic:** Strips your buffs on hit — re-up key buffs or burst it down.
+- **Spellgnaw:** Strips your buffs on hit — re-up key buffs or burst it down.
 
 **Loot:**
 
@@ -305,7 +305,7 @@
 | Stat | Value |
 |---|---|
 | Level | 10 |
-| Family | Murloc |
+| Family | mudfin |
 | Health | 1937 HP |
 | Armor (physical mitigation) | 234 (~16% vs a same-level attacker) |
 | Melee damage | 58–91 per hit @ 1.8s swing (~41 DPS) |
@@ -328,7 +328,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Murloc Scale | Junk | 100% | sells for 5c |
+| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Mudfin Scale | Junk | 100% | sells for 5c |
 | <img src="../_loot-icons/mirejaw_biteblade.png" width="22" alt=""> 🟢 Mirejaw Biteblade | Weapon — Main hand · 8–14 dmg @ 1.7s (~6 DPS), +5 Agi, +2 Sta | 25% |  |
 | <img src="../_loot-icons/mirejaw_scale_vest.png" width="22" alt=""> 🟢 Mirejaw Scale Vest | Mail armor — Chest · 115 armor, +2 Str, +3 Sta | 25% |  |
 | <img src="../_loot-icons/fen_reaver_glaive.png" width="22" alt=""> 🔵 Fen Reaver Glaive | Weapon — Main hand · 16–26 dmg @ 2.4s (~9 DPS), +5 Str, +3 Sta | 25% | exclusive set † |
@@ -345,7 +345,7 @@
 | Stat | Value |
 |---|---|
 | Level | 11 |
-| Family | Murloc |
+| Family | mudfin |
 | Health | 2162 HP |
 | Armor (physical mitigation) | 280 (~17% vs a same-level attacker) |
 | Melee damage | 65–101 per hit @ 1.9s swing (~44 DPS) |
@@ -367,7 +367,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Murloc Scale | Junk | 100% | sells for 5c |
+| <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Mudfin Scale | Junk | 100% | sells for 5c |
 | <img src="../_loot-icons/tidereaver_gaff.png" width="22" alt=""> 🔵 Tidereaver Gaff | Weapon — Main hand · 17–28 dmg @ 2.5s (~9 DPS), +5 Str, +4 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/sloomtooth_tidefang.png" width="22" alt=""> 🔵 Sloomtooth's Tidefang | Weapon — Main hand · 10–17 dmg @ 1.7s (~8 DPS), +6 Agi, +3 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/drowned_tide_scepter.png" width="22" alt=""> 🔵 Drowned Tide Scepter | Weapon — Main hand · 16–28 dmg @ 3s (~7 DPS), +6 Int, +3 Spi | 25% | exclusive set † |
@@ -393,7 +393,7 @@
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
-- **Mortal Strike:** Cuts the healing you receive — kill it before the debuff stacks matter.
+- **Maiming Strike:** Cuts the healing you receive — kill it before the debuff stacks matter.
 
 **Loot:**
 
@@ -429,7 +429,7 @@
 - Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 - Summons adds at HP thresholds — bring AoE or kill the adds fast; don't let them pile up.
 - **Dirge of Nhalia:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
-- **Banshee's Wail:** Fears nearby players — fight with your back to a wall or bring fear protection.
+- **Keening Wail:** Fears nearby players — fight with your back to a wall or bring fear protection.
 - **Spirit Siphon:** Drains life to heal itself — burst it before it tops up.
 - Will follow you into the water — no escaping by swimming.
 
@@ -439,7 +439,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Tallow Candle | Junk | 100% | sells for 5c |
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 100% | sells for 5c |
 | <img src="../_loot-icons/nhalias_funeral_wraps.png" width="22" alt=""> 🟢 Nhalia's Funeral Wraps | Cloth armor — Legs · 48 armor, +5 Int, +2 Spi | 25% |  |
 | <img src="../_loot-icons/nhalias_dirgeblade.png" width="22" alt=""> 🔵 Nhalia's Dirgeblade | Weapon — Main hand · 10–16 dmg @ 1.7s (~8 DPS), +6 Agi, +3 Sta | 25% | exclusive set † |
 
@@ -496,7 +496,7 @@
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
-- **Cleave:** Cleaves its frontal arc — keep everyone but the tank out of its face.
+- **Reaping Arc:** Cleaves its frontal arc — keep everyone but the tank out of its face.
 
 **Loot:**
 
@@ -574,14 +574,14 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Tallow Candle | Junk | 100% | sells for 5c |
+| <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 100% | sells for 5c |
 | <img src="../_loot-icons/voss_sanctified_mace.png" width="22" alt=""> 🟢 Voss's Sanctified Mace | Weapon — Main hand · 12–20 dmg @ 2.6s (~6 DPS), +3 Int, +2 Spi | 25% |  |
 
 <a id="mob-vael_the_mistcaller"></a>
 
-### Vael the Mistcaller — _Boss · Elite_
+### Vael the Fogbinder — _Boss · Elite_
 
-<img src="../_mob-renders/vael_the_mistcaller.png" width="150" align="right" alt="Vael the Mistcaller">
+<img src="../_mob-renders/vael_the_mistcaller.png" width="150" align="right" alt="Vael the Fogbinder">
 
 | Stat | Value |
 |---|---|
@@ -616,6 +616,7 @@
 | <img src="../_loot-icons/drowned_prayer_leggings.png" width="22" alt=""> 🔵 Drowned Prayer Leggings | Cloth armor — Legs · 48 armor, +6 Int, +4 Spi | 10% | exclusive set 2 † |
 | <img src="../_loot-icons/drowned_prayer_sandals.png" width="22" alt=""> 🔵 Drowned Prayer Sandals | Cloth armor — Feet · 42 armor, +5 Int, +3 Spi | 10% | exclusive set 2 † |
 | <img src="../_loot-icons/eelscale_treads.png" width="22" alt=""> 🔵 Eelscale Treads | Leather armor — Feet · 72 armor, +5 Agi, +3 Sta | 10% | exclusive set 2 † |
+| <img src="../_loot-icons/mistcallers_duffel.png" width="22" alt=""> 🟣 Fogbinder's Duffel | bag | 10% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 

@@ -30,7 +30,7 @@ Buy a **Simple Fishing Pole** from the Provisioner in the first village (about 2
 | Catch | Chance | Restores |
 |---|---:|---|
 | Raw Frostgill Trout | 40% | 117 HP |
-| Raw Stonescale Carp | 30% | 117 HP |
+| Raw Slatefin Carp | 30% | 117 HP |
 | Tangled Weed | 14% | — |
 | _nothing (the one that got away)_ | 12% | — |
 | Glimmerfin Koi ⭐ | 4% | 117 HP |

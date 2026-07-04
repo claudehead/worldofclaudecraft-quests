@@ -10,7 +10,7 @@
 
 ## Story
 
-> Morthen's writings named a master in the northern marsh — a 'Mistcaller.' Now Warden Fenwick has sounded the muster horn at Fenbridge, and I do not believe in coincidence, <your name>. Take the causeway north, pull the muster order from the gatepost, and present it to the Warden.
+> Morthen's writings named a master in the northern marsh — a 'Fogbinder.' Now Warden Fenwick has sounded the muster horn at Fenbridge, and I do not believe in coincidence, <your name>. Take the causeway north, pull the muster order from the gatepost, and present it to the Warden.
 
 ## How to complete
 

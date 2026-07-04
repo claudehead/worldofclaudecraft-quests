@@ -90,6 +90,7 @@ Most stutter is the browser, not the game. In order:
 | Friends & Guild | `O` |
 | Arena (Ashen Coliseum) | `G` |
 | Leaderboard | `K` |
+| Event Calendar | `I` |
 | Discord | `U` |
 | Open Chat | `Enter` or `NumpadEnter` |
 | Emote Wheel | `X` |

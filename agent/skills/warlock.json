@@ -11,7 +11,7 @@
   "abilities": [
     {
       "id": "shadow_bolt",
-      "name": "Shadow Bolt",
+      "name": "Gloom Bolt",
       "learnLevel": 1,
       "cost": 25,
       "cooldown": 0,
@@ -23,7 +23,7 @@
     },
     {
       "id": "summon_imp",
-      "name": "Summon Imp",
+      "name": "Summon Emberkin",
       "learnLevel": 1,
       "cost": 50,
       "cooldown": 0,
@@ -31,11 +31,11 @@
       "castTime": 5,
       "school": "shadow",
       "requiresTarget": false,
-      "desc": "Summons an Imp under the command of the Warlock. The Imp hurls Firebolts at your enemies from afar. Summoning a new demon dismisses your current one. You may have one demon at a time."
+      "desc": "Summons an Emberkin under the command of the Warlock. The Emberkin hurls Ashbolts at your enemies from afar. Summoning a new demon dismisses your current one. You may have one demon at a time."
     },
     {
       "id": "demon_skin",
-      "name": "Demon Skin",
+      "name": "Fiendhide",
       "learnLevel": 1,
       "cost": 20,
       "cooldown": 0,
@@ -47,7 +47,7 @@
     },
     {
       "id": "immolate",
-      "name": "Immolate",
+      "name": "Burning Pact",
       "learnLevel": 1,
       "cost": 25,
       "cooldown": 0,
@@ -59,7 +59,7 @@
     },
     {
       "id": "corruption",
-      "name": "Corruption",
+      "name": "Blackrot",
       "learnLevel": 4,
       "cost": 35,
       "cooldown": 0,
@@ -71,7 +71,7 @@
     },
     {
       "id": "life_tap",
-      "name": "Life Tap",
+      "name": "Hard Bargain",
       "learnLevel": 6,
       "cost": 0,
       "cooldown": 0,
@@ -83,7 +83,7 @@
     },
     {
       "id": "summon_voidwalker",
-      "name": "Summon Voidwalker",
+      "name": "Summon Gloomshade",
       "learnLevel": 8,
       "cost": 80,
       "cooldown": 0,
@@ -91,11 +91,11 @@
       "castTime": 5,
       "school": "shadow",
       "requiresTarget": false,
-      "desc": "Summons a Voidwalker under the command of the Warlock. The Voidwalker is a sturdy demon that taunts your enemies and soaks up punishment. Summoning a new demon dismisses your current one. You may have one demon at a time."
+      "desc": "Summons a Gloomshade under the command of the Warlock. The Gloomshade is a sturdy demon that taunts your enemies and soaks up punishment. Summoning a new demon dismisses your current one. You may have one demon at a time."
     },
     {
       "id": "curse_of_agony",
-      "name": "Curse of Agony",
+      "name": "Hex of Anguish",
       "learnLevel": 8,
       "cost": 25,
       "cooldown": 0,
@@ -107,7 +107,7 @@
     },
     {
       "id": "drain_life",
-      "name": "Drain Life",
+      "name": "Consume",
       "learnLevel": 10,
       "cost": 35,
       "cooldown": 0,
@@ -119,7 +119,7 @@
     },
     {
       "id": "fear",
-      "name": "Fear",
+      "name": "Harrow",
       "learnLevel": 14,
       "cost": 40,
       "cooldown": 0,
@@ -131,7 +131,7 @@
     },
     {
       "id": "searing_pain",
-      "name": "Searing Pain",
+      "name": "Sear",
       "learnLevel": 16,
       "cost": 35,
       "cooldown": 0,
@@ -143,7 +143,7 @@
     },
     {
       "id": "shadowburn",
-      "name": "Shadowburn",
+      "name": "Duskfire",
       "learnLevel": 20,
       "cost": 70,
       "cooldown": 15,
@@ -151,11 +151,11 @@
       "castTime": 0,
       "school": "shadow",
       "requiresTarget": true,
-      "desc": "Instantly blasts the target with Shadow Flame for $d Shadow damage."
+      "desc": "Instantly blasts the target with searing shadow for $d Shadow damage."
     },
     {
       "id": "summon_succubus",
-      "name": "Summon Succubus",
+      "name": "Summon Duskborn",
       "learnLevel": 12,
       "cost": 100,
       "cooldown": 0,
@@ -163,11 +163,11 @@
       "castTime": 5,
       "school": "shadow",
       "requiresTarget": false,
-      "desc": "Summons a Succubus under the command of the Warlock. The Succubus is a fragile demon that strikes quickly and hits hard in melee. Summoning a new demon dismisses your current one. You may have one demon at a time."
+      "desc": "Summons a Duskborn under the command of the Warlock. The Duskborn is a fragile demon that strikes quickly and hits hard in melee. Summoning a new demon dismisses your current one. You may have one demon at a time."
     },
     {
       "id": "summon_felhunter",
-      "name": "Summon Felhunter",
+      "name": "Summon Spellhound",
       "learnLevel": 14,
       "cost": 120,
       "cooldown": 0,
@@ -175,11 +175,11 @@
       "castTime": 5,
       "school": "shadow",
       "requiresTarget": false,
-      "desc": "Summons a Felhunter under the command of the Warlock. The Felhunter harries enemies from range with Shadow Bite and excels at hunting spellcasters. Summoning a new demon dismisses your current one. You may have one demon at a time."
+      "desc": "Summons a Spellhound under the command of the Warlock. The Spellhound harries enemies from range with Gloombite and excels at hunting spellcasters. Summoning a new demon dismisses your current one. You may have one demon at a time."
     },
     {
       "id": "summon_felguard",
-      "name": "Summon Felguard",
+      "name": "Summon Warfiend",
       "learnLevel": 16,
       "cost": 150,
       "cooldown": 0,
@@ -187,11 +187,11 @@
       "castTime": 5,
       "school": "shadow",
       "requiresTarget": false,
-      "desc": "Summons a Felguard under the command of the Warlock. The Felguard is a durable melee demon that wades into battle and holds its own. Summoning a new demon dismisses your current one. You may have one demon at a time."
+      "desc": "Summons a Warfiend under the command of the Warlock. The Warfiend is a durable melee demon that wades into battle and holds its own. Summoning a new demon dismisses your current one. You may have one demon at a time."
     },
     {
       "id": "summon_infernal",
-      "name": "Summon Infernal",
+      "name": "Summon Pyre Colossus",
       "learnLevel": 18,
       "cost": 140,
       "cooldown": 180,
@@ -199,11 +199,11 @@
       "castTime": 6,
       "school": "fire",
       "requiresTarget": false,
-      "desc": "Binds an Infernal to your will — a hulking juggernaut with crushing melee and the deepest health and armor of any demon. A long cooldown gates its raw power. Summoning a new demon dismisses your current one. You may have one demon at a time."
+      "desc": "Binds a Pyre Colossus to your will — a hulking juggernaut with crushing melee and the deepest health and armor of any demon. A long cooldown gates its raw power. Summoning a new demon dismisses your current one. You may have one demon at a time."
     },
     {
       "id": "summon_doomguard",
-      "name": "Summon Doomguard",
+      "name": "Summon Wraithborn",
       "learnLevel": 20,
       "cost": 150,
       "cooldown": 180,
@@ -211,7 +211,7 @@
       "castTime": 6,
       "school": "shadow",
       "requiresTarget": false,
-      "desc": "Binds a Doomguard to your will — an elite demon that rains heavy Shadow damage from afar. A long cooldown gates its devastating power. Summoning a new demon dismisses your current one. You may have one demon at a time."
+      "desc": "Binds a Wraithborn to your will — an elite demon that rains heavy Shadow damage from afar. A long cooldown gates its devastating power. Summoning a new demon dismisses your current one. You may have one demon at a time."
     },
     {
       "id": "rain_of_fire",
@@ -229,7 +229,7 @@
   "rotation": [
     "shadowburn",
     "drain_life",
-    "curse_of_agony",
+    "fear",
     "searing_pain",
     "shadow_bolt",
     "corruption",
@@ -240,7 +240,7 @@
     "demon_skin",
     "life_tap",
     "summon_voidwalker",
-    "fear",
+    "curse_of_agony",
     "summon_succubus",
     "summon_felhunter",
     "summon_felguard",

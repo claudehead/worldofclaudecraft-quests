@@ -10,7 +10,7 @@
 
 ## Story
 
-> The kobolds at Deeprock Burrows are digging deeper than any candle-rat has business digging — straight down, as if something were calling them. Their tunnels run beneath our wall, <your name>. Collapse the matter: kill twelve Deeprock Tunnelers.
+> The tunnelers at Deeprock Burrows are digging deeper than any pit-rat has business digging — straight down, as if something were calling them. Their tunnels run beneath our wall, <your name>. Collapse the matter: kill twelve Deeprock Tunnelers.
 
 ## How to complete
 
@@ -28,7 +28,7 @@ Then return to **Loremaster Caddis**, Loremaster _(at ~x:12, z:655)_ to turn in.
 
 ## On completion
 
-> Straight down, every shaft of it — kobolds do not dig like that on their own. I must consult my books.
+> Straight down, every shaft of it — burrowers do not dig like that on their own. I must consult my books.
 
 ## Leads to
 

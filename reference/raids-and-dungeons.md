@@ -20,7 +20,7 @@ Instanced group content — private copies of a zone you and your party clear fo
 | Instance | Format | Players | Level | Bosses |
 |---|---|---|---|---|
 | [The Hollow Crypt](../dungeons/hollow_crypt.md) | ⚔️ Dungeon | 5 | 7–10 | Morthen the Gravecaller |
-| [The Sunken Bastion](../dungeons/sunken_bastion.md) | ⚔️ Dungeon | 5 | 12–13 | Vael the Mistcaller |
+| [The Sunken Bastion](../dungeons/sunken_bastion.md) | ⚔️ Dungeon | 5 | 12–13 | Vael the Fogbinder |
 | [Gravewyrm Sanctum](../dungeons/gravewyrm_sanctum.md) | ⚔️ Dungeon | 5 | 19–20 | Korzul the Gravewyrm |
 | [Abandoned Crypt](../dungeons/nythraxis_crypt.md) | 🧍 Solo | 1 | — | — |
 | [Nythraxis Raid Arena](../dungeons/nythraxis_boss_arena.md) | 🐉 Raid | 10 | 20 | Nythraxis, Scourge of Thornpeak |
@@ -43,7 +43,7 @@ Instanced group content — private copies of a zone you and your party clear fo
 
 ### Other bosses
 - **Morthen the Gravecaller** — level 10, in [The Hollow Crypt](../dungeons/hollow_crypt.md). See the instance page + bestiary for its pull and loot.
-- **Vael the Mistcaller** — level 13, in [The Sunken Bastion](../dungeons/sunken_bastion.md). See the instance page + bestiary for its pull and loot.
+- **Vael the Fogbinder** — level 13, in [The Sunken Bastion](../dungeons/sunken_bastion.md). See the instance page + bestiary for its pull and loot.
 - **Korzul the Gravewyrm** — level 20, in [Gravewyrm Sanctum](../dungeons/gravewyrm_sanctum.md). See the instance page + bestiary for its pull and loot.
 
 ## Per-instance detail pages
