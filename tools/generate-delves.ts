@@ -2,8 +2,14 @@ import { ITEMS } from '../woc/src/sim/data.ts';
 import { COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULES, DROWNED_LITANY_DELVE, DROWNED_LITANY_MODULES, DELVE_AFFIXES, DELVE_COMPANIONS, DELVE_MOBS, DELVE_SHOPS, COMPANION_UPGRADE_COSTS } from '../woc/src/sim/content/delves/index.ts';
 import { ACTION_DELTA, ANTE_TO_TIER, ANTE_TO_PAGES, ANTE_TO_TRIES, ANTE_TO_STEP_TIMEOUT_MS } from '../woc/src/sim/lockpick.ts';
 import { LOCKPICK_TIER_PRESETS, LOCKPICK_TIER_REWARD } from '../woc/src/sim/content/delves/lockpick_tiers.ts';
+import { RITE_INTENSITY } from '../woc/src/sim/delves/rite_tuning.ts';
 import { qualityDot, statLine } from './iteminfo.ts';
 import * as fs from 'node:fs';
+
+// Which delves end on the Drowned Reliquary Rite (a shrine-sequence puzzle) instead
+// of the lockpick chest. Mirrors the game's own finale branch in
+// woc/src/sim/delves/runs.ts (onDelveBossDefeated: `if (run.delveId === 'drowned_litany')`).
+const RITE_DELVES = new Set<string>(['drowned_litany']);
 
 // Module defs per delve, so the enemy roster can be resolved generically from each
 // delve's modules → spawnSets → mobIds (no per-delve id-prefix hardcoding).
@@ -83,6 +89,48 @@ function lockpickSection(d: any): string[] {
   L.push(`- Use **Steady** when the channel runs flat; don't over-correct with Hard Set / Drop.`);
   L.push(`- Heroic locks are wider with more gates, more traps, and heavier fog — drop your ante if you're not confident.`);
   L.push(`- A **Bountiful Coffer** guarantees your class's signature rare plus a premium green on a solve.`);
+  L.push('');
+  return L;
+}
+
+// The Drowned Reliquary Rite finale — the shrine-sequence (Simon-says) puzzle that
+// REPLACES the lockpick chest for the Drowned Litany. Built from the game's real
+// constants (RITE_INTENSITY in woc/src/sim/delves/rite_tuning.ts).
+const CAP: Record<string, string> = { low: 'Low', medium: 'Medium', premium: 'Premium' };
+function riteSection(_d: any): string[] {
+  const L: string[] = [];
+  L.push(`## The finale — the Drowned Reliquary Rite`);
+  L.push('');
+  L.push(`This delve has **no lockpick chest.** When **Sister Nhalia** falls, a drowned reliquary rises ringed by **four shrines** — a **bell**, a **candle**, a **reed**, and a **skull**. The reliquary lights them in a sequence; repeat it back in order, like a memory rite, to claim your spoils.`);
+  L.push('');
+  L.push(`> 🔔 It's a **"Simon says"** puzzle, not a lock. There is no pick, no timer per touch, and no ward-traps — just watch the sequence, then tap the shrines back in the same order.`);
+  L.push('');
+  L.push(`### How the rite runs`);
+  L.push('');
+  L.push(`1. **Pick a difficulty** when the reliquary rises — Easy, Medium or Hard. Harder rites are longer and show the sequence fewer times, but raise the **loot ceiling**.`);
+  L.push(`2. **Watch the playback.** The shrines light one at a time (about **0.6s** apart), and the whole sequence replays a few times before input opens.`);
+  L.push(`3. **Repeat the sequence** by touching the shrines in order. A **wrong touch costs 3% of your health** and burns a try; if you have tries left, the sequence replays from the top.`);
+  L.push(`4. **Run out of tries** and the reliquary still opens — but only on **low-tier** loot.`);
+  L.push('');
+  L.push(`### Difficulty (you choose)`);
+  L.push('');
+  L.push(`| Difficulty | Sequence length | Times shown | Tries | Wrong touches allowed | Loot ceiling |`);
+  L.push(`|---|---:|---:|---:|---:|---|`);
+  for (const key of ['easy', 'medium', 'hard'] as const) {
+    const c = (RITE_INTENSITY as any)[key];
+    L.push(`| **${key[0].toUpperCase() + key.slice(1)}** | ${c.length} | ${c.playbacks} | ${c.tries} | ${c.tries - 1} | ${CAP[c.ceiling] || c.ceiling} |`);
+  }
+  L.push('');
+  L.push(`> **Hard** is the memory test — a 6-step sequence shown just **once**, with a single try — but it lifts the loot ceiling to **Premium**. **Easy** shows a 4-step sequence **three times** and forgives two mistakes, capped at low-tier loot.`);
+  L.push('');
+  L.push(`The rite draws from the **same reward tiers** as the other delve's lockpick chest, and the Drowned Litany pays **double Marks** for it. So a clean **Hard** rite is this delve's route to premium loot and the class signature rare.`);
+  L.push('');
+  L.push(`### Tips`);
+  L.push('');
+  L.push(`- **Don't rush.** There's no per-touch timer — the pressure is memory, not speed. Wait for the full playback before you touch anything.`);
+  L.push(`- **Chunk the sequence** (say it aloud: "bell, skull, reed…"). Four shrines and up to six steps is very repeatable once you name them.`);
+  L.push(`- **Match difficulty to your memory, not your gear greed** — a failed Hard still opens on low loot, but a clean Medium beats a fumbled Hard.`);
+  L.push(`- Each wrong touch chips **3% HP**, so on Hard a few misses plus boss splash can actually threaten a squishy — let a healer top you between attempts.`);
   L.push('');
   return L;
 }
@@ -198,8 +246,9 @@ function delvePage(d: any): string {
     L.push('');
   }
 
-  // lockpicking
-  for (const line of lockpickSection(d)) L.push(line);
+  // finale: the shrine-rite (Drowned Litany) or the lockpick chest (everything else)
+  const finale = RITE_DELVES.has(d.id) ? riteSection(d) : lockpickSection(d);
+  for (const line of finale) L.push(line);
 
   if (d.leaveText) { L.push(`> ${d.leaveText}`); L.push(''); }
   L.push(`[← All delves](README.md)`);
@@ -212,7 +261,7 @@ const delves = [COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE];
 const idx: string[] = [];
 idx.push(`# Delves`);
 idx.push('');
-idx.push(`Replayable, scalable mini-instances with companions, difficulty tiers, random affixes, a **Marks** currency, and lockpickable chests.`);
+idx.push(`Replayable, scalable mini-instances with companions, difficulty tiers, random affixes, a **Marks** currency, and a finale reward — a lockpick chest, or the Drowned Litany's shrine-sequence rite.`);
 idx.push('');
 idx.push(`| Delve | Theme | Min level | Players | Boss |`);
 idx.push(`|---|---|---:|---:|---|`);

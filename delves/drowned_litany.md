@@ -66,56 +66,37 @@ Spend **Marks** (earned from clears) at the delve vendor:
 | <img src="_delve-icons/sister_nhalia_choir_plate.png" width="22" alt=""> 🔵 Sister Nhalia's Choir-Forged Plate | Mail armor · 150 armor, +5 Str, +4 Sta | 56 Marks | Unlocks after a Heroic clear |
 | <img src="_delve-icons/drowned_choir_fang.png" width="22" alt=""> 🔵 Drowned Choir-Fang | Weapon · 20–32 dmg @ 1.7s (~15 DPS), +4 Agi, +3 Sta | 56 Marks | Unlocks after a Heroic clear |
 
-## Chests & lockpicking — "Tumbler's Path"
+## The finale — the Drowned Reliquary Rite
 
-Clearing the delve opens a **locked chest** guarded by a lockpicking minigame. The pick advances **one column at a time** through a fogged grid of tumblers — thread the open channel, seat exactly on each gate, dodge the ward-traps, and reach the bolt at the end.
+This delve has **no lockpick chest.** When **Sister Nhalia** falls, a drowned reliquary rises ringed by **four shrines** — a **bell**, a **candle**, a **reed**, and a **skull**. The reliquary lights them in a sequence; repeat it back in order, like a memory rite, to claim your spoils.
 
-> 🔓 **Practice for free:** try the interactive [Lockpick Practice game](#/lockpick) right here on the guide — same tumbler mechanics, no real chest at stake — before you run a delve.
+> 🔔 It's a **"Simon says"** puzzle, not a lock. There is no pick, no timer per touch, and no ward-traps — just watch the sequence, then tap the shrines back in the same order.
 
-> 📺 **Need help?** Watch a [lockpicking walkthrough video](https://discord.com/channels/1515097174378020894/1515979731760320522/1519349657938165930) on the community Discord.
+### How the rite runs
 
-### The five pick actions
+1. **Pick a difficulty** when the reliquary rises — Easy, Medium or Hard. Harder rites are longer and show the sequence fewer times, but raise the **loot ceiling**.
+2. **Watch the playback.** The shrines light one at a time (about **0.6s** apart), and the whole sequence replays a few times before input opens.
+3. **Repeat the sequence** by touching the shrines in order. A **wrong touch costs 3% of your health** and burns a try; if you have tries left, the sequence replays from the top.
+4. **Run out of tries** and the reliquary still opens — but only on **low-tier** loot.
 
-Each input moves the pick forward one column; you choose how deep it goes:
+### Difficulty (you choose)
 
-| Action | Moves the pick |
-|---|---|
-| **Hard Set** | up 2 (shallower) |
-| **Set** | up 1 (shallower) |
-| **Steady** | hold position |
-| **Ease** | down 1 (deeper) |
-| **Drop** | down 2 (deeper) |
+| Difficulty | Sequence length | Times shown | Tries | Wrong touches allowed | Loot ceiling |
+|---|---:|---:|---:|---:|---|
+| **Easy** | 4 | 3 | 3 | 2 | Low |
+| **Medium** | 5 | 2 | 2 | 1 | Medium |
+| **Hard** | 6 | 1 | 1 | 0 | Premium |
 
-- Only the next few columns are **lit** — the rest is fog, so plan ahead within the window.
-- You must land **exactly** on each tumbler **gate** and finish on the bolt.
-- **Ward-traps** look like open rows but **jam the lock instantly on contact** — avoid them.
-- The forgiveness band is just **one row wide** here, so you must thread the true path precisely.
+> **Hard** is the memory test — a 6-step sequence shown just **once**, with a single try — but it lifts the loot ceiling to **Premium**. **Easy** shows a 4-step sequence **three times** and forgives two mistakes, capped at low-tier loot.
 
-### Board difficulty (by delve tier)
-
-| Tier | Grid | Gates | Ward-traps | Lit columns |
-|---|---|---:|---:|---:|
-| Normal | 12×6 | 2 | 3 | 4 |
-| Heroic | 16×6 | 3 | 5 | 3 |
-
-### Your ante = your loot tier
-
-Before you start you commit an **ante** (1–3). It fixes the reward, how many lock "pages" you must clear back-to-back **flawlessly**, how many tries you get, and a **per-move timer**. A single slip, bind, or trap jams that try.
-
-| Ante | Loot tier | Pages (flawless) | Tries | Time per move | Reward bonus |
-|---:|---|---:|---:|---:|---|
-| 3 | Low | 1 | 3 | 9s | base reward |
-| 2 | Medium | 2 | 2 | 6s | +1 Marks, 1.5× copper |
-| 1 | Premium | 3 | 1 | 3s | +2 Marks, 2× copper |
-
-> **Premium (ante 1)** is the brutal one — a 3-page gauntlet, one try, 3 seconds per move — but pays the most (and a chance at the class signature rare). Just want the gear? **Ante 3** is forgiving: one page, three tries, nine seconds per move, for the base reward.
+The rite draws from the **same reward tiers** as the other delve's lockpick chest, and the Drowned Litany pays **double Marks** for it. So a clean **Hard** rite is this delve's route to premium loot and the class signature rare.
 
 ### Tips
 
-- Plan a couple of moves ahead inside the lit window — the pick only goes forward, so overshooting a gate jams the page.
-- Use **Steady** when the channel runs flat; don't over-correct with Hard Set / Drop.
-- Heroic locks are wider with more gates, more traps, and heavier fog — drop your ante if you're not confident.
-- A **Bountiful Coffer** guarantees your class's signature rare plus a premium green on a solve.
+- **Don't rush.** There's no per-touch timer — the pressure is memory, not speed. Wait for the full playback before you touch anything.
+- **Chunk the sequence** (say it aloud: "bell, skull, reed…"). Four shrines and up to six steps is very repeatable once you name them.
+- **Match difficulty to your memory, not your gear greed** — a failed Hard still opens on low loot, but a clean Medium beats a fumbled Hard.
+- Each wrong touch chips **3% HP**, so on Hard a few misses plus boss splash can actually threaten a squishy — let a healer top you between attempts.
 
 > You climb back to Brother Halven at the marsh's edge.
 

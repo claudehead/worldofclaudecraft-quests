@@ -1,6 +1,6 @@
 # Delves
 
-Replayable, scalable mini-instances with companions, difficulty tiers, random affixes, a **Marks** currency, and lockpickable chests.
+Replayable, scalable mini-instances with companions, difficulty tiers, random affixes, a **Marks** currency, and a finale reward — a lockpick chest, or the Drowned Litany's shrine-sequence rite.
 
 | Delve | Theme | Min level | Players | Boss |
 |---|---|---:|---:|---|
