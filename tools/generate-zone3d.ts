@@ -6,6 +6,7 @@ import { ZONE1_NPCS, ZONE1_CAMPS, ZONE1_ROADS, ZONE1_ZONE } from '../woc/src/sim
 import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_ROADS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_ROADS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_NPCS, TEMPLE_CAMPS } from '../woc/src/sim/content/temple.ts';
+import { OVERWORLD_GRAVEYARDS } from '../woc/src/sim/content/graveyards.ts';
 import * as mf from '../woc/src/render/characters/manifest.ts';
 import { terrainHeight } from '../woc/src/sim/world.ts';
 import * as fs from 'node:fs';
@@ -66,6 +67,14 @@ for (const z of ZONES) {
   const decor: any[] = [];
   for (const c of camps) { decor.push({ x: c.x, z: c.z, url: 'models/props/bonfire.glb', h: 1.4, rotY: 0 }); if (rnd() < 0.5) decor.push({ x: c.x + 5, z: c.z + 4, url: 'models/props/tent_small.glb', h: 2.6, rotY: rnd() * 6.28 }); }
   if (z.Z?.hub) { const h = z.Z.hub; decor.push({ x: h.x + 7, z: h.z + 4, url: 'models/props/market_stand_1.glb', h: 2.8, rotY: 1 }); decor.push({ x: h.x - 6, z: h.z + 5, url: 'models/props/cart.glb', h: 1.8, rotY: 2 }); decor.push({ x: h.x + 3, z: h.z - 7, url: 'models/props/well.glb', h: 2.6, rotY: 0 }); }
+  // v0.20 graveyards (Spirit Healer waits at each) — a cluster of headstones + a label
+  for (const gy of OVERWORLD_GRAVEYARDS) if (inB(gy)) {
+    places.push({ name: '⚰ ' + gy.name, x: gy.x, z: gy.z });
+    decor.push({ x: gy.x, z: gy.z, url: 'models/props/gravestone_bevel.glb', h: 1.1, rotY: 0.3 });
+    decor.push({ x: gy.x + 3, z: gy.z + 2, url: 'models/dungeon/gravestone.glb', h: 1.0, rotY: 1.4 });
+    decor.push({ x: gy.x - 3, z: gy.z + 3, url: 'models/dungeon/gravemarker_A.glb', h: 0.9, rotY: 2.6 });
+    decor.push({ x: gy.x + 2, z: gy.z - 3, url: 'models/dungeon/grave_a.glb', h: 0.6, rotY: 4.1 });
+  }
   // terrain grid
   const RES = 80, gx = (x1 - x0) / (RES - 1), gz = (z1 - z0) / (RES - 1), heights: number[] = [];
   for (let i = 0; i < RES; i++) for (let j = 0; j < RES; j++) heights.push(+terrainHeight(x0 + j * gx, z0 + i * gz, SEED).toFixed(2));

@@ -5,18 +5,18 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   
-  <title>Farming Calculator — World of Claudecraft</title>
-  <meta name="description" content="Plan farming runs — drop rates, expected time and best routes.">
-  <link rel="canonical" href="https://claudehead.com/farming/">
+  <title>World Bosses — World of Claudecraft</title>
+  <meta name="description" content="Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who participated rolls their own loot, tracked per character per day.">
+  <link rel="canonical" href="https://claudehead.com/doc/reference/world-bosses/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="World of Claudecraft">
-  <meta property="og:title" content="Farming Calculator — World of Claudecraft">
-  <meta property="og:description" content="Plan farming runs — drop rates, expected time and best routes.">
-  <meta property="og:url" content="https://claudehead.com/farming/">
+  <meta property="og:title" content="World Bosses — World of Claudecraft">
+  <meta property="og:description" content="Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who participated rolls their own loot, tracked per character per day.">
+  <meta property="og:url" content="https://claudehead.com/doc/reference/world-bosses/">
   <meta property="og:image" content="https://claudehead.com/icon-512.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Farming Calculator — World of Claudecraft">
-  <meta name="twitter:description" content="Plan farming runs — drop rates, expected time and best routes.">
+  <meta name="twitter:title" content="World Bosses — World of Claudecraft">
+  <meta name="twitter:description" content="Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who participated rolls their own loot, tracked per character per day.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
   <link rel="stylesheet" href="styles.css?v=113">
   <link rel="manifest" href="manifest.webmanifest">
@@ -149,7 +149,76 @@
       <a class="link navtheme" id="navtheme" title="Toggle theme">🌙 <span class="navctl-label">Theme</span></a>
     </div>
   </nav>
-  <main id="app"><section class="block"><div class="wrap"><span class="eyebrow">World of Claudecraft</span><h1>Farming Calculator</h1><p class="sub">Plan farming runs — drop rates, expected time and best routes.</p><p class="meta">Loading the interactive guide… <a href="/">open the full guide</a>.</p></div></section></main>
+  <main id="app"><article class="doc"><div class="wrap"><h1>World Bosses</h1>
+<p><strong>v0.20</strong> introduced the first <strong>world boss</strong> — a raid-tier overworld encounter that rises on a fixed cadence, bellows a <strong>server-wide warning</strong>, and rewards <strong>every player who helps kill it</strong> with personal loot, <strong>once per day</strong>.</p>
+<p>Unlike dungeon and delve bosses, a world boss is out in the open world, needs a <strong>gathered raid</strong> (not a solo or small group), and uses <strong>personal daily loot</strong> — everyone who participated rolls their own loot, tracked per character per day.</p>
+<hr>
+<h2>⛰️ Thunzharr, the Waking Peak</h2>
+<p>The mountain at <strong>Stormcrag</strong>, in <strong>Thornpeak Heights</strong>, is no mountain at all — it&#39;s a primordial <strong>storm elemental</strong> the Gravecallers&#39; chanting keeps stirring loose. On its cadence it wakes, warns the server, and demands a raid.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Zone</strong></td>
+<td>Thornpeak Heights (Stormcrag)</td>
+</tr>
+<tr>
+<td><strong>Level</strong></td>
+<td>20 · elite · CC-immune</td>
+</tr>
+<tr>
+<td><strong>Health</strong></td>
+<td>~44,000 (raid-tier)</td>
+</tr>
+<tr>
+<td><strong>Family</strong></td>
+<td>Elemental</td>
+</tr>
+<tr>
+<td><strong>Loot</strong></td>
+<td>Tier-2 epic <strong>gloves</strong> and <strong>belts</strong> (personal, once/day)</td>
+</tr>
+<tr>
+<td><strong>Spawn</strong></td>
+<td>Fixed cadence; a server-wide warning heralds it</td>
+</tr>
+</tbody></table>
+<h3>Mechanics</h3>
+<ul>
+<li><strong>Thunderclap</strong> — a lightning nova pulse; spread and heal through it.</li>
+<li><strong>Seismic Stomp</strong> — a quaking ground slam.</li>
+<li><strong>Stormcall</strong> — summons <strong>2 Roused Stormlings</strong> at <strong>66%</strong> and <strong>33%</strong> health (<em>&quot;Rise, stormlings! Tear them loose from my slopes!&quot;</em>). Kill or control the adds.</li>
+<li><strong>Tectonic Heave</strong> — a chance-on-hit knockback (~7 units). Tanks, mind the ledges.</li>
+<li><strong>Mountainhide</strong> — periodically gains a <strong>500-point stoneskin barrier</strong> (nature school) for ~9s every ~18s. Burn through it or wait it out.</li>
+<li><strong>Enrage</strong> — below <strong>20%</strong> health it breaks: <strong>+50% damage and +25% haste</strong> (<em>&quot;The peak breaks, and the sky falls with it!&quot;</em>). Save cooldowns for the final fifth.</li>
+</ul>
+<h3>How to fight it</h3>
+<ul>
+<li><strong>Bring a raid.</strong> ~44k HP with raid-tier melee means it needs a <strong>dedicated healed tank</strong>, exactly like the Nythraxis raid.</li>
+<li><strong>Tank it away from cliffs</strong> so Tectonic Heave doesn&#39;t fling you off Stormcrag.</li>
+<li><strong>Assign add control</strong> for the Stormlings at 66%/33%.</li>
+<li><strong>Cool down for the enrage</strong> — the last 20% is where undergeared raids wipe.</li>
+</ul>
+<h3>The loot</h3>
+<p>Thunzharr drops each set family&#39;s <strong>Tier-2 gloves and belts</strong> — the glove and belt slots that complete the four-piece (helm, shoulder, glove, belt) sets:</p>
+<ul>
+<li><strong>Crownforged Gauntlets</strong> / <strong>Crownforged Girdle</strong></li>
+<li><strong>Nighttalon Grips</strong> / belt</li>
+<li><strong>Soulflame Gloves</strong> / belt</li>
+<li><strong>Stormcaller&#39;s Handguards</strong> / belt</li>
+</ul>
+<p>Every Tier-2 3-piece grants <strong>15% haste</strong> (see the <a href="#/sets">item sets</a> page), so these are a priority for any BiS build.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="#/sets">Item sets</a> — the Tier-2 sets Thunzharr completes</li>
+<li><a href="#/bosses">Boss strategies</a> · <a href="#/bestiary">Bestiary</a></li>
+<li><a href="#/doc/reference%2Fdeath-and-graveyards.md">Death &amp; graveyards</a> — you&#39;ll want to know these</li>
+</ul>
+</div></article></main>
   <footer>
     Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
     A fan-made guide — not affiliated with the upstream project.
@@ -229,7 +298,7 @@
       navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
     });
   </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Farming Calculator","item":"https://claudehead.com/farming/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Farming Calculator — World of Claudecraft","description":"Plan farming runs — drop rates, expected time and best routes.","url":"https://claudehead.com/farming/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://claudehead.com/"},{"@type":"ListItem","position":3,"name":"World Bosses","item":"https://claudehead.com/doc/reference/world-bosses/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"World Bosses — World of Claudecraft","description":"Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who participated rolls their own loot, tracked per character per day.","url":"https://claudehead.com/doc/reference/world-bosses/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
 </body>
 </html>

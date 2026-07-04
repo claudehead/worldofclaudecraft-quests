@@ -38,6 +38,8 @@ const SECTIONS = [
   ['abilities', 'Abilities', 'Every class ability in World of Claudecraft with ranks, costs and effects.'],
   ['talents', 'Talent Calculator', 'Interactive talent calculator — plan builds across class and spec trees.'],
   ['patches', 'Patch Notes', 'Official release notes for every version of World of Claudecraft.'],
+  ['bags', 'Bag & Inventory Planner', 'Plan your World of Claudecraft bag loadout — 16-slot backpack + 4 bag sockets, total carry capacity, and where each bag drops (v0.20).'],
+  ['haste', 'Haste Stat Weights', 'How much DPS one point of haste is worth for every class in World of Claudecraft (v0.20), and where to get haste.'],
   ['news', "What's New", "What's new in World of Claudecraft v0.20 and in the field guide — the Drowned Litany delve, world boss, haste, bags, and the guide's new tools and games."],
   ['donate', 'Donate', 'Support the free World of Claudecraft field guide — tip in SOL or $WOC on Solana.'],
   ['supporters', 'Supporters Wall', 'Live from Solana — everyone who has tipped the World of Claudecraft guide, with a supporter leaderboard and recent tips.'],

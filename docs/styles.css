@@ -780,6 +780,17 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .news-card h3{margin:0 0 .3rem;font-size:1.05rem;color:var(--text,#eee4cd)}
 .news-card .meta{margin:0 0 .5rem;line-height:1.5;color:var(--muted,#ab9f83)}
 .news-link{font-size:.82rem;color:var(--gold,#e8c86a);font-weight:600}
+/* bag planner + haste cheat sheet */
+.bag-total{font-size:1.3rem;margin:1.2rem 0 .8rem}.bag-total b{color:var(--gold,#e8c86a)}
+.bag-sockets{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin-bottom:.6rem}
+.bag-socket{display:flex;flex-direction:column;gap:.2rem}
+.bag-socket select{padding:.5rem .6rem;border-radius:10px;border:1px solid var(--line,rgba(128,128,128,.3));background:var(--panel,#12190f);color:inherit;font:inherit}
+.bag-table,.haste-table{width:100%;border-collapse:collapse;margin-top:.8rem;font-size:.9rem}
+.bag-table th,.bag-table td,.haste-table th,.haste-table td{text-align:right;padding:.45rem .7rem;border-bottom:1px solid rgba(128,128,128,.15)}
+.bag-table th:first-child,.bag-table td:first-child,.haste-table th:first-child,.haste-table td:first-child{text-align:left}
+.haste-src{margin-top:1.4rem;padding:1.1rem 1.2rem;border:1px solid var(--line,rgba(128,128,128,.22));border-radius:12px;background:rgba(128,128,128,.04)}
+.haste-src h3{margin:0 0 .5rem;font-family:'IM Fell English SC',serif;font-weight:400}
+.haste-src ul{margin:.3rem 0;padding-left:1.2rem;line-height:1.6}
 /* $WOC token hub */
 .woc-sym{font-size:1rem;color:var(--muted,#9aa);font-family:inherit;font-weight:400}
 .woc-hero{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;margin:1.4rem 0 1.2rem;padding:1.4rem 1.6rem;border:1px solid var(--line,rgba(128,128,128,.25));border-radius:16px;background:rgba(128,128,128,.05)}

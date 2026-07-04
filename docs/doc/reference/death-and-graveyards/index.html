@@ -5,18 +5,18 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   
-  <title>Farming Calculator — World of Claudecraft</title>
-  <meta name="description" content="Plan farming runs — drop rates, expected time and best routes.">
-  <link rel="canonical" href="https://claudehead.com/farming/">
+  <title>Death, Ghosts &amp; Graveyards — World of Claudecraft</title>
+  <meta name="description" content="Since **v0.20**, dying in World of Claudecraft works the WoW way: you leave a **corpse** where you fell and become a **ghost**. You choose how to come back.">
+  <link rel="canonical" href="https://claudehead.com/doc/reference/death-and-graveyards/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="World of Claudecraft">
-  <meta property="og:title" content="Farming Calculator — World of Claudecraft">
-  <meta property="og:description" content="Plan farming runs — drop rates, expected time and best routes.">
-  <meta property="og:url" content="https://claudehead.com/farming/">
+  <meta property="og:title" content="Death, Ghosts &amp; Graveyards — World of Claudecraft">
+  <meta property="og:description" content="Since **v0.20**, dying in World of Claudecraft works the WoW way: you leave a **corpse** where you fell and become a **ghost**. You choose how to come back.">
+  <meta property="og:url" content="https://claudehead.com/doc/reference/death-and-graveyards/">
   <meta property="og:image" content="https://claudehead.com/icon-512.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Farming Calculator — World of Claudecraft">
-  <meta name="twitter:description" content="Plan farming runs — drop rates, expected time and best routes.">
+  <meta name="twitter:title" content="Death, Ghosts &amp; Graveyards — World of Claudecraft">
+  <meta name="twitter:description" content="Since **v0.20**, dying in World of Claudecraft works the WoW way: you leave a **corpse** where you fell and become a **ghost**. You choose how to come back.">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
   <link rel="stylesheet" href="styles.css?v=113">
   <link rel="manifest" href="manifest.webmanifest">
@@ -149,7 +149,76 @@
       <a class="link navtheme" id="navtheme" title="Toggle theme">🌙 <span class="navctl-label">Theme</span></a>
     </div>
   </nav>
-  <main id="app"><section class="block"><div class="wrap"><span class="eyebrow">World of Claudecraft</span><h1>Farming Calculator</h1><p class="sub">Plan farming runs — drop rates, expected time and best routes.</p><p class="meta">Loading the interactive guide… <a href="/">open the full guide</a>.</p></div></section></main>
+  <main id="app"><article class="doc"><div class="wrap"><h1>Death, Ghosts &amp; Graveyards</h1>
+<p>Since <strong>v0.20</strong>, dying in World of Claudecraft works the WoW way: you leave a <strong>corpse</strong> where you fell and become a <strong>ghost</strong>. You choose how to come back.</p>
+<h2>What happens when you die</h2>
+<ol>
+<li>Your body drops as a <strong>corpse</strong> at the spot you died.</li>
+<li>You appear as a <strong>ghost</strong> at the <strong>nearest graveyard</strong>, where a <strong>Spirit Healer</strong> (an angel) hovers.</li>
+<li>As a ghost you <strong>cannot interact with the world</strong> — no looting, fighting, or using objects. Logging out preserves the death state; you&#39;re still a ghost when you return.</li>
+</ol>
+<h2>Two ways to resurrect</h2>
+<ul>
+<li><strong>Corpse run (free).</strong> Run your ghost back to your corpse and reclaim your body. No penalty — this is the standard, cost-free option.</li>
+<li><strong>Spirit Healer (instant, but costs).</strong> Accept the Spirit Healer&#39;s resurrection to revive <strong>on the spot</strong> at the graveyard. The price is <strong>Resurrection Sickness</strong> — a temporary debuff that weakens you for a while. Use it when your corpse is somewhere dangerous or far away.</li>
+</ul>
+<blockquote>
+<p>Tip: the corpse run is almost always worth it while leveling — Resurrection Sickness makes the next few minutes much harder. Save the Spirit Healer for when the corpse is unreachable (mid-boss, over a cliff, deep in a pack).</p>
+</blockquote>
+<h2>Graveyards</h2>
+<p>A Spirit Healer waits at every graveyard below. When you die, you&#39;re sent to the nearest one. They&#39;re marked on the <a href="#/map">world map</a> and rendered in the <a href="#/zone3d">3D zone maps</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Graveyard</th>
+<th>Zone</th>
+<th>Location (x, z)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Eastbrook Rest</strong></td>
+<td>Eastbrook Vale</td>
+<td>−14, −14</td>
+</tr>
+<tr>
+<td><strong>Vale Chapel Yard</strong></td>
+<td>Eastbrook Vale</td>
+<td>4, −56</td>
+</tr>
+<tr>
+<td><strong>Fenbridge Barrow</strong></td>
+<td>Mirefen Marsh</td>
+<td>−18, 286</td>
+</tr>
+<tr>
+<td><strong>Thornpeak Cairns</strong></td>
+<td>Thornpeak Heights</td>
+<td>15, 645</td>
+</tr>
+<tr>
+<td><strong>East Ridge Graves</strong></td>
+<td>Thornpeak Heights</td>
+<td>141, 712</td>
+</tr>
+<tr>
+<td><strong>West Spire Graves</strong></td>
+<td>Thornpeak Heights</td>
+<td>−139, 787</td>
+</tr>
+<tr>
+<td><strong>Sanctum Approach Graves</strong></td>
+<td>Thornpeak Heights</td>
+<td>138, 838</td>
+</tr>
+</tbody></table>
+<p>Thornpeak Heights has four graveyards — fitting for the zone where the world boss <a href="#/doc/reference%2Fworld-bosses.md">Thunzharr</a> roams and deaths are frequent.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="#/map">World map</a> — every graveyard as a marker</li>
+<li><a href="#/doc/reference%2Fworld-bosses.md">World bosses</a> — where you&#39;ll be needing them most</li>
+<li><a href="#/doc/reference%2Frules.md">Rules &amp; conduct</a></li>
+</ul>
+</div></article></main>
   <footer>
     Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
     A fan-made guide — not affiliated with the upstream project.
@@ -229,7 +298,7 @@
       navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
     });
   </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Farming Calculator","item":"https://claudehead.com/farming/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Farming Calculator — World of Claudecraft","description":"Plan farming runs — drop rates, expected time and best routes.","url":"https://claudehead.com/farming/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://claudehead.com/"},{"@type":"ListItem","position":3,"name":"Death, Ghosts & Graveyards","item":"https://claudehead.com/doc/reference/death-and-graveyards/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Death, Ghosts & Graveyards — World of Claudecraft","description":"Since **v0.20**, dying in World of Claudecraft works the WoW way: you leave a **corpse** where you fell and become a **ghost**. You choose how to come back.","url":"https://claudehead.com/doc/reference/death-and-graveyards/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
 </body>
 </html>
