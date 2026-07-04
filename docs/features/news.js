@@ -17,6 +17,7 @@
   ];
 
   const GUIDE = [
+    ['🥇', 'Ultimate Solo Class', "Every class simulated soloing the whole mob population, levels 1–20, with and without BiS and pets, on the real combat math — ranked by kill speed, survivability and elite-soloing. Who's the best soloer?", '#/soloclass'],
     ['🔔', 'Rite Trainer — new practice game', "The Drowned Litany's finale is a Simon-says shrine rite, not a lockpick. Practice the real thing — sequence, replays, difficulty and loot ceiling — free, before you run the delve.", '#/rite'],
     ['📖', 'Build Compendium — haste-updated', 'Top builds for every class with rotations and theoretical DPS/HPS — now recomputed to include the v0.20 15% haste from Tier-2 sets at BiS. The DPS calculator models haste too.', '#/builds'],
     ['🏅', 'Class Tier Lists', 'S/A/B/C rankings computed from the game\'s real combat math — DPS, tank and healer lenses.', '#/tiers'],
