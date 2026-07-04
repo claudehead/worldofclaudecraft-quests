@@ -90,10 +90,63 @@ Tank Thunzharr at a **fixed spot with its back to the cliff**, raid stacked on t
 - **Healers** triage the MT (and OT if adds linger) through much faster, harder hits.
 - **MT** uses defensive cooldowns on cadence; you're racing its damage now. Kill it before it kills the tank.
 
-### Tank checklist
+## Role playbooks & rotations
 
-- **Main Tank:** face Thunzharr **into the cliff / away from the raid** at all times. Position so **Tectonic Heave** (30% chance, ~7y knockback on its target) shoves **you toward the fight**, never off the ledge. Watch **Mountainhide** and warn DPS. Save a big cooldown for the **enrage**.
-- **Off Tank:** pre-position **on the boss** at ~67% and ~34% — that's exactly where the adds spawn, latched onto the MT. **Taunt one Stormling, then the other** (single-target taunt, ~2 GCDs) and swing on each to hold; they start threatless so it sticks instantly. Walk them to the add-pit, backs to the raid, then help cleave the boss.
+The priorities below are what changes **on this fight**. For your class's full single-target opener, see the [Build Compendium](#/builds).
+
+### 🛡️ Off-Tank — exact step-by-step
+
+This is the job that wins or wipes it. Do it in order:
+
+**Before the pull**
+- Stand **on the boss, right next to the Main Tank**, backs to the cliff.
+- Keep your **taunt off cooldown** and one **defensive** in reserve. Chip a little threat into the boss, but **never** pull off the MT.
+
+**Watch the health bar.** Stormlings come at **66%** and **33%** — at ~**68%** and ~**34%**, stop everything else and get ready.
+
+**On "Rise, stormlings!" (each Stormcall):**
+1. **GCD 1 — Taunt Stormling A.** (Both spawn ~3.5y on the boss, already hitting the MT, with almost no threat.)
+2. **GCD 2 — Taunt Stormling B.**
+3. **GCD 3–4 — land one threat strike on each** so it holds past the 3-second taunt window. If you have an **AoE-threat button, it locks both in one GCD** — use it: Paladin **Consecration**, Druid **Swipe**, Warrior **Thunder Clap**.
+4. **Walk both adds to the add-pit** (~15y to the side), backs to the raid, off the cliff. Keep them **stacked** so cleave DPS hits both.
+5. **Hold** ~10–15s until the add-DPS finish, keeping threat with your rotation.
+
+**Between waves:** rejoin the boss for threat/resource, but stay near it for the next spawn. **If an add ever peels to a healer, taunt it back instantly** — that's your #1 emergency.
+
+**Enrage (<20%):** adds are dead by now — if the MT needs a gap to reset defensives, **taunt the boss** for a few seconds.
+
+**Your hold rotation, by class:**
+- **Warrior:** Defensive Stance · **Thunder Clap** (hits both + slows their swings) · Revenge/Shield Slam · Sunder to hold · Taunt to peel.
+- **Paladin:** Righteous Fury on · **Consecration** (both) · Judgement · Hammer of Justice if one casts · Holy Shield.
+- **Druid:** Dire Bear · **Swipe** (both) · Maul every swing · Demoralizing Roar · Growl to peel.
+
+### 🛡️ Main Tank
+
+**Rotation (threat priority):**
+- **Warrior:** Defensive Stance → Sunder Armor ×5 → **Shield Slam on CD** → Revenge on proc → Heroic Strike only to dump excess rage.
+- **Paladin:** Righteous Fury + Seal of Righteousness → **Judgement on CD** → Consecration → Holy Shield → Exorcism.
+- **Druid:** Dire Bear → **Maul every swing** → Swipe → Demoralizing Roar → Growl to hold.
+
+**Fight duties:** face Thunzharr **into the cliff, away from the raid** at all times (Thunderclap is frontal; Tectonic Heave — 30%, ~7y — knocks *you*, so orient it to shove you toward the fight, never off the ledge). **Call Mountainhide** (500 nature stoneskin, ~9s/18s) so DPS don't burn into it. Use small defensives on cadence; **save one big cooldown for the enrage**.
+
+### ⚔️ DPS
+
+**Rotation:** run your normal single-target priority (full versions in the [Build Compendium](#/builds)) — e.g. **Arms Warrior** Rend → Mortal Strike on CD → Overpower on a dodge proc → **Execute <20%**; **Fire Mage** Scorch to stack → Fireball → Fire Blast on CD; **Assassination Rogue** Slice and Dice up → Sinister Strike to 5 CP → Eviscerate.
+
+**Fight overlays:**
+- **Melee behind** the boss; **ranged spread ~8y** and off the cliff.
+- **Assigned add-DPS (2):** on each Stormcall, **swap to the Stormlings**, burst them, then back to the boss. Everyone else **ignores the adds** and holds boss uptime.
+- **Don't burst into Mountainhide** — pool/hold cooldowns until the shield drops.
+- **Save big cooldowns + Execute for the <20% enrage** — that's the DPS race.
+
+### ✨ Healers
+
+**Rotation (priority):**
+- **Priest (Disc):** **Power Word: Shield** the MT pre-emptively (6s CD) → Renew rolling → Flash Heal reactively → Prayer of Healing if the raid clumps in Thunderclap. *Prevention > reaction.*
+- **Paladin (Holy):** Flash of Light spam on the MT → Holy Light for big top-offs → **Lay on Hands** as the panic button → Judgement on CD for mana.
+- **Shaman (Resto) / Druid (Resto):** keep Riptide/HoTs rolling on **both tanks** → chain/spot-heal Thunderclap & Seismic Stomp splash.
+
+**Fight duties:** the **MT is your #1 job** (raid-tier melee — they die fast). Splash-heal Thunderclap/Stomp. **On adds, one healer shifts to the Off-Tank** for the ~15s window. At the **enrage (<20%)** the boss hits **+50% harder, +25% faster** — pre-shield, pop your throughput/mana cooldowns, and **assign a healing-cooldown rotation** (one big tank/raid CD every ~15s) so the MT never spikes out. This is where undergeared raids lose the tank.
 
 ### The loot
 
