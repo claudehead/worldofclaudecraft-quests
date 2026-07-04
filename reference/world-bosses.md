@@ -17,7 +17,14 @@ The mountain at **Stormcrag**, in **Thornpeak Heights**, is no mountain at all �
 | **Health** | ~44,000 (raid-tier) |
 | **Family** | Elemental (nature-school shields) |
 | **Loot** | Tier-2 epic **gloves** and **belts** (personal, once/day) |
-| **Spawn** | Fixed cadence; a server-wide warning heralds it |
+| **Spawn timer** | **Every 3 hours** (fixed cadence — only one is ever up at a time); a server-wide warning announces each rise |
+| **Loot window** | The corpse is lootable for **5 minutes** after the kill, then despawns |
+
+### When it spawns
+
+Thunzharr rises on a **fixed 3-hour cadence** — up to **8 chances a day** — and only **one** is ever up at a time. A **server-wide warning** announces each rise, so watch chat, rally the raid, and head to **Stormcrag**. After it dies the corpse stays lootable for **5 minutes**, then despawns.
+
+> ⏳ **The catch:** personal loot is **once per day, per character.** The boss may spawn eight times, but only your **first kill each day** rewards you — so you don't *need* to catch every window, just one. **Tag it** (land any damage) to be eligible for the roll.
 
 ### Raid composition
 
