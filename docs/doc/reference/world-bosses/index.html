@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   
   <title>World Bosses — World of Claudecraft</title>
-  <meta name="description" content="Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who participated rolls their own loot, tracked per character per day.">
+  <meta name="description" content="Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who tagged it rolls their own loot, tracked per character per day. Because tagging is open, extra bodies never hurt — but the fig">
   <link rel="canonical" href="https://claudehead.com/doc/reference/world-bosses/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="World of Claudecraft">
   <meta property="og:title" content="World Bosses — World of Claudecraft">
-  <meta property="og:description" content="Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who participated rolls their own loot, tracked per character per day.">
+  <meta property="og:description" content="Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who tagged it rolls their own loot, tracked per character per day. Because tagging is open, extra bodies never hurt — but the fig">
   <meta property="og:url" content="https://claudehead.com/doc/reference/world-bosses/">
   <meta property="og:image" content="https://claudehead.com/icon-512.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="World Bosses — World of Claudecraft">
-  <meta name="twitter:description" content="Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who participated rolls their own loot, tracked per character per day.">
+  <meta name="twitter:description" content="Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who tagged it rolls their own loot, tracked per character per day. Because tagging is open, extra bodies never hurt — but the fig">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=115">
+  <link rel="stylesheet" href="styles.css?v=116">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -151,7 +151,7 @@
   </nav>
   <main id="app"><article class="doc"><div class="wrap"><h1>World Bosses</h1>
 <p><strong>v0.20</strong> introduced the first <strong>world boss</strong> — a raid-tier overworld encounter that rises on a fixed cadence, bellows a <strong>server-wide warning</strong>, and rewards <strong>every player who helps kill it</strong> with personal loot, <strong>once per day</strong>.</p>
-<p>Unlike dungeon and delve bosses, a world boss is out in the open world, needs a <strong>gathered raid</strong> (not a solo or small group), and uses <strong>personal daily loot</strong> — everyone who participated rolls their own loot, tracked per character per day.</p>
+<p>Unlike dungeon and delve bosses, a world boss is out in the open world, needs a <strong>gathered raid</strong> (not a solo or small group), and uses <strong>personal daily loot</strong> — everyone who tagged it rolls their own loot, tracked per character per day. Because tagging is open, extra bodies never hurt — but the fight still needs the <strong>roles below</strong> covered to actually win.</p>
 <hr>
 <h2>⛰️ Thunzharr, the Waking Peak</h2>
 <p>The mountain at <strong>Stormcrag</strong>, in <strong>Thornpeak Heights</strong>, is no mountain at all — it&#39;s a primordial <strong>storm elemental</strong> the Gravecallers&#39; chanting keeps stirring loose. On its cadence it wakes, warns the server, and demands a raid.</p>
@@ -176,7 +176,7 @@
 </tr>
 <tr>
 <td><strong>Family</strong></td>
-<td>Elemental</td>
+<td>Elemental (nature-school shields)</td>
 </tr>
 <tr>
 <td><strong>Loot</strong></td>
@@ -187,36 +187,116 @@
 <td>Fixed cadence; a server-wide warning heralds it</td>
 </tr>
 </tbody></table>
-<h3>Mechanics</h3>
+<h3>Raid composition</h3>
+<p>Thunzharr hits like a raid boss and summons adds twice, so cover these roles as your <strong>core</strong> (everyone else who tags in is bonus DPS):</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Count</th>
+<th>Job in one line</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Main Tank</strong></td>
+<td>1</td>
+<td>Holds Thunzharr, faces it away from the raid, plants it clear of the cliff</td>
+</tr>
+<tr>
+<td><strong>Off Tank</strong></td>
+<td>1</td>
+<td>Grabs both Roused Stormlings the instant they spawn (66% &amp; 33%)</td>
+</tr>
+<tr>
+<td><strong>Healers</strong></td>
+<td>2–3</td>
+<td>Keep the MT alive; the OT during adds; spot-heal Thunderclap/Stomp splash</td>
+</tr>
+<tr>
+<td><strong>DPS</strong></td>
+<td>5–6+</td>
+<td>Burn the boss; 2 assigned to swap onto adds; save cooldowns for the enrage</td>
+</tr>
+</tbody></table>
+<p>A <strong>10-player core (1 MT · 1 OT · 2–3 healers · 5–6 DPS)</strong> clears it comfortably; scale healers/DPS up with the crowd. If only one tank shows, the MT tanks boss <strong>and</strong> adds stacked — doable, but the healers will sweat.</p>
+<h3>Positioning</h3>
+<p>Tank Thunzharr at a <strong>fixed spot with its back to the cliff</strong>, raid stacked on the safe side. Stormcrag&#39;s ledges are lethal with <strong>Tectonic Heave</strong> — never let the boss face the raid.</p>
+<svg viewBox="0 0 640 400" style="width:100%;max-width:640px;height:auto;background:#12160f;border:1px solid #2a3320;border-radius:12px" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="46" height="400" fill="#5a1f1f"/>
+  <text x="23" y="200" fill="#ffb3b3" font-size="12" font-family="system-ui" text-anchor="middle" transform="rotate(-90 23 200)">⚠ CLIFF EDGE — Tectonic Heave knockback</text>
+  <!-- boss -->
+  <circle cx="185" cy="200" r="40" fill="#c46a2e" stroke="#e6803a" stroke-width="3"/>
+  <text x="185" y="205" font-size="26" text-anchor="middle">⛰️</text>
+  <text x="185" y="258" fill="#e6803a" font-size="13" font-family="system-ui" text-anchor="middle" font-weight="700">Thunzharr</text>
+  <!-- facing arrow toward cliff -->
+  <path d="M145 200 L70 200" stroke="#e6803a" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#e6803a"/></marker></defs>
+  <text x="105" y="188" fill="#c9a" font-size="10" font-family="system-ui" text-anchor="middle">faces AWAY from raid</text>
+  <!-- main tank -->
+  <circle cx="120" cy="200" r="13" fill="#46b8da" stroke="#0a0c0e"/><text x="120" y="204" font-size="13" text-anchor="middle">🛡</text>
+  <text x="120" y="232" fill="#8fd0ff" font-size="11" font-family="system-ui" text-anchor="middle">Main Tank</text>
+  <!-- melee behind boss -->
+  <circle cx="250" cy="175" r="10" fill="#e0526a"/><circle cx="255" cy="205" r="10" fill="#e0526a"/><circle cx="248" cy="232" r="10" fill="#e0526a"/>
+  <text x="255" y="262" fill="#e0526a" font-size="11" font-family="system-ui" text-anchor="middle">Melee (behind)</text>
+  <!-- ranged + healers spread right -->
+  <circle cx="470" cy="120" r="10" fill="#4bbf7b"/><circle cx="520" cy="200" r="10" fill="#4bbf7b"/><circle cx="470" cy="280" r="10" fill="#4bbf7b"/>
+  <text x="500" y="170" fill="#4bbf7b" font-size="11" font-family="system-ui" text-anchor="middle">Healers</text>
+  <circle cx="410" cy="150" r="10" fill="#c9a34b"/><circle cx="435" cy="250" r="10" fill="#c9a34b"/><circle cx="400" cy="215" r="10" fill="#c9a34b"/>
+  <text x="415" y="300" fill="#c9a34b" font-size="11" font-family="system-ui" text-anchor="middle">Ranged (spread 8y)</text>
+  <!-- off tank + adds -->
+  <circle cx="300" cy="345" r="13" fill="#46b8da" stroke="#0a0c0e"/><text x="300" y="349" font-size="13" text-anchor="middle">🛡</text>
+  <circle cx="335" cy="340" r="9" fill="#9482c9"/><circle cx="335" cy="360" r="9" fill="#9482c9"/>
+  <text x="335" y="384" fill="#b7a7e0" font-size="11" font-family="system-ui" text-anchor="middle">Off-Tank + Stormlings (~15y aside)</text>
+</svg>
+
 <ul>
-<li><strong>Thunderclap</strong> — a lightning nova pulse; spread and heal through it.</li>
-<li><strong>Seismic Stomp</strong> — a quaking ground slam.</li>
-<li><strong>Stormcall</strong> — summons <strong>2 Roused Stormlings</strong> at <strong>66%</strong> and <strong>33%</strong> health (<em>&quot;Rise, stormlings! Tear them loose from my slopes!&quot;</em>). Kill or control the adds.</li>
-<li><strong>Tectonic Heave</strong> — a chance-on-hit knockback (~7 units). Tanks, mind the ledges.</li>
-<li><strong>Mountainhide</strong> — periodically gains a <strong>500-point stoneskin barrier</strong> (nature school) for ~9s every ~18s. Burn through it or wait it out.</li>
-<li><strong>Enrage</strong> — below <strong>20%</strong> health it breaks: <strong>+50% damage and +25% haste</strong> (<em>&quot;The peak breaks, and the sky falls with it!&quot;</em>). Save cooldowns for the final fifth.</li>
+<li><strong>Melee</strong> stack <strong>behind</strong> the boss (it doesn&#39;t cleave the back arc; you avoid the frontal Thunderclap).</li>
+<li><strong>Ranged + healers</strong> spread <strong>~8 yards apart</strong> on the far side so a single Thunderclap can&#39;t chain the whole raid, and stay <strong>off the cliff</strong>.</li>
+<li>The <strong>add pit</strong> is off to one side, ~15y from the boss stack, so the Stormlings never eat the boss&#39;s Seismic Stomp heals or block melee.</li>
 </ul>
-<h3>How to fight it</h3>
+<h3>Phases</h3>
+<p><strong>Phase 1 — The Waking (100% → 66%)</strong></p>
 <ul>
-<li><strong>Bring a raid.</strong> ~44k HP with raid-tier melee means it needs a <strong>dedicated healed tank</strong>, exactly like the Nythraxis raid.</li>
-<li><strong>Tank it away from cliffs</strong> so Tectonic Heave doesn&#39;t fling you off Stormcrag.</li>
-<li><strong>Assign add control</strong> for the Stormlings at 66%/33%.</li>
-<li><strong>Cool down for the enrage</strong> — the last 20% is where undergeared raids wipe.</li>
+<li><strong>MT:</strong> open with your hardest threat, settle the boss on its mark, never turn it toward the raid. <strong>Mountainhide</strong> gives it a 500-point nature stoneskin (~9s every ~18s) — call it so DPS don&#39;t waste burst/execute into the shield.</li>
+<li><strong>Healers:</strong> the MT takes raid-tier melee; keep them topped. Splash-heal anyone clipped by <strong>Thunderclap</strong> (frontal lightning nova) or <strong>Seismic Stomp</strong> (ground slam).</li>
+<li><strong>DPS:</strong> full uptime on the boss; drop burst <em>after</em> a Mountainhide shield pops, not during.</li>
+</ul>
+<p><strong>Phase 2 — First Stormcall (66%)</strong> — <em>&quot;Rise, stormlings! Tear them loose from my slopes!&quot;</em></p>
+<ul>
+<li><strong>2 Roused Stormlings</strong> spawn. <strong>Off-Tank taunts both immediately</strong> and drags them to the add-pit.</li>
+<li><strong>2 assigned DPS</strong> peel to the Stormlings and burn them fast; the rest <strong>stay on the boss</strong>.</li>
+<li><strong>Healers:</strong> one healer shifts to the OT for the add window; keep an eye on melee if a Stormling wandered.</li>
+</ul>
+<p><strong>Phase 3 — Second Stormcall (33%)</strong></p>
+<ul>
+<li>Another <strong>2 Stormlings</strong> — same drill: OT grabs, add-DPS burn, everyone else on the boss. Don&#39;t let adds pile up with the enrage looming.</li>
+</ul>
+<p><strong>Phase 4 — The Peak Breaks (Enrage, below 20%)</strong> — <em>&quot;The peak breaks, and the sky falls with it!&quot;</em></p>
+<ul>
+<li>Thunzharr <strong>enrages: +50% damage and +25% haste.</strong></li>
+<li><strong>Everyone pops cooldowns</strong> — Bloodlust-type effects, trinkets, potions.</li>
+<li><strong>Healers</strong> triage the MT (and OT if adds linger) through much faster, harder hits.</li>
+<li><strong>MT</strong> uses defensive cooldowns on cadence; you&#39;re racing its damage now. Kill it before it kills the tank.</li>
+</ul>
+<h3>Tank checklist</h3>
+<ul>
+<li><strong>Main Tank:</strong> face Thunzharr <strong>into the cliff / away from the raid</strong> at all times. Position so <strong>Tectonic Heave</strong> (30% chance, ~7y knockback on its target) shoves <strong>you toward the fight</strong>, never off the ledge. Watch <strong>Mountainhide</strong> and warn DPS. Save a big cooldown for the <strong>enrage</strong>.</li>
+<li><strong>Off Tank:</strong> pre-position near the boss at ~67% and ~34%. On Stormcall, <strong>taunt both Stormlings at once</strong> and walk them to the add-pit, backs to the raid. Hold threat until the add-DPS finish, then help cleave the boss.</li>
 </ul>
 <h3>The loot</h3>
-<p>Thunzharr drops each set family&#39;s <strong>Tier-2 gloves and belts</strong> — the glove and belt slots that complete the four-piece (helm, shoulder, glove, belt) sets:</p>
+<p>Thunzharr drops each set family&#39;s <strong>Tier-2 gloves and belts</strong> — the glove and belt that complete the four-piece (helm · shoulder · glove · belt) sets:</p>
 <ul>
 <li><strong>Crownforged Gauntlets</strong> / <strong>Crownforged Girdle</strong></li>
 <li><strong>Nighttalon Grips</strong> / belt</li>
 <li><strong>Soulflame Gloves</strong> / belt</li>
 <li><strong>Stormcaller&#39;s Handguards</strong> / belt</li>
 </ul>
-<p>Every Tier-2 3-piece grants <strong>15% haste</strong> (see the <a href="#/sets">item sets</a> page), so these are a priority for any BiS build.</p>
+<p>Every Tier-2 3-piece grants <strong>15% haste</strong> (see the <a href="#/sets">item sets</a> page), so these are a priority for any BiS build — worth showing up daily for.</p>
 <h2>See also</h2>
 <ul>
 <li><a href="#/sets">Item sets</a> — the Tier-2 sets Thunzharr completes</li>
 <li><a href="#/bosses">Boss strategies</a> · <a href="#/bestiary">Bestiary</a></li>
-<li><a href="#/doc/reference%2Fdeath-and-graveyards.md">Death &amp; graveyards</a> — you&#39;ll want to know these</li>
+<li><a href="#/doc/reference%2Fdeath-and-graveyards.md">Death &amp; graveyards</a> — Thornpeak has four, for good reason</li>
 </ul>
 </div></article></main>
   <footer>
@@ -265,32 +345,32 @@
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
-  <script src="app.js?v=115"></script>
+  <script src="app.js?v=116"></script>
   <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
-  <script src="features/planner.js?v=115"></script>
-  <script src="features/loadout.js?v=115"></script>
-  <script src="features/combatlog.js?v=115"></script>
-  <script src="features/droplab.js?v=115"></script>
-  <script src="features/pathfinder.js?v=115"></script>
-  <script src="features/builds.js?v=115"></script>
-  <script src="features/tracker.js?v=115"></script>
-  <script src="features/coach.js?v=115"></script>
-  <script src="features/zoneguide.js?v=115"></script>
-  <script src="features/donate.js?v=115"></script>
-  <script src="features/news.js?v=115"></script>
-  <script src="features/bags.js?v=115"></script>
-  <script src="features/haste.js?v=115"></script>
-  <script src="features/supporters.js?v=115"></script>
-  <script src="features/ask.js?v=115"></script>
-  <script src="features/woc.js?v=115"></script>
-  <script src="features/earn.js?v=115"></script>
-  <script src="features/cards.js?v=115"></script>
-  <script src="features/arena.js?v=115"></script>
-  <script src="features/adventure.js?v=115"></script>
-  <script src="features/play.js?v=115"></script>
-  <script src="features/world.js?v=115"></script>
-  <script src="features/tiers.js?v=115"></script>
-  <script src="features/dashboard.js?v=115"></script>
+  <script src="features/planner.js?v=116"></script>
+  <script src="features/loadout.js?v=116"></script>
+  <script src="features/combatlog.js?v=116"></script>
+  <script src="features/droplab.js?v=116"></script>
+  <script src="features/pathfinder.js?v=116"></script>
+  <script src="features/builds.js?v=116"></script>
+  <script src="features/tracker.js?v=116"></script>
+  <script src="features/coach.js?v=116"></script>
+  <script src="features/zoneguide.js?v=116"></script>
+  <script src="features/donate.js?v=116"></script>
+  <script src="features/news.js?v=116"></script>
+  <script src="features/bags.js?v=116"></script>
+  <script src="features/haste.js?v=116"></script>
+  <script src="features/supporters.js?v=116"></script>
+  <script src="features/ask.js?v=116"></script>
+  <script src="features/woc.js?v=116"></script>
+  <script src="features/earn.js?v=116"></script>
+  <script src="features/cards.js?v=116"></script>
+  <script src="features/arena.js?v=116"></script>
+  <script src="features/adventure.js?v=116"></script>
+  <script src="features/play.js?v=116"></script>
+  <script src="features/world.js?v=116"></script>
+  <script src="features/tiers.js?v=116"></script>
+  <script src="features/dashboard.js?v=116"></script>
   <script>
     if ('serviceWorker' in navigator) addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js').catch(() => {});
@@ -299,6 +379,6 @@
     });
   </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://claudehead.com/"},{"@type":"ListItem","position":3,"name":"World Bosses","item":"https://claudehead.com/doc/reference/world-bosses/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"World Bosses — World of Claudecraft","description":"Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who participated rolls their own loot, tracked per character per day.","url":"https://claudehead.com/doc/reference/world-bosses/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"World Bosses — World of Claudecraft","description":"Unlike dungeon and delve bosses, a world boss is out in the open world, needs a **gathered raid** (not a solo or small group), and uses **personal daily loot** — everyone who tagged it rolls their own loot, tracked per character per day. Because tagging is open, extra bodies never hurt — but the fight still needs the **roles below** covered to actually win.","url":"https://claudehead.com/doc/reference/world-bosses/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
 </body>
 </html>
