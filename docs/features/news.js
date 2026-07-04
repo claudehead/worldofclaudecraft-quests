@@ -17,6 +17,7 @@
   ];
 
   const GUIDE = [
+    ['📖', 'Build Compendium — haste-updated', 'Top builds for every class with rotations and theoretical DPS/HPS — now recomputed to include the v0.20 15% haste from Tier-2 sets at BiS. The DPS calculator models haste too.', '#/builds'],
     ['🏅', 'Class Tier Lists', 'S/A/B/C rankings computed from the game\'s real combat math — DPS, tank and healer lenses.', '#/tiers'],
     ['📊', 'Stats Dashboard', 'The whole world charted — zone levels, quest XP, mob threat and class stats.', '#/stats'],
     ['🪙', '$WOC & Supporters', 'Live $WOC price + chart, an on-chain supporters wall, and the play-and-earn guide.', '#/woc'],
