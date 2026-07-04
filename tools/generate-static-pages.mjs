@@ -40,6 +40,7 @@ const SECTIONS = [
   ['patches', 'Patch Notes', 'Official release notes for every version of World of Claudecraft.'],
   ['bags', 'Bag & Inventory Planner', 'Plan your World of Claudecraft bag loadout — 16-slot backpack + 4 bag sockets, total carry capacity, and where each bag drops (v0.20).'],
   ['haste', 'Haste Stat Weights', 'How much DPS one point of haste is worth for every class in World of Claudecraft (v0.20), and where to get haste.'],
+  ['rite', 'Drowned Reliquary Rite — Practice', "Practice the Drowned Litany's finale — a Simon-says shrine-sequence memory rite. Play the real mechanics (sequence, replays, tries, loot ceiling) free before you run the delve."],
   ['news', "What's New", "What's new in World of Claudecraft v0.20 and in the field guide — the Drowned Litany delve, world boss, haste, bags, and the guide's new tools and games."],
   ['donate', 'Donate', 'Support the free World of Claudecraft field guide — tip in SOL or $WOC on Solana.'],
   ['supporters', 'Supporters Wall', 'Live from Solana — everyone who has tipped the World of Claudecraft guide, with a supporter leaderboard and recent tips.'],

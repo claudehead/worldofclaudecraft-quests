@@ -105,6 +105,8 @@ function riteSection(_d: any): string[] {
   L.push('');
   L.push(`> 🔔 It's a **"Simon says"** puzzle, not a lock. There is no pick, no timer per touch, and no ward-traps — just watch the sequence, then tap the shrines back in the same order.`);
   L.push('');
+  L.push(`> 🎮 **Practice for free:** try the interactive [Rite Practice game](#/rite) right here on the guide — the real shrines, sequence lengths and difficulty, no boss required — before you run the delve.`);
+  L.push('');
   L.push(`### How the rite runs`);
   L.push('');
   L.push(`1. **Pick a difficulty** when the reliquary rises — Easy, Medium or Hard. Harder rites are longer and show the sequence fewer times, but raise the **loot ceiling**.`);
