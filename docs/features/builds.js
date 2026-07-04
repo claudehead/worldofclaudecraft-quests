@@ -129,14 +129,20 @@
     'warlock/affliction/DPS': { base: 77, bis: 93, metric: 'DPS' }, 'warlock/demonology/DPS': { base: 60, bis: 72, metric: 'DPS' }, 'warlock/destruction/DPS': { base: 63, bis: 76, metric: 'DPS' },
     'druid/balance/DPS': { base: 70, bis: 78, metric: 'DPS' }, 'druid/feral/DPS': { base: 30, bis: 41, metric: 'DPS' }, 'druid/feral/Tank': { base: 729, bis: 1908, metric: 'EHP' }, 'druid/restoration/Healer': { base: 81, bis: 91, metric: 'HPS' },
   };
-  const METRIC_MAX = { DPS: 85, HPS: 115, EHP: 2900 };
+  const METRIC_MAX = { DPS: 110, HPS: 132, EHP: 2900 }; // headroom for hasted BiS values
   const numFor = (cls, b) => NUMS[`${cls.id}/${b.spec}/${b.role}`] || { base: 0, bis: 0, metric: 'DPS' };
   const fmtN = (v, m) => m === 'EHP' ? v.toLocaleString() : `~${v} ${m}`;
+  // v0.20: every BiS build wears a Tier-2 3-piece set, which grants 15% haste — this
+  // raises sustained DPS and HPS by ~15% (haste shortens swing/cast intervals). Tank
+  // EHP is unaffected. Computed here so it tracks the game's haste framework.
+  const HASTE_BIS = 1.15;
+  const bisOf = (n) => n.metric === 'EHP' ? n.bis : Math.round(n.bis * HASTE_BIS);
 
   function card(cls, b, bisMode) {
     const rc = ROLE_COLOR[b.role];
     const n = numFor(cls, b);
-    const sel = bisMode ? n.bis : n.base, alt = bisMode ? n.base : n.bis;
+    const bv = bisOf(n);
+    const sel = bisMode ? bv : n.base, alt = bisMode ? n.base : bv;
     const w = Math.min(100, (sel / (METRIC_MAX[n.metric] || 100)) * 100);
     return `<div class="card build-card" data-role="${b.role}" style="padding:15px 16px;display:flex;flex-direction:column;gap:9px">
       <div style="display:flex;align-items:baseline;gap:9px">
@@ -166,7 +172,7 @@
     app.innerHTML = '';
     app.append(el(`<section class="block"><div class="wrap">
       <div class="shead reveal"><span class="eyebrow">Guide · theorycraft</span><h2>Build compendium</h2>
-        <p>Named top builds for every class — DPS, healer and tank — each with a talent summary, a priority rotation (top&nbsp;=&nbsp;cast first), and a one-click link into the planner. Numbers are <b>theoretical at level&nbsp;20</b> (rotation, no misses) — DPS for damage, HPS for healers, effective-HP for tanks. Toggle <b>BiS gear</b> vs <b>leveling greens</b> to see the range; each card shows both. Read them as relative yardsticks.</p></div>
+        <p>Named top builds for every class — DPS, healer and tank — each with a talent summary, a priority rotation (top&nbsp;=&nbsp;cast first), and a one-click link into the planner. Numbers are <b>theoretical at level&nbsp;20</b> (rotation, no misses) — DPS for damage, HPS for healers, effective-HP for tanks. Toggle <b>BiS gear</b> vs <b>leveling greens</b> to see the range; each card shows both. BiS figures now include the <b>15% haste</b> from a Tier-2 3-piece set (v0.20). Read them as relative yardsticks.</p></div>
       <div class="controls reveal" style="gap:14px;flex-wrap:wrap;align-items:flex-end">
         <div class="pills" id="bd-filter">
           ${['All', 'DPS', 'Healer', 'Tank'].map((r, i) => `<span class="pill${i === 0 ? ' active' : ''}" data-f="${r}">${r === 'All' ? 'All roles' : r}</span>`).join('')}
@@ -197,7 +203,7 @@
     const st = { role: 'All', cls: 'All', sort: 'class', bis: true };
     const grid = inner => `<div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))">${inner}</div>`;
     // sort power: DPS/HPS at the selected gear level; tanks (EHP) sink to 0 in a damage/healing sort
-    const power = x => { const n = numFor(x.cls, x.b); return n.metric === 'EHP' ? 0 : (st.bis ? n.bis : n.base); };
+    const power = x => { const n = numFor(x.cls, x.b); return n.metric === 'EHP' ? 0 : (st.bis ? bisOf(n) : n.base); };
 
     function render() {
       // flat list of {cls,b} passing the role + class filters

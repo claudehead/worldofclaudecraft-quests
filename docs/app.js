@@ -2367,7 +2367,10 @@ function router() {
     else { const joined = rest.join('/'); file = /\.md$/.test(joined) ? joined : joined + '.md'; } // clean multi-segment
     return docView(file, anchor);
   }
-  if (EXT_VIEWS[head]) return EXT_VIEWS[head](parts.slice(1));
+  // Feature views register themselves; run the view then trigger the scroll-reveal
+  // (sync views resolve immediately, async views after they finish rendering) so their
+  // .reveal headers fade in instead of flashing and staying hidden.
+  if (EXT_VIEWS[head]) { const r = EXT_VIEWS[head](parts.slice(1)); Promise.resolve(r).then(() => reveal()).catch(() => {}); return r; }
   return home();
 }
 
