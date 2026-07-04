@@ -17,14 +17,8 @@
   ];
 
   const GUIDE = [
-    ['🗺️', 'Top-Down RPG', 'Play the whole world of Claudecraft as a 2D top-down RPG — real zones, towns and creatures. Explore, fight, quest and level up.', '#/world'],
-    ['🎮', 'Claudecraft Runner', 'A side-scrolling platformer across three boss zones. Run, double-jump, dash, and fight your way to each boss.', '#/play'],
-    ['⚔️', 'Boss Battle', 'Turn-based duels against real bosses using the actual class and creature stats.', '#/arena'],
-    ['📖', 'Play the Lore', 'A choose-your-path text adventure through the real zones and creatures.', '#/adventure'],
-    ['🃏', 'Trading Cards', 'Mint and download holo-style collector cards for any class, boss or creature — with real game art.', '#/cards'],
     ['🏅', 'Class Tier Lists', 'S/A/B/C rankings computed from the game\'s real combat math — DPS, tank and healer lenses.', '#/tiers'],
     ['📊', 'Stats Dashboard', 'The whole world charted — zone levels, quest XP, mob threat and class stats.', '#/stats'],
-    ['🔮', 'Ask the Guide', 'An AI that answers your Claudecraft questions, running privately in your browser.', '#/ask'],
     ['🪙', '$WOC & Supporters', 'Live $WOC price + chart, an on-chain supporters wall, and the play-and-earn guide.', '#/woc'],
   ];
 
@@ -42,8 +36,8 @@
       <p class="meta reveal">Headlined by the Drowned Litany delve, the first world boss, haste, bags, ghost mode and Talents 2.0. Here's what made it into the guide:</p>
       <div class="news-grid">${GAME.map(gCard).join('')}</div>
 
-      <h2 class="news-h reveal">📚 The guide — new tools &amp; games</h2>
-      <p class="meta reveal">Beyond the reference, the guide now has a whole arcade and toolkit:</p>
+      <h2 class="news-h reveal">📚 The guide — new tools</h2>
+      <p class="meta reveal">Beyond the reference, the guide now has new tools built on the real game data:</p>
       <div class="news-grid">${GUIDE.map(uCard).join('')}</div>
 
       <p class="meta" style="margin-top:2rem">Want the full technical changelog? See the <a data-go="#/patches">patch notes</a>.</p>

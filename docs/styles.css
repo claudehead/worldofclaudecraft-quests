@@ -774,11 +774,11 @@ nav .brand::before { content: "\2766 "; color: var(--gold); opacity: .7; }
 .news-h{font-family:'IM Fell English SC',serif;font-weight:400;margin:2rem 0 .3rem;border-bottom:1px solid var(--line,rgba(128,128,128,.25));padding-bottom:.4rem}
 .news-tag{font-family:system-ui,sans-serif;font-size:.72rem;color:var(--muted,#9aa);font-weight:600;background:rgba(128,128,128,.12);padding:.2rem .55rem;border-radius:20px;vertical-align:middle;margin-left:.4rem}
 .news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.8rem;margin:1rem 0}
-.news-card{display:flex;gap:.9rem;align-items:flex-start;padding:1rem 1.1rem;border:1px solid var(--line,rgba(128,128,128,.22));border-radius:14px;background:rgba(128,128,128,.04);text-decoration:none;color:inherit;cursor:pointer;transition:transform .13s,border-color .13s}
+.news-card{display:flex;gap:.9rem;align-items:flex-start;padding:1rem 1.1rem;border:1px solid var(--line,rgba(128,128,128,.22));border-radius:14px;background:rgba(128,128,128,.04);text-decoration:none;color:var(--text,#eee4cd);cursor:pointer;transition:transform .13s,border-color .13s}
 .news-card:hover{transform:translateY(-2px);border-color:var(--gold,#e8c86a)}
 .news-ico{font-size:1.8rem;line-height:1;flex:none}
-.news-card h3{margin:0 0 .3rem;font-size:1.05rem}
-.news-card .meta{margin:0 0 .5rem;line-height:1.5}
+.news-card h3{margin:0 0 .3rem;font-size:1.05rem;color:var(--text,#eee4cd)}
+.news-card .meta{margin:0 0 .5rem;line-height:1.5;color:var(--muted,#ab9f83)}
 .news-link{font-size:.82rem;color:var(--gold,#e8c86a);font-weight:600}
 /* $WOC token hub */
 .woc-sym{font-size:1rem;color:var(--muted,#9aa);font-family:inherit;font-weight:400}
