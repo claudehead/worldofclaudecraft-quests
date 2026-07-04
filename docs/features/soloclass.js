@@ -174,6 +174,7 @@
       <span class="eyebrow reveal">Tools · combat</span>
       <h1 class="reveal">Ultimate Solo Class 🥇</h1>
       <p class="sub reveal">Every class simulated soloing the whole mob population, levels 1–20, with &amp; without BiS, with &amp; without pets — using the game's real combat math. Who levels fastest, survives best, and can solo elites?</p>
+      <p class="meta reveal" id="scSims" style="margin-top:-6px"></p>
       <div class="controls reveal"><span class="meta" style="align-self:center">Rank by</span><div class="pills" id="scLens"></div></div>
       <div class="controls reveal" style="margin-top:-4px;gap:16px;flex-wrap:wrap">
         <span class="meta" style="align-self:center">Gear</span><div class="pills" id="scGear"></div>
@@ -192,6 +193,13 @@
     </div></section>`));
     try { [S, M] = await Promise.all([loadJSON('solo.json'), loadJSON('mobstats.json')]); }
     catch (e) { document.getElementById('scBody').innerHTML = `<p class="meta">Couldn't load data (${esc(e.message)}).</p>`; return; }
+
+    // how many individual fights back the results (computed, not hardcoded):
+    // every class vs every near-level mob at each level, across 2 gear sets and pets on/off.
+    let mobEncounters = 0;
+    for (let L = 1; L <= S.levelCap; L++) mobEncounters += M.mobs.filter(m => !m.boss && (m.elite || !m.rare) && near(m, L)).length;
+    const sims = mobEncounters * S.classes.length * 4;
+    document.getElementById('scSims').innerHTML = `⚙️ Built from <b>${sims.toLocaleString()}</b> simulated fights — all ${S.classes.length} classes vs every level-appropriate mob (normals + elites) at each of levels 1–${S.levelCap}, run for both gear sets and pets on/off.`;
 
     const bindLens = () => pillRow(document.getElementById('scLens'), Object.entries(LENSES).map(([k, v]) => [k, v.label]), st.lens, k => { st.lens = k; bindLens(); render(); });
     const bindGear = () => pillRow(document.getElementById('scGear'), [['leveling', 'Leveling'], ['bis', 'BiS']], st.gear, k => { st.gear = k; bindGear(); render(); });
