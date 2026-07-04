@@ -26,7 +26,7 @@ Thunzharr hits like a raid boss and summons adds twice, so cover these roles as 
 | Role | Count | Job in one line |
 |---|---|---|
 | **Main Tank** | 1 | Holds Thunzharr, faces it away from the raid, plants it clear of the cliff |
-| **Off Tank** | 1 | Grabs both Roused Stormlings the instant they spawn (66% & 33%) |
+| **Off Tank** | 1 | Peels both Roused Stormlings off the MT when they spawn (66% & 33%) — easy: they spawn stacked on the boss, threatless |
 | **Healers** | 2–3 | Keep the MT alive; the OT during adds; spot-heal Thunderclap/Stomp splash |
 | **DPS** | 5–6+ | Burn the boss; 2 assigned to swap onto adds; save cooldowns for the enrage |
 
@@ -76,9 +76,10 @@ Tank Thunzharr at a **fixed spot with its back to the cliff**, raid stacked on t
 - **DPS:** full uptime on the boss; drop burst *after* a Mountainhide shield pops, not during.
 
 **Phase 2 — First Stormcall (66%)** — *"Rise, stormlings! Tear them loose from my slopes!"*
-- **2 Roused Stormlings** spawn. **Off-Tank taunts both immediately** and drags them to the add-pit.
-- **2 assigned DPS** peel to the Stormlings and burn them fast; the rest **stay on the boss**.
-- **Healers:** one healer shifts to the OT for the add window; keep an eye on melee if a Stormling wandered.
+- **2 Roused Stormlings** spawn **stacked on the boss and already latched onto the Main Tank** with almost no threat — they don't run off at your healers, so there's no scramble.
+- **Off-Tank peels them off the MT.** Taunt is **single-target**, so taunt one, then the other (two GCDs), and land a hit on each to hold — trivial since they start threatless. A cleave/AoE-threat tank snaps both at once. Then walk them to the add-pit.
+- **2 assigned DPS** swap to the Stormlings and burn them fast; the rest **stay on the boss**.
+- **Healers:** one healer shifts to the OT for the add window.
 
 **Phase 3 — Second Stormcall (33%)**
 - Another **2 Stormlings** — same drill: OT grabs, add-DPS burn, everyone else on the boss. Don't let adds pile up with the enrage looming.
@@ -92,7 +93,7 @@ Tank Thunzharr at a **fixed spot with its back to the cliff**, raid stacked on t
 ### Tank checklist
 
 - **Main Tank:** face Thunzharr **into the cliff / away from the raid** at all times. Position so **Tectonic Heave** (30% chance, ~7y knockback on its target) shoves **you toward the fight**, never off the ledge. Watch **Mountainhide** and warn DPS. Save a big cooldown for the **enrage**.
-- **Off Tank:** pre-position near the boss at ~67% and ~34%. On Stormcall, **taunt both Stormlings at once** and walk them to the add-pit, backs to the raid. Hold threat until the add-DPS finish, then help cleave the boss.
+- **Off Tank:** pre-position **on the boss** at ~67% and ~34% — that's exactly where the adds spawn, latched onto the MT. **Taunt one Stormling, then the other** (single-target taunt, ~2 GCDs) and swing on each to hold; they start threatless so it sticks instantly. Walk them to the add-pit, backs to the raid, then help cleave the boss.
 
 ### The loot
 
