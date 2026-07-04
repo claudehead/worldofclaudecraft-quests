@@ -446,6 +446,7 @@ const MARKER = {
   delve: { color: '#46b8da', r: 7, label: 'Delves' },
   npc: { color: '#5cb85c', r: 4.5, label: 'Quest givers' },
   camp: { color: '#d9534f', r: 4.5, label: 'Mob camps' },
+  graveyard: { color: '#c8c8cf', r: 4.5, label: 'Graveyards' },
   poi: { color: '#7fa890', r: 3, label: 'Places' },
 };
 let worldData = null;
@@ -463,7 +464,7 @@ async function worldMapView(fx, fz) {
   }
   const W = worldData, b = W.bounds;
   const host = app.querySelector('#wmap'), tip = app.querySelector('#wtip');
-  const on = { town: true, dungeon: true, delve: true, npc: true, camp: true, poi: true };
+  const on = { town: true, dungeon: true, delve: true, npc: true, camp: true, graveyard: true, poi: true };
 
   const svgNS = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(svgNS, 'svg');
@@ -1788,7 +1789,7 @@ async function calcView() {
     catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load class stats (${esc(e.message)})</p></div></section>`)); return; }
   }
   const K = statData.constants, cls = Object.values(statData.classes);
-  const st = { cls: 'warrior', level: statData.maxLevel, g: { str: 0, agi: 0, sta: 0, int: 0, ap: 0, armor: 0, crit: 0 }, w: { min: 8, max: 14, speed: 2.5 } };
+  const st = { cls: 'warrior', level: statData.maxLevel, g: { str: 0, agi: 0, sta: 0, int: 0, ap: 0, armor: 0, crit: 0, haste: 0 }, w: { min: 8, max: 14, speed: 2.5 } };
   app.append(el(`<section class="block"><div class="wrap">
     <div class="shead reveal"><span class="eyebrow">Tools · combat</span><h2>DPS &amp; survivability calculator</h2>
       <p>Estimates attack power, crit, health, armor mitigation and white-hit DPS using the game's real combat formulas. Pick a class and level, then add your gear's bonuses.</p></div>
@@ -1807,7 +1808,7 @@ async function calcView() {
   const lv = app.querySelector('#clevel'); for (let i = 1; i <= statData.maxLevel; i++) lv.append(el(`<option value="${i}"${i === st.level ? ' selected' : ''}>${i}</option>`)); lv.onchange = () => { st.level = +lv.value; render(); };
   const numField = (label, get, set) => { const w = el(`<label class="meta" style="display:flex;flex-direction:column;gap:2px">${label}<input type="number" value="${get()}" style="padding:6px 8px;border-radius:6px;border:1px solid #888;background:#fff;color:#111;color-scheme:light"></label>`); w.querySelector('input').oninput = (e) => { set(parseFloat(e.target.value) || 0); render(); }; return w; };
   const gh = app.querySelector('#cgear');
-  [['+ Strength', 'str'], ['+ Agility', 'agi'], ['+ Stamina', 'sta'], ['+ Intellect', 'int'], ['+ Attack Power', 'ap'], ['+ Armor', 'armor'], ['+ Crit %', 'crit']].forEach(([l, k]) => gh.append(numField(l, () => st.g[k], (v) => st.g[k] = v)));
+  [['+ Strength', 'str'], ['+ Agility', 'agi'], ['+ Stamina', 'sta'], ['+ Intellect', 'int'], ['+ Attack Power', 'ap'], ['+ Armor', 'armor'], ['+ Crit %', 'crit'], ['+ Haste %', 'haste']].forEach(([l, k]) => gh.append(numField(l, () => st.g[k], (v) => st.g[k] = v)));
   const wh = app.querySelector('#cweap');
   [['Min dmg', 'min'], ['Max dmg', 'max'], ['Speed (s)', 'speed']].forEach(([l, k]) => wh.append(numField(l, () => st.w[k], (v) => st.w[k] = v)));
   function render() {
@@ -1822,16 +1823,19 @@ async function calcView() {
     const armor = base.armor + st.g.armor + agi * K.armorPerAgi;
     const mit = Math.min(K.armorCap, armor / (armor + K.armorA * L + K.armorB));
     const ehp = hp / (1 - mit);
+    const haste = Math.max(0, st.g.haste) / 100;                 // v0.20 haste stat
+    const hastedSpeed = st.w.speed / (1 + haste);                 // swing interval shrinks
     const avg = (st.w.min + st.w.max) / 2, perHit = avg + (ap / K.apToDamageDivisor) * st.w.speed;
-    const dpsWhite = st.w.speed > 0 ? perHit / st.w.speed : 0;
+    const dpsWhite = hastedSpeed > 0 ? perHit / hastedSpeed : 0;
     const dps = dpsWhite * (1 + crit * (K.meleeCritMult - 1));
     const row = (a, b) => `<div style="display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-bottom:1px solid var(--line,#262626)"><span class="meta">${a}</span><b>${b}</b></div>`;
     app.querySelector('#cout').innerHTML = `<h3 style="margin:0 0 10px">${esc(c.name)} · level ${L}</h3>
       ${row('Strength / Agility', `${str} / ${agi}`)}${row('Stamina / Intellect', `${sta} / ${int}`)}
       ${row('Attack power', Math.round(ap))}${row('Melee crit', (crit * 100).toFixed(1) + '%')}${c.caster ? row('Spell crit', (spellCrit * 100).toFixed(1) + '%') + row('Spell power', Math.round(int * (K.spellPowerPerInt || 0.5))) : ''}
       ${row('Health', Math.round(hp))}${row('Armor', Math.round(armor))}${row('Mitigation (vs lv ' + L + ')', (mit * 100).toFixed(1) + '%')}${row('Effective HP', Math.round(ehp))}
-      ${row('White-hit damage', Math.round(perHit))}${row('White DPS (with crit)', dps.toFixed(1))}
-      <p class="meta" style="margin:10px 0 0;opacity:.75">DPS is raw weapon/auto-attack output before the target's armor; abilities and ${c.caster ? 'spell coefficients' : 'rotation'} add more. Talents not included.</p>`;
+      ${haste > 0 ? row('Haste', (haste * 100).toFixed(0) + '%') + row('Attack speed', st.w.speed.toFixed(2) + 's → ' + hastedSpeed.toFixed(2) + 's') : ''}
+      ${row('White-hit damage', Math.round(perHit))}${row('White DPS (with crit' + (haste > 0 ? ' + haste' : '') + ')', dps.toFixed(1))}
+      <p class="meta" style="margin:10px 0 0;opacity:.75">DPS is raw weapon/auto-attack output before the target's armor; abilities and ${c.caster ? 'spell coefficients' : 'rotation'} add more. ${c.caster ? 'Haste also shortens cast/channel time. ' : ''}Talents not included.</p>`;
   }
   render();
   reveal();

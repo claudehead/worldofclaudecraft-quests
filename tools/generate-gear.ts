@@ -25,9 +25,9 @@ const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS, ...DELVE_MOBS 
 
 const SLOT_LABEL: Record<string, string> = {
   helmet: 'Head', shoulder: 'Shoulder', chest: 'Chest', gloves: 'Hands', waist: 'Waist',
-  legs: 'Legs', feet: 'Feet', mainhand: 'Weapon',
+  legs: 'Legs', feet: 'Feet', mainhand: 'Weapon', bag: 'Bag',
 };
-const SLOT_ORDER = ['mainhand', 'helmet', 'shoulder', 'chest', 'gloves', 'waist', 'legs', 'feet'];
+const SLOT_ORDER = ['mainhand', 'helmet', 'shoulder', 'chest', 'gloves', 'waist', 'legs', 'feet', 'bag'];
 
 // ---- precompute reverse indexes for "where to get" ----
 const dropsBy: Record<string, { id: string; name: string }[]> = {};
@@ -67,19 +67,20 @@ function sourcesFor(id: string): any[] {
 }
 
 const gear = (Object.values(ITEMS) as any[])
-  .filter(i => i.kind === 'armor' || i.kind === 'weapon')
+  .filter(i => i.kind === 'armor' || i.kind === 'weapon' || i.kind === 'bag')
   .map(i => {
     const q = quality(i.id);
     return {
       id: i.id,
       name: i.name,
       kind: i.kind,
-      slot: i.slot || (i.kind === 'weapon' ? 'mainhand' : ''),
-      slotLabel: SLOT_LABEL[i.slot] || (i.kind === 'weapon' ? 'Weapon' : 'Armor'),
+      slot: i.slot || (i.kind === 'weapon' ? 'mainhand' : i.kind === 'bag' ? 'bag' : ''),
+      slotLabel: SLOT_LABEL[i.slot] || (i.kind === 'weapon' ? 'Weapon' : i.kind === 'bag' ? 'Bag' : 'Armor'),
       armorType: i.armorType || null,
       quality: i.quality || 'common',
       qualityName: q?.name || 'Common',
-      stats: statLine(i.id),
+      stats: i.kind === 'bag' ? `${i.bagSlots} inventory slots` : statLine(i.id),
+      bagSlots: i.bagSlots ?? null,
       bonuses: i.stats || {},
       weapon: i.weapon || null,
       set: i.set || null,

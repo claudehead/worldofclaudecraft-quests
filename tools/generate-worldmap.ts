@@ -5,6 +5,7 @@ import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_ROADS, ZONE3_ZONE, ZONE3_QUESTS } from '
 import { TEMPLE_NPCS, TEMPLE_CAMPS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE } from '../woc/src/sim/content/delves/index.ts';
+import { OVERWORLD_GRAVEYARDS } from '../woc/src/sim/content/graveyards.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
 
@@ -57,6 +58,8 @@ for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) {
   markers.push({ type: 'dungeon', x: Math.round(d.doorPos.x), z: Math.round(d.doorPos.z), label: d.name, link: `dungeons/${id}.md` });
 }
 for (const dv of [COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE]) markers.push({ type: 'delve', x: Math.round(dv.doorPos.x), z: Math.round(dv.doorPos.z), label: dv.name, link: `delves/${dv.id}.md` });
+// graveyards (v0.20 ghost/corpse-run system): a Spirit Healer hovers at each
+for (const gy of OVERWORLD_GRAVEYARDS) markers.push({ type: 'graveyard', x: Math.round(gy.x), z: Math.round(gy.z), label: gy.name });
 
 // bounds
 const xs = markers.map(m => m.x).concat(lakes.flatMap(l => [l.x - l.r, l.x + l.r]));

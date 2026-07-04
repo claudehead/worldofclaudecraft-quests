@@ -34,10 +34,14 @@ for (const [id, dir] of Object.entries(DIR)) {
   const m = ALL_MOBS[id]; if (!m || seenMob.has(id)) continue; seenMob.add(id);
   out.push({ t: m.boss ? 'Boss' : 'Mob', n: m.name, k: `mobs:${id}`, go: docHash(`quests/zones/${dir}/bestiary.md`, `mob-${id}`) });
 }
+// world bosses live outside the per-zone bestiary dirs — index them to the boss page
+for (const [id, m] of Object.entries(MOBS) as any[]) {
+  if (m.worldBoss && !seenMob.has(id)) { seenMob.add(id); out.push({ t: 'Boss', n: m.name, k: `mobs:${id}`, go: '#/bosses' }); }
+}
 
 // gear + consumables -> their tab, prefilled
 for (const i of Object.values(ITEMS) as any[]) {
-  if (i.kind === 'armor' || i.kind === 'weapon') out.push({ t: 'Gear', n: i.name, k: `items:${i.id}`, go: '#/gear', pre: i.name });
+  if (i.kind === 'armor' || i.kind === 'weapon' || i.kind === 'bag') out.push({ t: 'Gear', n: i.name, k: `items:${i.id}`, go: '#/gear', pre: i.name });
   else if (['food', 'drink', 'potion', 'elixir'].includes(i.kind)) out.push({ t: 'Consumable', n: i.name, k: `items:${i.id}`, go: '#/consumables', pre: i.name });
 }
 // abilities -> abilities tab, prefilled

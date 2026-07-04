@@ -147,6 +147,7 @@
     for (const m of D.map.markers) {
       if (m.type === 'town') { ctx.fillStyle = 'rgba(210,180,120,.5)'; ctx.beginPath(); ctx.arc(m.x, m.z, m.r || 22, 0, 7); ctx.fill(); }
       else if (m.type === 'camp') { ctx.fillStyle = '#7a3a2a'; ctx.fillRect(m.x - 3, m.z - 3, 6, 6); }
+      else if (m.type === 'graveyard') { ctx.fillStyle = '#9aa'; ctx.fillRect(m.x - 1.5, m.z - 6, 3, 12); ctx.fillRect(m.x - 5, m.z - 2, 10, 3); }
     }
     // labels layer done after transform for crispness — collect towns/dungeons/npcs
     // mobs
@@ -165,8 +166,8 @@
       if (!m.label) continue; if (m.type === 'camp' || m.type === 'poi') continue;
       const sx = CVW / 2 + (m.x - p.x) * S, sy = CVH / 2 + (m.z - p.z) * S;
       if (sx < -40 || sx > CVW + 40 || sy < -20 || sy > CVH + 20) continue;
-      ctx.fillStyle = m.type === 'town' ? '#e8c86a' : m.type === 'dungeon' ? '#d07a5a' : m.type === 'npc' ? '#8fd0ff' : '#bbb';
-      const ico = m.type === 'town' ? '🏰' : m.type === 'dungeon' ? '🚪' : m.type === 'npc' ? '❗' : '•';
+      ctx.fillStyle = m.type === 'town' ? '#e8c86a' : m.type === 'dungeon' ? '#d07a5a' : m.type === 'npc' ? '#8fd0ff' : m.type === 'graveyard' ? '#cfd3da' : '#bbb';
+      const ico = m.type === 'town' ? '🏰' : m.type === 'dungeon' ? '🚪' : m.type === 'npc' ? '❗' : m.type === 'graveyard' ? '⚰️' : '•';
       ctx.fillText(ico, sx, sy - 4); ctx.fillStyle = 'rgba(255,255,255,.85)'; ctx.font = '11px system-ui'; ctx.fillText(m.label, sx, sy + 12); ctx.font = '600 12px system-ui';
     }
     // HUD
