@@ -35,7 +35,7 @@
       <div id="bagBody"><div class="spinner"></div></div>
     </div></section>`));
     if (!BAGS) {
-      try { const g = await loadJSON('gear/gear.json'); BAGS = (g.gear || []).filter(x => x.kind === 'bag').sort((a, b) => b.bagSlots - a.bagSlots); }
+      try { const g = await loadJSON('gear/gear.json', { raw: true }); BAGS = (g.gear || []).filter(x => x.kind === 'bag').sort((a, b) => b.bagSlots - a.bagSlots); }
       catch (e) { document.getElementById('bagBody').innerHTML = `<p class="meta">Couldn't load bags (${esc(e.message)}).</p>`; return; }
     }
     if (!BAGS.length) { document.getElementById('bagBody').innerHTML = '<p class="meta">No bags found.</p>'; return; }
