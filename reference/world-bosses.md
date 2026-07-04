@@ -26,6 +26,57 @@ Thunzharr rises on a **fixed 3-hour cadence** — up to **8 chances a day** — 
 
 > ⏳ **The catch:** personal loot is **once per day, per character.** The boss may spawn eight times, but only your **first kill each day** rewards you — so you don't *need* to catch every window, just one. **Tag it** (land any damage) to be eligible for the roll.
 
+### Where to find it
+
+Thunzharr wakes at **Stormcrag**, the storm-blasted plateau in the **northeast corner** of Thornpeak Heights, up among the Stormcrag Elemental packs. Run north through the zone from the **Highwatch** hub; the plateau is the highest ground on the map.
+
+<svg viewBox="0 0 688 470" style="width:100%;max-width:688px;height:auto;background:#12160f;border:1px solid #2a3320;border-radius:12px" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#8fd0ff"/></marker>
+    <radialGradient id="storm" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#6f7bd6" stop-opacity="0.55"/><stop offset="100%" stop-color="#6f7bd6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="pulse" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e6803a" stop-opacity="0.5"/><stop offset="100%" stop-color="#e6803a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <!-- plot frame -->
+  <rect x="64" y="64" width="560" height="360" fill="#171c12" stroke="#2a3320" stroke-width="1.5" rx="8"/>
+  <text x="344" y="40" fill="#cdbb8e" font-size="15" font-family="system-ui" text-anchor="middle" font-weight="700">THORNPEAK HEIGHTS — where Thunzharr spawns</text>
+  <text x="618" y="82" fill="#7d8a6a" font-size="11" font-family="system-ui" text-anchor="end">Lv 13–20 · the world's northern frontier</text>
+  <!-- compass -->
+  <g font-family="system-ui"><path d="M96 108 L96 78" stroke="#7d8a6a" stroke-width="2" marker-end="url(#ar)"/><text x="96" y="72" fill="#9fb080" font-size="12" text-anchor="middle" font-weight="700">N</text></g>
+  <!-- scale bar: 100 world units ~= 156.9px -->
+  <g><line x1="440" y1="404" x2="596.9" y2="404" stroke="#7d8a6a" stroke-width="2"/><line x1="440" y1="399" x2="440" y2="409" stroke="#7d8a6a" stroke-width="2"/><line x1="596.9" y1="399" x2="596.9" y2="409" stroke="#7d8a6a" stroke-width="2"/><text x="518" y="420" fill="#7d8a6a" font-size="10" font-family="system-ui" text-anchor="middle">~100 yards</text></g>
+  <!-- storm field around the plateau -->
+  <ellipse cx="545" cy="180" rx="120" ry="95" fill="url(#storm)"/>
+  <!-- road from hub up to Stormcrag -->
+  <path d="M352 302 Q430 260 460 230 Q500 215 522 204" stroke="#6b5a2e" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M352 302 Q430 260 460 230 Q500 215 522 204" stroke="#a98a45" stroke-width="2" fill="none" stroke-dasharray="3 6" stroke-linecap="round"/>
+  <!-- zone entrance from Mirefen (south) -->
+  <path d="M349 456 L349 424" stroke="#5c7d4a" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="349" y="468" fill="#8fb070" font-size="11" font-family="system-ui" text-anchor="middle">↑ up from Mirefen Marsh (zone road)</text>
+  <!-- elemental trash dots around boss -->
+  <g fill="#6f7bd6" opacity="0.85"><circle cx="561" cy="169" r="6"/><circle cx="577" cy="149" r="6"/><circle cx="500" cy="182" r="5"/><circle cx="540" cy="150" r="5"/><circle cx="505" cy="225" r="5"/></g>
+  <text x="560" y="128" fill="#9aa6e0" font-size="10.5" font-family="system-ui" text-anchor="middle">Stormcrag Elementals (trash)</text>
+  <!-- orientation camps (faint) -->
+  <circle cx="142" cy="216" r="7" fill="#8a5a2a" opacity="0.7"/><text x="142" y="238" fill="#b98a5a" font-size="10" font-family="system-ui" text-anchor="middle">Warlord Drogmar</text>
+  <circle cx="475" cy="119" r="7" fill="#8a5a2a" opacity="0.7"/><text x="475" y="108" fill="#b98a5a" font-size="10" font-family="system-ui" text-anchor="middle">Voskar</text>
+  <circle cx="296" cy="122" r="7" fill="#8a5a2a" opacity="0.7"/><text x="296" y="111" fill="#b98a5a" font-size="10" font-family="system-ui" text-anchor="middle">Marrowlord Varkas</text>
+  <!-- Highwatch hub -->
+  <rect x="341" y="291" width="22" height="22" rx="3" fill="#3a4a6a" stroke="#8fd0ff" stroke-width="1.5"/><text x="352" y="307" font-size="13" text-anchor="middle">🏳</text>
+  <text x="352" y="332" fill="#8fd0ff" font-size="11.5" font-family="system-ui" text-anchor="middle" font-weight="600">Highwatch — quest hub &amp; rally point</text>
+  <!-- graveyard -->
+  <circle cx="373" cy="319" r="8" fill="#2a3320" stroke="#c8c8cf" stroke-width="1.5"/><text x="373" y="323" font-size="10" text-anchor="middle">⚰</text>
+  <text x="373" y="352" fill="#c8c8cf" font-size="10.5" font-family="system-ui" text-anchor="middle">Thornpeak Cairns (nearest rez)</text>
+  <!-- BOSS marker -->
+  <circle cx="522" cy="204" r="40" fill="url(#pulse)"/>
+  <circle cx="522" cy="204" r="26" fill="#c46a2e" stroke="#e6803a" stroke-width="3"/>
+  <text x="522" y="212" font-size="26" text-anchor="middle">⛰️</text>
+  <text x="522" y="256" fill="#e6803a" font-size="13.5" font-family="system-ui" text-anchor="middle" font-weight="800">THUNZHARR spawns here</text>
+  <text x="522" y="272" fill="#cdbb8e" font-size="11" font-family="system-ui" text-anchor="middle">Stormcrag plateau (NE corner)</text>
+</svg>
+
+- **Rally at Highwatch** — the zone's quest hub and the closest safe gathering point. Form the raid there, then move as a group.
+- **Head northeast to Stormcrag**, the elemental plateau in the top-right of the zone. You'll fight (or ride past) **Stormcrag Elemental** packs on the way up — clear a little breathing room before you pull.
+- **Nearest graveyard is Thornpeak Cairns**, just south of Highwatch — that's where you rez and corpse-run back if the raid wipes.
+
 ### Raid composition
 
 Thunzharr hits like a raid boss and summons adds twice, so cover these roles as your **core** (everyone else who tags in is bonus DPS):
