@@ -1,40 +1,36 @@
-# The Collapsed Reliquary
+# The Drowned Litany
 
 A replayable **delve** — a short, scalable instance you run solo or in a small group, with a companion, tiers, affixes, and a currency (**Marks**) you spend at the delve vendor.
 
 | | |
 |---|---|
-| **Theme** | crypt |
-| **Minimum level** | 7 |
+| **Theme** | ruin |
+| **Minimum level** | 12 |
 | **Suggested players** | 2 |
-| **Entrance** | overworld portal ~x:-5, z:-52 |
+| **Entrance** | overworld portal ~x:-95, z:505 |
 | **Objective** | Defeat the final boss |
-| **Final boss** | Deacon Varric |
+| **Final boss** | Sister Nhalia, the Drowned Canticle |
 
-> You descend into the collapsed reliquary.
+> You descend into the drowned shrine at the marsh's edge.
 
 ## Difficulty tiers
 
 | Tier | Enemy levels | Affixes | Reward | Min level | First-clear XP | Repeat XP |
 |---|---|---:|---|---:|---:|---:|
-| Normal | +0 | 0 | 1× | 7 | — | — |
-| Heroic | +3 | 1 | 1.3× | 9 | 1050 | 650 |
+| Normal | +0 | 0 | 1× | 12 | — | — |
+| Heroic | +3 | 1 | 1.3× | 14 | 1850 | 1140 |
 
 ## Affixes
 
-Higher tiers roll random modifiers. Possible affixes for a **crypt** delve:
+Higher tiers roll random modifiers. Possible affixes for a **ruin** delve:
 
-- **Restless Graves**
-- **Bad Air**
-- **Candleblind**
-- **Grave Tax**
-- **Unstable Roof**
-- **Cult Remnants**
-- **Chapel Candle**
+- **High Water**
+- **Lively Choir**
+- **Belligerent Dead**
 
 ## Companion
 
-You're joined by **Acolyte Tessa** (healer). Companions can be upgraded with Marks:
+You're joined by **Edda Reedhand** (healer). Companions can be upgraded with Marks:
 
 | Rank | Cost |
 |---|---|
@@ -45,11 +41,14 @@ You're joined by **Acolyte Tessa** (healer). Companions can be upgraded with Mar
 
 | Enemy | Level | Tier |
 |---|---|---|
-| Ledger Wraith | 7–8 | Normal |
-| Funeral Ringer | 7–8 | Normal |
-| Gravecall Acolyte | 7–8 | Normal |
-| Saintless Effigy | 8 | Elite |
-| Deacon Varric | 9 | **Boss** |
+| Deepfen Spearjaw | 12–13 | Normal |
+| Mirefen Widowling | 12–13 | Normal |
+| Drowned Cantor | 12–13 | Normal |
+| Reedbound Acolyte | 12–13 | Normal |
+| Bog Thrall | 12 | Normal |
+| Grave-Silt Bulwark | 13 | Elite |
+| Sump Troll Devourer | 13–14 | Elite |
+| Sister Nhalia, the Drowned Canticle | 14 | **Boss** |
 
 ## Marks vendor
 
@@ -57,15 +56,15 @@ Spend **Marks** (earned from clears) at the delve vendor:
 
 | Item | Type | Cost | Unlock |
 |---|---|---:|---|
-| <img src="_delve-icons/reliquary_legs.png" width="22" alt=""> 🟢 Vaultbound Legwraps | Cloth armor · 48 armor, +2 Sta | 8 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_shoulder.png" width="22" alt=""> 🟢 Crumbled Spaulders | Mail armor · 36 armor, +2 Sta | 8 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_gloves_rog.png" width="22" alt=""> 🟢 Bonewarden Grips | Leather armor · 36 armor, +2 Agi, +1 Sta | 8 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_cloth_chest.png" width="22" alt=""> 🟢 Shroud of the Reliquary | Cloth armor · 30 armor, +2 Int, +1 Spi | 10 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_leather_chest.png" width="22" alt=""> 🟢 Dustwarden Jerkin | Leather armor · 55 armor, +2 Agi, +1 Sta | 10 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_plate_chest.png" width="22" alt=""> 🟢 Reliquary Guard Hauberk | Mail armor · 90 armor, +1 Str, +2 Sta | 10 Marks | Available from the start |
-| <img src="_delve-icons/reliquary_helm.png" width="22" alt=""> 🟢 Ossuary Watch Helm | Mail armor · 48 armor, +1 Str, +2 Sta | 12 Marks | Unlocks after 3 clears |
-| <img src="_delve-icons/deacon_reliquary_helm.png" width="22" alt=""> 🔵 Deacon's Reliquary Helm | Mail armor · 105 armor, +3 Str, +4 Sta | 28 Marks | Unlocks after a Heroic clear |
-| <img src="_delve-icons/varric_shadow_cowl.png" width="22" alt=""> 🔵 Varric's Shadow Cowl | Cloth armor · 42 armor, +4 Int, +3 Spi | 28 Marks | Unlocks after a Heroic clear |
+| <img src="_delve-icons/litany_legs.png" width="22" alt=""> 🟢 Silt-Walker Greaves | Cloth armor · 58 armor, +3 Sta | 16 Marks | Available from the start |
+| <img src="_delve-icons/litany_shoulder.png" width="22" alt=""> 🟢 Blackwater Drift Mantle | Mail armor · 44 armor, +3 Sta | 16 Marks | Available from the start |
+| <img src="_delve-icons/litany_gloves_rog.png" width="22" alt=""> 🟢 Reed-Bound Handwraps | Leather armor · 44 armor, +2 Agi, +2 Sta | 16 Marks | Available from the start |
+| <img src="_delve-icons/litany_cloth_chest.png" width="22" alt=""> 🟢 Choir-Drowned Raiment | Cloth armor · 36 armor, +3 Int, +2 Spi | 20 Marks | Available from the start |
+| <img src="_delve-icons/litany_leather_chest.png" width="22" alt=""> 🟢 Silt-Deep Vestment | Leather armor · 66 armor, +3 Agi, +2 Sta | 20 Marks | Available from the start |
+| <img src="_delve-icons/litany_plate_chest.png" width="22" alt=""> 🟢 Sump-Warden Cuirass | Mail armor · 108 armor, +2 Str, +3 Sta | 20 Marks | Available from the start |
+| <img src="_delve-icons/litany_helm.png" width="22" alt=""> 🟢 Reliquant's Drowned Cowl | Cloth armor · 32 armor, +3 Int, +2 Spi | 24 Marks | Unlocks after 3 clears |
+| <img src="_delve-icons/sister_nhalia_choir_plate.png" width="22" alt=""> 🔵 Sister Nhalia's Choir-Forged Plate | Mail armor · 150 armor, +5 Str, +4 Sta | 56 Marks | Unlocks after a Heroic clear |
+| <img src="_delve-icons/drowned_choir_fang.png" width="22" alt=""> 🔵 Drowned Choir-Fang | Weapon · 20–32 dmg @ 1.7s (~15 DPS), +4 Agi, +3 Sta | 56 Marks | Unlocks after a Heroic clear |
 
 ## Chests & lockpicking — "Tumbler's Path"
 
@@ -116,6 +115,6 @@ Before you start you commit an **ante** (1–3). It fixes the reward, how many l
 - Heroic locks are wider with more gates, more traps, and heavier fog — drop your ante if you're not confident.
 - A **Bountiful Coffer** guarantees your class's signature rare plus a premium green on a solve.
 
-> You climb back to Brother Halven at the reliquary ruin.
+> You climb back to Brother Halven at the marsh's edge.
 
 [← All delves](README.md)

@@ -6,7 +6,7 @@ import { ZONE2_QUESTS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
-import { COLLAPSED_RELIQUARY_DELVE } from '../woc/src/sim/content/delves/index.ts';
+import { COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE } from '../woc/src/sim/content/delves/index.ts';
 import { GUIDE_CLASSES } from '../woc/src/guide/content.generated.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
@@ -45,7 +45,7 @@ for (const a of Object.values(ABILITIES) as any[]) if (a.class) out.push({ t: 'A
 // classes / dungeons / delves
 for (const c of GUIDE_CLASSES as any[]) out.push({ t: 'Class', n: c.id[0].toUpperCase() + c.id.slice(1), go: docHash(`classes/${c.id}.md`) });
 for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) if ((d.spawns || []).length) out.push({ t: 'Dungeon', n: d.name, k: `dungeons:${id}`, go: docHash(`dungeons/${id}.md`) });
-out.push({ t: 'Delve', n: COLLAPSED_RELIQUARY_DELVE.name, k: `delves:${COLLAPSED_RELIQUARY_DELVE.id}`, go: docHash(`delves/${COLLAPSED_RELIQUARY_DELVE.id}.md`) });
+for (const dv of [COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE]) out.push({ t: 'Delve', n: dv.name, k: `delves:${dv.id}`, go: docHash(`delves/${dv.id}.md`) });
 
 // reference guides
 for (const g of [

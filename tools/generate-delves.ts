@@ -1,9 +1,26 @@
 import { ITEMS } from '../woc/src/sim/data.ts';
-import { COLLAPSED_RELIQUARY_DELVE, DELVE_AFFIXES, DELVE_COMPANIONS, DELVE_MOBS, DELVE_SHOPS, COMPANION_UPGRADE_COSTS } from '../woc/src/sim/content/delves/index.ts';
+import { COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULES, DROWNED_LITANY_DELVE, DROWNED_LITANY_MODULES, DELVE_AFFIXES, DELVE_COMPANIONS, DELVE_MOBS, DELVE_SHOPS, COMPANION_UPGRADE_COSTS } from '../woc/src/sim/content/delves/index.ts';
 import { ACTION_DELTA, ANTE_TO_TIER, ANTE_TO_PAGES, ANTE_TO_TRIES, ANTE_TO_STEP_TIMEOUT_MS } from '../woc/src/sim/lockpick.ts';
 import { LOCKPICK_TIER_PRESETS, LOCKPICK_TIER_REWARD } from '../woc/src/sim/content/delves/lockpick_tiers.ts';
 import { qualityDot, statLine } from './iteminfo.ts';
 import * as fs from 'node:fs';
+
+// Module defs per delve, so the enemy roster can be resolved generically from each
+// delve's modules → spawnSets → mobIds (no per-delve id-prefix hardcoding).
+const MODULES_BY_DELVE: Record<string, any> = {
+  [COLLAPSED_RELIQUARY_DELVE.id]: COLLAPSED_RELIQUARY_MODULES,
+  [DROWNED_LITANY_DELVE.id]: DROWNED_LITANY_MODULES,
+};
+function rosterFor(d: any): any[] {
+  const mods = MODULES_BY_DELVE[d.id] || {};
+  const ids = new Set<string>();
+  for (const key of [...(d.modules || []), d.finaleModuleId].filter(Boolean)) {
+    const mod = mods[key]; if (!mod) continue;
+    for (const ss of (mod.spawnSets || [])) for (const sp of (ss.spawns || [])) if (sp.mobId) ids.add(sp.mobId);
+  }
+  for (const b of (d.bosses || [])) ids.add(b);
+  return [...ids].map((id) => (DELVE_MOBS as any)[id]).filter(Boolean);
+}
 
 const ACTION_LABEL: Record<string, string> = { hardSet: 'Hard Set', set: 'Set', steady: 'Steady', ease: 'Ease', drop: 'Drop' };
 function depthText(delta: number): string {
@@ -146,8 +163,8 @@ function delvePage(d: any): string {
     }
   }
 
-  // enemy roster
-  const roster = Object.values(DELVE_MOBS).filter((m: any) => m.id.startsWith('reliquary_') || (d.bosses || []).includes(m.id));
+  // enemy roster — resolved from the delve's own modules (works for any delve)
+  const roster = rosterFor(d);
   if (roster.length) {
     L.push(`## Enemies`);
     L.push('');
@@ -189,7 +206,7 @@ function delvePage(d: any): string {
 }
 
 fs.mkdirSync(OUT, { recursive: true });
-const delves = [COLLAPSED_RELIQUARY_DELVE];
+const delves = [COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE];
 const idx: string[] = [];
 idx.push(`# Delves`);
 idx.push('');

@@ -4,7 +4,7 @@ import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_ROADS, ZONE2_ZONE, ZONE2_QUESTS } from '
 import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_ROADS, ZONE3_ZONE, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_NPCS, TEMPLE_CAMPS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
-import { COLLAPSED_RELIQUARY_DELVE } from '../woc/src/sim/content/delves/index.ts';
+import { COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE } from '../woc/src/sim/content/delves/index.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
 
@@ -56,8 +56,7 @@ for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) {
   if (!(d.spawns || []).length && !TEMPLE_DUNGEONS.has(id)) continue;
   markers.push({ type: 'dungeon', x: Math.round(d.doorPos.x), z: Math.round(d.doorPos.z), label: d.name, link: `dungeons/${id}.md` });
 }
-const rel = COLLAPSED_RELIQUARY_DELVE;
-markers.push({ type: 'delve', x: Math.round(rel.doorPos.x), z: Math.round(rel.doorPos.z), label: rel.name, link: `delves/${rel.id}.md` });
+for (const dv of [COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE]) markers.push({ type: 'delve', x: Math.round(dv.doorPos.x), z: Math.round(dv.doorPos.z), label: dv.name, link: `delves/${dv.id}.md` });
 
 // bounds
 const xs = markers.map(m => m.x).concat(lakes.flatMap(l => [l.x - l.r, l.x + l.r]));

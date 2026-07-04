@@ -6,7 +6,7 @@ import { ZONE2_CAMPS } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_CAMPS } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_CAMPS } from '../woc/src/sim/content/temple.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
-import { COLLAPSED_RELIQUARY_DELVE, DELVE_MOBS } from '../woc/src/sim/content/delves/index.ts';
+import { COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULES, DROWNED_LITANY_DELVE, DROWNED_LITANY_MODULES, DELVE_MOBS } from '../woc/src/sim/content/delves/index.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || 'bestiary/bestiary.json';
@@ -27,7 +27,13 @@ for (const z of ZONES) for (const c of (z.camps || []) as any[]) { if (c.mobId &
 const dungeonOf: Record<string, { name: string; file: string; zoneDir: string }> = {};
 for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) for (const s of d.spawns || []) { const mid = s.mobId || s.template; if (mid && !dungeonOf[mid]) dungeonOf[mid] = { name: d.name, file: `dungeons/${id}.md`, zoneDir: TEMPLE_DUNGEONS.has(id) ? '04-the-drowned-temple' : '' }; }
 const delveOf: Record<string, { name: string; file: string }> = {};
-for (const mid of Object.keys(DELVE_MOBS)) delveOf[mid] = { name: COLLAPSED_RELIQUARY_DELVE.name, file: `delves/${COLLAPSED_RELIQUARY_DELVE.id}.md` };
+for (const [dv, mods] of [[COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULES], [DROWNED_LITANY_DELVE, DROWNED_LITANY_MODULES]] as any[]) {
+  for (const key of [...(dv.modules || []), dv.finaleModuleId].filter(Boolean)) {
+    const mod = (mods as any)[key]; if (!mod) continue;
+    for (const ss of (mod.spawnSets || [])) for (const sp of (ss.spawns || [])) if (sp.mobId && !delveOf[sp.mobId]) delveOf[sp.mobId] = { name: dv.name, file: `delves/${dv.id}.md` };
+  }
+  for (const b of (dv.bosses || [])) delveOf[b] = { name: dv.name, file: `delves/${dv.id}.md` };
+}
 
 const itemName = (id: string) => (ITEMS as any)[id]?.name || id;
 const itemQual = (id: string) => (ITEMS as any)[id]?.quality || 'common';

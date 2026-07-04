@@ -54,6 +54,14 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
+<a id="mob-reliquary_bonewalker"></a>
+
+### Raised Bonewalker
+
+**Level 7–8 · 76 HP · Undead**
+
+<br clear="all">
+
 <a id="mob-wraithbinder_maldrec"></a>
 
 ### Wraithbinder Maldrec 🔶 Elite
@@ -61,6 +69,14 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 **Level 7 · 740 HP · Undead**
 
 **Drops:** Bone Fragments _(100%)_, Maldrec's Soulbinder _(25%)_, Hollowbone Hauberk _(25%)_, Gravewoven Raiment _(25%)_, Gravestalker Jerkin _(25%)_
+
+<br clear="all">
+
+<a id="mob-acolyte_tessa"></a>
+
+### Acolyte Tessa
+
+**Level 8 · 183 HP · Humanoid**
 
 <br clear="all">
 
@@ -85,6 +101,30 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Nhalia Mourner
 
 **Level 11–12 · 250 HP · Humanoid**
+
+<br clear="all">
+
+<a id="mob-spider_egg_sac"></a>
+
+### Spider Egg-Sac
+
+**Level 12–13 · 1 HP · Beast**
+
+<br clear="all">
+
+<a id="mob-edda_reedhand"></a>
+
+### Edda Reedhand
+
+**Level 13 · 266 HP · Humanoid**
+
+<br clear="all">
+
+<a id="mob-tolling_bell"></a>
+
+### Tolling Bell
+
+**Level 14 · 1 HP · Undead**
 
 <br clear="all">
 

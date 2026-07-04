@@ -5,7 +5,7 @@ import { ZONE2_CAMPS, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_CAMPS, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_CAMPS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
-import { COLLAPSED_RELIQUARY_DELVE, DELVE_MOBS } from '../woc/src/sim/content/delves/index.ts';
+import { COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULES, DROWNED_LITANY_DELVE, DROWNED_LITANY_MODULES, DELVE_MOBS } from '../woc/src/sim/content/delves/index.ts';
 import { qualityDot, statLine } from './iteminfo.ts';
 import * as fs from 'node:fs';
 
@@ -16,7 +16,13 @@ const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS, ...DELVE_MOBS 
 const dungeonByMob: Record<string, { name: string; file: string }> = {};
 for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) for (const s of d.spawns || []) { const mid = s.mobId || s.template; if (mid && !dungeonByMob[mid]) dungeonByMob[mid] = { name: d.name, file: `dungeons/${id}.md` }; }
 const delveByMob: Record<string, { name: string; file: string }> = {};
-for (const mid of Object.keys(DELVE_MOBS)) delveByMob[mid] = { name: COLLAPSED_RELIQUARY_DELVE.name, file: `delves/${COLLAPSED_RELIQUARY_DELVE.id}.md` };
+for (const [dv, mods] of [[COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULES], [DROWNED_LITANY_DELVE, DROWNED_LITANY_MODULES]] as any[]) {
+  for (const key of [...(dv.modules || []), dv.finaleModuleId].filter(Boolean)) {
+    const mod = (mods as any)[key]; if (!mod) continue;
+    for (const ss of (mod.spawnSets || [])) for (const sp of (ss.spawns || [])) if (sp.mobId && !delveByMob[sp.mobId]) delveByMob[sp.mobId] = { name: dv.name, file: `delves/${dv.id}.md` };
+  }
+  for (const b of (dv.bosses || [])) delveByMob[b] = { name: dv.name, file: `delves/${dv.id}.md` };
+}
 
 const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
 

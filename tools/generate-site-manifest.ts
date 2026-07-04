@@ -5,7 +5,7 @@ import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { GUIDE_CLASSES } from '../woc/src/guide/content.generated.ts';
 import { DUNGEON_DEFS } from '../woc/src/sim/content/dungeons.ts';
-import { COLLAPSED_RELIQUARY_DELVE } from '../woc/src/sim/content/delves/index.ts';
+import { COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE } from '../woc/src/sim/content/delves/index.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/manifest.json';
@@ -50,12 +50,12 @@ const dungeons = (Object.entries(DUNGEON_DEFS) as any[]).map(([id, d]) => ({
   map: (d.spawns || []).length > 0 ? `dungeons/_maps/${id}.svg` : null,
 })).filter(d => d.name);
 
-const delves = [{
-  id: COLLAPSED_RELIQUARY_DELVE.id,
-  name: COLLAPSED_RELIQUARY_DELVE.name,
-  minLevel: COLLAPSED_RELIQUARY_DELVE.minLevel,
-  file: `delves/${COLLAPSED_RELIQUARY_DELVE.id}.md`,
-}];
+const delves = [COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE].map(d => ({
+  id: d.id,
+  name: d.name,
+  minLevel: d.minLevel,
+  file: `delves/${d.id}.md`,
+}));
 
 const allLevels = zones.flatMap(z => z.quests.map(q => q.level));
 const manifest = {
