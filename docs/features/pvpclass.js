@@ -8,10 +8,12 @@
   const { el, esc, registerView, loadJSON, reveal, app } = window.WOC;
   const COLOR = { warrior: '#C79C6E', mage: '#69CCF0', rogue: '#FFF569', paladin: '#F58CBA', hunter: '#ABD473', priest: '#E7E7E7', shaman: '#3390DE', warlock: '#9482C9', druid: '#FF7D0A' };
   const ROT = 2.2, SPELL = { base: 12, cast: 2.0 }, HEAL_UP = 0.5;
-  // duel-model coefficients (all disclosed on-page)
-  const KITE_ADV = 1.15, KITE_PEN = 0.82, CATCH = 0.15, CTRL_SUPPRESS = 0.30, CTRL_BURST = 0.35, DEF_MIT = 0.25, PET_EHP = 1.20;
+  // duel-model coefficients (all disclosed on-page). Skill (0=weak, 1=top-rank) gates
+  // every "hard" tool: kiting-avoidance, CC amplification/suppression, defensive timing.
+  const CTRL_BURST = 0.6, CTRL_SUPPRESS = 0.35, DEF_MIT = 0.30, KITE_AVOID = 0.55, PET_EHP = 1.20;
+  const SKILLS = [['0.1', 'Casual'], ['0.4', 'Average'], ['0.7', 'Skilled'], ['0.95', 'Top rank']];
   let S = null, P = null, pmap = null;
-  const st = { lens: 'overall', gear: 'bis', pet: true, level: 20 };
+  const st = { lens: 'overall', gear: 'bis', pet: true, level: 20, skill: 0.4 };
 
   const mit = (armor, atk) => Math.min(S.constants.armorCap, armor / (armor + S.constants.armorA * atk + S.constants.armorB));
   const hpSta = (sta) => { const K = S.constants; return Math.min(sta, K.staLowCap) * K.staHpLow + Math.max(0, sta - K.staLowCap) * K.staHpHigh; };
@@ -31,26 +33,28 @@
     const healRaw = (SPELL.base + sp) / SPELL.cast * (1 + sCrit * (K.spellCritMult - 1)) + s.spi * 0.4;
     return { dps: dps + petDps, baseDps: dps, petDps, ehp: ehp * ehpMul, healRaw };
   }
-  // returns A's outcome vs B: { win, margin } (margin>1 = A wins more comfortably)
-  function duel(A, B, L, gear, pet) {
+  // returns A's outcome vs B: { win, margin } (margin>1 = A wins more comfortably).
+  // sk (0..1) = player skill: at 0 it's a raw stand-and-trade (stats + pet win); at 1
+  // every skill tool is realized — kiters barely get hit, CC amplifies, defensives are
+  // timed perfectly — so high-ceiling classes climb.
+  function duel(A, B, L, gear, pet, sk) {
     const dA = derive(A, L, gear, pet), dB = derive(B, L, gear, pet);
     const pA = pmap[A.id].byLevel[L], pB = pmap[B.id].byLevel[L], arA = pmap[A.id].ranged, arB = pmap[B.id].ranged;
-    let kiteA = 1, kiteB = 1;
-    if (arA && !arB) { kiteA = KITE_ADV; kiteB = KITE_PEN + CATCH * pB.control; }
-    else if (arB && !arA) { kiteB = KITE_ADV; kiteA = KITE_PEN + CATCH * pA.control; }
-    const outA = dA.dps * kiteA * (1 - CTRL_SUPPRESS * pB.control) * (1 + CTRL_BURST * pA.control);
-    const outB = dB.dps * kiteB * (1 - CTRL_SUPPRESS * pA.control) * (1 + CTRL_BURST * pB.control);
-    const healA = dA.healRaw * pA.heal * HEAL_UP, healB = dB.healRaw * pB.heal * HEAL_UP;
-    const dmgToB = Math.max(0.5, outA * (1 - DEF_MIT * pB.defense) - healB);
-    const dmgToA = Math.max(0.5, outB * (1 - DEF_MIT * pA.defense) - healA);
+    const outA = dA.dps * (1 + CTRL_BURST * pA.control * sk) * (1 - CTRL_SUPPRESS * pB.control * sk);
+    const outB = dB.dps * (1 + CTRL_BURST * pB.control * sk) * (1 - CTRL_SUPPRESS * pA.control * sk);
+    const avoidA = (arA && !arB) ? Math.max(0, (KITE_AVOID - 0.4 * pB.control) * sk) : 0; // skilled kite dodges melee
+    const avoidB = (arB && !arA) ? Math.max(0, (KITE_AVOID - 0.4 * pA.control) * sk) : 0;
+    const healA = dA.healRaw * pA.heal * HEAL_UP * (0.6 + 0.4 * sk), healB = dB.healRaw * pB.heal * HEAL_UP * (0.6 + 0.4 * sk);
+    const dmgToA = Math.max(0.5, outB * (1 - avoidA) * (1 - DEF_MIT * pA.defense * (0.3 + 0.7 * sk)) - healA);
+    const dmgToB = Math.max(0.5, outA * (1 - avoidB) * (1 - DEF_MIT * pB.defense * (0.3 + 0.7 * sk)) - healB);
     const ttkB = dB.ehp / dmgToB, ttkA = dA.ehp / dmgToA;
     return { win: ttkB < ttkA, margin: ttkA / ttkB };
   }
-  function rows(L, gear, pet) {
+  function rows(L, gear, pet, sk) {
     const cs = S.classes;
     return cs.map(A => {
       let wins = 0; const results = {};
-      for (const B of cs) { if (A.id === B.id) { results[B.id] = null; continue; } const r = duel(A, B, L, gear, pet); results[B.id] = r; if (r.win) wins++; }
+      for (const B of cs) { if (A.id === B.id) { results[B.id] = null; continue; } const r = duel(A, B, L, gear, pet, sk); results[B.id] = r; if (r.win) wins++; }
       const d = derive(A, L, gear, pet), p = pmap[A.id].byLevel[L];
       return { c: A, wr: wins / (cs.length - 1), results, dps: d.dps, ehp: d.ehp, ranged: pmap[A.id].ranged, control: p.control, sustain: (d.ehp / 1000) + (d.healRaw * p.heal * HEAL_UP / 20) };
     });
@@ -90,14 +94,15 @@
   }
 
   function render() {
-    const rws = rows(st.level, st.gear, st.pet);
+    const rws = rows(st.level, st.gear, st.pet, st.skill);
     const lens = LENSES[st.lens];
+    const skLbl = (SKILLS.find(s => +s[0] === st.skill) || ['', ''])[1];
     rws.sort((a, b) => (b[lens.key] ?? b.wr) - (a[lens.key] ?? a.wr));
     const top = rws[0], maxWr = Math.max(...rws.map(r => r.wr)) || 1;
     const body = document.getElementById('pvpBody');
     body.innerHTML = `
       <div class="sc-hero reveal" style="border-color:${COLOR[top.c.id]}66">
-        <div class="sc-crown">⚔️ Ultimate 1v1 PvP class ${st.gear === 'bis' ? '(at BiS)' : '(no gear)'} · level ${st.level}</div>
+        <div class="sc-crown">⚔️ Ultimate 1v1 PvP class · ${esc(skLbl)} skill ${st.gear === 'bis' ? '· BiS' : '· no gear'} · L${st.level}</div>
         <div class="sc-win"><span style="color:${COLOR[top.c.id]}">${esc(top.c.name)}</span> <span class="sc-rating">${(top.wr * 100).toFixed(0)}% win</span></div>
         <p class="sc-why">Beats ${Math.round(top.wr * 8)} of 8 classes${st.pet ? '' : ', pets off'}: ${esc(whyText(top, st.pet))}</p>
       </div>
@@ -148,7 +153,8 @@
       <h1 class="reveal">Ultimate PvP Class ⚔️</h1>
       <p class="sub reveal">Every class dueled against every other class, 1v1, on the game's real combat math plus mined PvP attributes — crowd control, self-heals, defensives, ranged-kiting and pets. Who wins the Coliseum?</p>
       <p class="meta reveal" id="pvpSims" style="margin-top:-6px"></p>
-      <div class="controls reveal"><span class="meta" style="align-self:center">Rank by</span><div class="pills" id="pvpLens"></div></div>
+      <div class="controls reveal"><span class="meta" style="align-self:center">Player skill</span><div class="pills" id="pvpSkill"></div></div>
+      <div class="controls reveal" style="margin-top:-4px"><span class="meta" style="align-self:center">Rank by</span><div class="pills" id="pvpLens"></div></div>
       <div class="controls reveal" style="margin-top:-4px;gap:16px;flex-wrap:wrap">
         <span class="meta" style="align-self:center">Gear</span><div class="pills" id="pvpGear"></div>
         <label class="meta">Level <select id="pvpLevel"></select></label>
@@ -158,8 +164,9 @@
       <details class="reveal" style="margin-top:1.6rem"><summary class="meta">How this is calculated (and its limits)</summary>
         <div class="meta" style="line-height:1.6;margin-top:8px">
           <p>Each ordered pair of classes fights a 1v1 attrition duel. Damage and effective HP come from the game's real formulas (same as the <a data-go="#/calc">DPS calculator</a>, <a data-go="#/tiers">tier lists</a> and <a data-go="#/soloclass">solo tool</a>). On top of that we mine three PvP dimensions straight from each class's abilities (level-gated): <b>control</b> (stun/root/polymorph/slow, weighted by severity and cooldown), <b>self-heal</b>, and <b>defensives</b> (absorbs).</p>
-          <p><b>Duel model:</b> a ranged class kites a melee one (${KITE_ADV}× its damage; the melee does ${KITE_PEN}× unless its own control lets it stick). Control both suppresses the opponent's output (−${CTRL_SUPPRESS * 100}% at max) and buys the controller free damage windows (+${CTRL_BURST * 100}%). Defensives cut incoming by up to ${DEF_MIT * 100}%. Healers offset damage with self-heals. <b>Pets</b> (hunter/warlock) add their damage and a body to chew through (+${(PET_EHP - 1) * 100}% effective HP). Whoever's time-to-kill is shorter wins.</p>
-          <p><b>Limits — read this:</b> PvP is the hardest thing to model. This is a <i>sustained attrition</i> simulation. It does <b>not</b> capture burst-combo one-shots, precise CC chains, line-of-sight, positioning, cooldown trading, or player skill — all of which especially help burst casters (mage/warlock) and coordinated play. Treat it as "who wins a stand-and-fight duel on paper," a strong baseline, not the last word. A model, not gospel.</p>
+          <p><b>Player skill is the key dial.</b> Every "hard" tool is gated by the skill setting (Casual → Top rank). At <b>low skill</b> the duel is a raw stand-and-trade: whoever has the better stats and pet wins, so forgiving bruisers and pet classes dominate. As skill rises, kiters start dodging melee damage (up to ${KITE_AVOID * 100}% avoided at top rank), crowd control amplifies your damage (+${CTRL_BURST * 100}% at max control) and suppresses theirs (−${CTRL_SUPPRESS * 100}%), and defensives get timed well (up to ${DEF_MIT * 100}% cut). So <b>high-ceiling classes (rogue, casters, kiters) climb at high rank</b> while faceroll classes fade. That's why the ranking changes when you move the skill pills.</p>
+          <p><b>Other factors:</b> Healers offset damage with self-heals; <b>pets</b> (hunter/warlock) add their damage and a body to chew through (+${(PET_EHP - 1) * 100}% effective HP). Damage and effective HP themselves are skill-independent (they happen regardless). Whoever's time-to-kill is shorter wins.</p>
+          <p><b>Limits — read this:</b> PvP is the hardest thing to model. Even with the skill dial this is a <i>duel abstraction</i>: it approximates burst, kiting and CC as damage/mitigation multipliers rather than simulating exact ability sequences, line-of-sight, or positioning, and it can't capture the very top of individual outplay. Treat it as a strong, transparent baseline for "who wins a 1v1 at a given skill level," not the last word. A model, not gospel.</p>
         </div>
       </details>
     </div></section>`));
@@ -169,6 +176,8 @@
     const n = S.classes.length, duels = n * (n - 1) * S.levelCap * 2 * 2;
     document.getElementById('pvpSims').innerHTML = `⚔️ Built from <b>${duels.toLocaleString()}</b> simulated duels — all ${n} classes vs each other at every level 1–${S.levelCap}, for both gear sets and pets on/off.`;
 
+    const bindSkill = () => pillRow(document.getElementById('pvpSkill'), SKILLS, String(st.skill), k => { st.skill = +k; bindSkill(); render(); });
+    bindSkill();
     const bindLens = () => pillRow(document.getElementById('pvpLens'), Object.entries(LENSES).map(([k, v]) => [k, v.label]), st.lens, k => { st.lens = k; bindLens(); render(); });
     const bindGear = () => pillRow(document.getElementById('pvpGear'), [['leveling', 'No gear'], ['bis', 'BiS']], st.gear, k => { st.gear = k; bindGear(); render(); });
     bindLens(); bindGear();
