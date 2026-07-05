@@ -172,8 +172,8 @@
     try { [S, P, CD] = await Promise.all([loadJSON('solo.json'), loadJSON('pvpsim.json'), loadJSON('combat.json')]); }
     catch (e) { document.getElementById('pvpBody').innerHTML = `<p class="meta">Couldn't load data (${esc(e.message)}).</p>`; return; }
     pmap = Object.fromEntries(P.classes.map(c => [c.id, c]));
-    const n = S.classes.length, duels = n * (n - 1) * S.levelCap * 2 * 2;
-    document.getElementById('pvpSims').innerHTML = `⚔️ Built from <b>${duels.toLocaleString()}</b> simulated duels — all ${n} classes vs each other at every level 1–${S.levelCap}, for both gear sets and pets on/off.`;
+    const n = S.classes.length, duels = n * (n - 1) * S.levelCap * 2 * 2 * SKILLS.length;
+    document.getElementById('pvpSims').innerHTML = `⚔️ Built from <b>${duels.toLocaleString()}</b> simulated duels — all ${n} classes vs each other at every level 1–${S.levelCap}, across both gear sets, pets on/off, and all ${SKILLS.length} skill brackets.`;
 
     const bindSkill = () => pillRow(document.getElementById('pvpSkill'), SKILLS, String(st.skill), k => { st.skill = +k; bindSkill(); render(); });
     bindSkill();
