@@ -13,7 +13,7 @@
   // their auto-attack DPS is scaled by this rotation factor to compare fairly against
   // casters, whose spell DPS already reflects their rotation. (Disclosed on the page.)
   const ROTATION = 2.2;
-  let CS = null, ROLES = null, LEVEL = 20, LENS = 'overall';
+  let CS = null, ROLES = null, CB = null, LEVEL = 20, LENS = 'overall';
 
   function derive(c, K, L) {
     const s = {}; for (const k of ['str', 'agi', 'sta', 'int', 'spi', 'armor']) s[k] = (c.baseStats[k] || 0) + (c.statsPerLevel[k] || 0) * (L - 1);
@@ -26,17 +26,16 @@
     const mit = Math.min(K.armorCap, armor / (armor + K.armorA * L + K.armorB));
     const ehp = hp / (1 - mit);
     const sp = s.int * (K.spellPowerPerInt || 0.5);
-    const avg = (WEAPON.min + WEAPON.max) / 2, perHit = avg + (ap / K.apToDamageDivisor) * WEAPON.speed;
-    const meleeDps = perHit / WEAPON.speed * (1 + crit * (K.meleeCritMult - 1));
-    const spellDps = (SPELL.base + sp * SPELL.coef) / SPELL.cast * (1 + spellCrit * (K.spellCritMult - 1));
-    const offense = c.caster ? spellDps : meleeDps * ROTATION;
+    // real rotation DPS (no-gear baseline) from combat.json — physical + magic throughput
+    const cm = CB ? CB.classes[c.id].leveling[L] : null;
+    const offense = cm ? cm.phys + cm.magic : 0;
     const heal = (SPELL.base + sp) / SPELL.cast * (1 + spellCrit * (K.spellCritMult - 1)) + s.spi * 0.4;
     return { s, ap, crit, hp, armor, mit, ehp, sp, offense, heal };
   }
 
   const LENSES = {
     overall: { label: 'Overall', metric: (d, r) => null, note: 'Blend of offense, effective HP and role versatility.' },
-    dps: { label: 'DPS', role: 'dps', metric: (d) => d.offense, note: 'Sustained damage — melee white DPS or caster spell DPS on a neutral weapon/spell.' },
+    dps: { label: 'DPS', role: 'dps', metric: (d) => d.offense, note: 'Real rotation DPS — built from each class\'s actual abilities (no-gear baseline), physical + magic throughput.' },
     tank: { label: 'Tank', role: 'tank', metric: (d) => d.ehp, note: 'Effective HP — health divided by armor mitigation at this level.' },
     healer: { label: 'Healer', role: 'healer', metric: (d) => d.heal, note: 'Throughput proxy from spell power + spirit.' },
   };
@@ -105,6 +104,7 @@
     </div></section>`));
     (async () => {
       if (!CS) CS = await loadJSON('classstats.json');
+      if (!CB) CB = await loadJSON('combat.json');
       if (!ROLES) { const mf = await loadJSON('manifest.json'); ROLES = {}; (mf.classes || []).forEach(c => ROLES[c.id] = { roles: c.roles, specs: c.specs }); }
       if (LEVEL > CS.maxLevel) LEVEL = CS.maxLevel;
       document.querySelectorAll('.tier-lens').forEach(b => b.onclick = () => { LENS = b.dataset.lens; document.querySelectorAll('.tier-lens').forEach(x => x.classList.toggle('on', x === b)); render(); });

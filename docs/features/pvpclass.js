@@ -7,12 +7,12 @@
 (function () {
   const { el, esc, registerView, loadJSON, reveal, app } = window.WOC;
   const COLOR = { warrior: '#C79C6E', mage: '#69CCF0', rogue: '#FFF569', paladin: '#F58CBA', hunter: '#ABD473', priest: '#E7E7E7', shaman: '#3390DE', warlock: '#9482C9', druid: '#FF7D0A' };
-  const ROT = 2.2, SPELL = { base: 12, cast: 2.0 }, HEAL_UP = 0.5;
+  const SPELL = { base: 12, cast: 2.0 }, HEAL_UP = 0.5;
   // duel-model coefficients (all disclosed on-page). Skill (0=weak, 1=top-rank) gates
   // every "hard" tool: kiting-avoidance, CC amplification/suppression, defensive timing.
   const CTRL_BURST = 0.6, CTRL_SUPPRESS = 0.35, DEF_MIT = 0.30, KITE_AVOID = 0.55, PET_EHP = 1.20;
   const SKILLS = [['0.1', 'Casual'], ['0.4', 'Average'], ['0.7', 'Skilled'], ['0.95', 'Top rank']];
-  let S = null, P = null, pmap = null;
+  let S = null, P = null, CD = null, pmap = null;
   const st = { lens: 'overall', gear: 'bis', pet: true, level: 20, skill: 0.4 };
 
   const mit = (armor, atk) => Math.min(S.constants.armorCap, armor / (armor + S.constants.armorA * atk + S.constants.armorB));
@@ -20,34 +20,31 @@
   function derive(c, L, gear, pet) {
     const K = S.constants, g = gear === 'bis' ? S.bis[c.id][L] : null;
     const s = {}; for (const k of ['str', 'agi', 'sta', 'int', 'spi', 'armor']) s[k] = (c.baseStats[k] || 0) + (c.statsPerLevel[k] || 0) * (L - 1) + (g ? (g[k] || 0) : 0);
-    const w = g ? { min: g.wMin, max: g.wMax, speed: g.wSpeed } : S.levelingWeapon[L];
-    const ap = c.apRule === 'str2' ? s.str * 2 : c.apRule === 'stragi' ? s.str + s.agi : s.str;
-    const crit = K.baseCrit + s.agi * K.critPerAgi, sCrit = K.baseCrit + s.int * K.spellCritPerInt;
-    const hp = c.baseHp + c.hpPerLevel * (L - 1) + hpSta(s.sta), armor = s.armor + s.agi * K.armorPerAgi;
-    const ehp = hp / (1 - mit(armor, L)), sp = s.int * (K.spellPowerPerInt || 0.5);
-    const avg = (w.min + w.max) / 2, perHit = avg + (ap / K.apToDamageDivisor) * w.speed;
-    const meleeDps = perHit / w.speed * (1 + crit * (K.meleeCritMult - 1)) * ROT;
-    const spellDps = (SPELL.base + sp) / SPELL.cast * (1 + sCrit * (K.spellCritMult - 1));
-    let dps = c.caster ? spellDps : meleeDps, petDps = 0, ehpMul = 1;
-    if (pet && c.petKind && S.pets[c.id]) { petDps = S.pets[c.id].dps[L].dps; ehpMul = PET_EHP; }
+    const sCrit = K.baseCrit + s.int * K.spellCritPerInt;
+    const hp = c.baseHp + c.hpPerLevel * (L - 1) + hpSta(s.sta), armor = s.armor + s.agi * K.armorPerAgi, sp = s.int * (K.spellPowerPerInt || 0.5);
+    const cm = CD.classes[c.id][gear][L]; // real rotation DPS: {phys (armor-reduced), magic (ignores armor)}
+    let petDps = 0, petEhpMul = 1;
+    if (pet && c.petKind && S.pets[c.id]) { petDps = S.pets[c.id].dps[L].dps; petEhpMul = PET_EHP; } // pet damage is physical
     const healRaw = (SPELL.base + sp) / SPELL.cast * (1 + sCrit * (K.spellCritMult - 1)) + s.spi * 0.4;
-    return { dps: dps + petDps, baseDps: dps, petDps, ehp: ehp * ehpMul, healRaw };
+    return { hp: hp * petEhpMul, armor, phys: cm.phys + petDps, magic: cm.magic, healRaw };
   }
   // returns A's outcome vs B: { win, margin } (margin>1 = A wins more comfortably).
   // sk (0..1) = player skill: at 0 it's a raw stand-and-trade (stats + pet win); at 1
   // every skill tool is realized — kiters barely get hit, CC amplifies, defensives are
-  // timed perfectly — so high-ceiling classes climb.
+  // timed perfectly — so high-ceiling classes climb. Magic ignores armor; physical
+  // (and pet) damage is reduced by the target's armor.
   function duel(A, B, L, gear, pet, sk) {
     const dA = derive(A, L, gear, pet), dB = derive(B, L, gear, pet);
     const pA = pmap[A.id].byLevel[L], pB = pmap[B.id].byLevel[L], arA = pmap[A.id].ranged, arB = pmap[B.id].ranged;
-    const outA = dA.dps * (1 + CTRL_BURST * pA.control * sk) * (1 - CTRL_SUPPRESS * pB.control * sk);
-    const outB = dB.dps * (1 + CTRL_BURST * pB.control * sk) * (1 - CTRL_SUPPRESS * pA.control * sk);
+    const rawA = dA.magic + dA.phys * (1 - mit(dB.armor, L)), rawB = dB.magic + dB.phys * (1 - mit(dA.armor, L));
+    const outA = rawA * (1 + CTRL_BURST * pA.control * sk) * (1 - CTRL_SUPPRESS * pB.control * sk);
+    const outB = rawB * (1 + CTRL_BURST * pB.control * sk) * (1 - CTRL_SUPPRESS * pA.control * sk);
     const avoidA = (arA && !arB) ? Math.max(0, (KITE_AVOID - 0.4 * pB.control) * sk) : 0; // skilled kite dodges melee
     const avoidB = (arB && !arA) ? Math.max(0, (KITE_AVOID - 0.4 * pA.control) * sk) : 0;
     const healA = dA.healRaw * pA.heal * HEAL_UP * (0.6 + 0.4 * sk), healB = dB.healRaw * pB.heal * HEAL_UP * (0.6 + 0.4 * sk);
     const dmgToA = Math.max(0.5, outB * (1 - avoidA) * (1 - DEF_MIT * pA.defense * (0.3 + 0.7 * sk)) - healA);
     const dmgToB = Math.max(0.5, outA * (1 - avoidB) * (1 - DEF_MIT * pB.defense * (0.3 + 0.7 * sk)) - healB);
-    const ttkB = dB.ehp / dmgToB, ttkA = dA.ehp / dmgToA;
+    const ttkB = dB.hp / dmgToB, ttkA = dA.hp / dmgToA;
     return { win: ttkB < ttkA, margin: ttkA / ttkB };
   }
   function rows(L, gear, pet, sk) {
@@ -56,15 +53,18 @@
       let wins = 0; const results = {};
       for (const B of cs) { if (A.id === B.id) { results[B.id] = null; continue; } const r = duel(A, B, L, gear, pet, sk); results[B.id] = r; if (r.win) wins++; }
       const d = derive(A, L, gear, pet), p = pmap[A.id].byLevel[L];
-      return { c: A, wr: wins / (cs.length - 1), results, dps: d.dps, ehp: d.ehp, ranged: pmap[A.id].ranged, control: p.control, sustain: (d.ehp / 1000) + (d.healRaw * p.heal * HEAL_UP / 20) };
+      const dmg = d.magic + d.phys * (1 - mit(500, L)); // effective DPS vs a typical (~500 armor) target
+      const burst = (d.magic + d.phys) * (1 + p.control); // peak damage front-loadable in a CC window
+      return { c: A, wr: wins / (cs.length - 1), results, dmg, burst, ranged: pmap[A.id].ranged, control: p.control, sustain: (d.hp / 1000) + (d.healRaw * p.heal * HEAL_UP / 20) };
     });
   }
 
   const LENSES = {
     overall: { label: 'Win rate', key: 'wr', fmt: r => (r.wr * 100).toFixed(0) + '%', note: 'Share of the other 8 classes this class beats 1v1 (round-robin).' },
-    damage: { label: 'Damage', key: 'dps', fmt: r => r.dps.toFixed(1), note: 'Sustained damage output (with pet), the kill-pressure lens.' },
+    burst: { label: 'Burst', key: 'burst', fmt: r => r.burst.toFixed(0), note: 'Peak damage you can front-load in a stun/opener — the burst-combo lens (damage × control). Where glass-cannon casters and rogues shine.' },
+    damage: { label: 'Damage', key: 'dmg', fmt: r => r.dmg.toFixed(1), note: 'Sustained effective DPS vs a typical target — spells ignore armor, physical is reduced.' },
     control: { label: 'Control', key: 'control', fmt: r => (r.control * 100).toFixed(0) + '%', note: 'Crowd-control strength (stun/root/polymorph/slow), relative to the best.' },
-    sustain: { label: 'Sustain', key: 'sustain', fmt: r => r.sustain.toFixed(1), note: 'Effective HP plus self-healing — how long you stay alive.' },
+    sustain: { label: 'Sustain', key: 'sustain', fmt: r => r.sustain.toFixed(1), note: 'Health plus self-healing — how long you stay alive.' },
   };
 
   function whyText(r, pet) {
@@ -73,7 +73,6 @@
     if (r.c.petKind && pet) b.push(`fights with a ${r.c.petKind === 'beast' ? 'pet' : 'demon'}`);
     if (r.control >= 0.6) b.push('chain-controls opponents');
     if (r.c.canHeal) b.push('heals through pressure');
-    if (r.dps >= 1) { /* placeholder */ }
     return b.length ? b.join(', ') + '.' : 'a balanced 1v1 kit.';
   }
 
@@ -111,7 +110,7 @@
           <td class="sc-rank">${i + 1}</td>
           <td style="color:${COLOR[r.c.id]};font-weight:700">${esc(r.c.name)}</td>
           <td><div class="sc-bar"><span style="width:${(r.wr / maxWr * 100).toFixed(0)}%;background:${COLOR[r.c.id]}"></span></div><b>${(r.wr * 100).toFixed(0)}%</b></td>
-          <td>${r.dps.toFixed(1)}</td>
+          <td>${r.dmg.toFixed(1)}</td>
           <td>${(r.control * 100).toFixed(0)}%</td>
           <td>${r.sustain.toFixed(1)}</td>
           <td class="meta">${r.ranged ? 'ranged' : 'melee'}${r.c.petKind && st.pet ? ' +' + r.c.petKind : ''}</td>
@@ -163,14 +162,14 @@
       <div id="pvpBody"><div class="spinner"></div></div>
       <details class="reveal" style="margin-top:1.6rem"><summary class="meta">How this is calculated (and its limits)</summary>
         <div class="meta" style="line-height:1.6;margin-top:8px">
-          <p>Each ordered pair of classes fights a 1v1 attrition duel. Damage and effective HP come from the game's real formulas (same as the <a data-go="#/calc">DPS calculator</a>, <a data-go="#/tiers">tier lists</a> and <a data-go="#/soloclass">solo tool</a>). On top of that we mine three PvP dimensions straight from each class's abilities (level-gated): <b>control</b> (stun/root/polymorph/slow, weighted by severity and cooldown), <b>self-heal</b>, and <b>defensives</b> (absorbs).</p>
+          <p>Each ordered pair of classes fights a 1v1 duel. Damage is each class's <b>real rotation DPS</b> — built from its actual abilities (rank-resolved) on the game's own spell/attack-power scaling — split into <b>magic</b> (ignores armor) and <b>physical</b> (reduced by the target's armor), so plate resists a warrior but not a mage. HP comes from the real stamina/health formulas. On top of that we mine three PvP dimensions straight from each class's abilities (level-gated): <b>control</b> (stun/root/polymorph/slow, weighted by severity and cooldown), <b>self-heal</b>, and <b>defensives</b> (absorbs). The <b>Burst</b> lens ranks peak front-loadable damage (damage × control) — where glass-cannon casters and rogues shine even if they lose a long attrition fight.</p>
           <p><b>Player skill is the key dial.</b> Every "hard" tool is gated by the skill setting (Casual → Top rank). At <b>low skill</b> the duel is a raw stand-and-trade: whoever has the better stats and pet wins, so forgiving bruisers and pet classes dominate. As skill rises, kiters start dodging melee damage (up to ${KITE_AVOID * 100}% avoided at top rank), crowd control amplifies your damage (+${CTRL_BURST * 100}% at max control) and suppresses theirs (−${CTRL_SUPPRESS * 100}%), and defensives get timed well (up to ${DEF_MIT * 100}% cut). So <b>high-ceiling classes (rogue, casters, kiters) climb at high rank</b> while faceroll classes fade. That's why the ranking changes when you move the skill pills.</p>
           <p><b>Other factors:</b> Healers offset damage with self-heals; <b>pets</b> (hunter/warlock) add their damage and a body to chew through (+${(PET_EHP - 1) * 100}% effective HP). Damage and effective HP themselves are skill-independent (they happen regardless). Whoever's time-to-kill is shorter wins.</p>
           <p><b>Limits — read this:</b> PvP is the hardest thing to model. Even with the skill dial this is a <i>duel abstraction</i>: it approximates burst, kiting and CC as damage/mitigation multipliers rather than simulating exact ability sequences, line-of-sight, or positioning, and it can't capture the very top of individual outplay. Treat it as a strong, transparent baseline for "who wins a 1v1 at a given skill level," not the last word. A model, not gospel.</p>
         </div>
       </details>
     </div></section>`));
-    try { [S, P] = await Promise.all([loadJSON('solo.json'), loadJSON('pvpsim.json')]); }
+    try { [S, P, CD] = await Promise.all([loadJSON('solo.json'), loadJSON('pvpsim.json'), loadJSON('combat.json')]); }
     catch (e) { document.getElementById('pvpBody').innerHTML = `<p class="meta">Couldn't load data (${esc(e.message)}).</p>`; return; }
     pmap = Object.fromEntries(P.classes.map(c => [c.id, c]));
     const n = S.classes.length, duels = n * (n - 1) * S.levelCap * 2 * 2;

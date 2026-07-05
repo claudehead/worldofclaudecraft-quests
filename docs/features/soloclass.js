@@ -8,10 +8,10 @@
 (function () {
   const { el, esc, registerView, loadJSON, reveal, app } = window.WOC;
   const COLOR = { warrior: '#C79C6E', mage: '#69CCF0', rogue: '#FFF569', paladin: '#F58CBA', hunter: '#ABD473', priest: '#E7E7E7', shaman: '#3390DE', warlock: '#9482C9', druid: '#FF7D0A' };
-  const ROT = 2.2, SPELL = { base: 12, cast: 2.0 };
+  const SPELL = { base: 12, cast: 2.0 };
   // composite weights (disclosed on-page)
   const W = { coverage: 0.20, safety: 0.30, speed: 0.25, elite: 0.25 };
-  let S = null, M = null;
+  let S = null, M = null, CD = null;
   const st = { lens: 'overall', gear: 'leveling', pet: true, level: 'avg' };
 
   // ---- combat model (identical math to /calc and /tiers) ----
@@ -20,22 +20,18 @@
   function derive(c, L, gearMode) {
     const K = S.constants, g = gearMode === 'bis' ? S.bis[c.id][L] : null;
     const s = {}; for (const k of ['str', 'agi', 'sta', 'int', 'spi', 'armor']) s[k] = (c.baseStats[k] || 0) + (c.statsPerLevel[k] || 0) * (L - 1) + (g ? (g[k] || 0) : 0);
-    const w = g ? { min: g.wMin, max: g.wMax, speed: g.wSpeed } : S.levelingWeapon[L];
-    const ap = c.apRule === 'str2' ? s.str * 2 : c.apRule === 'stragi' ? s.str + s.agi : s.str;
-    const crit = K.baseCrit + s.agi * K.critPerAgi, sCrit = K.baseCrit + s.int * K.spellCritPerInt;
+    const sCrit = K.baseCrit + s.int * K.spellCritPerInt;
     const hp = c.baseHp + c.hpPerLevel * (L - 1) + hpFromSta(s.sta, K);
     const armor = s.armor + s.agi * K.armorPerAgi, sp = s.int * (K.spellPowerPerInt || 0.5);
-    const avg = (w.min + w.max) / 2, perHit = avg + (ap / K.apToDamageDivisor) * w.speed;
-    const meleeDps = perHit / w.speed * (1 + crit * (K.meleeCritMult - 1)) * ROT;
-    const spellDps = (SPELL.base + sp) / SPELL.cast * (1 + sCrit * (K.spellCritMult - 1));
-    const offense = c.caster ? spellDps : meleeDps;
+    // real rotation DPS from combat.json, split into physical (armor-reducible) and magic (ignores armor)
+    const cm = CD.classes[c.id][gearMode][L];
     const heal = (SPELL.base + sp) / SPELL.cast * (1 + sCrit * (K.spellCritMult - 1)) + s.spi * 0.4;
-    return { hp, armor, offense, selfHeal: c.canHeal ? heal * 0.35 : 0 };
+    return { hp, armor, phys: cm.phys, magic: cm.magic, selfHeal: c.canHeal ? heal * 0.35 : 0 };
   }
   // 2-phase solo fight vs one mob: pet tanks until it dies, then you finish it
   function fight(d, pet, m, L) {
     const K = S.constants;
-    const myInto = d.offense * (1 - mit(m.armor, L, K));
+    const myInto = d.magic + d.phys * (1 - mit(m.armor, L, K)); // spells ignore armor; physical is reduced
     const mobIntoMe = Math.max(0.1, m.dps * (1 - mit(d.armor, m.level, K)) - d.selfHeal);
     if (!pet) { const ttk = m.hp / myInto, ttd = d.hp / mobIntoMe; const win = ttk < ttd; return { win, ttk, hpLeft: win ? 1 - mobIntoMe * ttk / d.hp : 0 }; }
     const petInto = pet.dps * (1 - mit(m.armor, L, K)), team = myInto + petInto;
@@ -184,14 +180,14 @@
       <div id="scBody"><div class="spinner"></div></div>
       <details class="reveal" style="margin-top:1.6rem"><summary class="meta">How this is calculated</summary>
         <div class="meta" style="line-height:1.6;margin-top:8px">
-          <p>For each class × level × gear × mob we run the game's real formulas (same as the <a data-go="#/calc">DPS calculator</a> and <a data-go="#/tiers">tier lists</a>): attack power by class rule, armor mitigation both ways, health from stamina, crit from agility/intellect, caster spell power. Melee/hybrid white damage is scaled by a ${ROT}× rotation factor so it compares fairly to casters' rotation-inclusive spell DPS.</p>
+          <p>Damage is each class's <b>real rotation DPS</b> — built from its actual abilities (rank-resolved) on the game's own spell/attack-power scaling, filling the 1.5s global cooldown with its best spells/strikes, DoTs and (for rogues) finishers. It's split into <b>physical</b> (reduced by the mob's armor) and <b>magic</b> (ignores armor), so casters are no longer wrongly taxed by armor. The rest uses the game's real formulas (same as the <a data-go="#/calc">DPS calculator</a>): health from stamina, armor mitigation, crit from agility/intellect.</p>
           <p><b>Pets</b> are modeled exactly as the game scales them (a mob template at your level): the tank pet (warlock's Gloomshade demon; hunter's most durable tameable beast for your level) holds aggro while you deal damage. A fight is a two-phase race — the pet tanks until it dies, then you finish the mob yourself. Turn pets off to compare on raw class power.</p>
           <p><b>Metrics:</b> <b>Kill speed</b> = kills/min of level-appropriate normal mobs. <b>Survive</b> = average health left after a kill. <b>Elite solo</b> = share of near-level elites you can solo. <b>Coverage</b> = share of normal mobs you can kill without dying. <b>Solo Rating</b> = ${(W.safety * 100)}% survive + ${(W.speed * 100)}% speed + ${(W.elite * 100)}% elite + ${(W.coverage * 100)}% coverage, normalized across classes.</p>
           <p>Self-healing classes (paladin, priest, shaman, druid) offset ~35% of incoming damage. "Leveling" gear = base class stats + a level-appropriate white weapon; "BiS" = the best gear obtainable by that level from the <a data-go="#/bis">BiS lists</a>. A model, not gospel — abilities, procs and player skill shift the edges.</p>
         </div>
       </details>
     </div></section>`));
-    try { [S, M] = await Promise.all([loadJSON('solo.json'), loadJSON('mobstats.json')]); }
+    try { [S, M, CD] = await Promise.all([loadJSON('solo.json'), loadJSON('mobstats.json'), loadJSON('combat.json')]); }
     catch (e) { document.getElementById('scBody').innerHTML = `<p class="meta">Couldn't load data (${esc(e.message)}).</p>`; return; }
 
     // how many individual fights back the results (computed, not hardcoded):

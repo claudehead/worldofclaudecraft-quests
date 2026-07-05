@@ -107,6 +107,9 @@ $TSX $TOOLS/generate-solo.ts docs/solo.json
 echo "==> pvp-class sim data (mines ability CC/heals/defensives)"
 $TSX $TOOLS/generate-pvpsim.ts docs/pvpsim.json
 
+echo "==> real rotation DPS (needs solo.json; feeds solo/pvp/tiers)"
+$TSX $TOOLS/generate-combat.ts docs/combat.json
+
 echo "==> item sets (v0.16)"
 $TSX $TOOLS/generate-itemsets.ts docs/itemsets.json
 
