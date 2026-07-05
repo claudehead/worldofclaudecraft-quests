@@ -42,6 +42,7 @@ const SECTIONS = [
   ['haste', 'Haste Stat Weights', 'How much DPS one point of haste is worth for every class in World of Claudecraft (v0.20), and where to get haste.'],
   ['rite', 'Drowned Reliquary Rite — Practice', "Practice the Drowned Litany's finale — a Simon-says shrine-sequence memory rite. Play the real mechanics (sequence, replays, tries, loot ceiling) free before you run the delve."],
   ['soloclass', 'Ultimate Solo Class', 'Every class simulated soloing all mobs across levels 1-20, with and without BiS and pets, on the real combat math — ranked by kill speed, survivability and elite-soloing to find the best solo class in World of Claudecraft.'],
+  ['pvpclass', 'Ultimate PvP Class', 'Every class dueled 1v1 against every other class on the real combat math plus crowd control, self-heals, defensives, kiting and pets — a win-rate ranking and full matrix to find the best PvP class in World of Claudecraft.'],
   ['news', "What's New", "What's new in World of Claudecraft v0.20 and in the field guide — the Drowned Litany delve, world boss, haste, bags, and the guide's new tools and games."],
   ['donate', 'Donate', 'Support the free World of Claudecraft field guide — tip in SOL or $WOC on Solana.'],
   ['supporters', 'Supporters Wall', 'Live from Solana — everyone who has tipped the World of Claudecraft guide, with a supporter leaderboard and recent tips.'],

@@ -101,6 +101,12 @@ rm -f consumables/consumable-icons.json
 echo "==> best-in-slot (reuses gear icons)"
 $TSX $TOOLS/generate-bis.ts gear/bis.json
 
+echo "==> solo-class sim data (needs classstats + bis)"
+$TSX $TOOLS/generate-solo.ts docs/solo.json
+
+echo "==> pvp-class sim data (mines ability CC/heals/defensives)"
+$TSX $TOOLS/generate-pvpsim.ts docs/pvpsim.json
+
 echo "==> item sets (v0.16)"
 $TSX $TOOLS/generate-itemsets.ts docs/itemsets.json
 
