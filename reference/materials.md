@@ -64,13 +64,17 @@ _Equippable utility items (fishing poles, picks, and the like)._
 | <a id="item-alien_armor_plate"></a>Alien Armor Plate | — | tool |
 | <a id="item-amber_crimson_armor_plate"></a>Amber Crimson | — | tool |
 | <a id="item-amethyst_silver_armor_plate"></a>Amethyst Silver | — | tool |
+| <a id="item-arcanite_mining_pick"></a>Arcanite Mining Pick | — | tool |
+| <a id="item-ashwood_axe"></a>Ashwood Axe | — | tool |
 | <a id="item-bronze_sickle"></a>Bronze Sickle | vendor (Trader Wilkes) | tool |
 | <a id="item-copper_mining_pick"></a>Copper Mining Pick | vendor (Trader Wilkes) | tool |
 | <a id="item-crimson_amber_armor_plate"></a>Crimson Amber | — | tool |
 | <a id="item-cyan_magenta_armor_plate"></a>Cyan Magenta | — | tool |
+| <a id="item-elderwood_axe"></a>Elderwood Axe | — | tool |
 | <a id="item-felling_axe"></a>Felling Axe | vendor (Trader Wilkes) | tool |
 | <a id="item-forest_pink_armor_plate"></a>Forest Pink | — | tool |
 | <a id="item-gathering_sickle"></a>Gathering Sickle | vendor (Trader Wilkes) | tool |
+| <a id="item-goldleaf_sickle"></a>Goldleaf Sickle | — | tool |
 | <a id="item-handaxe"></a>Handaxe | vendor (Trader Wilkes) | tool |
 | <a id="item-imperial_crimson_armor_plate"></a>Imperial Crimson | — | tool |
 | <a id="item-imperial_gold_armor_plate"></a>Imperial Gold | — | tool |
@@ -86,6 +90,8 @@ _Equippable utility items (fishing poles, picks, and the like)._
 | <a id="item-silverleaf_sickle"></a>Silverleaf Sickle | vendor (Trader Wilkes) | tool |
 | <a id="item-simple_fishing_pole"></a>Simple Fishing Pole | vendor (Fisherman Brandt) | tool |
 | <a id="item-steel_orange_armor_plate"></a>Steel Orange | — | tool |
+| <a id="item-sunpetal_sickle"></a>Sunpetal Sickle | — | tool |
+| <a id="item-thorium_mining_pick"></a>Thorium Mining Pick | — | tool |
 | <a id="item-vanguard_azure_armor_plate"></a>Vanguard Azure | — | tool |
 | <a id="item-vanguard_chrome_armor_plate"></a>Vanguard Chrome | — | tool |
 

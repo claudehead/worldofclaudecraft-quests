@@ -16,7 +16,7 @@
 |---|---|
 | Level | 1–2 |
 | Family | Beast |
-| Health | 28–42 HP |
+| Health | 40–54 HP |
 | Armor (physical mitigation) | 0–10 (~0–2% vs a same-level attacker) |
 | Melee damage | 2–6 per hit @ 2s swing (~2–3 DPS) |
 | Location | Eastbrook Vale · ~x:-15, z:55 · ~x:20, z:70 — [🗺️ show on map](#/map/-15/55) |
@@ -45,7 +45,7 @@
 |---|---|
 | Level | 2–4 |
 | Family | Spider |
-| Health | 45–75 HP |
+| Health | 51–81 HP |
 | Armor (physical mitigation) | 8–24 (~1–3% vs a same-level attacker) |
 | Melee damage | 5–11 per hit @ 1.8s swing (~3–5 DPS) |
 | Location | Eastbrook Vale · ~x:-60, z:5 — [🗺️ show on map](#/map/-60/5) |
@@ -74,7 +74,7 @@
 |---|---|
 | Level | 2–3 |
 | Family | Beast |
-| Health | 50–66 HP |
+| Health | 54–70 HP |
 | Armor (physical mitigation) | 14–28 (~2–4% vs a same-level attacker) |
 | Melee damage | 5–10 per hit @ 2.2s swing (~3–4 DPS) |
 | Location | Eastbrook Vale · ~x:55, z:12 · ~x:80, z:-15 — [🗺️ show on map](#/map/55/12) |
