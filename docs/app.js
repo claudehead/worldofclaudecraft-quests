@@ -18,10 +18,12 @@ function resolvePath(base, rel) {
   return out.join('/');
 }
 const raw = (path) => RAW + path;
-// per-page-load cache-buster for DATA/markdown fetches (raw.githubusercontent +
-// Pages both CDN-cache ~5–10 min). Images via raw() stay cacheable. A fresh
-// reload always pulls the latest data; within a load it's still cached.
-const BUST = Date.now();
+// Cache-buster for DATA/markdown fetches, bucketed to 5 minutes (raw.githubusercontent
+// + Pages both CDN-cache ~5 min). A per-LOAD buster (Date.now()) made every reload a
+// unique URL that bypassed the CDN and re-hit origin, so heavy browsing tripped raw's
+// rate limit (429). Bucketing means reloads within the same 5-min window reuse the
+// cached copy — data still refreshes every ~5 min, but origin isn't hammered.
+const BUST = Math.floor(Date.now() / 300000);
 const cb = (u) => u + (u.includes('?') ? '&' : '?') + 'cb=' + BUST;
 
 // ---------- localization (the game's own translations) ----------
@@ -36,7 +38,10 @@ async function loadLang(code) {
 
 async function getMd(path) {
   if (mdCache.has(path)) return mdCache.get(path);
-  const res = await fetch(cb(raw(path)));
+  let res = await fetch(cb(raw(path)));
+  // raw.githubusercontent rate-limits (429): back off and retry the un-busted URL,
+  // which its CDN is likely already serving from cache.
+  if (res.status === 429) { await new Promise(r => setTimeout(r, 1200)); res = await fetch(raw(path)); }
   if (!res.ok) throw new Error(`${res.status} ${path}`);
   const text = await res.text();
   mdCache.set(path, text);
@@ -60,7 +65,8 @@ function registerView(hash, fn) { EXT_VIEWS[hash] = fn; }
 // live in the source repo (served from raw.githubusercontent) rather than docs/.
 async function loadJSON(path, opts) {
   const url = opts && opts.raw ? raw(path) : path;
-  const res = await fetch(cb(url));
+  let res = await fetch(cb(url));
+  if (res.status === 429) { await new Promise(r => setTimeout(r, 1200)); res = await fetch(url); } // rate-limited: retry the CDN-cached (un-busted) URL
   if (!res.ok) throw new Error(`${res.status} ${path}`);
   return res.json();
 }
