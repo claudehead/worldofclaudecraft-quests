@@ -3,6 +3,7 @@ const app = document.getElementById('app');
 let M = null;            // manifest
 let RAW = '';            // raw.githubusercontent base
 const mdCache = new Map();
+let cdnRefPromise = null;
 
 // ---------- helpers ----------
 const el = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild; };
@@ -18,6 +19,8 @@ function resolvePath(base, rel) {
   return out.join('/');
 }
 const raw = (path) => RAW + path;
+const cdnBranch = () => (M && M.branch) || 'main';
+const rawCdn = (path, ref) => M ? `https://cdn.jsdelivr.net/gh/${M.repo}@${ref || cdnBranch()}/${path}` : raw(path);
 // Cache-buster for DATA/markdown fetches, bucketed to 5 minutes (raw.githubusercontent
 // + Pages both CDN-cache ~5 min). A per-LOAD buster (Date.now()) made every reload a
 // unique URL that bypassed the CDN and re-hit origin, so heavy browsing tripped raw's
@@ -25,6 +28,42 @@ const raw = (path) => RAW + path;
 // cached copy — data still refreshes every ~5 min, but origin isn't hammered.
 const BUST = Math.floor(Date.now() / 300000);
 const cb = (u) => u + (u.includes('?') ? '&' : '?') + 'cb=' + BUST;
+const delay = (ms) => new Promise(r => setTimeout(r, ms));
+const shouldFallback = (res) => res.status === 429 || res.status === 403 || res.status >= 500;
+
+async function getCdnRef() {
+  if (!M) return '';
+  if (M.commit) return M.commit;
+  if (!cdnRefPromise) {
+    const ref = cdnBranch();
+    cdnRefPromise = fetch(cb(`https://api.github.com/repos/${M.repo}/commits/${encodeURIComponent(ref)}`))
+      .then(res => res.ok ? res.json() : null)
+      .then(data => data && data.sha ? data.sha : ref)
+      .catch(() => ref);
+  }
+  return cdnRefPromise;
+}
+
+async function fetchRaw(path) {
+  let firstError = null;
+  try {
+    const res = await fetch(cb(raw(path)));
+    if (!shouldFallback(res)) return res;
+  } catch (e) { firstError = e; }
+  await delay(1200);
+  try {
+    const res = await fetch(raw(path));
+    if (!shouldFallback(res)) return res;
+  } catch (e) { firstError = e; }
+  try { return await fetch(cb(rawCdn(path, await getCdnRef()))); }
+  catch (e) { if (firstError) throw firstError; throw e; }
+}
+
+async function rawJSON(path) {
+  const res = await fetchRaw(path);
+  if (!res.ok) throw new Error(`${res.status} ${path}`);
+  return res.json();
+}
 
 // ---------- localization (the game's own translations) ----------
 let LANG = (() => { try { return localStorage.getItem('wc_lang') || 'en'; } catch (e) { return 'en'; } })();
@@ -38,10 +77,7 @@ async function loadLang(code) {
 
 async function getMd(path) {
   if (mdCache.has(path)) return mdCache.get(path);
-  let res = await fetch(cb(raw(path)));
-  // raw.githubusercontent rate-limits (429): back off and retry the un-busted URL,
-  // which its CDN is likely already serving from cache.
-  if (res.status === 429) { await new Promise(r => setTimeout(r, 1200)); res = await fetch(raw(path)); }
+  const res = await fetchRaw(path);
   if (!res.ok) throw new Error(`${res.status} ${path}`);
   const text = await res.text();
   mdCache.set(path, text);
@@ -64,9 +100,9 @@ function registerView(hash, fn) { EXT_VIEWS[hash] = fn; }
 // Load a JSON file with the per-load cache-buster. Pass {raw:true} for files that
 // live in the source repo (served from raw.githubusercontent) rather than docs/.
 async function loadJSON(path, opts) {
-  const url = opts && opts.raw ? raw(path) : path;
-  let res = await fetch(cb(url));
-  if (res.status === 429) { await new Promise(r => setTimeout(r, 1200)); res = await fetch(url); } // rate-limited: retry the CDN-cached (un-busted) URL
+  if (opts && opts.raw) return rawJSON(path);
+  let res = await fetch(cb(path));
+  if (res.status === 429) { await delay(1200); res = await fetch(path); } // rate-limited: retry the CDN-cached (un-busted) URL
   if (!res.ok) throw new Error(`${res.status} ${path}`);
   return res.json();
 }
@@ -274,7 +310,7 @@ async function mobsView() {
     <div class="grid g-3" id="mgrid"></div>
   </div></section>`));
   if (!bestiaryData) {
-    try { bestiaryData = await (await fetch(cb(raw('bestiary/bestiary.json')))).json(); }
+    try { bestiaryData = await rawJSON('bestiary/bestiary.json'); }
     catch (e) { app.querySelector('#mgrid').innerHTML = `<div class="meta">Couldn't load bestiary (${esc(e.message)}).</div>`; return; }
   }
   try { if (!mobStatData) mobStatData = await (await fetch(cb('mobstats.json'))).json(); } catch (e) {}
@@ -397,7 +433,7 @@ async function gearView() {
     <div class="grid g-3" id="ggrid"></div>
   </div></section>`));
   if (!gearData) {
-    try { gearData = await (await fetch(cb(raw('gear/gear.json')))).json(); }
+    try { gearData = await rawJSON('gear/gear.json'); }
     catch (e) { app.querySelector('#ggrid').innerHTML = `<div class="meta">Couldn't load gear (${esc(e.message)}).</div>`; return; }
   }
   const grid = app.querySelector('#ggrid'), count = app.querySelector('#gcount');
@@ -567,7 +603,7 @@ async function abilitiesView() {
     <div id="abbody"></div>
   </div></section>`));
   if (!abilityData) {
-    try { abilityData = await (await fetch(cb(raw('abilities/abilities.json')))).json(); }
+    try { abilityData = await rawJSON('abilities/abilities.json'); }
     catch (e) { app.querySelector('#abbody').innerHTML = `<div class="meta">Couldn't load abilities (${esc(e.message)}).</div>`; return; }
   }
   const host = app.querySelector('#abbody'), count = app.querySelector('#abcount');
@@ -811,7 +847,7 @@ async function bisView() {
     <div id="bisbody"></div>
   </div></section>`));
   if (!bisData) {
-    try { bisData = await (await fetch(cb(raw('gear/bis.json')))).json(); }
+    try { bisData = await rawJSON('gear/bis.json'); }
     catch (e) { app.querySelector('#bisbody').innerHTML = `<div class="meta">Couldn't load BiS (${esc(e.message)}).</div>`; return; }
   }
   const pillHost = app.querySelector('#bisclasses'), body = app.querySelector('#bisbody'), zoneHost = app.querySelector('#biszones'), buildHost = app.querySelector('#bisbuilds');
@@ -886,7 +922,7 @@ async function consumablesView() {
     <div class="grid g-3" id="cgrid"></div>
   </div></section>`));
   if (!consData) {
-    try { consData = await (await fetch(cb(raw('consumables/consumables.json')))).json(); }
+    try { consData = await rawJSON('consumables/consumables.json'); }
     catch (e) { app.querySelector('#cgrid').innerHTML = `<div class="meta">Couldn't load consumables (${esc(e.message)}).</div>`; return; }
   }
   const grid = app.querySelector('#cgrid'), count = app.querySelector('#ccount');
@@ -935,7 +971,7 @@ async function augmentsView() {
     <div class="grid g-4" id="powgrid"></div>
   </div></section>`));
   if (!augData) {
-    try { augData = await (await fetch(cb(raw('augments/augments.json')))).json(); }
+    try { augData = await rawJSON('augments/augments.json'); }
     catch (e) { app.querySelector('#auggrid').innerHTML = `<div class="meta">Couldn't load augments (${esc(e.message)}).</div>`; return; }
   }
   const classes = [...new Set(augData.augments.flatMap(a => a.classes))].sort();
@@ -972,7 +1008,7 @@ async function cosmeticsView() {
       <p>The cosmetic system — event skin tiers and the collectible Combat Mech colour chromas.</p></div>
     <div id="cosbody"></div></div></section>`));
   if (!cosmeticData) {
-    try { cosmeticData = await (await fetch(cb(raw('cosmetics/cosmetics.json')))).json(); }
+    try { cosmeticData = await rawJSON('cosmetics/cosmetics.json'); }
     catch (e) { app.querySelector('#cosbody').innerHTML = `<div class="meta">Couldn't load cosmetics (${esc(e.message)}).</div>`; return; }
   }
   const body = app.querySelector('#cosbody');
@@ -1091,7 +1127,7 @@ async function npcsView() {
     <div class="grid g-3" id="ngrid"></div>
   </div></section>`));
   if (!npcData) {
-    try { npcData = await (await fetch(cb(raw('npcs/npcs.json')))).json(); }
+    try { npcData = await rawJSON('npcs/npcs.json'); }
     catch (e) { app.querySelector('#ngrid').innerHTML = `<div class="meta">Couldn't load NPCs (${esc(e.message)}).</div>`; return; }
   }
   const grid = app.querySelector('#ngrid'); let zone = 'all', term = '';
@@ -1137,7 +1173,7 @@ function simpleListView(title, eyebrow, blurb, items) {
 let questMaps = null; // lazy-loaded quest-maps.json
 async function getQuestMaps() {
   if (questMaps) return questMaps;
-  try { questMaps = await (await fetch(cb(raw('quests/quest-maps.json')))).json(); }
+  try { questMaps = await rawJSON('quests/quest-maps.json'); }
   catch { questMaps = {}; }
   return questMaps;
 }
@@ -1298,7 +1334,7 @@ async function dungeon3dView(sel) {
     </div>
   </div></section>`));
   if (!dungeon3dData) {
-    try { dungeon3dData = await (await fetch(cb(raw('docs/dungeon3d.json')))).json(); }
+    try { dungeon3dData = await rawJSON('docs/dungeon3d.json'); }
     catch (e) { app.querySelector('#d3dhint').textContent = `Couldn't load dungeon (${esc(e.message)})`; return; }
   }
   const mods = await ensureThree();
@@ -1512,7 +1548,7 @@ async function quest3dView(id) {
     <div id="qrsteps" class="meta"></div>
   </div></section>`));
   if (!quest3dData) {
-    try { quest3dData = await (await fetch(cb(raw('docs/quest3d.json')))).json(); }
+    try { quest3dData = await rawJSON('docs/quest3d.json'); }
     catch (e) { app.querySelector('#qrsteps').textContent = `Couldn't load quest world (${esc(e.message)})`; return; }
   }
   const Q = quest3dData.quests, ids = Object.keys(Q);
@@ -1628,7 +1664,7 @@ async function zone3dView(dir) {
     </div>
   </div></section>`));
   if (!zone3dData) {
-    try { zone3dData = await (await fetch(cb(raw('docs/zone3d.json')))).json(); }
+    try { zone3dData = await rawJSON('docs/zone3d.json'); }
     catch (e) { app.querySelector('#z3load').textContent = `Couldn't load zone (${esc(e.message)})`; return; }
   }
   const Z = zone3dData.zones, ids = Object.keys(Z), cur = Z[dir] ? dir : ids[0], q = Z[cur];
@@ -1926,7 +1962,7 @@ const STAT_LABEL = { str: 'Strength', agi: 'Agility', sta: 'Stamina', int: 'Inte
 const wDps = (w) => w && w.speed ? ((w.min + w.max) / 2) / w.speed : 0;
 const gearScore = (g) => Object.values(g.bonuses || {}).reduce((a, b) => a + (+b || 0), 0) + wDps(g.weapon) * 3;
 const srcText = (g) => (g.sources || []).map((s) => s.label || s.type).join(' · ') || '—';
-async function ensureGear() { if (!gearAll) gearAll = await (await fetch(cb(raw('gear/gear.json')))).json(); return gearAll; }
+async function ensureGear() { if (!gearAll) gearAll = await rawJSON('gear/gear.json'); return gearAll; }
 
 async function compareView() {
   app.innerHTML = '';
@@ -2079,7 +2115,7 @@ async function levelTimeView(startArg) {
 async function atlasView(dir) {
   app.innerHTML = '';
   if (!zone3dData) {
-    try { zone3dData = await (await fetch(cb(raw('docs/zone3d.json')))).json(); }
+    try { zone3dData = await rawJSON('docs/zone3d.json'); }
     catch (e) { app.append(el(`<section class="block"><div class="wrap"><p class="meta">Couldn't load atlas (${esc(e.message)})</p></div></section>`)); return; }
   }
   const Z = zone3dData.zones, ids = Object.keys(Z), cur = Z[dir] ? dir : ids[0], q = Z[cur];
