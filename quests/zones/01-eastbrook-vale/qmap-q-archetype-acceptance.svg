@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 991" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="991" fill="#1f2a24"/>
+<circle cx="218.8" cy="703.1" r="93.8" fill="#2f6f8f" opacity="0.28"/>
+<path d="M506.3 453.1 L481.3 521.9 L459.4 600.0 L500.0 671.9" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M531.3 434.4 L600.0 453.1 L678.1 465.6" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M525.0 409.4 L600.0 334.4 L662.5 271.9 L709.4 225.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M481.3 446.9 L396.9 506.3 L325.0 578.1 L300.0 609.4" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M487.5 409.4 L412.5 340.6 L334.4 287.5 L287.5 256.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M525.0 453.1 L615.6 537.5 L693.8 615.6 L750.0 659.4" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<circle cx="506.3" cy="428.1" r="81.3" fill="#caa15a" opacity="0.08" stroke="#caa15a" stroke-width="1" stroke-opacity="0.3"/>
+<circle cx="459.4" cy="600.0" r="4" fill="#3a4a42"/>
+<circle cx="568.8" cy="646.9" r="4" fill="#3a4a42"/>
+<circle cx="506.3" cy="725.0" r="4" fill="#3a4a42"/>
+<circle cx="678.1" cy="465.6" r="4" fill="#3a4a42"/>
+<circle cx="756.3" cy="381.3" r="4" fill="#3a4a42"/>
+<circle cx="875.0" cy="346.9" r="4" fill="#3a4a42"/>
+<circle cx="318.8" cy="443.8" r="4" fill="#3a4a42"/>
+<circle cx="271.9" cy="606.3" r="4" fill="#3a4a42"/>
+<circle cx="250.0" cy="234.4" r="4" fill="#3a4a42"/>
+<circle cx="709.4" cy="225.0" r="4" fill="#3a4a42"/>
+<circle cx="787.5" cy="146.9" r="4" fill="#3a4a42"/>
+<circle cx="793.8" cy="140.6" r="4" fill="#3a4a42"/>
+<circle cx="756.3" cy="671.9" r="4" fill="#3a4a42"/>
+<circle cx="793.8" cy="709.4" r="4" fill="#3a4a42"/>
+<circle cx="506.3" cy="457.8" r="4" fill="#3a4a42"/>
+<circle cx="518.8" cy="446.9" r="4" fill="#3a4a42"/>
+<circle cx="484.4" cy="437.5" r="4" fill="#3a4a42"/>
+<circle cx="540.6" cy="418.8" r="4" fill="#3a4a42"/>
+<circle cx="462.5" cy="396.9" r="4" fill="#3a4a42"/>
+<circle cx="528.1" cy="479.7" r="4" fill="#3a4a42"/>
+<circle cx="456.3" cy="446.9" r="4" fill="#3a4a42"/>
+<circle cx="493.8" cy="384.4" r="4" fill="#3a4a42"/>
+<text x="506.3" y="418.8" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Eastbrook</text>
+<text x="500.0" y="646.9" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Wolf Run</text>
+<text x="709.4" y="428.1" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Boar Meadow</text>
+<text x="231.3" y="684.4" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Mirror Lake</text>
+<text x="318.8" y="440.6" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Sableweb</text>
+<text x="243.8" y="228.1" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Copper Dig</text>
+<text x="743.8" y="190.6" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Bandit Camp</text>
+<text x="756.3" y="678.1" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Fallen Chapel</text>
+<text x="490.6" y="265.6" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Reliquary Hill</text>
+<text x="631.3" y="865.6" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Brightwood Glade</text>
+<path d="M518.8 446.9 L514.1 623.4" fill="none" stroke="#e6bb6a" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.85"/>
+<g class="qstep" data-keys="giver,turnin" data-steps="1,3">
+<circle cx="518.8" cy="446.9" r="21" fill="#f0c419" opacity="0.18"/>
+<circle cx="518.8" cy="446.9" r="14" fill="#f0c419" stroke="#11160f" stroke-width="2"/>
+<text x="518.8" y="451.9" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">1·3</text>
+</g>
+<g class="qstep" data-keys="forest_wolf" data-steps="2">
+<circle cx="514.1" cy="623.4" r="21" fill="#d9534f" opacity="0.18"/>
+<circle cx="514.1" cy="623.4" r="14" fill="#d9534f" stroke="#11160f" stroke-width="2"/>
+<text x="514.1" y="628.4" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">2</text>
+</g>
+<rect x="10" y="10" width="360" height="112" rx="10" fill="#11160f" opacity="0.82"/>
+<text x="22" y="34" fill="#cfe3d6" font-size="14" font-weight="bold">Where to go — N ↑</text>
+<circle cx="30" cy="48" r="9" fill="#f0c419"/>
+<text x="30" y="51.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">1</text>
+<text x="46" y="52" fill="#e8e8ea" font-size="13.5">Start — Marshal Redbrook</text>
+<circle cx="30" cy="72" r="9" fill="#d9534f"/>
+<text x="30" y="75.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">2</text>
+<text x="46" y="76" fill="#e8e8ea" font-size="13.5">1× Forest Wolf</text>
+<circle cx="30" cy="96" r="9" fill="#5cb85c"/>
+<text x="30" y="99.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">3</text>
+<text x="46" y="100" fill="#e8e8ea" font-size="13.5">Turn in — Marshal Redbrook</text>
+</svg>

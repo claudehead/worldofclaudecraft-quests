@@ -2,7 +2,7 @@
   "repo": "claudehead/worldofclaudecraft-quests",
   "branch": "main",
   "counts": {
-    "quests": 80,
+    "quests": 82,
     "zones": 4,
     "classes": 9,
     "dungeons": 5,
@@ -121,6 +121,22 @@
           "group": false,
           "chain": true,
           "file": "quests/zones/01-eastbrook-vale/q-ringleader.md"
+        },
+        {
+          "id": "q_archetype_acceptance",
+          "name": "A Craft to Call Your Own",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-archetype-acceptance.md"
+        },
+        {
+          "id": "q_prof_make_amends",
+          "name": "Making Amends",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-make-amends.md"
         },
         {
           "id": "q_spiders",

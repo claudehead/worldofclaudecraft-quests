@@ -84,6 +84,7 @@ Most stutter is the browser, not the game. In order:
 | Quest Log | `L` |
 | World Map | `M` |
 | Bags | `B` |
+| Crafting | `T` |
 | Toggle Nameplates | `V` |
 | Talents | `N` |
 | Damage Meters | `H` |

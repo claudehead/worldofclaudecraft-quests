@@ -154,7 +154,7 @@
   </nav>
   <main id="app"><article class="doc"><div class="wrap"><h1>🔭 Sneak Peek — what&#39;s in the works</h1>
 <p>Unmerged branches and open pull requests on the <a href="https://github.com/levy-street/world-of-claudecraft">upstream game repo</a> — a look at what <em>might</em> be coming. <strong>Nothing here is in the game yet</strong>, and branches that have sat untouched for months may never land. Sorted by how recently each was updated.</p>
-<p><em>As of 2026-07-06 · 183 branches in flight.</em></p>
+<p><em>As of 2026-07-06 · 191 branches in flight.</em></p>
 <h2>🟢 Fresh — actively in progress (updated this week)</h2>
 <table>
 <thead>
@@ -166,7 +166,19 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>pr-1506: 01-hud-desktop.png</td>
+<td>add in-game X account linking</td>
+<td>•</td>
+<td>today</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1508">#1508</a> <em>(draft)</em></td>
+</tr>
+<tr>
+<td>pr-1524: 01-world-map.png</td>
+<td>•</td>
+<td>today</td>
+<td>—</td>
+</tr>
+<tr>
+<td>prepare v0.22.0 for main</td>
 <td>•</td>
 <td>today</td>
 <td>—</td>
@@ -178,22 +190,16 @@
 <td>—</td>
 </tr>
 <tr>
-<td>merge(release): refresh desktop launcher branch</td>
+<td>AI asset generation pipeline (Tripo + gpt-image-2) [WIP]</td>
+<td>✨ Feature</td>
+<td>today</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1405">#1405</a> <em>(draft)</em></td>
+</tr>
+<tr>
+<td>resume after black-holed drops (pong liveness + bounded conflict retry)</td>
 <td>✨ Feature</td>
 <td>today</td>
 <td>—</td>
-</tr>
-<tr>
-<td>localize desktop download labels</td>
-<td>✨ Feature</td>
-<td>today</td>
-<td>—</td>
-</tr>
-<tr>
-<td>linkdead grace keeps disconnected characters in-world for 5 minutes</td>
-<td>✨ Feature</td>
-<td>today</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1506">#1506</a></td>
 </tr>
 <tr>
 <td>point donate buttons to Ko-fi</td>
@@ -202,55 +208,37 @@
 <td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1457">#1457</a></td>
 </tr>
 <tr>
-<td>AI asset generation pipeline (Tripo + gpt-image-2) [WIP]</td>
-<td>✨ Feature</td>
-<td>yesterday</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1405">#1405</a> <em>(draft)</em></td>
-</tr>
-<tr>
 <td>the Gravemarch, a 5v5 lane battleground with spectate (WIP)</td>
 <td>✨ Feature</td>
 <td>yesterday</td>
 <td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1456">#1456</a> <em>(draft)</em></td>
 </tr>
 <tr>
+<td>merge(release): refresh desktop launcher branch</td>
+<td>✨ Feature</td>
+<td>yesterday</td>
+<td>—</td>
+</tr>
+<tr>
+<td>localize desktop download labels</td>
+<td>✨ Feature</td>
+<td>yesterday</td>
+<td>—</td>
+</tr>
+<tr>
 <td>default Show My Nameplate off per the issue #1235 and PR contract</td>
 <td>✨ Feature</td>
-<td>2 days ago</td>
+<td>3 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>lock in Vanguard as the battle theme, drop audition variants</td>
 <td>✨ Feature</td>
-<td>3 days ago</td>
+<td>4 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>use a dedicated internal secret, no RESTART_COUNTDOWN_SECRET fallback</td>
-<td>✨ Feature</td>
-<td>3 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>build(desktop): regenerate package-lock with npm 10 to match CI</td>
-<td>✨ Feature</td>
-<td>3 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>auto-join the guild on OAuth link/login via guilds.join</td>
-<td>✨ Feature</td>
-<td>4 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>make the Discord menu a rebindable keybind (default U)</td>
-<td>✨ Feature</td>
-<td>4 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>add a Discord link/unlink entry to the touch More menu</td>
 <td>✨ Feature</td>
 <td>4 days ago</td>
 <td>—</td>
@@ -262,39 +250,45 @@
 <td>—</td>
 </tr>
 <tr>
-<td>format fbx to glb converter</td>
+<td>build(desktop): regenerate package-lock with npm 10 to match CI</td>
 <td>✨ Feature</td>
 <td>4 days ago</td>
 <td>—</td>
 </tr>
 <tr>
-<td>instance corpse-run death loop, no Spirit Healer inside instances</td>
+<td>auto-join the guild on OAuth link/login via guilds.join</td>
 <td>✨ Feature</td>
-<td>4 days ago</td>
+<td>5 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>make the Discord menu a rebindable keybind (default U)</td>
+<td>✨ Feature</td>
+<td>5 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>add a Discord link/unlink entry to the touch More menu</td>
+<td>✨ Feature</td>
+<td>5 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>allow Discord bot to boot without dotenv file</td>
 <td>•</td>
-<td>5 days ago</td>
+<td>6 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>avoid compose env lint warnings</td>
 <td>•</td>
-<td>5 days ago</td>
+<td>6 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>include Discord bot build script in Docker context</td>
 <td>⚙️ Chore</td>
-<td>5 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>align cross-platform-sync M16 wording with the other i18n docs</td>
-<td>✨ Feature</td>
-<td>7 days ago</td>
+<td>6 days ago</td>
 <td>—</td>
 </tr>
 </tbody></table>
@@ -311,20 +305,14 @@
 <tbody><tr>
 <td>improve admin metrics</td>
 <td>✨ Feature</td>
-<td>11 days ago</td>
+<td>12 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>harden public origins and consent payload</td>
 <td>✨ Feature</td>
-<td>11 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>[codex] Refactor mob behavior systems</td>
-<td>•</td>
 <td>12 days ago</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/879">#879</a> <em>(draft)</em></td>
+<td>—</td>
 </tr>
 <tr>
 <td>add codex project workflow surface</td>
@@ -339,25 +327,13 @@
 <td>—</td>
 </tr>
 <tr>
-<td>keep low quality loot out of need greed rolls</td>
+<td>[codex] Refactor mob behavior systems</td>
 <td>•</td>
 <td>13 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>add travel form live diagnostics</td>
-<td>•</td>
-<td>13 days ago</td>
-<td>—</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/879">#879</a> <em>(draft)</em></td>
 </tr>
 <tr>
 <td>fix PR gate typecheck failures</td>
-<td>•</td>
-<td>14 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>align ultra default CI expectations</td>
 <td>•</td>
 <td>14 days ago</td>
 <td>—</td>
@@ -369,7 +345,19 @@
 <td>—</td>
 </tr>
 <tr>
-<td>keep dev card images on dev origin</td>
+<td>keep low quality loot out of need greed rolls</td>
+<td>•</td>
+<td>14 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>add travel form live diagnostics</td>
+<td>•</td>
+<td>14 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>align ultra default CI expectations</td>
 <td>•</td>
 <td>15 days ago</td>
 <td>—</td>
@@ -377,23 +365,23 @@
 <tr>
 <td>keep dev card images on dev origin</td>
 <td>•</td>
-<td>15 days ago</td>
+<td>16 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>keep dev card images on dev origin</td>
+<td>•</td>
+<td>16 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>Limited-addition-skin-select-+-wheel</td>
 <td>•</td>
-<td>16 days ago</td>
+<td>17 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>route Aldric reward through mech spinner</td>
-<td>✨ Feature</td>
-<td>16 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>kickoff spec for first cosmetic skin (Skyfall, event-gated)</td>
 <td>✨ Feature</td>
 <td>17 days ago</td>
 <td>—</td>
@@ -405,39 +393,27 @@
 <td>—</td>
 </tr>
 <tr>
+<td>kickoff spec for first cosmetic skin (Skyfall, event-gated)</td>
+<td>✨ Feature</td>
+<td>18 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>[codex] separate 1v1 and 2v2 arena standings</td>
 <td>•</td>
-<td>18 days ago</td>
+<td>19 days ago</td>
 <td><a href="https://github.com/levy-street/world-of-claudecraft/pull/521">#521</a></td>
 </tr>
 <tr>
 <td>complete arena deaths and targeting</td>
 <td>✨ Feature</td>
-<td>18 days ago</td>
+<td>19 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>correct it_IT chatFilter.hardHint gender agreement</td>
 <td>✨ Feature</td>
-<td>18 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Add friend invite links</td>
-<td>✨ Feature</td>
-<td>21 days ago</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/190">#190</a></td>
-</tr>
-<tr>
-<td>Block offensive names and add character deletion</td>
-<td>•</td>
-<td>22 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>deny unused electron permissions</td>
-<td>•</td>
-<td>22 days ago</td>
+<td>19 days ago</td>
 <td>—</td>
 </tr>
 <tr>
@@ -447,6 +423,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>Add friend invite links</td>
+<td>✨ Feature</td>
+<td>22 days ago</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/190">#190</a></td>
+</tr>
+<tr>
 <td>Add ad blocker performance tip</td>
 <td>•</td>
 <td>23 days ago</td>
@@ -454,6 +436,18 @@
 </tr>
 <tr>
 <td>Rate limit chat and add ignore action</td>
+<td>•</td>
+<td>23 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Block offensive names and add character deletion</td>
+<td>•</td>
+<td>23 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>deny unused electron permissions</td>
 <td>•</td>
 <td>23 days ago</td>
 <td>—</td>
@@ -470,6 +464,24 @@
 </tr>
 </thead>
 <tbody><tr>
+<td>feature/fbx-to-glb-scripts</td>
+<td>✨ Feature</td>
+<td>?</td>
+<td>—</td>
+</tr>
+<tr>
+<td>feature/frontend-modernization-v016</td>
+<td>✨ Feature</td>
+<td>?</td>
+<td>—</td>
+</tr>
+<tr>
+<td>feature/ghost-mode-v020</td>
+<td>✨ Feature</td>
+<td>?</td>
+<td>—</td>
+</tr>
+<tr>
 <td>feature/graphics-budgets-telemetry-only</td>
 <td>✨ Feature</td>
 <td>?</td>
@@ -548,6 +560,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>the Mirror World — a level-20 endgame zone (Vale of Glass), forward-ported to v0.22.0</td>
+<td>✨ Feature</td>
+<td>?</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1514">#1514</a></td>
+</tr>
+<tr>
 <td>feature/mobile-nameplate-declutter</td>
 <td>✨ Feature</td>
 <td>?</td>
@@ -558,6 +576,12 @@
 <td>✨ Feature</td>
 <td>?</td>
 <td>—</td>
+</tr>
+<tr>
+<td>finish mobile action ring HUD wiring</td>
+<td>✨ Feature</td>
+<td>?</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1525">#1525</a> <em>(draft)</em></td>
 </tr>
 <tr>
 <td>feature/npc-voices</td>
@@ -584,10 +608,10 @@
 <td>—</td>
 </tr>
 <tr>
-<td>add effect recharge with original-crafter discount</td>
+<td>feature/professions-effect-recharge-1137</td>
 <td>✨ Feature</td>
 <td>?</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1200">#1200</a></td>
+<td>—</td>
 </tr>
 <tr>
 <td>feature/quest-log-collapsible</td>
@@ -639,6 +663,12 @@
 </tr>
 <tr>
 <td>feature/whitepaper-footer</td>
+<td>✨ Feature</td>
+<td>?</td>
+<td>—</td>
+</tr>
+<tr>
+<td>feature/wiki-optimal-settings</td>
 <td>✨ Feature</td>
 <td>?</td>
 <td>—</td>
@@ -777,6 +807,12 @@
 </tr>
 <tr>
 <td>fix/emote-wheel-suspend-clear</td>
+<td>🔧 Fix</td>
+<td>?</td>
+<td>—</td>
+</tr>
+<tr>
+<td>fix/grey-linux-desktop-download</td>
 <td>🔧 Fix</td>
 <td>?</td>
 <td>—</td>
@@ -972,6 +1008,12 @@
 <td>🔧 Fix</td>
 <td>?</td>
 <td>—</td>
+</tr>
+<tr>
+<td>Timed casts resolve against the cast-start target</td>
+<td>🔧 Fix</td>
+<td>?</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1515">#1515</a></td>
 </tr>
 <tr>
 <td>fix/v0.8-mobile-menu-polish</td>
@@ -1232,6 +1274,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>release/v0.23.0</td>
+<td>•</td>
+<td>?</td>
+<td>—</td>
+</tr>
+<tr>
 <td>remove-zone1-quest-chains</td>
 <td>•</td>
 <td>?</td>
@@ -1335,7 +1383,7 @@
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
-  <script src="app.js?v=135"></script>
+  <script src="app.js?v=137"></script>
   <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
   <script src="features/planner.js?v=116"></script>
   <script src="features/loadout.js?v=116"></script>
@@ -1347,7 +1395,7 @@
   <script src="features/coach.js?v=116"></script>
   <script src="features/zoneguide.js?v=116"></script>
   <script src="features/donate.js?v=116"></script>
-  <script src="features/news.js?v=130"></script>
+  <script src="features/news.js?v=136"></script>
   <script src="features/bags.js?v=116"></script>
   <script src="features/haste.js?v=116"></script>
   <script src="features/rite.js?v=127"></script>

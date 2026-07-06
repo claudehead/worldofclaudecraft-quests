@@ -1,6 +1,6 @@
 # Zone 1 — Eastbrook Vale
 
-Level range: **1–7** · Hub: Eastbrook · 18 quests
+Level range: **1–7** · Hub: Eastbrook · 20 quests
 
 ![Map of Zone 1 — Eastbrook Vale](map.svg)
 
@@ -22,6 +22,8 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 1 | [The Gravecaller's Trail](q-gravecallers-trail.md) | Brother Aldric | collect |
 | 1 | [Bandits of the Vale](q-bandits.md) | Marshal Redbrook | kill |
 | 1 | [The Ringleader](q-ringleader.md) | Marshal Redbrook | kill |
+| 1 | [A Craft to Call Your Own](q-archetype-acceptance.md) | Marshal Redbrook | kill |
+| 1 | [Making Amends](q-prof-make-amends.md) | Marshal Redbrook | kill |
 | 2 | [Sableweb Menace](q-spiders.md) | Apothecary Lin | kill/collect |
 | 3 | [Trouble at the Lake](q-murlocs.md) | Fisherman Brandt | kill |
 | 3 | [Stolen Supplies](q-supplies.md) | Trader Wilkes | collect |
