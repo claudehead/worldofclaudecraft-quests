@@ -288,20 +288,20 @@ async function mobsView() {
       .filter(m => zone === 'all' || m.zoneDir === zone)
       .filter(m => fam === 'all' || m.family === fam)
       .filter(m => rank === 'all' || m.rank === rank)
-      .filter(m => !term || m.name.toLowerCase().includes(term));
+      .filter(m => !term || m.name.toLowerCase().includes(term) || tn('mobs', m.id, m.name).toLowerCase().includes(term));
     list.sort((a, b) => sortBy === 'name' ? a.name.localeCompare(b.name) : (sortBy === 'levelDown' ? (b.level - a.level) : (a.level - b.level)) || a.name.localeCompare(b.name));
     count.textContent = `${list.length} of ${bestiaryData.count} creatures`;
     grid.innerHTML = '';
     list.slice(0, 240).forEach(m => {
       const col = RANK_COLOR[m.rank] || '#ccc';
       const rankTag = m.rank !== 'normal' ? `<span class="tag" style="color:${col}">${m.rank[0].toUpperCase() + m.rank.slice(1)}</span>` : '';
-      const loot = m.loot.length ? ('Drops: ' + m.loot.slice(0, 3).map(l => esc(l.name) + (l.chance ? ` <span class="droppct">${Math.round(l.chance * 100)}%</span>` : '')).join(', ') + (m.loot.length > 3 ? ` +${m.loot.length - 3}` : '')) : 'No notable drops';
+      const loot = m.loot.length ? ('Drops: ' + m.loot.slice(0, 3).map(l => esc(tn('items', l.id, l.name)) + (l.chance ? ` <span class="droppct">${Math.round(l.chance * 100)}%</span>` : '')).join(', ') + (m.loot.length > 3 ? ` +${m.loot.length - 3}` : '')) : 'No notable drops';
       const st = mobStatMap[m.id];
       const lvl = m.minLevel === m.maxLevel ? ('Lvl ' + m.level) : ('Lvl ' + m.minLevel + '–' + m.maxLevel);
       const card = el(`<div class="card gearcard" style="cursor:pointer">
         <div class="gearhead">
           ${m.render ? `<img class="gicon" src="${raw(m.render)}" alt="" loading="lazy" style="border-color:${col}">` : `<div class="gicon" style="border-color:${col}"></div>`}
-          <div><h3 style="color:${col}">${esc(m.name)}</h3>
+          <div><h3 style="color:${col}">${esc(tn('mobs', m.id, m.name))}</h3>
             <div class="meta">${lvl}${m.rank !== 'normal' ? ' · ' + m.rank[0].toUpperCase() + m.rank.slice(1) : ''} · ${esc(m.familyLabel)}</div></div>
         </div>
         <div class="gstats">❤ ${m.hp} HP${st ? ` · ⚔ ${st.dmgMin}–${st.dmgMax} · ${st.dps} dps` : ''}</div>
@@ -328,7 +328,7 @@ function openMobDetail(m, st, boss) {
     ? sRow('Health', st.hp + ' HP') + sRow('Damage', st.dmgMin + '–' + st.dmgMax + ' @ ' + st.attackSpeed + 's') + sRow('DPS', st.dps) + sRow('Armor', st.armor) + (st.spawns ? sRow('Spawns in world', st.spawns) : '')
     : (m.hp ? sRow('Health', m.hp + ' HP') + '<p class="meta" style="margin:6px 0 0">Detailed damage/armor stats aren\'t published for dungeon-only mobs.</p>' : '<p class="meta" style="margin:4px 0">No combat stats.</p>');
   const loot = m.loot && m.loot.length
-    ? m.loot.map((l) => `<li style="color:${QUALITY_COLOR[l.quality] || '#fff'}">${esc(l.name)}${l.chance ? ` <span class="meta" style="color:var(--muted-2,#888)">${Math.round(l.chance * 100)}%</span>` : ''}</li>`).join('')
+    ? m.loot.map((l) => `<li style="color:${QUALITY_COLOR[l.quality] || '#fff'}">${esc(tn('items', l.id, l.name))}${l.chance ? ` <span class="meta" style="color:var(--muted-2,#888)">${Math.round(l.chance * 100)}%</span>` : ''}</li>`).join('')
     : '<li class="meta">No notable drops</li>';
   const mech = boss && boss.tips && boss.tips.length
     ? `<h4 style="margin:16px 0 6px;font-size:15px">Mechanics</h4><ul style="margin:0;padding-left:18px;line-height:1.7">${boss.tips.map((t) => `<li>${esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}</li>`).join('')}</ul>`
@@ -337,7 +337,7 @@ function openMobDetail(m, st, boss) {
     <div class="card" style="width:min(560px,94vw);cursor:default;padding:20px 22px">
       <div style="display:flex;gap:16px;align-items:flex-start">
         ${m.render ? `<img src="${raw(m.render)}" alt="" loading="lazy" style="width:96px;height:96px;object-fit:contain;border:2px solid ${col};border-radius:12px;background:rgba(0,0,0,.25);flex:none">` : ''}
-        <div style="min-width:0"><h2 style="margin:0;color:${col};font-size:22px">${esc(m.name)}</h2>
+        <div style="min-width:0"><h2 style="margin:0;color:${col};font-size:22px">${esc(tn('mobs', m.id, m.name))}</h2>
           <div class="meta" style="margin-top:4px">${lvl} · ${m.rank[0].toUpperCase() + m.rank.slice(1)} · ${esc(m.familyLabel)}</div>
           <div class="meta" style="margin-top:2px">📍 ${esc(m.zoneTitle || (st && st.zones ? st.zones.join(', ') : '—'))}${m.location ? ' · ' + esc(m.location) : ''}</div></div>
       </div>
@@ -367,8 +367,8 @@ function sourceHTML(src) {
   if (src.type === 'drop' && Array.isArray(src.mobs)) {
     const pct = (c) => c ? ` <span class="droppct">${Math.round(c * 100)}%</span>` : '';
     const parts = src.mobs.slice(0, 3).map(m => (m.dir
-      ? `<a href="#/doc/${encodeURIComponent('quests/zones/' + m.dir + '/bestiary.md')}/${encodeURIComponent('mob-' + m.id)}">${esc(m.name)}</a>`
-      : esc(m.name)) + pct(m.chance));
+      ? `<a href="#/doc/${encodeURIComponent('quests/zones/' + m.dir + '/bestiary.md')}/${encodeURIComponent('mob-' + m.id)}">${esc(tn('mobs', m.id, m.name))}</a>`
+      : esc(tn('mobs', m.id, m.name))) + pct(m.chance));
     const more = src.mobs.length > 3 ? ` +${src.mobs.length - 3} more` : '';
     return 'Drops from ' + parts.join(', ') + more;
   }
@@ -1103,7 +1103,7 @@ async function npcsView() {
       const vend = n.market ? `<div class="npcvend"><span class="npclbl">Sells</span> the World Market (auction house)</div>` : (n.vendorItems.length ? `<div class="npcvend"><span class="npclbl">Sells</span> ${n.vendorItems.slice(0, 6).map(esc).join(', ')}${n.vendorItems.length > 6 ? `, +${n.vendorItems.length - 6} more` : ''}</div>` : '');
       grid.append(el(`<div class="card npccard">
         <div class="npchead"><img class="npcimg" src="${raw(n.render)}" alt="" loading="lazy">
-          <div><h3>${esc(n.name)}</h3><div class="meta">${esc(n.title)}</div>
+          <div><h3>${esc(tn('npcs', n.id, n.name))}</h3><div class="meta">${esc(n.title)}</div>
             <div class="npcloc">${esc(n.zone)} · ~x:${n.pos.x}, z:${n.pos.z}</div></div></div>
         ${n.greeting ? `<div class="npcgreet">“${esc(n.greeting)}”</div>` : ''}
         ${quests}${vend}</div>`));
@@ -2021,7 +2021,7 @@ async function bossesView() {
   const RC = { Boss: '#ff8000', Elite: '#a335ee', Rare: '#0070dd' };
   const cards = bossData.bosses.map((b) => `<div class="card reveal" style="margin-bottom:14px;padding:14px 16px">
     <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline">
-      <h3 style="margin:0">${esc(b.name)} <span class="pill" style="background:${RC[b.rank] || '#555'};color:#fff">${b.rank}</span></h3>
+      <h3 style="margin:0">${esc(tn('mobs', b.id, b.name))} <span class="pill" style="background:${RC[b.rank] || '#555'};color:#fff">${b.rank}</span></h3>
       <span class="meta">lv ${b.level} · ${b.hp.toLocaleString()} HP · ${esc(b.where)}</span></div>
     ${b.tips.length ? `<ul style="margin:10px 0 0;padding-left:18px;line-height:1.7">${b.tips.map((t) => `<li>${bold(t)}</li>`).join('')}</ul>` : '<p class="meta" style="margin:8px 0 0">No special mechanics — straight tank &amp; spank.</p>'}
   </div>`).join('');
@@ -2035,7 +2035,7 @@ async function bossesView() {
   app.querySelector('#bsearch').oninput = (e) => {
     const q = e.target.value.trim().toLowerCase();
     if (!q) { list.innerHTML = all; reveal(); return; }
-    list.innerHTML = bossData.bosses.filter((b) => b.name.toLowerCase().includes(q)).map((b) => `<div class="card" style="margin-bottom:14px;padding:14px 16px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h3 style="margin:0">${esc(b.name)} <span class="pill" style="background:${RC[b.rank] || '#555'};color:#fff">${b.rank}</span></h3><span class="meta">lv ${b.level} · ${b.hp.toLocaleString()} HP · ${esc(b.where)}</span></div>${b.tips.length ? `<ul style="margin:10px 0 0;padding-left:18px;line-height:1.7">${b.tips.map((t) => `<li>${bold(t)}</li>`).join('')}</ul>` : ''}</div>`).join('') || '<p class="meta">No boss matches.</p>';
+    list.innerHTML = bossData.bosses.filter((b) => b.name.toLowerCase().includes(q) || tn('mobs', b.id, b.name).toLowerCase().includes(q)).map((b) => `<div class="card" style="margin-bottom:14px;padding:14px 16px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h3 style="margin:0">${esc(tn('mobs', b.id, b.name))} <span class="pill" style="background:${RC[b.rank] || '#555'};color:#fff">${b.rank}</span></h3><span class="meta">lv ${b.level} · ${b.hp.toLocaleString()} HP · ${esc(b.where)}</span></div>${b.tips.length ? `<ul style="margin:10px 0 0;padding-left:18px;line-height:1.7">${b.tips.map((t) => `<li>${bold(t)}</li>`).join('')}</ul>` : ''}</div>`).join('') || '<p class="meta">No boss matches.</p>';
   };
   reveal();
 }
