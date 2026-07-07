@@ -51,6 +51,7 @@
           <a class="btn primary" href="${jup}" target="_blank" rel="noopener">Buy $WOC on Jupiter ↗</a>
           <a class="btn ghost" href="${pair.url}" target="_blank" rel="noopener">Chart on DexScreener ↗</a>
         </div>
+        <p class="meta" style="margin-top:10px">New to Solana? <a data-go="#/doc/reference%2Fget-woc.md"><b>Full step-by-step: set up a wallet, fund it &amp; buy $WOC →</b></a></p>
       </div>
       <div class="woc-stats">
         ${stat('Market cap', fmtBig(pair.marketCap ?? pair.fdv))}

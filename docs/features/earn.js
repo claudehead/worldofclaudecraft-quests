@@ -58,7 +58,7 @@
   }
 
   const STEPS = [
-    ['①', 'Get $WOC', 'Buy the $WOC community token on Solana (via Jupiter or PumpSwap). See the <a data-go="#/woc">$WOC hub</a> for live price and a buy link.'],
+    ['①', 'Get $WOC', 'Buy the $WOC community token on Solana. New to crypto? Follow the <a data-go="#/doc/reference%2Fget-woc.md"><b>wallet setup &amp; buy guide</b></a> (wallet → fund → swap), or see the <a data-go="#/woc">$WOC hub</a> for live price and a buy link.'],
     ['②', 'Hold at least $20', 'Keep at least <b>$20 worth of $WOC</b> in your Solana wallet. That\'s your key to the play-and-earn program — check your status below any time.'],
     ['③', 'Play World of Claudecraft', 'Jump into the game and play. <a href="https://claudehead.github.io/woc-play/" target="_blank" rel="noopener">Play here ▶</a>. Your activity is what earns rewards — the more you play, the more you earn.'],
     ['④', 'Earn SOL rewards', 'Eligible holders share in <b>SOL rewards</b> paid from the community treasury. Rewards are distributed periodically to the wallet you hold $WOC in.'],
