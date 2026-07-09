@@ -19,7 +19,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "A strong melee attack that increases damage by 5. Activates on your next swing."
+      "desc": "A strong melee attack that increases damage by $d. Activates on your next swing."
     },
     {
       "id": "aspect_of_the_hawk",
@@ -31,7 +31,7 @@
       "castTime": 0,
       "school": "nature",
       "requiresTarget": false,
-      "desc": "Take on the aspect of the hawk, increasing attack power by 20 for 30 min."
+      "desc": "Take on the aspect of the hawk, increasing attack power by $b for 30 min."
     },
     {
       "id": "serpent_sting",
@@ -67,7 +67,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Dazes the target, slowing movement by 50% for 4 sec."
+      "desc": "Dazes the target for $d damage, slowing movement by 50% for 4 sec."
     },
     {
       "id": "mongoose_bite",
@@ -79,7 +79,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Counterattack after the target dodges for weapon damage plus 12. Cannot be dodged."
+      "desc": "Counterattack after the target dodges for weapon damage plus $d. Cannot be dodged."
     },
     {
       "id": "wing_clip",
@@ -91,7 +91,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Inflicts a wound that slows the enemy by 40% for 10 sec."
+      "desc": "Inflicts a wound for $d damage, slowing the enemy by 40% for 10 sec."
     },
     {
       "id": "tame_beast",
@@ -187,7 +187,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Rains arrows on the target area, dealing $d damage to enemies caught in it."
+      "desc": "Rains arrows on the target area for 3 sec, dealing $d damage every 0.5 sec to enemies caught in it."
     }
   ],
   "rotation": [

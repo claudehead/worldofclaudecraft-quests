@@ -5,6 +5,8 @@ A Hunter can **tame any beast** in the world to fight as a pet — as long as it
 | Beast | Level | Where | |
 |---|---|---|---|
 | [Forest Wolf](../quests/zones/01-eastbrook-vale/bestiary.md#mob-forest_wolf) | 1–2 | Eastbrook Vale | [🗺️ map](#/map/-15/55) |
+| Yumi | 1–60 | — |  |
+| Boarball | 1 | — |  |
 | [Wild Boar](../quests/zones/01-eastbrook-vale/bestiary.md#mob-wild_boar) | 2–3 | Eastbrook Vale | [🗺️ map](#/map/55/12) |
 | [Old Greyjaw ⭐](../quests/zones/01-eastbrook-vale/bestiary.md#mob-old_greyjaw) | 4 | Eastbrook Vale | [🗺️ map](#/map/0/95) |
 | [Mire Prowler](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mire_prowler) | 7–8 | Mirefen Marsh | [🗺️ map](#/map/-40/230) |

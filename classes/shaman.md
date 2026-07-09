@@ -22,15 +22,15 @@
 |---|---|---:|---|---|---:|---|---|
 | Arc Bolt | 1 _(ranks: 8, 14, 20)_ | 15 | 1.5s | — | 30 | Nature | Hurls a bolt of lightning for X Nature damage. |
 | Mending Waters | 1 _(ranks: 6, 12, 18)_ | 25 | 1.5s | — | 30 | Nature | Heals a friendly target for X. |
-| Stonebound Weapon | 1 _(ranks: 8, 16)_ | 20 | Instant | — | Melee | Nature | Imbues your weapon with the fury of stone: each swing deals 5 additional damage for 5 min. |
+| Stonebound Weapon | 1 _(ranks: 8, 16)_ | 20 | Instant | — | Melee | Nature | Imbues your weapon with the fury of stone: each swing deals X additional damage for 5 min. |
 | Earthen Jolt | 4 _(ranks: 10, 16)_ | 30 | Instant | 6s | 20 | Nature | Instantly shocks the target with concussive force for X Nature damage. |
-| Thunder Ward | 8 _(ranks: 12, 18)_ | 25 | Instant | — | Melee | Nature | Surrounds you with crackling lightning: melee attackers take 13 Nature damage, up to 3 charges and at most once every 5 seconds. |
-| Cinder Jolt | 10 _(ranks: 16)_ | 35 | Instant | 6s | 20 | Fire | Sears the target with fire for 25 damage plus X over 12 sec. |
-| Pyrebrand Weapon | 10 _(ranks: 18)_ | 25 | Instant | — | Melee | Fire | Imbues your weapon with elemental fire: each swing deals 8 additional Fire damage for 5 min. |
-| Rimebound Weapon | 12 _(ranks: 20)_ | 25 | Instant | — | Melee | Frost | Imbues your weapon with biting frost: each swing deals 8 additional damage for 5 min. |
+| Thunder Ward | 8 _(ranks: 12, 18)_ | 25 | Instant | — | Melee | Nature | Surrounds you with crackling lightning: melee attackers take X Nature damage, up to 3 charges and at most once every 5 seconds. |
+| Cinder Jolt | 10 _(ranks: 16)_ | 35 | Instant | 6s | 20 | Fire | Sears the target with fire for X damage plus X over 12 sec. |
+| Pyrebrand Weapon | 10 _(ranks: 18)_ | 25 | Instant | — | Melee | Fire | Imbues your weapon with elemental fire: each swing deals X additional Fire damage for 5 min. |
+| Rimebound Weapon | 12 _(ranks: 20)_ | 25 | Instant | — | Melee | Frost | Imbues your weapon with biting frost: each swing deals X additional damage for 5 min. |
 | Rime Jolt | 14 | 50 | Instant | 6s | 20 | Frost | Instantly shocks the target with frost for X Frost damage and slows its movement by 50% for 8 sec. |
 | Shadewolf | 16 | 35 | 2s | — | Melee | Nature | Turns you into a Shadewolf, increasing movement speed by 40%. Cast again to return to normal form. |
-| Earthquake | 18 | 80 | Instant | 12s | 30 | Nature | Shakes the target area, battering enemies for X Nature damage. |
+| Earthquake | 18 | 80 | Instant | 12s | 30 | Nature | Shakes the target area for 6 sec, battering enemies for X Nature damage every 1.5 sec. |
 | Ancestral Strike | 20 | 40 | Instant | 12s | Melee | Physical | Channels the storm through your weapon, instantly striking for weapon damage plus X. |
 
 ---

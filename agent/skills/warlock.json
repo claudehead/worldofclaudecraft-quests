@@ -43,7 +43,7 @@
       "castTime": 0,
       "school": "shadow",
       "requiresTarget": false,
-      "desc": "Demonic skin increases your armor by 30 for 30 min."
+      "desc": "Demonic skin increases your armor by $b for 30 min."
     },
     {
       "id": "immolate",
@@ -55,7 +55,7 @@
       "castTime": 2,
       "school": "fire",
       "requiresTarget": true,
-      "desc": "Burns the enemy for 11 Fire damage and an additional $d over 15 sec."
+      "desc": "Burns the enemy for $d Fire damage and an additional $o over 15 sec."
     },
     {
       "id": "corruption",
@@ -79,7 +79,7 @@
       "castTime": 0,
       "school": "shadow",
       "requiresTarget": false,
-      "desc": "Converts 30 health into 30 mana."
+      "desc": "Converts $d health into $d mana."
     },
     {
       "id": "summon_voidwalker",
@@ -223,7 +223,7 @@
       "castTime": 0,
       "school": "fire",
       "requiresTarget": false,
-      "desc": "Calls a rain of fire onto the target area, burning enemies for $d Fire damage."
+      "desc": "Calls a rain of fire onto the target area for 4 sec, burning enemies for $d Fire damage each second."
     }
   ],
   "rotation": [

@@ -31,7 +31,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Increases your attack power by 20 for 2 min."
+      "desc": "A shout that increases the attack power of all party members by $b% for 2 min."
     },
     {
       "id": "commanding_shout",
@@ -43,7 +43,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Increases your Stamina by 6 for 2 min."
+      "desc": "Increases your Stamina by $b for 2 min."
     },
     {
       "id": "charge",
@@ -67,7 +67,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Wounds the target, causing them to bleed for $d damage over 9 sec."
+      "desc": "Wounds the target, causing them to bleed for $d damage over $t sec."
     },
     {
       "id": "thunder_clap",
@@ -91,7 +91,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Maims the enemy for 5 damage, slowing its movement by 50% for 15 sec."
+      "desc": "Maims the enemy for $d damage, slowing its movement by 50% for 15 sec."
     },
     {
       "id": "bloodrage",
@@ -115,7 +115,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Instant attack for weapon damage +5. Only usable after the target dodges. Cannot be dodged."
+      "desc": "Instant attack for weapon damage plus $d. Only usable after the target dodges. Cannot be dodged."
     },
     {
       "id": "execute",
@@ -175,7 +175,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Lets out a fearsome shout, reducing the attack power of all nearby enemies by 30 for 30 sec."
+      "desc": "Lets out a fearsome shout, reducing the attack power of all nearby enemies by $b for 30 sec."
     },
     {
       "id": "sunder_armor",
@@ -187,7 +187,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Sunders the target's armor, reducing it by $d per application. Stacks up to 5 times. Generates a high amount of threat."
+      "desc": "Sunders the target's armor, reducing it by $d% per application. Stacks up to 5 times. Generates a high amount of threat."
     },
     {
       "id": "taunt",

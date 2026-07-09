@@ -43,7 +43,7 @@
       "castTime": 0,
       "school": "holy",
       "requiresTarget": true,
-      "desc": "Increases the target's Stamina by 3 for 30 min."
+      "desc": "Increases the Stamina of all party members by $b% for 30 min."
     },
     {
       "id": "shadow_word_pain",
@@ -67,7 +67,7 @@
       "castTime": 0,
       "school": "holy",
       "requiresTarget": true,
-      "desc": "Shields the target, absorbing 48 damage for 30 sec."
+      "desc": "Shields the target, absorbing $d damage for 30 sec."
     },
     {
       "id": "renew",

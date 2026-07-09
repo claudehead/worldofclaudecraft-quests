@@ -32,7 +32,23 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 20000 HP · Elemental**
 
-**Drops:** Inert Storm Shard _(100%)_, Crownforged Gauntlets _(8%)_, Nighttalon Grips _(8%)_, Soulflame Gloves _(8%)_, Stormcaller's Handguards _(8%)_, Crownforged Girdle _(8%)_
+**Drops:** Inert Storm Shard _(100%)_, Bonewrought Gauntlets _(8%)_, Direfang Grips _(8%)_, Wraithfire Gloves _(8%)_, Galecall Handguards _(8%)_, Bonewrought Girdle _(8%)_
+
+<br clear="all">
+
+<a id="mob-vale_cup_ball"></a>
+
+### Boarball
+
+**Level 1 · 1 HP · Beast**
+
+<br clear="all">
+
+<a id="mob-yumi_cat"></a>
+
+### Yumi
+
+**Level 1–60 · 5000 HP · Beast**
 
 <br clear="all">
 

@@ -31,7 +31,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Finishing move that causes damage per combo point."
+      "desc": "Finishing move that causes $d."
     },
     {
       "id": "garrote",
@@ -43,7 +43,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Garrote the enemy, causing damage now and bleeding it for $d over 18 sec. Must be stealthed. Awards 1 combo point."
+      "desc": "Garrote the enemy, causing $d damage now and bleeding it for $o over 18 sec. Must be stealthed. Awards 1 combo point."
     },
     {
       "id": "backstab",
@@ -67,7 +67,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Strikes the target, incapacitating it for 4 sec. Any damage breaks the effect. Awards 1 combo point."
+      "desc": "Strikes the target for $d damage, incapacitating it for 4 sec. Any damage breaks the effect. Awards 1 combo point."
     },
     {
       "id": "cheap_shot",
@@ -79,7 +79,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Strike the target, stunning it for 4 sec. Must be stealthed. Awards 2 combo points."
+      "desc": "Strike the target for $d damage, stunning it for 4 sec. Must be stealthed. Awards 2 combo points."
     },
     {
       "id": "evasion",
@@ -139,7 +139,7 @@
       "castTime": 0,
       "school": "nature",
       "requiresTarget": true,
-      "desc": "Strikes the target with a crippling poison, dealing {damage} Nature damage and slowing its movement speed by 50% for 12 sec."
+      "desc": "Strikes the target with a crippling poison, dealing $d Nature damage and slowing its movement speed by 50% for 12 sec."
     },
     {
       "id": "kidney_shot",
@@ -163,7 +163,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Finishing move that exposes the target, reducing its armor. More combo points spent build into a deeper cut."
+      "desc": "Finishing move that exposes the target, reducing its armor by $d% for 30 sec."
     },
     {
       "id": "ambush",

@@ -90,6 +90,7 @@ Most stutter is the browser, not the game. In order:
 | Damage Meters | `H` |
 | Friends & Guild | `O` |
 | Arena (Ashen Coliseum) | `G` |
+| Vale Cup | `Y` |
 | Leaderboard | `K` |
 | Event Calendar | `I` |
 | Discord | `U` |

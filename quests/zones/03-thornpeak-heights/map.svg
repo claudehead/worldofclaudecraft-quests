@@ -42,6 +42,8 @@
 <text x="643.8" y="2356.2" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Wyrmcult Tents</text>
 <text x="383.6" y="2383.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Revenant Fields</text>
 <text x="493.2" y="2520.5" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Gravewyrm Sanctum</text>
+<circle cx="383.6" cy="1884.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="383.6" y="1876.9" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Training Dummy ×1</text>
 <circle cx="356.2" cy="1726.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
 <text x="356.2" y="1718.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ridge Stalker ×7</text>
 <circle cx="616.4" cy="1753.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
@@ -129,10 +131,14 @@
 <text x="479.5" y="1931.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Quartermaster Bree</text>
 <circle cx="487.7" cy="1950.7" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
 <text x="487.7" y="1942.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Armorer Hode</text>
+<circle cx="471.2" cy="1931.5" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="471.2" y="1923.5" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Quartermaster Vex</text>
 <circle cx="526.0" cy="1904.1" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
 <text x="526.0" y="1896.1" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Loremaster Caddis</text>
 <circle cx="537.0" cy="1934.2" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
 <text x="537.0" y="1926.2" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Auctioneer Voss</text>
+<circle cx="460.3" cy="1926.0" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="460.3" y="1918.0" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Bursar Aldous Crane</text>
 <text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">Thornpeak Heights — N ↑</text>
 <rect x="10" y="2512" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
 <rect x="18" y="2519" width="11" height="11" fill="#f0c419"/>

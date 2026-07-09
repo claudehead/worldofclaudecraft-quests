@@ -173,7 +173,7 @@
 |---|---|
 | Level | 20 |
 | Family | Undead |
-| Health | 51239 HP |
+| Health | 60000 HP |
 | Armor (physical mitigation) | 798 (~28% vs a same-level attacker) |
 | Melee damage | 325–507 per hit @ 2.6s swing (~160 DPS) |
 | Crowd control | Immune |
@@ -215,8 +215,8 @@
 | <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 16% | exclusive set 3 † |
 | <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 16% | exclusive set 4 † |
 | <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 16% | exclusive set 4 † |
-| <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> 🟠 Heartwood of the Deathless Crown | Weapon — Main hand · 42–68 dmg @ 3.2s (~17 DPS), +17 Agi, +13 Sta, +14 Int | 3% | exclusive set 1 † |
-| <img src="../_loot-icons/kingsbane_last_oath.png" width="22" alt=""> 🟠 Thronebane, Last Oath of Thornpeak | Weapon — Main hand · 46–74 dmg @ 2.8s (~21 DPS), +24 Str, +20 Sta | 3% | exclusive set 2 † |
+| <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> 🟠 Heartwood of the Deathless Crown | Weapon — Main hand · 42–68 dmg @ 3.2s (~17 DPS), +13 Sta, +14 Int, +17 Spi | 3% | exclusive set 1 † |
+| <img src="../_loot-icons/kingsbane_last_oath.png" width="22" alt=""> 🟠 Thronebane, Last Oath of Thornpeak | Weapon — Main hand · 46–74 dmg @ 2.8s (~21 DPS), +15 Str, +15 Agi, +14 Sta | 3% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 

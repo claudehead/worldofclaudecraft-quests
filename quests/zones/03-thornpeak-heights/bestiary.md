@@ -1,6 +1,6 @@
 # Bestiary — Thornpeak Heights
 
-22 creatures you'll fight in this zone. Health/armor/damage are shown across the mob's spawn level range (mobs roll a random level within it). Mitigation % is what a same-level attacker's physical hits lose to armor — spells ignore armor.
+23 creatures you'll fight in this zone. Health/armor/damage are shown across the mob's spawn level range (mobs roll a random level within it). Mitigation % is what a same-level attacker's physical hits lose to armor — spells ignore armor.
 
 > Threat tiers: **Boss** (dungeon, group it) · **Elite** (~2.3× HP, ~1.5× damage) · **Rare** (tough roamer) · normal (everything else).
 
@@ -237,6 +237,27 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/ritual_phylactery.png" width="22" alt="">  Ritual Phylactery | Quest item | 55% | quest item — only drops while on _The Phylactery Ring_ |
 | <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 30% | sells for 3c |
+
+<a id="mob-training_dummy"></a>
+
+### Training Dummy
+
+<img src="../_mob-renders/training_dummy.png" width="150" align="right" alt="Training Dummy">
+
+| Stat | Value |
+|---|---|
+| Level | 20 |
+| Family | Humanoid |
+| Health | 999999 HP |
+| Armor (physical mitigation) | 0 (~0% vs a same-level attacker) |
+| Melee damage | 0–0 per hit @ 2s swing (~0 DPS) |
+| Location | Thornpeak Heights · ~x:-40, z:648 — [🗺️ show on map](#/map/-40/648) |
+
+**Best way to kill:**
+
+- Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+**Loot:** _nothing_
 
 ## Elites
 
@@ -684,7 +705,7 @@
 | <img src="../_loot-icons/wyrmshadow_harness.png" width="22" alt=""> 🟣 Nightfang Harness | Leather armor — Chest · 170 armor, +12 Agi, +6 Sta | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/boundstone_girdle.png" width="22" alt=""> 🔵 Boundstone Girdle | Mail armor — Waist · 60 armor, +3 Str, +6 Sta | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/gravewyrm_gauntlets.png" width="22" alt=""> 🔵 Gravewyrm Gauntlets | Mail armor — Hands · 72 armor, +5 Str, +4 Sta | 5% | exclusive set 2 † |
-| <img src="../_loot-icons/deathlords_dread_visage.png" width="22" alt=""> 🟣 Barrowlord's Dread Visage | Mail armor — Head · 245 armor, +7 Str, +8 Sta | 4% | exclusive set 2 † |
+| <img src="../_loot-icons/deathlords_dread_visage.png" width="22" alt=""> 🟣 Barrowlord Dread Visage | Mail armor — Head · 245 armor, +7 Str, +8 Sta | 4% | exclusive set 2 † |
 | <img src="../_loot-icons/necromancers_soulspire_mantle.png" width="22" alt=""> 🟣 Mournweave Soulspire Mantle | Cloth armor — Shoulder · 70 armor, +9 Int, +5 Spi | 4% | exclusive set 2 † |
 | <img src="../_loot-icons/wyrmshadow_talongrips.png" width="22" alt=""> 🟣 Nightfang Talongrips | Leather armor — Hands · 110 armor, +9 Agi, +4 Sta | 4% | exclusive set 2 † |
 
@@ -700,7 +721,7 @@
 |---|---|
 | Level | 20 |
 | Family | Undead |
-| Health | 51239 HP |
+| Health | 60000 HP |
 | Armor (physical mitigation) | 798 (~28% vs a same-level attacker) |
 | Melee damage | 325–507 per hit @ 2.6s swing (~160 DPS) |
 | Crowd control | Immune |
@@ -742,8 +763,8 @@
 | <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 16% | exclusive set 3 † |
 | <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 16% | exclusive set 4 † |
 | <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 16% | exclusive set 4 † |
-| <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> 🟠 Heartwood of the Deathless Crown | Weapon — Main hand · 42–68 dmg @ 3.2s (~17 DPS), +17 Agi, +13 Sta, +14 Int | 3% | exclusive set 1 † |
-| <img src="../_loot-icons/kingsbane_last_oath.png" width="22" alt=""> 🟠 Thronebane, Last Oath of Thornpeak | Weapon — Main hand · 46–74 dmg @ 2.8s (~21 DPS), +24 Str, +20 Sta | 3% | exclusive set 2 † |
+| <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> 🟠 Heartwood of the Deathless Crown | Weapon — Main hand · 42–68 dmg @ 3.2s (~17 DPS), +13 Sta, +14 Int, +17 Spi | 3% | exclusive set 1 † |
+| <img src="../_loot-icons/kingsbane_last_oath.png" width="22" alt=""> 🟠 Thronebane, Last Oath of Thornpeak | Weapon — Main hand · 46–74 dmg @ 2.8s (~21 DPS), +15 Str, +15 Agi, +14 Sta | 3% | exclusive set 2 † |
 
 † Each exclusive set is rolled separately — at most one item from each set drops per kill.
 

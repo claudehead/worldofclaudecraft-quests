@@ -43,7 +43,7 @@
       "castTime": 0,
       "school": "nature",
       "requiresTarget": true,
-      "desc": "Places the Wildward on a friendly target, increasing armor by 25 for 30 min."
+      "desc": "Places the Wildward on the party, increasing all attributes of all party members by $b% for 30 min."
     },
     {
       "id": "moonfire",
@@ -79,7 +79,7 @@
       "castTime": 0,
       "school": "nature",
       "requiresTarget": true,
-      "desc": "Thorns sprout from the target: melee attackers take 3 Nature damage."
+      "desc": "Thorns sprout from the target: melee attackers take $b Nature damage."
     },
     {
       "id": "entangling_roots",
@@ -103,7 +103,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Shapeshift into a bear: armor +65%, attack power +15, your attacks build rage and generate 30% more threat. Cast again to return to caster form."
+      "desc": "Shapeshift into a bear: armor +90%, greatly increased attack power, your attacks build rage and generate 30% more threat. Cast again to return to caster form."
     },
     {
       "id": "bear_charge",
@@ -223,7 +223,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Finishing move that causes damage per combo point. Wolf Form only."
+      "desc": "Finishing move that causes $d. Wolf Form only."
     },
     {
       "id": "barkskin",
@@ -307,7 +307,7 @@
       "castTime": 0,
       "school": "nature",
       "requiresTarget": true,
-      "desc": "Decreases the target's armor by 35 for 40 sec."
+      "desc": "Decreases the target's armor by $d% for 40 sec. Does not stack with Armor Shear."
     },
     {
       "id": "hibernate",
@@ -379,7 +379,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Finishing move that causes Bleed damage over 12 sec. Consumes combo points. Wolf Form only."
+      "desc": "Finishing move that causes $d Bleed damage over 12 sec. Consumes combo points. Wolf Form only."
     },
     {
       "id": "hurricane",
@@ -391,7 +391,7 @@
       "castTime": 0,
       "school": "nature",
       "requiresTarget": false,
-      "desc": "Calls a hurricane onto the target area, battering enemies for $d Nature damage."
+      "desc": "Calls a hurricane onto the target area for 6 sec, battering enemies for $d Nature damage each second."
     }
   ],
   "rotation": [

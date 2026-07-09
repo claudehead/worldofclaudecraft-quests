@@ -31,7 +31,7 @@
       "castTime": 0,
       "school": "frost",
       "requiresTarget": false,
-      "desc": "Encases you in frost, increasing armor by 30 for 30 min."
+      "desc": "Encases you in frost, increasing armor by $b for 30 min."
     },
     {
       "id": "arcane_intellect",
@@ -43,7 +43,7 @@
       "castTime": 0,
       "school": "arcane",
       "requiresTarget": false,
-      "desc": "Increases Intellect by 2 for 30 min."
+      "desc": "Increases the Intellect of all party members by $b% for 30 min."
     },
     {
       "id": "frostbolt",
@@ -115,7 +115,7 @@
       "castTime": 1.5,
       "school": "arcane",
       "requiresTarget": true,
-      "desc": "Transforms the enemy into a toad for up to 15 sec. The toad wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only."
+      "desc": "Transforms the enemy into a toad for up to $t sec. The toad wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only."
     },
     {
       "id": "frost_nova",
@@ -163,7 +163,7 @@
       "castTime": 0,
       "school": "frost",
       "requiresTarget": false,
-      "desc": "Shields you in ice, absorbing 130 damage for 60 sec."
+      "desc": "Shields you in ice, absorbing $d damage for 60 sec."
     },
     {
       "id": "pyroblast",
