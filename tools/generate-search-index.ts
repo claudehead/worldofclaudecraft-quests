@@ -65,6 +65,11 @@ for (const g of [
   ['Endgame & prestige', 'reference/endgame.md'],
   ['World bosses', 'reference/world-bosses.md'],
   ['Death, ghosts & graveyards', 'reference/death-and-graveyards.md'],
+  ['The Vale Cup — boarball', 'reference/vale-cup.md'],
+  ['Protect Yumi & Arena PvP', 'reference/protect-yumi.md'],
+  ['Heroic dungeons & jewelry', 'reference/heroic-dungeons.md'],
+  ['Professions & crafting endgame', 'reference/professions.md'],
+  ['The Gilded Strongbox (bank)', 'reference/bank.md'],
   ['Sneak peek (upcoming branches)', 'reference/sneak-peek.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
 

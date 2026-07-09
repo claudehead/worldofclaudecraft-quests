@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <title>Professions &amp; the crafting endgame 🔨 — World of Claudecraft</title>
+  <meta name="description" content="v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character *is*, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.">
+  <link rel="canonical" href="https://claudehead.com/doc/reference/professions/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="World of Claudecraft">
+  <meta property="og:title" content="Professions &amp; the crafting endgame 🔨 — World of Claudecraft">
+  <meta property="og:description" content="v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character *is*, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.">
+  <meta property="og:url" content="https://claudehead.com/doc/reference/professions/">
+  <meta property="og:image" content="https://claudehead.com/icon-512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Professions &amp; the crafting endgame 🔨 — World of Claudecraft">
+  <meta name="twitter:description" content="v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character *is*, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.">
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=116">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#07070b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <script>try{const t=localStorage.getItem('wc_theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <nav>
+    <span class="brand" data-go="#/">World of <b>Claudecraft</b></span>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a class="link" data-go="#/doc/reference%2Fgetting-started.md">Start here</a>
+      <a class="link" data-go="#/quests">Quests</a>
+      <a class="link" data-go="#/bis">BiS</a>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">World</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/zone">🗺️ Zone guides</a>
+          <a class="link" data-go="#/map">Map</a>
+          <a class="link" data-go="#/atlas">Interactive map</a>
+          <a class="link" data-go="#/bestiary">Bestiary</a>
+          <a class="link" data-go="#/bosses">Boss strategies</a>
+          <a class="link" data-go="#/npcs">NPCs</a>
+          <a class="link" data-go="#/dungeons">Dungeons</a>
+          <a class="link" data-go="#/delves">Delves</a>
+          <a class="link" data-go="#/route">Leveling route</a>
+          <a class="link" data-go="#/chains">Quest chains</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">3D</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/questroute">Quest paths 3D</a>
+          <a class="link" data-go="#/zone3d">Zones 3D</a>
+          <a class="link" data-go="#/zone3d/00-world">Whole world 3D</a>
+          <a class="link" data-go="#/explore">Explore 3D (VR)</a>
+          <a class="link" data-go="#/assets">3D Assets</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Tools</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/tracker">✅ Progress tracker</a>
+          <a class="link" data-go="#/coach">🧭 Leveling coach</a>
+          <a class="link" data-go="#/tiers">🏅 Tier lists</a>
+          <a class="link" data-go="#/stats">📊 Stats dashboard</a>
+          <a class="link" data-go="#/builds">📖 Build compendium</a>
+          <a class="link" data-go="#/planner">🌿 Talent / build planner</a>
+          <a class="link" data-go="#/loadout">🛡 Loadout simulator</a>
+          <a class="link" data-go="#/combatlog">⚔ Combat log simulator</a>
+          <a class="link" data-go="#/droplab">🎲 Drop-rate lab</a>
+          <a class="link" data-go="#/pathfinder">🧭 Leveling pathfinder</a>
+          <a class="link" data-go="#/farming">Farming calculator</a>
+          <a class="link" data-go="#/leveltime">Time to max level</a>
+          <a class="link" data-go="#/solo">Can I solo this?</a>
+          <a class="link" data-go="#/soloclass">🥇 Ultimate solo class</a>
+          <a class="link" data-go="#/pvpclass">⚔️ Ultimate PvP class</a>
+          <a class="link" data-go="#/calc">DPS &amp; survivability</a>
+          <a class="link" data-go="#/upgrades">Gear upgrade finder</a>
+          <a class="link" data-go="#/compare">Compare gear</a>
+          <a class="link" data-go="#/drops">Where to get items</a>
+          <a class="link" data-go="#/bags">🎒 Bag planner</a>
+          <a class="link" data-go="#/haste">⚡ Haste cheat sheet</a>
+          <a class="link" data-go="#/lockpick">🔓 Lockpick practice</a>
+          <a class="link" data-go="#/rite">🔔 Rite practice</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Items</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/gear">Gear</a>
+          <a class="link" data-go="#/sets">Item sets</a>
+          <a class="link" data-go="#/consumables">Consumables</a>
+          <a class="link" data-go="#/augments">Augments</a>
+          <a class="link" data-go="#/cosmetics">Cosmetics</a>
+          <a class="link" data-go="#/doc/reference%2Fworld-market.md">World Market</a>
+          <a class="link" data-go="#/doc/reference%2Fmaterials.md">Drops & materials</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Characters</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/classes">Classes</a>
+          <a class="link" data-go="#/abilities">Abilities</a>
+          <a class="link" data-go="#/talents">Talents</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Guides</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/doc/reference%2Fvale-cup.md">⚽ The Vale Cup <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fprotect-yumi.md">🐱 Protect Yumi &amp; PvP <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fheroic-dungeons.md">🛡️ Heroic dungeons <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fprofessions.md">🔨 Professions <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fbank.md">🏦 The Gilded Strongbox <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fraids-and-dungeons.md">Raids &amp; dungeons</a>
+          <a class="link" data-go="#/doc/reference%2Flockpicking.md">Lockpicking</a>
+          <a class="link" data-go="#/doc/reference%2Fcompanions.md">Delve companions</a>
+          <a class="link" data-go="#/doc/reference%2Frules.md">Rules &amp; conduct</a>
+          <a class="link" data-go="#/doc/reference%2Fcombat.md">Combat maths</a>
+          <a class="link" data-go="#/doc/reference%2Fendgame.md">Endgame &amp; prestige</a>
+          <a class="link" data-go="#/doc/reference%2Ffishing.md">Fishing</a>
+          <a class="link" data-go="#/doc/reference%2Fpvp.md">PvP — Coliseum</a>
+          <a class="link" data-go="#/doc/reference%2Ftameable-beasts.md">Tameable beasts</a>
+          <a class="link" data-go="#/doc/reference%2Fwarlock-demons.md">Warlock demons</a>
+          <a class="link" data-go="#/doc/reference%2Fencounters.md">Bosses &amp; encounters</a>
+          <a class="link" data-go="#/doc/reference%2Fworld-bosses.md">⛰️ World bosses</a>
+          <a class="link" data-go="#/doc/reference%2Fdeath-and-graveyards.md">💀 Death &amp; graveyards</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">🎮 Play</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/world">🗺️ Top-down RPG</a>
+          <a class="link" data-go="#/play">🎮 Claudecraft Runner</a>
+          <a class="link" data-go="#/arena">⚔️ Boss battle</a>
+          <a class="link" data-go="#/adventure">📖 Play the lore</a>
+          <a class="link" data-go="#/cards">🃏 Trading cards</a>
+        </div>
+      </div>
+      <a class="link" data-go="#/news">🆕 What's new</a>
+      <a class="link" data-go="#/patches">Patch notes</a>
+      <a class="link" data-go="#/doc/reference%2Fsneak-peek.md">🔭 Sneak peek</a>
+      <a class="link" data-go="#/badges">🏅 Dev badges</a>
+      <a class="link" data-go="#/donate">💜 Donate</a>
+      <a class="link" data-go="#/woc">🪙 $WOC</a>
+      <a class="link" data-go="#/doc/reference%2Fget-woc.md">💳 Get $WOC</a>
+      <a class="link" data-go="#/earn">◎ Earn SOL</a>
+      <a class="link" data-go="#/supporters">🏆 Supporters</a>
+      <a class="link" data-go="#/ask">🔮 Ask the Guide</a>
+      <a class="link" href="https://claudehead.github.io/woc-play/" target="_blank" rel="noopener">▶ Play offline</a>
+      <a class="link navsearch" id="navsearch" title="Search ( / )">🔍 <span class="navctl-label">Search</span></a>
+      <span class="langwrap" title="Language">🌐 <select class="navlang" id="navlang" aria-label="Language"></select></span>
+      <a class="link navtheme" id="navtheme" title="Toggle theme">🌙 <span class="navctl-label">Theme</span></a>
+    </div>
+  </nav>
+  <main id="app"><article class="doc"><div class="wrap"><h1>Professions &amp; the crafting endgame 🔨</h1>
+<p>v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character <em>is</em>, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.</p>
+<blockquote>
+<p>🔨 <strong>The shape:</strong> gather raw materials (Mining / Logging / Herbalism) → level a craft from <strong>0 to 300</strong> → specialize at <strong>skill 75</strong> for discounts → declare an <strong>archetype</strong> that defines your identity → craft at the <strong>Highwatch</strong> hub (level 20).</p>
+</blockquote>
+<hr>
+<h2>Gathering</h2>
+<p>Three gathering professions, tracked independently:</p>
+<ul>
+<li><strong>Mining</strong> — ore and stone from veins</li>
+<li><strong>Logging</strong> — timber from trees</li>
+<li><strong>Herbalism</strong> — herbs and plants</li>
+</ul>
+<p><strong>Proficiency</strong> builds through successful harvests and shifts your output toward rarer grades (common → uncommon → rare → epic → legendary) — though the very rarest grades stay rare no matter how skilled you are.</p>
+<p><strong>Tools matter.</strong> Vendors sell basic gathering tools; better ones are crafted, and higher-tier tools unlock richer nodes and work them faster over a long session. You can slot <strong>tool effects</strong> onto them:</p>
+<table>
+<thead>
+<tr>
+<th>Tool effect</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Gatherer&#39;s Cache</strong></td>
+<td>Extra quantity per node</td>
+</tr>
+<tr>
+<td><strong>Artisan&#39;s Eye</strong></td>
+<td>Higher material quality</td>
+</tr>
+<tr>
+<td><strong>Quickening Charm</strong></td>
+<td>Faster node respawns</td>
+</tr>
+</tbody></table>
+<p>Each effect starts with <strong>20 durability charges</strong>, spent faster against equal-or-higher-rarity targets and barely at all on low-rarity ones.</p>
+<hr>
+<h2>The ten crafts</h2>
+<p>Every craft runs its own recipe list, with skill from <strong>0 to 300</strong>. Basic recipes are open to everyone from the start; more advanced ones unlock as your skill climbs (the tier-3 boundary sits at <strong>skill 75</strong>). The ten crafts sit in a fixed <strong>ring</strong>, and <em>where</em> a craft sits matters — neighbours share recipes and mechanics, and each craft has an opposite five seats away.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Craft</th>
+<th></th>
+<th>#</th>
+<th>Craft</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Armorcrafting</td>
+<td></td>
+<td>6</td>
+<td>Cooking</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Weaponcrafting</td>
+<td></td>
+<td>7</td>
+<td>Inscription</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Jewelcrafting</td>
+<td></td>
+<td>8</td>
+<td>Enchanting</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Alchemy</td>
+<td></td>
+<td>9</td>
+<td>Tailoring</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Engineering</td>
+<td></td>
+<td>10</td>
+<td>Leatherworking</td>
+</tr>
+</tbody></table>
+<p><strong>Specialization (skill 75+).</strong> Hit 75 in a craft and you become <em>specialized</em>, unlocking two perks: a <strong>material-cost discount</strong> on that craft&#39;s recipes, and an extra <strong>recharge discount</strong> on tool effects you originally crafted. <em>(Current values sit around 20% / 25% and may shift with tuning.)</em></p>
+<p><strong>Combination recipes.</strong> The ring supports recipes that call on <strong>two neighbouring crafts at once</strong> — rewarding players (or trading partners) who invest in adjacent trades rather than going it alone. Armorcrafting + Weaponcrafting and Alchemy + Engineering are two examples.</p>
+<blockquote>
+<p>⚙️ <strong>Market throttles.</strong> To stop maxed specialists flooding the economy, crafting has a small <strong>copper fee</strong> scaled to an item&#39;s value and a cap of <strong>~10 crafts per rolling 60 seconds</strong>. Craft for use and trade, not for spam.</p>
+</blockquote>
+<hr>
+<h2>The ten archetypes</h2>
+<p>Each craft also stands for an <strong>archetype</strong> — a broader identity beyond just working the trade. You hold <strong>one active archetype at a time</strong>; it&#39;s a statement about who your character is, recognized in how the world addresses you.</p>
+<ul>
+<li><strong>Choosing one:</strong> you declare your first archetype through an <strong>early Zone 1 story quest</strong> that formally accepts you into that identity. Until then you have no archetype.</li>
+<li><strong>Switching:</strong> possible but not casual — you complete a repeatable <strong>&quot;make amends&quot; quest</strong> for your old archetype, and <strong>each successive switch costs more</strong>, so the choice stays meaningful.</li>
+</ul>
+<p>Your active archetype is what gates your crafting direction and endgame power. <em>(The exact rewards and recognition are still being filled in — expect this to grow.)</em></p>
+<hr>
+<h2>The crafting hub — Highwatch</h2>
+<p>The endgame crafting hub is at <strong>Highwatch</strong> in <strong>Thornpeak Heights</strong> (Zone 3, the level-20 zone), reusing the existing town centre. It hosts <strong>one station for each of the ten crafts</strong> arranged around the hub, and is gated to <strong>level 20</strong> so you can comfortably work the surrounding zone while you craft.</p>
+<hr>
+<h2>Getting started</h2>
+<ol>
+<li>Pick up <strong>Mining, Logging or Herbalism</strong> and gather while you level.</li>
+<li>Feed those materials into a <strong>craft</strong> and push its skill toward <strong>75</strong> to specialize.</li>
+<li>Declare your <strong>archetype</strong> via the Zone 1 story quest when you&#39;re ready to commit.</li>
+<li>At level 20, base yourself at the <strong>Highwatch</strong> hub and work combination recipes with a neighbouring craft — or a trading partner who&#39;s leveled it.</li>
+</ol>
+<hr>
+<p><em>See also: <a href="#/doc/reference%2Fmaterials.md">Drops &amp; materials</a>, the <a href="#/doc/reference%2Fworld-market.md">World Market</a>, and the <a href="#/doc/reference%2Fbank.md">Gilded Strongbox</a> to store everything you gather.</em></p>
+</div></article></main>
+  <footer>
+    Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
+    A fan-made guide — not affiliated with the upstream project.
+    · <a data-go="#/donate" style="cursor:pointer">💜 Donate (SOL / $WOC)</a>
+    <span id="visitcount" class="visitcount" hidden></span>
+  </footer>
+  <!-- Privacy-friendly visitor analytics — pick ONE (or neither). Both are free, cookieless, GDPR-safe.
+       Leave both blank to disable all tracking.
+
+       OPTION A — Cloudflare Web Analytics (accurate; stats in the Cloudflare dashboard only):
+         1. dash.cloudflare.com → Analytics & Logs → Web Analytics → Add a site (your Pages URL).
+         2. Copy the beacon "token" and set CF_BEACON_TOKEN below.
+         (No public counter, so the footer "visits" badge stays hidden with this option.)
+
+       OPTION B — GoatCounter (also shows a live count in the footer):
+         1. Free account at https://www.goatcounter.com/ → creates <code>.goatcounter.com
+         2. Settings → tick "Allow viewing without login" (enables the footer counter).
+         3. Set ANALYTICS_CODE to your <code> (e.g. "claudehead"). Dashboard: https://<code>.goatcounter.com -->
+  <script>
+    // Community comments (Giscus / GitHub Discussions). Fill repoId + categoryId from
+    // https://giscus.app after enabling Discussions and installing the Giscus app. "" = off.
+    window.GISCUS = { repo: "claudehead/worldofclaudecraft-quests", repoId: "R_kgDOTEKczA", category: "Announcements", categoryId: "DIC_kwDOTEKczM4DAZYO" };
+    // "Ask the Guide" AI endpoint — the Cloudflare Worker in /cloudflare/ask-worker.js
+    // (holds the OpenRouter key). Set this to the deployed Worker URL to switch the AI on.
+    window.ASK_ENDPOINT = "";
+    // Optional Solana RPC for the "Earn SOL" eligibility checker. Leave "" to use public
+    // endpoints (best-effort); set a free Helius/QuickNode URL for a reliable live check.
+    window.SOLANA_RPC = "";
+    window.CF_BEACON_TOKEN = "95a0cf6d95fa430e830349daeff26c6b"; // Cloudflare Web Analytics token ("" = off)
+    window.ANALYTICS_CODE = "";  // GoatCounter subdomain ("" = off), e.g. "claudehead"
+    if (window.CF_BEACON_TOKEN) {
+      const c = document.createElement('script');
+      c.defer = true; c.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      c.setAttribute('data-cf-beacon', JSON.stringify({ token: window.CF_BEACON_TOKEN, spa: true }));
+      document.head.appendChild(c);
+    }
+    if (window.ANALYTICS_CODE) {
+      window.goatcounter = { no_onload: true }; // app.js counts each SPA route instead
+      const s = document.createElement('script');
+      s.async = true; s.src = 'https://gc.zgo.at/count.js';
+      s.setAttribute('data-goatcounter', 'https://' + window.ANALYTICS_CODE + '.goatcounter.com/count');
+      document.head.appendChild(s);
+    }
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
+  <script src="app.js?v=137"></script>
+  <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
+  <script src="features/planner.js?v=116"></script>
+  <script src="features/loadout.js?v=116"></script>
+  <script src="features/combatlog.js?v=116"></script>
+  <script src="features/droplab.js?v=116"></script>
+  <script src="features/pathfinder.js?v=116"></script>
+  <script src="features/builds.js?v=116"></script>
+  <script src="features/tracker.js?v=116"></script>
+  <script src="features/coach.js?v=116"></script>
+  <script src="features/zoneguide.js?v=116"></script>
+  <script src="features/donate.js?v=116"></script>
+  <script src="features/news.js?v=142"></script>
+  <script src="features/bags.js?v=116"></script>
+  <script src="features/haste.js?v=116"></script>
+  <script src="features/rite.js?v=127"></script>
+  <script src="features/soloclass.js?v=132"></script>
+  <script src="features/pvpclass.js?v=133"></script>
+  <script src="features/supporters.js?v=116"></script>
+  <script src="features/ask.js?v=116"></script>
+  <script src="features/woc.js?v=139"></script>
+  <script src="features/earn.js?v=139"></script>
+  <script src="features/cards.js?v=116"></script>
+  <script src="features/arena.js?v=116"></script>
+  <script src="features/adventure.js?v=116"></script>
+  <script src="features/play.js?v=141"></script>
+  <script src="features/world.js?v=141"></script>
+  <script src="features/tiers.js?v=132"></script>
+  <script src="features/dashboard.js?v=116"></script>
+  <script>
+    if ('serviceWorker' in navigator) addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
+    });
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://claudehead.com/"},{"@type":"ListItem","position":3,"name":"Professions & the crafting endgame 🔨","item":"https://claudehead.com/doc/reference/professions/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Professions & the crafting endgame 🔨 — World of Claudecraft","description":"v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character *is*, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.","url":"https://claudehead.com/doc/reference/professions/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
+</body>
+</html>

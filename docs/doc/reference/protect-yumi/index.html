@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <title>Arena PvP &amp; Protect Yumi 🐱 — World of Claudecraft</title>
+  <meta name="description" content="v0.23 adds a new team objective mode — **Protect Yumi** — alongside the existing Ashen Coliseum ladder and the 2v2 Fiesta. This guide covers all of arena PvP, with a deep dive on Yumi. All PvP is opt-in: you choose when to queue, and nothing is forced on you.">
+  <link rel="canonical" href="https://claudehead.com/doc/reference/protect-yumi/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="World of Claudecraft">
+  <meta property="og:title" content="Arena PvP &amp; Protect Yumi 🐱 — World of Claudecraft">
+  <meta property="og:description" content="v0.23 adds a new team objective mode — **Protect Yumi** — alongside the existing Ashen Coliseum ladder and the 2v2 Fiesta. This guide covers all of arena PvP, with a deep dive on Yumi. All PvP is opt-in: you choose when to queue, and nothing is forced on you.">
+  <meta property="og:url" content="https://claudehead.com/doc/reference/protect-yumi/">
+  <meta property="og:image" content="https://claudehead.com/icon-512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Arena PvP &amp; Protect Yumi 🐱 — World of Claudecraft">
+  <meta name="twitter:description" content="v0.23 adds a new team objective mode — **Protect Yumi** — alongside the existing Ashen Coliseum ladder and the 2v2 Fiesta. This guide covers all of arena PvP, with a deep dive on Yumi. All PvP is opt-in: you choose when to queue, and nothing is forced on you.">
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=116">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#07070b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <script>try{const t=localStorage.getItem('wc_theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <nav>
+    <span class="brand" data-go="#/">World of <b>Claudecraft</b></span>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a class="link" data-go="#/doc/reference%2Fgetting-started.md">Start here</a>
+      <a class="link" data-go="#/quests">Quests</a>
+      <a class="link" data-go="#/bis">BiS</a>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">World</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/zone">🗺️ Zone guides</a>
+          <a class="link" data-go="#/map">Map</a>
+          <a class="link" data-go="#/atlas">Interactive map</a>
+          <a class="link" data-go="#/bestiary">Bestiary</a>
+          <a class="link" data-go="#/bosses">Boss strategies</a>
+          <a class="link" data-go="#/npcs">NPCs</a>
+          <a class="link" data-go="#/dungeons">Dungeons</a>
+          <a class="link" data-go="#/delves">Delves</a>
+          <a class="link" data-go="#/route">Leveling route</a>
+          <a class="link" data-go="#/chains">Quest chains</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">3D</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/questroute">Quest paths 3D</a>
+          <a class="link" data-go="#/zone3d">Zones 3D</a>
+          <a class="link" data-go="#/zone3d/00-world">Whole world 3D</a>
+          <a class="link" data-go="#/explore">Explore 3D (VR)</a>
+          <a class="link" data-go="#/assets">3D Assets</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Tools</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/tracker">✅ Progress tracker</a>
+          <a class="link" data-go="#/coach">🧭 Leveling coach</a>
+          <a class="link" data-go="#/tiers">🏅 Tier lists</a>
+          <a class="link" data-go="#/stats">📊 Stats dashboard</a>
+          <a class="link" data-go="#/builds">📖 Build compendium</a>
+          <a class="link" data-go="#/planner">🌿 Talent / build planner</a>
+          <a class="link" data-go="#/loadout">🛡 Loadout simulator</a>
+          <a class="link" data-go="#/combatlog">⚔ Combat log simulator</a>
+          <a class="link" data-go="#/droplab">🎲 Drop-rate lab</a>
+          <a class="link" data-go="#/pathfinder">🧭 Leveling pathfinder</a>
+          <a class="link" data-go="#/farming">Farming calculator</a>
+          <a class="link" data-go="#/leveltime">Time to max level</a>
+          <a class="link" data-go="#/solo">Can I solo this?</a>
+          <a class="link" data-go="#/soloclass">🥇 Ultimate solo class</a>
+          <a class="link" data-go="#/pvpclass">⚔️ Ultimate PvP class</a>
+          <a class="link" data-go="#/calc">DPS &amp; survivability</a>
+          <a class="link" data-go="#/upgrades">Gear upgrade finder</a>
+          <a class="link" data-go="#/compare">Compare gear</a>
+          <a class="link" data-go="#/drops">Where to get items</a>
+          <a class="link" data-go="#/bags">🎒 Bag planner</a>
+          <a class="link" data-go="#/haste">⚡ Haste cheat sheet</a>
+          <a class="link" data-go="#/lockpick">🔓 Lockpick practice</a>
+          <a class="link" data-go="#/rite">🔔 Rite practice</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Items</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/gear">Gear</a>
+          <a class="link" data-go="#/sets">Item sets</a>
+          <a class="link" data-go="#/consumables">Consumables</a>
+          <a class="link" data-go="#/augments">Augments</a>
+          <a class="link" data-go="#/cosmetics">Cosmetics</a>
+          <a class="link" data-go="#/doc/reference%2Fworld-market.md">World Market</a>
+          <a class="link" data-go="#/doc/reference%2Fmaterials.md">Drops & materials</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Characters</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/classes">Classes</a>
+          <a class="link" data-go="#/abilities">Abilities</a>
+          <a class="link" data-go="#/talents">Talents</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Guides</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/doc/reference%2Fvale-cup.md">⚽ The Vale Cup <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fprotect-yumi.md">🐱 Protect Yumi &amp; PvP <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fheroic-dungeons.md">🛡️ Heroic dungeons <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fprofessions.md">🔨 Professions <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fbank.md">🏦 The Gilded Strongbox <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fraids-and-dungeons.md">Raids &amp; dungeons</a>
+          <a class="link" data-go="#/doc/reference%2Flockpicking.md">Lockpicking</a>
+          <a class="link" data-go="#/doc/reference%2Fcompanions.md">Delve companions</a>
+          <a class="link" data-go="#/doc/reference%2Frules.md">Rules &amp; conduct</a>
+          <a class="link" data-go="#/doc/reference%2Fcombat.md">Combat maths</a>
+          <a class="link" data-go="#/doc/reference%2Fendgame.md">Endgame &amp; prestige</a>
+          <a class="link" data-go="#/doc/reference%2Ffishing.md">Fishing</a>
+          <a class="link" data-go="#/doc/reference%2Fpvp.md">PvP — Coliseum</a>
+          <a class="link" data-go="#/doc/reference%2Ftameable-beasts.md">Tameable beasts</a>
+          <a class="link" data-go="#/doc/reference%2Fwarlock-demons.md">Warlock demons</a>
+          <a class="link" data-go="#/doc/reference%2Fencounters.md">Bosses &amp; encounters</a>
+          <a class="link" data-go="#/doc/reference%2Fworld-bosses.md">⛰️ World bosses</a>
+          <a class="link" data-go="#/doc/reference%2Fdeath-and-graveyards.md">💀 Death &amp; graveyards</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">🎮 Play</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/world">🗺️ Top-down RPG</a>
+          <a class="link" data-go="#/play">🎮 Claudecraft Runner</a>
+          <a class="link" data-go="#/arena">⚔️ Boss battle</a>
+          <a class="link" data-go="#/adventure">📖 Play the lore</a>
+          <a class="link" data-go="#/cards">🃏 Trading cards</a>
+        </div>
+      </div>
+      <a class="link" data-go="#/news">🆕 What's new</a>
+      <a class="link" data-go="#/patches">Patch notes</a>
+      <a class="link" data-go="#/doc/reference%2Fsneak-peek.md">🔭 Sneak peek</a>
+      <a class="link" data-go="#/badges">🏅 Dev badges</a>
+      <a class="link" data-go="#/donate">💜 Donate</a>
+      <a class="link" data-go="#/woc">🪙 $WOC</a>
+      <a class="link" data-go="#/doc/reference%2Fget-woc.md">💳 Get $WOC</a>
+      <a class="link" data-go="#/earn">◎ Earn SOL</a>
+      <a class="link" data-go="#/supporters">🏆 Supporters</a>
+      <a class="link" data-go="#/ask">🔮 Ask the Guide</a>
+      <a class="link" href="https://claudehead.github.io/woc-play/" target="_blank" rel="noopener">▶ Play offline</a>
+      <a class="link navsearch" id="navsearch" title="Search ( / )">🔍 <span class="navctl-label">Search</span></a>
+      <span class="langwrap" title="Language">🌐 <select class="navlang" id="navlang" aria-label="Language"></select></span>
+      <a class="link navtheme" id="navtheme" title="Toggle theme">🌙 <span class="navctl-label">Theme</span></a>
+    </div>
+  </nav>
+  <main id="app"><article class="doc"><div class="wrap"><h1>Arena PvP &amp; Protect Yumi 🐱</h1>
+<p>v0.23 adds a new team objective mode — <strong>Protect Yumi</strong> — alongside the existing Ashen Coliseum ladder and the 2v2 Fiesta. This guide covers all of arena PvP, with a deep dive on Yumi. All PvP is opt-in: you choose when to queue, and nothing is forced on you.</p>
+<blockquote>
+<p>🐱 <strong>Protect Yumi in one line:</strong> two teams (3v3 or 5v5) each guard a 5,000-HP cat inside a braided maze; the cats teleport every 60 seconds; first team to kill the <em>enemy</em> cat wins. Unranked.</p>
+</blockquote>
+<hr>
+<h2>Duels — free and casual</h2>
+<p>Challenge any player within <strong>30 yards</strong> to a friendly duel. Nothing&#39;s on the line but pride, so it&#39;s the easiest way to learn a matchup. No rating, no record, no consequences. (You can&#39;t duel inside the Nythraxis Raid Arena.)</p>
+<hr>
+<h2>The Ashen Coliseum — ranked ladder</h2>
+<p>The realm&#39;s ranked arena. Two brackets, each with its <strong>own separate standing</strong>:</p>
+<ul>
+<li><strong>1v1</strong> — solo ranked against a single opponent.</li>
+<li><strong>2v2</strong> — a premade pair, or solos matched with a stranger.</li>
+</ul>
+<p><strong>How matches run:</strong></p>
+<ul>
+<li>Queue from anywhere above ground (you can&#39;t queue while dead or in a dungeon).</li>
+<li>A <strong>5-second countdown</strong> opens every match — no damage lands yet.</li>
+<li>You&#39;re scaled to your <strong>own level and gear</strong>. Matchmaking pairs you by <strong>Elo</strong> (everyone starts at 1500; floor 100).</li>
+<li>Win by <strong>defeating</strong> the other side, or by <strong>timeout at 150 seconds</strong> — if both teams are at similar health when time runs out, it&#39;s a <strong>draw</strong>.</li>
+<li>Once you&#39;re down, you&#39;re out for the rest of that bout — there&#39;s no self-res in ranked.</li>
+</ul>
+<p><strong>The ladder:</strong> wins lift your rating, losses drop it, and beating higher-rated opponents swings your rating more. Rated results feed the realm-wide <strong>leaderboard</strong>, tracked per bracket. Only <strong>1v1</strong> and <strong>2v2</strong> are ranked — Fiesta and Protect Yumi are not.</p>
+<hr>
+<h2>2v2 Fiesta — augment party mode</h2>
+<p>A fast, unranked 2v2 played in short rounds. Every round both teams <strong>draft augments</strong> — quick boosts that reshape your kit on the fly — so no two matches play alike. Score points for takedowns, first to the round limit takes the round, and it&#39;s <strong>best of three</strong>.</p>
+<p>The augments come in three escalating waves:</p>
+<table>
+<thead>
+<tr>
+<th>Wave</th>
+<th>Feel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Silver</strong></td>
+<td>Clean single-stat boosts — flat damage, armor, movement — that sharpen the basics</td>
+</tr>
+<tr>
+<td><strong>Gold</strong></td>
+<td>Two-edged combos where your build starts to take shape and sing</td>
+</tr>
+<tr>
+<td><strong>Prismatic</strong></td>
+<td>Build-defining, screen-melting spikes, meant to feel ridiculous in the best way</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>🎉 Augments and power-ups <strong>last only for the match</strong> — Fiesta is about playful, on-the-spot builds, not lasting power. Nobody buys their way to a win.</p>
+</blockquote>
+<p><strong>Power-ups</strong> drop as glowing orbs mid-fight, free for whoever grabs them first, and last only a short while: <strong>Speed Demon</strong> (blinding pace), <strong>Colossus</strong> (swell into a giant), <strong>Moon Boots</strong> (low-gravity bounce), and <strong>Berserker</strong> (a surge of fury).</p>
+<hr>
+<h2>Protect Yumi — the new objective mode 🐱</h2>
+<p>A team objective mode played in a maze. Each side guards <strong>its own cat familiar, Yumi</strong>, while hunting the enemy&#39;s. <strong>First team to destroy the enemy Yumi wins.</strong> Unranked, in two brackets: <strong>3v3</strong> and <strong>5v5</strong>.</p>
+<h3>Yumi, the cat</h3>
+<ul>
+<li>A passive, non-attacking objective with <strong>5,000 HP</strong> (flat — it doesn&#39;t scale with level or bracket).</li>
+<li>Only the <strong>enemy</strong> team can damage her; <strong>your</strong> team can heal and shield her.</li>
+<li>She&#39;s <strong>immune to all crowd control and slows</strong> — you can&#39;t lock her down.</li>
+<li>The instant a Yumi hits <strong>0 HP, her team loses</strong>.</li>
+</ul>
+<h3>The braided maze</h3>
+<ul>
+<li>A deterministic <strong>13×13 grid</strong> of 5.75-yard corridors, <strong>180° symmetric</strong> so both teams see the same layout mirrored.</li>
+<li>Every cell connects to at least two others — <strong>no dead ends or traps</strong>.</li>
+<li>Five plazas: the two team spawns (blue &amp; red) in opposite corners, the two Yumi start points in the other corners, and a <strong>3×3 centre plaza</strong> for mid-arena brawls.</li>
+<li>A tall translucent <strong>beacon</strong> hovers over each cat, visible from anywhere — so you always know where both Yumis are.</li>
+</ul>
+<h3>How a match flows</h3>
+<ol>
+<li><strong>Countdown — 5s.</strong> Heal up; no damage yet.</li>
+<li><strong>Active phase.</strong> Hunt the enemy Yumi while defending yours. <strong>Every 60 seconds both cats teleport at once</strong> to new cells (always at least 5 yards apart, never on a spawn plaza), with a visual burst everyone sees. Get downed and you <strong>bench for just 10 seconds</strong>, then respawn beside your own cat — unlike ranked, a death doesn&#39;t end your match.</li>
+<li><strong>Sudden death — at 10:00.</strong> Teleports <strong>freeze</strong>, and the cats start taking escalating bonus damage (1.25× at 10:00, +25% every 15s) plus a <strong>neutral bleed</strong> every 2 seconds. Nobody can stall — a winner is guaranteed.</li>
+</ol>
+<h3>Winning</h3>
+<p>Reduce the enemy Yumi to 0. If both cats would die on the same sudden-death pulse, the tiebreak is: <strong>higher remaining HP survives</strong> → then <strong>whoever dealt more total damage to the enemy cat</strong> → then a per-match random roll. <strong>It&#39;s never a draw.</strong></p>
+<p><strong>Teams &amp; disconnects:</strong> queue solo or as a premade up to your bracket size. One missing teammate just benches their slot (you play short); the match only forfeits if an <strong>entire team</strong> vanishes at once.</p>
+<hr>
+<h2>Quick reference</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Yumi HP</td>
+<td>5,000</td>
+</tr>
+<tr>
+<td>Brackets</td>
+<td>3v3, 5v5 (Protect Yumi); 1v1, 2v2 (ranked)</td>
+</tr>
+<tr>
+<td>Cat teleport</td>
+<td>every 60s, ≥5 yards apart</td>
+</tr>
+<tr>
+<td>Player respawn</td>
+<td>10s</td>
+</tr>
+<tr>
+<td>Sudden death</td>
+<td>at 10:00 (teleports freeze, escalating damage + bleed)</td>
+</tr>
+<tr>
+<td>Ranked timeout</td>
+<td>150s (similar HP = draw)</td>
+</tr>
+<tr>
+<td>Elo</td>
+<td>start 1500, floor 100</td>
+</tr>
+<tr>
+<td>Duel range</td>
+<td>30 yards</td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>See also: the <a href="#/doc/reference%2Fvale-cup.md">Vale Cup guide</a> for the other new mode, and <a href="#/doc/reference%2Fpvp.md">PvP — Coliseum</a> for the ranked-combat deep dive.</em></p>
+</div></article></main>
+  <footer>
+    Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
+    A fan-made guide — not affiliated with the upstream project.
+    · <a data-go="#/donate" style="cursor:pointer">💜 Donate (SOL / $WOC)</a>
+    <span id="visitcount" class="visitcount" hidden></span>
+  </footer>
+  <!-- Privacy-friendly visitor analytics — pick ONE (or neither). Both are free, cookieless, GDPR-safe.
+       Leave both blank to disable all tracking.
+
+       OPTION A — Cloudflare Web Analytics (accurate; stats in the Cloudflare dashboard only):
+         1. dash.cloudflare.com → Analytics & Logs → Web Analytics → Add a site (your Pages URL).
+         2. Copy the beacon "token" and set CF_BEACON_TOKEN below.
+         (No public counter, so the footer "visits" badge stays hidden with this option.)
+
+       OPTION B — GoatCounter (also shows a live count in the footer):
+         1. Free account at https://www.goatcounter.com/ → creates <code>.goatcounter.com
+         2. Settings → tick "Allow viewing without login" (enables the footer counter).
+         3. Set ANALYTICS_CODE to your <code> (e.g. "claudehead"). Dashboard: https://<code>.goatcounter.com -->
+  <script>
+    // Community comments (Giscus / GitHub Discussions). Fill repoId + categoryId from
+    // https://giscus.app after enabling Discussions and installing the Giscus app. "" = off.
+    window.GISCUS = { repo: "claudehead/worldofclaudecraft-quests", repoId: "R_kgDOTEKczA", category: "Announcements", categoryId: "DIC_kwDOTEKczM4DAZYO" };
+    // "Ask the Guide" AI endpoint — the Cloudflare Worker in /cloudflare/ask-worker.js
+    // (holds the OpenRouter key). Set this to the deployed Worker URL to switch the AI on.
+    window.ASK_ENDPOINT = "";
+    // Optional Solana RPC for the "Earn SOL" eligibility checker. Leave "" to use public
+    // endpoints (best-effort); set a free Helius/QuickNode URL for a reliable live check.
+    window.SOLANA_RPC = "";
+    window.CF_BEACON_TOKEN = "95a0cf6d95fa430e830349daeff26c6b"; // Cloudflare Web Analytics token ("" = off)
+    window.ANALYTICS_CODE = "";  // GoatCounter subdomain ("" = off), e.g. "claudehead"
+    if (window.CF_BEACON_TOKEN) {
+      const c = document.createElement('script');
+      c.defer = true; c.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      c.setAttribute('data-cf-beacon', JSON.stringify({ token: window.CF_BEACON_TOKEN, spa: true }));
+      document.head.appendChild(c);
+    }
+    if (window.ANALYTICS_CODE) {
+      window.goatcounter = { no_onload: true }; // app.js counts each SPA route instead
+      const s = document.createElement('script');
+      s.async = true; s.src = 'https://gc.zgo.at/count.js';
+      s.setAttribute('data-goatcounter', 'https://' + window.ANALYTICS_CODE + '.goatcounter.com/count');
+      document.head.appendChild(s);
+    }
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
+  <script src="app.js?v=137"></script>
+  <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
+  <script src="features/planner.js?v=116"></script>
+  <script src="features/loadout.js?v=116"></script>
+  <script src="features/combatlog.js?v=116"></script>
+  <script src="features/droplab.js?v=116"></script>
+  <script src="features/pathfinder.js?v=116"></script>
+  <script src="features/builds.js?v=116"></script>
+  <script src="features/tracker.js?v=116"></script>
+  <script src="features/coach.js?v=116"></script>
+  <script src="features/zoneguide.js?v=116"></script>
+  <script src="features/donate.js?v=116"></script>
+  <script src="features/news.js?v=142"></script>
+  <script src="features/bags.js?v=116"></script>
+  <script src="features/haste.js?v=116"></script>
+  <script src="features/rite.js?v=127"></script>
+  <script src="features/soloclass.js?v=132"></script>
+  <script src="features/pvpclass.js?v=133"></script>
+  <script src="features/supporters.js?v=116"></script>
+  <script src="features/ask.js?v=116"></script>
+  <script src="features/woc.js?v=139"></script>
+  <script src="features/earn.js?v=139"></script>
+  <script src="features/cards.js?v=116"></script>
+  <script src="features/arena.js?v=116"></script>
+  <script src="features/adventure.js?v=116"></script>
+  <script src="features/play.js?v=141"></script>
+  <script src="features/world.js?v=141"></script>
+  <script src="features/tiers.js?v=132"></script>
+  <script src="features/dashboard.js?v=116"></script>
+  <script>
+    if ('serviceWorker' in navigator) addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
+    });
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://claudehead.com/"},{"@type":"ListItem","position":3,"name":"Arena PvP & Protect Yumi 🐱","item":"https://claudehead.com/doc/reference/protect-yumi/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Arena PvP & Protect Yumi 🐱 — World of Claudecraft","description":"v0.23 adds a new team objective mode — **Protect Yumi** — alongside the existing Ashen Coliseum ladder and the 2v2 Fiesta. This guide covers all of arena PvP, with a deep dive on Yumi. All PvP is opt-in: you choose when to queue, and nothing is forced on you.","url":"https://claudehead.com/doc/reference/protect-yumi/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
+</body>
+</html>

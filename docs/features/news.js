@@ -6,11 +6,11 @@
   const { el, esc, registerView, app } = window.WOC;
 
   const GAME = [
-    ['⚽', 'The Vale Cup', 'A full boarball (football) minigame at the Sowfield stadium in Eastbrook Vale — 1v1 to 5v5 queues, sport role kits, bot backfill, spectator betting, and player + guild leaderboards.', '#/patches', 'See the patch notes'],
-    ['🛡️', 'Heroic dungeons', 'All four 5-player dungeons gain a Heroic difficulty (retuned level-22 mobs) dropping Heroic Marks — spend them at the new Heroic Quartermaster in Highwatch, the game\'s only source of neck and ring jewelry.', '#/dungeons', 'Dungeon guides'],
-    ['🔨', 'Professions, completed', 'The professions endgame lands: your active archetype gates crafting power, with specialization perks, combo recipes, signed materials, town focus allocation, and a level-20 crafting hub at Highwatch.', '#/patches', 'Full patch notes'],
-    ['🏦', 'The Gilded Strongbox', 'A personal bank vault at the bursar in every hub town — 24 slots to start, expandable to 96 (112 with bonuses), with an audit ledger. Somewhere, at last, to stash your loot.', '#/patches', 'Patch notes'],
-    ['🐱', 'Protect Yumi', 'A new 3v3/5v5 objective PvP mode: each team guards a 5,000-HP cat familiar inside a braided maze, with simultaneous cat teleports and a sudden-death finish.', '#/doc/' + encodeURIComponent('reference/pvp.md'), 'PvP guide'],
+    ['⚽', 'The Vale Cup', 'A full boarball (football) minigame at the Sowfield stadium in Eastbrook Vale — 1v1 to 5v5 queues, sport role kits, bot backfill, spectator betting, and player + guild leaderboards.', '#/doc/' + encodeURIComponent('reference/vale-cup.md'), 'How to play'],
+    ['🛡️', 'Heroic dungeons', 'All four 5-player dungeons gain a Heroic difficulty (retuned level-22 mobs) dropping Heroic Marks — spend them at the new Heroic Quartermaster in Highwatch, the game\'s only source of neck and ring jewelry.', '#/doc/' + encodeURIComponent('reference/heroic-dungeons.md'), 'Heroic guide'],
+    ['🔨', 'Professions, completed', 'The professions endgame lands: your active archetype gates crafting power, with specialization perks, combo recipes, ten crafts on a ring, and a level-20 crafting hub at Highwatch.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Professions guide'],
+    ['🏦', 'The Gilded Strongbox', 'A personal bank vault at the bursar in every hub town — 24 slots to start, expandable to 96 (112 with bonuses), with filters, search and deposit-all. Somewhere, at last, to stash your loot.', '#/doc/' + encodeURIComponent('reference/bank.md'), 'Bank guide'],
+    ['🐱', 'Protect Yumi', 'A new 3v3/5v5 objective PvP mode: each team guards a 5,000-HP cat familiar inside a braided maze, with simultaneous cat teleports and a sudden-death finish.', '#/doc/' + encodeURIComponent('reference/protect-yumi.md'), 'How to play'],
     ['💎', 'Itemization wave', 'New Crit Rating and Haste Rating gear stats, signature procs on both legendary weapons, weapon-scaled Hunter Auto Shot, and a 4-piece proc bonus on every epic set. Our combat tools are recomputed to match.', '#/gear', 'Browse gear'],
     ['📱', 'A real mobile HUD', 'First-class touch controls — a proper mobile HUD, plus display-side movement prediction that makes online play feel as smooth as offline.', '#/patches', 'Technical changelog'],
   ];
