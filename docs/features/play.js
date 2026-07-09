@@ -207,6 +207,14 @@
   function wireTouch() { document.querySelectorAll('.tc').forEach(bt => { const k = bt.dataset.k; const on = e => { e.preventDefault(); keys[k] = true; if (k === ' ') jump(); if (k === 'j') attack(); }; const off = e => { e.preventDefault(); keys[k] = false; }; bt.addEventListener('pointerdown', on); bt.addEventListener('pointerup', off); bt.addEventListener('pointerleave', off); bt.addEventListener('pointercancel', off); }); }
 
   function onKey(e, down) {
+    // This listener is bound to window and lives for the whole session, so it must
+    // NOT touch keys unless the game is actually on screen — otherwise it would
+    // preventDefault() on WASD/space/J/X everywhere and swallow them out of text
+    // inputs (e.g. the "Ask the Guide" box). Bail if a field is focused or the
+    // canvas isn't mounted.
+    const t = e.target;
+    if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable)) return;
+    if (!G_ || !document.getElementById('playCv')) return;
     const k = e.key.toLowerCase();
     if ([' ', 'arrowup', 'w', 'arrowdown', 'arrowleft', 'arrowright', 'a', 'd', 's', 'j', 'x', 'shift'].includes(k)) e.preventDefault();
     keys[k] = down;

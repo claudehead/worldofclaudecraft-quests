@@ -223,6 +223,12 @@
   }
   function attack() { if (G && G.state === 'play' && !G.ranged && G.p.atk <= 0) { G.p.atk = 12; SFX.shoot(); } }
   function onKey(e, down) {
+    // Global session-long listener: only act while the game canvas is on screen and
+    // no text field is focused, or it would swallow WASD/space/J/E out of inputs
+    // like the "Ask the Guide" box everywhere on the site.
+    const t = e.target;
+    if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable)) return;
+    if (!G || !document.getElementById('wCv')) return;
     const k = e.key.toLowerCase();
     if ([' ', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd', 'j', 'e'].includes(k)) e.preventDefault();
     keys[k] = down;
