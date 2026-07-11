@@ -25,7 +25,7 @@
       "id": "holy_light",
       "name": "Mending Light",
       "learnLevel": 1,
-      "cost": 35,
+      "cost": 25,
       "cooldown": 0,
       "range": 30,
       "castTime": 2.5,

@@ -1,6 +1,6 @@
 # Zone 1 — Eastbrook Vale
 
-Level range: **1–7** · Hub: Eastbrook · 20 quests
+Level range: **1–7** · Hub: Eastbrook · 21 quests
 
 ![Map of Zone 1 — Eastbrook Vale](map.svg)
 
@@ -10,6 +10,7 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 
 | Lvl | Quest | Giver | Type |
 |----:|-------|-------|------|
+| 1 | [A Trade for Every Hand](q-prof-intro.md) | Foreman Odell | collect |
 | 1 | [Wolves at the Door](q-wolves.md) | Marshal Redbrook | kill |
 | 1 | [The Old Wolf](q-greyjaw.md) | Marshal Redbrook | collect |
 | 1 | [Bristly Boar Hides](q-boars.md) | Trader Wilkes | collect |

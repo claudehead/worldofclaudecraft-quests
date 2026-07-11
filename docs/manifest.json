@@ -2,7 +2,7 @@
   "repo": "claudehead/worldofclaudecraft-quests",
   "branch": "main",
   "counts": {
-    "quests": 82,
+    "quests": 83,
     "zones": 4,
     "classes": 9,
     "dungeons": 5,
@@ -26,6 +26,14 @@
       "bestiary": "quests/zones/01-eastbrook-vale/bestiary.md",
       "map": "quests/zones/01-eastbrook-vale/map.svg",
       "quests": [
+        {
+          "id": "q_prof_intro",
+          "name": "A Trade for Every Hand",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-intro.md"
+        },
         {
           "id": "q_wolves",
           "name": "Wolves at the Door",

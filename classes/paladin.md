@@ -20,7 +20,7 @@
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
-| Mending Light | 1 _(ranks: 8, 14, 20)_ | 35 | 2.5s | — | 30 | Holy | Heals a friendly target for X. |
+| Mending Light | 1 _(ranks: 8, 14, 20)_ | 25 | 2.5s | — | 30 | Holy | Heals a friendly target for X. |
 | Oathbrand | 1 _(ranks: 10, 16)_ | 25 | Instant | — | Melee | Holy | Fills you with Holy power for 30 sec, causing each of your melee swings to deal X additional Holy damage. Unleash with Verdict. |
 | Steadfast Aura | 1 | — | Instant | — | Melee | Holy | Increases the armor of all party members by X% for 30 min. |
 | Oath of Iron | 4 | 25 | Instant | — | 30 | Holy | Blesses the party, increasing the attack power of all party members by X% for 30 min. |

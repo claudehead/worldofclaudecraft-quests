@@ -6,6 +6,7 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 
 | Quest | Zone | Notes |
 |-------|------|-------|
+| [A Trade for Every Hand](zones/01-eastbrook-vale/q-prof-intro.md) | Zone 1 — Eastbrook Vale |  |
 | [Wolves at the Door](zones/01-eastbrook-vale/q-wolves.md) | Zone 1 — Eastbrook Vale |  |
 | [The Old Wolf](zones/01-eastbrook-vale/q-greyjaw.md) | Zone 1 — Eastbrook Vale | chain |
 | [Bristly Boar Hides](zones/01-eastbrook-vale/q-boars.md) | Zone 1 — Eastbrook Vale |  |

@@ -1,42 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 1386" font-family="Segoe UI, Helvetica, Arial, sans-serif">
-<rect width="460" height="1386" fill="#181014"/>
-<rect x="118.0" y="38.0" width="217.0" height="1326.0" rx="16" fill="#241820" stroke="#3a2a33" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 1440" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="460" height="1440" fill="#181014"/>
+<rect x="118.0" y="38.0" width="217.0" height="1380.0" rx="16" fill="#241820" stroke="#3a2a33" stroke-width="2"/>
 <circle cx="230.0" cy="62.0" r="7" fill="#5cb85c" stroke="#11160f" stroke-width="1.5"/>
 <text x="230.0" y="51.0" fill="#a7e3a7" font-size="12" font-weight="bold" text-anchor="middle">Enter ▼</text>
-<circle cx="230.0" cy="174.5" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="243.0" y="178.5" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard ×2</text>
-<circle cx="174.0" cy="296.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="161.0" y="300.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
-<circle cx="202.0" cy="305.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="189.0" y="309.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
-<circle cx="279.0" cy="422.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="292.0" y="426.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
-<circle cx="251.0" cy="431.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="264.0" y="435.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
-<circle cx="188.0" cy="548.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="175.0" y="552.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
-<circle cx="216.0" cy="557.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="203.0" y="561.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
-<circle cx="230.0" cy="674.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="243.0" y="678.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Korgath the Bound</text>
-<circle cx="181.0" cy="800.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="168.0" y="804.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
-<circle cx="209.0" cy="809.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="196.0" y="813.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
-<circle cx="272.0" cy="926.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="285.0" y="930.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
-<circle cx="244.0" cy="935.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="257.0" y="939.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
-<circle cx="230.0" cy="1052.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="243.0" y="1056.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Grand Necromancer Velkhar</text>
-<circle cx="230.0" cy="1034.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="243.0" y="1038.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard ×2</text>
-<circle cx="209.0" cy="1205.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="196.0" y="1209.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard ×2</text>
-<circle cx="230.0" cy="1340.0" r="11" fill="#f0c419" stroke="#11160f" stroke-width="1.5"/>
-<text x="230.0" y="1367.0" fill="#f7d979" font-size="14" font-weight="bold" text-anchor="middle" stroke="#11160f" stroke-width="0.7" paint-order="stroke">Korzul the Gravewyrm — Boss</text>
-<circle cx="230.0" cy="1322.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
-<text x="243.0" y="1326.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard ×2</text>
+<circle cx="230.0" cy="264.5" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="243.0" y="268.5" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard ×2</text>
+<circle cx="174.0" cy="350.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="161.0" y="354.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
+<circle cx="202.0" cy="359.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="189.0" y="363.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
+<circle cx="279.0" cy="476.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="292.0" y="480.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
+<circle cx="251.0" cy="485.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="264.0" y="489.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
+<circle cx="188.0" cy="602.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="175.0" y="606.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
+<circle cx="216.0" cy="611.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="203.0" y="615.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
+<circle cx="230.0" cy="728.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="243.0" y="732.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Korgath the Bound</text>
+<circle cx="181.0" cy="854.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="168.0" y="858.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
+<circle cx="209.0" cy="863.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="196.0" y="867.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
+<circle cx="272.0" cy="980.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="285.0" y="984.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard</text>
+<circle cx="244.0" cy="989.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="257.0" y="993.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard</text>
+<circle cx="230.0" cy="1106.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="243.0" y="1110.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Grand Necromancer Velkhar</text>
+<circle cx="230.0" cy="1088.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="243.0" y="1092.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Boneguard ×2</text>
+<circle cx="209.0" cy="1259.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="196.0" y="1263.0" fill="#f0e6d2" font-size="11" text-anchor="end" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard ×2</text>
+<circle cx="230.0" cy="1394.0" r="11" fill="#f0c419" stroke="#11160f" stroke-width="1.5"/>
+<text x="230.0" y="1421.0" fill="#f7d979" font-size="14" font-weight="bold" text-anchor="middle" stroke="#11160f" stroke-width="0.7" paint-order="stroke">Korzul the Gravewyrm — Boss</text>
+<circle cx="230.0" cy="1376.0" r="7" fill="#d9534f" stroke="#11160f" stroke-width="1.5"/>
+<text x="243.0" y="1380.0" fill="#f0e6d2" font-size="11" text-anchor="start" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sanctum Scaleguard ×2</text>
 <text x="12" y="22" fill="#cfe3d6" font-size="13" font-weight="bold">Gravewyrm Sanctum</text>
-<text x="448" y="1374" fill="#7a6a73" font-size="11" text-anchor="end">▼ descent</text>
+<text x="448" y="1428" fill="#7a6a73" font-size="11" text-anchor="end">▼ descent</text>
 </svg>

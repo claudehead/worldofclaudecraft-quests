@@ -6,6 +6,7 @@ Tick a box when you turn the quest in. Work top-down — quests are grouped by t
 
 ## Level 1+
 
+- [ ] [A Trade for Every Hand](../quests/zones/01-eastbrook-vale/q-prof-intro.md) — Zone 1 — Eastbrook Vale
 - [ ] [Wolves at the Door](../quests/zones/01-eastbrook-vale/q-wolves.md) — Zone 1 — Eastbrook Vale
 - [ ] [The Old Wolf](../quests/zones/01-eastbrook-vale/q-greyjaw.md) _(chain)_ — Zone 1 — Eastbrook Vale
 - [ ] [Bristly Boar Hides](../quests/zones/01-eastbrook-vale/q-boars.md) — Zone 1 — Eastbrook Vale

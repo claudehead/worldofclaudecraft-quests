@@ -14,6 +14,7 @@ _Carried for a quest — gather the listed count, then turn it in._
 | <a id="item-blessed_embers"></a>Blessed Embers | [Stormcrag Elemental](../quests/zones/03-thornpeak-heights/bestiary.md#mob-stormcrag_elemental) 55% | Quest: [Breaking the Seal](../quests/zones/03-thornpeak-heights/q-breaking-the-seal.md) |
 | <a id="item-blessed_wax"></a>Blessed Tallow | [Deeprock Digger](../quests/zones/01-eastbrook-vale/bestiary.md#mob-tunnel_rat) 45% | Quest: [The Binding Rite](../quests/zones/01-eastbrook-vale/q-rite.md) |
 | <a id="item-boar_hide"></a>Bristly Boar Hide | [Wild Boar](../quests/zones/01-eastbrook-vale/bestiary.md#mob-wild_boar) 60% | Quest: [Bristly Boar Hides](../quests/zones/01-eastbrook-vale/q-boars.md) |
+| <a id="item-chunk_of_ore"></a>Chunk of Ore | — | Quest: [A Trade for Every Hand](../quests/zones/01-eastbrook-vale/q-prof-intro.md) |
 | <a id="item-crypt_keystone"></a>Crypt Keystone | — | Quest: [The Bound Guardian](../quests/zones/03-thornpeak-heights/q-nythraxis-bound-guardian.md) |
 | <a id="item-priests_sigil"></a>Crypt Keystone Lower | Corrupted Priest Malric 100% | Quest: [The Abandoned Crypt](../quests/zones/03-thornpeak-heights/q-nythraxis-sealed-crypt.md) |
 | <a id="item-captains_crest"></a>Crypt Keystone Upper | Fallen Captain Aldren 100% | Quest: [The Abandoned Crypt](../quests/zones/03-thornpeak-heights/q-nythraxis-sealed-crypt.md) |
@@ -103,6 +104,9 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | Item | Where to get it | Used for |
 |---|---|---|
 | <a id="item-amber_hide"></a>Amber Hide | — | sells for 9c |
+| <a id="item-arcane_dust"></a>Arcane Dust | — | sells for 6c |
+| <a id="item-arcane_essence"></a>Arcane Essence | — | sells for 18c |
+| <a id="item-arcane_shard"></a>Arcane Shard | — | sells for 55c |
 | <a id="item-arcanite_bar"></a>Arcanite Bar | — | sells for 40c |
 | <a id="item-ashwood_log"></a>Ashwood Log | — | sells for 15c |
 | <a id="item-bogiron_nugget"></a>Bogiron Nugget | [Mirefen Troll](../quests/zones/02-mirefen-marsh/bestiary.md#mob-fen_troll) 30% | sells for 12c |
