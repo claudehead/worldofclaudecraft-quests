@@ -60,6 +60,8 @@ Most stutter is the browser, not the game. In order:
 | Move Backward | `S` or `↓` |
 | Turn Left | `A` or `←` |
 | Turn Right | `D` or `→` |
+| Strafe Left | `Q` |
+| Strafe Right | `E` |
 | Jump | `Space` |
 | Toggle Autorun | `R` |
 
@@ -85,7 +87,7 @@ Most stutter is the browser, not the game. In order:
 | Crafting | `T` |
 | Toggle Nameplates | `V` |
 | Talents | `N` |
-| Damage Meters | `Z` |
+| Damage Meters | `H` |
 | Friends & Guild | `O` |
 | Arena (Ashen Coliseum) | `G` |
 | Vale Cup | `Y` |
@@ -119,18 +121,18 @@ Most stutter is the browser, not the game. In order:
 | Action Bar 8 | `8` |
 | Action Bar 9 | `9` |
 | Action Bar 10 | `0` |
-| Action Bar 11 | `Q` or `Minus` |
-| Action Bar 12 | `E` or `Equal` |
-| Secondary Bar 1 | `Numpad1` or `Shift+Digit1` |
-| Secondary Bar 2 | `Numpad2` or `Shift+Digit2` |
-| Secondary Bar 3 | `Numpad3` or `Shift+Digit3` |
-| Secondary Bar 4 | `Numpad4` or `Shift+Digit4` |
-| Secondary Bar 5 | `Numpad5` or `Shift+Digit5` |
-| Secondary Bar 6 | `Numpad6` or `Shift+Digit6` |
-| Secondary Bar 7 | `Numpad7` or `Shift+Digit7` |
-| Secondary Bar 8 | `Numpad8` or `Shift+Digit8` |
-| Secondary Bar 9 | `Numpad9` or `Shift+Digit9` |
-| Secondary Bar 10 | `Numpad0` or `Shift+Digit0` |
+| Action Bar 11 | `Minus` |
+| Action Bar 12 | `Equal` |
+| Secondary Bar 1 | `Numpad1` |
+| Secondary Bar 2 | `Numpad2` |
+| Secondary Bar 3 | `Numpad3` |
+| Secondary Bar 4 | `Numpad4` |
+| Secondary Bar 5 | `Numpad5` |
+| Secondary Bar 6 | `Numpad6` |
+| Secondary Bar 7 | `Numpad7` |
+| Secondary Bar 8 | `Numpad8` |
+| Secondary Bar 9 | `Numpad9` |
+| Secondary Bar 10 | `Numpad0` |
 | Secondary Bar 11 | `NumpadDecimal` |
 
 _Most actions are rebindable in Settings → Keybinds._
