@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <title>Specializations — signature abilities &amp; masteries 🎯 — World of Claudecraft</title>
+  <meta name="description" content="v0.25 reworks talents. Picking a **specialization** is now a real choice with real teeth: the moment you choose one, you're handed a **signature ability** unique to that spec and a passive **identity mastery** that scales as you level. Every one of the **27 specs** (three per class) has both.">
+  <link rel="canonical" href="https://claudehead.com/doc/reference/specializations/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="World of Claudecraft">
+  <meta property="og:title" content="Specializations — signature abilities &amp; masteries 🎯 — World of Claudecraft">
+  <meta property="og:description" content="v0.25 reworks talents. Picking a **specialization** is now a real choice with real teeth: the moment you choose one, you're handed a **signature ability** unique to that spec and a passive **identity mastery** that scales as you level. Every one of the **27 specs** (three per class) has both.">
+  <meta property="og:url" content="https://claudehead.com/doc/reference/specializations/">
+  <meta property="og:image" content="https://claudehead.com/icon-512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Specializations — signature abilities &amp; masteries 🎯 — World of Claudecraft">
+  <meta name="twitter:description" content="v0.25 reworks talents. Picking a **specialization** is now a real choice with real teeth: the moment you choose one, you're handed a **signature ability** unique to that spec and a passive **identity mastery** that scales as you level. Every one of the **27 specs** (three per class) has both.">
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=116">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#07070b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <script>try{const t=localStorage.getItem('wc_theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <nav>
+    <span class="brand" data-go="#/">World of <b>Claudecraft</b></span>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a class="link" data-go="#/doc/reference%2Fgetting-started.md">Start here</a>
+      <a class="link" data-go="#/quests">Quests</a>
+      <a class="link" data-go="#/bis">BiS</a>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">World</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/zone">🗺️ Zone guides</a>
+          <a class="link" data-go="#/map">Map</a>
+          <a class="link" data-go="#/atlas">Interactive map</a>
+          <a class="link" data-go="#/bestiary">Bestiary</a>
+          <a class="link" data-go="#/bosses">Boss strategies</a>
+          <a class="link" data-go="#/npcs">NPCs</a>
+          <a class="link" data-go="#/dungeons">Dungeons</a>
+          <a class="link" data-go="#/delves">Delves</a>
+          <a class="link" data-go="#/route">Leveling route</a>
+          <a class="link" data-go="#/chains">Quest chains</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">3D</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/questroute">Quest paths 3D</a>
+          <a class="link" data-go="#/zone3d">Zones 3D</a>
+          <a class="link" data-go="#/zone3d/00-world">Whole world 3D</a>
+          <a class="link" data-go="#/explore">Explore 3D (VR)</a>
+          <a class="link" data-go="#/assets">3D Assets</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Tools</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/tracker">✅ Progress tracker</a>
+          <a class="link" data-go="#/coach">🧭 Leveling coach</a>
+          <a class="link" data-go="#/tiers">🏅 Tier lists</a>
+          <a class="link" data-go="#/stats">📊 Stats dashboard</a>
+          <a class="link" data-go="#/builds">📖 Build compendium</a>
+          <a class="link" data-go="#/planner">🌿 Talent / build planner</a>
+          <a class="link" data-go="#/loadout">🛡 Loadout simulator</a>
+          <a class="link" data-go="#/combatlog">⚔ Combat log simulator</a>
+          <a class="link" data-go="#/droplab">🎲 Drop-rate lab</a>
+          <a class="link" data-go="#/pathfinder">🧭 Leveling pathfinder</a>
+          <a class="link" data-go="#/farming">Farming calculator</a>
+          <a class="link" data-go="#/leveltime">Time to max level</a>
+          <a class="link" data-go="#/solo">Can I solo this?</a>
+          <a class="link" data-go="#/soloclass">🥇 Ultimate solo class</a>
+          <a class="link" data-go="#/pvpclass">⚔️ Ultimate PvP class</a>
+          <a class="link" data-go="#/calc">DPS &amp; survivability</a>
+          <a class="link" data-go="#/upgrades">Gear upgrade finder</a>
+          <a class="link" data-go="#/compare">Compare gear</a>
+          <a class="link" data-go="#/drops">Where to get items</a>
+          <a class="link" data-go="#/bags">🎒 Bag planner</a>
+          <a class="link" data-go="#/haste">⚡ Haste cheat sheet</a>
+          <a class="link" data-go="#/lockpick">🔓 Lockpick practice</a>
+          <a class="link" data-go="#/rite">🔔 Rite practice</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Items</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/gear">Gear</a>
+          <a class="link" data-go="#/sets">Item sets</a>
+          <a class="link" data-go="#/consumables">Consumables</a>
+          <a class="link" data-go="#/augments">Augments</a>
+          <a class="link" data-go="#/cosmetics">Cosmetics</a>
+          <a class="link" data-go="#/doc/reference%2Fworld-market.md">World Market</a>
+          <a class="link" data-go="#/doc/reference%2Fmaterials.md">Drops & materials</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Characters</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/classes">Classes</a>
+          <a class="link" data-go="#/abilities">Abilities</a>
+          <a class="link" data-go="#/talents">Talents</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Guides</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/doc/reference%2Fbook-of-deeds.md">📖 The Book of Deeds <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fheroic-nythraxis.md">⚔️ Heroic Nythraxis <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fspecializations.md">🎯 Specializations <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fwarfare.md">🏆 Honor &amp; Warfare <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fvale-cup.md">⚽ The Vale Cup</a>
+          <a class="link" data-go="#/doc/reference%2Fprotect-yumi.md">🐱 Protect Yumi &amp; PvP</a>
+          <a class="link" data-go="#/doc/reference%2Fheroic-dungeons.md">🛡️ Heroic dungeons</a>
+          <a class="link" data-go="#/doc/reference%2Fprofessions.md">🔨 Professions</a>
+          <a class="link" data-go="#/doc/reference%2Fbank.md">🏦 The Gilded Strongbox</a>
+          <a class="link" data-go="#/doc/reference%2Fraids-and-dungeons.md">Raids &amp; dungeons</a>
+          <a class="link" data-go="#/doc/reference%2Flockpicking.md">Lockpicking</a>
+          <a class="link" data-go="#/doc/reference%2Fcompanions.md">Delve companions</a>
+          <a class="link" data-go="#/doc/reference%2Frules.md">Rules &amp; conduct</a>
+          <a class="link" data-go="#/doc/reference%2Fcombat.md">Combat maths</a>
+          <a class="link" data-go="#/doc/reference%2Fendgame.md">Endgame &amp; prestige</a>
+          <a class="link" data-go="#/doc/reference%2Ffishing.md">Fishing</a>
+          <a class="link" data-go="#/doc/reference%2Fpvp.md">PvP — Coliseum</a>
+          <a class="link" data-go="#/doc/reference%2Ftameable-beasts.md">Tameable beasts</a>
+          <a class="link" data-go="#/doc/reference%2Fwarlock-demons.md">Warlock demons</a>
+          <a class="link" data-go="#/doc/reference%2Fencounters.md">Bosses &amp; encounters</a>
+          <a class="link" data-go="#/doc/reference%2Fworld-bosses.md">⛰️ World bosses</a>
+          <a class="link" data-go="#/doc/reference%2Fdeath-and-graveyards.md">💀 Death &amp; graveyards</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">🎮 Play</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/world">🗺️ Top-down RPG</a>
+          <a class="link" data-go="#/play">🎮 Claudecraft Runner</a>
+          <a class="link" data-go="#/arena">⚔️ Boss battle</a>
+          <a class="link" data-go="#/adventure">📖 Play the lore</a>
+          <a class="link" data-go="#/cards">🃏 Trading cards</a>
+        </div>
+      </div>
+      <a class="link" data-go="#/news">🆕 What's new</a>
+      <a class="link" data-go="#/patches">Patch notes</a>
+      <a class="link" data-go="#/doc/reference%2Fsneak-peek.md">🔭 Sneak peek</a>
+      <a class="link" data-go="#/badges">🏅 Dev badges</a>
+      <a class="link" data-go="#/donate">💜 Donate</a>
+      <a class="link" data-go="#/woc">🪙 $WOC</a>
+      <a class="link" data-go="#/doc/reference%2Fget-woc.md">💳 Get $WOC</a>
+      <a class="link" data-go="#/earn">◎ Earn SOL</a>
+      <a class="link" data-go="#/supporters">🏆 Supporters</a>
+      <a class="link" data-go="#/ask">🔮 Ask the Guide</a>
+      <a class="link" href="https://claudehead.github.io/woc-play/" target="_blank" rel="noopener">▶ Play offline</a>
+      <a class="link navsearch" id="navsearch" title="Search ( / )">🔍 <span class="navctl-label">Search</span></a>
+      <span class="langwrap" title="Language">🌐 <select class="navlang" id="navlang" aria-label="Language"></select></span>
+      <a class="link navtheme" id="navtheme" title="Toggle theme">🌙 <span class="navctl-label">Theme</span></a>
+    </div>
+  </nav>
+  <main id="app"><article class="doc"><div class="wrap"><h1>Specializations — signature abilities &amp; masteries 🎯</h1>
+<p>v0.25 reworks talents. Picking a <strong>specialization</strong> is now a real choice with real teeth: the moment you choose one, you&#39;re handed a <strong>signature ability</strong> unique to that spec and a passive <strong>identity mastery</strong> that scales as you level. Every one of the <strong>27 specs</strong> (three per class) has both.</p>
+<blockquote>
+<p>🎯 <strong>The basics:</strong> at level 10 you unlock talents and pick a spec. That instantly grants your spec&#39;s <strong>signature ability</strong> (no point to spend, no node to reach) and switches on its <strong>identity mastery</strong> passive, which grows from 50% strength at level 10 to full strength at level 20. <em>Then</em> you spend your talent points — all 11 of them by cap — inside that spec&#39;s tree.</p>
+</blockquote>
+<hr>
+<h2>The 27 specializations</h2>
+<p>Each class has three specs. The name in <strong>bold</strong> is the spec&#39;s identity (its mastery); the role is in brackets.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Warrior</strong></td>
+<td>Battlecraft <em>(dps)</em></td>
+<td>Bloodrush <em>(dps)</em></td>
+<td>Ironguard <em>(tank)</em></td>
+</tr>
+<tr>
+<td><strong>Paladin</strong></td>
+<td>Sacrament <em>(heal)</em></td>
+<td>Vigil <em>(tank)</em></td>
+<td>Requital <em>(dps)</em></td>
+</tr>
+<tr>
+<td><strong>Hunter</strong></td>
+<td>Packlord <em>(dps)</em></td>
+<td>Coldsight <em>(dps)</em></td>
+<td>Fieldcraft <em>(dps)</em></td>
+</tr>
+<tr>
+<td><strong>Rogue</strong></td>
+<td>Knifework <em>(dps)</em></td>
+<td>Thuggery <em>(dps)</em></td>
+<td>Skulduggery <em>(dps)</em></td>
+</tr>
+<tr>
+<td><strong>Priest</strong></td>
+<td>Doctrine <em>(heal)</em></td>
+<td>Benison <em>(heal)</em></td>
+<td>Vespers <em>(dps)</em></td>
+</tr>
+<tr>
+<td><strong>Mage</strong></td>
+<td>Aethermancy <em>(dps)</em></td>
+<td>Pyromancy <em>(dps)</em></td>
+<td>Cryomancy <em>(dps)</em></td>
+</tr>
+<tr>
+<td><strong>Shaman</strong></td>
+<td>Thundercall <em>(dps)</em></td>
+<td>Warspirit <em>(dps)</em></td>
+<td>Spiritmend <em>(heal)</em></td>
+</tr>
+<tr>
+<td><strong>Warlock</strong></td>
+<td>Hexcraft <em>(dps)</em></td>
+<td>Pactbound <em>(dps)</em></td>
+<td>Ruination <em>(dps)</em></td>
+</tr>
+<tr>
+<td><strong>Druid</strong></td>
+<td>Moongrove <em>(dps)</em></td>
+<td>Wildfang <em>(tank)</em></td>
+<td>Groveheart <em>(heal)</em></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Signature abilities</h2>
+<p>A <strong>signature</strong> is a full ability your spec grants the instant you select it — no talent point, no gated node. Twenty-four of the 27 are brand-new abilities shipped with this update; the other three reuse an existing spell. A few:</p>
+<table>
+<thead>
+<tr>
+<th>Spec</th>
+<th>Signature</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Warrior · Battlecraft</td>
+<td><strong>Maiming Strike</strong></td>
+<td>Weapon damage + 40 bonus, 6s cooldown, extra threat</td>
+</tr>
+<tr>
+<td>Paladin · Sacrament</td>
+<td><strong>Holy Shock</strong></td>
+<td>Instant — heal a friend <em>or</em> deal Holy damage to an enemy</td>
+</tr>
+<tr>
+<td>Hunter · Packlord</td>
+<td><strong>Bestial Wrath</strong></td>
+<td>+20% attack power and +100% pet damage for 15s</td>
+</tr>
+<tr>
+<td>Mage · Cryomancy</td>
+<td><strong>Icy Veins</strong></td>
+<td>+30% spell haste and interrupt immunity for 10s</td>
+</tr>
+<tr>
+<td>Warlock · Pactbound</td>
+<td><strong>Metamorphosis</strong></td>
+<td>20s demon form: +20% spell damage &amp; cast speed</td>
+</tr>
+<tr>
+<td>Druid · Wildfang</td>
+<td><strong>Feral Charge</strong></td>
+<td>Gap-closer into the fight</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Identity masteries</h2>
+<p>Your spec&#39;s <strong>mastery</strong> is a passive that defines how it plays. It applies purely from picking the spec and <strong>scales linearly with level</strong> — half strength at level 10, full strength at 20. Some examples:</p>
+<ul>
+<li><strong>Sharpened Blades</strong> (Warrior · Battlecraft) — +15% melee ability damage, +25% physical crit damage</li>
+<li><strong>Kindled Faith</strong> (Paladin · Sacrament) — your healing crits heal for double</li>
+<li><strong>Packbond</strong> (Hunter · Packlord) — pet deals +35% damage and has +8% health</li>
+<li><strong>Brittlebreak</strong> (Mage · Cryomancy) — +25% Frostbolt/Frost Nova damage, +10% armor</li>
+<li><strong>Fiendlore</strong> (Warlock · Pactbound) — 20% of damage you take is redirected to your demon, +10% Stamina</li>
+<li><strong>Primal Heart</strong> (Druid · Wildfang) — +15% physical &amp; bleed damage, +20% threat</li>
+</ul>
+<hr>
+<h2>What changed</h2>
+<p>Before, your &quot;spec&quot; was just wherever you&#39;d sunk the most points. Now it&#39;s an <strong>explicit choice</strong> that pays off immediately — signature + mastery before you spend a single point. Points spent in another spec&#39;s tree no longer do anything (off-spec nodes go dormant), so builds are cleaner and more committed.</p>
+<p><strong>Respeccing</strong> re-picks the spec and reallocates every point, swapping your signature and mastery to match. Choose the spec that fits how you want to play — the identity is the point.</p>
+<hr>
+<p><em>See also: the <a href="#/classes">class guides</a> for full ability lists, the <a href="#/calc">DPS calculator</a> and <a href="#/tiers">tier lists</a> which model these masteries, and <a href="#/doc/reference%2Fbook-of-deeds.md">The Book of Deeds</a> — spending all 11 talent points is itself a deed.</em></p>
+</div></article></main>
+  <footer>
+    Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
+    A fan-made guide — not affiliated with the upstream project.
+    · <a data-go="#/donate" style="cursor:pointer">💜 Donate (SOL / $WOC)</a>
+    <span id="visitcount" class="visitcount" hidden></span>
+  </footer>
+  <!-- Privacy-friendly visitor analytics — pick ONE (or neither). Both are free, cookieless, GDPR-safe.
+       Leave both blank to disable all tracking.
+
+       OPTION A — Cloudflare Web Analytics (accurate; stats in the Cloudflare dashboard only):
+         1. dash.cloudflare.com → Analytics & Logs → Web Analytics → Add a site (your Pages URL).
+         2. Copy the beacon "token" and set CF_BEACON_TOKEN below.
+         (No public counter, so the footer "visits" badge stays hidden with this option.)
+
+       OPTION B — GoatCounter (also shows a live count in the footer):
+         1. Free account at https://www.goatcounter.com/ → creates <code>.goatcounter.com
+         2. Settings → tick "Allow viewing without login" (enables the footer counter).
+         3. Set ANALYTICS_CODE to your <code> (e.g. "claudehead"). Dashboard: https://<code>.goatcounter.com -->
+  <script>
+    // Community comments (Giscus / GitHub Discussions). Fill repoId + categoryId from
+    // https://giscus.app after enabling Discussions and installing the Giscus app. "" = off.
+    window.GISCUS = { repo: "claudehead/worldofclaudecraft-quests", repoId: "R_kgDOTEKczA", category: "Announcements", categoryId: "DIC_kwDOTEKczM4DAZYO" };
+    // "Ask the Guide" AI endpoint — the Cloudflare Worker in /cloudflare/ask-worker.js
+    // (holds the OpenRouter key). Set this to the deployed Worker URL to switch the AI on.
+    window.ASK_ENDPOINT = "";
+    // Optional Solana RPC for the "Earn SOL" eligibility checker. Leave "" to use public
+    // endpoints (best-effort); set a free Helius/QuickNode URL for a reliable live check.
+    window.SOLANA_RPC = "";
+    window.CF_BEACON_TOKEN = "95a0cf6d95fa430e830349daeff26c6b"; // Cloudflare Web Analytics token ("" = off)
+    window.ANALYTICS_CODE = "";  // GoatCounter subdomain ("" = off), e.g. "claudehead"
+    if (window.CF_BEACON_TOKEN) {
+      const c = document.createElement('script');
+      c.defer = true; c.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      c.setAttribute('data-cf-beacon', JSON.stringify({ token: window.CF_BEACON_TOKEN, spa: true }));
+      document.head.appendChild(c);
+    }
+    if (window.ANALYTICS_CODE) {
+      window.goatcounter = { no_onload: true }; // app.js counts each SPA route instead
+      const s = document.createElement('script');
+      s.async = true; s.src = 'https://gc.zgo.at/count.js';
+      s.setAttribute('data-goatcounter', 'https://' + window.ANALYTICS_CODE + '.goatcounter.com/count');
+      document.head.appendChild(s);
+    }
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
+  <script src="app.js?v=137"></script>
+  <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
+  <script src="features/planner.js?v=116"></script>
+  <script src="features/loadout.js?v=116"></script>
+  <script src="features/combatlog.js?v=116"></script>
+  <script src="features/droplab.js?v=116"></script>
+  <script src="features/pathfinder.js?v=116"></script>
+  <script src="features/builds.js?v=116"></script>
+  <script src="features/tracker.js?v=116"></script>
+  <script src="features/coach.js?v=116"></script>
+  <script src="features/zoneguide.js?v=116"></script>
+  <script src="features/donate.js?v=116"></script>
+  <script src="features/news.js?v=143"></script>
+  <script src="features/bags.js?v=116"></script>
+  <script src="features/haste.js?v=116"></script>
+  <script src="features/rite.js?v=127"></script>
+  <script src="features/soloclass.js?v=132"></script>
+  <script src="features/pvpclass.js?v=133"></script>
+  <script src="features/supporters.js?v=116"></script>
+  <script src="features/ask.js?v=116"></script>
+  <script src="features/woc.js?v=139"></script>
+  <script src="features/earn.js?v=139"></script>
+  <script src="features/cards.js?v=116"></script>
+  <script src="features/arena.js?v=116"></script>
+  <script src="features/adventure.js?v=116"></script>
+  <script src="features/play.js?v=141"></script>
+  <script src="features/world.js?v=141"></script>
+  <script src="features/tiers.js?v=132"></script>
+  <script src="features/dashboard.js?v=116"></script>
+  <script>
+    if ('serviceWorker' in navigator) addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
+    });
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://claudehead.com/"},{"@type":"ListItem","position":3,"name":"Specializations — signature abilities & masteries 🎯","item":"https://claudehead.com/doc/reference/specializations/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Specializations — signature abilities & masteries 🎯 — World of Claudecraft","description":"v0.25 reworks talents. Picking a **specialization** is now a real choice with real teeth: the moment you choose one, you're handed a **signature ability** unique to that spec and a passive **identity mastery** that scales as you level. Every one of the **27 specs** (three per class) has both.","url":"https://claudehead.com/doc/reference/specializations/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
+</body>
+</html>

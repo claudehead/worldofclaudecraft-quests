@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <title>The Book of Deeds — achievements &amp; Renown 📖 — World of Claudecraft</title>
+  <meta name="description" content="v0.25 adds a full achievement system: the **Book of Deeds**, **192 deeds** worth **2,365 Renown** across everything you do — levelling, dungeons, delves, PvP, collecting, exploring and story Chronicles. The rewards are **cosmetic only**: titles, nameplate badge borders, and public Renown standings. ">
+  <link rel="canonical" href="https://claudehead.com/doc/reference/book-of-deeds/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="World of Claudecraft">
+  <meta property="og:title" content="The Book of Deeds — achievements &amp; Renown 📖 — World of Claudecraft">
+  <meta property="og:description" content="v0.25 adds a full achievement system: the **Book of Deeds**, **192 deeds** worth **2,365 Renown** across everything you do — levelling, dungeons, delves, PvP, collecting, exploring and story Chronicles. The rewards are **cosmetic only**: titles, nameplate badge borders, and public Renown standings. ">
+  <meta property="og:url" content="https://claudehead.com/doc/reference/book-of-deeds/">
+  <meta property="og:image" content="https://claudehead.com/icon-512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Book of Deeds — achievements &amp; Renown 📖 — World of Claudecraft">
+  <meta name="twitter:description" content="v0.25 adds a full achievement system: the **Book of Deeds**, **192 deeds** worth **2,365 Renown** across everything you do — levelling, dungeons, delves, PvP, collecting, exploring and story Chronicles. The rewards are **cosmetic only**: titles, nameplate badge borders, and public Renown standings. ">
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=116">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#07070b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <script>try{const t=localStorage.getItem('wc_theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <nav>
+    <span class="brand" data-go="#/">World of <b>Claudecraft</b></span>
+    <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a class="link" data-go="#/doc/reference%2Fgetting-started.md">Start here</a>
+      <a class="link" data-go="#/quests">Quests</a>
+      <a class="link" data-go="#/bis">BiS</a>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">World</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/zone">🗺️ Zone guides</a>
+          <a class="link" data-go="#/map">Map</a>
+          <a class="link" data-go="#/atlas">Interactive map</a>
+          <a class="link" data-go="#/bestiary">Bestiary</a>
+          <a class="link" data-go="#/bosses">Boss strategies</a>
+          <a class="link" data-go="#/npcs">NPCs</a>
+          <a class="link" data-go="#/dungeons">Dungeons</a>
+          <a class="link" data-go="#/delves">Delves</a>
+          <a class="link" data-go="#/route">Leveling route</a>
+          <a class="link" data-go="#/chains">Quest chains</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">3D</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/questroute">Quest paths 3D</a>
+          <a class="link" data-go="#/zone3d">Zones 3D</a>
+          <a class="link" data-go="#/zone3d/00-world">Whole world 3D</a>
+          <a class="link" data-go="#/explore">Explore 3D (VR)</a>
+          <a class="link" data-go="#/assets">3D Assets</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Tools</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/tracker">✅ Progress tracker</a>
+          <a class="link" data-go="#/coach">🧭 Leveling coach</a>
+          <a class="link" data-go="#/tiers">🏅 Tier lists</a>
+          <a class="link" data-go="#/stats">📊 Stats dashboard</a>
+          <a class="link" data-go="#/builds">📖 Build compendium</a>
+          <a class="link" data-go="#/planner">🌿 Talent / build planner</a>
+          <a class="link" data-go="#/loadout">🛡 Loadout simulator</a>
+          <a class="link" data-go="#/combatlog">⚔ Combat log simulator</a>
+          <a class="link" data-go="#/droplab">🎲 Drop-rate lab</a>
+          <a class="link" data-go="#/pathfinder">🧭 Leveling pathfinder</a>
+          <a class="link" data-go="#/farming">Farming calculator</a>
+          <a class="link" data-go="#/leveltime">Time to max level</a>
+          <a class="link" data-go="#/solo">Can I solo this?</a>
+          <a class="link" data-go="#/soloclass">🥇 Ultimate solo class</a>
+          <a class="link" data-go="#/pvpclass">⚔️ Ultimate PvP class</a>
+          <a class="link" data-go="#/calc">DPS &amp; survivability</a>
+          <a class="link" data-go="#/upgrades">Gear upgrade finder</a>
+          <a class="link" data-go="#/compare">Compare gear</a>
+          <a class="link" data-go="#/drops">Where to get items</a>
+          <a class="link" data-go="#/bags">🎒 Bag planner</a>
+          <a class="link" data-go="#/haste">⚡ Haste cheat sheet</a>
+          <a class="link" data-go="#/lockpick">🔓 Lockpick practice</a>
+          <a class="link" data-go="#/rite">🔔 Rite practice</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Items</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/gear">Gear</a>
+          <a class="link" data-go="#/sets">Item sets</a>
+          <a class="link" data-go="#/consumables">Consumables</a>
+          <a class="link" data-go="#/augments">Augments</a>
+          <a class="link" data-go="#/cosmetics">Cosmetics</a>
+          <a class="link" data-go="#/doc/reference%2Fworld-market.md">World Market</a>
+          <a class="link" data-go="#/doc/reference%2Fmaterials.md">Drops & materials</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Characters</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/classes">Classes</a>
+          <a class="link" data-go="#/abilities">Abilities</a>
+          <a class="link" data-go="#/talents">Talents</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">Guides</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/doc/reference%2Fbook-of-deeds.md">📖 The Book of Deeds <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fheroic-nythraxis.md">⚔️ Heroic Nythraxis <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fspecializations.md">🎯 Specializations <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fwarfare.md">🏆 Honor &amp; Warfare <span class="news-tag">new</span></a>
+          <a class="link" data-go="#/doc/reference%2Fvale-cup.md">⚽ The Vale Cup</a>
+          <a class="link" data-go="#/doc/reference%2Fprotect-yumi.md">🐱 Protect Yumi &amp; PvP</a>
+          <a class="link" data-go="#/doc/reference%2Fheroic-dungeons.md">🛡️ Heroic dungeons</a>
+          <a class="link" data-go="#/doc/reference%2Fprofessions.md">🔨 Professions</a>
+          <a class="link" data-go="#/doc/reference%2Fbank.md">🏦 The Gilded Strongbox</a>
+          <a class="link" data-go="#/doc/reference%2Fraids-and-dungeons.md">Raids &amp; dungeons</a>
+          <a class="link" data-go="#/doc/reference%2Flockpicking.md">Lockpicking</a>
+          <a class="link" data-go="#/doc/reference%2Fcompanions.md">Delve companions</a>
+          <a class="link" data-go="#/doc/reference%2Frules.md">Rules &amp; conduct</a>
+          <a class="link" data-go="#/doc/reference%2Fcombat.md">Combat maths</a>
+          <a class="link" data-go="#/doc/reference%2Fendgame.md">Endgame &amp; prestige</a>
+          <a class="link" data-go="#/doc/reference%2Ffishing.md">Fishing</a>
+          <a class="link" data-go="#/doc/reference%2Fpvp.md">PvP — Coliseum</a>
+          <a class="link" data-go="#/doc/reference%2Ftameable-beasts.md">Tameable beasts</a>
+          <a class="link" data-go="#/doc/reference%2Fwarlock-demons.md">Warlock demons</a>
+          <a class="link" data-go="#/doc/reference%2Fencounters.md">Bosses &amp; encounters</a>
+          <a class="link" data-go="#/doc/reference%2Fworld-bosses.md">⛰️ World bosses</a>
+          <a class="link" data-go="#/doc/reference%2Fdeath-and-graveyards.md">💀 Death &amp; graveyards</a>
+        </div>
+      </div>
+      <div class="navgroup">
+        <button type="button" class="navgroupbtn">🎮 Play</button>
+        <div class="navdropdown">
+          <a class="link" data-go="#/world">🗺️ Top-down RPG</a>
+          <a class="link" data-go="#/play">🎮 Claudecraft Runner</a>
+          <a class="link" data-go="#/arena">⚔️ Boss battle</a>
+          <a class="link" data-go="#/adventure">📖 Play the lore</a>
+          <a class="link" data-go="#/cards">🃏 Trading cards</a>
+        </div>
+      </div>
+      <a class="link" data-go="#/news">🆕 What's new</a>
+      <a class="link" data-go="#/patches">Patch notes</a>
+      <a class="link" data-go="#/doc/reference%2Fsneak-peek.md">🔭 Sneak peek</a>
+      <a class="link" data-go="#/badges">🏅 Dev badges</a>
+      <a class="link" data-go="#/donate">💜 Donate</a>
+      <a class="link" data-go="#/woc">🪙 $WOC</a>
+      <a class="link" data-go="#/doc/reference%2Fget-woc.md">💳 Get $WOC</a>
+      <a class="link" data-go="#/earn">◎ Earn SOL</a>
+      <a class="link" data-go="#/supporters">🏆 Supporters</a>
+      <a class="link" data-go="#/ask">🔮 Ask the Guide</a>
+      <a class="link" href="https://claudehead.github.io/woc-play/" target="_blank" rel="noopener">▶ Play offline</a>
+      <a class="link navsearch" id="navsearch" title="Search ( / )">🔍 <span class="navctl-label">Search</span></a>
+      <span class="langwrap" title="Language">🌐 <select class="navlang" id="navlang" aria-label="Language"></select></span>
+      <a class="link navtheme" id="navtheme" title="Toggle theme">🌙 <span class="navctl-label">Theme</span></a>
+    </div>
+  </nav>
+  <main id="app"><article class="doc"><div class="wrap"><h1>The Book of Deeds — achievements &amp; Renown 📖</h1>
+<p>v0.25 adds a full achievement system: the <strong>Book of Deeds</strong>, <strong>192 deeds</strong> worth <strong>2,365 Renown</strong> across everything you do — levelling, dungeons, delves, PvP, collecting, exploring and story Chronicles. The rewards are <strong>cosmetic only</strong>: titles, nameplate badge borders, and public Renown standings. Nothing here ever makes your hero stronger.</p>
+<blockquote>
+<p>📖 <strong>The basics:</strong> open the <strong>Book of Deeds</strong> window to see your deeds by category, <strong>pin</strong> ones you&#39;re chasing to the HUD tracker, and earn <strong>Renown</strong> as you complete them. Renown only ever climbs, and it&#39;s totalled on the realm <strong>Leaderboard → Renown</strong> tab.</p>
+</blockquote>
+<hr>
+<h2>The eleven categories</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Deeds</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Progression</strong></td>
+<td>30</td>
+<td>Levelling, XP, talent points, prestige</td>
+</tr>
+<tr>
+<td><strong>Dungeon</strong></td>
+<td>27</td>
+<td>Every dungeon + the raid, normal and Heroic</td>
+</tr>
+<tr>
+<td><strong>PvP</strong></td>
+<td>27</td>
+<td>Arena, Vale Cup, Fiesta</td>
+</tr>
+<tr>
+<td><strong>Chronicle</strong></td>
+<td>24</td>
+<td>Per-zone story arcs (the Chroniclers)</td>
+</tr>
+<tr>
+<td><strong>Collection</strong></td>
+<td>24</td>
+<td>Discovering items, sets, wardrobe</td>
+</tr>
+<tr>
+<td><strong>Social</strong></td>
+<td>16</td>
+<td>Party, market, bank</td>
+</tr>
+<tr>
+<td><strong>Delve</strong></td>
+<td>13</td>
+<td>Reliquary &amp; Drowned Litany, companions</td>
+</tr>
+<tr>
+<td><strong>Combat</strong></td>
+<td>10</td>
+<td>Kills, world bosses</td>
+</tr>
+<tr>
+<td><strong>Exploration</strong></td>
+<td>9</td>
+<td>Visiting every named place</td>
+</tr>
+<tr>
+<td><strong>Hidden</strong></td>
+<td>9</td>
+<td>Secret deeds (see below)</td>
+</tr>
+<tr>
+<td><strong>Feat</strong></td>
+<td>3</td>
+<td>Legacy &quot;feats of strength&quot;</td>
+</tr>
+</tbody></table>
+<p>A few examples of what a deed looks like:</p>
+<ul>
+<li><strong>First Steps</strong> — reach level 2 <em>(5 Renown)</em></li>
+<li><strong>The View From the Top</strong> — reach the level-20 cap <em>(25)</em></li>
+<li><strong>Legion of One</strong> — defeat 10,000 enemies <em>(25)</em></li>
+<li><strong>The Mountain Fell</strong> — kill the world boss Thunzharr at Stormcrag <em>(25)</em></li>
+<li><strong>Cryptbreaker</strong> — defeat Morthen in Hollow Crypt <em>(5)</em></li>
+<li><strong>The Grand Catalogue</strong> — discover 250 items <em>(50, grants a badge border)</em></li>
+<li><strong>World Traveler</strong> — earn all three zone wayfarer deeds <em>(25, title &quot;the Wayfarer&quot;)</em></li>
+</ul>
+<hr>
+<h2>Renown, rarity &amp; standings</h2>
+<p><strong>Renown</strong> is the score attached to each deed. It&#39;s per-character to earn, but the <strong>realm leaderboard</strong> aggregates your Renown across <em>all</em> your characters (each deed counted once), and it only ever goes up.</p>
+<p>The window shows each deed&#39;s <strong>rarity</strong> — the fraction of eligible players who&#39;ve earned it — so you can see at a glance which of your deeds are genuinely rare. Public <strong>Renown standings</strong> live on the in-game <strong>Leaderboard → Renown</strong> tab, not on this wiki.</p>
+<blockquote>
+<p>💡 Some deeds are worth <strong>0 Renown</strong> by design — luck-based rolls, set/quality unlocks, and every <strong>Feat of Strength</strong>. They still show in your book; they just don&#39;t move your score.</p>
+</blockquote>
+<hr>
+<h2>Rewards: titles &amp; badge borders</h2>
+<p><strong>19 titles</strong> are tied to deeds. The title unlocks automatically the moment you earn its deed, but <em>wearing</em> it is your choice — set your <strong>active title</strong> and it rides along on your nameplate, in chat, and on the boards. Examples: <strong>Paragon</strong> (1,000,000 lifetime XP), <strong>Gladiator</strong> (1900 arena rating), <strong>Boarball Legend</strong> (25 rated Vale Cup wins), <strong>the Deathless</strong> (Heroic Nythraxis with no raider deaths), <strong>Peakbreaker</strong> (kill Thunzharr without dying).</p>
+<p><strong>3 badge borders</strong> frame your name with a cosmetic crest:</p>
+<table>
+<thead>
+<tr>
+<th>Border</th>
+<th>Deed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Prestige Laurels</strong></td>
+<td>Perpetual Motion — reach prestige rank 10</td>
+</tr>
+<tr>
+<td><strong>Deepward</strong></td>
+<td>Deepward — clear every dungeon, the raid and both delves on Heroic</td>
+</tr>
+<tr>
+<td><strong>Curator&#39;s Gilt</strong></td>
+<td>The Grand Catalogue — discover 250 items</td>
+</tr>
+</tbody></table>
+<p>Like titles, borders are power-neutral — pure prestige.</p>
+<hr>
+<h2>Hidden deeds</h2>
+<p>Nine deeds are <strong>hidden</strong>: they don&#39;t appear in the catalogue and reveal only once you&#39;ve earned them. They&#39;re excluded from the &quot;complete the whole book&quot; meta, so you never <em>need</em> them. A few in the wild:</p>
+<ul>
+<li><strong>A Footnote in History</strong> — pester <strong>Saul the Chronicler</strong> nine times in a row without talking to anyone else <em>(title &quot;the Footnote&quot;)</em></li>
+<li><strong>Joined the Family</strong> — a certain Mirefen questline&#39;s secret ending</li>
+<li><strong>Natural Hundred</strong> — roll a perfect 100 on <code>/roll</code> <em>(0 Renown — pure luck)</em></li>
+</ul>
+<hr>
+<h2>The Chroniclers</h2>
+<p>Three <strong>Chronicler NPCs</strong> — <strong>Saul</strong>, <strong>Osric Fenn</strong> and <strong>Edda Hartwell</strong> — anchor the story <strong>Chronicle</strong> deeds, one arc per zone, and track the places you&#39;ve visited for the exploration deeds. There&#39;s no single &quot;achievements NPC&quot;: the Book itself is a UI window; the Chroniclers are its in-world flavour. (Saul also quietly counts your consecutive chats for that Footnote deed…)</p>
+<hr>
+<p><em>See also: <a href="#/doc/reference%2Fendgame.md">Endgame &amp; prestige</a>, <a href="#/doc/reference%2Fheroic-dungeons.md">Heroic dungeons</a> and <a href="#/doc/reference%2Fheroic-nythraxis.md">Heroic Nythraxis</a> for the toughest deeds, and the <a href="#/doc/reference%2Fvale-cup.md">Vale Cup</a> &amp; <a href="#/doc/reference%2Fprotect-yumi.md">Arena PvP</a> for the PvP ones.</em></p>
+</div></article></main>
+  <footer>
+    Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
+    A fan-made guide — not affiliated with the upstream project.
+    · <a data-go="#/donate" style="cursor:pointer">💜 Donate (SOL / $WOC)</a>
+    <span id="visitcount" class="visitcount" hidden></span>
+  </footer>
+  <!-- Privacy-friendly visitor analytics — pick ONE (or neither). Both are free, cookieless, GDPR-safe.
+       Leave both blank to disable all tracking.
+
+       OPTION A — Cloudflare Web Analytics (accurate; stats in the Cloudflare dashboard only):
+         1. dash.cloudflare.com → Analytics & Logs → Web Analytics → Add a site (your Pages URL).
+         2. Copy the beacon "token" and set CF_BEACON_TOKEN below.
+         (No public counter, so the footer "visits" badge stays hidden with this option.)
+
+       OPTION B — GoatCounter (also shows a live count in the footer):
+         1. Free account at https://www.goatcounter.com/ → creates <code>.goatcounter.com
+         2. Settings → tick "Allow viewing without login" (enables the footer counter).
+         3. Set ANALYTICS_CODE to your <code> (e.g. "claudehead"). Dashboard: https://<code>.goatcounter.com -->
+  <script>
+    // Community comments (Giscus / GitHub Discussions). Fill repoId + categoryId from
+    // https://giscus.app after enabling Discussions and installing the Giscus app. "" = off.
+    window.GISCUS = { repo: "claudehead/worldofclaudecraft-quests", repoId: "R_kgDOTEKczA", category: "Announcements", categoryId: "DIC_kwDOTEKczM4DAZYO" };
+    // "Ask the Guide" AI endpoint — the Cloudflare Worker in /cloudflare/ask-worker.js
+    // (holds the OpenRouter key). Set this to the deployed Worker URL to switch the AI on.
+    window.ASK_ENDPOINT = "";
+    // Optional Solana RPC for the "Earn SOL" eligibility checker. Leave "" to use public
+    // endpoints (best-effort); set a free Helius/QuickNode URL for a reliable live check.
+    window.SOLANA_RPC = "";
+    window.CF_BEACON_TOKEN = "95a0cf6d95fa430e830349daeff26c6b"; // Cloudflare Web Analytics token ("" = off)
+    window.ANALYTICS_CODE = "";  // GoatCounter subdomain ("" = off), e.g. "claudehead"
+    if (window.CF_BEACON_TOKEN) {
+      const c = document.createElement('script');
+      c.defer = true; c.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      c.setAttribute('data-cf-beacon', JSON.stringify({ token: window.CF_BEACON_TOKEN, spa: true }));
+      document.head.appendChild(c);
+    }
+    if (window.ANALYTICS_CODE) {
+      window.goatcounter = { no_onload: true }; // app.js counts each SPA route instead
+      const s = document.createElement('script');
+      s.async = true; s.src = 'https://gc.zgo.at/count.js';
+      s.setAttribute('data-goatcounter', 'https://' + window.ANALYTICS_CODE + '.goatcounter.com/count');
+      document.head.appendChild(s);
+    }
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
+  <script src="app.js?v=137"></script>
+  <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
+  <script src="features/planner.js?v=116"></script>
+  <script src="features/loadout.js?v=116"></script>
+  <script src="features/combatlog.js?v=116"></script>
+  <script src="features/droplab.js?v=116"></script>
+  <script src="features/pathfinder.js?v=116"></script>
+  <script src="features/builds.js?v=116"></script>
+  <script src="features/tracker.js?v=116"></script>
+  <script src="features/coach.js?v=116"></script>
+  <script src="features/zoneguide.js?v=116"></script>
+  <script src="features/donate.js?v=116"></script>
+  <script src="features/news.js?v=143"></script>
+  <script src="features/bags.js?v=116"></script>
+  <script src="features/haste.js?v=116"></script>
+  <script src="features/rite.js?v=127"></script>
+  <script src="features/soloclass.js?v=132"></script>
+  <script src="features/pvpclass.js?v=133"></script>
+  <script src="features/supporters.js?v=116"></script>
+  <script src="features/ask.js?v=116"></script>
+  <script src="features/woc.js?v=139"></script>
+  <script src="features/earn.js?v=139"></script>
+  <script src="features/cards.js?v=116"></script>
+  <script src="features/arena.js?v=116"></script>
+  <script src="features/adventure.js?v=116"></script>
+  <script src="features/play.js?v=141"></script>
+  <script src="features/world.js?v=141"></script>
+  <script src="features/tiers.js?v=132"></script>
+  <script src="features/dashboard.js?v=116"></script>
+  <script>
+    if ('serviceWorker' in navigator) addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
+    });
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://claudehead.com/"},{"@type":"ListItem","position":3,"name":"The Book of Deeds — achievements & Renown 📖","item":"https://claudehead.com/doc/reference/book-of-deeds/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Book of Deeds — achievements & Renown 📖 — World of Claudecraft","description":"v0.25 adds a full achievement system: the **Book of Deeds**, **192 deeds** worth **2,365 Renown** across everything you do — levelling, dungeons, delves, PvP, collecting, exploring and story Chronicles. The rewards are **cosmetic only**: titles, nameplate badge borders, and public Renown standings. Nothing here ever makes your hero stronger.","url":"https://claudehead.com/doc/reference/book-of-deeds/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
+</body>
+</html>

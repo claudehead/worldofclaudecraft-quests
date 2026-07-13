@@ -70,6 +70,10 @@ for (const g of [
   ['Heroic dungeons & jewelry', 'reference/heroic-dungeons.md'],
   ['Professions & crafting endgame', 'reference/professions.md'],
   ['The Gilded Strongbox (bank)', 'reference/bank.md'],
+  ['The Book of Deeds — achievements', 'reference/book-of-deeds.md'],
+  ['Heroic Nythraxis — the raid', 'reference/heroic-nythraxis.md'],
+  ['Specializations — signature abilities', 'reference/specializations.md'],
+  ['Honor & Warfare PvP', 'reference/warfare.md'],
   ['Sneak peek (upcoming branches)', 'reference/sneak-peek.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
 

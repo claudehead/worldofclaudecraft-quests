@@ -6,13 +6,12 @@
   const { el, esc, registerView, app } = window.WOC;
 
   const GAME = [
-    ['⚽', 'The Vale Cup', 'A full boarball (football) minigame at the Sowfield stadium in Eastbrook Vale — 1v1 to 5v5 queues, sport role kits, bot backfill, spectator betting, and player + guild leaderboards.', '#/doc/' + encodeURIComponent('reference/vale-cup.md'), 'How to play'],
-    ['🛡️', 'Heroic dungeons', 'All four 5-player dungeons gain a Heroic difficulty (retuned level-22 mobs) dropping Heroic Marks — spend them at the new Heroic Quartermaster in Highwatch, the game\'s only source of neck and ring jewelry.', '#/doc/' + encodeURIComponent('reference/heroic-dungeons.md'), 'Heroic guide'],
-    ['🔨', 'Professions, completed', 'The professions endgame lands: your active archetype gates crafting power, with specialization perks, combo recipes, ten crafts on a ring, and a level-20 crafting hub at Highwatch.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Professions guide'],
-    ['🏦', 'The Gilded Strongbox', 'A personal bank vault at the bursar in every hub town — 24 slots to start, expandable to 96 (112 with bonuses), with filters, search and deposit-all. Somewhere, at last, to stash your loot.', '#/doc/' + encodeURIComponent('reference/bank.md'), 'Bank guide'],
-    ['🐱', 'Protect Yumi', 'A new 3v3/5v5 objective PvP mode: each team guards a 5,000-HP cat familiar inside a braided maze, with simultaneous cat teleports and a sudden-death finish.', '#/doc/' + encodeURIComponent('reference/protect-yumi.md'), 'How to play'],
-    ['💎', 'Itemization wave', 'New Crit Rating and Haste Rating gear stats, signature procs on both legendary weapons, weapon-scaled Hunter Auto Shot, and a 4-piece proc bonus on every epic set. Our combat tools are recomputed to match.', '#/gear', 'Browse gear'],
-    ['📱', 'A real mobile HUD', 'First-class touch controls — a proper mobile HUD, plus display-side movement prediction that makes online play feel as smooth as offline.', '#/patches', 'Technical changelog'],
+    ['📖', 'The Book of Deeds', '192 achievements worth 2,365 Renown across levelling, dungeons, delves, PvP, collecting, exploring and story Chronicles. Rewards are cosmetic — 19 titles, three nameplate badge borders, and public Renown standings.', '#/doc/' + encodeURIComponent('reference/book-of-deeds.md'), 'How it works'],
+    ['⚔️', 'Heroic Nythraxis', 'The 10-player raid gains a Heroic tier: the summoned Deathless Court, a raid-heal channel you must crowd-control (Malric\'s Mending), raid-tier heroic gear, and three heroic-only weapons.', '#/doc/' + encodeURIComponent('reference/heroic-nythraxis.md'), 'Raid guide'],
+    ['🎯', 'Talents 2.0 — specializations', 'Picking any of the 27 specs now grants a real signature ability and a level-scaled identity mastery — before you spend a single point. 24 brand-new abilities ship with it.', '#/doc/' + encodeURIComponent('reference/specializations.md'), 'Spec guide'],
+    ['🏆', 'Honor & Warfare PvP', 'A PvP gear track: earn Honor from ranked arena and the Fiesta, spend it with the Honor Quartermaster on Warfare gear — four armor sets, necks, rings and weapons carrying a PvP-only offense/defense rating.', '#/doc/' + encodeURIComponent('reference/warfare.md'), 'How to play'],
+    ['💄', 'Claudium & Season 1 Armory', 'A cosmetics storefront and the first seasonal armory — character skins, weapon skins and identity tools. Presentation-only: richer world models and bag art land alongside.', '#/patches', 'Technical changelog'],
+    ['🎮', 'A rebuilt /play', 'The online entry point is rebuilt as online-only, with player mute and identity controls, a production sound workflow, and a broad reliability and operations pass.', '#/patches', 'Technical changelog'],
   ];
 
   const GUIDE = [
@@ -34,15 +33,15 @@
       <h1 class="reveal">What's New 🆕</h1>
       <p class="sub reveal">The latest from World of Claudecraft, and everything new in this guide.</p>
 
-      <h2 class="news-h reveal">🎮 Game — v0.23.0 <span class="news-tag">the biggest content release yet · 680 commits</span></h2>
-      <p class="meta reveal">Two new game modes (the Vale Cup and Protect Yumi), Heroic dungeons with fresh jewelry, the professions endgame, a personal bank, an itemization wave, and a real mobile HUD. Here's what made it into the guide:</p>
+      <h2 class="news-h reveal">🎮 Game — v0.25.0 <span class="news-tag">progression · endgame · PvP · 350 commits</span></h2>
+      <p class="meta reveal">The Book of Deeds achievement system, a Heroic tier for the Nythraxis raid, Talents 2.0 signature abilities and identity masteries for all 27 specs, Honor &amp; Warfare PvP progression, and the Claudium cosmetics store. Here's what made it into the guide:</p>
       <div class="news-grid">${GAME.map(gCard).join('')}</div>
 
       <h2 class="news-h reveal">📚 The guide — new tools</h2>
       <p class="meta reveal">Beyond the reference, the guide now has new tools built on the real game data:</p>
       <div class="news-grid">${GUIDE.map(uCard).join('')}</div>
 
-      <p class="meta" style="margin-top:2rem">Catching up? The <b>v0.22</b> terrain overhaul, the <b>v0.21</b> gathering &amp; professions pass, and the <b>v0.20</b> Drowned Litany delve, first world boss and haste are all in the <a data-go="#/patches">patch notes</a>.</p>
+      <p class="meta" style="margin-top:2rem">Catching up? <b>v0.24</b> was a polish &amp; infrastructure release (heroic-loot reliability, ready checks, sign-in), and <b>v0.23</b> brought the <a data-go="#/doc/reference%2Fvale-cup.md">Vale Cup</a>, <a data-go="#/doc/reference%2Fprotect-yumi.md">Protect Yumi</a>, <a data-go="#/doc/reference%2Fheroic-dungeons.md">Heroic dungeons</a>, <a data-go="#/doc/reference%2Fprofessions.md">professions</a> and the <a data-go="#/doc/reference%2Fbank.md">bank</a>. Full history in the <a data-go="#/patches">patch notes</a>.</p>
     </div></section>`));
   }
   registerView('news', view);
