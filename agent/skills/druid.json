@@ -392,10 +392,23 @@
       "school": "nature",
       "requiresTarget": false,
       "desc": "Calls a hurricane onto the target area for 6 sec, battering enemies for $d Nature damage each second."
+    },
+    {
+      "id": "skull_bash",
+      "name": "Headbutt",
+      "learnLevel": 10,
+      "cost": 10,
+      "cooldown": 15,
+      "range": 8,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "A lunging headbutt that interrupts the target's spellcast and locks that school for 4 sec."
     }
   ],
   "rotation": [
     "bash",
+    "skull_bash",
     "bear_charge",
     "growl",
     "pounce",

@@ -200,10 +200,23 @@
       "school": "physical",
       "requiresTarget": true,
       "desc": "Taunts the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec."
+    },
+    {
+      "id": "pummel",
+      "name": "Jawcrack",
+      "learnLevel": 10,
+      "cost": 10,
+      "cooldown": 10,
+      "range": 0,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "Interrupts the target's spellcast and prevents casting from that school for 4 sec."
     }
   ],
   "rotation": [
     "charge",
+    "pummel",
     "taunt",
     "overpower",
     "heroic_strike",

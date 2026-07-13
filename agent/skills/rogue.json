@@ -260,12 +260,25 @@
       "school": "physical",
       "requiresTarget": false,
       "desc": "Conceals you in the shadows: enemies barely notice you, but you move 50% slower. Attacking or taking damage breaks Duskveil. Cast again to step out."
+    },
+    {
+      "id": "kick",
+      "name": "Boot",
+      "learnLevel": 10,
+      "cost": 25,
+      "cooldown": 10,
+      "range": 0,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "Interrupts the target's spellcast and prevents casting from that school for 4 sec."
     }
   ],
   "rotation": [
     "blind",
     "kidney_shot",
     "gouge",
+    "kick",
     "backstab",
     "cheap_shot",
     "ambush",

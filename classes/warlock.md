@@ -10,13 +10,13 @@
 
 ## Specializations
 
-- **Hexcraft** — _DPS_. Signature ability: **Consume** (learned at level 10).
-- **Pactbound** — _DPS_. Signature ability: **Fiendhide** (learned at level 1).
-- **Ruination** — _DPS_. Signature ability: **Duskfire** (learned at level 20).
+- **Hexcraft** — _DPS_. Signature ability: **Veinleech** (learned at level 10).
+- **Pactbound** — _DPS_. Signature ability: **Dread Aspect** (learned at level 10).
+- **Ruination** — _DPS_. Signature ability: **Conflagrate** (learned at level 10).
 
 ## Abilities
 
-18 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+22 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -28,7 +28,11 @@
 | Hard Bargain | 6 _(ranks: 14, 20)_ | — | Instant | — | Melee | Shadow | Converts X health into X mana. |
 | Hex of Anguish | 8 _(ranks: 14, 20)_ | 25 | Instant | — | 30 | Shadow | Curses the target with agony: X Shadow damage over 24 sec. |
 | Summon Gloomshade | 8 | 80 | 5s | — | Melee | Shadow | Summons a Gloomshade under the command of the Warlock. The Gloomshade is a sturdy demon that taunts your enemies and soaks up punishment. Summoning a new demon dismisses your current one. You may have one demon at a time. |
+| Conflagrate | 10 | 55 | Instant | 6s | 30 | Fire | Consumes your Immolate on the enemy to ignite them for X Fire damage. (Destruction signature) |
 | Consume | 10 _(ranks: 14, 20)_ | 35 | Instant | — | 20 | Shadow | Drains the target's life, transferring X health to you each second for 5 sec. |
+| Dread Aspect | 10 | 75 | Instant | 3 min | Melee | Shadow | Transform into a monstrous demon for 20 sec, increasing your spell damage by 20% and casting speed by 20%. Your demon gains 50% damage and 20% casting speed. (Demonology signature) |
+| Gag Order | 10 | 35 | Instant | 24s | 30 | Physical | Silences the target mid-cast and prevents casting from that school for 5 sec. |
+| Veinleech | 10 | 45 | Instant | — | 30 | Shadow | Siphons life from the enemy, causing X Shadow damage over 30 sec and healing you for the damage done. (Affliction signature) |
 | Summon Duskborn | 12 | 100 | 5s | — | Melee | Shadow | Summons a Duskborn under the command of the Warlock. The Duskborn is a fragile demon that strikes quickly and hits hard in melee. Summoning a new demon dismisses your current one. You may have one demon at a time. |
 | Harrow | 14 | 40 | 1.5s | — | 20 | Shadow | Strikes terror into the enemy, leaving it cowering for up to 8 sec. Any damage breaks the effect. |
 | Summon Spellhound | 14 | 120 | 5s | — | Melee | Shadow | Summons a Spellhound under the command of the Warlock. The Spellhound harries enemies from range with Gloombite and excels at hunting spellcasters. Summoning a new demon dismisses your current one. You may have one demon at a time. |

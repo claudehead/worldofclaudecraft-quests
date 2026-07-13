@@ -188,9 +188,22 @@
       "school": "physical",
       "requiresTarget": false,
       "desc": "Rains arrows on the target area for 3 sec, dealing $d damage every 0.5 sec to enemies caught in it."
+    },
+    {
+      "id": "counter_shot",
+      "name": "Hushing Shot",
+      "learnLevel": 10,
+      "cost": 35,
+      "cooldown": 20,
+      "range": 35,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "A snap shot that interrupts the target's spellcast and locks that school for 4 sec."
     }
   ],
   "rotation": [
+    "counter_shot",
     "concussive_shot",
     "arcane_shot",
     "raptor_strike",

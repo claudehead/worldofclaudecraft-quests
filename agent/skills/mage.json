@@ -188,9 +188,22 @@
       "school": "fire",
       "requiresTarget": false,
       "desc": "Calls down a burst of flame at the target area, dealing $d Fire damage to enemies caught in the blast."
+    },
+    {
+      "id": "counterspell",
+      "name": "Spellbreak",
+      "learnLevel": 10,
+      "cost": 45,
+      "cooldown": 24,
+      "range": 30,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "Counters the target's spellcast and prevents casting from that school for 6 sec."
     }
   ],
   "rotation": [
+    "counterspell",
     "fire_blast",
     "arcane_missiles",
     "polymorph",

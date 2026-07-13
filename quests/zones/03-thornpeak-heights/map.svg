@@ -139,6 +139,8 @@
 <text x="537.0" y="1926.2" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Auctioneer Voss</text>
 <circle cx="460.3" cy="1926.0" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
 <text x="460.3" y="1918.0" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Bursar Aldous Crane</text>
+<circle cx="498.6" cy="1871.2" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="498.6" y="1863.2" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Chronicler Zenzie</text>
 <text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">Thornpeak Heights — N ↑</text>
 <rect x="10" y="2512" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
 <rect x="18" y="2519" width="11" height="11" fill="#f0c419"/>

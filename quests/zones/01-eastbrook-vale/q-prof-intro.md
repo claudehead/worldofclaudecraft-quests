@@ -10,7 +10,7 @@
 
 ## Story
 
-> Every soul in Eastbrook works a trade besides the sword, <your name>. There's ore veins scattered round town, so go swing a pick and bring me 5 chunks. Mine them yourself, mind; I'll know the difference.
+> Every soul in Eastbrook works a trade besides the sword, <your name>. There's ore veins in the rocks around the Copper Dig, southwest of town, so go swing a pick and bring me 5 chunks. Mine them yourself, mind; I'll know the difference.
 
 ## How to complete
 

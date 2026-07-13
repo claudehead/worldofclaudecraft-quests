@@ -107,8 +107,8 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-arcane_dust"></a>Arcane Dust | — | sells for 6c |
 | <a id="item-arcane_essence"></a>Arcane Essence | — | sells for 18c |
 | <a id="item-arcane_shard"></a>Arcane Shard | — | sells for 55c |
-| <a id="item-arcanite_bar"></a>Arcanite Bar | — | sells for 40c |
-| <a id="item-ashwood_log"></a>Ashwood Log | — | sells for 15c |
+| <a id="item-arcanite_bar"></a>Arcanite Bar | vendor (Quartermaster Bree) | sells for 40c |
+| <a id="item-ashwood_log"></a>Ashwood Log | vendor (Quartermaster Bree) | sells for 15c |
 | <a id="item-bogiron_nugget"></a>Bogiron Nugget | [Mirefen Troll](../quests/zones/02-mirefen-marsh/bestiary.md#mob-fen_troll) 30% | sells for 12c |
 | <a id="item-bone_fragments"></a>Bone Fragments | [Captain Verlan](../quests/zones/01-eastbrook-vale/bestiary.md#mob-captain_verlan) 100%, Wraithbinder Maldrec 100%, Fallen Captain Aldren 100%, +9 more | sells for 7c |
 | <a id="item-stag_antler"></a>Branching Antler | — | sells for 8c |
@@ -119,10 +119,10 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-wolf_fang"></a>Cracked Wolf Fang | [Old Greyjaw](../quests/zones/01-eastbrook-vale/bestiary.md#mob-old_greyjaw) 100%, [Forest Wolf](../quests/zones/01-eastbrook-vale/bestiary.md#mob-forest_wolf) 45% | sells for 4c |
 | <a id="item-cracked_wyrm_scale"></a>Cracked Wyrm Scale | [Sanctum Scaleguard](../quests/zones/03-thornpeak-heights/bestiary.md#mob-sanctum_drakonid) 50% | sells for 35c |
 | <a id="item-deepfen_pearl"></a>Deepfen Pearl | [Vael the Fogbinder](../quests/zones/02-mirefen-marsh/bestiary.md#mob-vael_the_mistcaller) 100% | sells for 600c |
-| <a id="item-elderwood_log"></a>Elderwood Log | — | sells for 40c |
+| <a id="item-elderwood_log"></a>Elderwood Log | vendor (Quartermaster Bree) | sells for 40c |
 | <a id="item-emberwing_cinderscale"></a>Emberwing Cinderscale | [Voskar the Emberwing](../quests/zones/03-thornpeak-heights/bestiary.md#mob-voskar_emberwing) 100% | sells for 320c |
 | <a id="item-frayed_prayer_beads"></a>Frayed Prayer Beads | Corrupted Priest Malric 50%, [Wyrmcult Zealot](../quests/zones/03-thornpeak-heights/bestiary.md#mob-wyrmcult_zealot) 35% | sells for 30c |
-| <a id="item-goldleaf_herb"></a>Goldleaf Herb | — | sells for 15c |
+| <a id="item-goldleaf_herb"></a>Goldleaf Herb | vendor (Quartermaster Bree) | sells for 15c |
 | <a id="item-tallow_candle"></a>Greasy Tallow Lump | Grix the Tunnelking 100%, [Sister Nhalia](../quests/zones/02-mirefen-marsh/bestiary.md#mob-sister_nhalia) 100%, [Deacon Voss](../quests/zones/02-mirefen-marsh/bestiary.md#mob-deacon_voss) 100%, +4 more | sells for 5c |
 | <a id="item-inert_storm_shard"></a>Inert Storm Shard | [Shardlord Kazzix](../quests/zones/03-thornpeak-heights/bestiary.md#mob-shardlord_kazzix) 100%, Thunzharr, the Waking Peak 100%, [Stormcrag Elemental](../quests/zones/03-thornpeak-heights/bestiary.md#mob-stormcrag_elemental) 40% | sells for 28c |
 | <a id="item-linen_scrap"></a>Linen Scrap | [Mogger](../quests/zones/01-eastbrook-vale/bestiary.md#mob-mogger) 100%, [Hollow Acolyte](../quests/zones/01-eastbrook-vale/bestiary.md#mob-hollow_acolyte) 60%, [Tidebound Acolyte](../quests/zones/02-mirefen-marsh/bestiary.md#mob-tidebound_acolyte) 50%, +6 more | sells for 3c |
@@ -135,7 +135,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-soft_down"></a>Soft Down Tuft | — | sells for 4c |
 | <a id="item-soggy_boot"></a>Soggy Boot | — | sells for 1c |
 | <a id="item-soggy_moccasin"></a>Soggy Moccasin | [Mire Prowler](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mire_prowler) 30% | sells for 9c |
-| <a id="item-sunpetal_herb"></a>Sunpetal Herb | — | sells for 40c |
+| <a id="item-sunpetal_herb"></a>Sunpetal Herb | vendor (Quartermaster Bree) | sells for 40c |
 | <a id="item-tangled_weed"></a>Tangled Weed | [Bog Bloat](../quests/zones/02-mirefen-marsh/bestiary.md#mob-bog_bloat) 50% | sells for 1c |
-| <a id="item-thorium_ore"></a>Thorium Ore | — | sells for 15c |
+| <a id="item-thorium_ore"></a>Thorium Ore | vendor (Quartermaster Bree) | sells for 15c |
 | <a id="item-spider_leg"></a>Twitching Spider Leg | [The Broodmother](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mirefen_broodmother) 100%, [Bonechill Widow](../quests/zones/01-eastbrook-vale/bestiary.md#mob-bonechill_widow) 70%, Glimmerscale Lurker 50%, +2 more | sells for 4c |

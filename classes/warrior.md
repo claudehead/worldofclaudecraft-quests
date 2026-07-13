@@ -16,7 +16,7 @@
 
 ## Abilities
 
-31 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+32 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -42,6 +42,7 @@
 | Bloodletting | 10 | 30 | Instant | 6s | Melee | Physical | Instantly attack in a blood frenzy for 60% weapon damage plus X. (Fury signature) |
 | Goad | 10 | — | Instant | 10s | 8 | Physical | Taunts the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec. |
 | Guarded Stance | 10 | — | Instant | 1s | Melee | Physical | A defensive combat stance: you generate 30% more threat but deal and take 10% less damage. Cast again to leave the stance. |
+| Jawcrack | 10 | 10 | Instant | 10s | Melee | Physical | Interrupts the target's spellcast and prevents casting from that school for 4 sec. |
 | Maiming Strike | 10 | 30 | Instant | 6s | Melee | Physical | A vicious strike dealing weapon damage plus X. (Arms signature) |
 | Redhand | 10 _(ranks: 16)_ | 5 | Instant | 5s | Melee | Physical | Instant attack for weapon damage plus X. Only usable after the target dodges. Cannot be dodged. |
 | Seething Fury | 10 | — | Instant | 30s | Melee | Physical | Enter a berserker rage, generating 20 rage. (Warrior talent) |

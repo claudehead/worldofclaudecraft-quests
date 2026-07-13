@@ -10,13 +10,13 @@
 
 ## Specializations
 
-- **Moongrove** — _DPS_. Signature ability: **Skyfall** (learned at level 18).
-- **Wildfang** — _Tank_. Signature ability: **Bruin Form** (learned at level 10).
-- **Groveheart** — _Healer_. Signature ability: **Second Bloom** (learned at level 14).
+- **Moongrove** — _DPS_. Signature ability: **Moonwing Form** (learned at level 10).
+- **Wildfang** — _Tank_. Signature ability: **Primal Surge** (learned at level 10).
+- **Groveheart** — _Healer_. Signature ability: **Swiftmend** (learned at level 10).
 
 ## Abilities
 
-32 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+36 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -31,7 +31,11 @@
 | Bruin Form | 10 | 30 | Instant | — | Melee | Physical | Shapeshift into a bear: armor +90%, greatly increased attack power, your attacks build rage and generate 30% more threat. Cast again to return to caster form. |
 | Bruin Rush | 10 | — | Instant | 15s | 25 | Physical | Charge an enemy, generating 9 rage and stunning it for 1 sec. 8-25 yd range. Bruin Form only. |
 | Craven Roar | 10 _(ranks: 16)_ | 10 | Instant | — | Melee | Physical | Demoralizes nearby enemies, reducing their attack power by 20 for 20 sec. Bruin Form only. |
+| Headbutt | 10 | 10 | Instant | 15s | 8 | Physical | A lunging headbutt that interrupts the target's spellcast and locks that school for 4 sec. |
 | Menace | 10 | — | Instant | 10s | 8 | Physical | Growls at the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec. Bruin Form only. |
+| Moonwing Form | 10 | 55 | Instant | — | Melee | Arcane | Shapeshift into a fearsome Moonkin, increasing your spell damage by 20% and your armor by 50%. Lasts until you shift out. Cast again to return to caster form. (Balance signature) |
+| Primal Surge | 10 | — | Instant | 1.5 min | Melee | Physical | Unleash a primal surge. In Wolf Form, Energy regeneration is increased by 100% for 10 sec. In Bruin Form, instantly generates 50 Rage. (Feral signature) |
+| Swiftmend | 10 | 55 | Instant | 8s | 30 | Nature | Consumes a heal-over-time effect on a friendly target to heal them for X. (Restoration signature) |
 | Claw | 12 _(ranks: 18)_ | 45 | Instant | — | Melee | Physical | Claw the enemy for weapon damage plus X. Awards 1 combo point. Wolf Form only. |
 | Flense | 12 _(ranks: 18)_ | 35 | Instant | — | Melee | Physical | A stealth opener that rakes the enemy for weapon damage plus X and causes bleeding damage over 9 sec. Awards 1 combo point. Wolf Form only. |
 | Stalk | 12 | — | Instant | — | Melee | Physical | Enter stealth while in Wolf Form, moving 50% slower. Cannot be used in combat. |

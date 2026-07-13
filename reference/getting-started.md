@@ -94,6 +94,7 @@ Most stutter is the browser, not the game. In order:
 | Leaderboard | `K` |
 | Event Calendar | `I` |
 | Discord | `U` |
+| Book of Deeds | `Shift+KeyZ` |
 | Open Chat | `Enter` or `NumpadEnter` |
 | Emote Wheel | `X` |
 

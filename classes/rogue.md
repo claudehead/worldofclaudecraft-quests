@@ -10,13 +10,13 @@
 
 ## Specializations
 
-- **Knifework** — _DPS_. Signature ability: **Dirt Nap** (learned at level 1).
-- **Thuggery** — _DPS_. Signature ability: **Quickened Blood** (learned at level 20).
-- **Skulduggery** — _DPS_. Signature ability: **Lurker's Strike** (learned at level 16).
+- **Knifework** — _DPS_. Signature ability: **Killer's Calm** (learned at level 10).
+- **Thuggery** — _DPS_. Signature ability: **Mirrored Blades** (learned at level 10).
+- **Skulduggery** — _DPS_. Signature ability: **Red Ribbon** (learned at level 10).
 
 ## Abilities
 
-21 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+25 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -28,7 +28,11 @@
 | Eye Jab | 6 _(ranks: 14)_ | 45 | Instant | 10s | Melee | Physical | Strikes the target for X damage, incapacitating it for 4 sec. Any damage breaks the effect. Awards 1 combo point. |
 | Ghostfoot | 8 | — | Instant | 5 min | Melee | Physical | Increases your dodge chance by 50% for 15 sec. |
 | Gut Punch | 8 | 60 | Instant | — | Melee | Physical | Strike the target for X damage, stunning it for 4 sec. Must be stealthed. Awards 2 combo points. |
+| Boot | 10 | 25 | Instant | 10s | Melee | Physical | Interrupts the target's spellcast and prevents casting from that school for 4 sec. |
 | Cutthroat Tempo | 10 | 25 | Instant | — | Melee | Physical | Finishing move that increases melee attack speed by 30%. Lasts longer per combo point. |
+| Killer's Calm | 10 | — | Instant | 2 min | Melee | Physical | Focuses your killing intent so your next attack is a critical strike. (Assassination signature) |
+| Mirrored Blades | 10 | 25 | Instant | 2 min | Melee | Physical | Unleashes a flurry of blades, increasing attack speed by 20% for 12 sec. (Combat signature) |
+| Red Ribbon | 10 | 35 | Instant | — | Melee | Physical | Strikes the enemy for weapon damage plus X, causes bleeding damage over 12 sec, and increases bleed damage taken by 40%. Awards 1 combo point. (Subtlety signature) |
 | Sap | 10 | 65 | Instant | — | Melee | Physical | Incapacitates the target for 8 sec. Must be stealthed and out of combat. Any damage breaks the effect. |
 | Swift Heels | 10 | — | Instant | 5 min | Melee | Physical | Increases your movement speed by 70% for 15 sec. |
 | Leaden Venom | 12 | 40 | Instant | — | Melee | Nature | Strikes the target with a crippling poison, dealing X Nature damage and slowing its movement speed by 50% for 12 sec. |

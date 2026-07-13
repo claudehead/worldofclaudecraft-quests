@@ -224,9 +224,22 @@
       "school": "fire",
       "requiresTarget": false,
       "desc": "Calls a rain of fire onto the target area for 4 sec, burning enemies for $d Fire damage each second."
+    },
+    {
+      "id": "spell_lock",
+      "name": "Gag Order",
+      "learnLevel": 10,
+      "cost": 35,
+      "cooldown": 24,
+      "range": 30,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": true,
+      "desc": "Silences the target mid-cast and prevents casting from that school for 5 sec."
     }
   ],
   "rotation": [
+    "spell_lock",
     "shadowburn",
     "drain_life",
     "fear",

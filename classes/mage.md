@@ -10,13 +10,13 @@
 
 ## Specializations
 
-- **Aethermancy** — _DPS_. Signature ability: **Aether Darts** (learned at level 8).
-- **Pyromancy** — _DPS_. Signature ability: **Scald** (learned at level 16).
-- **Cryomancy** — _DPS_. Signature ability: **Frostveil** (learned at level 20).
+- **Aethermancy** — _DPS_. Signature ability: **Aether Surge** (learned at level 10).
+- **Pyromancy** — _DPS_. Signature ability: **Flashfire** (learned at level 10).
+- **Cryomancy** — _DPS_. Signature ability: **Icy Veins** (learned at level 10).
 
 ## Abilities
 
-15 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+19 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -29,7 +29,11 @@
 | Cinderfall | 6 _(ranks: 12, 18)_ | 40 | Instant | 8s | 20 | Fire | Blasts the enemy for X Fire damage. Instant. |
 | Aether Darts | 8 _(ranks: 14, 20)_ | 50 | Instant | — | 30 | Arcane | Launches Aether Darts at the enemy, causing X Arcane damage each second for 3 sec. |
 | Bewitch | 8 _(ranks: 18)_ | 50 | 1.5s | — | 30 | Arcane | Transforms the enemy into a toad for up to X sec. The toad wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only. |
+| Aether Surge | 10 | — | Instant | 1.5 min | Melee | Arcane | Increases spell damage by 20% and spell haste by 10% for 10 sec. (Arcane signature) |
+| Flashfire | 10 | — | Instant | 2 min | Melee | Fire | Increases spell critical chance by 50% for 15 sec. (Fire signature) |
 | Icebind | 10 _(ranks: 16)_ | 35 | Instant | 22s | Melee | Frost | Freezes all nearby enemies in place for up to 8 sec, dealing X Frost damage. |
+| Icy Veins | 10 | — | Instant | 3 min | Melee | Frost | Increases spell haste by 30% and prevents cast interruption and pushback for 10 sec. (Frost signature) |
+| Spellbreak | 10 | 45 | Instant | 24s | 30 | Physical | Counters the target's spellcast and prevents casting from that school for 6 sec. |
 | Aetherburst | 14 | 60 | Instant | — | Melee | Arcane | A burst of Arcane energy hits all nearby enemies for X Arcane damage. |
 | Scald | 16 | 35 | 1.5s | — | 30 | Fire | Scorches the enemy for X Fire damage. Quick to cast. |
 | Flamestrike | 20 | 80 | Instant | 12s | 30 | Fire | Calls down a burst of flame at the target area, dealing X Fire damage to enemies caught in the blast. |

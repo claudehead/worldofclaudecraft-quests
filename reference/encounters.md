@@ -274,6 +274,30 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
+<a id="mob-nythraxis_heroic_warrior_add"></a>
+
+### Spirit of Aldren 🔶 Elite
+
+**Level 20 · 710 HP · Undead**
+
+<br clear="all">
+
+<a id="mob-nythraxis_heroic_priest_add"></a>
+
+### Spirit of Malric 🔶 Elite
+
+**Level 20 · 360 HP · Undead**
+
+<br clear="all">
+
+<a id="mob-nythraxis_heroic_rogue_add"></a>
+
+### Spirit of Voss 🔶 Elite
+
+**Level 20 · 410 HP · Undead**
+
+<br clear="all">
+
 <a id="mob-vision_aldren_warrior"></a>
 
 ### Vision of Captain Aldren

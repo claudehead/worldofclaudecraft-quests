@@ -10,13 +10,13 @@
 
 ## Specializations
 
-- **Doctrine** — _Healer_. Signature ability: **Psalm of Warding** (learned at level 6).
-- **Benison** — _Healer_. Signature ability: **Urgent Prayer** (learned at level 20).
-- **Vespers** — _DPS_. Signature ability: **Litany of Woe** (learned at level 16).
+- **Doctrine** — _Healer_. Signature ability: **Anointing** (learned at level 10).
+- **Benison** — _Healer_. Signature ability: **Holy Nova** (learned at level 10).
+- **Vespers** — _DPS_. Signature ability: **Gloamveil Form** (learned at level 10).
 
 ## Abilities
 
-10 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+13 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -26,6 +26,9 @@
 | Dirge of Decay | 4 _(ranks: 10, 16)_ | 25 | Instant | — | 30 | Shadow | A word of darkness causes X Shadow damage over 18 sec. |
 | Psalm of Warding | 6 _(ranks: 12, 18)_ | 45 | Instant | 6s | 30 | Holy | Shields the target, absorbing X damage for 30 sec. |
 | Lingering Grace | 8 _(ranks: 14, 20)_ | 30 | Instant | — | 30 | Holy | Heals the target for X over 15 sec. |
+| Anointing | 10 | 55 | Instant | 2 min | 30 | Holy | Infuses a friendly target with power, increasing spell haste by 20% for 15 sec. (Discipline signature) |
+| Gloamveil Form | 10 | 60 | Instant | — | Melee | Shadow | Assume a Shadowform, increasing your Shadow damage by 15% until you shift back. Casting a healing spell ends the form. Cast again to return to normal form. (Shadow signature) |
+| Holy Nova | 10 | 70 | Instant | — | Melee | Holy | Causes an explosion of holy radiance, healing nearby allies for X and damaging nearby enemies. (Holy signature) |
 | Mindfracture | 10 _(ranks: 14, 20)_ | 50 | 1.5s | 8s | 30 | Shadow | Blasts the target's mind for X Shadow damage. |
 | Solemn Prayer | 14 _(ranks: 20)_ | 95 | 2.5s | — | 30 | Holy | A slow but powerful prayer that heals a friendly target for X. |
 | Litany of Woe | 16 | 45 | Instant | — | 20 | Shadow | Assaults the target's mind with Shadow energy, causing X Shadow damage each second for 3 sec. |

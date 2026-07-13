@@ -99,6 +99,8 @@
 <text x="546.9" y="492.0" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Bursar Fernando</text>
 <circle cx="487.5" cy="218.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
 <text x="487.5" y="210.8" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Groundskeeper Bram</text>
+<circle cx="553.1" cy="425.0" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="553.1" y="417.0" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Saul the Chronicler</text>
 <text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">Eastbrook Vale — N ↑</text>
 <rect x="10" y="920" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
 <rect x="18" y="927" width="11" height="11" fill="#f0c419"/>
