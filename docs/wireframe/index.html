@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>World of Claudecraft — Wireframe Remix</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden;
+    font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;color:#fff;cursor:crosshair}
+  #cv{display:block;width:100vw;height:100vh}
+  #start{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:1.1rem;text-align:center;background:#000;z-index:5}
+  #start h1{font-size:clamp(1.2rem,4.5vw,2.4rem);letter-spacing:.18em;margin:0;font-weight:400}
+  #start .sub{opacity:.55;letter-spacing:.28em;font-size:.72rem;text-transform:uppercase}
+  #start .keys{opacity:.7;font-size:.82rem;line-height:1.9;border:1px solid #fff;padding:.9rem 1.4rem}
+  #start b{font-weight:400;border:1px solid #fff;padding:.02rem .38rem;margin:0 .1rem}
+  #start button{font:inherit;color:#fff;background:#000;border:1px solid #fff;
+    padding:.65rem 2.2rem;letter-spacing:.2em;cursor:pointer;text-transform:uppercase;font-size:.8rem}
+  #start button:hover{background:#fff;color:#000}
+  #hint{position:fixed;left:12px;bottom:10px;opacity:.4;font-size:.68rem;letter-spacing:.06em;z-index:4;pointer-events:none}
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<div id="start">
+  <div class="sub">World of Claudecraft</div>
+  <h1>WIREFRAME REMIX</h1>
+  <div class="keys">
+    <b>W</b><b>A</b><b>S</b><b>D</b> move &nbsp;·&nbsp; <b>MOUSE</b> look &nbsp;·&nbsp; <b>SPACE</b> / <b>CLICK</b> strike<br>
+    <b>SHIFT</b> sprint &nbsp;·&nbsp; <b>ESC</b> release mouse<br>
+    slay the boars of Eastbrook Vale
+  </div>
+  <button id="go">Enter the Vale</button>
+</div>
+<div id="hint">click to capture mouse · esc to release</div>
+<a href="../" style="position:fixed;right:12px;bottom:10px;color:#fff;opacity:.4;font-size:.68rem;letter-spacing:.06em;z-index:4;text-decoration:none;font-family:ui-monospace,monospace">← back to guide</a>
+<script>
+'use strict';
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let W=0,H=0,DPR=1,focal=1;
+function resize(){
+  DPR = Math.min(2, window.devicePixelRatio||1);
+  W = cv.clientWidth; H = cv.clientHeight;
+  cv.width = Math.floor(W*DPR); cv.height = Math.floor(H*DPR);
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  focal = (0.5*H) / Math.tan((70*Math.PI/180)/2);
+}
+addEventListener('resize', resize); resize();
+
+// ---------- math ----------
+const clamp=(v,a,b)=>v<a?a:v>b?b:v;
+const lerp=(a,b,t)=>a+(b-a)*t;
+function height(x,z){ // gentle rolling terrain
+  return 1.25*Math.sin(x*0.15)*Math.cos(z*0.13)
+       + 0.65*Math.sin((x+z)*0.07)
+       + 0.35*Math.cos(x*0.31 - z*0.21);
+}
+
+// ---------- camera basis ----------
+const cam={x:0,y:0,z:0};
+let camYaw=0, camPitch=-0.18;
+let right={x:1,y:0,z:0}, up={x:0,y:1,z:0}, fwd={x:0,y:0,z:1};
+function updateBasis(){
+  const cy=Math.cos(camYaw), sy=Math.sin(camYaw), cp=Math.cos(camPitch), sp=Math.sin(camPitch);
+  right={x:cy, y:0, z:-sy};
+  fwd  ={x:sy*cp, y:sp, z:cy*cp};
+  up   ={x:-sp*sy, y:cp, z:-sp*cy};
+}
+function toCam(p){
+  const dx=p.x-cam.x, dy=p.y-cam.y, dz=p.z-cam.z;
+  return { x: dx*right.x+dy*right.y+dz*right.z,
+           y: dx*up.x   +dy*up.y   +dz*up.z,
+           z: dx*fwd.x  +dy*fwd.y  +dz*fwd.z };
+}
+const NEAR=0.12;
+function projPoint(c){ return { x: W/2 + (c.x/c.z)*focal, y: H/2 - (c.y/c.z)*focal }; }
+// draw a world-space segment with near-plane clipping
+function seg(pa,pb, shade, wdt){
+  let a=toCam(pa), b=toCam(pb);
+  if(a.z<NEAR && b.z<NEAR) return;
+  if(a.z<NEAR){ const t=(NEAR-a.z)/(b.z-a.z); a={x:lerp(a.x,b.x,t),y:lerp(a.y,b.y,t),z:NEAR}; }
+  else if(b.z<NEAR){ const t=(NEAR-b.z)/(a.z-b.z); b={x:lerp(b.x,a.x,t),y:lerp(b.y,a.y,t),z:NEAR}; }
+  const sa=projPoint(a), sb=projPoint(b);
+  ctx.strokeStyle=shade; ctx.lineWidth=wdt||1;
+  ctx.beginPath(); ctx.moveTo(sa.x,sa.y); ctx.lineTo(sb.x,sb.y); ctx.stroke();
+}
+// greyscale by distance
+function shadeFor(d, max, floor){
+  const g = clamp(1 - d/max, floor||0.12, 1);
+  const v = Math.round(255*g);
+  return 'rgb('+v+','+v+','+v+')';
+}
+
+// ---------- meshes (local edges: [x,y,z, x,y,z]) ----------
+// A blocky boar: body, snout, tusks, legs, tail. Faces +z.
+const BOAR = (()=>{ const E=[];
+  const box=(x0,y0,z0,x1,y1,z1)=>{const p=[[x0,y0,z0],[x1,y0,z0],[x1,y1,z0],[x0,y1,z0],[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]];
+    const ed=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+    ed.forEach(e=>E.push([...p[e[0]],...p[e[1]]]));};
+  box(-0.55,0.35,-0.8, 0.55,1.0,0.7);      // body
+  box(-0.35,0.45,0.7, 0.35,0.85,1.25);     // head/snout
+  E.push([-0.28,0.5,1.25,-0.42,0.2,1.55]); // left tusk
+  E.push([ 0.28,0.5,1.25, 0.42,0.2,1.55]); // right tusk
+  const leg=(x,z)=>E.push([x,0.35,z,x,0,z]);
+  leg(-0.4,-0.55);leg(0.4,-0.55);leg(-0.4,0.45);leg(0.4,0.45); // legs
+  E.push([-0.55,0.9,-0.8,-0.75,1.15,-1.05]); // tail
+  return E; })();
+
+// A conifer: trunk + stacked wireframe cones
+const TREE = (()=>{ const E=[]; E.push([0,0,0,0,2.0,0]); // trunk
+  const cone=(y,r,h)=>{ const seg=6; let px=r,pz=0;
+    for(let i=1;i<=seg;i++){ const a=i/seg*Math.PI*2, x=Math.cos(a)*r, z=Math.sin(a)*r;
+      E.push([px,y,pz, x,y,z]); E.push([x,y,z, 0,y+h,0]); px=x;pz=z; } };
+  cone(1.4,1.15,1.4); cone(2.1,0.85,1.2); cone(2.8,0.55,1.0); return E; })();
+
+// A rock: irregular octahedron
+const ROCK = [ [0,1.1,0, 0.9,0.4,0],[0,1.1,0,-0.7,0.45,0.2],[0,1.1,0,0.1,0.4,0.95],[0,1.1,0,0.15,0.5,-0.9],
+  [0.9,0.4,0,0.1,0,0.6],[0.1,0.4,0.95,-0.7,0.1,0.2],[-0.7,0.45,0.2,0.15,0.05,-0.8],[0.15,0.5,-0.9,0.9,0.15,0.1],
+  [0.1,0,0.6,-0.5,0,-0.3],[-0.5,0,-0.3,0.7,0,-0.2],[0.7,0,-0.2,0.1,0,0.6] ];
+
+// Player: wireframe adventurer, faces +z. Weapon arm swings via param.
+function playerEdges(swing){ const E=[];
+  E.push([0,0.7,0,0,1.55,0]);                 // spine
+  E.push([-0.28,1.35,0,0.28,1.35,0]);         // shoulders
+  E.push([0,1.55,0,0,1.9,0]);                 // neck->head base
+  const hs=6, hr=0.2, hy=2.05;                // head ring
+  let px=hr,pz=0; for(let i=1;i<=hs;i++){const a=i/hs*Math.PI*2,x=Math.cos(a)*hr,z=Math.sin(a)*hr;E.push([px,hy,pz,x,hy,z]);px=x;pz=z;}
+  E.push([0,1.9,0,0,hy-0.02,0]);
+  E.push([-0.28,1.35,0,-0.34,0.75,0.05]);     // left arm
+  E.push([-0.34,0.75,0.05,-0.3,0.35,0.28]);
+  E.push([0,0.7,0,-0.17,0.05,0.02]);          // left leg
+  E.push([-0.17,0.05,0.02,-0.17,0,0.16]);
+  E.push([0,0.7,0,0.17,0.05,0.02]);           // right leg
+  E.push([0.17,0.05,0.02,0.17,0,0.16]);
+  // right arm + blade, swings forward on strike
+  const s=swing; const ex=0.30+0.05*s, ey=0.95-0.55*s, ez=0.15+0.75*s;
+  E.push([0.28,1.35,0, ex,ey,ez]);            // upper->hand
+  E.push([ex,ey,ez, ex+0.02, ey+0.15+0.7*s, ez+0.15+0.55*s]); // blade
+  return E; }
+
+function drawMesh(edges, ox,oy,oz, yaw, scale, shade, wdt){
+  const c=Math.cos(yaw), s=Math.sin(yaw); scale=scale||1;
+  for(const e of edges){
+    const a={x:ox+(e[0]*c+e[2]*s)*scale, y:oy+e[1]*scale, z:oz+(-e[0]*s+e[2]*c)*scale};
+    const b={x:ox+(e[3]*c+e[5]*s)*scale, y:oy+e[4]*scale, z:oz+(-e[3]*s+e[5]*c)*scale};
+    seg(a,b,shade,wdt);
+  }
+}
+
+// ---------- world ----------
+let rngState=1337; function rnd(){ rngState=(rngState*1664525+1013904223)>>>0; return rngState/4294967296; }
+const trees=[], rocks=[];
+for(let i=0;i<150;i++){ const x=(rnd()-0.5)*180, z=(rnd()-0.5)*180;
+  if(Math.hypot(x,z)<6) continue; trees.push({x,z,s:0.8+rnd()*0.9,r:rnd()*6}); }
+for(let i=0;i<70;i++){ const x=(rnd()-0.5)*180, z=(rnd()-0.5)*180;
+  rocks.push({x,z,s:0.6+rnd()*1.3,r:rnd()*6}); }
+
+const player={x:0,z:0,y:0,facing:0,hp:100,maxhp:100};
+let camDist=6.2, camHt=3.0;
+
+const boars=[];
+function spawnBoar(){ let x,z,tries=0;
+  do{ const a=rnd()*Math.PI*2, d=14+rnd()*40; x=player.x+Math.cos(a)*d; z=player.z+Math.sin(a)*d; tries++; }
+  while(tries<8 && Math.hypot(x-player.x,z-player.z)<12);
+  boars.push({x,z,hp:34,maxhp:34,facing:rnd()*6.28,wt:0,atk:0,hit:0,dead:0}); }
+for(let i=0;i<8;i++) spawnBoar();
+let slain=0; const GOAL=8;
+
+// ---------- input ----------
+const keys={}; let locked=false, swing=0, swingCD=0, dmgFlash=0;
+addEventListener('keydown',e=>{ keys[e.code]=true; if(e.code==='Space'){e.preventDefault(); strike();} });
+addEventListener('keyup',e=>{ keys[e.code]=false; });
+cv.addEventListener('click',()=>{ if(!locked) cv.requestPointerLock(); else strike(); });
+document.addEventListener('pointerlockchange',()=>{ locked = document.pointerLockElement===cv; });
+addEventListener('mousemove',e=>{ if(!locked) return;
+  camYaw -= e.movementX*0.0026; camPitch = clamp(camPitch - e.movementY*0.0022, -1.15, 0.5); });
+
+function strike(){ if(swingCD>0) return; swing=1; swingCD=0.42;
+  for(const b of boars){ if(b.dead) continue;
+    const dx=b.x-player.x, dz=b.z-player.z, d=Math.hypot(dx,dz);
+    if(d<2.7){ const fdx=Math.sin(player.facing), fdz=Math.cos(player.facing);
+      if((dx*fdx+dz*fdz)/(d||1) > 0.25){ b.hp-=18; b.hit=0.25;
+        if(b.hp<=0){ b.dead=0.6; slain++; setTimeout(()=>{ if(slain<GOAL+30) spawnBoar(); }, 1400); } } } }
+}
+
+// ---------- start ----------
+const startEl=document.getElementById('start');
+document.getElementById('go').addEventListener('click',()=>{ startEl.style.display='none'; cv.requestPointerLock(); });
+
+// ---------- loop ----------
+let last=performance.now();
+function frame(now){
+  const dt=Math.min(0.05,(now-last)/1000); last=now;
+  update(dt); render();
+  requestAnimationFrame(frame);
+}
+function update(dt){
+  swingCD=Math.max(0,swingCD-dt); if(swingCD<0.28) swing=Math.max(0,swing-dt*4);
+  dmgFlash=Math.max(0,dmgFlash-dt*2);
+  // movement relative to camera yaw
+  let mx=0,mz=0;
+  if(keys['KeyW']){ mx+=Math.sin(camYaw); mz+=Math.cos(camYaw); }
+  if(keys['KeyS']){ mx-=Math.sin(camYaw); mz-=Math.cos(camYaw); }
+  if(keys['KeyA']){ mx+=Math.cos(camYaw); mz-=Math.sin(camYaw); }
+  if(keys['KeyD']){ mx-=Math.cos(camYaw); mz+=Math.sin(camYaw); }
+  if(keys['ArrowLeft']) camYaw+=dt*1.6;
+  if(keys['ArrowRight']) camYaw-=dt*1.6;
+  if(keys['ArrowUp']) camPitch=clamp(camPitch+dt*1.2,-1.15,0.5);
+  if(keys['ArrowDown']) camPitch=clamp(camPitch-dt*1.2,-1.15,0.5);
+  const ml=Math.hypot(mx,mz);
+  if(ml>0){ mx/=ml; mz/=ml; const sp=(keys['ShiftLeft']||keys['ShiftRight']?11:6)*dt;
+    player.x+=mx*sp; player.z+=mz*sp; player.facing=Math.atan2(mx,mz); }
+  player.y=height(player.x,player.z);
+  // boars
+  for(const b of boars){ if(b.dead){ b.dead-=dt; continue; }
+    b.hit=Math.max(0,b.hit-dt); b.atk=Math.max(0,b.atk-dt);
+    const dx=player.x-b.x, dz=player.z-b.z, d=Math.hypot(dx,dz);
+    if(d<13){ b.facing=Math.atan2(dx,dz);
+      if(d>1.5){ const sp=4.2*dt; b.x+=(dx/d)*sp; b.z+=(dz/d)*sp; }
+      else if(b.atk<=0){ b.atk=1.1; player.hp=Math.max(0,player.hp-7); dmgFlash=1; }
+    } else { b.wt-=dt; if(b.wt<=0){ b.wt=1+rnd()*2.5; b.facing+=(rnd()-0.5)*2; }
+      b.x+=Math.sin(b.facing)*1.3*dt; b.z+=Math.cos(b.facing)*1.3*dt; }
+    b.y=height(b.x,b.z);
+  }
+  for(let i=boars.length-1;i>=0;i--) if(boars[i].dead!==0 && boars[i].dead<=0) boars.splice(i,1);
+  if(player.hp<100) player.hp=Math.min(player.maxhp, player.hp + (dmgFlash>0?0:3.5*dt));
+  // camera follows behind player facing camYaw
+  updateBasis();
+  cam.x=player.x - Math.sin(camYaw)*camDist;
+  cam.z=player.z - Math.cos(camYaw)*camDist;
+  cam.y=player.y + camHt;
+  updateBasis();
+}
+
+function render(){
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
+  // terrain grid around player
+  const STEP=3.5, N=15, R=48;
+  const bx=Math.round(player.x/STEP)*STEP, bz=Math.round(player.z/STEP)*STEP;
+  for(let i=-N;i<=N;i++){ for(let j=-N;j<=N;j++){
+    const x=bx+i*STEP, z=bz+j*STEP, d=Math.hypot(x-player.x,z-player.z);
+    if(d>R) continue;
+    const y=height(x,z), sh=shadeFor(d,R,0.10);
+    const x2=x+STEP, z2=z+STEP;
+    if(Math.hypot(x2-player.x,z-player.z)<=R) seg({x,y,z},{x:x2,y:height(x2,z),z},sh);
+    if(Math.hypot(x-player.x,z2-player.z)<=R) seg({x,y,z},{x,y:height(x,z2),z:z2},sh);
+  }}
+  // scenery: gather, sort far->near for cleaner overlap
+  const items=[];
+  for(const t of trees){ const d=Math.hypot(t.x-player.x,t.z-player.z); if(d<R+8) items.push({d,k:'t',o:t}); }
+  for(const r of rocks){ const d=Math.hypot(r.x-player.x,r.z-player.z); if(d<R) items.push({d,k:'r',o:r}); }
+  for(const b of boars){ const d=Math.hypot(b.x-player.x,b.z-player.z); if(d<R) items.push({d,k:'b',o:b}); }
+  items.sort((a,b)=>b.d-a.d);
+  for(const it of items){ const o=it.o, sh=shadeFor(it.d,R,0.18);
+    if(it.k==='t') drawMesh(TREE,o.x,height(o.x,o.z),o.z,o.r,o.s,sh);
+    else if(it.k==='r') drawMesh(ROCK,o.x,height(o.x,o.z),o.z,o.r,o.s,sh);
+    else { const bsh = o.hit>0 ? '#fff' : shadeFor(it.d,R,0.3);
+      drawMesh(BOAR, o.x, o.y, o.z, o.facing, 1, o.dead? shadeFor(it.d,R,0.1): bsh, o.hit>0?2:1); }
+  }
+  // player (in front of camera)
+  drawMesh(playerEdges(swing), player.x, player.y, player.z, player.facing, 1, '#fff', 1.3);
+  drawHUD();
+}
+
+function drawHUD(){
+  ctx.save();
+  // damage vignette
+  if(dmgFlash>0){ ctx.strokeStyle='rgba(255,255,255,'+(dmgFlash*0.9)+')'; ctx.lineWidth=8;
+    ctx.strokeRect(4,4,W-8,H-8); }
+  ctx.lineWidth=1; ctx.strokeStyle='#fff'; ctx.fillStyle='#fff';
+  // crosshair
+  const cx=W/2, cy=H/2; ctx.globalAlpha=0.5;
+  ctx.beginPath(); ctx.moveTo(cx-7,cy);ctx.lineTo(cx-2,cy);ctx.moveTo(cx+2,cy);ctx.lineTo(cx+7,cy);
+  ctx.moveTo(cx,cy-7);ctx.lineTo(cx,cy-2);ctx.moveTo(cx,cy+2);ctx.lineTo(cx,cy+7); ctx.stroke();
+  ctx.globalAlpha=1;
+  // HP bar
+  const bw=200,bh=12,bx=18,by=H-30;
+  ctx.strokeRect(bx,by,bw,bh);
+  const hpw=(bw-4)*clamp(player.hp/player.maxhp,0,1);
+  // hatch-fill the hp portion (monochrome)
+  ctx.save(); ctx.beginPath(); ctx.rect(bx+2,by+2,hpw,bh-4); ctx.clip();
+  for(let x=bx-bh; x<bx+hpw+bh; x+=4){ ctx.beginPath(); ctx.moveTo(x,by+bh); ctx.lineTo(x+bh,by); ctx.stroke(); }
+  ctx.restore();
+  ctx.font='11px ui-monospace,monospace';
+  ctx.fillText('HP '+Math.round(player.hp)+' / '+player.maxhp, bx, by-6);
+  // quest tracker
+  ctx.font='12px ui-monospace,monospace'; ctx.textAlign='right';
+  const done = slain>=GOAL;
+  ctx.fillText('QUEST · Boars of Eastbrook Vale', W-18, 26);
+  ctx.fillText(done? 'COMPLETE — '+slain+' slain' : 'Boars slain   '+Math.min(slain,GOAL)+' / '+GOAL, W-18, 46);
+  ctx.strokeRect(W-18-160, 54, 160, 6);
+  ctx.fillRect(W-18-160, 54, 160*clamp(slain/GOAL,0,1), 6);
+  if(player.hp<=0){ ctx.textAlign='center'; ctx.font='28px ui-monospace,monospace';
+    ctx.fillText('YOU HAVE FALLEN', W/2, H/2-40);
+    ctx.font='13px ui-monospace,monospace'; ctx.fillText('press R to rise again', W/2, H/2-16); }
+  ctx.textAlign='left'; ctx.restore();
+}
+addEventListener('keydown',e=>{ if(e.code==='KeyR' && player.hp<=0){ player.hp=player.maxhp; player.x=0;player.z=0; }});
+
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
