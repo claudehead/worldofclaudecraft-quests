@@ -6,12 +6,12 @@
   const { el, esc, registerView, app } = window.WOC;
 
   const GAME = [
-    ['📖', 'The Book of Deeds', '192 achievements worth 2,365 Renown across levelling, dungeons, delves, PvP, collecting, exploring and story Chronicles. Rewards are cosmetic — 19 titles, three nameplate badge borders, and public Renown standings.', '#/doc/' + encodeURIComponent('reference/book-of-deeds.md'), 'How it works'],
-    ['⚔️', 'Heroic Nythraxis', 'The 10-player raid gains a Heroic tier: the summoned Deathless Court, a raid-heal channel you must crowd-control (Malric\'s Mending), raid-tier heroic gear, and three heroic-only weapons.', '#/doc/' + encodeURIComponent('reference/heroic-nythraxis.md'), 'Raid guide'],
-    ['🎯', 'Talents 2.0 — specializations', 'Picking any of the 27 specs now grants a real signature ability and a level-scaled identity mastery — before you spend a single point. 24 brand-new abilities ship with it.', '#/doc/' + encodeURIComponent('reference/specializations.md'), 'Spec guide'],
-    ['🏆', 'Honor & Warfare PvP', 'A PvP gear track: earn Honor from ranked arena and the Fiesta, spend it with the Honor Quartermaster on Warfare gear — four armor sets, necks, rings and weapons carrying a PvP-only offense/defense rating.', '#/doc/' + encodeURIComponent('reference/warfare.md'), 'How to play'],
-    ['💄', 'Claudium & Season 1 Armory', 'A cosmetics storefront and the first seasonal armory — character skins, weapon skins and identity tools. Presentation-only: richer world models and bag art land alongside.', '#/patches', 'Technical changelog'],
-    ['🎮', 'A rebuilt /play', 'The online entry point is rebuilt as online-only, with player mute and identity controls, a production sound workflow, and a broad reliability and operations pass.', '#/patches', 'Technical changelog'],
+    ['🔎', 'The Dungeon Finder', 'Automatic role-based matchmaking plus a premade listing board. Queue as tank / healer / DPS for any dungeon, heroic, the solo scenario or the 10-man raid; a full group fires a 30-second proposal (decline and you sit a 60-second lockout). Post or browse premade groups with structured tags.', '#/doc/' + encodeURIComponent('reference/dungeon-finder.md'), 'How it works'],
+    ['🛡️', 'Tank defensive cooldowns', 'Each tank class gains a distinct level-20 emergency button: Warrior Ironhold (−40% damage for 8s), Paladin Sacred Bulwark (denies the next lethal hit, heal to 35%), Druid Primal Reflexes (+50% dodge for 6s). Dire Bruin bear form also gets +20% threat / +15% armor to close the tank-parity gap.', '#/doc/' + encodeURIComponent('reference/specializations.md'), 'Spec guide'],
+    ['🎯', 'Hit rating & itemization', 'A new Hit combat-rating joins crit and haste (10 rating = +1% hit, cutting both physical miss and spell resist, down to a 0% floor). Gear is re-itemized around it, and the PvP gear track is rebalanced onto the Warfare offense/defense ratings.', '#/doc/' + encodeURIComponent('reference/warfare.md'), 'Warfare guide'],
+    ['⛏️', 'Gather-node harvesting', 'Harvesting ore, herb and other gather nodes is now wired into the normal play controls — walk up and gather, no separate mode. Feeds straight into professions & crafting.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Professions'],
+    ['🗡️', 'Weapon sheathing & QoL', 'Z-key sheathe/unsheathe with weapons worn on your back, an arm gesture and SFX. Plus: your own nameplate shows by default, the Attack action-bar button is removable, drag bag items straight onto the paperdoll, and a punchier on-kill XP floater.', '#/patches', 'Technical changelog'],
+    ['🖥️', 'Windows client & Armory', 'The desktop client download is enabled for Windows, with a Store Armory promo card. Under the hood: safe player analytics, automated & moderated daily payouts, new mob voice families, and 11 procedural props replaced with real Tripo-generated models.', '#/patches', 'Technical changelog'],
   ];
 
   const GUIDE = [
@@ -33,15 +33,15 @@
       <h1 class="reveal">What's New 🆕</h1>
       <p class="sub reveal">The latest from World of Claudecraft, and everything new in this guide.</p>
 
-      <h2 class="news-h reveal">🎮 Game — v0.25.0 <span class="news-tag">progression · endgame · PvP · 350 commits</span></h2>
-      <p class="meta reveal">The Book of Deeds achievement system, a Heroic tier for the Nythraxis raid, Talents 2.0 signature abilities and identity masteries for all 27 specs, Honor &amp; Warfare PvP progression, and the Claudium cosmetics store. Here's what made it into the guide:</p>
+      <h2 class="news-h reveal">🎮 Game — v0.26.0 <span class="news-tag">dungeon finder · tanks · itemization · 131 commits</span></h2>
+      <p class="meta reveal">The Dungeon Finder role queue and premade board, a level-20 defensive cooldown for every tank class, a new Hit combat-rating with re-itemized gear, gather-node harvesting in normal play, Z-key weapon sheathing, and the Windows desktop client. Here's what made it into the guide:</p>
       <div class="news-grid">${GAME.map(gCard).join('')}</div>
 
       <h2 class="news-h reveal">📚 The guide — new tools</h2>
       <p class="meta reveal">Beyond the reference, the guide now has new tools built on the real game data:</p>
       <div class="news-grid">${GUIDE.map(uCard).join('')}</div>
 
-      <p class="meta" style="margin-top:2rem">Catching up? <b>v0.24</b> was a polish &amp; infrastructure release (heroic-loot reliability, ready checks, sign-in), and <b>v0.23</b> brought the <a data-go="#/doc/reference%2Fvale-cup.md">Vale Cup</a>, <a data-go="#/doc/reference%2Fprotect-yumi.md">Protect Yumi</a>, <a data-go="#/doc/reference%2Fheroic-dungeons.md">Heroic dungeons</a>, <a data-go="#/doc/reference%2Fprofessions.md">professions</a> and the <a data-go="#/doc/reference%2Fbank.md">bank</a>. Full history in the <a data-go="#/patches">patch notes</a>.</p>
+      <p class="meta" style="margin-top:2rem">Catching up? <b>v0.25</b> brought the <a data-go="#/doc/reference%2Fbook-of-deeds.md">Book of Deeds</a> achievement system, a Heroic tier for <a data-go="#/doc/reference%2Fheroic-nythraxis.md">Nythraxis</a>, <a data-go="#/doc/reference%2Fspecializations.md">Talents 2.0 specializations</a> and the <a data-go="#/doc/reference%2Fwarfare.md">Honor &amp; Warfare</a> PvP track; <b>v0.23</b> added the <a data-go="#/doc/reference%2Fvale-cup.md">Vale Cup</a>, <a data-go="#/doc/reference%2Fprotect-yumi.md">Protect Yumi</a>, <a data-go="#/doc/reference%2Fheroic-dungeons.md">Heroic dungeons</a>, <a data-go="#/doc/reference%2Fprofessions.md">professions</a> and the <a data-go="#/doc/reference%2Fbank.md">bank</a>. Full history in the <a data-go="#/patches">patch notes</a>.</p>
     </div></section>`));
   }
   registerView('news', view);
