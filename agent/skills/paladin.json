@@ -188,6 +188,18 @@
       "school": "physical",
       "requiresTarget": true,
       "desc": "Interrupts the target's spellcast and prevents casting from that school for 4 sec."
+    },
+    {
+      "id": "sacred_bulwark",
+      "name": "Sacred Bulwark",
+      "learnLevel": 20,
+      "cost": 15,
+      "cooldown": 180,
+      "range": 0,
+      "castTime": 0,
+      "school": "holy",
+      "requiresTarget": false,
+      "desc": "For $t sec, the next enemy hit that would kill you is denied, restoring you to 35% health instead."
     }
   ],
   "rotation": [
@@ -207,7 +219,8 @@
     "flash_of_light",
     "consecration",
     "righteous_fury",
-    "retribution_aura"
+    "retribution_aura",
+    "sacred_bulwark"
   ],
   "playbook": [
     "You are playing a Paladin (mana-based, melee).",

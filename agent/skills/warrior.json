@@ -212,6 +212,18 @@
       "school": "physical",
       "requiresTarget": true,
       "desc": "Interrupts the target's spellcast and prevents casting from that school for 4 sec."
+    },
+    {
+      "id": "ironhold",
+      "name": "Ironhold",
+      "learnLevel": 20,
+      "cost": 10,
+      "cooldown": 180,
+      "range": 0,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": false,
+      "desc": "Brace behind your guard, reducing all damage taken by 40% for 8 sec."
     }
   ],
   "rotation": [
@@ -233,7 +245,8 @@
     "cleave",
     "defensive_stance",
     "demoralizing_shout",
-    "sunder_armor"
+    "sunder_armor",
+    "ironhold"
   ],
   "playbook": [
     "You are playing a Warrior (rage-based, melee).",

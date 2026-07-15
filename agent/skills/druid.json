@@ -404,6 +404,18 @@
       "school": "physical",
       "requiresTarget": true,
       "desc": "A lunging headbutt that interrupts the target's spellcast and locks that school for 4 sec."
+    },
+    {
+      "id": "primal_reflexes",
+      "name": "Primal Reflexes",
+      "learnLevel": 20,
+      "cost": 0,
+      "cooldown": 60,
+      "range": 0,
+      "castTime": 0,
+      "school": "nature",
+      "requiresTarget": false,
+      "desc": "Your instincts sharpen, increasing your chance to dodge by 50% for 6 sec."
     }
   ],
   "rotation": [
@@ -441,7 +453,8 @@
     "enrage",
     "dash",
     "tigers_fury",
-    "hurricane"
+    "hurricane",
+    "primal_reflexes"
   ],
   "playbook": [
     "You are playing a Druid (mana-based, melee).",

@@ -87,9 +87,10 @@ Most stutter is the browser, not the game. In order:
 | Crafting | `T` |
 | Toggle Nameplates | `V` |
 | Talents | `N` |
-| Damage Meters | `H` |
+| Damage Meters | `Shift+KeyH` |
 | Friends & Guild | `O` |
 | Arena (Ashen Coliseum) | `G` |
+| Dungeon Finder | `Shift+KeyI` |
 | Vale Cup | `Y` |
 | Leaderboard | `K` |
 | Event Calendar | `I` |
@@ -97,6 +98,7 @@ Most stutter is the browser, not the game. In order:
 | Book of Deeds | `Shift+KeyZ` |
 | Open Chat | `Enter` or `NumpadEnter` |
 | Emote Wheel | `X` |
+| Sheathe/Unsheathe Weapon | `Z` |
 
 ### Pet
 

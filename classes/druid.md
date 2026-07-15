@@ -16,7 +16,7 @@
 
 ## Abilities
 
-36 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+37 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -53,6 +53,7 @@
 | Slinkstrike | 18 | 50 | Instant | — | 8 | Physical | A stealth opener that stuns the target for 2 sec. Awards 1 combo point. Wolf Form only. |
 | Slumber | 18 | 50 | 1.5s | — | 30 | Nature | Forces the target into a deep sleep for up to 8 sec. Any damage will awaken it. |
 | Witchlight | 18 | 30 | Instant | — | 30 | Nature | Decreases the target's armor by X% for 40 sec. Does not stack with Armor Shear. |
+| Primal Reflexes | 20 | — | Instant | 1 min | Melee | Nature | Your instincts sharpen, increasing your chance to dodge by 50% for 6 sec. |
 | Rip | 20 | 30 | Instant | — | Melee | Physical | Finishing move that causes X Bleed damage over 12 sec. Consumes combo points. Wolf Form only. |
 | Stinging Swarm | 20 | 45 | Instant | — | 30 | Nature | The enemy is swarmed by insects, taking X Nature damage over 12 sec. |
 | Wolfsblood | 20 | 30 | Instant | — | Melee | Physical | Increases attack power by 40 for 6 sec. Wolf Form only. |

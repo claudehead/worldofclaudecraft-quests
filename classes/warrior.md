@@ -16,7 +16,7 @@
 
 ## Abilities
 
-32 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
+33 abilities, in the order you learn them. "Ranks" shows the levels where the ability gets stronger.
 
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
@@ -52,6 +52,7 @@
 | Early Grave | 14 | 15 | Instant | — | Melee | Physical | Attempt to finish off a wounded foe, causing X damage. Only usable on enemies below 20% health. |
 | Brute Swing | 16 | 15 | 1.5s | — | Melee | Physical | Slams the opponent for weapon damage plus X. |
 | Reaping Arc | 18 | 20 | Instant | — | Melee | Physical | A sweeping strike that hits all enemies in front of you for X damage. |
+| Ironhold | 20 | 10 | Instant | 3 min | Melee | Physical | Brace behind your guard, reducing all damage taken by 40% for 8 sec. |
 
 ---
 
