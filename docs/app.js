@@ -77,7 +77,7 @@ window.WOC = {
   // Shared colour maps (kept in sync with the ones used across the app).
   QUALITY_COLOR: { legendary: '#e6803a', epic: '#a86bd6', rare: '#46b8da', uncommon: '#5cb85c', common: '#c8c8cf', poor: '#7a7a82' },
   RANK_COLOR: { boss: '#e6bb6a', elite: '#e6803a', rare: '#46b8da', normal: '#c8c8cf' },
-  STAT_LABEL: { str: 'Strength', agi: 'Agility', sta: 'Stamina', int: 'Intellect', spi: 'Spirit', armor: 'Armor', ap: 'Attack Power', crit: 'Crit', dodge: 'Dodge' },
+  STAT_LABEL: { str: 'Strength', agi: 'Agility', sta: 'Stamina', int: 'Intellect', spi: 'Spirit', armor: 'Armor', ap: 'Attack Power', crit: 'Crit', dodge: 'Dodge', spellPower: 'Spell Power', critRating: 'Crit rating', hasteRating: 'Haste rating', hitRating: 'Hit rating', pvpOffenseRating: 'PvP Power', pvpDefenseRating: 'PvP Resilience' },
 };
 
 // ---------- markdown rendering ----------
@@ -1922,7 +1922,7 @@ async function soloView() {
 
 // ---------- item compare + upgrade finder ----------
 let gearAll = null;
-const STAT_LABEL = { str: 'Strength', agi: 'Agility', sta: 'Stamina', int: 'Intellect', spi: 'Spirit', armor: 'Armor', ap: 'Attack Power', crit: 'Crit', dodge: 'Dodge' };
+const STAT_LABEL = { str: 'Strength', agi: 'Agility', sta: 'Stamina', int: 'Intellect', spi: 'Spirit', armor: 'Armor', ap: 'Attack Power', crit: 'Crit', dodge: 'Dodge', spellPower: 'Spell Power', critRating: 'Crit rating', hasteRating: 'Haste rating', hitRating: 'Hit rating', pvpOffenseRating: 'PvP Power', pvpDefenseRating: 'PvP Resilience' };
 const wDps = (w) => w && w.speed ? ((w.min + w.max) / 2) / w.speed : 0;
 const gearScore = (g) => Object.values(g.bonuses || {}).reduce((a, b) => a + (+b || 0), 0) + wDps(g.weapon) * 3;
 const srcText = (g) => (g.sources || []).map((s) => s.label || s.type).join(' · ') || '—';

@@ -7,7 +7,7 @@ import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
 import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
 import { GUIDE_CLASSES } from '../woc/src/guide/content.generated.ts';
 import { canEquipItem } from '../woc/src/sim/equipment_rules.ts';
-import { quality, statLine } from './iteminfo.ts';
+import { quality, statLine, itemRatings } from './iteminfo.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
 
@@ -78,6 +78,15 @@ function score(item: any, w: W): number {
   for (const k of ['str', 'agi', 'sta', 'int', 'spi'] as const) v += (s[k] || 0) * (w[k] || 0);
   v += (s.armor || 0) * (w.armor || 0);
   if (item.weapon) { const dps = (item.weapon.min + item.weapon.max) / 2 / item.weapon.speed; v += dps * (w.dps || 0); }
+  // Combat ratings (v0.26 itemization). Hit is universally valuable (cuts miss AND
+  // spell resist), crit/haste help every attacker, Spell Power only casters. PvP-only
+  // ratings don't count toward PvE best-in-slot. Weights are modest so ratings break
+  // ties between primary-stat-equal items without overriding the stat budget.
+  const r = itemRatings(item);
+  v += (r.hitRating || 0) * 0.8;
+  v += (r.critRating || 0) * 0.7;
+  v += (r.hasteRating || 0) * 0.7;
+  v += (r.spellPower || 0) * ((w.int || 0) > 0 ? 0.6 : 0.1);
   v += (QRANK[item.quality] || 0) * 1.5; // tie-break toward rarity
   return v;
 }

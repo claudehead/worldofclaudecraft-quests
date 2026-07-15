@@ -1,7 +1,7 @@
 import { ITEMS, MOBS, NPCS, QUESTS } from '../woc/src/sim/data.ts';
 import { DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { DELVE_MOBS, DELVE_SHOPS } from '../woc/src/sim/content/delves/index.ts';
-import { quality, statLine } from './iteminfo.ts';
+import { quality, statLine, itemRatings } from './iteminfo.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
 import { canEquipItem, armorTypeForItem } from '../woc/src/sim/equipment_rules.ts';
 import { requiredLevelFor } from '../woc/src/sim/item_level_req.ts';
@@ -81,7 +81,7 @@ const gear = (Object.values(ITEMS) as any[])
       qualityName: q?.name || 'Common',
       stats: i.kind === 'bag' ? `${i.bagSlots} inventory slots` : statLine(i.id),
       bagSlots: i.bagSlots ?? null,
-      bonuses: i.stats || {},
+      bonuses: { ...(i.stats || {}), ...itemRatings(i) },
       weapon: i.weapon || null,
       set: i.set || null,
       reqLevel: requiredLevelFor(i),

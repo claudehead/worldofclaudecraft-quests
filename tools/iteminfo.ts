@@ -11,6 +11,23 @@ const QUALITY: Record<string, { dot: string; name: string }> = {
 };
 const STAT: Record<string, string> = { str: 'Str', agi: 'Agi', sta: 'Sta', int: 'Int', spi: 'Spi' };
 
+// Combat ratings + Spell Power live as sibling fields on the ItemDef, NOT inside
+// `stats` (which is the six primary attributes + armor). v0.26 itemizes gear around
+// these — especially the new Hit rating — so they must be surfaced to every app that
+// shows item stats (gear browser, BiS, the compare tool). Order = how they read on
+// a tooltip: Spell Power, then the three combat ratings, then the PvP-only ratings.
+const RATING_KEYS = ['spellPower', 'critRating', 'hasteRating', 'hitRating', 'pvpOffenseRating', 'pvpDefenseRating'] as const;
+export const RATING_LABEL: Record<string, string> = {
+  spellPower: 'Spell Power', critRating: 'Crit rating', hasteRating: 'Haste rating',
+  hitRating: 'Hit rating', pvpOffenseRating: 'PvP Power', pvpDefenseRating: 'PvP Resilience',
+};
+// The numeric rating bonuses an item carries, keyed as above, present values only.
+export function itemRatings(it: any): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const k of RATING_KEYS) if (it && it[k]) out[k] = it[k];
+  return out;
+}
+
 export function quality(id: string): { dot: string; name: string } | null {
   const q = ITEMS[id]?.quality;
   return q && QUALITY[q] ? QUALITY[q] : null;
@@ -32,6 +49,7 @@ export function statLine(id: string): string {
   const s = it.stats || {};
   if (s.armor) parts.push(`${s.armor} armor`);
   for (const k of ['str', 'agi', 'sta', 'int', 'spi']) if (s[k]) parts.push(`+${s[k]} ${STAT[k]}`);
+  for (const [k, v] of Object.entries(itemRatings(it))) parts.push(`+${v} ${RATING_LABEL[k]}`);
   if (it.foodHp) parts.push(`restores ${it.foodHp} HP (over time)`);
   if (it.drinkMana) parts.push(`restores ${it.drinkMana} mana (over time)`);
   if (it.potionHp) parts.push(`restores ${it.potionHp} HP`);
