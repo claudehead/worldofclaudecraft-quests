@@ -47,11 +47,12 @@
 // Dynamic imports so a load/resolve failure gives a REAL error message
 // (static imports fail opaquely as cross-origin "Script error.").
 function fail(m){ const t=document.getElementById('lt'); if(t){ t.style.opacity='1'; t.style.color='#ff9a9a'; t.textContent=String(m).slice(0,260);} const d=document.getElementById('load'); if(d) d.style.display='flex'; }
-let THREE, GLTFLoader, skClone;
+let THREE, GLTFLoader, skClone, MeshoptDecoder;
 try {
   THREE = await import('three');
   GLTFLoader = (await import('three/addons/loaders/GLTFLoader.js')).GLTFLoader;
   skClone   = (await import('three/addons/utils/SkeletonUtils.js')).clone;
+  MeshoptDecoder = (await import('three/addons/libs/meshopt_decoder.module.js')).MeshoptDecoder;
 } catch (e) {
   fail('THREE import failed: ' + (e && (e.message||e)) );
   throw e;
@@ -121,6 +122,7 @@ for (let i=0;i<24;i++){ const h = new THREE.Mesh(new THREE.ConeGeometry(6+Math.s
 
 // ---------- loading ----------
 const loader = new GLTFLoader();
+loader.setMeshoptDecoder(MeshoptDecoder); // WoC GLBs are meshopt-compressed
 const lf = document.getElementById('lf'), lt = document.getElementById('lt');
 function load(url){ return new Promise((res,rej)=> loader.load(url, res, undefined, rej)); }
 function fitHeight(obj, targetH){
