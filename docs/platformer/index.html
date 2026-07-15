@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claudecraft Bros. — a WoC side-scroller</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#7ec0ee;font-family:ui-monospace,Consolas,monospace;color:#fff}
+  #cv{display:block;width:100vw;height:100vh}
+  #hud{position:fixed;top:12px;left:16px;font-size:18px;text-shadow:2px 2px 0 #0006;letter-spacing:.03em;z-index:3}
+  #hud b{font-weight:700}
+  #msg{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;
+    gap:.6rem;text-align:center;z-index:4;background:#0007}
+  #msg h1{font-size:clamp(28px,6vw,56px);margin:0;text-shadow:3px 3px 0 #0007}
+  #msg button{font:inherit;font-size:18px;color:#222;background:#ffd34d;border:0;border-radius:8px;
+    padding:.6rem 1.8rem;cursor:pointer;box-shadow:0 4px 0 #c99a1e}
+  #msg button:active{transform:translateY(3px);box-shadow:0 1px 0 #c99a1e}
+  #load{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:1rem;background:#1a1030;z-index:5}
+  #load .bar{width:min(60vw,320px);height:10px;border:1px solid #fff6;border-radius:6px;overflow:hidden}
+  #load .fill{height:100%;width:0;background:#ffd34d;transition:width .2s}
+  #load .t{letter-spacing:.25em;text-transform:uppercase;font-size:.75rem;opacity:.7}
+  #ctl{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);opacity:.55;font-size:.72rem;z-index:3;text-shadow:1px 1px 0 #0006}
+</style>
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<div id="hud"><b>◎</b> <span id="coins">0</span> &nbsp;·&nbsp; <b>♥</b> <span id="lives">3</span></div>
+<div id="ctl">← → / A D · move &nbsp; SPACE / ↑ · jump &nbsp; stomp the boars</div>
+<div id="load"><div class="t">Loading Eastbrook Vale…</div><div class="bar"><div class="fill" id="lf"></div></div><div class="t" id="lt" style="opacity:.4"></div></div>
+<div id="msg"><h1 id="mt"></h1><button id="mb">Play again</button></div>
+<script>
+// Surface any error on-screen (module-load errors, model failures) instead of a blank page.
+(function(){
+  function show(m){ var t=document.getElementById('lt'); if(t){ t.style.opacity='1'; t.style.color='#ff9a9a'; t.textContent=String(m).slice(0,220); } }
+  addEventListener('error', e=>{ show('ERROR: '+(e.message||(e.error&&e.error.message)||'script/module failed to load')); }, true);
+  addEventListener('unhandledrejection', e=>{ show('ERROR: '+((e.reason&&e.reason.message)||e.reason||'promise rejected')); });
+})();
+</script>
+<script type="module">
+// Dynamic imports so a load/resolve failure gives a REAL error message
+// (static imports fail opaquely as cross-origin "Script error.").
+function fail(m){ const t=document.getElementById('lt'); if(t){ t.style.opacity='1'; t.style.color='#ff9a9a'; t.textContent=String(m).slice(0,260);} const d=document.getElementById('load'); if(d) d.style.display='flex'; }
+let THREE, GLTFLoader, skClone;
+try {
+  THREE = await import('three');
+  GLTFLoader = (await import('three/addons/loaders/GLTFLoader.js')).GLTFLoader;
+  skClone   = (await import('three/addons/utils/SkeletonUtils.js')).clone;
+} catch (e) {
+  fail('THREE import failed: ' + (e && (e.message||e)) );
+  throw e;
+}
+
+const BASE = 'https://cdn.jsdelivr.net/gh/levy-street/world-of-claudecraft@v0.25.0/public/models/';
+const cv = document.getElementById('cv');
+const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true });
+renderer.setPixelRatio(Math.min(2, devicePixelRatio));
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x7ec0ee);
+scene.fog = new THREE.Fog(0x7ec0ee, 40, 90);
+
+const camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.1, 200);
+function resize(){ camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); }
+addEventListener('resize', resize); resize();
+
+// lights
+scene.add(new THREE.HemisphereLight(0xcfe8ff, 0x4a6b3a, 1.05));
+const sun = new THREE.DirectionalLight(0xfff2d0, 1.5);
+sun.position.set(-8, 20, 12); sun.castShadow = true;
+sun.shadow.mapSize.set(2048,2048); sun.shadow.camera.near=1; sun.shadow.camera.far=80;
+const sc = sun.shadow.camera; sc.left=-40; sc.right=40; sc.top=30; sc.bottom=-20;
+scene.add(sun); scene.add(sun.target);
+
+// ---------- level ----------
+// platforms: {x,y,w,h,d} — top surface is y (feet rest there); x is left edge, w width.
+const GROUND_Y = 0;
+const platforms = [];
+function plat(x, y, w){ platforms.push({ x, y, w }); }
+// a rolling ground with gaps + floating blocks
+const LEVEL_END = 150;
+plat(-4, 0, 30);
+plat(30, 0, 22);
+plat(58, 0, 40);
+plat(104, 0, 50);
+plat(20, 4.2, 5); plat(27, 6.5, 4); plat(40, 5, 6);
+plat(66, 5.5, 7); plat(78, 7.5, 5); plat(90, 4.5, 6);
+plat(112, 5, 6); plat(124, 7, 6); plat(134, 4.5, 8);
+
+// visuals for platforms (blocky WoC-earth look)
+const groundMat = new THREE.MeshStandardMaterial({ color: 0x6c8f4a, roughness: 1 });
+const brickMat  = new THREE.MeshStandardMaterial({ color: 0x9c6b3f, roughness: 1 });
+const DEPTH = 4;
+for (const p of platforms){
+  const thick = p.y <= 0.01 ? 6 : 1.1;
+  const g = new THREE.BoxGeometry(p.w, thick, DEPTH);
+  const m = new THREE.Mesh(g, p.y<=0.01?groundMat:brickMat);
+  m.position.set(p.x + p.w/2, p.y - thick/2, 0);
+  m.receiveShadow = true; m.castShadow = p.y>0.01;
+  scene.add(m);
+}
+// goal flag
+const goalX = LEVEL_END - 4;
+{ const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.12,8,8), new THREE.MeshStandardMaterial({color:0xdddddd}));
+  pole.position.set(goalX, 4, 0); pole.castShadow=true; scene.add(pole);
+  const flag = new THREE.Mesh(new THREE.PlaneGeometry(2.4,1.4), new THREE.MeshStandardMaterial({color:0xd23b3b, side:THREE.DoubleSide}));
+  flag.position.set(goalX+1.2, 7, 0); scene.add(flag);
+}
+// distant parallax hills
+for (let i=0;i<24;i++){ const h = new THREE.Mesh(new THREE.ConeGeometry(6+Math.sin(i)*2, 8, 5),
+    new THREE.MeshStandardMaterial({color:0x5a7d55}));
+  h.position.set(i*8 - 10, -2, -18 - (i%3)*6); scene.add(h); }
+
+// ---------- loading ----------
+const loader = new GLTFLoader();
+const lf = document.getElementById('lf'), lt = document.getElementById('lt');
+function load(url){ return new Promise((res,rej)=> loader.load(url, res, undefined, rej)); }
+function fitHeight(obj, targetH){
+  const box = new THREE.Box3().setFromObject(obj); const size = new THREE.Vector3(); box.getSize(size);
+  const s = targetH / (size.y || 1); obj.scale.setScalar(s);
+  const box2 = new THREE.Box3().setFromObject(obj); obj.position.y -= box2.min.y; // feet to 0
+  return s;
+}
+function pickClip(clips, re){ return clips.find(c=>re.test(c.name)); }
+function enableShadows(o){ o.traverse(n=>{ if(n.isMesh){ n.castShadow=true; n.frombox=true; } }); }
+
+const assets = {};
+async function boot(){
+  const steps = [
+    ['knight', BASE+'chars/players/knight.glb'],
+    ['boar',   BASE+'creatures/wild_boar.glb'],
+    ['coin',   BASE+'dungeon/coin.glb'],
+  ];
+  let done=0;
+  for (const [k,u] of steps){ lt.textContent=k; assets[k]=await load(u); lf.style.width=(++done/steps.length*100)+'%'; }
+  start();
+}
+boot().catch(e=>{ lt.textContent='load failed: '+e.message; console.error(e); });
+
+// ---------- entities ----------
+const clock = new THREE.Clock();
+let player, mixer, actions={}, current=null;
+const state = { x: 0, y: 6, vx:0, vy:0, onGround:false, dir:1, coins:0, lives:3, dead:false, won:false, invuln:0 };
+const coins = [], boars = [];
+
+function play(name){ const a = actions[name]; if(!a || current===a) return;
+  a.reset().fadeIn(0.18).play(); if(current) current.fadeOut(0.18); current=a; }
+
+function start(){
+  // player
+  const g = assets.knight; player = g.scene;
+  fitHeight(player, 1.7); enableShadows(player);
+  const holder = new THREE.Group(); holder.add(player); scene.add(holder);
+  player.parent.userData.model = player;
+  window.__holder = holder;
+  mixer = new THREE.AnimationMixer(player);
+  const clips = g.animations||[];
+  const mk = (re)=>{ const c=pickClip(clips,re); return c? mixer.clipAction(c): null; };
+  actions.idle = mk(/idle|stand/i) || (clips[0]&&mixer.clipAction(clips[0]));
+  actions.run  = mk(/run|jog|walk|sprint/i) || actions.idle;
+  actions.jump = mk(/jump|fall|air/i) || actions.idle;
+  if(actions.idle){ current=actions.idle; actions.idle.play(); }
+
+  // coins along the level (wrap each in a group so the fit-to-feet offset survives)
+  const coinSrc = assets.coin.scene; fitHeight(coinSrc,0.9);
+  const coinSpots = [[16,2],[22,5.5],[27.5,7.8],[41,6.3],[48,2],[62,2],[67,6.8],[79,8.8],[91,5.8],[100,2],[113,6.3],[125,8.3],[135,5.8],[120,2],[140,2]];
+  for(const [x,y] of coinSpots){ const grp=new THREE.Group(); grp.add(skClone(coinSrc)); grp.position.set(x,y+0.5,0); grp.traverse(n=>{if(n.isMesh)n.castShadow=true;}); scene.add(grp); coins.push({obj:grp, x, y:y+0.9, got:false}); }
+
+  // boars patrolling platforms
+  const boarSrc = assets.boar.scene; fitHeight(boarSrc,1.1);
+  const boarClips = assets.boar.animations||[];
+  const boarSpots = [[40,0,36,46],[70,0,58,96],[110,0,104,150],[132,4.5,130,140]];
+  for(const [x,y,lo,hi] of boarSpots){
+    const b = skClone(boarSrc); const grp=new THREE.Group(); grp.add(b); grp.position.set(x,y,0); grp.traverse(n=>{if(n.isMesh)n.castShadow=true;}); scene.add(grp);
+    let bmx=null; if(boarClips.length){ bmx=new THREE.AnimationMixer(b); const wc=pickClip(boarClips,/walk|run|idle/i)||boarClips[0]; bmx.clipAction(wc).play(); }
+    boars.push({obj:grp, x, y, lo, hi, dir:-1, mx:bmx, dead:false, tip:0});
+  }
+  document.getElementById('load').style.display='none';
+  loop();
+}
+
+// ---------- input ----------
+const keys={};
+addEventListener('keydown',e=>{ keys[e.code]=true; if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) e.preventDefault(); });
+addEventListener('keyup',e=>{ keys[e.code]=false; });
+document.getElementById('mb').onclick=()=>location.reload();
+
+// ---------- physics helpers ----------
+const GRAV=-34, MOVE=8.2, JUMP=13.2;
+function groundYAt(x, feetY){
+  // highest platform top at or below feet (within a small step) under x
+  let best=-Infinity;
+  for(const p of platforms){ if(x>=p.x-0.4 && x<=p.x+p.w+0.4){ if(p.y<=feetY+0.35 && p.y>best) best=p.y; } }
+  return best;
+}
+function solidTopUnder(x){ let best=-Infinity; for(const p of platforms){ if(x>=p.x && x<=p.x+p.w && p.y>best) best=p.y; } return best; }
+
+function endGame(win){ if(state.won||state.dead) return; state[win?'won':'dead']=true;
+  document.getElementById('mt').textContent = win?'🏆 The Vale is saved!':'💀 Game Over';
+  document.getElementById('msg').style.display='flex'; }
+
+// ---------- loop ----------
+function loop(){
+  requestAnimationFrame(loop);
+  const dt = Math.min(0.033, clock.getDelta());
+  if(!state.dead && !state.won) update(dt);
+  if(mixer) mixer.update(dt);
+  for(const b of boars) if(b.mx) b.mx.update(dt);
+  for(const c of coins) if(!c.got){ c.obj.rotation.y += dt*3; }
+  renderer.render(scene,camera);
+}
+
+function update(dt){
+  state.invuln=Math.max(0,state.invuln-dt);
+  // horizontal
+  let ax=0; if(keys['ArrowLeft']||keys['KeyA']) ax-=1; if(keys['ArrowRight']||keys['KeyD']) ax+=1;
+  state.vx = ax*MOVE;
+  if(ax!==0) state.dir=ax;
+  state.x += state.vx*dt;
+  if(state.x<-4) state.x=-4;
+  // jump
+  const wantJump = keys['Space']||keys['ArrowUp']||keys['KeyW'];
+  if(wantJump && state.onGround){ state.vy=JUMP; state.onGround=false; }
+  // gravity
+  state.vy += GRAV*dt; state.y += state.vy*dt;
+  // land
+  const gy = groundYAt(state.x, state.y);
+  if(state.vy<=0 && gy>-Infinity && state.y<=gy+0.02){ state.y=gy; state.vy=0; state.onGround=true; }
+  else state.onGround=false;
+  // fell in a pit
+  if(state.y<-12){ hurt(true); }
+
+  // anim select
+  if(!state.onGround) play('jump'); else if(Math.abs(state.vx)>0.1) play('run'); else play('idle');
+
+  // place player
+  const holder = window.__holder;
+  holder.position.set(state.x, state.y, 0);
+  holder.rotation.y = state.dir>0 ? Math.PI/2 : -Math.PI/2; // face travel direction
+
+  // coins
+  for(const c of coins){ if(c.got) continue;
+    if(Math.abs(c.x-state.x)<0.9 && Math.abs(c.y-(state.y+0.9))<1.1){ c.got=true; c.obj.visible=false; state.coins++; document.getElementById('coins').textContent=state.coins; } }
+
+  // boars
+  for(const b of boars){ if(b.dead){ b.tip+=dt; b.obj.rotation.z = Math.min(Math.PI/2, b.tip*4); b.obj.position.y = b.y - b.tip*2; continue; }
+    b.x += b.dir*2.2*dt; if(b.x<b.lo){b.x=b.lo;b.dir=1;} if(b.x>b.hi){b.x=b.hi;b.dir=-1;}
+    b.y = solidTopUnder(b.x); if(b.y===-Infinity) b.y=0;
+    b.obj.position.set(b.x,b.y,0); b.obj.rotation.y = b.dir>0?Math.PI/2:-Math.PI/2;
+    // collision with player
+    const dx=Math.abs(b.x-state.x), dyFeet=state.y-(b.y+0.9);
+    if(dx<0.95 && Math.abs(state.y-b.y)<1.6){
+      if(state.vy<0 && state.y > b.y+0.5){ b.dead=true; state.vy=JUMP*0.7; }        // stomp
+      else if(state.invuln<=0){ hurt(false); state.vx=0; state.x-=state.dir*0.6; }   // hit
+    }
+  }
+
+  // goal
+  if(state.x>=goalX-0.6) endGame(true);
+
+  // camera follow — true side view (no yaw), slight downward pitch
+  const camX = state.x + 2*state.dir;
+  camera.position.x += (camX - camera.position.x)*0.12;
+  camera.position.y += ((state.y+3.5) - camera.position.y)*0.08;
+  camera.position.z = 21;
+  camera.lookAt(camera.position.x, state.y+1.5, 0);
+  sun.position.set(state.x-8,20,12); sun.target.position.set(state.x,0,0);
+}
+
+function hurt(pit){ if(state.invuln>0 && !pit) return;
+  state.lives--; document.getElementById('lives').textContent=Math.max(0,state.lives);
+  state.invuln=1.2;
+  if(pit){ state.x=Math.max(-4,state.x-3); state.y=10; state.vy=0; }
+  if(state.lives<=0) endGame(false);
+}
+</script>
+</body>
+</html>
