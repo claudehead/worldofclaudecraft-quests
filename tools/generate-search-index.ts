@@ -74,6 +74,7 @@ for (const g of [
   ['Heroic Nythraxis — the raid', 'reference/heroic-nythraxis.md'],
   ['Specializations — signature abilities', 'reference/specializations.md'],
   ['Honor & Warfare PvP', 'reference/warfare.md'],
+  ['Dungeon Finder — role queue', 'reference/dungeon-finder.md'],
   ['Sneak peek (upcoming branches)', 'reference/sneak-peek.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
 
