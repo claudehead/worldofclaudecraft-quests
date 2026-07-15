@@ -21,6 +21,21 @@
   #load .fill{height:100%;width:0;background:#ffd34d;transition:width .2s}
   #load .t{letter-spacing:.25em;text-transform:uppercase;font-size:.75rem;opacity:.7}
   #ctl{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);opacity:.55;font-size:.72rem;z-index:3;text-shadow:1px 1px 0 #0006}
+  /* fullscreen toggle */
+  #fs{position:fixed;top:10px;right:12px;z-index:7;width:44px;height:44px;font:inherit;font-size:20px;
+    background:#0006;color:#fff;border:1px solid #fff4;border-radius:8px;cursor:pointer;line-height:1}
+  #fs:active{background:#fff3;color:#111}
+  /* NES-style touch controls (mobile / portrait) */
+  #touch{position:fixed;left:0;right:0;bottom:0;display:none;justify-content:space-between;align-items:flex-end;
+    padding:0 20px calc(20px + env(safe-area-inset-bottom));z-index:7;pointer-events:none}
+  #touch .cluster{pointer-events:none;display:flex;gap:16px;align-items:center}
+  .tb{pointer-events:auto;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;
+    width:72px;height:72px;border-radius:50%;border:2px solid #ffffff66;background:#00000055;color:#fff;
+    font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(2px)}
+  .tb:active{background:#ffffff55;color:#111;transform:scale(.94)}
+  .tb.jump{width:98px;height:98px;font-size:20px;background:#c0392baa;border-color:#ffffffaa}
+  body.touch #touch{display:flex}
+  body.touch #ctl{display:none}
 </style>
 <script type="importmap">
 {"imports":{
@@ -35,6 +50,16 @@
 <div id="ctl">← → / A D · move &nbsp; SPACE / ↑ · jump &nbsp; stomp the boars</div>
 <div id="load"><div class="t">Loading Eastbrook Vale…</div><div class="bar"><div class="fill" id="lf"></div></div><div class="t" id="lt" style="opacity:.4"></div></div>
 <div id="msg"><h1 id="mt"></h1><button id="mb">Play again</button></div>
+<button id="fs" aria-label="Toggle fullscreen" title="Fullscreen">⛶</button>
+<div id="touch">
+  <div class="cluster">
+    <button class="tb" data-k="ArrowLeft" aria-label="Left">◀</button>
+    <button class="tb" data-k="ArrowRight" aria-label="Right">▶</button>
+  </div>
+  <div class="cluster">
+    <button class="tb jump" data-k="Space" aria-label="Jump">JUMP</button>
+  </div>
+</div>
 <script>
 // Surface any error on-screen (module-load errors, model failures) instead of a blank page.
 (function(){
@@ -194,6 +219,27 @@ const keys={};
 addEventListener('keydown',e=>{ keys[e.code]=true; if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) e.preventDefault(); });
 addEventListener('keyup',e=>{ keys[e.code]=false; });
 document.getElementById('mb').onclick=()=>location.reload();
+
+// fullscreen toggle
+const fsBtn = document.getElementById('fs');
+fsBtn.onclick = () => {
+  const el = document.documentElement;
+  if (document.fullscreenElement) (document.exitFullscreen||document.webkitExitFullscreen).call(document);
+  else (el.requestFullscreen||el.webkitRequestFullscreen)?.call(el);
+};
+document.addEventListener('fullscreenchange', ()=>{ fsBtn.textContent = document.fullscreenElement ? '⤢' : '⛶'; });
+
+// on-screen NES-style controls — drive the same key flags the game reads
+if (matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window) document.body.classList.add('touch');
+for (const b of document.querySelectorAll('.tb')){
+  const k = b.getAttribute('data-k');
+  const set = v => e => { e.preventDefault(); keys[k] = v; };
+  b.addEventListener('pointerdown', set(true));
+  b.addEventListener('pointerup', set(false));
+  b.addEventListener('pointerleave', set(false));
+  b.addEventListener('pointercancel', set(false));
+  b.addEventListener('contextmenu', e=>e.preventDefault());
+}
 
 // ---------- physics helpers ----------
 const GRAV=-34, MOVE=8.2, JUMP=13.2;
