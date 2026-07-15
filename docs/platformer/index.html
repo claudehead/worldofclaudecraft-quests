@@ -337,6 +337,7 @@ function update(dt){
   if(wantJump && !state.jumpHeld && state.jumps<2){ state.vy = state.jumps===0 ? JUMP : JUMP*0.92; state.jumps++; state.onGround=false; }
   state.jumpHeld = wantJump;
   // gravity
+  const prevY = state.y;
   state.vy += GRAV*dt; state.y += state.vy*dt;
   // head-bonk hittable bricks: stop rising, bump the brick, pop a coin
   if(state.vy>0){ const head=state.y+1.72, prevHead=head-state.vy*dt;
@@ -345,10 +346,15 @@ function update(dt){
       if(!br.used){ br.used=true; state.coins++; document.getElementById('coins').textContent=state.coins; popCoin(br.x,br.top); }
       break; } }
   }
-  // land
-  const gy = groundYAt(state.x, state.y);
-  if(state.vy<=0 && gy>-Infinity && state.y<=gy+0.02){ state.y=gy; state.vy=0; state.onGround=true; state.cpX=state.x; state.cpY=state.y; }
-  else state.onGround=false;
+  // land — swept test: catch any platform top we crossed this frame (no fall-through)
+  if(state.vy<=0){
+    let landY=-Infinity;
+    for(const p of platforms){
+      if(state.x>=p.x-0.4 && state.x<=p.x+p.w+0.4 && prevY>=p.y-0.06 && state.y<=p.y+0.02 && p.y>landY) landY=p.y;
+    }
+    if(landY>-Infinity){ state.y=landY; state.vy=0; state.onGround=true; state.cpX=state.x; state.cpY=state.y; }
+    else state.onGround=false;
+  } else state.onGround=false;
   // fell in a pit → lose a life and respawn at the last safe ground (or game over)
   if(state.y<-6){ hurt(true); }
 
