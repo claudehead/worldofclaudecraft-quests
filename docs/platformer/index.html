@@ -21,6 +21,8 @@
   #load .fill{height:100%;width:0;background:#ffd34d;transition:width .2s}
   #load .t{letter-spacing:.25em;text-transform:uppercase;font-size:.75rem;opacity:.7}
   #ctl{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);opacity:.55;font-size:.72rem;z-index:3;text-shadow:1px 1px 0 #0006}
+  #toast{position:fixed;top:26%;left:50%;transform:translateX(-50%);z-index:4;opacity:0;transition:opacity .3s;
+    font-size:clamp(28px,7vw,54px);font-weight:700;letter-spacing:.06em;text-shadow:3px 3px 0 #0007;pointer-events:none}
   /* fullscreen toggle */
   #fs{position:fixed;top:10px;right:12px;z-index:7;width:44px;height:44px;font:inherit;font-size:20px;
     background:#0006;color:#fff;border:1px solid #fff4;border-radius:8px;cursor:pointer;line-height:1}
@@ -57,7 +59,8 @@
 </head>
 <body>
 <canvas id="cv"></canvas>
-<div id="hud"><b>◎</b> <span id="coins">0</span> &nbsp;·&nbsp; <b>♥</b> <span id="lives">3</span></div>
+<div id="hud"><b>◎</b> <span id="coins">0</span> &nbsp;·&nbsp; <b>♥</b> <span id="lives">3</span> &nbsp;·&nbsp; <b>⚑</b> <span id="lvl">1</span></div>
+<div id="toast"></div>
 <div id="ctl">← → / A D · move &nbsp; SPACE / ↑ · jump &nbsp; J · attack &nbsp; or stomp the boars</div>
 <div id="load"><div class="t">Loading Eastbrook Vale…</div><div class="bar"><div class="fill" id="lf"></div></div><div class="t" id="lt" style="opacity:.4"></div></div>
 <div id="msg"><h1 id="mt"></h1><button id="mb">Play again</button></div>
@@ -130,44 +133,79 @@ const slashMat = new THREE.MeshBasicMaterial({ color:0xffffff, transparent:true,
 const slashMesh = new THREE.Mesh(new THREE.RingGeometry(0.9, 1.7, 20, 1, -0.7, 1.4), slashMat);
 slashMesh.visible=false; scene.add(slashMesh);
 
-// ---------- level ----------
-// platforms: {x,y,w,h,d} — top surface is y (feet rest there); x is left edge, w width.
-const GROUND_Y = 0;
-const platforms = [];
-function plat(x, y, w){ platforms.push({ x, y, w }); }
-// a rolling ground with gaps + floating blocks
-const LEVEL_END = 150;
-plat(-4, 0, 30);
-plat(30, 0, 22);
-plat(58, 0, 40);
-plat(104, 0, 50);
-plat(20, 4.2, 5); plat(27, 6.5, 4); plat(40, 5, 6);
-plat(66, 5.5, 7); plat(78, 7.5, 5); plat(90, 4.5, 6);
-plat(112, 5, 6); plat(124, 7, 6); plat(134, 4.5, 8);
-
-// visuals for platforms (blocky WoC-earth look)
+// ---------- levels ----------
 const groundMat = new THREE.MeshStandardMaterial({ color: 0x6c8f4a, roughness: 1 });
 const brickMat  = new THREE.MeshStandardMaterial({ color: 0x9c6b3f, roughness: 1 });
+const blockMat  = new THREE.MeshStandardMaterial({ color: 0xd7b04a, roughness: .7, metalness:.15, emissive:0x2a2008 }); // hittable brick
 const DEPTH = 4;
-for (const p of platforms){
-  const thick = p.y <= 0.01 ? 6 : 1.1;
-  const g = new THREE.BoxGeometry(p.w, thick, DEPTH);
-  const m = new THREE.Mesh(g, p.y<=0.01?groundMat:brickMat);
-  m.position.set(p.x + p.w/2, p.y - thick/2, 0);
-  m.receiveShadow = true; m.castShadow = p.y>0.01;
-  scene.add(m);
+
+// persistent parallax hills
+for (let i=0;i<70;i++){ const h = new THREE.Mesh(new THREE.ConeGeometry(6+Math.sin(i)*2, 8, 5),
+    new THREE.MeshStandardMaterial({color:0x5a7d55})); h.position.set(i*8 - 10, -2, -18 - (i%3)*6); scene.add(h); }
+
+// plats:[x,y(top),w]  bricks:[x,y]  coins:[x,y]  boars:[x,y,lo,hi]  end:flag-x
+const LEVELS = [
+  { end:150,
+    plats:[[-4,0,30],[30,0,22],[58,0,40],[104,0,52],[20,4.2,5],[40,5,6],[66,5.5,7],[90,4.5,6],[112,5,6],[134,4.5,8]],
+    bricks:[[25.5,4.6],[27,4.6],[78,6.6],[124,6.6]],
+    coins:[[16,2],[26,6.5],[41,6.3],[48,2],[62,2],[67,7],[91,5.8],[100,2],[113,6.3],[135,5.8],[120,2],[140,2]],
+    boars:[[40,0,36,46],[70,0,58,96],[110,0,104,146]] },
+  { end:165,
+    plats:[[-4,0,20],[26,0,10],[44,0,14],[66,0,18],[92,0,30],[128,0,40],[16,4.5,5],[36,6,5],[54,5,6],[78,6.5,6],[104,5.5,6],[116,8,5]],
+    bricks:[[36,6.1],[37.5,6.1],[104,5.6],[105.5,5.6],[140,4.6]],
+    coins:[[16,6.5],[30,2],[48,2],[54,7],[70,2],[78,8.5],[96,2],[104,7.5],[116,10],[135,2],[150,2],[155,2]],
+    boars:[[46,0,44,58],[96,0,92,122],[132,0,128,160]] },
+  { end:175,
+    plats:[[-4,0,16],[24,0,8],[40,0,8],[56,0,10],[80,0,10],[104,0,14],[132,0,44],[18,5,4],[34,6.5,4],[50,5,4],[68,7,5],[92,6,5],[116,7,5]],
+    bricks:[[34,6.6],[68,7.1],[69.5,7.1],[92,6.1],[116,7.1],[150,4.6],[151.5,4.6]],
+    coins:[[18,7],[30,2],[46,2],[50,7],[62,2],[68,9],[86,2],[92,8],[110,2],[116,9],[140,2],[160,2],[165,2]],
+    boars:[[44,0,40,50],[84,0,80,92],[110,0,104,120],[150,0,132,172]] },
+];
+
+let platforms=[], bricks=[], coins=[], boars=[], pops=[], goalX=0, level=0;
+const levelGroup = new THREE.Group(); scene.add(levelGroup);
+let coinSrc, boarSrc, boarClips=[];
+
+function buildLevel(i){
+  level = i;
+  while(levelGroup.children.length) levelGroup.remove(levelGroup.children[0]);
+  platforms=[]; bricks=[]; coins=[]; boars=[]; pops=[];
+  const L = LEVELS[i]; goalX = L.end - 4;
+  const lvlEl = document.getElementById('lvl'); if(lvlEl) lvlEl.textContent = (i+1);
+  // platforms
+  for(const [x,y,w] of L.plats){ platforms.push({x,y,w});
+    const thick = y<=0.01?6:1.1;
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w,thick,DEPTH), y<=0.01?groundMat:brickMat);
+    m.position.set(x+w/2, y-thick/2, 0); m.receiveShadow=true; m.castShadow=y>0.01; levelGroup.add(m); }
+  // hittable bricks — also solid to stand on
+  for(const [x,y] of (L.bricks||[])){ const w=1.4; platforms.push({x:x-w/2, y:y+0.7, w});
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w,1.4,DEPTH*0.9), blockMat.clone());
+    m.position.set(x,y,0); m.castShadow=true; m.receiveShadow=true; levelGroup.add(m);
+    bricks.push({x, y, w, mesh:m, top:y+0.7, bottom:y-0.7, used:false, bump:0}); }
+  // goal flag
+  const pole=new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.12,8,8), new THREE.MeshStandardMaterial({color:0xdddddd}));
+  pole.position.set(goalX,4,0); pole.castShadow=true; levelGroup.add(pole);
+  const flag=new THREE.Mesh(new THREE.PlaneGeometry(2.4,1.4), new THREE.MeshStandardMaterial({color:0xd23b3b,side:THREE.DoubleSide}));
+  flag.position.set(goalX+1.2,7,0); levelGroup.add(flag);
+  // coins
+  for(const [x,y] of L.coins){ const grp=new THREE.Group(); grp.add(skClone(coinSrc)); grp.position.set(x,y+0.5,0);
+    grp.traverse(n=>{if(n.isMesh)n.castShadow=true;}); levelGroup.add(grp); coins.push({obj:grp,x,y:y+0.9,got:false}); }
+  // boars
+  for(const [x,y,lo,hi] of L.boars){ const b=skClone(boarSrc); const grp=new THREE.Group(); grp.add(b); grp.position.set(x,y,0);
+    grp.traverse(n=>{if(n.isMesh)n.castShadow=true;}); levelGroup.add(grp);
+    let bmx=null; if(boarClips.length){ bmx=new THREE.AnimationMixer(b); const wc=pickClip(boarClips,/walk|run|idle/i)||boarClips[0]; bmx.clipAction(wc).play(); }
+    boars.push({obj:grp,x,y,lo,hi,dir:-1,mx:bmx,dead:false,tip:0}); }
+  // reset hero to the start
+  state.x=0; state.y=6; state.vx=0; state.vy=0; state.cpX=0; state.cpY=6; state.won=false; state.invuln=0.6;
+  camera.position.set(2,9.5,21);
+  if(i>0) toast('Level '+(i+1));
 }
-// goal flag
-const goalX = LEVEL_END - 4;
-{ const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.12,8,8), new THREE.MeshStandardMaterial({color:0xdddddd}));
-  pole.position.set(goalX, 4, 0); pole.castShadow=true; scene.add(pole);
-  const flag = new THREE.Mesh(new THREE.PlaneGeometry(2.4,1.4), new THREE.MeshStandardMaterial({color:0xd23b3b, side:THREE.DoubleSide}));
-  flag.position.set(goalX+1.2, 7, 0); scene.add(flag);
-}
-// distant parallax hills
-for (let i=0;i<24;i++){ const h = new THREE.Mesh(new THREE.ConeGeometry(6+Math.sin(i)*2, 8, 5),
-    new THREE.MeshStandardMaterial({color:0x5a7d55}));
-  h.position.set(i*8 - 10, -2, -18 - (i%3)*6); scene.add(h); }
+
+function popCoin(x,y){ const grp=new THREE.Group(); grp.add(skClone(coinSrc)); grp.position.set(x,y+0.4,0.5); levelGroup.add(grp);
+  pops.push({grp, vy:7, t:0.55}); }
+
+let toastT=0;
+function toast(txt){ const el=document.getElementById('toast'); if(!el) return; el.textContent=txt; el.style.opacity='1'; toastT=1.3; }
 
 // ---------- loading ----------
 const loader = new GLTFLoader();
@@ -201,7 +239,6 @@ const clock = new THREE.Clock();
 let player, mixer, actions={}, current=null;
 const state = { x: 0, y: 6, vx:0, vy:0, onGround:false, dir:1, coins:0, lives:3, dead:false, won:false, invuln:0, cpX:0, cpY:6 };
 let attackCD=0, attacking=0, slashT=0;
-const coins = [], boars = [];
 
 function play(name){ const a = actions[name]; if(!a || current===a) return;
   a.reset().fadeIn(0.18).play(); if(current) current.fadeOut(0.18); current=a; }
@@ -222,20 +259,11 @@ function start(){
   actions.attack = mk(/attack|slash|swing|melee|strike|cast|ability|1h|sword/i);
   if(actions.idle){ current=actions.idle; actions.idle.play(); }
 
-  // coins along the level (wrap each in a group so the fit-to-feet offset survives)
-  const coinSrc = assets.coin.scene; fitHeight(coinSrc,0.9);
-  const coinSpots = [[16,2],[22,5.5],[27.5,7.8],[41,6.3],[48,2],[62,2],[67,6.8],[79,8.8],[91,5.8],[100,2],[113,6.3],[125,8.3],[135,5.8],[120,2],[140,2]];
-  for(const [x,y] of coinSpots){ const grp=new THREE.Group(); grp.add(skClone(coinSrc)); grp.position.set(x,y+0.5,0); grp.traverse(n=>{if(n.isMesh)n.castShadow=true;}); scene.add(grp); coins.push({obj:grp, x, y:y+0.9, got:false}); }
+  // sources for per-level cloning
+  coinSrc = assets.coin.scene; fitHeight(coinSrc, 0.9);
+  boarSrc = assets.boar.scene; fitHeight(boarSrc, 1.1); boarClips = assets.boar.animations||[];
 
-  // boars patrolling platforms
-  const boarSrc = assets.boar.scene; fitHeight(boarSrc,1.1);
-  const boarClips = assets.boar.animations||[];
-  const boarSpots = [[40,0,36,46],[70,0,58,96],[110,0,104,150],[132,4.5,130,140]];
-  for(const [x,y,lo,hi] of boarSpots){
-    const b = skClone(boarSrc); const grp=new THREE.Group(); grp.add(b); grp.position.set(x,y,0); grp.traverse(n=>{if(n.isMesh)n.castShadow=true;}); scene.add(grp);
-    let bmx=null; if(boarClips.length){ bmx=new THREE.AnimationMixer(b); const wc=pickClip(boarClips,/walk|run|idle/i)||boarClips[0]; bmx.clipAction(wc).play(); }
-    boars.push({obj:grp, x, y, lo, hi, dir:-1, mx:bmx, dead:false, tip:0});
-  }
+  buildLevel(0);
   document.getElementById('load').style.display='none';
   loop();
 }
@@ -307,6 +335,13 @@ function update(dt){
   if(wantJump && state.onGround){ state.vy=JUMP; state.onGround=false; }
   // gravity
   state.vy += GRAV*dt; state.y += state.vy*dt;
+  // head-bonk hittable bricks: stop rising, bump the brick, pop a coin
+  if(state.vy>0){ const head=state.y+1.72, prevHead=head-state.vy*dt;
+    for(const br of bricks){ if(state.x>br.x-br.w/2-0.3 && state.x<br.x+br.w/2+0.3 && head>=br.bottom && prevHead<br.bottom+0.02){
+      state.vy=-2; state.y=Math.min(state.y, br.bottom-1.73); br.bump=0.18;
+      if(!br.used){ br.used=true; state.coins++; document.getElementById('coins').textContent=state.coins; popCoin(br.x,br.top); }
+      break; } }
+  }
   // land
   const gy = groundYAt(state.x, state.y);
   if(state.vy<=0 && gy>-Infinity && state.y<=gy+0.02){ state.y=gy; state.vy=0; state.onGround=true; state.cpX=state.x; state.cpY=state.y; }
@@ -321,6 +356,12 @@ function update(dt){
     slashMesh.rotation.z = state.dir>0 ? -0.3 : Math.PI+0.3;
     slashMesh.scale.setScalar(1 + (0.18-slashT)*5); slashMat.opacity = Math.max(0, slashT/0.18);
     if(slashT<=0) slashMesh.visible=false; }
+
+  // brick bumps, coin pops, level toast
+  for(const br of bricks){ if(br.bump>0){ br.bump-=dt; br.mesh.position.y = br.y + Math.max(0,Math.sin(br.bump/0.18*Math.PI))*0.35; } }
+  for(let i=pops.length-1;i>=0;i--){ const p=pops[i]; p.t-=dt; p.vy-=20*dt; p.grp.position.y+=p.vy*dt; p.grp.rotation.y+=dt*9;
+    if(p.t<=0){ levelGroup.remove(p.grp); pops.splice(i,1); } }
+  if(toastT>0){ toastT-=dt; if(toastT<=0){ const el=document.getElementById('toast'); if(el) el.style.opacity='0'; } }
 
   // anim select (attack anim holds while attacking)
   if(attacking>0){ /* keep attack pose */ }
@@ -348,8 +389,8 @@ function update(dt){
     }
   }
 
-  // goal
-  if(state.x>=goalX-0.6) endGame(true);
+  // goal → next level, or win after the last
+  if(state.x>=goalX-0.6){ if(level < LEVELS.length-1) buildLevel(level+1); else endGame(true); }
 
   // camera follow — true side view (no yaw), slight downward pitch
   const camX = state.x + 2*state.dir;
