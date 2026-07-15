@@ -150,16 +150,17 @@ const LEVELS = [
     bricks:[[25.5,4.6],[27,4.6],[78,6.6],[124,6.6]],
     coins:[[16,2],[26,6.5],[41,6.3],[48,2],[62,2],[67,7],[91,5.8],[100,2],[113,6.3],[135,5.8],[120,2],[140,2]],
     boars:[[40,0,36,46],[70,0,58,96],[110,0,104,146]] },
-  { end:165,
-    plats:[[-4,0,20],[26,0,10],[44,0,14],[66,0,18],[92,0,30],[128,0,40],[16,4.5,5],[36,6,5],[54,5,6],[78,6.5,6],[104,5.5,6],[116,8,5]],
-    bricks:[[36,6.1],[37.5,6.1],[104,5.6],[105.5,5.6],[140,4.6]],
-    coins:[[16,6.5],[30,2],[48,2],[54,7],[70,2],[78,8.5],[96,2],[104,7.5],[116,10],[135,2],[150,2],[155,2]],
-    boars:[[46,0,44,58],[96,0,92,122],[132,0,128,160]] },
-  { end:175,
-    plats:[[-4,0,16],[24,0,8],[40,0,8],[56,0,10],[80,0,10],[104,0,14],[132,0,44],[18,5,4],[34,6.5,4],[50,5,4],[68,7,5],[92,6,5],[116,7,5]],
-    bricks:[[34,6.6],[68,7.1],[69.5,7.1],[92,6.1],[116,7.1],[150,4.6],[151.5,4.6]],
-    coins:[[18,7],[30,2],[46,2],[50,7],[62,2],[68,9],[86,2],[92,8],[110,2],[116,9],[140,2],[160,2],[165,2]],
-    boars:[[44,0,40,50],[84,0,80,92],[110,0,104,120],[150,0,132,172]] },
+  { end:158,  // gaps all 8 wide (single-jump ≈9.8), stones ≤4.5 high
+    plats:[[-4,0,20],[24,0,12],[44,0,16],[68,0,16],[92,0,20],[120,0,44],[16,4,4],[52,4.5,5],[100,4.5,5]],
+    bricks:[[36,4.2],[37.5,4.2],[84,4.6],[112,5],[113.5,5]],
+    coins:[[10,2],[18,5.5],[30,2],[48,2],[52,6],[60,2],[76,2],[84,6],[96,2],[100,6],[112,6.5],[130,2],[145,2],[152,2]],
+    boars:[[50,0,44,60],[100,0,92,112],[140,0,120,154]] },
+  { end:170,  // 12-wide first gap bridged by the stone at x15; the rest ≤8; stones ≤4.5
+    plats:[[-4,0,14],[22,0,8],[38,0,8],[54,0,10],[72,0,10],[90,0,10],[108,0,10],[126,0,44],
+           [15,4,3],[30,4.5,4],[46,4,4],[64,4.5,4],[82,4,4],[100,4.5,4],[118,4,4]],
+    bricks:[[30,5],[64,5],[82,5],[118,5],[150,4.5],[151.5,4.5]],
+    coins:[[8,2],[22,2],[30,6],[38,2],[46,5.5],[54,2],[64,6],[72,2],[82,5.5],[90,2],[100,6],[108,2],[118,5.5],[140,2],[160,2],[165,2]],
+    boars:[[54,0,54,64],[96,0,90,106],[145,0,126,166]] },
 ];
 
 let platforms=[], bricks=[], coins=[], boars=[], pops=[], goalX=0, level=0;
@@ -196,7 +197,7 @@ function buildLevel(i){
     let bmx=null; if(boarClips.length){ bmx=new THREE.AnimationMixer(b); const wc=pickClip(boarClips,/walk|run|idle/i)||boarClips[0]; bmx.clipAction(wc).play(); }
     boars.push({obj:grp,x,y,lo,hi,dir:-1,mx:bmx,dead:false,tip:0}); }
   // reset hero to the start
-  state.x=0; state.y=6; state.vx=0; state.vy=0; state.cpX=0; state.cpY=6; state.won=false; state.invuln=0.6;
+  state.x=0; state.y=6; state.vx=0; state.vy=0; state.cpX=0; state.cpY=6; state.won=false; state.invuln=0.6; state.jumps=0; state.jumpHeld=false;
   camera.position.set(2,9.5,21);
   if(i>0) toast('Level '+(i+1));
 }
@@ -237,7 +238,7 @@ boot().catch(e=>{ lt.textContent='load failed: '+e.message; console.error(e); })
 // ---------- entities ----------
 const clock = new THREE.Clock();
 let player, mixer, actions={}, current=null;
-const state = { x: 0, y: 6, vx:0, vy:0, onGround:false, dir:1, coins:0, lives:3, dead:false, won:false, invuln:0, cpX:0, cpY:6 };
+const state = { x: 0, y: 6, vx:0, vy:0, onGround:false, dir:1, coins:0, lives:3, dead:false, won:false, invuln:0, cpX:0, cpY:6, jumps:0, jumpHeld:false };
 let attackCD=0, attacking=0, slashT=0;
 
 function play(name){ const a = actions[name]; if(!a || current===a) return;
@@ -330,9 +331,11 @@ function update(dt){
   if(ax!==0) state.dir=ax;
   state.x += state.vx*dt;
   if(state.x<-4) state.x=-4;
-  // jump
+  // jump (grounded jump + one air/double jump), edge-triggered
   const wantJump = keys['Space']||keys['ArrowUp']||keys['KeyW'];
-  if(wantJump && state.onGround){ state.vy=JUMP; state.onGround=false; }
+  if(state.onGround) state.jumps=0;
+  if(wantJump && !state.jumpHeld && state.jumps<2){ state.vy = state.jumps===0 ? JUMP : JUMP*0.92; state.jumps++; state.onGround=false; }
+  state.jumpHeld = wantJump;
   // gravity
   state.vy += GRAV*dt; state.y += state.vy*dt;
   // head-bonk hittable bricks: stop rising, bump the brick, pop a coin
