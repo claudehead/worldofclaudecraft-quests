@@ -6,7 +6,7 @@
 <title>Claudecraft Bros. — a WoC side-scroller</title>
 <style>
   html,body{margin:0;height:100%;overflow:hidden;background:#7ec0ee;font-family:ui-monospace,Consolas,monospace;color:#fff}
-  #cv{display:block;width:100vw;height:100vh}
+  #cv{position:fixed;top:0;left:0;display:block;width:100vw;height:100vh}
   #hud{position:fixed;top:12px;left:16px;font-size:18px;text-shadow:2px 2px 0 #0006;letter-spacing:.03em;z-index:3}
   #hud b{font-weight:700}
   #msg{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;
@@ -36,6 +36,16 @@
   .tb.jump{width:98px;height:98px;font-size:20px;background:#c0392baa;border-color:#ffffffaa}
   body.touch #touch{display:flex}
   body.touch #ctl{display:none}
+  /* portrait: split the screen — game on top, controller panel on the bottom */
+  @media (orientation: portrait){
+    body.touch #cv{ height: 64vh; }
+    body.touch #hud{ }
+    body.touch #touch{ top:auto; height:36vh; align-items:center;
+      background:linear-gradient(#1a1330,#0d0a1a); border-top:3px solid #35285a;
+      box-shadow:inset 0 3px 12px #0008; padding-bottom:calc(14px + env(safe-area-inset-bottom)); }
+    body.touch .tb{ width:78px; height:78px; }
+    body.touch .tb.jump{ width:104px; height:104px; }
+  }
 </style>
 <script type="importmap">
 {"imports":{
@@ -94,9 +104,16 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x7ec0ee);
 scene.fog = new THREE.Fog(0x7ec0ee, 40, 90);
 
-const camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.1, 200);
-function resize(){ camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); }
-addEventListener('resize', resize); resize();
+const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 200);
+function resize(){
+  const w = cv.clientWidth || innerWidth, h = cv.clientHeight || innerHeight;
+  camera.aspect = w/h; camera.updateProjectionMatrix();
+  renderer.setSize(w, h, false); // false: canvas CSS size is controlled by layout
+}
+addEventListener('resize', resize);
+addEventListener('orientationchange', ()=> setTimeout(resize, 120));
+document.addEventListener('fullscreenchange', ()=> setTimeout(resize, 120));
+resize();
 
 // lights
 scene.add(new THREE.HemisphereLight(0xcfe8ff, 0x4a6b3a, 1.05));
@@ -230,7 +247,7 @@ fsBtn.onclick = () => {
 document.addEventListener('fullscreenchange', ()=>{ fsBtn.textContent = document.fullscreenElement ? '⤢' : '⛶'; });
 
 // on-screen NES-style controls — drive the same key flags the game reads
-if (matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window) document.body.classList.add('touch');
+if (matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window){ document.body.classList.add('touch'); resize(); }
 for (const b of document.querySelectorAll('.tb')){
   const k = b.getAttribute('data-k');
   const set = v => e => { e.preventDefault(); keys[k] = v; };
