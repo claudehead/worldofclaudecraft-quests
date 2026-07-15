@@ -34,6 +34,7 @@
     font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(2px)}
   .tb:active{background:#ffffff55;color:#111;transform:scale(.94)}
   .tb.jump{width:98px;height:98px;font-size:20px;background:#c0392baa;border-color:#ffffffaa}
+  .tb.atk{background:#2e64c9aa;border-color:#ffffffaa;font-size:30px}
   body.touch #touch{display:flex}
   body.touch #ctl{display:none}
   /* portrait: split the screen — game on top, controller panel on the bottom */
@@ -57,7 +58,7 @@
 <body>
 <canvas id="cv"></canvas>
 <div id="hud"><b>◎</b> <span id="coins">0</span> &nbsp;·&nbsp; <b>♥</b> <span id="lives">3</span></div>
-<div id="ctl">← → / A D · move &nbsp; SPACE / ↑ · jump &nbsp; stomp the boars</div>
+<div id="ctl">← → / A D · move &nbsp; SPACE / ↑ · jump &nbsp; J · attack &nbsp; or stomp the boars</div>
 <div id="load"><div class="t">Loading Eastbrook Vale…</div><div class="bar"><div class="fill" id="lf"></div></div><div class="t" id="lt" style="opacity:.4"></div></div>
 <div id="msg"><h1 id="mt"></h1><button id="mb">Play again</button></div>
 <button id="fs" aria-label="Toggle fullscreen" title="Fullscreen">⛶</button>
@@ -67,6 +68,7 @@
     <button class="tb" data-k="ArrowRight" aria-label="Right">▶</button>
   </div>
   <div class="cluster">
+    <button class="tb atk" data-k="attack" aria-label="Attack">⚔</button>
     <button class="tb jump" data-k="Space" aria-label="Jump">JUMP</button>
   </div>
 </div>
@@ -122,6 +124,11 @@ sun.position.set(-8, 20, 12); sun.castShadow = true;
 sun.shadow.mapSize.set(2048,2048); sun.shadow.camera.near=1; sun.shadow.camera.far=80;
 const sc = sun.shadow.camera; sc.left=-40; sc.right=40; sc.top=30; sc.bottom=-20;
 scene.add(sun); scene.add(sun.target);
+
+// weapon-swing slash effect (a white arc that flashes in front of the hero)
+const slashMat = new THREE.MeshBasicMaterial({ color:0xffffff, transparent:true, opacity:0, side:THREE.DoubleSide });
+const slashMesh = new THREE.Mesh(new THREE.RingGeometry(0.9, 1.7, 20, 1, -0.7, 1.4), slashMat);
+slashMesh.visible=false; scene.add(slashMesh);
 
 // ---------- level ----------
 // platforms: {x,y,w,h,d} — top surface is y (feet rest there); x is left edge, w width.
@@ -192,7 +199,8 @@ boot().catch(e=>{ lt.textContent='load failed: '+e.message; console.error(e); })
 // ---------- entities ----------
 const clock = new THREE.Clock();
 let player, mixer, actions={}, current=null;
-const state = { x: 0, y: 6, vx:0, vy:0, onGround:false, dir:1, coins:0, lives:3, dead:false, won:false, invuln:0 };
+const state = { x: 0, y: 6, vx:0, vy:0, onGround:false, dir:1, coins:0, lives:3, dead:false, won:false, invuln:0, cpX:0, cpY:6 };
+let attackCD=0, attacking=0, slashT=0;
 const coins = [], boars = [];
 
 function play(name){ const a = actions[name]; if(!a || current===a) return;
@@ -211,6 +219,7 @@ function start(){
   actions.idle = mk(/idle|stand/i) || (clips[0]&&mixer.clipAction(clips[0]));
   actions.run  = mk(/run|jog|walk|sprint/i) || actions.idle;
   actions.jump = mk(/jump|fall|air/i) || actions.idle;
+  actions.attack = mk(/attack|slash|swing|melee|strike|cast|ability|1h|sword/i);
   if(actions.idle){ current=actions.idle; actions.idle.play(); }
 
   // coins along the level (wrap each in a group so the fit-to-feet offset survives)
@@ -233,7 +242,8 @@ function start(){
 
 // ---------- input ----------
 const keys={};
-addEventListener('keydown',e=>{ keys[e.code]=true; if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) e.preventDefault(); });
+addEventListener('keydown',e=>{ keys[e.code]=true; if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) e.preventDefault();
+  if(e.code==='KeyJ'||e.code==='KeyF'||e.code==='KeyX') doAttack(); });
 addEventListener('keyup',e=>{ keys[e.code]=false; });
 document.getElementById('mb').onclick=()=>location.reload();
 
@@ -250,12 +260,13 @@ document.addEventListener('fullscreenchange', ()=>{ fsBtn.textContent = document
 if (matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window){ document.body.classList.add('touch'); resize(); }
 for (const b of document.querySelectorAll('.tb')){
   const k = b.getAttribute('data-k');
+  b.addEventListener('contextmenu', e=>e.preventDefault());
+  if(k==='attack'){ b.addEventListener('pointerdown', e=>{ e.preventDefault(); doAttack(); }); continue; }
   const set = v => e => { e.preventDefault(); keys[k] = v; };
   b.addEventListener('pointerdown', set(true));
   b.addEventListener('pointerup', set(false));
   b.addEventListener('pointerleave', set(false));
   b.addEventListener('pointercancel', set(false));
-  b.addEventListener('contextmenu', e=>e.preventDefault());
 }
 
 // ---------- physics helpers ----------
@@ -298,13 +309,22 @@ function update(dt){
   state.vy += GRAV*dt; state.y += state.vy*dt;
   // land
   const gy = groundYAt(state.x, state.y);
-  if(state.vy<=0 && gy>-Infinity && state.y<=gy+0.02){ state.y=gy; state.vy=0; state.onGround=true; }
+  if(state.vy<=0 && gy>-Infinity && state.y<=gy+0.02){ state.y=gy; state.vy=0; state.onGround=true; state.cpX=state.x; state.cpY=state.y; }
   else state.onGround=false;
-  // fell in a pit
-  if(state.y<-12){ hurt(true); }
+  // fell in a pit → lose a life and respawn at the last safe ground (or game over)
+  if(state.y<-6){ hurt(true); }
 
-  // anim select
-  if(!state.onGround) play('jump'); else if(Math.abs(state.vx)>0.1) play('run'); else play('idle');
+  // attack timers / anim
+  attackCD=Math.max(0,attackCD-dt); if(attacking>0) attacking-=dt;
+  if(slashT>0){ slashT-=dt; slashMesh.visible=true;
+    slashMesh.position.set(state.x+state.dir*1.3, state.y+0.9, 0.6);
+    slashMesh.rotation.z = state.dir>0 ? -0.3 : Math.PI+0.3;
+    slashMesh.scale.setScalar(1 + (0.18-slashT)*5); slashMat.opacity = Math.max(0, slashT/0.18);
+    if(slashT<=0) slashMesh.visible=false; }
+
+  // anim select (attack anim holds while attacking)
+  if(attacking>0){ /* keep attack pose */ }
+  else if(!state.onGround) play('jump'); else if(Math.abs(state.vx)>0.1) play('run'); else play('idle');
 
   // place player
   const holder = window.__holder;
@@ -343,8 +363,18 @@ function update(dt){
 function hurt(pit){ if(state.invuln>0 && !pit) return;
   state.lives--; document.getElementById('lives').textContent=Math.max(0,state.lives);
   state.invuln=1.2;
-  if(pit){ state.x=Math.max(-4,state.x-3); state.y=10; state.vy=0; }
+  if(pit){ // respawn on the last solid ground, not mid-air over the pit
+    state.x=state.cpX; state.y=state.cpY+0.4; state.vx=0; state.vy=0;
+    camera.position.set(state.x, state.y+3.5, 21); }
   if(state.lives<=0) endGame(false);
+}
+
+function doAttack(){ if(attackCD>0 || state.dead || state.won) return;
+  attackCD=0.5; attacking=0.34; slashT=0.18;
+  if(actions.attack){ actions.attack.reset(); actions.attack.setLoop(THREE.LoopOnce,1); actions.attack.clampWhenFinished=true;
+    actions.attack.fadeIn(0.06).play(); if(current && current!==actions.attack) current.fadeOut(0.06); current=actions.attack; }
+  for(const b of boars){ if(b.dead) continue; const dx=b.x-state.x;
+    if((dx>=0?1:-1)===state.dir && Math.abs(dx)<3.4 && Math.abs(b.y-state.y)<1.9){ b.dead=true; b.tip=0; } }
 }
 </script>
 </body>
