@@ -3,7 +3,7 @@
 // v0.27+ choice-row model: pick a spec + one option per row, see projected base
 // stats at your level plus the ability modifiers your picks grant.
 (function () {
-  const { el, esc, reveal, registerView, loadJSON, STAT_LABEL } = window.WOC;
+  const { el, esc, reveal, registerView, loadJSON, STAT_LABEL, raw } = window.WOC;
 
   let TALENTS = null, CLASS = null;
 
@@ -105,7 +105,7 @@
     function buildSpecs() {
       specHost.innerHTML = '';
       TALENTS.classes[classId].specs.forEach((s, i) => {
-        const p = el(`<span class="pill specpill ${i === specIdx ? 'active' : ''}"><img class="tspecicon" src="${esc(s.signatureIcon || '')}" alt="" loading="lazy">${esc(s.name)}</span>`);
+        const p = el(`<span class="pill specpill ${i === specIdx ? 'active' : ''}"><img class="tspecicon" src="${s.signatureIcon ? raw(s.signatureIcon) : ''}" alt="" loading="lazy">${esc(s.name)}</span>`);
         p.onclick = () => { specIdx = i; specHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
         specHost.append(p);
       });

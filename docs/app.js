@@ -650,7 +650,7 @@ async function talentsView(initClass, initSpec, initPicks) {
   function buildSpecs() {
     specHost.innerHTML = '';
     talentData.classes[classId].specs.forEach((s, i) => {
-      const p = el(`<span class="pill specpill ${i === specIdx ? 'active' : ''}"><img class="tspecicon" src="${esc(s.signatureIcon || '')}" alt="" loading="lazy">${esc(s.name)} <span class="specrole">${esc(s.role)}</span></span>`);
+      const p = el(`<span class="pill specpill ${i === specIdx ? 'active' : ''}"><img class="tspecicon" src="${s.signatureIcon ? raw(s.signatureIcon) : ''}" alt="" loading="lazy">${esc(s.name)} <span class="specrole">${esc(s.role)}</span></span>`);
       p.onclick = () => { specIdx = i; specHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
       specHost.append(p);
     });
@@ -675,7 +675,7 @@ async function talentsView(initClass, initSpec, initPicks) {
     const spec = cls.specs[specIdx];
     const chosen = picks.filter(p => p >= 0).length;
     app.querySelector('#tspecinfo').innerHTML = `
-      <div class="tspeccard"><div class="tspechead"><img class="tspecicon lg" src="${esc(spec.signatureIcon || '')}" alt=""><div><b>${esc(spec.name)}</b> <span class="specrole">${esc(spec.role)}</span><div class="meta">${esc(spec.description || '')}</div></div></div>
+      <div class="tspeccard"><div class="tspechead"><img class="tspecicon lg" src="${spec.signatureIcon ? raw(spec.signatureIcon) : ''}" alt=""><div><b>${esc(spec.name)}</b> <span class="specrole">${esc(spec.role)}</span><div class="meta">${esc(spec.description || '')}</div></div></div>
       ${spec.mastery && spec.mastery.name ? `<div class="tmastery"><b>Mastery — ${esc(spec.mastery.name)}:</b> ${esc(spec.mastery.description || '')}</div>` : ''}
       <div class="meta" style="margin-top:6px">Rows chosen: <b>${chosen}/${NROWS}</b></div></div>`;
     const host = app.querySelector('#ttrees');
