@@ -1,7 +1,7 @@
 // Service worker: network-first for everything so online visitors always get
 // the latest build; cached copies are kept only as an offline fallback. The
 // shell is precached on install so the app still opens with no connection.
-const CACHE = 'woc-v156';
+const CACHE = 'woc-v157';
 const SHELL_FILES = ['./', 'index.html', 'app.js?v=139', 'styles.css?v=117', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'wireframe/', 'wireframe/index.html', 'platformer/', 'platformer/index.html'];
 
 self.addEventListener('install', (e) => {

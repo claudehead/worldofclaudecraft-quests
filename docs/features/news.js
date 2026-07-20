@@ -6,12 +6,12 @@
   const { el, esc, registerView, app } = window.WOC;
 
   const GAME = [
-    ['🔎', 'The Dungeon Finder', 'Automatic role-based matchmaking plus a premade listing board. Queue as tank / healer / DPS for any dungeon, heroic, the solo scenario or the 10-man raid; a full group fires a 30-second proposal (decline and you sit a 60-second lockout). Post or browse premade groups with structured tags.', '#/doc/' + encodeURIComponent('reference/dungeon-finder.md'), 'How it works'],
-    ['🛡️', 'Tank defensive cooldowns', 'Each tank class gains a distinct level-20 emergency button: Warrior Ironhold (−40% damage for 8s), Paladin Sacred Bulwark (denies the next lethal hit, heal to 35%), Druid Primal Reflexes (+50% dodge for 6s). Dire Bruin bear form also gets +20% threat / +15% armor to close the tank-parity gap.', '#/doc/' + encodeURIComponent('reference/specializations.md'), 'Spec guide'],
-    ['🎯', 'Hit rating & itemization', 'A new Hit combat-rating joins crit and haste (10 rating = +1% hit, cutting both physical miss and spell resist, down to a 0% floor). Gear is re-itemized around it, and the PvP gear track is rebalanced onto the Warfare offense/defense ratings.', '#/doc/' + encodeURIComponent('reference/warfare.md'), 'Warfare guide'],
-    ['⛏️', 'Gather-node harvesting', 'Harvesting ore, herb and other gather nodes is now wired into the normal play controls — walk up and gather, no separate mode. Feeds straight into professions & crafting.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Professions'],
-    ['🗡️', 'Weapon sheathing & QoL', 'Z-key sheathe/unsheathe with weapons worn on your back, an arm gesture and SFX. Plus: your own nameplate shows by default, the Attack action-bar button is removable, drag bag items straight onto the paperdoll, and a punchier on-kill XP floater.', '#/patches', 'Technical changelog'],
-    ['🖥️', 'Windows client & Armory', 'The desktop client download is enabled for Windows, with a Store Armory promo card. Under the hood: safe player analytics, automated & moderated daily payouts, new mob voice families, and 11 procedural props replaced with real Tripo-generated models.', '#/patches', 'Technical changelog'],
+    ['🔨', 'The crafting overhaul', 'Professions get rebuilt: six crafts (weapon- and armorcrafting, tailoring, leatherworking, alchemy, cooking) each climb a skill-tier ladder that gates which recipes you can train. Craft outputs are deterministic, plus one masterwork proc per craft that bumps quality and adds bonus stats — swayed by trending reagent pairs.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Professions guide'],
+    ['⚒️', 'Crafting masters & Artisan Row', 'Six crafting masters set up on Artisan Row, each with a typed crafting station. The single level-20 Highwatch hub is retired: you now craft at the station for your discipline, with a field station for crafting on the move.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Where to craft'],
+    ['🌾', 'Real gather nodes & rare finds', 'Gather nodes now carry real material tables with a rarity ladder and rare gather events, and respawn per-viewer (two players can see the same node differently). Harvesting is wired into normal play — walk up and gather.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Gathering'],
+    ['🃏', 'The Card Duel minigame', 'A new card-duel minigame lands with its own first set of sound effects — a side game to play between adventures.', '#/patches', 'Technical changelog'],
+    ['🎯', 'Talents: the choice-row rework', 'The point-buy talent grid is gone. You now pick 1 of 3 specializations at level 5, then choose 1 of 3 options at each of six rows (levels 5/8/11/14/17/20). The guide\'s talent calculator and build planner are rebuilt to match.', '#/talents', 'Talent calculator'],
+    ['💬', 'HUD & social QoL', 'The third action bar returns; the spellbook is a landscape tile grid and the Social window a wide layout. Chat gets class-colored names and a verified-streamer badge, plus clearer nameplates, player hover tooltips, a reconnect countdown, and confirm dialogs for revives and mark purchases.', '#/patches', 'Technical changelog'],
   ];
 
   const GUIDE = [
@@ -33,15 +33,15 @@
       <h1 class="reveal">What's New 🆕</h1>
       <p class="sub reveal">The latest from World of Claudecraft, and everything new in this guide.</p>
 
-      <h2 class="news-h reveal">🎮 Game — v0.26.0 <span class="news-tag">dungeon finder · tanks · itemization · 131 commits</span></h2>
-      <p class="meta reveal">The Dungeon Finder role queue and premade board, a level-20 defensive cooldown for every tank class, a new Hit combat-rating with re-itemized gear, gather-node harvesting in normal play, Z-key weapon sheathing, and the Windows desktop client. Here's what made it into the guide:</p>
+      <h2 class="news-h reveal">🎮 Game — v0.28.0 <span class="news-tag">crafting · talents · card duel · 620 commits</span></h2>
+      <p class="meta reveal">A ground-up professions and crafting overhaul (skill-tier ladders, masterwork procs, crafting masters on Artisan Row, real gather nodes), the choice-row talent rework, a new Card Duel minigame, and a wave of HUD and social quality-of-life. Here's what made it into the guide:</p>
       <div class="news-grid">${GAME.map(gCard).join('')}</div>
 
       <h2 class="news-h reveal">📚 The guide — new tools</h2>
       <p class="meta reveal">Beyond the reference, the guide now has new tools built on the real game data:</p>
       <div class="news-grid">${GUIDE.map(uCard).join('')}</div>
 
-      <p class="meta" style="margin-top:2rem">Catching up? <b>v0.25</b> brought the <a data-go="#/doc/reference%2Fbook-of-deeds.md">Book of Deeds</a> achievement system, a Heroic tier for <a data-go="#/doc/reference%2Fheroic-nythraxis.md">Nythraxis</a>, <a data-go="#/doc/reference%2Fspecializations.md">Talents 2.0 specializations</a> and the <a data-go="#/doc/reference%2Fwarfare.md">Honor &amp; Warfare</a> PvP track; <b>v0.23</b> added the <a data-go="#/doc/reference%2Fvale-cup.md">Vale Cup</a>, <a data-go="#/doc/reference%2Fprotect-yumi.md">Protect Yumi</a>, <a data-go="#/doc/reference%2Fheroic-dungeons.md">Heroic dungeons</a>, <a data-go="#/doc/reference%2Fprofessions.md">professions</a> and the <a data-go="#/doc/reference%2Fbank.md">bank</a>. Full history in the <a data-go="#/patches">patch notes</a>.</p>
+      <p class="meta" style="margin-top:2rem">Catching up? <b>v0.26</b> added the <a data-go="#/doc/reference%2Fdungeon-finder.md">Dungeon Finder</a>, per-class tank defensive cooldowns and the new Hit combat-rating; <b>v0.25</b> brought the <a data-go="#/doc/reference%2Fbook-of-deeds.md">Book of Deeds</a>, a Heroic tier for <a data-go="#/doc/reference%2Fheroic-nythraxis.md">Nythraxis</a>, <a data-go="#/doc/reference%2Fspecializations.md">specializations</a> and the <a data-go="#/doc/reference%2Fwarfare.md">Honor &amp; Warfare</a> track. Full history in the <a data-go="#/patches">patch notes</a>.</p>
     </div></section>`));
   }
   registerView('news', view);

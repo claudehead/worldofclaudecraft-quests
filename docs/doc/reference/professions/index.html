@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   
   <title>Professions &amp; the crafting endgame 🔨 — World of Claudecraft</title>
-  <meta name="description" content="v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character *is*, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.">
+  <meta name="description" content="v0.27–0.28 rebuild professions into a full crafting endgame: three gathering skills feeding ten crafts, a **skill-tier ladder** that gates which recipes you can train, a **masterwork proc** that can turn any craft into something better, crafting **masters on Artisan Row**, and ten **archetypes** tha">
   <link rel="canonical" href="https://claudehead.com/doc/reference/professions/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="World of Claudecraft">
   <meta property="og:title" content="Professions &amp; the crafting endgame 🔨 — World of Claudecraft">
-  <meta property="og:description" content="v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character *is*, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.">
+  <meta property="og:description" content="v0.27–0.28 rebuild professions into a full crafting endgame: three gathering skills feeding ten crafts, a **skill-tier ladder** that gates which recipes you can train, a **masterwork proc** that can turn any craft into something better, crafting **masters on Artisan Row**, and ten **archetypes** tha">
   <meta property="og:url" content="https://claudehead.com/doc/reference/professions/">
   <meta property="og:image" content="https://claudehead.com/icon-512.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Professions &amp; the crafting endgame 🔨 — World of Claudecraft">
-  <meta name="twitter:description" content="v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character *is*, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.">
+  <meta name="twitter:description" content="v0.27–0.28 rebuild professions into a full crafting endgame: three gathering skills feeding ten crafts, a **skill-tier ladder** that gates which recipes you can train, a **masterwork proc** that can turn any craft into something better, crafting **masters on Artisan Row**, and ten **archetypes** tha">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=116">
+  <link rel="stylesheet" href="styles.css?v=117">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#07070b">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -166,9 +166,9 @@
     </div>
   </nav>
   <main id="app"><article class="doc"><div class="wrap"><h1>Professions &amp; the crafting endgame 🔨</h1>
-<p>v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character <em>is</em>, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.</p>
+<p>v0.27–0.28 rebuild professions into a full crafting endgame: three gathering skills feeding ten crafts, a <strong>skill-tier ladder</strong> that gates which recipes you can train, a <strong>masterwork proc</strong> that can turn any craft into something better, crafting <strong>masters on Artisan Row</strong>, and ten <strong>archetypes</strong> that say who your character <em>is</em>. Exact reward numbers are still being tuned.</p>
 <blockquote>
-<p>🔨 <strong>The shape:</strong> gather raw materials (Mining / Logging / Herbalism) → level a craft from <strong>0 to 300</strong> → specialize at <strong>skill 75</strong> for discounts → declare an <strong>archetype</strong> that defines your identity → craft at the <strong>Highwatch</strong> hub (level 20).</p>
+<p>🔨 <strong>The shape:</strong> gather raw materials (Mining / Logging / Herbalism) → level a craft and climb its <strong>tiers</strong> → train recipes gated to your tier → craft at your discipline&#39;s <strong>station</strong>, hoping for a <strong>masterwork</strong> proc → declare an <strong>archetype</strong> that defines your identity.</p>
 </blockquote>
 <hr>
 <h2>Gathering</h2>
@@ -178,7 +178,7 @@
 <li><strong>Logging</strong> — timber from trees</li>
 <li><strong>Herbalism</strong> — herbs and plants</li>
 </ul>
-<p><strong>Proficiency</strong> builds through successful harvests and shifts your output toward rarer grades (common → uncommon → rare → epic → legendary) — though the very rarest grades stay rare no matter how skilled you are.</p>
+<p>Harvesting is wired into the <strong>normal play controls</strong> — walk up to a node and gather, no separate mode. <strong>Proficiency</strong> builds through successful harvests and shifts your output toward rarer grades (common → uncommon → rare → epic → legendary), though the very rarest grades stay rare no matter how skilled you are. Nodes now carry <strong>real material tables</strong> with <strong>rare gather events</strong>, and respawn <strong>per-viewer</strong> — two players can see the same node in different states.</p>
 <p><strong>Tools matter.</strong> Vendors sell basic gathering tools; better ones are crafted, and higher-tier tools unlock richer nodes and work them faster over a long session. You can slot <strong>tool effects</strong> onto them:</p>
 <table>
 <thead>
@@ -202,8 +202,8 @@
 </tbody></table>
 <p>Each effect starts with <strong>20 durability charges</strong>, spent faster against equal-or-higher-rarity targets and barely at all on low-rarity ones.</p>
 <hr>
-<h2>The ten crafts</h2>
-<p>Every craft runs its own recipe list, with skill from <strong>0 to 300</strong>. Basic recipes are open to everyone from the start; more advanced ones unlock as your skill climbs (the tier-3 boundary sits at <strong>skill 75</strong>). The ten crafts sit in a fixed <strong>ring</strong>, and <em>where</em> a craft sits matters — neighbours share recipes and mechanics, and each craft has an opposite five seats away.</p>
+<h2>The crafts and the skill-tier ladder</h2>
+<p>Every craft runs its own recipe list and its own flat <strong>skill</strong> value. The ten crafts sit in a fixed <strong>ring</strong>, and <em>where</em> a craft sits matters — neighbours share recipes and trends, and each craft has an opposite five seats away.</p>
 <table>
 <thead>
 <tr>
@@ -250,11 +250,25 @@
 <td>Leatherworking</td>
 </tr>
 </tbody></table>
-<p><strong>Specialization (skill 75+).</strong> Hit 75 in a craft and you become <em>specialized</em>, unlocking two perks: a <strong>material-cost discount</strong> on that craft&#39;s recipes, and an extra <strong>recharge discount</strong> on tool effects you originally crafted. <em>(Current values sit around 20% / 25% and may shift with tuning.)</em></p>
-<p><strong>Combination recipes.</strong> The ring supports recipes that call on <strong>two neighbouring crafts at once</strong> — rewarding players (or trading partners) who invest in adjacent trades rather than going it alone. Armorcrafting + Weaponcrafting and Alchemy + Engineering are two examples.</p>
+<p>The six core crafts — <strong>weaponcrafting, armorcrafting, tailoring, leatherworking, alchemy, cooking</strong> — carry the deepest <strong>tier ladders</strong>.</p>
+<p><strong>Tiers, not a 0–300 bar.</strong> Your skill in a craft buckets into a <strong>tier every 25 points</strong>: skill 0–24 is the free <strong>common</strong> tier, 25–49 is tier 1, 50–74 tier 2, and so on. Recipes are bucketed the same way, so a recipe&#39;s tier and your capability tier compare directly.</p>
+<ul>
+<li><strong>Recipe training is tier-gated:</strong> you can only train recipes up to your current tier (recipes you already knew are <strong>grandfathered</strong> in).</li>
+<li><strong>Diminishing returns on skill-ups:</strong> crafting at or above your tier gives full skill; a craft <strong>one tier below</strong> your capability gives reduced skill; <strong>two or more tiers below</strong> gives nothing. Common-tier crafting is always <strong>free</strong> (no cost).</li>
+</ul>
+<p><strong>Enchanting &amp; salvage</strong> sit off the wheel: <strong>disenchant</strong> items into materials, then <strong>apply an enchant</strong> onto a specific instanced copy of an item.</p>
+<hr>
+<h2>Masterwork procs</h2>
+<p>Craft outputs are <strong>deterministic</strong> at the recipe&#39;s defined quality — with one twist. Every successful craft rolls a single <strong>masterwork proc</strong> (base <strong>3%</strong>) that <strong>bumps the item&#39;s quality</strong> and adds <strong>bonus stats</strong>. The odds rise with the <strong>tier of the materials</strong> you feed in and with <strong>trending reagents</strong> (below), so investing in better mats and following the trend pays off.</p>
 <blockquote>
-<p>⚙️ <strong>Market throttles.</strong> To stop maxed specialists flooding the economy, crafting has a small <strong>copper fee</strong> scaled to an item&#39;s value and a cap of <strong>~10 crafts per rolling 60 seconds</strong>. Craft for use and trade, not for spam.</p>
+<p>⚙️ <strong>Market throttles.</strong> To stop maxed specialists flooding the economy, crafting carries a small <strong>copper fee</strong> scaled to item value and a cap of <strong>~10 crafts per rolling 60 seconds</strong>. Craft for use and trade, not for spam.</p>
 </blockquote>
+<hr>
+<h2>Trending pairs &amp; the Crafting Guild</h2>
+<p>Your flat craft skills are watched for the <strong>adjacent pair</strong> they&#39;re trending toward. Push a pair&#39;s <strong>combined skill</strong> past one full tier (<strong>25 points</strong>) and the <strong>Crafting Guild</strong> takes notice — it delivers a letter on your first trend crossing. Trending reagents tied to your pair also <strong>raise your masterwork odds</strong>, rewarding players who commit to two neighbouring trades rather than spreading thin.</p>
+<hr>
+<h2>Where you craft — Artisan Row</h2>
+<p>The single level-20 Highwatch hub is <strong>retired</strong>. Six <strong>crafting masters</strong> now set up on <strong>Artisan Row</strong>, each tending a <strong>typed station</strong> for their discipline: you craft at the station that matches the recipe. A <strong>field crafting station</strong> lets you craft on the move when you&#39;re away from town.</p>
 <hr>
 <h2>The ten archetypes</h2>
 <p>Each craft also stands for an <strong>archetype</strong> — a broader identity beyond just working the trade. You hold <strong>one active archetype at a time</strong>; it&#39;s a statement about who your character is, recognized in how the world addresses you.</p>
@@ -262,17 +276,14 @@
 <li><strong>Choosing one:</strong> you declare your first archetype through an <strong>early Zone 1 story quest</strong> that formally accepts you into that identity. Until then you have no archetype.</li>
 <li><strong>Switching:</strong> possible but not casual — you complete a repeatable <strong>&quot;make amends&quot; quest</strong> for your old archetype, and <strong>each successive switch costs more</strong>, so the choice stays meaningful.</li>
 </ul>
-<p>Your active archetype is what gates your crafting direction and endgame power. <em>(The exact rewards and recognition are still being filled in — expect this to grow.)</em></p>
-<hr>
-<h2>The crafting hub — Highwatch</h2>
-<p>The endgame crafting hub is at <strong>Highwatch</strong> in <strong>Thornpeak Heights</strong> (Zone 3, the level-20 zone), reusing the existing town centre. It hosts <strong>one station for each of the ten crafts</strong> arranged around the hub, and is gated to <strong>level 20</strong> so you can comfortably work the surrounding zone while you craft.</p>
+<p>Your active archetype gates your crafting direction and endgame power, and sets the <strong>craft ceiling</strong> for your identity. <em>(The exact rewards and recognition are still being filled in — expect this to grow.)</em></p>
 <hr>
 <h2>Getting started</h2>
 <ol>
 <li>Pick up <strong>Mining, Logging or Herbalism</strong> and gather while you level.</li>
-<li>Feed those materials into a <strong>craft</strong> and push its skill toward <strong>75</strong> to specialize.</li>
-<li>Declare your <strong>archetype</strong> via the Zone 1 story quest when you&#39;re ready to commit.</li>
-<li>At level 20, base yourself at the <strong>Highwatch</strong> hub and work combination recipes with a neighbouring craft — or a trading partner who&#39;s leveled it.</li>
+<li>Feed those materials into a <strong>craft</strong> and push its skill up through the <strong>tiers</strong> to unlock better recipes.</li>
+<li>Lean into an <strong>adjacent pair</strong> so the Crafting Guild notices your trend and your masterwork odds climb.</li>
+<li>Declare your <strong>archetype</strong> via the Zone 1 story quest when you&#39;re ready to commit, and craft at your discipline&#39;s <strong>station on Artisan Row</strong>.</li>
 </ol>
 <hr>
 <p><em>See also: <a href="#/doc/reference%2Fmaterials.md">Drops &amp; materials</a>, the <a href="#/doc/reference%2Fworld-market.md">World Market</a>, and the <a href="#/doc/reference%2Fbank.md">Gilded Strongbox</a> to store everything you gather.</em></p>
@@ -323,7 +334,7 @@
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"World of Claudecraft","alternateName":"World of Claudecraft Field Guide","url":"https://claudehead.com/"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/","logo":"https://claudehead.com/icon-512.png"}</script>
-  <script src="app.js?v=138"></script>
+  <script src="app.js?v=139"></script>
   <!-- Self-contained tool views (register themselves into the router). Loaded after app.js. -->
   <script src="features/planner.js?v=116"></script>
   <script src="features/loadout.js?v=116"></script>
@@ -335,7 +346,7 @@
   <script src="features/coach.js?v=116"></script>
   <script src="features/zoneguide.js?v=116"></script>
   <script src="features/donate.js?v=116"></script>
-  <script src="features/news.js?v=144"></script>
+  <script src="features/news.js?v=145"></script>
   <script src="features/bags.js?v=116"></script>
   <script src="features/haste.js?v=116"></script>
   <script src="features/rite.js?v=127"></script>
@@ -360,6 +371,6 @@
     });
   </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://claudehead.com/"},{"@type":"ListItem","position":3,"name":"Professions & the crafting endgame 🔨","item":"https://claudehead.com/doc/reference/professions/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Professions & the crafting endgame 🔨 — World of Claudecraft","description":"v0.23 lands the professions endgame: three gathering skills, ten crafts arranged on a ring, ten archetypes that say who your character *is*, and a crafting hub at Highwatch. This is the shape of the system — exact reward numbers are still being tuned.","url":"https://claudehead.com/doc/reference/professions/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Professions & the crafting endgame 🔨 — World of Claudecraft","description":"v0.27–0.28 rebuild professions into a full crafting endgame: three gathering skills feeding ten crafts, a **skill-tier ladder** that gates which recipes you can train, a **masterwork proc** that can turn any craft into something better, crafting **masters on Artisan Row**, and ten **archetypes** that say who your character *is*. Exact reward numbers are still being tuned.","url":"https://claudehead.com/doc/reference/professions/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
 </body>
 </html>
