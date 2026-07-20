@@ -60,7 +60,7 @@
     {
       "id": "lightning_shield",
       "name": "Thunder Ward",
-      "learnLevel": 8,
+      "learnLevel": 5,
       "cost": 25,
       "cooldown": 0,
       "range": 0,
@@ -72,7 +72,7 @@
     {
       "id": "flame_shock",
       "name": "Cinder Jolt",
-      "learnLevel": 10,
+      "learnLevel": 8,
       "cost": 35,
       "cooldown": 6,
       "range": 20,
@@ -84,7 +84,7 @@
     {
       "id": "flametongue_weapon",
       "name": "Pyrebrand Weapon",
-      "learnLevel": 10,
+      "learnLevel": 5,
       "cost": 25,
       "cooldown": 0,
       "range": 0,
@@ -96,7 +96,7 @@
     {
       "id": "frost_shock",
       "name": "Rime Jolt",
-      "learnLevel": 14,
+      "learnLevel": 8,
       "cost": 50,
       "cooldown": 6,
       "range": 20,
@@ -108,7 +108,7 @@
     {
       "id": "frostbrand_weapon",
       "name": "Rimebound Weapon",
-      "learnLevel": 12,
+      "learnLevel": 5,
       "cost": 25,
       "cooldown": 0,
       "range": 0,

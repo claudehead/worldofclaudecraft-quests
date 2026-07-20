@@ -176,7 +176,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/runed_bone_shard.png" width="22" alt="">  Runed Bone Shard | Quest item | 70% | quest item — only drops while on _Unrest in the Bonefields_ |
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 60% | sells for 7c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 60% | sells for 7c |
 | <img src="../_loot-icons/necromancers_legwraps.png" width="22" alt=""> 🟣 Mournweave Legwraps | Cloth armor — Legs · 86 armor, +13 Int, +7 Spi | 0% |  |
 
 <a id="mob-shardlord_kazzix"></a>
@@ -236,7 +236,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/ritual_phylactery.png" width="22" alt="">  Ritual Phylactery | Quest item | 55% | quest item — only drops while on _The Phylactery Ring_ |
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 30% | sells for 3c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 30% | sells for 3c |
 
 <a id="mob-training_dummy"></a>
 
@@ -437,7 +437,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 100% | sells for 7c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 100% | sells for 7c |
 | <img src="../_loot-icons/marrowlord_boneboots.png" width="22" alt=""> 🟢 Marrowlord Boneboots | Mail armor — Feet · 90 armor, +2 Str, +5 Sta | 30% |  |
 | <img src="../_loot-icons/necromancers_legwraps.png" width="22" alt=""> 🟣 Mournweave Legwraps | Cloth armor — Legs · 86 armor, +13 Int, +7 Spi | 25% | exclusive set † |
 
@@ -470,7 +470,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 60% | sells for 7c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 60% | sells for 7c |
 | <img src="../_loot-icons/boundstone_helm.png" width="22" alt=""> 🔵 Boundstone Helm | Mail armor — Head · 105 armor, +5 Str, +6 Sta | 4% | exclusive set † |
 | <img src="../_loot-icons/boundstone_girdle.png" width="22" alt=""> 🔵 Boundstone Girdle | Mail armor — Waist · 60 armor, +3 Str, +6 Sta | 4% | exclusive set † |
 
@@ -697,7 +697,7 @@
 | <img src="../_loot-icons/revenant_silk_robe.png" width="22" alt=""> 🟢 Revenant Silk Robe | Cloth armor — Chest · 60 armor, +5 Int, +3 Spi | 33% | exclusive set 1 † |
 | <img src="../_loot-icons/nightwalk_jerkin.png" width="22" alt=""> 🟢 Nightwalk Jerkin | Leather armor — Chest · 105 armor, +6 Agi, +2 Sta | 33% | exclusive set 1 † |
 | <img src="../_loot-icons/cultist_flayer.png" width="22" alt=""> 🟢 Cultist Flayer | Weapon — Main hand · 12–19 dmg @ 1.7s (~9 DPS), +8 Agi | 10% | exclusive set 2 † |
-| <img src="../_loot-icons/wyrmfang_greatblade.png" width="22" alt=""> 🟣 Wyrmfang Greatblade | Weapon — Main hand · 30–48 dmg @ 2.6s (~15 DPS), +11 Str, +7 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/wyrmfang_greatblade.png" width="22" alt=""> 🟣 Wyrmfang Greatblade | Weapon — Main hand · 33–53 dmg @ 2.6s (~17 DPS), +14 Str, +9 Sta | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/staff_of_the_gravewyrm.png" width="22" alt=""> 🟣 Staff of the Gravewyrm | Weapon — Main hand · 32–52 dmg @ 3s (~14 DPS), +12 Int, +6 Spi | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/fang_of_korzul.png" width="22" alt=""> 🟣 Fang of Korzul | Weapon — Main hand · 19–30 dmg @ 1.7s (~14 DPS), +12 Agi, +6 Sta | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/deathlord_warplate.png" width="22" alt=""> 🟣 Barrowlord Warplate | Mail armor — Chest · 270 armor, +8 Str, +10 Sta | 5% | exclusive set 2 † |
@@ -739,30 +739,34 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 17% | exclusive set 1 † |
-| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Bonewrought Warspaulders | Mail armor — Shoulder · 260 armor, +7 Str, +8 Sta | 17% | exclusive set 2 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Wraithfire Cowl | Cloth armor — Head · 105 armor, +6 Sta, +11 Int | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Galecall Crown | Mail armor — Head · 225 armor, +7 Sta, +10 Int | 17% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Bonewrought Warspaulders | Mail armor — Shoulder · 260 armor, +7 Str, +8 Sta | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Galecall Spaulders | Mail armor — Shoulder · 190 armor, +7 Sta, +8 Int | 17% | exclusive set 4 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Wraithfire Cowl | Cloth armor — Head · 105 armor, +6 Sta, +11 Int | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Galecall Crown | Mail armor — Head · 225 armor, +7 Sta, +10 Int | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 16% | exclusive set 1 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Galecall Spaulders | Mail armor — Shoulder · 190 armor, +7 Sta, +8 Int | 16% | exclusive set 2 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta | 16% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int | 16% | exclusive set 3 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta | 16% | exclusive set 4 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta | 16% | exclusive set 4 † |
+| <img src="../_loot-icons/wraithfire_orb.png" width="22" alt=""> 🟣 Wraithfire Orb | held_offhand · +3 Sta, +7 Int, +5 Spi, +20 Crit rating | 16% | exclusive set 3 † |
+| <img src="../_loot-icons/direfang_greatblade.png" width="22" alt=""> 🟣 Direfang Greatblade | Weapon — Main hand · 40–66 dmg @ 3s (~18 DPS), +14 Agi, +12 Sta, +20 Hit rating | 16% | exclusive set 4 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 14% | exclusive set 1 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta, +20 Hit rating | 14% | exclusive set 1 † |
+| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Wraithfire Cowl | Cloth armor — Head · 105 armor, +6 Sta, +11 Int, +20 Hit rating | 14% | exclusive set 1 † |
+| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Galecall Crown | Mail armor — Head · 225 armor, +7 Sta, +10 Int, +20 Crit rating | 14% | exclusive set 1 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta, +20 Hit rating | 14% | exclusive set 1 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int, +20 Hit rating | 14% | exclusive set 1 † |
+| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Bonewrought Warspaulders | Mail armor — Shoulder · 260 armor, +7 Str, +8 Sta, +20 Hit rating | 14% | exclusive set 2 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta, +20 Hit rating | 14% | exclusive set 2 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int, +20 Hit rating | 14% | exclusive set 2 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 14% | exclusive set 2 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta, +20 Hit rating | 14% | exclusive set 2 † |
+| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Galecall Spaulders | Mail armor — Shoulder · 190 armor, +7 Sta, +8 Int, +20 Crit rating | 14% | exclusive set 2 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 14% | exclusive set 3 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta, +20 Hit rating | 14% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Wraithfire Cowl | Cloth armor — Head · 105 armor, +6 Sta, +11 Int, +20 Hit rating | 14% | exclusive set 3 † |
+| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Galecall Crown | Mail armor — Head · 225 armor, +7 Sta, +10 Int, +20 Crit rating | 14% | exclusive set 3 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta, +20 Hit rating | 14% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int, +20 Hit rating | 14% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int, +20 Hit rating | 14% | exclusive set 4 † |
+| <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Bonewrought Warspaulders | Mail armor — Shoulder · 260 armor, +7 Str, +8 Sta, +20 Hit rating | 14% | exclusive set 4 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta, +20 Hit rating | 14% | exclusive set 4 † |
+| <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Galecall Spaulders | Mail armor — Shoulder · 190 armor, +7 Sta, +8 Int, +20 Crit rating | 14% | exclusive set 4 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 14% | exclusive set 4 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta, +20 Hit rating | 14% | exclusive set 4 † |
+| <img src="../_loot-icons/bonewrought_greatsword.png" width="22" alt=""> 🟣 Bonewrought Greatsword | Weapon — Main hand · 45–75 dmg @ 3.4s (~18 DPS), +14 Str, +12 Sta, +20 Hit rating | 13% | exclusive set 1 † |
+| <img src="../_loot-icons/bonewrought_bulwark.png" width="22" alt=""> 🟣 Bonewrought Bulwark | Mail armor — offhand · 680 armor, +5 Str, +10 Sta, +20 Hit rating | 13% | exclusive set 2 † |
 | <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> 🟠 Heartwood of the Deathless Crown | Weapon — Main hand · 42–68 dmg @ 3.2s (~17 DPS), +13 Sta, +14 Int, +17 Spi | 3% | exclusive set 1 † |
 | <img src="../_loot-icons/kingsbane_last_oath.png" width="22" alt=""> 🟠 Thronebane, Last Oath of Thornpeak | Weapon — Main hand · 46–74 dmg @ 2.8s (~21 DPS), +15 Str, +15 Agi, +14 Sta | 3% | exclusive set 2 † |
 

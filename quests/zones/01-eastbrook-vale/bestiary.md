@@ -62,7 +62,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/webwood_silk.png" width="22" alt="">  Sableweb Silk Gland | Quest item | 55% | quest item — only drops while on _Sableweb Menace_ |
-| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚫ Twitching Spider Leg | Junk | 40% | sells for 4c |
+| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚪ Twitching Spider Leg | Junk | 40% | sells for 4c |
 
 <a id="mob-wild_boar"></a>
 
@@ -119,7 +119,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/mudfin_scale.png" width="22" alt=""> ⚫ Slimy Mudfin Scale | Junk | 50% | sells for 5c |
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 20% | sells for 3c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 20% | sells for 3c |
 
 <a id="mob-vale_bandit"></a>
 
@@ -147,7 +147,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/bandit_bandana.png" width="22" alt=""> ⚫ Red Bandana | Junk | 50% | sells for 6c |
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 30% | sells for 3c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 30% | sells for 3c |
 
 <a id="mob-tunnel_rat"></a>
 
@@ -176,7 +176,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 60% | sells for 5c |
 | <img src="../_loot-icons/blessed_wax.png" width="22" alt="">  Blessed Tallow | Quest item | 45% | quest item — only drops while on _The Binding Rite_ |
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 25% | sells for 3c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 25% | sells for 3c |
 | <img src="../_loot-icons/mossy_handwraps.png" width="22" alt=""> 🟢 Mossgrown Handwraps | Cloth armor — Hands · 12 armor, +1 Int, +2 Spi | 15% |  |
 
 <a id="mob-old_greyjaw"></a>
@@ -236,7 +236,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 60% | sells for 7c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 60% | sells for 7c |
 | <img src="../_loot-icons/ghostly_essence.png" width="22" alt="">  Ghostly Essence | Quest item | 55% | quest item — only drops while on _The Binding Rite_ |
 
 ## Elites
@@ -274,7 +274,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 100% | sells for 3c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 100% | sells for 3c |
 | <img src="../_loot-icons/moggers_stomper_boots.png" width="22" alt=""> 🟢 Mogger's Stomper Boots | Leather armor — Feet · 32 armor, +2 Agi, +1 Sta | 30% |  |
 | <img src="../_loot-icons/moggers_shiv.png" width="22" alt=""> 🔵 Mogger's Shiv | Weapon — Main hand · 6–11 dmg @ 1.7s (~5 DPS), +4 Agi, +2 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/cryptstalker_jerkin.png" width="22" alt=""> 🔵 Gravestalker Jerkin | Leather armor — Chest · 65 armor, +4 Agi, +2 Sta | 25% | exclusive set † |
@@ -311,7 +311,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 100% | sells for 7c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 100% | sells for 7c |
 | <img src="../_loot-icons/oathbound_greaves.png" width="22" alt=""> 🟢 Oathbound Greaves | Mail armor — Legs · 52 armor, +1 Str, +2 Sta | 30% |  |
 | <img src="../_loot-icons/verlans_oathblade.png" width="22" alt=""> 🔵 Verlan's Oathblade | Weapon — Main hand · 10–16 dmg @ 2.5s (~5 DPS), +4 Str, +2 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/hollow_vigil_staff.png" width="22" alt=""> 🔵 Staff of the Hollow Vigil | Weapon — Main hand · 11–18 dmg @ 3s (~5 DPS), +5 Int, +2 Spi | 25% | exclusive set † |
@@ -346,7 +346,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 80% | sells for 7c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 80% | sells for 7c |
 
 <a id="mob-bonechill_widow"></a>
 
@@ -375,7 +375,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚫ Twitching Spider Leg | Junk | 70% | sells for 4c |
+| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚪ Twitching Spider Leg | Junk | 70% | sells for 4c |
 
 <a id="mob-hollow_acolyte"></a>
 
@@ -404,7 +404,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 60% | sells for 3c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 60% | sells for 3c |
 
 <a id="mob-sexton_marrow"></a>
 

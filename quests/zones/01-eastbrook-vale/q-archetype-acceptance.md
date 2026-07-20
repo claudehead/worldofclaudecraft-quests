@@ -5,30 +5,27 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
-| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
-| **Status** | Retired (finishable only if already accepted) |
+| **Quest giver** | **Smith Haldren**, Armorer & Weaponsmith _(at ~x:7, z:17)_ |
+| **Turn in to** | **Smith Haldren**, Armorer & Weaponsmith _(at ~x:7, z:17)_ |
+| **Requires** | A Trade for Every Hand (`q_prof_intro`) |
 
 ## Story
 
-> Every artisan of Eastbrook eventually settles on one craft to call their own. Prove yourself with a single deed, <your name>, and declare your path.
+> Skill is knowledge, <your name>, but attunement is a promise. Choose two neighboring crafts whose methods you will carry as your majors, then bring me ore worked from the Vale with your own hands.
 
 ## How to complete
 
-- **Kill 1× [Forest Wolf](bestiary.md#mob-forest_wolf)** (level 1–2)
-  - Found in the open world at ~x:-15, z:55 (7 mobs, radius 22)
-  - Found in the open world at ~x:20, z:70 (6 mobs, radius 20)
-  - _Tracker: Forest Wolf slain_
+  - _Tracker: Ore vein harvested_
 
-Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
+Then return to **Smith Haldren**, Armorer & Weaponsmith _(at ~x:7, z:17)_ to turn in.
 
 ## Rewards
 
-- **XP:** 100
+- **XP:** 150
 
 ## On completion
 
-> Your path is chosen; walk it well.
+> The promise holds. These two crafts are now your majors, and the knowledge opposite them becomes your hobby.
 
 ## Where to go
 

@@ -2,7 +2,7 @@
   "class": "druid",
   "name": "Druid",
   "resource": "mana",
-  "ranged": false,
+  "ranged": true,
   "rules": {
     "meleeRange": 5,
     "gcd": 1.5,
@@ -96,7 +96,7 @@
     {
       "id": "bear_form",
       "name": "Bruin Form",
-      "learnLevel": 10,
+      "learnLevel": 8,
       "cost": 30,
       "cooldown": 0,
       "range": 0,
@@ -115,7 +115,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Charge an enemy, generating 9 rage and stunning it for 1 sec. 8-25 yd range. Bruin Form only."
+      "desc": "Rush an enemy, generating 9 rage and stunning it for 1 sec. 8-25 yd range. Bruin Form only."
     },
     {
       "id": "maul",
@@ -139,7 +139,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Growls at the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec. Bruin Form only."
+      "desc": "Menaces the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec. Bruin Form only."
     },
     {
       "id": "demoralizing_roar",
@@ -156,7 +156,7 @@
     {
       "id": "cat_form",
       "name": "Wolf Form",
-      "learnLevel": 12,
+      "learnLevel": 5,
       "cost": 30,
       "cooldown": 0,
       "range": 0,
@@ -168,7 +168,7 @@
     {
       "id": "prowl",
       "name": "Stalk",
-      "learnLevel": 12,
+      "learnLevel": 5,
       "cost": 0,
       "cooldown": 0,
       "range": 0,
@@ -180,7 +180,7 @@
     {
       "id": "rake",
       "name": "Flense",
-      "learnLevel": 12,
+      "learnLevel": 5,
       "cost": 35,
       "cooldown": 0,
       "range": 0,
@@ -192,7 +192,7 @@
     {
       "id": "claw",
       "name": "Claw",
-      "learnLevel": 12,
+      "learnLevel": 5,
       "cost": 45,
       "cooldown": 0,
       "range": 0,
@@ -247,12 +247,12 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Swipe nearby enemies for $d damage. Causes extra threat. Bruin Form only."
+      "desc": "Sweep your claws through nearby enemies for $d damage. Causes extra threat. Bruin Form only."
     },
     {
       "id": "starfire",
       "name": "Skyfall",
-      "learnLevel": 18,
+      "learnLevel": 14,
       "cost": 80,
       "cooldown": 0,
       "range": 30,
@@ -264,7 +264,7 @@
     {
       "id": "travel_form",
       "name": "Fleet Form",
-      "learnLevel": 16,
+      "learnLevel": 11,
       "cost": 30,
       "cooldown": 0,
       "range": 0,
@@ -288,7 +288,7 @@
     {
       "id": "bash",
       "name": "Concuss",
-      "learnLevel": 16,
+      "learnLevel": 8,
       "cost": 10,
       "cooldown": 60,
       "range": 8,
@@ -362,17 +362,17 @@
       "name": "Wolfsblood",
       "learnLevel": 20,
       "cost": 30,
-      "cooldown": 0,
+      "cooldown": 30,
       "range": 0,
       "castTime": 0,
       "school": "physical",
       "requiresTarget": false,
-      "desc": "Increases attack power by 40 for 6 sec. Wolf Form only."
+      "desc": "Increases attack power by $b for $t sec. Wolf Form only."
     },
     {
       "id": "rip",
       "name": "Rip",
-      "learnLevel": 20,
+      "learnLevel": 14,
       "cost": 30,
       "cooldown": 0,
       "range": 0,
@@ -383,7 +383,7 @@
     },
     {
       "id": "hurricane",
-      "name": "Hurricane",
+      "name": "Galeheart",
       "learnLevel": 18,
       "cost": 90,
       "cooldown": 12,
@@ -403,7 +403,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "A lunging headbutt that interrupts the target's spellcast and locks that school for 4 sec."
+      "desc": "Interrupts spellcasting and prevents any spell in that school from being cast for 4 sec. (Druid talent)"
     },
     {
       "id": "primal_reflexes",
@@ -457,11 +457,11 @@
     "primal_reflexes"
   ],
   "playbook": [
-    "You are playing a Druid (mana-based, melee).",
+    "You are playing a Druid (mana-based, ranged).",
     "Goal: gain XP safely — kill mobs at or below your level, complete quests, stay alive.",
     "SURVIVE: if HP < 25% and a mob is hitting you, flee or use a defensive; if safe and HP < 60%, eat/consume.",
     "RESOURCE: if mana < 20% and out of combat, drink before pulling.",
-    "ENGAGE: pick the nearest hostile within range of your goal, close to 5 yards (face it), then attack.",
+    "ENGAGE: pick the nearest hostile within range of your goal, close to ability range (face it), then attack.",
     "ROTATE: cast the first ready ability in \"rotation\" each GCD (respect cost/cooldown/range/line-of-sight); auto-attack fills the gaps.",
     "LOOT/QUEST: after a kill, loot the corpse; interact with quest objects/NPCs the objective needs.",
     "Avoid pulling Elite/Rare mobs above your level, and don't pull more than you can handle."

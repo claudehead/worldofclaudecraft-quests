@@ -31,8 +31,13 @@
 <circle cx="456.3" cy="493.8" r="4" fill="#3a4a42"/>
 <circle cx="493.8" cy="431.3" r="4" fill="#3a4a42"/>
 <circle cx="546.9" cy="500.0" r="4" fill="#3a4a42"/>
+<circle cx="546.9" cy="481.3" r="4" fill="#3a4a42"/>
 <circle cx="487.5" cy="218.8" r="4" fill="#3a4a42"/>
 <circle cx="553.1" cy="425.0" r="4" fill="#3a4a42"/>
+<circle cx="521.9" cy="521.9" r="4" fill="#3a4a42"/>
+<circle cx="467.2" cy="484.4" r="4" fill="#3a4a42"/>
+<circle cx="493.8" cy="446.9" r="4" fill="#3a4a42"/>
+<circle cx="535.9" cy="431.3" r="4" fill="#3a4a42"/>
 <text x="506.3" y="465.6" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Eastbrook</text>
 <text x="500.0" y="693.8" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Wolf Run</text>
 <text x="709.4" y="475.0" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Boar Meadow</text>

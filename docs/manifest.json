@@ -2,7 +2,7 @@
   "repo": "claudehead/worldofclaudecraft-quests",
   "branch": "main",
   "counts": {
-    "quests": 83,
+    "quests": 84,
     "zones": 4,
     "classes": 9,
     "dungeons": 5,
@@ -135,7 +135,7 @@
           "name": "A Craft to Call Your Own",
           "level": 1,
           "group": false,
-          "chain": false,
+          "chain": true,
           "file": "quests/zones/01-eastbrook-vale/q-archetype-acceptance.md"
         },
         {
@@ -143,8 +143,16 @@
           "name": "Making Amends",
           "level": 1,
           "group": false,
-          "chain": false,
+          "chain": true,
           "file": "quests/zones/01-eastbrook-vale/q-prof-make-amends.md"
+        },
+        {
+          "id": "q_prof_hobby_switch",
+          "name": "A Different Pastime",
+          "level": 1,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-hobby-switch.md"
         },
         {
           "id": "q_spiders",
@@ -839,10 +847,11 @@
       "name": "Mage",
       "resource": "mana",
       "roles": [
+        "healer",
         "dps"
       ],
       "specs": [
-        "Aethermancy",
+        "Chronomancy",
         "Pyromancy",
         "Cryomancy"
       ],

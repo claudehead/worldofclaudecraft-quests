@@ -44,6 +44,14 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
+<a id="mob-water_elemental"></a>
+
+### Water Elemental
+
+**Level 1–60 · 880 HP · Elemental**
+
+<br clear="all">
+
 <a id="mob-yumi_cat"></a>
 
 ### Yumi

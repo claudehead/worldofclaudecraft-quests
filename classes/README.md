@@ -10,6 +10,6 @@ The 9 playable classes. Each page lists every ability with the level you learn i
 | [Rogue](rogue.md) | Energy | DPS | Knifework, Thuggery, Skulduggery |
 | [Priest](priest.md) | Mana | Healer, DPS | Doctrine, Benison, Vespers |
 | [Shaman](shaman.md) | Mana | Healer, DPS | Thundercall, Warspirit, Spiritmend |
-| [Mage](mage.md) | Mana | DPS | Aethermancy, Pyromancy, Cryomancy |
+| [Mage](mage.md) | Mana | Healer, DPS | Chronomancy, Pyromancy, Cryomancy |
 | [Warlock](warlock.md) | Mana | DPS | Hexcraft, Pactbound, Ruination |
 | [Druid](druid.md) | Mana | Tank, Healer, DPS | Moongrove, Wildfang, Groveheart |

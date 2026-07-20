@@ -96,6 +96,7 @@ Most stutter is the browser, not the game. In order:
 | Event Calendar | `I` |
 | Discord | `U` |
 | Book of Deeds | `Shift+KeyZ` |
+| Professions | `Shift+KeyP` |
 | Open Chat | `Enter` or `NumpadEnter` |
 | Emote Wheel | `X` |
 | Sheathe/Unsheathe Weapon | `Z` |
@@ -137,5 +138,16 @@ Most stutter is the browser, not the game. In order:
 | Secondary Bar 9 | `Numpad9` |
 | Secondary Bar 10 | `Numpad0` |
 | Secondary Bar 11 | `NumpadDecimal` |
+| Third Bar 1 | `Shift+Numpad1` |
+| Third Bar 2 | `Shift+Numpad2` |
+| Third Bar 3 | `Shift+Numpad3` |
+| Third Bar 4 | `Shift+Numpad4` |
+| Third Bar 5 | `Shift+Numpad5` |
+| Third Bar 6 | `Shift+Numpad6` |
+| Third Bar 7 | `Shift+Numpad7` |
+| Third Bar 8 | `Shift+Numpad8` |
+| Third Bar 9 | `Shift+Numpad9` |
+| Third Bar 10 | `Shift+Numpad0` |
+| Third Bar 11 | `Shift+NumpadDecimal` |
 
 _Most actions are rebindable in Settings → Keybinds._

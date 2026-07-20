@@ -115,7 +115,7 @@
       "castTime": 0,
       "school": "holy",
       "requiresTarget": true,
-      "desc": "Taunts the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec."
+      "desc": "Goads the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec."
     },
     {
       "id": "flash_of_light",
@@ -132,7 +132,7 @@
     {
       "id": "exorcism",
       "name": "Rite of Expulsion",
-      "learnLevel": 14,
+      "learnLevel": 5,
       "cost": 55,
       "cooldown": 15,
       "range": 30,
@@ -144,7 +144,7 @@
     {
       "id": "consecration",
       "name": "Holy Ground",
-      "learnLevel": 18,
+      "learnLevel": 8,
       "cost": 60,
       "cooldown": 8,
       "range": 0,
@@ -187,7 +187,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Interrupts the target's spellcast and prevents casting from that school for 4 sec."
+      "desc": "Interrupts spellcasting and prevents any spell in that school from being cast for 4 sec. (Paladin talent)"
     },
     {
       "id": "sacred_bulwark",

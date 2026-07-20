@@ -604,102 +604,83 @@ async function abilitiesView() {
 }
 
 let talentData = null;
-async function talentsView(initClass, initSpec, initAlloc) {
+async function talentsView(initClass, initSpec, initPicks) {
   app.innerHTML = '';
   app.append(el(`<section class="block"><div class="wrap">
     <div class="shead reveal"><span class="eyebrow">Talents</span><h2>Talent calculator</h2>
-      <p>Pick a class and spec, then click talents to spend points (right-click to remove). Respects ranks, prerequisites, and tree gates.</p></div>
+      <p id="tintro">Pick a class and specialization, then choose one option in each row.</p></div>
     <div class="controls reveal"><div class="pills" id="tclass"></div></div>
-    <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="tspec"></div>
-      <span class="tbudget" id="tbudget"></span>
+    <div class="controls reveal" style="margin-top:-12px"><div class="pills" id="tspec"></div></div>
+    <div class="tspecinfo reveal" id="tspecinfo"></div>
+    <div class="controls reveal">
       <span class="pill" id="treset">Reset</span>
       <span class="pill" id="tshare">🔗 Copy link</span>
       <span class="pill" id="tsave">★ Save</span></div>
     <div class="tsaved" id="tsaved"></div>
-    <div id="ttrees" class="ttrees"></div>
+    <div id="ttrees" class="trows"></div>
   </div></section>`));
   if (!talentData) {
     try { talentData = await (await fetch(cb('talents.json'))).json(); }
     catch (e) { app.querySelector('#ttrees').innerHTML = `<div class="meta">Couldn't load talents (${esc(e.message)}).</div>`; return; }
   }
+  app.querySelector('#tintro').textContent = `Pick a class and specialization, then choose one option in each row. Specialization unlocks at level ${talentData.specLevel}; a new choice row opens at levels ${talentData.rowLevels.join(', ')}.`;
   const classIds = Object.keys(talentData.classes);
   let classId = classIds.includes(initClass) ? initClass : classIds[0], specIdx = 0;
-  let alloc = {}; // nodeId -> rank
-  const maxPoints = talentData.maxPoints;
+  const NROWS = talentData.rowLevels.length;
+  let picks = Array(NROWS).fill(-1); // per-row selected option index (-1 = none)
 
-  // restore a shared build (#/talents/<class>/<spec>/<digits>)
-  function nodeOrder(cid, si) { const c = talentData.classes[cid]; return [...c.classTree, ...c.specs[si].nodes]; }
-  function decode(cid, sid, digits) {
-    const c = talentData.classes[cid]; const si = Math.max(0, c.specs.findIndex(s => s.id === sid));
-    specIdx = si; alloc = {};
-    const order = nodeOrder(cid, si);
-    [...(digits || '')].forEach((d, i) => { const r = parseInt(d, 36); if (order[i] && r > 0) alloc[order[i].id] = Math.min(r, order[i].maxRank); });
+  // restore a shared build (#/talents/<class>/<spec>/<picks>), picks = one char per row (0-2, or '.')
+  function decode(cid, sid, str) {
+    const c = talentData.classes[cid]; specIdx = Math.max(0, c.specs.findIndex(s => s.id === sid));
+    picks = Array(NROWS).fill(-1);
+    [...(str || '')].forEach((ch, i) => { const v = parseInt(ch, 10); if (i < NROWS && v >= 0 && v <= 2) picks[i] = v; });
   }
-  function encode() {
-    const order = nodeOrder(classId, specIdx);
-    return order.map(n => (alloc[n.id] || 0).toString(36)).join('').replace(/0+$/, '');
-  }
+  function encode() { return picks.map(p => p < 0 ? '.' : p).join('').replace(/\.+$/, ''); }
   function buildHash() { return `#/talents/${classId}/${talentData.classes[classId].specs[specIdx].id}/${encode()}`; }
-  if (initClass) decode(classId, initSpec, initAlloc);
+  if (initClass) decode(classId, initSpec, initPicks);
 
   const clsHost = app.querySelector('#tclass'), specHost = app.querySelector('#tspec');
   classIds.forEach((id) => {
     const p = el(`<span class="pill ${id === classId ? 'active' : ''}">${esc(talentData.classes[id].name)}</span>`);
-    p.onclick = () => { classId = id; specIdx = 0; alloc = {}; clsHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); buildSpecs(); draw(); };
+    p.onclick = () => { classId = id; specIdx = 0; picks = Array(NROWS).fill(-1); clsHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); buildSpecs(); draw(); };
     clsHost.append(p);
   });
-  app.querySelector('#treset').onclick = () => { alloc = {}; draw(); };
+  app.querySelector('#treset').onclick = () => { picks = Array(NROWS).fill(-1); draw(); };
 
   function buildSpecs() {
     specHost.innerHTML = '';
     talentData.classes[classId].specs.forEach((s, i) => {
-      const p = el(`<span class="pill ${i === specIdx ? 'active' : ''}">${esc(s.icon || '')} ${esc(s.name)}</span>`);
-      p.onclick = () => { specIdx = i; alloc = {}; specHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
+      const p = el(`<span class="pill specpill ${i === specIdx ? 'active' : ''}"><img class="tspecicon" src="${esc(s.signatureIcon || '')}" alt="" loading="lazy">${esc(s.name)} <span class="specrole">${esc(s.role)}</span></span>`);
+      p.onclick = () => { specIdx = i; specHost.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); draw(); };
       specHost.append(p);
     });
   }
-  const spent = () => Object.values(alloc).reduce((a, b) => a + b, 0);
-  const treeSpent = (nodes) => nodes.reduce((a, n) => a + (alloc[n.id] || 0), 0);
 
-  function canAdd(node, treeNodes) {
-    if ((alloc[node.id] || 0) >= node.maxRank) return false;
-    if (spent() >= maxPoints) return false;
-    if (node.pointsGate && treeSpent(treeNodes) < node.pointsGate) return false;
-    if (node.requires) for (const r of node.requires) { const dep = treeNodes.find(n => n.id === r); if (dep && (alloc[r] || 0) < dep.maxRank) return false; }
-    return true;
-  }
-  function treeGrid(nodes, title) {
-    const cols = Math.max(...nodes.map(n => n.col)) + 1;
-    const rows = Math.max(...nodes.map(n => n.row)) + 1;
-    const wrap = el(`<div class="ttree"><div class="ttreehead">${esc(title)} <span class="ttreepts">${treeSpent(nodes)}</span></div><div class="tgrid" style="grid-template-columns:repeat(${cols},1fr);grid-template-rows:repeat(${rows},auto)"></div></div>`);
-    const grid = wrap.querySelector('.tgrid');
-    const at = {};
-    for (const n of nodes) at[n.row + ',' + n.col] = n;
-    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
-      const n = at[r + ',' + c];
-      if (!n) { grid.append(el('<div></div>')); continue; }
-      const rank = alloc[n.id] || 0;
-      const maxed = rank >= n.maxRank;
-      const avail = canAdd(n, nodes) || rank > 0;
-      const cell = el(`<div class="tnode ${rank > 0 ? (maxed ? 'maxed' : 'partial') : ''} ${avail ? '' : 'locked'}" title="${esc(n.name)} — ${esc(n.description || '')}">
-        <img class="ticon-img" src="${n.iconImg || ''}" alt="" loading="lazy">
-        <span class="tname">${esc(n.name)}</span>
-        <span class="trank">${rank}/${n.maxRank}</span></div>`);
-      cell.oncontextmenu = (e) => { e.preventDefault(); if (rank > 0) { alloc[n.id] = rank - 1; if (!alloc[n.id]) delete alloc[n.id]; draw(); } };
-      cell.onclick = () => { if (canAdd(n, nodes)) { alloc[n.id] = rank + 1; draw(); } };
-      grid.append(cell);
-    }
+  // A choice row: 3 option cards, pick exactly one.
+  function rowBlock(row, ri) {
+    const wrap = el(`<div class="trow"><div class="trowhead"><span class="trowlvl">Lv ${row.level}</span>${row.decision ? `<span class="trowtheme">${esc(row.decision)}</span>` : (row.theme ? `<span class="trowtheme">${esc(row.theme)}</span>` : '')}</div><div class="trowopts"></div></div>`);
+    const opts = wrap.querySelector('.trowopts');
+    row.options.forEach((o, oi) => {
+      const sel = picks[ri] === oi;
+      const cell = el(`<div class="topt ${sel ? 'picked' : ''}" title="${esc(o.name)} — ${esc(o.description || '')}">
+        <img class="ticon-img" src="${o.iconImg || ''}" alt="" loading="lazy">
+        <div class="toptbody"><span class="tname">${esc(o.name)}</span><span class="tdesc">${esc(o.description || '')}</span></div></div>`);
+      cell.onclick = () => { picks[ri] = sel ? -1 : oi; draw(); };
+      opts.append(cell);
+    });
     return wrap;
   }
   function draw() {
     const cls = talentData.classes[classId];
     const spec = cls.specs[specIdx];
-    app.querySelector('#tbudget').innerHTML = `<b>${spent()}</b> / ${maxPoints} points`;
+    const chosen = picks.filter(p => p >= 0).length;
+    app.querySelector('#tspecinfo').innerHTML = `
+      <div class="tspeccard"><div class="tspechead"><img class="tspecicon lg" src="${esc(spec.signatureIcon || '')}" alt=""><div><b>${esc(spec.name)}</b> <span class="specrole">${esc(spec.role)}</span><div class="meta">${esc(spec.description || '')}</div></div></div>
+      ${spec.mastery && spec.mastery.name ? `<div class="tmastery"><b>Mastery — ${esc(spec.mastery.name)}:</b> ${esc(spec.mastery.description || '')}</div>` : ''}
+      <div class="meta" style="margin-top:6px">Rows chosen: <b>${chosen}/${NROWS}</b></div></div>`;
     const host = app.querySelector('#ttrees');
     host.innerHTML = '';
-    host.append(treeGrid(cls.classTree, 'Class'));
-    host.append(treeGrid(spec.nodes, spec.name));
-    if (spec.mastery) host.append(el(`<div class="tmastery"><b>${esc(spec.name)} mastery — ${esc(spec.mastery.name)}:</b> ${esc(spec.mastery.description)}</div>`));
+    cls.rows.forEach((row, ri) => host.append(rowBlock(row, ri)));
   }
   // share + save
   app.querySelector('#tshare').onclick = () => {

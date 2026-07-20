@@ -1,25 +1,44 @@
-import { TALENTS, talentPointsAtLevel, FIRST_TALENT_LEVEL } from '../woc/src/sim/content/talents.ts';
+// Emit the guide's talent data from the game source.
+//
+// v0.27+ talent model (replaces the old point-buy `nodes` grid): each class has
+// 3 specializations (chosen at SPEC_UNLOCK_LEVEL), and a shared choice-row tree of
+// 6 rows unlocked at ROW_LEVELS (5/8/11/14/17/20). Each row offers 3 options and you
+// pick exactly one. Rows are per-class and independent of the chosen spec.
+import { TALENTS, SPEC_UNLOCK_LEVEL } from '../woc/src/sim/content/talents.ts';
+import { ROW_LEVELS, rowTreeFor } from '../woc/src/sim/content/talent_rows.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/talents.json';
 
-const pointsByLevel: Record<number, number> = {};
-for (let l = 1; l <= 20; l++) pointsByLevel[l] = talentPointsAtLevel(l);
-
+// Row-option icon ids to render as PNGs (see icon-entry.js / render-game-icons.mjs).
 const iconIds: string[] = [];
-const withIcon = (n: any) => { iconIds.push(n.id); return { ...n, iconImg: `talent-icons/${n.id}.png` }; };
 
 const classes: Record<string, any> = {};
 for (const [cid, ct] of Object.entries(TALENTS) as any[]) {
-  const classTree = ct.nodes.filter((n: any) => n.tree === 'class').map(withIcon);
   const specs = (ct.specs || []).map((s: any) => ({
-    id: s.id, name: s.name, icon: s.icon, role: s.role, description: s.description, mastery: s.mastery,
-    nodes: ct.nodes.filter((n: any) => n.tree === 'spec' && n.specId === s.id).map(withIcon),
+    id: s.id,
+    name: s.name,
+    role: s.role,
+    description: s.description,
+    signature: s.signature,
+    // The spec's signature ability icon is already rendered by the abilities pass.
+    signatureIcon: `abilities/_icons/${s.signature}.png`,
+    mastery: { name: s.mastery?.name, description: s.mastery?.description },
   }));
-  classes[cid] = { id: cid, name: cid[0].toUpperCase() + cid.slice(1), classTree, specs };
+  const tree = rowTreeFor(cid) || [];
+  const rows = tree.map((r: any) => ({
+    level: r.level,
+    theme: r.theme || null,
+    decision: r.decision || null,
+    options: r.options.map((o: any) => {
+      iconIds.push(o.id);
+      return { id: o.id, name: o.name, description: o.description, iconImg: `talent-icons/${o.id}.png`, effect: o.effect };
+    }),
+  }));
+  classes[cid] = { id: cid, name: cid[0].toUpperCase() + cid.slice(1), specs, rows };
 }
 
 fs.mkdirSync(OUT.replace(/[/\\][^/\\]+$/, '') || '.', { recursive: true });
-fs.writeFileSync(OUT, JSON.stringify({ firstLevel: FIRST_TALENT_LEVEL, maxPoints: talentPointsAtLevel(20), pointsByLevel, classes }));
+fs.writeFileSync(OUT, JSON.stringify({ specLevel: SPEC_UNLOCK_LEVEL, rowLevels: ROW_LEVELS, classes }));
 fs.writeFileSync(OUT.replace(/[^/\\]+$/, 'talent-icon-ids.json'), JSON.stringify(iconIds));
-console.log(`wrote talents for ${Object.keys(classes).length} classes, ${iconIds.length} icon ids (max ${talentPointsAtLevel(20)} points)`);
+console.log(`wrote talents for ${Object.keys(classes).length} classes, ${iconIds.length} row-option icons (spec at Lv ${SPEC_UNLOCK_LEVEL}, rows ${ROW_LEVELS.join('/')})`);

@@ -19,8 +19,9 @@ Tick a box when you turn the quest in. Work top-down — quests are grouped by t
 - [ ] [The Gravecaller's Trail](../quests/zones/01-eastbrook-vale/q-gravecallers-trail.md) _(chain)_ — Zone 1 — Eastbrook Vale
 - [ ] [Bandits of the Vale](../quests/zones/01-eastbrook-vale/q-bandits.md) _(chain)_ — Zone 1 — Eastbrook Vale
 - [ ] [The Ringleader](../quests/zones/01-eastbrook-vale/q-ringleader.md) _(chain)_ — Zone 1 — Eastbrook Vale
-- [ ] [A Craft to Call Your Own](../quests/zones/01-eastbrook-vale/q-archetype-acceptance.md) — Zone 1 — Eastbrook Vale
-- [ ] [Making Amends](../quests/zones/01-eastbrook-vale/q-prof-make-amends.md) — Zone 1 — Eastbrook Vale
+- [ ] [A Craft to Call Your Own](../quests/zones/01-eastbrook-vale/q-archetype-acceptance.md) _(chain)_ — Zone 1 — Eastbrook Vale
+- [ ] [Making Amends](../quests/zones/01-eastbrook-vale/q-prof-make-amends.md) _(chain)_ — Zone 1 — Eastbrook Vale
+- [ ] [A Different Pastime](../quests/zones/01-eastbrook-vale/q-prof-hobby-switch.md) _(chain)_ — Zone 1 — Eastbrook Vale
 
 ## Level 2+
 

@@ -19,8 +19,9 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 | [The Gravecaller's Trail](zones/01-eastbrook-vale/q-gravecallers-trail.md) | Zone 1 — Eastbrook Vale | chain |
 | [Bandits of the Vale](zones/01-eastbrook-vale/q-bandits.md) | Zone 1 — Eastbrook Vale | chain |
 | [The Ringleader](zones/01-eastbrook-vale/q-ringleader.md) | Zone 1 — Eastbrook Vale | chain |
-| [A Craft to Call Your Own](zones/01-eastbrook-vale/q-archetype-acceptance.md) | Zone 1 — Eastbrook Vale |  |
-| [Making Amends](zones/01-eastbrook-vale/q-prof-make-amends.md) | Zone 1 — Eastbrook Vale |  |
+| [A Craft to Call Your Own](zones/01-eastbrook-vale/q-archetype-acceptance.md) | Zone 1 — Eastbrook Vale | chain |
+| [Making Amends](zones/01-eastbrook-vale/q-prof-make-amends.md) | Zone 1 — Eastbrook Vale | chain |
+| [A Different Pastime](zones/01-eastbrook-vale/q-prof-hobby-switch.md) | Zone 1 — Eastbrook Vale | chain |
 
 ## Level 2+
 

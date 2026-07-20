@@ -10,13 +10,11 @@
 
 ## Story
 
-> Every soul in Eastbrook works a trade besides the sword, <your name>. There's ore veins in the rocks around the Copper Dig, southwest of town, so go swing a pick and bring me 5 chunks. Mine them yourself, mind; I'll know the difference.
+> Every soul in Eastbrook works a trade besides the sword, <your name>. There are ore veins in the rocks around the Copper Dig, southwest of town. Go swing a pick and work 5 of them yourself, mind; I'll know the difference.
 
 ## How to complete
 
-- **Collect 5× Chunk of Ore**
-  - _Granted by a prerequisite quest or special encounter_
-  - _Tracker: Chunk of Ore_
+  - _Tracker: Ore vein harvested_
 
 Then return to **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ to turn in.
 
@@ -27,7 +25,13 @@ Then return to **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ to turn in.
 
 ## On completion
 
-> See? Ore in your pack and callus on your hands. Keep at the mining, logging, and herb-picking as you travel the roads, and when you're back in town, mind the Town Focus board by the market and the crafting bench nearby. There's a fair trade waiting in all of it, if you want it.
+> See? Ore gathered and callus on your hands. Keep at the mining, logging, and herb-picking as you travel the roads, and when you're back in town, mind the Town Focus board by the market and the crafting bench nearby. There's a fair trade waiting in all of it, if you want it.
+
+## Leads to
+
+- A Craft to Call Your Own (`q_archetype_acceptance`)
+- Making Amends (`q_prof_make_amends`)
+- A Different Pastime (`q_prof_hobby_switch`)
 
 ## Where to go
 

@@ -84,7 +84,7 @@
     {
       "id": "mind_blast",
       "name": "Mindfracture",
-      "learnLevel": 10,
+      "learnLevel": 5,
       "cost": 50,
       "cooldown": 8,
       "range": 30,
@@ -108,7 +108,7 @@
     {
       "id": "mind_flay",
       "name": "Litany of Woe",
-      "learnLevel": 16,
+      "learnLevel": 14,
       "cost": 45,
       "cooldown": 0,
       "range": 20,

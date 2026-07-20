@@ -190,12 +190,12 @@
 </tbody></table>
 <h2>Specializations</h2>
 <ul>
-<li><strong>Battlecraft</strong> — <em>DPS</em>. Signature ability: <strong>Maiming Strike</strong> (learned at level 10).</li>
-<li><strong>Bloodrush</strong> — <em>DPS</em>. Signature ability: <strong>Bloodletting</strong> (learned at level 10).</li>
-<li><strong>Ironguard</strong> — <em>Tank</em>. Signature ability: <strong>Shieldcrack</strong> (learned at level 10).</li>
+<li><strong>Battlecraft</strong> — <em>DPS</em>. Signature ability: <strong>Maiming Strike</strong> (learned at level 5).</li>
+<li><strong>Bloodrush</strong> — <em>DPS</em>. Signature ability: <strong>Bloodletting</strong> (learned at level 5).</li>
+<li><strong>Ironguard</strong> — <em>Tank</em>. Signature ability: <strong>Shieldcrack</strong> (learned at level 5).</li>
 </ul>
 <h2>Abilities</h2>
-<p>33 abilities, in the order you learn them. &quot;Ranks&quot; shows the levels where the ability gets stronger.</p>
+<p>61 abilities, in the order you learn them. &quot;Ranks&quot; shows the levels where the ability gets stronger.</p>
 <table>
 <thead>
 <tr>
@@ -210,6 +210,16 @@
 </tr>
 </thead>
 <tbody><tr>
+<td>Battle Stance</td>
+<td>1</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>1s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>An aggressive combat stance: you generate 10% more rage. The default stance for Arms and Protection.</td>
+</tr>
+<tr>
 <td>Big Boot</td>
 <td>1</td>
 <td align="right">—</td>
@@ -262,12 +272,12 @@
 <tr>
 <td>Iron Bellow</td>
 <td>1</td>
-<td align="right">10</td>
+<td align="right">—</td>
 <td>Instant</td>
 <td>—</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>A shout that increases the attack power of all party members by X% for 2 min.</td>
+<td>A shout that increases the attack power of all party members by X% for 30 min.</td>
 </tr>
 <tr>
 <td>Kick</td>
@@ -330,48 +340,28 @@
 <td>A fair harvest-truce shoulder. Sends them tumbling off the ball.</td>
 </tr>
 <tr>
-<td>Deep Gash</td>
-<td>4 <em>(ranks: 10, 16)</em></td>
-<td align="right">10</td>
+<td>Redhand</td>
+<td>2 <em>(ranks: 16)</em></td>
+<td align="right">15</td>
 <td>Instant</td>
-<td>—</td>
+<td>5s</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>Wounds the target, causing them to bleed for X damage over X sec.</td>
+<td>Instant attack (2 charges) for weapon damage plus X that empowers your next Maiming Strike by 20% (stacks twice). Cannot be dodged.</td>
 </tr>
 <tr>
 <td>Onrush</td>
-<td>4</td>
+<td>3</td>
 <td align="right">—</td>
 <td>Instant</td>
 <td>15s</td>
 <td align="right">25</td>
 <td>Physical</td>
-<td>Charges an enemy, generating 9 rage and stunning it for 1 sec. 8-25 yd range.</td>
-</tr>
-<tr>
-<td>Quaking Blow</td>
-<td>6 <em>(ranks: 14, 20)</em></td>
-<td align="right">20</td>
-<td>Instant</td>
-<td>4s</td>
-<td align="right">Melee</td>
-<td>Physical</td>
-<td>Blasts nearby enemies for X damage and slows their attacks by 10% for 10 sec.</td>
-</tr>
-<tr>
-<td>Hobbling Cut</td>
-<td>8 <em>(ranks: 16)</em></td>
-<td align="right">10</td>
-<td>Instant</td>
-<td>—</td>
-<td align="right">Melee</td>
-<td>Physical</td>
-<td>Maims the enemy for X damage, slowing its movement by 50% for 15 sec.</td>
+<td>Rushes an enemy, generating 9 rage and stunning it for 1 sec. 8-25 yd range.</td>
 </tr>
 <tr>
 <td>Armor Shear</td>
-<td>10 <em>(ranks: 16)</em></td>
+<td>5 <em>(ranks: 16)</em></td>
 <td align="right">15</td>
 <td>Instant</td>
 <td>—</td>
@@ -380,18 +370,158 @@
 <td>Sunders the target&#39;s armor, reducing it by X% per application. Stacks up to 5 times. Generates a high amount of threat.</td>
 </tr>
 <tr>
-<td>Bladed Gyre</td>
-<td>10</td>
-<td align="right">25</td>
+<td>Berserker Stance</td>
+<td>5</td>
+<td align="right">—</td>
 <td>Instant</td>
-<td>10s</td>
+<td>1s</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>Spin in a deadly arc, striking all nearby enemies for X. (Fury talent)</td>
+<td>A reckless combat stance: your critical strikes land 3% more often and hit for 3% more. The Fury warrior always fights in this stance.</td>
+</tr>
+<tr>
+<td>Bloodletting</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>6s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Instantly attack in a blood frenzy for X, healing you for 3% of your maximum health and generating 12 rage. Has a 30% chance to Enrage you. (Fury signature)</td>
+</tr>
+<tr>
+<td>Brute Swing</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>4s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Swings brutally at the opponent for 50% weapon damage plus X, generating 8 rage.</td>
+</tr>
+<tr>
+<td>Cleaving Blows</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Red Harvest always refunds a charge of Twinstrike. (Fury)</td>
+</tr>
+<tr>
+<td>Diabolical Twinstrike</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>While Enraged, your Twinstrike deals 15% more damage. (Fury)</td>
+</tr>
+<tr>
+<td>Goad</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>10s</td>
+<td align="right">8</td>
+<td>Physical</td>
+<td>Goads the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec.</td>
+</tr>
+<tr>
+<td>Guarded Stance</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>1s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>A defensive combat stance: you generate 30% more threat but deal and take 10% less damage. Cast Battle Stance to return to the offensive.</td>
+</tr>
+<tr>
+<td>Hobbling Cut</td>
+<td>5 <em>(ranks: 16)</em></td>
+<td align="right">10</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Maims the enemy for X damage, slowing its movement by 50% for 15 sec.</td>
+</tr>
+<tr>
+<td>Maiming Strike</td>
+<td>5</td>
+<td align="right">30</td>
+<td>Instant</td>
+<td>6s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>A vicious strike dealing weapon damage plus X and reducing healing the target receives by 50% for 10 sec. Applies Gaping Wounds (bleed). (Arms signature)</td>
+</tr>
+<tr>
+<td>Mayhem</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Passive: while Enraged you deal 7% more damage, attack 25% faster and move 10% faster for 4 sec. Bloodletting has a 30% chance to Enrage you; Red Harvest always does. (Fury)</td>
+</tr>
+<tr>
+<td>Measured Fury</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Your measured fury sharpens your economy: your abilities cost 10% less rage. (Arms)</td>
+</tr>
+<tr>
+<td>Quaking Blow</td>
+<td>5 <em>(ranks: 14, 20)</em></td>
+<td align="right">20</td>
+<td>Instant</td>
+<td>4s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Blasts nearby enemies for X damage and slows their attacks by 10% for 10 sec.</td>
+</tr>
+<tr>
+<td>Seasoned Soldier</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Your critical auto-attacks generate 10% more rage. (Arms)</td>
+</tr>
+<tr>
+<td>Shieldcrack</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>6s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Slam the target with your shield for X and massive threat, generating 15 rage. (Protection signature)</td>
+</tr>
+<tr>
+<td>Sudden Death</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Your auto-attacks have a chance to let you cast Early Grave on a target at any health, costing no rage. (Arms)</td>
 </tr>
 <tr>
 <td>Blood Toll</td>
-<td>10</td>
+<td>6</td>
 <td align="right">—</td>
 <td>Instant</td>
 <td>1 min</td>
@@ -400,64 +530,114 @@
 <td>Generates 10 rage at the cost of health.</td>
 </tr>
 <tr>
-<td>Bloodletting</td>
-<td>10</td>
+<td>Heroic Leap</td>
+<td>6</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>20s</td>
 <td align="right">30</td>
-<td>Instant</td>
-<td>6s</td>
-<td align="right">Melee</td>
 <td>Physical</td>
-<td>Instantly attack in a blood frenzy for 60% weapon damage plus X. (Fury signature)</td>
+<td>Leap to the target area, dealing X damage to nearby enemies on landing.</td>
 </tr>
 <tr>
-<td>Goad</td>
-<td>10</td>
-<td align="right">—</td>
+<td>Revenge</td>
+<td>7</td>
+<td align="right">20</td>
 <td>Instant</td>
-<td>10s</td>
-<td align="right">8</td>
-<td>Physical</td>
-<td>Taunts the target: your threat rises to match its most hated enemy and it is compelled to attack you for 3 sec.</td>
-</tr>
-<tr>
-<td>Guarded Stance</td>
-<td>10</td>
-<td align="right">—</td>
-<td>Instant</td>
-<td>1s</td>
+<td>—</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>A defensive combat stance: you generate 30% more threat but deal and take 10% less damage. Cast again to leave the stance.</td>
+<td>Attack in a wide arc, dealing 18 to 24 Physical damage to all enemies in front of you. Above 5 targets the damage is reduced. When you dodge or parry, your next Revenge may cost no rage. (Protection)</td>
+</tr>
+<tr>
+<td>Twinstrike</td>
+<td>7</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>8s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Instantly strike with your weapon twice, each hit dealing 40% weapon damage plus X, and generate 4 rage. Stores up to 2 charges. (Fury)</td>
+</tr>
+<tr>
+<td>Die by the Sword</td>
+<td>8</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>2 min</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Defensive cooldown: for 8 sec you take 30% less damage and dodge far more attacks.</td>
 </tr>
 <tr>
 <td>Jawcrack</td>
-<td>10</td>
-<td align="right">10</td>
+<td>8</td>
+<td align="right">—</td>
 <td>Instant</td>
 <td>10s</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>Interrupts the target&#39;s spellcast and prevents casting from that school for 4 sec.</td>
+<td>Interrupts spellcasting, preventing any spell in that school from being cast for 4 sec. Generates 10 rage when it stops a cast.</td>
 </tr>
 <tr>
-<td>Maiming Strike</td>
+<td>Raised Guard</td>
+<td>8</td>
+<td align="right">15</td>
+<td>Instant</td>
+<td>12s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Brace behind your shield: you take 50% reduced Physical damage for 6 sec. Stores up to 2 charges. (Protection)</td>
+</tr>
+<tr>
+<td>Victory Rush</td>
+<td>8</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Strike for weapon damage plus X and heal 20% of your maximum health. Only usable within 20 sec of killing an enemy.</td>
+</tr>
+<tr>
+<td>Gaping Wounds</td>
+<td>9</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Passive: your Maiming Strike leaves the target bleeding for Physical damage over 6 sec. (Arms)</td>
+</tr>
+<tr>
+<td>Bladed Gyre</td>
 <td>10</td>
-<td align="right">30</td>
+<td align="right">—</td>
 <td>Instant</td>
-<td>6s</td>
+<td>10s</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>A vicious strike dealing weapon damage plus X. (Arms signature)</td>
+<td>Spin in a deadly arc, striking all nearby enemies for X at no rage cost. Your next 2 single-target abilities also strike enemies near their target. (Fury talent)</td>
 </tr>
 <tr>
-<td>Redhand</td>
-<td>10 <em>(ranks: 16)</em></td>
-<td align="right">5</td>
+<td>Furious Mending</td>
+<td>10</td>
+<td align="right">—</td>
 <td>Instant</td>
-<td>5s</td>
+<td>2 min</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>Instant attack for weapon damage plus X. Only usable after the target dodges. Cannot be dodged.</td>
+<td>For 10 sec you take 20% reduced damage, and while it lasts your Bloodletting heals you for 20% of your maximum health. (Fury)</td>
+</tr>
+<tr>
+<td>Red Harvest</td>
+<td>10</td>
+<td align="right">80</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Spend everything: strike three times in a frenzy for 65% weapon damage plus X each, always Enraging you. (Fury)</td>
 </tr>
 <tr>
 <td>Seething Fury</td>
@@ -470,38 +650,58 @@
 <td>Enter a berserker rage, generating 20 rage. (Warrior talent)</td>
 </tr>
 <tr>
-<td>Shieldcrack</td>
-<td>10</td>
-<td align="right">20</td>
-<td>Instant</td>
-<td>6s</td>
-<td align="right">Melee</td>
-<td>Physical</td>
-<td>Slam the target with your shield for 50% weapon damage plus X and massive threat. (Protection signature)</td>
-</tr>
-<tr>
-<td>Bolstering Cry</td>
-<td>14 <em>(ranks: 24)</em></td>
+<td>Piercing Howl</td>
+<td>11</td>
 <td align="right">10</td>
 <td>Instant</td>
 <td>—</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>Increases your Stamina by X for 2 min.</td>
+<td>A piercing shout that slows all enemies within 15 yards by 50% for 8 sec.</td>
+</tr>
+<tr>
+<td>Storm Bolt</td>
+<td>11</td>
+<td align="right">10</td>
+<td>Instant</td>
+<td>30s</td>
+<td align="right">20</td>
+<td>Physical</td>
+<td>Hurl your weapon at the target for X, stunning it for 3 sec.</td>
+</tr>
+<tr>
+<td>Breachmaker</td>
+<td>12</td>
+<td align="right">10</td>
+<td>Instant</td>
+<td>45s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Batter the target for weapon damage plus X and crack its guard: your own attacks against it deal 20% more damage for 8 sec. (Arms)</td>
+</tr>
+<tr>
+<td>Defiant Bellow</td>
+<td>12</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>1 min</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>A defiant bellow: every enemy within 10 yards is taunted, compelled to attack you for 3 sec. (Protection)</td>
 </tr>
 <tr>
 <td>Direhowl</td>
-<td>14 <em>(ranks: 20)</em></td>
+<td>12</td>
 <td align="right">10</td>
 <td>Instant</td>
-<td>—</td>
+<td>45s</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>Lets out a fearsome shout, reducing the attack power of all nearby enemies by X for 30 sec.</td>
+<td>Lets out a fearsome shout, reducing the damage dealt by all nearby enemies by 20% for 20 sec.</td>
 </tr>
 <tr>
 <td>Early Grave</td>
-<td>14</td>
+<td>12</td>
 <td align="right">15</td>
 <td>Instant</td>
 <td>—</td>
@@ -510,19 +710,39 @@
 <td>Attempt to finish off a wounded foe, causing X damage. Only usable on enemies below 20% health.</td>
 </tr>
 <tr>
-<td>Brute Swing</td>
-<td>16</td>
+<td>Faultline</td>
+<td>14</td>
 <td align="right">15</td>
-<td>1.5s</td>
-<td>—</td>
+<td>Instant</td>
+<td>30s</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>Slams the opponent for weapon damage plus X.</td>
+<td>Send a shockwave through the ground: enemies in front of you within 8 yards take X damage and are stunned for 3 sec. (Protection)</td>
+</tr>
+<tr>
+<td>Intimidating Shout</td>
+<td>14</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>2 min</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>A terrifying shout that sends up to 5 enemies within 8 yards fleeing in fear for 8 sec. Damage may break the effect.</td>
+</tr>
+<tr>
+<td>Iron Resolve</td>
+<td>14</td>
+<td align="right">20</td>
+<td>Instant</td>
+<td>15s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Grit your teeth and ignore the pain: spends up to 40 rage (20 minimum) to absorb 4 damage per rage spent, lasting up to 10 sec. (Protection)</td>
 </tr>
 <tr>
 <td>Reaping Arc</td>
-<td>18</td>
-<td align="right">20</td>
+<td>14</td>
+<td align="right">15</td>
 <td>Instant</td>
 <td>—</td>
 <td align="right">Melee</td>
@@ -530,14 +750,74 @@
 <td>A sweeping strike that hits all enemies in front of you for X damage.</td>
 </tr>
 <tr>
-<td>Ironhold</td>
-<td>20</td>
-<td align="right">10</td>
+<td>Emboldening Roar</td>
+<td>16</td>
+<td align="right">—</td>
 <td>Instant</td>
 <td>3 min</td>
 <td align="right">Melee</td>
 <td>Physical</td>
-<td>Brace behind your guard, reducing all damage taken by 40% for 8 sec.</td>
+<td>Lets loose an emboldening roar: you and friendly players within 40 yards are Emboldened, and your next 3 abilities are guaranteed critical strikes. (Fury)</td>
+</tr>
+<tr>
+<td>Avatar</td>
+<td>17</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>3 min</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Transform into a colossus for 20 sec, breaking all control on you and increasing your damage dealt by 20%.</td>
+</tr>
+<tr>
+<td>Recklessness</td>
+<td>17</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>3 min</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Enrage: your rage generation increases by 50% and your critical strike chance by 20% for 12 sec.</td>
+</tr>
+<tr>
+<td>Valor Roar</td>
+<td>18</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>3 min</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Lets loose a valorous roar, granting you and party members within 40 yards 20% additional maximum health for 10 sec. Protection: they also take 5% less damage for the duration.</td>
+</tr>
+<tr>
+<td>Widening Arc</td>
+<td>18</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>30s</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>For 12 sec your single-target attacks also strike 1 nearby enemy for full damage. (Arms)</td>
+</tr>
+<tr>
+<td>Bladestorm</td>
+<td>20</td>
+<td align="right">25</td>
+<td>Instant</td>
+<td>1.5 min</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Become a whirling storm of steel, striking all enemies within 6 yards for X every second for 4 sec.</td>
+</tr>
+<tr>
+<td>Sanguine Aura</td>
+<td>20</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>3 min</td>
+<td align="right">Melee</td>
+<td>Physical</td>
+<td>Imbue your weapon with the blood of your foes: you and your melee allies gain 10% attack speed and 10% damage for 20 sec.</td>
 </tr>
 </tbody></table>
 <hr>

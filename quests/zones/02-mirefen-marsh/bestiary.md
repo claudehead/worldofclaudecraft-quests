@@ -90,7 +90,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/widow_venom_sac.png" width="22" alt="">  Widow Venom Sac | Quest item | 65% | quest item — only drops while on _Silk and Venom_ |
-| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚫ Twitching Spider Leg | Junk | 40% | sells for 4c |
+| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚪ Twitching Spider Leg | Junk | 40% | sells for 4c |
 
 <a id="mob-bog_bloat"></a>
 
@@ -145,7 +145,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 50% | sells for 7c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 50% | sells for 7c |
 | <img src="../_loot-icons/cracked_fetish.png" width="22" alt=""> ⚫ Cracked Fetish | Junk | 30% | sells for 14c |
 
 <a id="mob-gravecaller_cultist"></a>
@@ -174,7 +174,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 30% | sells for 3c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 30% | sells for 3c |
 | <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 30% | sells for 5c |
 
 <a id="mob-fen_troll"></a>
@@ -401,7 +401,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚫ Bone Fragments | Junk | 70% | sells for 7c |
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 70% | sells for 7c |
 | <img src="../_loot-icons/mistveil_cord.png" width="22" alt=""> 🟢 Mistveil Cord | Cloth armor — Waist · 30 armor, +1 Agi, +2 Sta | 6% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
@@ -472,7 +472,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚫ Linen Scrap | Junk | 50% | sells for 3c |
+| <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 50% | sells for 3c |
 | <img src="../_loot-icons/mistveil_grips.png" width="22" alt=""> 🟢 Mistveil Grips | Cloth armor — Hands · 36 armor, +2 Agi, +1 Sta | 6% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
@@ -542,7 +542,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚫ Twitching Spider Leg | Junk | 100% | sells for 4c |
+| <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚪ Twitching Spider Leg | Junk | 100% | sells for 4c |
 | <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> 🟢 Marshstrider Boots | Cloth armor — Feet · 40 armor, +2 Agi, +2 Sta | 40% |  |
 | <img src="../_loot-icons/broodmother_silk_robe.png" width="22" alt=""> 🟢 Broodmother's Silk Robe | Cloth armor — Chest · 42 armor, +4 Int, +2 Spi | 25% |  |
 

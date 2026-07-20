@@ -132,7 +132,7 @@
     {
       "id": "searing_pain",
       "name": "Sear",
-      "learnLevel": 16,
+      "learnLevel": 14,
       "cost": 35,
       "cooldown": 0,
       "range": 30,
@@ -144,7 +144,7 @@
     {
       "id": "shadowburn",
       "name": "Duskfire",
-      "learnLevel": 20,
+      "learnLevel": 14,
       "cost": 70,
       "cooldown": 15,
       "range": 20,
@@ -235,7 +235,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "Silences the target mid-cast and prevents casting from that school for 5 sec."
+      "desc": "Interrupts spellcasting and prevents any spell in that school from being cast for 5 sec. (Warlock talent)"
     }
   ],
   "rotation": [

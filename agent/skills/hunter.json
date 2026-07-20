@@ -48,7 +48,7 @@
     {
       "id": "arcane_shot",
       "name": "Fell Shot",
-      "learnLevel": 6,
+      "learnLevel": 5,
       "cost": 25,
       "cooldown": 6,
       "range": 35,
@@ -119,7 +119,7 @@
     },
     {
       "id": "revive_pet",
-      "name": "Revive Pet",
+      "name": "Patch Up",
       "learnLevel": 10,
       "cost": 45,
       "cooldown": 0,
@@ -127,12 +127,12 @@
       "castTime": 3,
       "school": "nature",
       "requiresTarget": false,
-      "desc": "Revives your dead pet and returns it to your side."
+      "desc": "Patch up your companion, restoring 240 health over 12 sec if it is alive. If it is dead, revive it at 35% health."
     },
     {
       "id": "aspect_of_the_monkey",
       "name": "Marten's Guise",
-      "learnLevel": 10,
+      "learnLevel": 5,
       "cost": 20,
       "cooldown": 0,
       "range": 0,
@@ -156,7 +156,7 @@
     {
       "id": "aimed_shot",
       "name": "Long Draw",
-      "learnLevel": 16,
+      "learnLevel": 11,
       "cost": 50,
       "cooldown": 6,
       "range": 35,
@@ -180,7 +180,7 @@
     {
       "id": "volley",
       "name": "Volley",
-      "learnLevel": 18,
+      "learnLevel": 11,
       "cost": 60,
       "cooldown": 8,
       "range": 35,
@@ -199,7 +199,7 @@
       "castTime": 0,
       "school": "physical",
       "requiresTarget": true,
-      "desc": "A snap shot that interrupts the target's spellcast and locks that school for 4 sec."
+      "desc": "Interrupts spellcasting and prevents any spell in that school from being cast for 4 sec. (Hunter talent)"
     }
   ],
   "rotation": [

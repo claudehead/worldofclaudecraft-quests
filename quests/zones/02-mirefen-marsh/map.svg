@@ -117,6 +117,8 @@
 <text x="514.9" y="690.0" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Bursar Petra Vell</text>
 <circle cx="453.8" cy="698.0" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
 <text x="453.8" y="690.0" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Chronicler Osric Fenn</text>
+<circle cx="461.8" cy="731.2" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="461.8" y="723.2" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Tanner Hesk</text>
 <text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">Mirefen Marsh — N ↑</text>
 <rect x="10" y="1254" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
 <rect x="18" y="1261" width="11" height="11" fill="#f0c419"/>

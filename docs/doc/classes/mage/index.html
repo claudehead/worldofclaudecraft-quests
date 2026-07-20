@@ -181,21 +181,21 @@
 </tr>
 <tr>
 <td><strong>Roles</strong></td>
-<td>DPS</td>
+<td>Healer, DPS</td>
 </tr>
 <tr>
 <td><strong>Specs</strong></td>
-<td>Aethermancy (DPS) · Pyromancy (DPS) · Cryomancy (DPS)</td>
+<td>Chronomancy (Healer) · Pyromancy (DPS) · Cryomancy (DPS)</td>
 </tr>
 </tbody></table>
 <h2>Specializations</h2>
 <ul>
-<li><strong>Aethermancy</strong> — <em>DPS</em>. Signature ability: <strong>Aether Surge</strong> (learned at level 10).</li>
-<li><strong>Pyromancy</strong> — <em>DPS</em>. Signature ability: <strong>Flashfire</strong> (learned at level 10).</li>
-<li><strong>Cryomancy</strong> — <em>DPS</em>. Signature ability: <strong>Icy Veins</strong> (learned at level 10).</li>
+<li><strong>Chronomancy</strong> — <em>Healer</em>. Signature ability: <strong>Temporal Mend</strong> (learned at level 5).</li>
+<li><strong>Pyromancy</strong> — <em>DPS</em>. Signature ability: <strong>Pyrelance</strong> (learned at level 5).</li>
+<li><strong>Cryomancy</strong> — <em>DPS</em>. Signature ability: <strong>Ice Lance</strong> (learned at level 5).</li>
 </ul>
 <h2>Abilities</h2>
-<p>19 abilities, in the order you learn them. &quot;Ranks&quot; shows the levels where the ability gets stronger.</p>
+<p>61 abilities, in the order you learn them. &quot;Ranks&quot; shows the levels where the ability gets stronger.</p>
 <table>
 <thead>
 <tr>
@@ -210,16 +210,6 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Aether Insight</td>
-<td>1</td>
-<td align="right">25</td>
-<td>Instant</td>
-<td>—</td>
-<td align="right">Melee</td>
-<td>Arcane</td>
-<td>Increases the Intellect of all party members by X% for 30 min.</td>
-</tr>
-<tr>
 <td>Cinderbolt</td>
 <td>1 <em>(ranks: 6, 12, 18)</em></td>
 <td align="right">30</td>
@@ -240,6 +230,16 @@
 <td>Encases you in frost, increasing armor by X for 30 min.</td>
 </tr>
 <tr>
+<td>Aether Insight</td>
+<td>3</td>
+<td align="right">25</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Increases the Intellect of all party members by X% for 30 min.</td>
+</tr>
+<tr>
 <td>Rimelance</td>
 <td>4 <em>(ranks: 8, 14, 20)</em></td>
 <td align="right">25</td>
@@ -251,7 +251,7 @@
 </tr>
 <tr>
 <td>Waterbind</td>
-<td>4 <em>(ranks: 10, 16)</em></td>
+<td>4 <em>(ranks: 8, 12, 16)</em></td>
 <td align="right">40</td>
 <td>3s</td>
 <td>—</td>
@@ -260,8 +260,68 @@
 <td>Conjures 2 bottles of water, restoring mana when drunk. Higher ranks conjure purer water.</td>
 </tr>
 <tr>
+<td>Aether Darts</td>
+<td>5 <em>(ranks: 14, 20)</em></td>
+<td align="right">50</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">30</td>
+<td>Arcane</td>
+<td>Launches Aether Darts at the enemy, causing X Arcane damage each second for 3 sec.</td>
+</tr>
+<tr>
+<td>Aether Surge</td>
+<td>5</td>
+<td align="right">16</td>
+<td>2s</td>
+<td>—</td>
+<td align="right">30</td>
+<td>Arcane</td>
+<td>Draws a surge of raw aether through the enemy for X damage. Each cast leaves an Arcane Charge that raises your next Aether Surge&#39;s damage and cast speed (5% faster each) but sharply raises its mana cost, stacking up to 4; Aether Darts spends the charges. Each cast can also arm Aether Rush, making your next Aether Surge free and twice as fast to cast.</td>
+</tr>
+<tr>
+<td>Aether Surge</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>1.5 min</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Increases spell damage by 20% and spell haste by 10% for 10 sec. (Arcane signature)</td>
+</tr>
+<tr>
+<td>Aetherwell</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>2 min</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Channel for 6 sec: each second restores 100 mana and builds 8 spell power, stacking while you channel and lasting 15 sec. (Mage talent)</td>
+</tr>
+<tr>
+<td>Blazing Barrier</td>
+<td>5 <em>(ranks: 12, 18)</em></td>
+<td align="right">45</td>
+<td>Instant</td>
+<td>30s</td>
+<td align="right">Melee</td>
+<td>Fire</td>
+<td>Wreathe yourself in flame, absorbing X damage for 60 sec. (Fire)</td>
+</tr>
+<tr>
+<td>Brain Freeze</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Rimelance has a 20% chance to make your next Winterlash instant and free of its cooldown. (Frost)</td>
+</tr>
+<tr>
 <td>Breadbind</td>
-<td>6 <em>(ranks: 12, 18)</em></td>
+<td>5 <em>(ranks: 10, 15, 20)</em></td>
 <td align="right">45</td>
 <td>3s</td>
 <td>—</td>
@@ -271,7 +331,7 @@
 </tr>
 <tr>
 <td>Cinderfall</td>
-<td>6 <em>(ranks: 12, 18)</em></td>
+<td>5 <em>(ranks: 12, 18)</em></td>
 <td align="right">40</td>
 <td>Instant</td>
 <td>8s</td>
@@ -280,78 +340,148 @@
 <td>Blasts the enemy for X Fire damage. Instant.</td>
 </tr>
 <tr>
-<td>Aether Darts</td>
-<td>8 <em>(ranks: 14, 20)</em></td>
-<td align="right">50</td>
+<td>Deadfrost</td>
+<td>5</td>
+<td align="right">60</td>
 <td>Instant</td>
-<td>—</td>
+<td>30s</td>
 <td align="right">30</td>
-<td>Arcane</td>
-<td>Launches Aether Darts at the enemy, causing X Arcane damage each second for 3 sec.</td>
+<td>Frost</td>
+<td>Deep freezes the target, dealing X Frost damage and stunning it for 4 sec. (Mage talent)</td>
 </tr>
 <tr>
-<td>Bewitch</td>
-<td>8 <em>(ranks: 18)</em></td>
-<td align="right">50</td>
-<td>1.5s</td>
-<td>—</td>
-<td align="right">30</td>
-<td>Arcane</td>
-<td>Transforms the enemy into a toad for up to X sec. The toad wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only.</td>
-</tr>
-<tr>
-<td>Aether Surge</td>
-<td>10</td>
+<td>Fingers of Frost</td>
+<td>5</td>
 <td align="right">—</td>
 <td>Instant</td>
-<td>1.5 min</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Rimelance has a 15% chance to grant Fingers of Frost, up to 2 charges: your next Ice Lance treats its target as frozen. (Frost)</td>
+</tr>
+<tr>
+<td>Flickerstep</td>
+<td>5</td>
+<td align="right">40</td>
+<td>Instant</td>
+<td>15s</td>
 <td align="right">Melee</td>
 <td>Arcane</td>
-<td>Increases spell damage by 20% and spell haste by 10% for 10 sec. (Arcane signature)</td>
+<td>Teleports you 15 yd forward and breaks roots. (Mage talent)</td>
 </tr>
 <tr>
-<td>Flashfire</td>
-<td>10</td>
+<td>Frostveil</td>
+<td>5 <em>(ranks: 12, 18)</em></td>
+<td align="right">45</td>
+<td>Instant</td>
+<td>30s</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Shields you in ice, absorbing X damage for 60 sec.</td>
+</tr>
+<tr>
+<td>Hot Streak</td>
+<td>5</td>
 <td align="right">—</td>
 <td>Instant</td>
-<td>2 min</td>
+<td>—</td>
 <td align="right">Melee</td>
 <td>Fire</td>
-<td>Increases spell critical chance by 50% for 15 sec. (Fire signature)</td>
+<td>Passive: two critical strikes in a row with your Fire spells (Cinderbolt, Cinderfall, Scald, Pyrelance or Flamestrike) make your next Pyrelance or Flamestrike instant and free. The spenders count toward the NEXT streak, free casts included; a Flamestrike counts once however many enemies it strikes, and only the initial impact ever counts. (Fire)</td>
+</tr>
+<tr>
+<td>Ice Floes</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>25s</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Your next two spells with a cast time can be cast while moving. Lasts 15 sec. (Mage talent)</td>
+</tr>
+<tr>
+<td>Ice Lance</td>
+<td>5 <em>(ranks: 12, 18)</em></td>
+<td align="right">10</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">30</td>
+<td>Frost</td>
+<td>Hurl a shard of ice, dealing X Frost damage, tripled against a frozen target. Spends Fingers of Frost, or a charge of Winter&#39;s Chill, to treat the target as frozen. (Frost)</td>
 </tr>
 <tr>
 <td>Icebind</td>
-<td>10 <em>(ranks: 16)</em></td>
+<td>5 <em>(ranks: 16)</em></td>
 <td align="right">35</td>
 <td>Instant</td>
 <td>22s</td>
 <td align="right">Melee</td>
 <td>Frost</td>
-<td>Freezes all nearby enemies in place for up to 8 sec, dealing X Frost damage.</td>
+<td>Freezes all nearby enemies in place for up to 8 sec, dealing X Frost damage. The root breaks after cumulative damage equal to 15% of the target&#39;s maximum health, with a minimum of 20 and a maximum of 60 damage.</td>
 </tr>
 <tr>
-<td>Icy Veins</td>
-<td>10</td>
+<td>Ignition</td>
+<td>5</td>
 <td align="right">—</td>
 <td>Instant</td>
-<td>3 min</td>
+<td>—</td>
 <td align="right">Melee</td>
-<td>Frost</td>
-<td>Increases spell haste by 30% and prevents cast interruption and pushback for 10 sec. (Frost signature)</td>
+<td>Fire</td>
+<td>Passive: your spell critical strikes burn the target for 40% of the damage dealt over 6 sec, stacking. (Fire mastery)</td>
+</tr>
+<tr>
+<td>Pyrelance</td>
+<td>5</td>
+<td align="right">125</td>
+<td>6s</td>
+<td>—</td>
+<td align="right">30</td>
+<td>Fire</td>
+<td>Hurls an immense fiery boulder that causes X Fire damage plus additional damage over time.</td>
+</tr>
+<tr>
+<td>Racing Mind</td>
+<td>5</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>1 min</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Makes your next spell with a cast time instant. Lasts 60 sec. (Mage talent)</td>
 </tr>
 <tr>
 <td>Spellbreak</td>
-<td>10</td>
+<td>5</td>
 <td align="right">45</td>
 <td>Instant</td>
 <td>24s</td>
 <td align="right">30</td>
 <td>Physical</td>
-<td>Counters the target&#39;s spellcast and prevents casting from that school for 6 sec.</td>
+<td>Counters enemy spellcasting, preventing any spell in that school from being cast for 6 sec. (Mage talent)</td>
+</tr>
+<tr>
+<td>Temporal Barrier</td>
+<td>5 <em>(ranks: 12, 18)</em></td>
+<td align="right">50</td>
+<td>Instant</td>
+<td>12s</td>
+<td align="right">30</td>
+<td>Arcane</td>
+<td>Shifts the target a heartbeat out of the present, a temporal shell absorbing X damage for 10 sec before the timeline snaps back.</td>
+</tr>
+<tr>
+<td>Temporal Mend</td>
+<td>5 <em>(ranks: 12, 18)</em></td>
+<td align="right">45</td>
+<td>2s</td>
+<td>—</td>
+<td align="right">30</td>
+<td>Arcane</td>
+<td>Draws an ally a moment forward in time, mending X health as the body settles into its healthier future self. (Chronomancy signature)</td>
 </tr>
 <tr>
 <td>Aetherburst</td>
-<td>14</td>
+<td>7</td>
 <td align="right">60</td>
 <td>Instant</td>
 <td>—</td>
@@ -360,44 +490,334 @@
 <td>A burst of Arcane energy hits all nearby enemies for X Arcane damage.</td>
 </tr>
 <tr>
+<td>Bewitch</td>
+<td>7 <em>(ranks: 18)</em></td>
+<td align="right">50</td>
+<td>1.5s</td>
+<td>—</td>
+<td align="right">30</td>
+<td>Arcane</td>
+<td>Transforms the enemy into a toad for up to X sec. The toad wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only.</td>
+</tr>
+<tr>
+<td>Collective Reversal</td>
+<td>8</td>
+<td align="right">250</td>
+<td>7s</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Rewinds every fallen member of your group or raid, returning them to life at their body with 30% health and mana. Cannot be cast in combat. (Chronomancy)</td>
+</tr>
+<tr>
+<td>Greater Invisibility</td>
+<td>8</td>
+<td align="right">60</td>
+<td>Instant</td>
+<td>2 min</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Vanish for 20 sec: removes 2 damage-over-time effects and you take 90% less damage while invisible and shortly after. (Mage talent)</td>
+</tr>
+<tr>
+<td>Spellsteal</td>
+<td>8</td>
+<td align="right">40</td>
+<td>Instant</td>
+<td>12s</td>
+<td align="right">30</td>
+<td>Arcane</td>
+<td>Steals a beneficial magic effect from an enemy, transferring it to yourself.</td>
+</tr>
+<tr>
+<td>Temporal Echo</td>
+<td>8 <em>(ranks: 12, 18)</em></td>
+<td align="right">40</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">30</td>
+<td>Arcane</td>
+<td>Marks an ally with an echo of a healthier moment, mending X health at once. For X sec, part of the Arcane damage you deal is drawn back through the echo to heal them.</td>
+</tr>
+<tr>
+<td>Winterlash</td>
+<td>8 <em>(ranks: 16)</em></td>
+<td align="right">30</td>
+<td>1.5s</td>
+<td>10s</td>
+<td align="right">30</td>
+<td>Frost</td>
+<td>Loose three icy bolts for X Frost damage each and plant Winter&#39;s Chill on the target: its next 2 incoming compatible spells treat it as frozen. Brain Freeze makes Winterlash instant and skips its cooldown. (Frost)</td>
+</tr>
+<tr>
+<td>Blizzard</td>
+<td>10</td>
+<td align="right">70</td>
+<td>2s</td>
+<td>8s</td>
+<td align="right">30</td>
+<td>Frost</td>
+<td>Conjures an ice storm at the target area: after a 2 sec cast it rages for 6 sec, dealing 12 to 16 Frost damage each second and slowing enemies by 40%. Each enemy struck shaves 0.5 sec off Frozen Orb, up to 3 sec per cast. (Frost)</td>
+</tr>
+<tr>
+<td>Brittle Ruin</td>
+<td>10</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Your spells gain 50% critical strike chance against frozen targets. Fingers of Frost and Winter&#39;s Chill count as frozen. (Frost)</td>
+</tr>
+<tr>
+<td>Frostsweep</td>
+<td>10</td>
+<td align="right">60</td>
+<td>Instant</td>
+<td>20s</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Blasts nearby enemies with frost for X Frost damage. (Frost signature)</td>
+</tr>
+<tr>
+<td>Perfect Moment</td>
+<td>10</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>2 min</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Seize your perfect moment: instantly gain 4 Arcane Charges, and for 10 sec Aether Darts does not consume them. (Chronomancer)</td>
+</tr>
+<tr>
 <td>Scald</td>
-<td>16</td>
+<td>10</td>
 <td align="right">35</td>
 <td>1.5s</td>
 <td>—</td>
 <td align="right">30</td>
 <td>Fire</td>
-<td>Scorches the enemy for X Fire damage. Quick to cast.</td>
+<td>Scalds the enemy for X Fire damage and quickens you by 20% for 3 sec. Quick to cast, and castable while moving.</td>
+</tr>
+<tr>
+<td>Ember Form</td>
+<td>11</td>
+<td align="right">50</td>
+<td>2s</td>
+<td>10s</td>
+<td align="right">Melee</td>
+<td>Fire</td>
+<td>Transform into a blazing ember, increasing movement speed by X%. You cannot attack or cast spells while transformed. Recast to return to your normal form.</td>
+</tr>
+<tr>
+<td>Ring of Frost</td>
+<td>11</td>
+<td align="right">60</td>
+<td>1.5s</td>
+<td>30s</td>
+<td align="right">25</td>
+<td>Frost</td>
+<td>Summons a ring for 10 sec. Enemies crossing its perimeter are frozen for 4 sec. (Mage talent)</td>
+</tr>
+<tr>
+<td>Cold Coffin</td>
+<td>12</td>
+<td align="right">15</td>
+<td>Instant</td>
+<td>4 min</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Encases you in solid ice for 8 sec, becoming immune to all damage and effects and removing every harmful effect. Usable while stunned or polymorphed. You cannot act while encased. Recast to cancel. (Mage)</td>
 </tr>
 <tr>
 <td>Flamestrike</td>
-<td>20</td>
+<td>12</td>
 <td align="right">80</td>
-<td>Instant</td>
+<td>2s</td>
 <td>12s</td>
 <td align="right">30</td>
 <td>Fire</td>
-<td>Calls down a burst of flame at the target area, dealing X Fire damage to enemies caught in the blast.</td>
+<td>Calls down a burst of flame at the target area, dealing X Fire damage to enemies caught in the blast. Can critically strike (one strike for the whole blast).</td>
 </tr>
 <tr>
-<td>Frostveil</td>
-<td>20</td>
+<td>Icy Veins</td>
+<td>12</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>3 min</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Increases spell haste by 30% and prevents cast interruption and pushback for 10 sec. (Frost signature)</td>
+</tr>
+<tr>
+<td>Phoenix Trance</td>
+<td>12</td>
+<td align="right">100</td>
+<td>Instant</td>
+<td>2 min</td>
+<td align="right">Melee</td>
+<td>Fire</td>
+<td>Combust: for 10 sec your Fire spells always critically strike, including bolts already in flight. Off the global cooldown. These crits build Hot Streak like any other. (Fire signature)</td>
+</tr>
+<tr>
+<td>Summon Water Elemental</td>
+<td>12</td>
+<td align="right">150</td>
+<td>2s</td>
+<td>—</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Summon a Water Elemental to fight beside you, hurling Waterbolts at your target and channeling Water Jet. (Frost)</td>
+</tr>
+<tr>
+<td>Temporal Cascade</td>
+<td>12 <em>(ranks: 16, 20)</em></td>
 <td align="right">90</td>
+<td>2s</td>
+<td>17s</td>
+<td align="right">30</td>
+<td>Arcane</td>
+<td>Sends an echo cascading through your group: the target and up to four of their nearest allies are mended at once and each marked for X sec, drawing part of the Arcane damage you deal back through their echoes to heal them. (Chronomancy)</td>
+</tr>
+<tr>
+<td>Dragon&#39;s Breath</td>
+<td>14</td>
+<td align="right">90</td>
+<td>2.4s</td>
+<td>20s</td>
+<td align="right">Melee</td>
+<td>Fire</td>
+<td>Hold to gather a widening breath of flame, then release it in a cone. Longer charges reach farther and deal more damage. Enemies hit are disoriented and damage breaks the effect; maximum charge always critically strikes and counts once toward Hot Streak. (Fire)</td>
+</tr>
+<tr>
+<td>Hourglass of Suspension</td>
+<td>14</td>
+<td align="right">110</td>
+<td>Instant</td>
+<td>50s</td>
+<td align="right">28</td>
+<td>Arcane</td>
+<td>Place a temporal hourglass at the selected location. Beneath an enemy, it suspends them for X sec in PvE or X sec in PvP and prevents all actions; damage breaks the effect. At your feet or beneath a group ally, it grants stasis for X sec, prevents damage and actions, restores X% of maximum health, and makes cooldowns recover X% faster for you or X% faster for an ally. On empty ground, the hourglass waits for X sec and affects the first valid unit to step on it. The beneficial aura can be removed manually.</td>
+</tr>
+<tr>
+<td>Overload</td>
+<td>14</td>
+<td align="right">—</td>
 <td>Instant</td>
 <td>30s</td>
 <td align="right">Melee</td>
-<td>Frost</td>
-<td>Shields you in ice, absorbing X damage for 60 sec.</td>
+<td>Arcane</td>
+<td>Your next spell is amplified by 40% but costs 50% more mana. Lasts 10 sec. (Mage talent)</td>
 </tr>
 <tr>
-<td>Pyrelance</td>
-<td>20</td>
-<td align="right">125</td>
-<td>6s</td>
+<td>Power Echo</td>
+<td>14</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>30s</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Your next direct spell repeats at 50% power on the same target. Lasts 10 sec. (Mage talent)</td>
+</tr>
+<tr>
+<td>Rewind</td>
+<td>14</td>
+<td align="right">150</td>
+<td>Instant</td>
+<td>2 min</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Sends an arcane wave through your group or raid, rewinding time to restore 30% of the damage each ally within 40 yards took over the last 5 seconds (up to 35% of their maximum health). Cannot be a critical effect. (Chronomancy)</td>
+</tr>
+<tr>
+<td>Frozen Orb</td>
+<td>15 <em>(ranks: 18)</em></td>
+<td align="right">50</td>
+<td>Instant</td>
+<td>45s</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Release an orb of swirling frost that drifts forward for 8 sec, dealing X Frost damage each second to nearby enemies and slowing them by 30%. Each striking pulse generates one Icicle. (Frost)</td>
+</tr>
+<tr>
+<td>Glacial Spike</td>
+<td>16 <em>(ranks: 20)</em></td>
+<td align="right">50</td>
+<td>2.7s</td>
 <td>—</td>
 <td align="right">30</td>
+<td>Frost</td>
+<td>Conjure a massive spike of ice, consuming 5 Icicles to deal X Frost damage and freeze the target in place for 4 sec. (Frost)</td>
+</tr>
+<tr>
+<td>Meteor</td>
+<td>16</td>
+<td align="right">120</td>
+<td>Instant</td>
+<td>45s</td>
+<td align="right">30</td>
 <td>Fire</td>
-<td>Hurls an immense fiery boulder that causes X Fire damage plus additional damage over time.</td>
+<td>Calls a meteor down on the target area: after a 2 sec fall it deals 90 to 120 Fire damage and Ignites everything it strikes. (Fire)</td>
+</tr>
+<tr>
+<td>Temporal Reversal</td>
+<td>16</td>
+<td align="right">60</td>
+<td>2s</td>
+<td>10 min</td>
+<td align="right">30</td>
+<td>Arcane</td>
+<td>Rewinds a fallen ally&#39;s timeline, returning them to life at their body with a portion of their health and mana, even in the thick of combat. (Chronomancy)</td>
+</tr>
+<tr>
+<td>Glacial Front</td>
+<td>17</td>
+<td align="right">80</td>
+<td>2.4s</td>
+<td>12s</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Hold to gather a widening front of frost, then release it in a cone. Longer charges reach farther and deal more damage. All enemies hit are slowed by 50% for 4 sec; maximum charge also roots them for 1 sec. (Frost)</td>
+</tr>
+<tr>
+<td>Mass Barrier</td>
+<td>17</td>
+<td align="right">150</td>
+<td>Instant</td>
+<td>1.5 min</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Shields you and up to 4 nearby allies within 30 yd, each absorbing 130 damage for 60 sec. (Mage talent)</td>
+</tr>
+<tr>
+<td>Winter&#39;s Recall</td>
+<td>17</td>
+<td align="right">—</td>
+<td>Instant</td>
+<td>2 min</td>
+<td align="right">Melee</td>
+<td>Frost</td>
+<td>Finishes the cooldown on Flickerstep, Frostveil, and Greater Invisibility. (Mage talent)</td>
+</tr>
+<tr>
+<td>Rune of Power</td>
+<td>20</td>
+<td align="right">100</td>
+<td>1.5s</td>
+<td>45s</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Inscribe a rune of power at your feet for 15 sec: allies standing within 8 yd deal 10% more damage. (Mage talent)</td>
+</tr>
+<tr>
+<td>Temporal Acceleration</td>
+<td>20</td>
+<td align="right">120</td>
+<td>Instant</td>
+<td>5 min</td>
+<td align="right">Melee</td>
+<td>Arcane</td>
+<td>Accelerates the flow of time for your group or raid, increasing attack, casting, and channeling speed by 30% for 15 sec. Allies recently affected by Temporal Acceleration or Storm Chorus are too exhausted to benefit. (Chronomancy)</td>
 </tr>
 </tbody></table>
 <hr>
