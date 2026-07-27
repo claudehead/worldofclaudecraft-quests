@@ -1,4 +1,6 @@
-import { QUESTS, MOBS, ITEMS, NPCS, CAMPS, GROUND_OBJECTS, ZONES, FISHING_TABLES } from '../woc/src/sim/data.ts';
+import { QUESTS, MOBS, ITEMS, NPCS, CAMPS, GROUND_OBJECTS, ZONES } from '../woc/src/sim/data.ts';
+// FISHING_TABLES moved out of data.ts's re-exports (v0.31); it lives in content/items.ts.
+import { FISHING_TABLES } from '../woc/src/sim/content/items.ts';
 import { ZONE1_QUESTS, ZONE1_CAMPS } from '../woc/src/sim/content/zone1.ts';
 import { ZONE2_QUESTS, ZONE2_CAMPS } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_QUESTS, ZONE3_CAMPS } from '../woc/src/sim/content/zone3.ts';

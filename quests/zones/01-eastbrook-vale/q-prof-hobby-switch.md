@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Smith Haldren**, Armorer & Weaponsmith _(at ~x:7, z:17)_ |
-| **Turn in to** | **Smith Haldren**, Armorer & Weaponsmith _(at ~x:7, z:17)_ |
+| **Quest giver** | **Smith Haldren**, Armorer & Weaponsmith _(at ~x:6, z:15)_ |
+| **Turn in to** | **Smith Haldren**, Armorer & Weaponsmith _(at ~x:6, z:15)_ |
 | **Requires** | A Trade for Every Hand (`q_prof_intro`) |
 
 ## Story
@@ -17,11 +17,11 @@
 
   - _Tracker: Herb patch harvested_
 
-Then return to **Smith Haldren**, Armorer & Weaponsmith _(at ~x:7, z:17)_ to turn in.
+Then return to **Smith Haldren**, Armorer & Weaponsmith _(at ~x:6, z:15)_ to turn in.
 
 ## Rewards
 
-- **XP:** 75
+- _None_
 
 ## On completion
 

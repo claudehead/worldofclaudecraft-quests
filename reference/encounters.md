@@ -74,7 +74,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 7 · 644 HP · Burrower**
 
-**Drops:** Greasy Tallow Lump _(100%)_, Lesser Healing Potion _(100%)_, Tunnelking's Spade _(30%)_, Mogger's Copper Cudgel _(25%)_, Hollowbone Hauberk _(25%)_
+**Drops:** Greasy Tallow Lump _(100%)_, Lesser Healing Potion _(100%)_, Tunnelking's Spade _(30%)_, Mogger's Copper Cudgel _(25%)_, Hollowbone Hauberk _(25%)_, Briarroot Staff _(30%)_
 
 <br clear="all">
 
@@ -250,7 +250,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 1720 HP · Undead**
 
-**Drops:** Crypt Keystone Lower _(100%)_, Frayed Prayer Beads _(50%)_
+**Drops:** Crypt Keystone Lower _(100%)_, Frayed Prayer Beads _(50%)_, Cryptbloom Shoulderguards _(20%)_
 
 <br clear="all">
 

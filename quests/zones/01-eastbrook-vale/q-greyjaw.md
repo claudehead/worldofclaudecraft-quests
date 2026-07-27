@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
-| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
+| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
+| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
 | **Requires** | Wolves at the Door (`q_wolves`) |
 
 ## Story
@@ -19,7 +19,7 @@
   - Drops from [**Old Greyjaw**](bestiary.md#mob-old_greyjaw) (100% chance) — Found in the open world at ~x:0, z:95 (1 mob, radius 8)
   - _Tracker: Old Greyjaw's Fang_
 
-Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
+Then return to **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ to turn in.
 
 ## Rewards
 

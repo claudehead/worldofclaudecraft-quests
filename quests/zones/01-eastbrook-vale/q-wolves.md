@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
-| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
+| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
+| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
 
 ## Story
 
@@ -19,7 +19,7 @@
   - Found in the open world at ~x:20, z:70 (6 mobs, radius 20)
   - _Tracker: Forest Wolf slain_
 
-Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
+Then return to **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ to turn in.
 
 ## Rewards
 

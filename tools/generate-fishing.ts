@@ -1,4 +1,6 @@
-import { ITEMS, FISHING_TABLES, FISHING_RARE_ID } from '../woc/src/sim/data.ts';
+import { ITEMS } from '../woc/src/sim/data.ts';
+// FISHING_TABLES/FISHING_RARE_ID moved out of data.ts's re-exports (v0.31).
+import { FISHING_TABLES, FISHING_RARE_ID } from '../woc/src/sim/content/items.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/fishing.md';

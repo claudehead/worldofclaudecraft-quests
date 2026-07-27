@@ -30,7 +30,7 @@
 | Stalk | 5 | — | Instant | — | Melee | Physical | Enter stealth while in Wolf Form, moving 50% slower. Cannot be used in combat. |
 | Wolf Form | 5 | 30 | Instant | — | Melee | Physical | Shapeshift into a wolf: agility rises with your level, attack power +8 plus 2 per level, your attacks use energy and combo points, and you generate 29% less threat. Cast again to return to caster form. |
 | Briarguard | 6 _(ranks: 14, 20)_ | 20 | Instant | — | 30 | Nature | Thorns sprout from the target: melee attackers take X Nature damage. |
-| Bruin Form | 8 | 30 | Instant | — | Melee | Physical | Shapeshift into a bear: armor +90%, greatly increased attack power, your attacks build rage and generate 30% more threat. Cast again to return to caster form. |
+| Bruin Form | 8 | 30 | Instant | — | Melee | Physical | Shapeshift into a bear: armor +130%, greatly increased attack power, your attacks build rage and generate 30% more threat. Cast again to return to caster form. |
 | Concuss | 8 | 10 | Instant | 1 min | 8 | Physical | Stuns the target for 2 sec. Bruin Form only. |
 | Gripping Roots | 8 _(ranks: 16)_ | 35 | 1.5s | — | 30 | Nature | Roots the target in place for up to 12 sec. |
 | Typhoon | 8 | 30 | Instant | 20s | Melee | Nature | A blast of wind knocks back all enemies within 8 yd and dazes them, slowing their movement by 50% for 4 sec. |
@@ -49,7 +49,7 @@
 | Fleet Form | 11 | 30 | Instant | — | Melee | Nature | Instantly shift into a swift travel form, increasing movement speed by 40%. You cannot use other abilities while shifted, but can shift in or out of combat, ideal for escaping. |
 | Gorebite | 14 | 35 | Instant | — | Melee | Physical | Finishing move that causes X. Wolf Form only. |
 | Rip | 14 | 30 | Instant | — | Melee | Physical | Finishing move that causes X Bleed damage over 12 sec. Consumes combo points. Wolf Form only. |
-| Second Bloom | 14 | 55 | 2s | — | 30 | Nature | Heals a friendly target for X and an additional amount over 21 sec. |
+| Second Bloom | 14 _(ranks: 20)_ | 55 | 2s | — | 30 | Nature | Heals a friendly target for X and an additional amount over 21 sec. |
 | Skyfall | 14 | 80 | 3s | — | 30 | Arcane | Calls down a bolt of stellar fire, causing X Arcane damage. |
 | Oakhide | 16 | 30 | Instant | 1 min | Melee | Nature | Your skin hardens like bark, increasing armor by 150 for 15 sec. |
 | Stoke | 16 | — | Instant | 1 min | Melee | Physical | Generates 20 rage instantly. Bruin Form only. |

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
-| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
+| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
+| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
 | **Requires** | Bandits of the Vale (`q_bandits`) |
 
 ## Story
@@ -19,7 +19,7 @@
   - Found in the open world at ~x:92, z:-92 (1 mob, radius 2)
   - _Tracker: Gorrak the Ruthless slain_
 
-Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
+Then return to **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ to turn in.
 
 ## Rewards
 

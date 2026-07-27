@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
 | **Requires** | Whispers Below (`q_whispers`) |
 
 ## Story
@@ -19,7 +19,7 @@
   - Pick up from the ground (sparkle objects) at: ~x:78, z:84 · ~x:83, z:88 · ~x:86, z:92
   - _Tracker: Weathered Ledger Page_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ to turn in.
 
 ## Rewards
 

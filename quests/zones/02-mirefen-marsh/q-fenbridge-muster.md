@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
 | **Turn in to** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ |
 
 ## Story

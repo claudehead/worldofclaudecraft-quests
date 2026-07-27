@@ -1,6 +1,6 @@
 # Zone 3 — Thornpeak Heights
 
-Level range: **13–20** · Hub: Highwatch · 33 quests
+Level range: **13–20** · Hub: Highwatch · 34 quests
 
 ![Map of Zone 3 — Thornpeak Heights](map.svg)
 
@@ -12,7 +12,7 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 |----:|-------|-------|------|
 | 12 | [The Watch on the Peaks](q-highwatch-summons.md) | Brother Aldric | collect |
 | 13 | [Stalkers on the Ridge](q-stalkers.md) | Captain Thessaly | kill |
-| 13 | [Winter Is Coming to Highwatch](q-stalker-pelts.md) | Quartermaster Bree | collect |
+| 13 | [First Frost at Highwatch](q-stalker-pelts.md) | Quartermaster Bree | collect |
 | 13 | [The Stalkers Return](q-stalkers-return.md) | Captain Thessaly | kill |
 | 13 | [Cloaks for the Watch](q-stalker-cloaks.md) | Quartermaster Bree | collect |
 | 13 | [Old Cragmaw](q-old-cragmaw.md) 👥 | Captain Thessaly | kill |
@@ -26,6 +26,7 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 13 | [Breaking the Seal](q-breaking-the-seal.md) | Brother Aldric | collect |
 | 13 | [The Voice Below](q-voice-below.md) | Brother Aldric | kill |
 | 13 | [The Sanctum Gate](q-sanctum-gate.md) | Brother Aldric | collect |
+| 13 | [Apothecary Work Order](q-prof-workorder-apothecary.md) | Alchemist Verane | collect |
 | 14 | [Deeprock Trouble](q-kobold-tunnels.md) | Loremaster Caddis | kill |
 | 15 | [Ogres at the Foothills](q-ogre-edges.md) | Scout Maren | kill |
 | 16 | [Break the War-Camp](q-crushers.md) 👥 | Captain Thessaly | kill |

@@ -2,7 +2,7 @@
   "repo": "claudehead/worldofclaudecraft-quests",
   "branch": "main",
   "counts": {
-    "quests": 84,
+    "quests": 96,
     "zones": 4,
     "classes": 9,
     "dungeons": 5,
@@ -131,20 +131,100 @@
           "file": "quests/zones/01-eastbrook-vale/q-ringleader.md"
         },
         {
-          "id": "q_archetype_acceptance",
-          "name": "A Craft to Call Your Own",
+          "id": "q_prof_attune_smith",
+          "name": "The Smith's Promise",
           "level": 1,
           "group": false,
-          "chain": true,
-          "file": "quests/zones/01-eastbrook-vale/q-archetype-acceptance.md"
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-attune-smith.md"
         },
         {
-          "id": "q_prof_make_amends",
-          "name": "Making Amends",
+          "id": "q_prof_attune_outfitter",
+          "name": "The Outfitter's Measure",
           "level": 1,
           "group": false,
-          "chain": true,
-          "file": "quests/zones/01-eastbrook-vale/q-prof-make-amends.md"
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-attune-outfitter.md"
+        },
+        {
+          "id": "q_prof_attune_apothecary",
+          "name": "A Recipe Worth Keeping",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-attune-apothecary.md"
+        },
+        {
+          "id": "q_prof_attune_bombardier",
+          "name": "A Volatile Arrangement",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-attune-bombardier.md"
+        },
+        {
+          "id": "q_prof_amends_smith",
+          "name": "Back to the Forge",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-amends-smith.md"
+        },
+        {
+          "id": "q_prof_amends_outfitter",
+          "name": "Threads Rejoined",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-amends-outfitter.md"
+        },
+        {
+          "id": "q_prof_amends_apothecary",
+          "name": "Back on the Stove",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-amends-apothecary.md"
+        },
+        {
+          "id": "q_prof_amends_bombardier",
+          "name": "The Ledger Grows",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-amends-bombardier.md"
+        },
+        {
+          "id": "q_prof_workorder_forge",
+          "name": "Forge Work Order",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-workorder-forge.md"
+        },
+        {
+          "id": "q_prof_workorder_kitchens",
+          "name": "Kitchens Work Order",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-workorder-kitchens.md"
+        },
+        {
+          "id": "q_prof_workorder_loom",
+          "name": "Loom Work Order",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-workorder-loom.md"
+        },
+        {
+          "id": "q_prof_workorder_toolworks",
+          "name": "Toolworks Work Order",
+          "level": 1,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/01-eastbrook-vale/q-prof-workorder-toolworks.md"
         },
         {
           "id": "q_prof_hobby_switch",
@@ -322,6 +402,14 @@
           "file": "quests/zones/02-mirefen-marsh/q-deacon.md"
         },
         {
+          "id": "q_prof_workorder_tannery",
+          "name": "Tannery Work Order",
+          "level": 6,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/02-mirefen-marsh/q-prof-workorder-tannery.md"
+        },
+        {
           "id": "q_fen_supplies",
           "name": "The Lost Caravan",
           "level": 7,
@@ -434,7 +522,7 @@
         },
         {
           "id": "q_stalker_pelts",
-          "name": "Winter Is Coming to Highwatch",
+          "name": "First Frost at Highwatch",
           "level": 13,
           "group": false,
           "chain": false,
@@ -543,6 +631,14 @@
           "group": false,
           "chain": true,
           "file": "quests/zones/03-thornpeak-heights/q-sanctum-gate.md"
+        },
+        {
+          "id": "q_prof_workorder_apothecary",
+          "name": "Apothecary Work Order",
+          "level": 13,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-prof-workorder-apothecary.md"
         },
         {
           "id": "q_kobold_tunnels",

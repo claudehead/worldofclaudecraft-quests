@@ -19,8 +19,18 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 | [The Gravecaller's Trail](zones/01-eastbrook-vale/q-gravecallers-trail.md) | Zone 1 — Eastbrook Vale | chain |
 | [Bandits of the Vale](zones/01-eastbrook-vale/q-bandits.md) | Zone 1 — Eastbrook Vale | chain |
 | [The Ringleader](zones/01-eastbrook-vale/q-ringleader.md) | Zone 1 — Eastbrook Vale | chain |
-| [A Craft to Call Your Own](zones/01-eastbrook-vale/q-archetype-acceptance.md) | Zone 1 — Eastbrook Vale | chain |
-| [Making Amends](zones/01-eastbrook-vale/q-prof-make-amends.md) | Zone 1 — Eastbrook Vale | chain |
+| [The Smith's Promise](zones/01-eastbrook-vale/q-prof-attune-smith.md) | Zone 1 — Eastbrook Vale |  |
+| [The Outfitter's Measure](zones/01-eastbrook-vale/q-prof-attune-outfitter.md) | Zone 1 — Eastbrook Vale |  |
+| [A Recipe Worth Keeping](zones/01-eastbrook-vale/q-prof-attune-apothecary.md) | Zone 1 — Eastbrook Vale |  |
+| [A Volatile Arrangement](zones/01-eastbrook-vale/q-prof-attune-bombardier.md) | Zone 1 — Eastbrook Vale |  |
+| [Back to the Forge](zones/01-eastbrook-vale/q-prof-amends-smith.md) | Zone 1 — Eastbrook Vale |  |
+| [Threads Rejoined](zones/01-eastbrook-vale/q-prof-amends-outfitter.md) | Zone 1 — Eastbrook Vale |  |
+| [Back on the Stove](zones/01-eastbrook-vale/q-prof-amends-apothecary.md) | Zone 1 — Eastbrook Vale |  |
+| [The Ledger Grows](zones/01-eastbrook-vale/q-prof-amends-bombardier.md) | Zone 1 — Eastbrook Vale |  |
+| [Forge Work Order](zones/01-eastbrook-vale/q-prof-workorder-forge.md) | Zone 1 — Eastbrook Vale |  |
+| [Kitchens Work Order](zones/01-eastbrook-vale/q-prof-workorder-kitchens.md) | Zone 1 — Eastbrook Vale |  |
+| [Loom Work Order](zones/01-eastbrook-vale/q-prof-workorder-loom.md) | Zone 1 — Eastbrook Vale |  |
+| [Toolworks Work Order](zones/01-eastbrook-vale/q-prof-workorder-toolworks.md) | Zone 1 — Eastbrook Vale |  |
 | [A Different Pastime](zones/01-eastbrook-vale/q-prof-hobby-switch.md) | Zone 1 — Eastbrook Vale | chain |
 
 ## Level 2+
@@ -66,6 +76,7 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 | [Fetish and Bone](zones/02-mirefen-marsh/q-troll-fetishes.md) | Zone 2 — Mirefen Marsh | chain |
 | [Stopping the Summoning](zones/02-mirefen-marsh/q-summoners.md) | Zone 2 — Mirefen Marsh | chain |
 | [The Deacon of the Mire](zones/02-mirefen-marsh/q-deacon.md) | Zone 2 — Mirefen Marsh | chain |
+| [Tannery Work Order](zones/02-mirefen-marsh/q-prof-workorder-tannery.md) | Zone 2 — Mirefen Marsh |  |
 
 ## Level 7+
 
@@ -113,7 +124,7 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 | Quest | Zone | Notes |
 |-------|------|-------|
 | [Stalkers on the Ridge](zones/03-thornpeak-heights/q-stalkers.md) | Zone 3 — Thornpeak Heights |  |
-| [Winter Is Coming to Highwatch](zones/03-thornpeak-heights/q-stalker-pelts.md) | Zone 3 — Thornpeak Heights |  |
+| [First Frost at Highwatch](zones/03-thornpeak-heights/q-stalker-pelts.md) | Zone 3 — Thornpeak Heights |  |
 | [The Stalkers Return](zones/03-thornpeak-heights/q-stalkers-return.md) | Zone 3 — Thornpeak Heights | chain |
 | [Cloaks for the Watch](zones/03-thornpeak-heights/q-stalker-cloaks.md) | Zone 3 — Thornpeak Heights | chain |
 | [Old Cragmaw](zones/03-thornpeak-heights/q-old-cragmaw.md) 👥 | Zone 3 — Thornpeak Heights | chain |
@@ -127,6 +138,7 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 | [Breaking the Seal](zones/03-thornpeak-heights/q-breaking-the-seal.md) | Zone 3 — Thornpeak Heights | chain |
 | [The Voice Below](zones/03-thornpeak-heights/q-voice-below.md) | Zone 3 — Thornpeak Heights | chain |
 | [The Sanctum Gate](zones/03-thornpeak-heights/q-sanctum-gate.md) | Zone 3 — Thornpeak Heights | chain |
+| [Apothecary Work Order](zones/03-thornpeak-heights/q-prof-workorder-apothecary.md) | Zone 3 — Thornpeak Heights |  |
 
 ## Level 14+
 

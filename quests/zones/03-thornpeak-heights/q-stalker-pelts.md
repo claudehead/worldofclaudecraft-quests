@@ -1,4 +1,4 @@
-# Winter Is Coming to Highwatch
+# First Frost at Highwatch
 
 > Quest ID: `q_stalker_pelts` · Zone 3 — Thornpeak Heights
 
@@ -38,7 +38,7 @@ Then return to **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668
 
 ## Where to go
 
-![Where to go for Winter Is Coming to Highwatch](qmap-q-stalker-pelts.svg)
+![Where to go for First Frost at Highwatch](qmap-q-stalker-pelts.svg)
 
 **[🧭 Open this route in 3D →](#/questroute/q_stalker_pelts)**
 

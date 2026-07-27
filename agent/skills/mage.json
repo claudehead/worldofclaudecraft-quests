@@ -151,7 +151,7 @@
       "castTime": 0,
       "school": "fire",
       "requiresTarget": false,
-      "desc": "Combust: for 10 sec your Fire spells always critically strike, including bolts already in flight. Off the global cooldown. These crits build Hot Streak like any other. (Fire signature)"
+      "desc": "Combust: for 10 sec your Fire spells always critically strike, including bolts already in flight. Off the global cooldown. These crits build Hot Streak like any other, and casting it finishes the Cinderfall charge currently recharging. (Fire signature)"
     },
     {
       "id": "summon_water_elemental",
@@ -242,7 +242,7 @@
       "name": "Cinderfall",
       "learnLevel": 5,
       "cost": 40,
-      "cooldown": 8,
+      "cooldown": 30,
       "range": 20,
       "castTime": 0,
       "school": "fire",
@@ -422,7 +422,7 @@
       "name": "Flamestrike",
       "learnLevel": 12,
       "cost": 80,
-      "cooldown": 12,
+      "cooldown": 0,
       "range": 30,
       "castTime": 2,
       "school": "fire",
@@ -563,9 +563,9 @@
     }
   ],
   "rotation": [
+    "fire_blast",
     "counterspell",
     "temporal_barrier",
-    "fire_blast",
     "arcane_missiles",
     "temporal_echo",
     "ice_lance",

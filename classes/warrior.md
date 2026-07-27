@@ -75,7 +75,7 @@
 | Iron Resolve | 14 | 20 | Instant | 15s | Melee | Physical | Grit your teeth and ignore the pain: spends up to 40 rage (20 minimum) to absorb 4 damage per rage spent, lasting up to 10 sec. (Protection) |
 | Reaping Arc | 14 | 15 | Instant | — | Melee | Physical | A sweeping strike that hits all enemies in front of you for X damage. |
 | Emboldening Roar | 16 | — | Instant | 3 min | Melee | Physical | Lets loose an emboldening roar: you and friendly players within 40 yards are Emboldened, and your next 3 abilities are guaranteed critical strikes. (Fury) |
-| Avatar | 17 | — | Instant | 3 min | Melee | Physical | Transform into a colossus for 20 sec, breaking all control on you and increasing your damage dealt by 20%. |
+| Avatar | 17 | — | Instant | 3 min | Melee | Physical | Transform into a colossus for 20 sec, breaking enemy control effects on you (boss control is unaffected) and increasing your damage dealt by 20%. |
 | Recklessness | 17 | — | Instant | 3 min | Melee | Physical | Enrage: your rage generation increases by 50% and your critical strike chance by 20% for 12 sec. |
 | Valor Roar | 18 | — | Instant | 3 min | Melee | Physical | Lets loose a valorous roar, granting you and party members within 40 yards 20% additional maximum health for 10 sec. Protection: they also take 5% less damage for the duration. |
 | Widening Arc | 18 | — | Instant | 30s | Melee | Physical | For 12 sec your single-target attacks also strike 1 nearby enemy for full damage. (Arms) |

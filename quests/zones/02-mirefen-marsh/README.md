@@ -1,6 +1,6 @@
 # Zone 2 — Mirefen Marsh
 
-Level range: **6–13** · Hub: Fenbridge · 23 quests
+Level range: **6–13** · Hub: Fenbridge · 24 quests
 
 ![Map of Zone 2 — Mirefen Marsh](map.svg)
 
@@ -23,6 +23,7 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 6 | [Fetish and Bone](q-troll-fetishes.md) | Scout Maren | collect |
 | 6 | [Stopping the Summoning](q-summoners.md) | Brother Aldric | kill/collect |
 | 6 | [The Deacon of the Mire](q-deacon.md) | Warden Fenwick | kill |
+| 6 | [Tannery Work Order](q-prof-workorder-tannery.md) | Tanner Hesk | collect |
 | 7 | [The Lost Caravan](q-fen-supplies.md) | Provisioner Hale | collect |
 | 7 | [The Deepfen Stirs](q-deepfen.md) | Warden Fenwick | kill |
 | 8 | [Silk and Venom](q-widows.md) | Herbalist Yara | kill/collect |

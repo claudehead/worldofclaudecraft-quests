@@ -31,8 +31,9 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/ridge_stalker_pelt.png" width="22" alt="">  Ridge Stalker Pelt | Quest item | 60% | quest item — only drops while on _Winter Is Coming to Highwatch_ |
+| <img src="../_loot-icons/ridge_stalker_pelt.png" width="22" alt="">  Ridge Stalker Pelt | Quest item | 60% | quest item — only drops while on _First Frost at Highwatch_ |
 | <img src="../_loot-icons/ridge_stalker_pelt.png" width="22" alt="">  Ridge Stalker Pelt | Quest item | 60% | quest item — only drops while on _Cloaks for the Watch_ |
+| <img src="../_loot-icons/wildgrove_cinch.png" width="22" alt=""> 🟢 Wildgrove Cinch | Leather armor — Waist · 36 armor, +2 Int, +2 Spi | 10% |  |
 
 <a id="mob-deeprock_kobold"></a>
 
@@ -62,6 +63,8 @@
 | <img src="../_loot-icons/glowing_wax.png" width="22" alt="">  Glowing Wax | Quest item | 50% | quest item — only drops while on _Strange Wax_ |
 | <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 40% | sells for 5c |
 | <img src="../_loot-icons/healing_potion.png" width="22" alt=""> ⚪ Healing Potion | Potion · restores 280 HP | 8% |  |
+| <img src="../_loot-icons/peaksong_helm.png" width="22" alt=""> 🔵 Peaksong Helm | Mail armor — Head · 78 armor, +5 Int, +4 Spi | 4% |  |
+| <img src="../_loot-icons/moonbark_vestments.png" width="22" alt=""> 🔵 Moonbark Vestments | Leather armor — Chest · 100 armor, +6 Int, +4 Spi | 4% |  |
 | <img src="../_loot-icons/deathlord_sabatons.png" width="22" alt=""> 🟣 Barrowlord Sabatons | Mail armor — Feet · 205 armor, +7 Str, +8 Sta | 0% |  |
 
 <a id="mob-thornpeak_ogre"></a>
@@ -90,6 +93,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/ogre_toe_ring.png" width="22" alt=""> ⚫ Ogre Toe Ring | Junk | 35% | sells for 25c |
+| <img src="../_loot-icons/cragprowl_belt.png" width="22" alt=""> 🟢 Cragprowl Belt | Leather armor — Waist · 40 armor, +3 Agi, +2 Sta | 10% |  |
 
 <a id="mob-stormcrag_elemental"></a>
 
@@ -149,6 +153,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/wyrmcult_orders.png" width="22" alt="">  Wyrmcult Orders | Quest item | 50% | quest item — only drops while on _Orders from Below_ |
 | <img src="../_loot-icons/frayed_prayer_beads.png" width="22" alt=""> ⚫ Frayed Prayer Beads | Junk | 35% | sells for 30c |
+| <img src="../_loot-icons/shardsong_mantle.png" width="22" alt=""> 🔵 Shardsong Mantle | Cloth armor — Shoulder · 32 armor, +5 Int, +4 Spi | 4% |  |
 
 <a id="mob-boneclad_revenant"></a>
 
@@ -177,6 +182,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/runed_bone_shard.png" width="22" alt="">  Runed Bone Shard | Quest item | 70% | quest item — only drops while on _Unrest in the Bonefields_ |
 | <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 60% | sells for 7c |
+| <img src="../_loot-icons/thornpeak_wildwraps.png" width="22" alt=""> 🔵 Thornpeak Wildwraps | Leather armor — Legs · 60 armor, +7 Int, +4 Spi | 4% |  |
 | <img src="../_loot-icons/necromancers_legwraps.png" width="22" alt=""> 🟣 Mournweave Legwraps | Cloth armor — Legs · 86 armor, +13 Int, +7 Spi | 0% |  |
 
 <a id="mob-shardlord_kazzix"></a>
@@ -208,6 +214,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/kazzix_heartshard.png" width="22" alt="">  Kazzix's Heartshard | Quest item | 100% | quest item — only drops while on _The Shardlord_ |
 | <img src="../_loot-icons/inert_storm_shard.png" width="22" alt=""> ⚫ Inert Storm Shard | Junk | 100% | sells for 28c |
+| <img src="../_loot-icons/shardfang_grips.png" width="22" alt=""> 🔵 Shardfang Grips | Leather armor — Hands · 40 armor, +5 Agi, +3 Sta | 25% |  |
 
 <a id="mob-wyrmcult_necromancer"></a>
 
@@ -237,6 +244,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/ritual_phylactery.png" width="22" alt="">  Ritual Phylactery | Quest item | 55% | quest item — only drops while on _The Phylactery Ring_ |
 | <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 30% | sells for 3c |
+| <img src="../_loot-icons/wyrmcult_spellgrips.png" width="22" alt=""> 🔵 Wyrmcult Spellgrips | Cloth armor — Hands · 36 armor, +5 Int, +4 Spi | 4% |  |
 
 <a id="mob-training_dummy"></a>
 
@@ -295,6 +303,8 @@
 | <img src="../_loot-icons/old_cragmaws_pelt.png" width="22" alt=""> ⚪ Old Cragmaw's Pelt | Junk | 100% | sells for 300c |
 | <img src="../_loot-icons/cragmaw_prowlboots.png" width="22" alt=""> 🔵 Cragmaw Prowlboots | Leather armor — Feet · 58 armor, +5 Agi, +3 Sta | 30% |  |
 | <img src="../_loot-icons/cragmaw_huntcord.png" width="22" alt=""> 🔵 Cragmaw's Huntcord | Leather armor — Waist · 44 armor, +5 Agi, +3 Sta | 25% |  |
+| <img src="../_loot-icons/cragward_pauldrons.png" width="22" alt=""> 🟢 Cragward Pauldrons | Mail armor — Shoulder · 56 armor, +2 Int, +2 Spi | 25% |  |
+| <img src="../_loot-icons/cragthorn_greatstaff.png" width="22" alt=""> 🔵 Cragthorn Greatstaff | Weapon — Main hand · 40–55 dmg @ 3.5s (~14 DPS), +5 Str, +4 Agi, +4 Sta | 20% |  |
 
 <a id="mob-ironvein_foreman"></a>
 
@@ -334,6 +344,7 @@
 | <img src="../_loot-icons/ironvein_lantern_staff.png" width="22" alt=""> 🟢 Ironvein Lantern Staff | Weapon — Main hand · 19–31 dmg @ 3s (~8 DPS), +7 Int, +3 Spi | 25% |  |
 | <img src="../_loot-icons/gutripper_shiv.png" width="22" alt=""> 🔵 Gutripper Shiv | Weapon — Main hand · 14–22 dmg @ 1.7s (~11 DPS), +8 Agi, +3 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/deathlord_sabatons.png" width="22" alt=""> 🟣 Barrowlord Sabatons | Mail armor — Feet · 205 armor, +7 Str, +8 Sta | 25% | exclusive set † |
+| <img src="../_loot-icons/stormchant_gauntlets.png" width="22" alt=""> 🟢 Stormchant Gauntlets | Mail armor — Hands · 50 armor, +3 Int, +2 Spi | 20% |  |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -365,6 +376,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/ogre_toe_ring.png" width="22" alt=""> ⚫ Ogre Toe Ring | Junk | 50% | sells for 25c |
+| <img src="../_loot-icons/revenantstep_treads.png" width="22" alt=""> 🔵 Revenantstep Treads | Leather armor — Feet · 62 armor, +4 Agi, +3 Sta | 6% |  |
 
 <a id="mob-brutok_skullsmasher"></a>
 
@@ -401,6 +413,7 @@
 | <img src="../_loot-icons/brutoks_maul.png" width="22" alt=""> 🔵 Brutok's Maul | Weapon — Main hand · 24–37 dmg @ 2.7s (~11 DPS), +8 Str, +3 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/crag_warden_cudgel.png" width="22" alt=""> 🔵 Crag Warden Cudgel | Weapon — Main hand · 23–36 dmg @ 3s (~10 DPS), +8 Int, +4 Spi | 25% | exclusive set † |
 | <img src="../_loot-icons/skullsplitter_dirk.png" width="22" alt=""> 🔵 Skullsplitter Dirk | Weapon — Main hand · 15–23 dmg @ 1.7s (~11 DPS), +8 Agi, +3 Sta | 25% | exclusive set † |
+| <img src="../_loot-icons/stormroot_cowl.png" width="22" alt=""> 🔵 Stormroot Cowl | Leather armor — Head · 58 armor, +6 Int, +4 Spi | 20% |  |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -506,6 +519,7 @@
 | <img src="../_loot-icons/cracked_wyrm_scale.png" width="22" alt=""> ⚫ Cracked Wyrm Scale | Junk | 50% | sells for 35c |
 | <img src="../_loot-icons/gravewyrm_mantle.png" width="22" alt=""> 🔵 Gravewyrm Mantle | Mail armor — Shoulder · 82 armor, +7 Agi, +3 Sta | 5% | exclusive set † |
 | <img src="../_loot-icons/gravewyrm_gauntlets.png" width="22" alt=""> 🔵 Gravewyrm Gauntlets | Mail armor — Hands · 72 armor, +5 Str, +4 Sta | 5% | exclusive set † |
+| <img src="../_loot-icons/gravewyrm_thornmaul.png" width="22" alt=""> 🔵 Gravewyrm Thornmaul | Weapon — Main hand · 48–65 dmg @ 3.6s (~16 DPS), +7 Str, +5 Agi, +5 Sta | 5% |  |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -544,6 +558,7 @@
 | <img src="../_loot-icons/emberwing_cinderscale.png" width="22" alt=""> ⚪ Emberwing Cinderscale | Junk | 100% | sells for 320c |
 | <img src="../_loot-icons/emberwing_legguards.png" width="22" alt=""> 🔵 Emberwing Legguards | Mail armor — Legs · 120 armor, +4 Str, +6 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/emberfang_warblade.png" width="22" alt=""> 🔵 Emberfang Warblade | Weapon — Main hand · 26–41 dmg @ 2.5s (~13 DPS), +8 Str, +3 Sta | 25% | exclusive set † |
+| <img src="../_loot-icons/stormvotive_hauberk.png" width="22" alt=""> 🔵 Stormvotive Hauberk | Mail armor — Chest · 180 armor, +7 Int, +5 Spi | 20% |  |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -560,12 +575,14 @@
 | Health | 1971 HP |
 | Armor (physical mitigation) | 380 (~15% vs a same-level attacker) |
 | Melee damage | 79–124 per hit @ 2s swing (~51 DPS) |
+| Crowd control | Immune |
 | Respawn | ~25s |
 | Location | Gravewyrm Sanctum (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fgravewyrm_sanctum.md) |
 
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
+- Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 - Summons adds at HP thresholds — bring AoE or kill the adds fast; don't let them pile up.
 
 **Loot:**
@@ -601,12 +618,14 @@
 | Health | 2171 HP |
 | Armor (physical mitigation) | 570 (~21% vs a same-level attacker) |
 | Melee damage | 83–130 per hit @ 2.8s swing (~38 DPS) |
+| Crowd control | Immune |
 | Respawn | ~25s |
 | Location | Gravewyrm Sanctum (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fgravewyrm_sanctum.md) |
 
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
+- Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 - **Shuddering Stomp:** War Stomp stuns nearby players on a timer — spread out so it can't catch the whole group.
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
 
@@ -664,6 +683,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/drogmar_warboots.png" width="22" alt=""> 🟢 Drogmar's Warboots | Mail armor — Feet · 85 armor, +3 Str, +4 Sta | 30% |  |
 | <img src="../_loot-icons/drogmars_skullcleaver.png" width="22" alt=""> 🔵 Drogmar's Skullcleaver | Weapon — Main hand · 22–35 dmg @ 2.6s (~11 DPS), +7 Str, +4 Sta | 25% |  |
+| <img src="../_loot-icons/thunderward_legguards.png" width="22" alt=""> 🔵 Thunderward Legguards | Mail armor — Legs · 118 armor, +6 Int, +4 Spi | 25% |  |
 
 <a id="mob-korzul_the_gravewyrm"></a>
 
@@ -678,13 +698,14 @@
 | Health | 3064 HP |
 | Armor (physical mitigation) | 646 (~24% vs a same-level attacker) |
 | Melee damage | 86–135 per hit @ 2.6s swing (~43 DPS) |
+| Crowd control | Immune |
 | Respawn | ~25s |
 | Location | Gravewyrm Sanctum (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fgravewyrm_sanctum.md) |
 
 **Best way to kill:**
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
-- **Necrotic Shockwave:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
+- Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
 
 **Loot:**
@@ -705,6 +726,10 @@
 | <img src="../_loot-icons/wyrmshadow_harness.png" width="22" alt=""> 🟣 Nightfang Harness | Leather armor — Chest · 170 armor, +12 Agi, +6 Sta | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/boundstone_girdle.png" width="22" alt=""> 🔵 Boundstone Girdle | Mail armor — Waist · 60 armor, +3 Str, +6 Sta | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/gravewyrm_gauntlets.png" width="22" alt=""> 🔵 Gravewyrm Gauntlets | Mail armor — Hands · 72 armor, +5 Str, +4 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/nightfangs_greatstaff.png" width="22" alt=""> 🟣 Nightfang's Greatstaff | Weapon — Main hand · 51–69 dmg @ 3.6s (~17 DPS), +9 Str, +7 Agi, +7 Sta | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/wildgrowth_leggings.png" width="22" alt=""> 🟣 Wildgrowth Leggings | Leather armor — Legs · 112 armor, +2 Sta, +9 Int, +5 Spi | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/grovewardens_grips.png" width="22" alt=""> 🟣 Grovewarden's Grips | Leather armor — Hands · 88 armor, +8 Int, +5 Spi | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/verdant_walkers.png" width="22" alt=""> 🟣 Verdant Walkers | Leather armor — Feet · 82 armor, +7 Int, +5 Spi | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/deathlords_dread_visage.png" width="22" alt=""> 🟣 Barrowlord Dread Visage | Mail armor — Head · 245 armor, +7 Str, +8 Sta | 4% | exclusive set 2 † |
 | <img src="../_loot-icons/necromancers_soulspire_mantle.png" width="22" alt=""> 🟣 Mournweave Soulspire Mantle | Cloth armor — Shoulder · 70 armor, +9 Int, +5 Spi | 4% | exclusive set 2 † |
 | <img src="../_loot-icons/wyrmshadow_talongrips.png" width="22" alt=""> 🟣 Nightfang Talongrips | Leather armor — Hands · 110 armor, +9 Agi, +4 Sta | 4% | exclusive set 2 † |
@@ -739,6 +764,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
+| <img src="../_loot-icons/maul_of_the_scourged_wilds.png" width="22" alt=""> 🟣 Maul of the Scourged Wilds | Weapon — Main hand · 56–75 dmg @ 3.7s (~18 DPS), +10 Str, +8 Agi, +8 Sta, +20 Hit rating | 25% | exclusive set 5 † |
 | <img src="../_loot-icons/wraithfire_orb.png" width="22" alt=""> 🟣 Wraithfire Orb | held_offhand · +3 Sta, +7 Int, +5 Spi, +20 Crit rating | 16% | exclusive set 3 † |
 | <img src="../_loot-icons/direfang_greatblade.png" width="22" alt=""> 🟣 Direfang Greatblade | Weapon — Main hand · 40–66 dmg @ 3s (~18 DPS), +14 Agi, +12 Sta, +20 Hit rating | 16% | exclusive set 4 † |
 | <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 14% | exclusive set 1 † |

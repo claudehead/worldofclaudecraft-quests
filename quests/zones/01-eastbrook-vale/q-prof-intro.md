@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ |
-| **Turn in to** | **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ |
+| **Quest giver** | **Foreman Odell**, Mine Foreman _(at ~x:-8, z:-9)_ |
+| **Turn in to** | **Foreman Odell**, Mine Foreman _(at ~x:-8, z:-9)_ |
 
 ## Story
 
@@ -16,7 +16,7 @@
 
   - _Tracker: Ore vein harvested_
 
-Then return to **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ to turn in.
+Then return to **Foreman Odell**, Mine Foreman _(at ~x:-8, z:-9)_ to turn in.
 
 ## Rewards
 
@@ -29,8 +29,6 @@ Then return to **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ to turn in.
 
 ## Leads to
 
-- A Craft to Call Your Own (`q_archetype_acceptance`)
-- Making Amends (`q_prof_make_amends`)
 - A Different Pastime (`q_prof_hobby_switch`)
 
 ## Where to go

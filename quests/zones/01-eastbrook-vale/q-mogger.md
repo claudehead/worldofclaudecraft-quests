@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ |
-| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
-| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
+| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
+| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
 | **Requires** | The Gravecaller's Trail (`q_gravecallers_trail`) |
 | **Group quest** | 👥 Suggested players: 3 |
 
@@ -20,7 +20,7 @@
   - Found in the open world at ~x:118, z:-26 (1 mob, radius 5)
   - _Tracker: Mogger slain_
 
-Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
+Then return to **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ to turn in.
 
 ## Rewards
 

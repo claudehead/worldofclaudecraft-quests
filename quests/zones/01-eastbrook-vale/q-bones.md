@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 5+ |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
 
 ## Story
 
@@ -19,7 +19,7 @@
   - Found in the open world at ~x:88, z:90 (2 mobs, radius 6)
   - _Tracker: Restless Bones laid to rest_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ to turn in.
 
 ## Rewards
 

@@ -22,15 +22,15 @@
 |---|---|---:|---|---|---:|---|---|
 | Litany of Resolve | 1 | 30 | Instant | — | 30 | Holy | Increases the Stamina of all party members by X% for 30 min. |
 | Smite | 1 _(ranks: 8, 14, 20)_ | 20 | 2s | — | 30 | Holy | Smites the enemy for X Holy damage. |
-| Whispered Prayer | 1 _(ranks: 6, 12)_ | 30 | 2s | — | 30 | Holy | Heals a friendly target for X. |
+| Whispered Prayer | 1 _(ranks: 6, 12, 20)_ | 30 | 2s | — | 30 | Holy | Heals a friendly target for X. |
 | Dirge of Decay | 4 _(ranks: 10, 16)_ | 25 | Instant | — | 30 | Shadow | A word of darkness causes X Shadow damage over 18 sec. |
 | Mindfracture | 5 _(ranks: 14, 20)_ | 50 | 1.5s | 8s | 30 | Shadow | Blasts the target's mind for X Shadow damage. |
-| Psalm of Warding | 6 _(ranks: 12, 18)_ | 45 | Instant | 6s | 30 | Holy | Shields the target, absorbing X damage for 30 sec. |
+| Psalm of Warding | 6 _(ranks: 12, 18, 20)_ | 45 | Instant | 6s | 30 | Holy | Shields the target, absorbing X damage for 30 sec. |
 | Lingering Grace | 8 _(ranks: 14, 20)_ | 30 | Instant | — | 30 | Holy | Heals the target for X over 15 sec. |
 | Anointing | 10 | 55 | Instant | 2 min | 30 | Holy | Infuses a friendly target with power, increasing spell haste by 20% for 15 sec. (Discipline signature) |
-| Choirmend | 10 | 130 | 3s | — | Melee | Holy | Heals nearby allies for X. (Priest talent) |
+| Choirmend | 10 _(ranks: 20)_ | 130 | 3s | — | Melee | Holy | Heals nearby allies for X. (Priest talent) |
 | Gloamveil | 10 | 60 | Instant | — | Melee | Shadow | Assume a Gloamveil, empowering shadow magic until you shift back. Cast again to return to normal form. (Shadow signature) |
-| Holy Nova | 10 | 70 | Instant | — | Melee | Holy | Causes an explosion of Mending Light, healing nearby allies for X and damaging nearby enemies. (Holy signature) |
+| Holy Nova | 10 _(ranks: 20)_ | 70 | Instant | — | Melee | Holy | Causes an explosion of Mending Light, healing nearby allies for X and damaging nearby enemies. (Holy signature) |
 | Hushword | 10 | 55 | Instant | 30s | 30 | Shadow | Silences the target for 4 sec. (Priest talent) |
 | Last Prayer | 10 | — | Instant | 1.5 min | Melee | Holy | Instantly heals you for X. (Priest talent) |
 | Stilled Mind | 10 | — | Instant | 1.5 min | Melee | Holy | Makes your next spell free. Lasts 60 sec. (Priest talent) |

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
 | **Requires** | The Names of the Dead (`q_names_of_the_dead`) |
 
 ## Story
@@ -20,7 +20,7 @@
   - Found in the open world at ~x:88, z:90 (2 mobs, radius 6)
   - _Tracker: Restless Bones silenced_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ to turn in.
 
 ## Rewards
 

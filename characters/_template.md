@@ -19,8 +19,18 @@ Tick a box when you turn the quest in. Work top-down — quests are grouped by t
 - [ ] [The Gravecaller's Trail](../quests/zones/01-eastbrook-vale/q-gravecallers-trail.md) _(chain)_ — Zone 1 — Eastbrook Vale
 - [ ] [Bandits of the Vale](../quests/zones/01-eastbrook-vale/q-bandits.md) _(chain)_ — Zone 1 — Eastbrook Vale
 - [ ] [The Ringleader](../quests/zones/01-eastbrook-vale/q-ringleader.md) _(chain)_ — Zone 1 — Eastbrook Vale
-- [ ] [A Craft to Call Your Own](../quests/zones/01-eastbrook-vale/q-archetype-acceptance.md) _(chain)_ — Zone 1 — Eastbrook Vale
-- [ ] [Making Amends](../quests/zones/01-eastbrook-vale/q-prof-make-amends.md) _(chain)_ — Zone 1 — Eastbrook Vale
+- [ ] [The Smith's Promise](../quests/zones/01-eastbrook-vale/q-prof-attune-smith.md) — Zone 1 — Eastbrook Vale
+- [ ] [The Outfitter's Measure](../quests/zones/01-eastbrook-vale/q-prof-attune-outfitter.md) — Zone 1 — Eastbrook Vale
+- [ ] [A Recipe Worth Keeping](../quests/zones/01-eastbrook-vale/q-prof-attune-apothecary.md) — Zone 1 — Eastbrook Vale
+- [ ] [A Volatile Arrangement](../quests/zones/01-eastbrook-vale/q-prof-attune-bombardier.md) — Zone 1 — Eastbrook Vale
+- [ ] [Back to the Forge](../quests/zones/01-eastbrook-vale/q-prof-amends-smith.md) — Zone 1 — Eastbrook Vale
+- [ ] [Threads Rejoined](../quests/zones/01-eastbrook-vale/q-prof-amends-outfitter.md) — Zone 1 — Eastbrook Vale
+- [ ] [Back on the Stove](../quests/zones/01-eastbrook-vale/q-prof-amends-apothecary.md) — Zone 1 — Eastbrook Vale
+- [ ] [The Ledger Grows](../quests/zones/01-eastbrook-vale/q-prof-amends-bombardier.md) — Zone 1 — Eastbrook Vale
+- [ ] [Forge Work Order](../quests/zones/01-eastbrook-vale/q-prof-workorder-forge.md) — Zone 1 — Eastbrook Vale
+- [ ] [Kitchens Work Order](../quests/zones/01-eastbrook-vale/q-prof-workorder-kitchens.md) — Zone 1 — Eastbrook Vale
+- [ ] [Loom Work Order](../quests/zones/01-eastbrook-vale/q-prof-workorder-loom.md) — Zone 1 — Eastbrook Vale
+- [ ] [Toolworks Work Order](../quests/zones/01-eastbrook-vale/q-prof-workorder-toolworks.md) — Zone 1 — Eastbrook Vale
 - [ ] [A Different Pastime](../quests/zones/01-eastbrook-vale/q-prof-hobby-switch.md) _(chain)_ — Zone 1 — Eastbrook Vale
 
 ## Level 2+
@@ -56,6 +66,7 @@ Tick a box when you turn the quest in. Work top-down — quests are grouped by t
 - [ ] [Fetish and Bone](../quests/zones/02-mirefen-marsh/q-troll-fetishes.md) _(chain)_ — Zone 2 — Mirefen Marsh
 - [ ] [Stopping the Summoning](../quests/zones/02-mirefen-marsh/q-summoners.md) _(chain)_ — Zone 2 — Mirefen Marsh
 - [ ] [The Deacon of the Mire](../quests/zones/02-mirefen-marsh/q-deacon.md) _(chain)_ — Zone 2 — Mirefen Marsh
+- [ ] [Tannery Work Order](../quests/zones/02-mirefen-marsh/q-prof-workorder-tannery.md) — Zone 2 — Mirefen Marsh
 
 ## Level 7+
 
@@ -89,7 +100,7 @@ Tick a box when you turn the quest in. Work top-down — quests are grouped by t
 ## Level 13+
 
 - [ ] [Stalkers on the Ridge](../quests/zones/03-thornpeak-heights/q-stalkers.md) — Zone 3 — Thornpeak Heights
-- [ ] [Winter Is Coming to Highwatch](../quests/zones/03-thornpeak-heights/q-stalker-pelts.md) — Zone 3 — Thornpeak Heights
+- [ ] [First Frost at Highwatch](../quests/zones/03-thornpeak-heights/q-stalker-pelts.md) — Zone 3 — Thornpeak Heights
 - [ ] [The Stalkers Return](../quests/zones/03-thornpeak-heights/q-stalkers-return.md) _(chain)_ — Zone 3 — Thornpeak Heights
 - [ ] [Cloaks for the Watch](../quests/zones/03-thornpeak-heights/q-stalker-cloaks.md) _(chain)_ — Zone 3 — Thornpeak Heights
 - [ ] [Old Cragmaw](../quests/zones/03-thornpeak-heights/q-old-cragmaw.md) 👥 _(chain)_ — Zone 3 — Thornpeak Heights
@@ -103,6 +114,7 @@ Tick a box when you turn the quest in. Work top-down — quests are grouped by t
 - [ ] [Breaking the Seal](../quests/zones/03-thornpeak-heights/q-breaking-the-seal.md) _(chain)_ — Zone 3 — Thornpeak Heights
 - [ ] [The Voice Below](../quests/zones/03-thornpeak-heights/q-voice-below.md) _(chain)_ — Zone 3 — Thornpeak Heights
 - [ ] [The Sanctum Gate](../quests/zones/03-thornpeak-heights/q-sanctum-gate.md) _(chain)_ — Zone 3 — Thornpeak Heights
+- [ ] [Apothecary Work Order](../quests/zones/03-thornpeak-heights/q-prof-workorder-apothecary.md) — Zone 3 — Thornpeak Heights
 
 ## Level 14+
 

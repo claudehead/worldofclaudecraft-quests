@@ -1,6 +1,6 @@
 # Zone 1 — Eastbrook Vale
 
-Level range: **1–7** · Hub: Eastbrook · 22 quests
+Level range: **1–7** · Hub: Eastbrook · 32 quests
 
 ![Map of Zone 1 — Eastbrook Vale](map.svg)
 
@@ -23,8 +23,18 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 1 | [The Gravecaller's Trail](q-gravecallers-trail.md) | Brother Aldric | collect |
 | 1 | [Bandits of the Vale](q-bandits.md) | Marshal Redbrook | kill |
 | 1 | [The Ringleader](q-ringleader.md) | Marshal Redbrook | kill |
-| 1 | [A Craft to Call Your Own](q-archetype-acceptance.md) | Smith Haldren | gather |
-| 1 | [Making Amends](q-prof-make-amends.md) | Smith Haldren | kill |
+| 1 | [The Smith's Promise](q-prof-attune-smith.md) | Forgemistress Darva | gather |
+| 1 | [The Outfitter's Measure](q-prof-attune-outfitter.md) | Weaver Ottilie | kill |
+| 1 | [A Recipe Worth Keeping](q-prof-attune-apothecary.md) | Cook Marlow | kill |
+| 1 | [A Volatile Arrangement](q-prof-attune-bombardier.md) | Tinker Gizzel | gather |
+| 1 | [Back to the Forge](q-prof-amends-smith.md) | Forgemistress Darva | kill |
+| 1 | [Threads Rejoined](q-prof-amends-outfitter.md) | Weaver Ottilie | kill |
+| 1 | [Back on the Stove](q-prof-amends-apothecary.md) | Cook Marlow | kill |
+| 1 | [The Ledger Grows](q-prof-amends-bombardier.md) | Tinker Gizzel | kill |
+| 1 | [Forge Work Order](q-prof-workorder-forge.md) | Forgemistress Darva | collect |
+| 1 | [Kitchens Work Order](q-prof-workorder-kitchens.md) | Cook Marlow | collect |
+| 1 | [Loom Work Order](q-prof-workorder-loom.md) | Weaver Ottilie | collect |
+| 1 | [Toolworks Work Order](q-prof-workorder-toolworks.md) | Tinker Gizzel | collect |
 | 1 | [A Different Pastime](q-prof-hobby-switch.md) | Smith Haldren | gather |
 | 2 | [Sableweb Menace](q-spiders.md) | Apothecary Lin | kill/collect |
 | 3 | [Trouble at the Lake](q-murlocs.md) | Fisherman Brandt | kill |

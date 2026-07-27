@@ -1,4 +1,6 @@
-import { ITEMS, MOBS, ABILITIES, FISHING_TABLES } from '../woc/src/sim/data.ts';
+import { ITEMS, MOBS, ABILITIES } from '../woc/src/sim/data.ts';
+// FISHING_TABLES moved out of data.ts's re-exports (v0.31); it lives in content/items.ts.
+import { FISHING_TABLES } from '../woc/src/sim/content/items.ts';
 import { POWERUPS } from '../woc/src/sim/content/augments.ts';
 import { WARLOCK_PET_MOBS } from '../woc/src/sim/content/warlock_pets.ts';
 import { ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';

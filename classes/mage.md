@@ -32,7 +32,7 @@
 | Blazing Barrier | 5 _(ranks: 12, 18)_ | 45 | Instant | 30s | Melee | Fire | Wreathe yourself in flame, absorbing X damage for 60 sec. (Fire) |
 | Brain Freeze | 5 | — | Instant | — | Melee | Frost | Rimelance has a 20% chance to make your next Winterlash instant and free of its cooldown. (Frost) |
 | Breadbind | 5 _(ranks: 10, 15, 20)_ | 45 | 3s | — | Melee | Arcane | Conjures 2 servings of bread, restoring health when eaten. Higher ranks conjure heartier fare. |
-| Cinderfall | 5 _(ranks: 12, 18)_ | 40 | Instant | 8s | 20 | Fire | Blasts the enemy for X Fire damage. Instant. |
+| Cinderfall | 5 _(ranks: 12, 18)_ | 40 | Instant | 30s | 20 | Fire | Blasts the enemy for X Fire damage. Instant. |
 | Deadfrost | 5 | 60 | Instant | 30s | 30 | Frost | Deep freezes the target, dealing X Frost damage and stunning it for 4 sec. (Mage talent) |
 | Fingers of Frost | 5 | — | Instant | — | Melee | Frost | Rimelance has a 15% chance to grant Fingers of Frost, up to 2 charges: your next Ice Lance treats its target as frozen. (Frost) |
 | Flickerstep | 5 | 40 | Instant | 15s | Melee | Arcane | Teleports you 15 yd forward and breaks roots. (Mage talent) |
@@ -62,9 +62,9 @@
 | Ember Form | 11 | 50 | 2s | 10s | Melee | Fire | Transform into a blazing ember, increasing movement speed by X%. You cannot attack or cast spells while transformed. Recast to return to your normal form. |
 | Ring of Frost | 11 | 60 | 1.5s | 30s | 25 | Frost | Summons a ring for 10 sec. Enemies crossing its perimeter are frozen for 4 sec. (Mage talent) |
 | Cold Coffin | 12 | 15 | Instant | 4 min | Melee | Frost | Encases you in solid ice for 8 sec, becoming immune to all damage and effects and removing every harmful effect. Usable while stunned or polymorphed. You cannot act while encased. Recast to cancel. (Mage) |
-| Flamestrike | 12 | 80 | 2s | 12s | 30 | Fire | Calls down a burst of flame at the target area, dealing X Fire damage to enemies caught in the blast. Can critically strike (one strike for the whole blast). |
+| Flamestrike | 12 | 80 | 2s | — | 30 | Fire | Calls down a burst of flame at the target area, dealing X Fire damage to enemies caught in the blast. Can critically strike (one strike for the whole blast). |
 | Icy Veins | 12 | — | Instant | 3 min | Melee | Frost | Increases spell haste by 30% and prevents cast interruption and pushback for 10 sec. (Frost signature) |
-| Phoenix Trance | 12 | 100 | Instant | 2 min | Melee | Fire | Combust: for 10 sec your Fire spells always critically strike, including bolts already in flight. Off the global cooldown. These crits build Hot Streak like any other. (Fire signature) |
+| Phoenix Trance | 12 | 100 | Instant | 2 min | Melee | Fire | Combust: for 10 sec your Fire spells always critically strike, including bolts already in flight. Off the global cooldown. These crits build Hot Streak like any other, and casting it finishes the Cinderfall charge currently recharging. (Fire signature) |
 | Summon Water Elemental | 12 | 150 | 2s | — | Melee | Frost | Summon a Water Elemental to fight beside you, hurling Waterbolts at your target and channeling Water Jet. (Frost) |
 | Temporal Cascade | 12 _(ranks: 16, 20)_ | 90 | 2s | 17s | 30 | Arcane | Sends an echo cascading through your group: the target and up to four of their nearest allies are mended at once and each marked for X sec, drawing part of the Arcane damage you deal back through their echoes to heal them. (Chronomancy) |
 | Dragon's Breath | 14 | 90 | 2.4s | 20s | Melee | Fire | Hold to gather a widening breath of flame, then release it in a cone. Longer charges reach farther and deal more damage. Enemies hit are disoriented and damage breaks the effect; maximum charge always critically strikes and counts once toward Hot Streak. (Fire) |

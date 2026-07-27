@@ -31,7 +31,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> ⚫ Cracked Wolf Fang | Junk | 45% | sells for 4c |
+| <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> ⚪ Cracked Wolf Fang | Junk | 45% | sells for 4c |
 | <img src="../_loot-icons/milepost_boots.png" width="22" alt=""> 🟢 Milepost Boots | Leather armor — Feet · 30 armor, +1 Agi, +1 Sta | 10% |  |
 | <img src="../_loot-icons/wolfhide_satchel.png" width="22" alt=""> 🟢 Wolfhide Satchel | bag | 2% |  |
 
@@ -63,6 +63,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/webwood_silk.png" width="22" alt="">  Sableweb Silk Gland | Quest item | 55% | quest item — only drops while on _Sableweb Menace_ |
 | <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚪ Twitching Spider Leg | Junk | 40% | sells for 4c |
+| <img src="../_loot-icons/mosshide_vest.png" width="22" alt=""> 🟢 Mosshide Vest | Leather armor — Chest · 40 armor, +1 Int, +1 Spi | 12% |  |
 
 <a id="mob-wild_boar"></a>
 
@@ -178,6 +179,7 @@
 | <img src="../_loot-icons/blessed_wax.png" width="22" alt="">  Blessed Tallow | Quest item | 45% | quest item — only drops while on _The Binding Rite_ |
 | <img src="../_loot-icons/linen_scrap.png" width="22" alt=""> ⚪ Linen Scrap | Junk | 25% | sells for 3c |
 | <img src="../_loot-icons/mossy_handwraps.png" width="22" alt=""> 🟢 Mossgrown Handwraps | Cloth armor — Hands · 12 armor, +1 Int, +2 Spi | 15% |  |
+| <img src="../_loot-icons/thornling_grips.png" width="22" alt=""> 🟢 Thornling Grips | Leather armor — Hands · 24 armor, +1 Int, +1 Spi | 15% |  |
 
 <a id="mob-old_greyjaw"></a>
 
@@ -207,8 +209,9 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/greyjaw_fang.png" width="22" alt="">  Old Greyjaw's Fang | Quest item | 100% | quest item — only drops while on _The Old Wolf_ |
-| <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> ⚫ Cracked Wolf Fang | Junk | 100% | sells for 4c |
+| <img src="../_loot-icons/wolf_fang.png" width="22" alt=""> ⚪ Cracked Wolf Fang | Junk | 100% | sells for 4c |
 | <img src="../_loot-icons/wolfhide_satchel.png" width="22" alt=""> 🟢 Wolfhide Satchel | bag | 35% |  |
+| <img src="../_loot-icons/acolyte_chain_grips.png" width="22" alt=""> 🟢 Acolyte Chain Grips | Mail armor — Hands · 22 armor, +1 Int | 25% |  |
 
 <a id="mob-restless_bones"></a>
 
@@ -278,6 +281,7 @@
 | <img src="../_loot-icons/moggers_stomper_boots.png" width="22" alt=""> 🟢 Mogger's Stomper Boots | Leather armor — Feet · 32 armor, +2 Agi, +1 Sta | 30% |  |
 | <img src="../_loot-icons/moggers_shiv.png" width="22" alt=""> 🔵 Mogger's Shiv | Weapon — Main hand · 6–11 dmg @ 1.7s (~5 DPS), +4 Agi, +2 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/cryptstalker_jerkin.png" width="22" alt=""> 🔵 Gravestalker Jerkin | Leather armor — Chest · 65 armor, +4 Agi, +2 Sta | 25% | exclusive set † |
+| <img src="../_loot-icons/valefire_lantern.png" width="22" alt=""> 🟢 Valefire Lantern | held_offhand · +1 Int, +1 Spi | 20% |  |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -419,13 +423,14 @@
 | Health | 695 HP |
 | Armor (physical mitigation) | 176 (~13% vs a same-level attacker) |
 | Melee damage | 35–54 per hit @ 2.2s swing (~20 DPS) |
+| Crowd control | Immune |
 | Respawn | ~25s |
 | Location | The Hollow Crypt (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fhollow_crypt.md) |
 
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
-- Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+- Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 
 **Loot:**
 
@@ -469,6 +474,7 @@
 | <img src="../_loot-icons/oiled_boots.png" width="22" alt=""> 🟢 Oiled Leather Boots | Leather armor — Feet · 25 armor, +1 Agi | 50% |  |
 | <img src="../_loot-icons/quilted_trousers.png" width="22" alt=""> 🟢 Quilted Trousers | Cloth armor — Legs · 30 armor, +2 Sta | 50% |  |
 | <img src="../_loot-icons/gorraks_cleaver.png" width="22" alt=""> 🟢 Gorrak's Cleaver | Weapon — Main hand · 8–14 dmg @ 2.5s (~4 DPS), +3 Str | 30% |  |
+| <img src="../_loot-icons/votive_chain_belt.png" width="22" alt=""> 🟢 Votive Chain Belt | Mail armor — Waist · 28 armor, +1 Int, +1 Spi | 30% |  |
 | <img src="../_loot-icons/gorraks_cruel_chopper.png" width="22" alt=""> 🟢 Gorrak's Cruel Chopper | Weapon — Main hand · 8–13 dmg @ 2.4s (~4 DPS), +2 Str, +1 Sta | 25% |  |
 
 <a id="mob-morthen"></a>
@@ -484,12 +490,14 @@
 | Health | 1191 HP |
 | Armor (physical mitigation) | 234 (~16% vs a same-level attacker) |
 | Melee damage | 41–65 per hit @ 2.6s swing (~20 DPS) |
+| Crowd control | Immune |
 | Respawn | ~25s |
 | Location | The Hollow Crypt (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fhollow_crypt.md) |
 
 **Best way to kill:**
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
+- Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 - **Shadow Pulse:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 
 **Loot:**

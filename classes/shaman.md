@@ -21,7 +21,7 @@
 | Ability | Learns at (lvl) | Cost | Cast | Cooldown | Range | School | Effect |
 |---|---|---:|---|---|---:|---|---|
 | Arc Bolt | 1 _(ranks: 8, 14, 20)_ | 15 | 1.5s | — | 30 | Nature | Hurls a bolt of lightning for X Nature damage. |
-| Mending Waters | 1 _(ranks: 6, 12, 18)_ | 25 | 1.5s | — | 30 | Nature | Heals a friendly target for X. |
+| Mending Waters | 1 _(ranks: 6, 12, 18, 20)_ | 25 | 1.5s | — | 30 | Nature | Heals a friendly target for X. |
 | Stonebound Weapon | 1 _(ranks: 8, 16)_ | 20 | Instant | — | Melee | Nature | Imbues your weapon with the fury of stone: each swing deals X additional damage for 5 min. |
 | Earthen Jolt | 4 _(ranks: 10, 16)_ | 30 | Instant | 6s | 20 | Nature | Instantly shocks the target with concussive force for X Nature damage. |
 | Pyrebrand Weapon | 5 _(ranks: 18)_ | 25 | Instant | — | Melee | Fire | Imbues your weapon with elemental fire: each swing deals X additional Fire damage for 5 min. |

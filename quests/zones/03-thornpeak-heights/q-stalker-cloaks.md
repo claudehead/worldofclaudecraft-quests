@@ -7,7 +7,7 @@
 | **Recommended level** | 13+ |
 | **Quest giver** | **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668)_ |
 | **Turn in to** | **Quartermaster Bree**, Highwatch Quartermaster _(at ~x:-5, z:668)_ |
-| **Requires** | Winter Is Coming to Highwatch (`q_stalker_pelts`) |
+| **Requires** | First Frost at Highwatch (`q_stalker_pelts`) |
 
 ## Story
 

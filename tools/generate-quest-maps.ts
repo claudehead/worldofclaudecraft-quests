@@ -1,4 +1,6 @@
-import { MOBS, ITEMS, FISHING_TABLES } from '../woc/src/sim/data.ts';
+import { MOBS, ITEMS } from '../woc/src/sim/data.ts';
+// FISHING_TABLES moved out of data.ts's re-exports (v0.31); it lives in content/items.ts.
+import { FISHING_TABLES } from '../woc/src/sim/content/items.ts';
 import { ZONE1_NPCS, ZONE1_CAMPS, ZONE1_OBJECTS, ZONE1_ROADS, ZONE1_ZONE, ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
 import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_OBJECTS, ZONE2_ROADS, ZONE2_ZONE, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
 import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_OBJECTS, ZONE3_ROADS, ZONE3_ZONE, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
 | **Requires** | The Binding Rite (`q_rite`) |
 | **Group quest** | 👥 Suggested players: 5 |
 
@@ -20,7 +20,7 @@
   - Inside dungeon [**The Hollow Crypt**](../../../dungeons/hollow_crypt.md) (entrance portal ~x:80, z:90)
   - _Tracker: Morthen the Gravecaller slain_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-14, z:-10)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ to turn in.
 
 ## Rewards
 

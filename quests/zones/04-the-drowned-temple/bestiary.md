@@ -33,6 +33,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/drowned_offering.png" width="22" alt="">  Drowned Offering | Quest item | 60% | quest item — only drops while on _The Drowned Choir_ |
 | <img src="../_loot-icons/briny_idol.png" width="22" alt=""> ⚫ Briny Idol | Junk | 30% | sells for 32c |
+| <img src="../_loot-icons/tidehymn_slippers.png" width="22" alt=""> 🟢 Tidehymn Slippers | Cloth armor — Feet · 40 armor, +2 Int, +2 Spi | 10% |  |
 
 <a id="mob-glimmermere_wader"></a>
 
@@ -92,6 +93,7 @@
 | <img src="../_loot-icons/palecoil_heartscale.png" width="22" alt="">  Sethrael's Heartscale | Quest item | 100% | quest item — only drops while on _Sethrael the Palecoil_ |
 | <img src="../_loot-icons/moonpale_scale.png" width="22" alt=""> ⚫ Moonpale Scale | Junk | 100% | sells for 26c |
 | <img src="../_loot-icons/pale_pearl.png" width="22" alt=""> ⚫ Pale Pearl | Junk | 50% | sells for 30c |
+| <img src="../_loot-icons/pearlward_aegis.png" width="22" alt=""> 🔵 Pearlward Aegis | Mail armor — offhand · 240 armor, +5 Int, +3 Spi | 20% |  |
 
 ## Elites
 
@@ -108,13 +110,14 @@
 | Health | 1362 HP |
 | Armor (physical mitigation) | 374 (~16% vs a same-level attacker) |
 | Melee damage | 69–109 per hit @ 2.2s swing (~40 DPS) |
+| Crowd control | Immune |
 | Respawn | ~25s |
 | Location | The Drowned Temple |
 
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
-- Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+- Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 
 **Loot:**
 
@@ -140,12 +143,14 @@
 | Health | 2176 HP |
 | Armor (physical mitigation) | 476 (~20% vs a same-level attacker) |
 | Melee damage | 76–119 per hit @ 2.5s swing (~39 DPS) |
+| Crowd control | Immune |
 | Respawn | ~25s |
 | Location | The Drowned Temple |
 
 **Best way to kill:**
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
+- Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 - Summons adds at HP thresholds — bring AoE or kill the adds fast; don't let them pile up.
 - **Lunar Tide:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 - Enrages at low HP (hits much harder) — save burst/defensives for the execute, or kite while enraged.
@@ -191,6 +196,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
+| <img src="../_loot-icons/maul_of_the_scourged_wilds.png" width="22" alt=""> 🟣 Maul of the Scourged Wilds | Weapon — Main hand · 56–75 dmg @ 3.7s (~18 DPS), +10 Str, +8 Agi, +8 Sta, +20 Hit rating | 25% | exclusive set 5 † |
 | <img src="../_loot-icons/wraithfire_orb.png" width="22" alt=""> 🟣 Wraithfire Orb | held_offhand · +3 Sta, +7 Int, +5 Spi, +20 Crit rating | 16% | exclusive set 3 † |
 | <img src="../_loot-icons/direfang_greatblade.png" width="22" alt=""> 🟣 Direfang Greatblade | Weapon — Main hand · 40–66 dmg @ 3s (~18 DPS), +14 Agi, +12 Sta, +20 Hit rating | 16% | exclusive set 4 † |
 | <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 14% | exclusive set 1 † |

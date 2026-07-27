@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 1+ (zone range 1–7) |
-| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
-| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ |
+| **Quest giver** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
+| **Turn in to** | **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ |
 | **Requires** | Wolves at the Door (`q_wolves`) |
 
 ## Story
@@ -20,7 +20,7 @@
   - Found in the open world at ~x:90, z:-90 (5 mobs, radius 16)
   - _Tracker: Vale Bandit slain_
 
-Then return to **Marshal Redbrook**, Town Marshal _(at ~x:4, z:6)_ to turn in.
+Then return to **Marshal Redbrook**, Town Marshal _(at ~x:5, z:6)_ to turn in.
 
 ## Rewards
 

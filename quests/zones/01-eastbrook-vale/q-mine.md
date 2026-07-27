@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 4+ |
-| **Quest giver** | **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ |
-| **Turn in to** | **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ |
+| **Quest giver** | **Foreman Odell**, Mine Foreman _(at ~x:-8, z:-9)_ |
+| **Turn in to** | **Foreman Odell**, Mine Foreman _(at ~x:-8, z:-9)_ |
 
 ## Story
 
@@ -18,7 +18,7 @@
   - Found in the open world at ~x:-82, z:-62 (9 mobs, radius 20)
   - _Tracker: Deeprock Digger slain_
 
-Then return to **Foreman Odell**, Mine Foreman _(at ~x:-4, z:-14)_ to turn in.
+Then return to **Foreman Odell**, Mine Foreman _(at ~x:-8, z:-9)_ to turn in.
 
 ## Rewards
 

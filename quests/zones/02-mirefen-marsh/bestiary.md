@@ -91,6 +91,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/widow_venom_sac.png" width="22" alt="">  Widow Venom Sac | Quest item | 65% | quest item — only drops while on _Silk and Venom_ |
 | <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚪ Twitching Spider Leg | Junk | 40% | sells for 4c |
+| <img src="../_loot-icons/fenbark_leggings.png" width="22" alt=""> 🟢 Fenbark Leggings | Leather armor — Legs · 48 armor, +3 Int, +1 Spi | 12% |  |
 
 <a id="mob-bog_bloat"></a>
 
@@ -205,6 +206,7 @@
 | <img src="../_loot-icons/troll_fetish.png" width="22" alt="">  Mirefen Troll Fetish | Quest item | 60% | quest item — only drops while on _Fetish and Bone_ |
 | <img src="../_loot-icons/chipped_tusk.png" width="22" alt=""> ⚫ Chipped Tusk | Junk | 40% | sells for 15c |
 | <img src="../_loot-icons/bogiron_nugget.png" width="22" alt=""> ⚫ Bogiron Nugget | Junk | 30% | sells for 12c |
+| <img src="../_loot-icons/marshlight_hauberk.png" width="22" alt=""> 🟢 Marshlight Hauberk | Mail armor — Chest · 110 armor, +3 Int, +2 Spi | 10% |  |
 | <img src="../_loot-icons/elixir_of_the_bear.png" width="22" alt=""> 🟢 Elixir of the Bear | Elixir · Might of the Bear: +12 Stamina (~+120 HP) for 15 min | 7% |  |
 
 <a id="mob-gravecaller_mender"></a>
@@ -235,6 +237,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/cult_cipher.png" width="22" alt="">  Gravecaller Cipher | Quest item | 40% | quest item — only drops while on _Stopping the Summoning_ |
 | <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 30% | sells for 5c |
+| <img src="../_loot-icons/duskthorn_mantle.png" width="22" alt=""> 🟢 Duskthorn Mantle | Leather armor — Shoulder · 34 armor, +3 Int, +1 Spi | 12% |  |
 
 <a id="mob-gravecaller_summoner"></a>
 
@@ -333,6 +336,7 @@
 | <img src="../_loot-icons/mirejaw_scale_vest.png" width="22" alt=""> 🟢 Mirejaw Scale Vest | Mail armor — Chest · 115 armor, +2 Str, +3 Sta | 25% |  |
 | <img src="../_loot-icons/fen_reaver_glaive.png" width="22" alt=""> 🔵 Fen Reaver Glaive | Weapon — Main hand · 16–26 dmg @ 2.4s (~9 DPS), +5 Str, +3 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/mirejaw_oracle_staff.png" width="22" alt=""> 🔵 Mirejaw Oracle Staff | Weapon — Main hand · 16–27 dmg @ 3s (~7 DPS), +6 Int, +3 Spi | 25% | exclusive set † |
+| <img src="../_loot-icons/mirebloom_treads.png" width="22" alt=""> 🟢 Mirebloom Treads | Leather armor — Feet · 28 armor, +2 Int, +1 Spi | 25% |  |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
@@ -490,12 +494,14 @@
 | Health | 994 HP |
 | Armor (physical mitigation) | 288 (~16% vs a same-level attacker) |
 | Melee damage | 51–79 per hit @ 2.2s swing (~30 DPS) |
+| Crowd control | Immune |
 | Respawn | ~25s |
 | Location | The Sunken Bastion (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fsunken_bastion.md) |
 
 **Best way to kill:**
 
 - **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
+- Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 - **Reaping Arc:** Cleaves its frontal arc — keep everyone but the tank out of its face.
 
 **Loot:**
@@ -544,6 +550,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/spider_leg.png" width="22" alt=""> ⚪ Twitching Spider Leg | Junk | 100% | sells for 4c |
 | <img src="../_loot-icons/marshstrider_boots.png" width="22" alt=""> 🟢 Marshstrider Boots | Cloth armor — Feet · 40 armor, +2 Agi, +2 Sta | 40% |  |
+| <img src="../_loot-icons/fenwarden_sabatons.png" width="22" alt=""> 🟢 Fenwarden Sabatons | Mail armor — Feet · 42 armor, +2 Int, +1 Spi | 30% |  |
 | <img src="../_loot-icons/broodmother_silk_robe.png" width="22" alt=""> 🟢 Broodmother's Silk Robe | Cloth armor — Chest · 42 armor, +4 Int, +2 Spi | 25% |  |
 
 <a id="mob-deacon_voss"></a>
@@ -576,6 +583,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 100% | sells for 5c |
 | <img src="../_loot-icons/voss_sanctified_mace.png" width="22" alt=""> 🟢 Voss's Sanctified Mace | Weapon — Main hand · 12–20 dmg @ 2.6s (~6 DPS), +3 Int, +2 Spi | 25% |  |
+| <img src="../_loot-icons/fenshadow_maul.png" width="22" alt=""> 🟢 Fenshadow Maul | Weapon — Main hand · 35–48 dmg @ 3.4s (~12 DPS), +3 Str, +2 Agi, +2 Sta | 25% |  |
 
 <a id="mob-vael_the_mistcaller"></a>
 
@@ -590,12 +598,14 @@
 | Health | 1490 HP |
 | Armor (physical mitigation) | 312 (~17% vs a same-level attacker) |
 | Melee damage | 52–81 per hit @ 2.4s swing (~28 DPS) |
+| Crowd control | Immune |
 | Respawn | ~25s |
 | Location | The Sunken Bastion (dungeon) — [🏰 view dungeon](#/doc/dungeons%2Fsunken_bastion.md) |
 
 **Best way to kill:**
 
 - **Boss** — fight it as a group in its dungeon; assign a tank and watch its mechanics below.
+- Immune to crowd control — it can't be stunned, feared, or polymorphed; just tank and burn.
 - Summons adds at HP thresholds — bring AoE or kill the adds fast; don't let them pile up.
 - **Mist Surge:** Pulses AoE damage around itself — healers expect steady raid damage; don't bring extra mobs into it.
 

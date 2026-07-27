@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 3+ |
-| **Quest giver** | **Trader Wilkes**, Provisioner _(at ~x:-7, z:3)_ |
-| **Turn in to** | **Trader Wilkes**, Provisioner _(at ~x:-7, z:3)_ |
+| **Quest giver** | **Trader Wilkes**, Provisioner _(at ~x:-7, z:1)_ |
+| **Turn in to** | **Trader Wilkes**, Provisioner _(at ~x:-7, z:1)_ |
 
 ## Story
 
@@ -18,7 +18,7 @@
   - Pick up from the ground (sparkle objects) at: ~x:58, z:-58 · ~x:73, z:-70 · ~x:86, z:-82 · ~x:95, z:-97 · ~x:64, z:-76 · ~x:81, z:-94
   - _Tracker: Stolen Supply Crate_
 
-Then return to **Trader Wilkes**, Provisioner _(at ~x:-7, z:3)_ to turn in.
+Then return to **Trader Wilkes**, Provisioner _(at ~x:-7, z:1)_ to turn in.
 
 ## Rewards
 

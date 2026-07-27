@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 2+ |
-| **Quest giver** | **Apothecary Lin**, Herbalist _(at ~x:11, z:-3)_ |
-| **Turn in to** | **Apothecary Lin**, Herbalist _(at ~x:11, z:-3)_ |
+| **Quest giver** | **Apothecary Lin**, Herbalist _(at ~x:3, z:10)_ |
+| **Turn in to** | **Apothecary Lin**, Herbalist _(at ~x:3, z:10)_ |
 
 ## Story
 
@@ -21,7 +21,7 @@
   - Drops from [**Sableweb Lurker**](bestiary.md#mob-webwood_spider) (55% chance) — Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
   - _Tracker: Sableweb Silk Gland_
 
-Then return to **Apothecary Lin**, Herbalist _(at ~x:11, z:-3)_ to turn in.
+Then return to **Apothecary Lin**, Herbalist _(at ~x:3, z:10)_ to turn in.
 
 ## Rewards
 
