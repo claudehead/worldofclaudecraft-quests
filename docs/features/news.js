@@ -6,12 +6,12 @@
   const { el, esc, registerView, app } = window.WOC;
 
   const GAME = [
-    ['🔨', 'The crafting overhaul', 'Professions get rebuilt: six crafts (weapon- and armorcrafting, tailoring, leatherworking, alchemy, cooking) each climb a skill-tier ladder that gates which recipes you can train. Craft outputs are deterministic, plus one masterwork proc per craft that bumps quality and adds bonus stats — swayed by trending reagent pairs.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Professions guide'],
-    ['⚒️', 'Crafting masters & Artisan Row', 'Six crafting masters set up on Artisan Row, each with a typed crafting station. The single level-20 Highwatch hub is retired: you now craft at the station for your discipline, with a field station for crafting on the move.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Where to craft'],
-    ['🌾', 'Real gather nodes & rare finds', 'Gather nodes now carry real material tables with a rarity ladder and rare gather events, and respawn per-viewer (two players can see the same node differently). Harvesting is wired into normal play — walk up and gather.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Gathering'],
-    ['🃏', 'The Card Duel minigame', 'A new card-duel minigame lands with its own first set of sound effects — a side game to play between adventures.', '#/patches', 'Technical changelog'],
+    ['🧗', 'The parkour physics engine', 'One deterministic character-physics engine — continuous swept collision, multi-pass sliding, depenetration and step-up — now runs in the offline sim, the server and the client alike, and the world is made physically honest so every drawn model collides exactly as drawn. A traversal ladder by obstacle height: stride, silent vault, a real ledge-climb pull-up for lips above your head, then wall.', '#/patches', 'Technical changelog'],
+    ['🖼️', 'Painted item art', 'The legacy procedural item icons are replaced with hand-painted art across the whole catalog — hundreds of weapons, armor pieces and consumables get real illustrations, visible everywhere gear shows in the guide.', '#/gear', 'Browse gear'],
+    ['🔍', 'Auction House filters & Bags', 'The World Market\'s Auction House gains advanced gear filters — armor type (Cloth / Leather / Mail) and dominant primary stat (Str / Agi / Int, ties included) — plus a new Bags browse category sized from the catalog, so you can find exactly the piece you want.', '#/doc/' + encodeURIComponent('reference/world-market.md'), 'World Market'],
+    ['✨', 'Replace an enchant', 'You can now overwrite an enchant on a piece you already enchanted — behind an explicit confirmation that spells out what it keeps and flags the row that gets destroyed (the old enchant is consumed, no refund). Masterwork gear stays fully enchantable on top of its maker bonus.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Professions guide'],
     ['🎯', 'Talents: the choice-row rework', 'The point-buy talent grid is gone. You now pick 1 of 3 specializations at level 5, then choose 1 of 3 options at each of six rows (levels 5/8/11/14/17/20). The guide\'s talent calculator and build planner are rebuilt to match.', '#/talents', 'Talent calculator'],
-    ['💬', 'HUD & social QoL', 'The third action bar returns; the spellbook is a landscape tile grid and the Social window a wide layout. Chat gets class-colored names and a verified-streamer badge, plus clearer nameplates, player hover tooltips, a reconnect countdown, and confirm dialogs for revives and mark purchases.', '#/patches', 'Technical changelog'],
+    ['🔊', 'Real sound & stacked nameplates', 'Real recordings land across gathering, crafting and enchanting, and for eating, drinking and quaffing potions. Overlapping nameplates now stack into a tidy vertical column instead of overprinting.', '#/patches', 'Technical changelog'],
   ];
 
   const GUIDE = [
@@ -33,15 +33,15 @@
       <h1 class="reveal">What's New 🆕</h1>
       <p class="sub reveal">The latest from World of Claudecraft, and everything new in this guide.</p>
 
-      <h2 class="news-h reveal">🎮 Game — v0.28.0 <span class="news-tag">crafting · talents · card duel · 620 commits</span></h2>
-      <p class="meta reveal">A ground-up professions and crafting overhaul (skill-tier ladders, masterwork procs, crafting masters on Artisan Row, real gather nodes), the choice-row talent rework, a new Card Duel minigame, and a wave of HUD and social quality-of-life. Here's what made it into the guide:</p>
+      <h2 class="news-h reveal">🎮 Game — v0.31.0 <span class="news-tag">parkour · painted art · market · 833 commits</span></h2>
+      <p class="meta reveal">A deterministic parkour physics engine (swept collision, a standable world, ledge climb), hand-painted item art replacing the legacy icons, Auction House filters and a Bags market category, enchant replacement, and real recorded sound across the professions. Here's what made it into the guide:</p>
       <div class="news-grid">${GAME.map(gCard).join('')}</div>
 
       <h2 class="news-h reveal">📚 The guide — new tools</h2>
       <p class="meta reveal">Beyond the reference, the guide now has new tools built on the real game data:</p>
       <div class="news-grid">${GUIDE.map(uCard).join('')}</div>
 
-      <p class="meta" style="margin-top:2rem">Catching up? <b>v0.26</b> added the <a data-go="#/doc/reference%2Fdungeon-finder.md">Dungeon Finder</a>, per-class tank defensive cooldowns and the new Hit combat-rating; <b>v0.25</b> brought the <a data-go="#/doc/reference%2Fbook-of-deeds.md">Book of Deeds</a>, a Heroic tier for <a data-go="#/doc/reference%2Fheroic-nythraxis.md">Nythraxis</a>, <a data-go="#/doc/reference%2Fspecializations.md">specializations</a> and the <a data-go="#/doc/reference%2Fwarfare.md">Honor &amp; Warfare</a> track. Full history in the <a data-go="#/patches">patch notes</a>.</p>
+      <p class="meta" style="margin-top:2rem">Catching up? <b>v0.28</b> rebuilt <a data-go="#/doc/reference%2Fprofessions.md">professions</a> (tier ladders, masterwork procs, Artisan Row) and reworked <a data-go="#/talents">talents</a> into choice rows; <b>v0.26</b> added the <a data-go="#/doc/reference%2Fdungeon-finder.md">Dungeon Finder</a>, tank defensive cooldowns and the Hit combat-rating; <b>v0.25</b> brought the <a data-go="#/doc/reference%2Fbook-of-deeds.md">Book of Deeds</a> and <a data-go="#/doc/reference%2Fheroic-nythraxis.md">Heroic Nythraxis</a>. Full history in the <a data-go="#/patches">patch notes</a>.</p>
     </div></section>`));
   }
   registerView('news', view);
