@@ -10,24 +10,43 @@ _Carried for a quest — gather the listed count, then turn it in._
 |---|---|---|
 | <a id="item-ancient_crypt_door"></a>Ancient Crypt Door | — | Quest: [The Abandoned Crypt](../quests/zones/03-thornpeak-heights/q-nythraxis-sealed-crypt.md) |
 | <a id="item-royal_seal"></a>Ancient Diary | Deathstalker Voss 100% | Quest: [The Abandoned Crypt](../quests/zones/03-thornpeak-heights/q-nythraxis-sealed-crypt.md) |
+| <a id="item-ashbone_war_brand"></a>Ashbone War-Brand | Ashbone Raider 60%, Ashbone Warcaller 60% | — |
+| <a id="item-aurora_mote"></a>Aurora Mote | Ice Wisp 65% | — |
 | <a id="item-bastion_ward_stone"></a>Bastion Ward Stone | — | Quest: [The Sunken Bastion](../quests/zones/02-mirefen-marsh/q-bastion-door.md) |
 | <a id="item-blessed_embers"></a>Blessed Embers | [Stormcrag Elemental](../quests/zones/03-thornpeak-heights/bestiary.md#mob-stormcrag_elemental) 55% | Quest: [Breaking the Seal](../quests/zones/03-thornpeak-heights/q-breaking-the-seal.md) |
 | <a id="item-blessed_wax"></a>Blessed Tallow | [Deeprock Digger](../quests/zones/01-eastbrook-vale/bestiary.md#mob-tunnel_rat) 45% | Quest: [The Binding Rite](../quests/zones/01-eastbrook-vale/q-rite.md) |
+| <a id="item-breakscarred_steel"></a>Break-Scarred Steel | Breach Wretch 60% | — |
 | <a id="item-boar_hide"></a>Bristly Boar Hide | [Wild Boar](../quests/zones/01-eastbrook-vale/bestiary.md#mob-wild_boar) 60% | Quest: [Bristly Boar Hides](../quests/zones/01-eastbrook-vale/q-boars.md) |
+| <a id="item-canopy_silk_hank"></a>Canopy Silk Hank | Canopy Weaver 60% | — |
 | <a id="item-chunk_of_ore"></a>Chunk of Ore | — | Quest: [A Trade for Every Hand](../quests/zones/01-eastbrook-vale/q-prof-intro.md) |
+| <a id="item-gullhaven_watchbell"></a>Coastal Watchbell | — | — |
 | <a id="item-crypt_keystone"></a>Crypt Keystone | — | Quest: [The Bound Guardian](../quests/zones/03-thornpeak-heights/q-nythraxis-bound-guardian.md) |
 | <a id="item-priests_sigil"></a>Crypt Keystone Lower | Corrupted Priest Malric 100% | Quest: [The Abandoned Crypt](../quests/zones/03-thornpeak-heights/q-nythraxis-sealed-crypt.md) |
 | <a id="item-captains_crest"></a>Crypt Keystone Upper | Fallen Captain Aldren 100% | Quest: [The Abandoned Crypt](../quests/zones/03-thornpeak-heights/q-nythraxis-sealed-crypt.md) |
+| <a id="item-fenway_mooring_line"></a>Cut Mooring Line | — | — |
+| <a id="item-shear_storm_lantern"></a>Doused Storm-Lantern | — | — |
 | <a id="item-drowned_offering"></a>Drowned Offering | [Drowned Votary](../quests/zones/04-the-drowned-temple/bestiary.md#mob-drowned_votary) 60% | Quest: [The Drowned Choir](../quests/zones/04-the-drowned-temple/q-drowned-choir.md) |
+| <a id="item-duskwisp_essence"></a>Duskwisp Essence | Duskwisp 60% | — |
+| <a id="item-elder_bark"></a>Elder Bark | Treant Elder 70% | — |
+| <a id="item-hearth_ember_cache"></a>Ember Cache | — | — |
+| <a id="item-emberwing_scale"></a>Emberwing Scale | Emberwing Drake 70% | — |
+| <a id="item-farshore_salt_moss"></a>Farshore Salt Moss | Riftspawn 60% | — |
 | <a id="item-fen_muster_order"></a>Fenbridge Muster Order | — | Quest: [Muster at Fenbridge](../quests/zones/02-mirefen-marsh/q-fenbridge-muster.md) |
+| <a id="item-mere_ferry_lantern"></a>Ferry Lantern | — | — |
+| <a id="item-wreckfield_flotsam_crate"></a>Flotsam Crate | — | — |
+| <a id="item-monument_north"></a>Forgotten Monument | — | — |
 | <a id="item-ghostly_essence"></a>Ghostly Essence | [Restless Bones](../quests/zones/01-eastbrook-vale/bestiary.md#mob-restless_bones) 55% | Quest: [The Binding Rite](../quests/zones/01-eastbrook-vale/q-rite.md) |
+| <a id="item-gilded_sap_clot"></a>Gilded Sap Clot | Gilded Stag 60% | — |
+| <a id="item-gleaming_antler"></a>Gleaming Antler | Aurelhorn, First of the Herd 100%, Veiled Stag 55% | — |
 | <a id="item-glowing_wax"></a>Glowing Wax | [Ironvein Foreman](../quests/zones/03-thornpeak-heights/bestiary.md#mob-ironvein_foreman) 100%, [Deeprock Tunneler](../quests/zones/03-thornpeak-heights/bestiary.md#mob-deeprock_kobold) 50% | Quest: [Strange Wax](../quests/zones/03-thornpeak-heights/q-glowing-wax.md) |
 | <a id="item-grave_sir_aldren"></a>Grave of Captain Aldren | — | Quest: [Graves of the Forgotten](../quests/zones/03-thornpeak-heights/q-nythraxis-graves.md) |
 | <a id="item-grave_high_priest_malric"></a>Grave of High Priest Malric | — | Quest: [Graves of the Forgotten](../quests/zones/03-thornpeak-heights/q-nythraxis-graves.md) |
 | <a id="item-grave_captain_voss"></a>Grave of Royal Assassin Voss | — | Quest: [Graves of the Forgotten](../quests/zones/03-thornpeak-heights/q-nythraxis-graves.md) |
+| <a id="item-gallowmere_grave_candle"></a>Grave-Candle | — | — |
 | <a id="item-cult_cipher"></a>Gravecaller Cipher | [Gravecaller Summoner](../quests/zones/02-mirefen-marsh/bestiary.md#mob-gravecaller_summoner) 60%, [Gravecaller Mender](../quests/zones/02-mirefen-marsh/bestiary.md#mob-gravecaller_mender) 40% | Quest: [Stopping the Summoning](../quests/zones/02-mirefen-marsh/q-summoners.md) |
 | <a id="item-gravecaller_sigil"></a>Gravecaller's Sigil | — | Quest: [Whispers Below](../quests/zones/01-eastbrook-vale/q-whispers.md) |
 | <a id="item-gravewyrm_sigil"></a>Gravewyrm Sigil | — | Quest: [Sigils of the Wyrm](../quests/zones/03-thornpeak-heights/q-wyrm-sigils.md) |
+| <a id="item-galecrest_ram_wool"></a>Greasy Ram Wool | Moor Ram 65% | — |
 | <a id="item-grubjaw_tusk"></a>Grubjaw's Tusk | [Grubjaw the Glutton](../quests/zones/02-mirefen-marsh/bestiary.md#mob-grubjaw) 100% | Quest: [The Glutton](../quests/zones/02-mirefen-marsh/q-grubjaw.md) |
 | <a id="item-highwatch_summons"></a>Highwatch Summons | — | Quest: [The Watch on the Peaks](../quests/zones/03-thornpeak-heights/q-highwatch-summons.md) |
 | <a id="item-kazzix_heartshard"></a>Kazzix's Heartshard | [Shardlord Kazzix](../quests/zones/03-thornpeak-heights/bestiary.md#mob-shardlord_kazzix) 100% | Quest: [The Shardlord](../quests/zones/03-thornpeak-heights/q-kazzix.md) |
@@ -35,9 +54,15 @@ _Carried for a quest — gather the listed count, then turn it in._
 | <a id="item-lost_caravan_goods"></a>Lost Caravan Goods | — | Quest: [The Lost Caravan](../quests/zones/02-mirefen-marsh/q-fen-supplies.md) |
 | <a id="item-mire_prowler_pelt"></a>Mire Prowler Pelt | [Mire Prowler](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mire_prowler) 60% | Quest: [Pelts for the Causeway](../quests/zones/02-mirefen-marsh/q-prowler-pelts.md) |
 | <a id="item-troll_fetish"></a>Mirefen Troll Fetish | [Mirefen Troll](../quests/zones/02-mirefen-marsh/bestiary.md#mob-fen_troll) 60% | Quest: [Fetish and Bone](../quests/zones/02-mirefen-marsh/q-troll-fetishes.md) |
+| <a id="item-moonfleece_tuft"></a>Moonfleece Tuft | Moonfleece Grazer 60% | — |
 | <a id="item-morthen_grimoire"></a>Morthen's Grimoire | — | Quest: [The Gravecaller's Trail](../quests/zones/01-eastbrook-vale/q-gravecallers-trail.md) |
+| <a id="item-gloamfield_nightbloom"></a>Nightbloom Blossom | — | — |
 | <a id="item-ogre_war_totem"></a>Ogre War Totem | — | Quest: [Totems of War](../quests/zones/03-thornpeak-heights/q-ogre-totems.md) |
 | <a id="item-greyjaw_fang"></a>Old Greyjaw's Fang | [Old Greyjaw](../quests/zones/01-eastbrook-vale/bestiary.md#mob-old_greyjaw) 100% | Quest: [The Old Wolf](../quests/zones/01-eastbrook-vale/q-greyjaw.md) |
+| <a id="item-pearlwake_cargo_crate"></a>Pearlwake Cargo Crate | — | — |
+| <a id="item-plump_fen_eel"></a>Plump Fen Eel | Bogtoad 60% | — |
+| <a id="item-evergarden_bloom_clipping"></a>Pruned Bloom Clipping | Topiary Stag 65% | — |
+| <a id="item-sunken_offering_bowl"></a>Refilled Offering Bowl | — | — |
 | <a id="item-ridge_stalker_pelt"></a>Ridge Stalker Pelt | [Ridge Stalker](../quests/zones/03-thornpeak-heights/bestiary.md#mob-ridge_stalker) 60% | Quest: [First Frost at Highwatch](../quests/zones/03-thornpeak-heights/q-stalker-pelts.md), [Cloaks for the Watch](../quests/zones/03-thornpeak-heights/q-stalker-cloaks.md) |
 | <a id="item-crypt_ritual_circle"></a>Ritual Circle | — | Quest: [The Bound Guardian](../quests/zones/03-thornpeak-heights/q-nythraxis-bound-guardian.md) |
 | <a id="item-ritual_phylactery"></a>Ritual Phylactery | [Wyrmcult Necromancer](../quests/zones/03-thornpeak-heights/bestiary.md#mob-wyrmcult_necromancer) 55% | Quest: [The Phylactery Ring](../quests/zones/03-thornpeak-heights/q-necromancers.md) |
@@ -45,16 +70,37 @@ _Carried for a quest — gather the listed count, then turn it in._
 | <a id="item-rusted_censer"></a>Rusted Censer | — | Quest: [Censers from the Deep](../quests/zones/02-mirefen-marsh/q-drowned-censers.md) |
 | <a id="item-webwood_silk"></a>Sableweb Silk Gland | [Sableweb Lurker](../quests/zones/01-eastbrook-vale/bestiary.md#mob-webwood_spider) 55% | Quest: [Sableweb Menace](../quests/zones/01-eastbrook-vale/q-spiders.md) |
 | <a id="item-sanctum_key_shard"></a>Sanctum Key Shard | — | Quest: [The Sanctum Gate](../quests/zones/03-thornpeak-heights/q-sanctum-gate.md) |
+| <a id="item-amberfall_sap_bucket"></a>Sap-Tap Bucket | — | — |
+| <a id="item-barrow_grave_offering"></a>Scattered Grave Offering | — | — |
+| <a id="item-scorched_supply_crate"></a>Scorched Supply Crate | — | — |
 | <a id="item-palecoil_heartscale"></a>Sethrael's Heartscale | [Sethrael the Palecoil](../quests/zones/04-the-drowned-temple/bestiary.md#mob-sethrael_palecoil) 100% | Quest: [Sethrael the Palecoil](../quests/zones/04-the-drowned-temple/q-palecoil.md) |
+| <a id="item-silkbound_remains"></a>Silkbound Remains | — | — |
+| <a id="item-hedgewick_tool_cart"></a>Spilled Tool Cart | — | — |
+| <a id="item-spore_heart"></a>Spore Heart | Corrupted Sporeling 65% | — |
+| <a id="item-sprung_trap"></a>Sprung Fen Trap | — | — |
+| <a id="item-starfall_shard"></a>Starfall Shard | Duskwisp 50% | — |
+| <a id="item-evergarden_statue_rubbing"></a>Statue Rubbing | — | — |
+| <a id="item-hedgewick_shears"></a>Stolen Hedgewick Shears | Hedge Gnome 60% | — |
 | <a id="item-supply_crate"></a>Stolen Supply Crate | — | Quest: [Stolen Supplies](../quests/zones/01-eastbrook-vale/q-supplies.md) |
 | <a id="item-storm_core"></a>Storm Core | [Stormcrag Elemental](../quests/zones/03-thornpeak-heights/bestiary.md#mob-stormcrag_elemental) 55% | Quest: [Cores of the Storm](../quests/zones/03-thornpeak-heights/q-shard-cores.md) |
+| <a id="item-monument_court"></a>Sunken Monument | — | — |
+| <a id="item-bridgemere_toll_chest"></a>Sunken Toll-Chest | — | — |
 | <a id="item-the_codfather"></a>The Codfather | — | Quest: [The Codfather](../quests/zones/02-mirefen-marsh/q-the-codfather.md) |
+| <a id="item-hollow_sealstone"></a>The Hollow Sealstone | — | — |
+| <a id="item-wardens_seal"></a>The Warden's Seal | The Waking Warden 100% | — |
+| <a id="item-thick_winter_pelt"></a>Thick Winter Pelt | Snowdrift Wolf 60% | — |
 | <a id="item-unknown_alien_weaponry"></a>Unknown Alien Weaponry | — | Quest: [Aldric's Fallen Star](../quests/zones/02-mirefen-marsh/q-aldrics-fallen-star.md) |
+| <a id="item-vigil_star_chart"></a>Vigil Star Chart | — | — |
 | <a id="item-moongate_rubbing"></a>Warding Rubbing | — | Quest: [Light on the Water](../quests/zones/04-the-drowned-temple/q-glimmermere-light.md) |
 | <a id="item-waterlogged_idol"></a>Waterlogged Idol | [Deepfen Snapper](../quests/zones/02-mirefen-marsh/bestiary.md#mob-deepfen_murloc) 50% | Quest: [Idols of the Deep](../quests/zones/02-mirefen-marsh/q-idols.md) |
 | <a id="item-weathered_ledger_page"></a>Weathered Ledger Page | — | Quest: [The Names of the Dead](../quests/zones/01-eastbrook-vale/q-names-of-the-dead.md) |
+| <a id="item-monument_overlook"></a>Weathered Monument | — | — |
 | <a id="item-widow_venom_sac"></a>Widow Venom Sac | [Mirefen Widow](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mire_widow) 65% | Quest: [Silk and Venom](../quests/zones/02-mirefen-marsh/q-widows.md) |
+| <a id="item-widowsilk_skein"></a>Widowsilk Skein | Widowsilk Spinner 60% | — |
+| <a id="item-wisp_mote"></a>Wisp Mote | Glimmerwisp 60% | — |
+| <a id="item-wisplight_globe"></a>Wisplight Globe | Lily Wisp 65% | — |
 | <a id="item-wyrmcult_orders"></a>Wyrmcult Orders | [Wyrmcult Zealot](../quests/zones/03-thornpeak-heights/bestiary.md#mob-wyrmcult_zealot) 50% | Quest: [Orders from Below](../quests/zones/03-thornpeak-heights/q-cult-orders.md) |
+| <a id="item-wyrmwatch_warning_banner"></a>Wyrmwatch Warning Banner | — | — |
 
 ## Tools
 
@@ -66,9 +112,11 @@ _Equippable utility items (fishing poles, picks, and the like)._
 | <a id="item-amber_crimson_armor_plate"></a>Amber Crimson | — | tool |
 | <a id="item-amethyst_silver_armor_plate"></a>Amethyst Silver | — | tool |
 | <a id="item-ashwood_axe"></a>Ashwood Axe | — | tool |
+| <a id="item-rift_gem_azure"></a>Azure Rift Gem | — | tool |
 | <a id="item-bronze_sickle"></a>Bronze Sickle | vendor (Trader Wilkes, Tinker Gizzel, Provisioner Hale, Quartermaster Bree) | tool |
 | <a id="item-copper_mining_pick"></a>Copper Mining Pick | vendor (Trader Wilkes, Forgemistress Darva, Provisioner Hale, Quartermaster Bree) | tool |
 | <a id="item-crimson_amber_armor_plate"></a>Crimson Amber | — | tool |
+| <a id="item-rift_gem_crimson"></a>Crimson Rift Gem | — | tool |
 | <a id="item-cyan_magenta_armor_plate"></a>Cyan Magenta | — | tool |
 | <a id="item-felling_axe"></a>Felling Axe | vendor (Trader Wilkes, Tinker Gizzel, Provisioner Hale, Quartermaster Bree) | tool |
 | <a id="item-forest_pink_armor_plate"></a>Forest Pink | — | tool |
@@ -90,6 +138,8 @@ _Equippable utility items (fishing poles, picks, and the like)._
 | <a id="item-orange_steel_armor_plate"></a>Orange Steel | — | tool |
 | <a id="item-thorium_mining_pick"></a>Osmium Mining Pick | — | tool |
 | <a id="item-pink_forest_armor_plate"></a>Pink Forest | — | tool |
+| <a id="item-riding_training"></a>Riding Training | vendor (Marla Hitchen) | tool |
+| <a id="item-rift_essence"></a>Rift Essence | Hoarfrost Warden 100%, Emberforge Tyrant 100%, Broodmother Vysska 100%, +24 more | tool |
 | <a id="item-silverleaf_sickle"></a>Sheenleaf Sickle | vendor (Trader Wilkes, Tinker Gizzel, Quartermaster Bree) | tool |
 | <a id="item-silverstream_fishing_rod"></a>Silverstream Fishing Rod | vendor (Trader Wilkes) | tool |
 | <a id="item-simple_fishing_pole"></a>Simple Fishing Pole | vendor (Fisherman Brandt, Tinker Gizzel, Provisioner Hale, Quartermaster Bree) | tool |
@@ -98,6 +148,7 @@ _Equippable utility items (fishing poles, picks, and the like)._
 | <a id="item-sunpetal_sickle"></a>Sunpetal Sickle | — | tool |
 | <a id="item-vanguard_azure_armor_plate"></a>Vanguard Azure | — | tool |
 | <a id="item-vanguard_chrome_armor_plate"></a>Vanguard Chrome | — | tool |
+| <a id="item-rift_gem_verdant"></a>Verdant Rift Gem | — | tool |
 
 ## Trade goods & trash
 
@@ -108,7 +159,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-amber_hide"></a>Amber Hide | — | sells for 9c |
 | <a id="item-ashwood_log"></a>Ashwood Log | vendor (Tinker Gizzel, Quartermaster Bree) | sells for 15c |
 | <a id="item-bogiron_nugget"></a>Bogiron Nugget | [Mirefen Troll](../quests/zones/02-mirefen-marsh/bestiary.md#mob-fen_troll) 30% | sells for 12c |
-| <a id="item-bone_fragments"></a>Bone Fragments | [Captain Verlan](../quests/zones/01-eastbrook-vale/bestiary.md#mob-captain_verlan) 100%, Wraithbinder Maldrec 100%, Fallen Captain Aldren 100%, +9 more | sells for 7c |
+| <a id="item-bone_fragments"></a>Bone Fragments | [Captain Verlan](../quests/zones/01-eastbrook-vale/bestiary.md#mob-captain_verlan) 100%, Wraithbinder Maldrec 100%, Fallen Captain Aldren 100%, +10 more | sells for 7c |
 | <a id="item-stag_antler"></a>Branching Antler | — | sells for 8c |
 | <a id="item-briny_idol"></a>Briny Idol | [Choirmother Selthe](../quests/zones/04-the-drowned-temple/bestiary.md#mob-choirmother_selthe) 50%, [Drowned Votary](../quests/zones/04-the-drowned-temple/bestiary.md#mob-drowned_votary) 30%, Pale Choir Acolyte 30% | sells for 32c |
 | <a id="item-arcane_dust"></a>Chime Dust | — | sells for 6c |
@@ -126,9 +177,11 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-frayed_prayer_beads"></a>Frayed Prayer Beads | Corrupted Priest Malric 50%, [Wyrmcult Zealot](../quests/zones/03-thornpeak-heights/bestiary.md#mob-wyrmcult_zealot) 35% | sells for 30c |
 | <a id="item-game_meat"></a>Game Meat | — | Quest: [Kitchens Work Order](../quests/zones/01-eastbrook-vale/q-prof-workorder-kitchens.md) |
 | <a id="item-glass_vial"></a>Glass Vial | vendor (Alchemist Verane) | sells for 3c |
+| <a id="item-gleamstag_charm"></a>Gleamstag Charm | The Gleamstag 100% | sells for 2500c |
 | <a id="item-arcanite_bar"></a>Glyphsteel Bar | vendor (Tinker Gizzel, Quartermaster Bree) | sells for 40c |
 | <a id="item-goldleaf_herb"></a>Goldleaf Herb | vendor (Tinker Gizzel, Quartermaster Bree) | Quest: [Apothecary Work Order](../quests/zones/03-thornpeak-heights/q-prof-workorder-apothecary.md) |
 | <a id="item-tallow_candle"></a>Greasy Tallow Lump | Grix the Tunnelking 100%, [Sister Nhalia](../quests/zones/02-mirefen-marsh/bestiary.md#mob-sister_nhalia) 100%, [Deacon Voss](../quests/zones/02-mirefen-marsh/bestiary.md#mob-deacon_voss) 100%, +4 more | sells for 5c |
+| <a id="item-guardian_core"></a>Guardian Core | Old Marrowshell 100%, Ancient Guardian 40% | sells for 180c |
 | <a id="item-elderwood_log"></a>Highpine Log | vendor (Tinker Gizzel, Quartermaster Bree) | sells for 40c |
 | <a id="item-homespun_cloth"></a>Homespun Cloth | — | sells for 4c |
 | <a id="item-inert_storm_shard"></a>Inert Storm Shard | [Shardlord Kazzix](../quests/zones/03-thornpeak-heights/bestiary.md#mob-shardlord_kazzix) 100%, Thunzharr, the Waking Peak 100%, [Stormcrag Elemental](../quests/zones/03-thornpeak-heights/bestiary.md#mob-stormcrag_elemental) 40% | sells for 28c |
@@ -152,6 +205,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-resonant_timber"></a>Resonant Timber | — | sells for 40c |
 | <a id="item-rough_hide"></a>Rough Hide | — | Quest: [Tannery Work Order](../quests/zones/02-mirefen-marsh/q-prof-workorder-tannery.md) |
 | <a id="item-silverleaf_herb"></a>Sheenleaf Herb | — | sells for 4c |
+| <a id="item-last_keep_signet"></a>Signet of the Last Keep | — | sells for 25c |
 | <a id="item-mudfin_scale"></a>Slimy Mudfin Scale | [Mirejaw the Ravenous](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mirejaw_the_ravenous) 100%, [Sloomtooth the Drowned](../quests/zones/02-mirefen-marsh/bestiary.md#mob-sloomtooth_the_drowned) 100%, [Mudfin Skulker](../quests/zones/01-eastbrook-vale/bestiary.md#mob-mudfin_murloc) 50%, +1 more | sells for 5c |
 | <a id="item-smithing_flux"></a>Smithing Flux | vendor (Forgemistress Darva) | sells for 5c |
 | <a id="item-soft_down"></a>Soft Down Tuft | — | sells for 4c |

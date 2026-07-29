@@ -1,6 +1,6 @@
 # Zone 3 — Thornpeak Heights
 
-Level range: **13–20** · Hub: Highwatch · 34 quests
+Level range: **13–20** · Hub: Highwatch · 35 quests
 
 ![Map of Zone 3 — Thornpeak Heights](map.svg)
 
@@ -44,3 +44,4 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 20 | [The Abandoned Crypt](q-nythraxis-sealed-crypt.md) | Brother Aldric | collect |
 | 20 | [The Bound Guardian](q-nythraxis-bound-guardian.md) 👥 | Brother Aldric | interact/kill/collect |
 | 20 | [Scourge's End](q-nythraxis-scourges-end.md) 👥 | Brother Aldric | kill |
+| 20 | [Riding Lessons](q-riding-lessons.md) | Marla Hitchen | interact |

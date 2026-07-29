@@ -192,3 +192,4 @@ Pick quests at or below your character's level. 👥 = group quest. "chain" = pa
 | [The Abandoned Crypt](zones/03-thornpeak-heights/q-nythraxis-sealed-crypt.md) | Zone 3 — Thornpeak Heights | chain |
 | [The Bound Guardian](zones/03-thornpeak-heights/q-nythraxis-bound-guardian.md) 👥 | Zone 3 — Thornpeak Heights | chain |
 | [Scourge's End](zones/03-thornpeak-heights/q-nythraxis-scourges-end.md) 👥 | Zone 3 — Thornpeak Heights | chain |
+| [Riding Lessons](zones/03-thornpeak-heights/q-riding-lessons.md) | Zone 3 — Thornpeak Heights |  |

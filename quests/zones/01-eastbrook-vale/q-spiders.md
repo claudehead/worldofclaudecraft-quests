@@ -15,10 +15,10 @@
 ## How to complete
 
 - **Kill 6× [Sableweb Lurker](bestiary.md#mob-webwood_spider)** (level 2–4)
-  - Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
+  - Found in the open world at ~x:-68, z:2 (6 mobs, radius 28.5)
   - _Tracker: Sableweb Lurker slain_
 - **Collect 4× Sableweb Silk Gland**
-  - Drops from [**Sableweb Lurker**](bestiary.md#mob-webwood_spider) (55% chance) — Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
+  - Drops from [**Sableweb Lurker**](bestiary.md#mob-webwood_spider) (55% chance) — Found in the open world at ~x:-68, z:2 (6 mobs, radius 28.5)
   - _Tracker: Sableweb Silk Gland_
 
 Then return to **Apothecary Lin**, Herbalist _(at ~x:3, z:10)_ to turn in.

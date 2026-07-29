@@ -16,7 +16,7 @@
 ## How to complete
 
 - **Kill 12× [Restless Bones](bestiary.md#mob-restless_bones)** (level 5–7)
-  - Found in the open world at ~x:80, z:78 (8 mobs, radius 18)
+  - Found in the open world at ~x:82, z:78 (6 mobs, radius 28.5)
   - Found in the open world at ~x:88, z:90 (2 mobs, radius 6)
   - _Tracker: Restless Bones silenced_
 

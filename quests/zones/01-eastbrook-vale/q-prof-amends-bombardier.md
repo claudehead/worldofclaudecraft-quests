@@ -15,7 +15,7 @@
 ## How to complete
 
 - **Kill 5× [Deeprock Digger](bestiary.md#mob-tunnel_rat)** (level 4–6)
-  - Found in the open world at ~x:-82, z:-62 (9 mobs, radius 20)
+  - Found in the open world at ~x:-82, z:-62 (8 mobs, radius 33)
   - _Tracker: Tunnel Rat exterminated_
 
 Then return to **Tinker Gizzel**, Master of the Toolworks _(at ~x:7, z:-14)_ to turn in.

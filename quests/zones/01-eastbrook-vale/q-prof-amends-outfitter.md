@@ -15,7 +15,7 @@
 ## How to complete
 
 - **Kill 5× [Sableweb Lurker](bestiary.md#mob-webwood_spider)** (level 2–4)
-  - Found in the open world at ~x:-60, z:5 (7 mobs, radius 22)
+  - Found in the open world at ~x:-68, z:2 (6 mobs, radius 28.5)
   - _Tracker: Webwood Spider culled_
 
 Then return to **Weaver Ottilie**, Master of the Loom _(at ~x:-4, z:-18)_ to turn in.

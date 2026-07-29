@@ -92,6 +92,7 @@ Most stutter is the browser, not the game. In order:
 | Arena (Ashen Coliseum) | `G` |
 | Dungeon Finder | `Shift+KeyI` |
 | Vale Cup | `Y` |
+| Mount / Dismount | `Backquote` |
 | Leaderboard | `K` |
 | Event Calendar | `I` |
 | Discord | `U` |

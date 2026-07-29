@@ -19,7 +19,7 @@
 | Health | 40–54 HP |
 | Armor (physical mitigation) | 0–10 (~0–2% vs a same-level attacker) |
 | Melee damage | 2–6 per hit @ 2s swing (~2–3 DPS) |
-| Location | Eastbrook Vale · ~x:-15, z:55 · ~x:20, z:70 — [🗺️ show on map](#/map/-15/55) |
+| Location | Eastbrook Vale · ~x:-27, z:71 · ~x:24, z:70 — [🗺️ show on map](#/map/-27/71) |
 
 **Best way to kill:**
 
@@ -48,7 +48,7 @@
 | Health | 51–81 HP |
 | Armor (physical mitigation) | 8–24 (~1–3% vs a same-level attacker) |
 | Melee damage | 5–11 per hit @ 1.8s swing (~3–5 DPS) |
-| Location | Eastbrook Vale · ~x:-60, z:5 — [🗺️ show on map](#/map/-60/5) |
+| Location | Eastbrook Vale · ~x:-68, z:2 — [🗺️ show on map](#/map/-68/2) |
 
 **Best way to kill:**
 
@@ -78,7 +78,7 @@
 | Health | 54–70 HP |
 | Armor (physical mitigation) | 14–28 (~2–4% vs a same-level attacker) |
 | Melee damage | 5–10 per hit @ 2.2s swing (~3–4 DPS) |
-| Location | Eastbrook Vale · ~x:55, z:12 · ~x:80, z:-15 — [🗺️ show on map](#/map/55/12) |
+| Location | Eastbrook Vale · ~x:63, z:16 · ~x:84, z:-27 — [🗺️ show on map](#/map/63/16) |
 
 **Best way to kill:**
 
@@ -135,7 +135,7 @@
 | Health | 76–112 HP |
 | Armor (physical mitigation) | 40–80 (~6–9% vs a same-level attacker) |
 | Melee damage | 7–16 per hit @ 2s swing (~5–7 DPS) |
-| Location | Eastbrook Vale · ~x:65, z:-65 · ~x:90, z:-90 — [🗺️ show on map](#/map/65/-65) |
+| Location | Eastbrook Vale · ~x:50, z:-72 · ~x:90, z:-90 — [🗺️ show on map](#/map/50/-72) |
 
 **Best way to kill:**
 
@@ -195,7 +195,7 @@
 | Armor (physical mitigation) | 48 (~6% vs a same-level attacker) |
 | Melee damage | 9–14 per hit @ 1.8s swing (~6 DPS) |
 | Respawn | ~2 min (rare spawn) |
-| Location | Eastbrook Vale · ~x:0, z:95 — [🗺️ show on map](#/map/0/95) |
+| Location | Eastbrook Vale · ~x:0, z:100 — [🗺️ show on map](#/map/0/100) |
 
 **Best way to kill:**
 
@@ -226,7 +226,7 @@
 | Health | 122–160 HP |
 | Armor (physical mitigation) | 56–84 (~6–8% vs a same-level attacker) |
 | Melee damage | 12–25 per hit @ 2.3s swing (~7–9 DPS) |
-| Location | Eastbrook Vale · ~x:80, z:78 — [🗺️ show on map](#/map/80/78) |
+| Location | Eastbrook Vale · ~x:82, z:78 — [🗺️ show on map](#/map/82/78) |
 
 **Best way to kill:**
 

@@ -2,10 +2,10 @@
   "repo": "claudehead/worldofclaudecraft-quests",
   "branch": "main",
   "counts": {
-    "quests": 96,
+    "quests": 202,
     "zones": 4,
     "classes": 9,
-    "dungeons": 5,
+    "dungeons": 6,
     "delves": 2
   },
   "levelRange": [
@@ -775,6 +775,14 @@
           "group": true,
           "chain": true,
           "file": "quests/zones/03-thornpeak-heights/q-nythraxis-scourges-end.md"
+        },
+        {
+          "id": "q_riding_lessons",
+          "name": "Riding Lessons",
+          "level": 20,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/03-thornpeak-heights/q-riding-lessons.md"
         }
       ]
     },
@@ -1018,6 +1026,14 @@
       "suggestedPlayers": 1,
       "hasMap": false,
       "file": "dungeons/nythraxis_crypt.md",
+      "map": null
+    },
+    {
+      "id": "the_last_keep",
+      "name": "The Last Keep",
+      "suggestedPlayers": 1,
+      "hasMap": false,
+      "file": "dungeons/the_last_keep.md",
       "map": null
     },
     {

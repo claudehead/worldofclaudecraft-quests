@@ -15,8 +15,8 @@
 ## How to complete
 
 - **Kill 5× [Wild Boar](bestiary.md#mob-wild_boar)** (level 2–3)
-  - Found in the open world at ~x:55, z:12 (6 mobs, radius 22)
-  - Found in the open world at ~x:80, z:-15 (5 mobs, radius 18)
+  - Found in the open world at ~x:63, z:16 (5 mobs, radius 26)
+  - Found in the open world at ~x:84, z:-27 (4 mobs, radius 23.5)
   - _Tracker: Wild Boar hunted_
 
 Then return to **Cook Marlow**, Master of the Kitchens _(at ~x:-13, z:10)_ to turn in.

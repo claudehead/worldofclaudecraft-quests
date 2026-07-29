@@ -24,6 +24,7 @@ Instanced group content — private copies of a zone you and your party clear fo
 | [Gravewyrm Sanctum](../dungeons/gravewyrm_sanctum.md) | ⚔️ Dungeon | 5 | 19–20 | Korzul the Gravewyrm |
 | [Abandoned Crypt](../dungeons/nythraxis_crypt.md) | 🧍 Solo | 1 | — | — |
 | [Nythraxis Raid Arena](../dungeons/nythraxis_boss_arena.md) | 🐉 Raid | 10 | 20 | Nythraxis, Scourge of Thornpeak |
+| [The Last Keep](../dungeons/the_last_keep.md) | 🧍 Solo | 1 | — | — |
 
 ## How to run an instance
 
@@ -53,5 +54,6 @@ Instanced group content — private copies of a zone you and your party clear fo
 - [Gravewyrm Sanctum](../dungeons/gravewyrm_sanctum.md) — ⚔️ Dungeon, 5-player, level 19–20
 - [Abandoned Crypt](../dungeons/nythraxis_crypt.md) — 🧍 Solo, 1-player, level —
 - [Nythraxis Raid Arena](../dungeons/nythraxis_boss_arena.md) — 🐉 Raid, 10-player, level 20
+- [The Last Keep](../dungeons/the_last_keep.md) — 🧍 Solo, 1-player, level —
 
 _Auto-generated from the game source; updates with each release._

@@ -15,8 +15,8 @@
 ## How to complete
 
 - **Kill 5× [Forest Wolf](bestiary.md#mob-forest_wolf)** (level 1–2)
-  - Found in the open world at ~x:-15, z:55 (7 mobs, radius 22)
-  - Found in the open world at ~x:20, z:70 (6 mobs, radius 20)
+  - Found in the open world at ~x:-27, z:71 (6 mobs, radius 28.5)
+  - Found in the open world at ~x:24, z:70 (5 mobs, radius 26)
   - _Tracker: Forest Wolf slain_
 
 Then return to **Forgemistress Darva**, Master of the Forge _(at ~x:2, z:16)_ to turn in.

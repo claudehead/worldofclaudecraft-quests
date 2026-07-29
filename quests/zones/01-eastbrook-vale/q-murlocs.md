@@ -15,7 +15,7 @@
 ## How to complete
 
 - **Kill 8× [Mudfin Skulker](bestiary.md#mob-mudfin_murloc)** (level 3–5)
-  - Found in the open world at ~x:-75, z:57 (8 mobs, radius 14)
+  - Found in the open world at ~x:-75, z:57 (5 mobs, radius 15)
   - _Tracker: Mudfin Skulker slain_
 
 Then return to **Fisherman Brandt**, Old Salt _(at ~x:-22, z:4)_ to turn in.

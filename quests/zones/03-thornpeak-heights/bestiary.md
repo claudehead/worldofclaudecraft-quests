@@ -1,10 +1,31 @@
 # Bestiary — Thornpeak Heights
 
-23 creatures you'll fight in this zone. Health/armor/damage are shown across the mob's spawn level range (mobs roll a random level within it). Mitigation % is what a same-level attacker's physical hits lose to armor — spells ignore armor.
+24 creatures you'll fight in this zone. Health/armor/damage are shown across the mob's spawn level range (mobs roll a random level within it). Mitigation % is what a same-level attacker's physical hits lose to armor — spells ignore armor.
 
 > Threat tiers: **Boss** (dungeon, group it) · **Elite** (~2.3× HP, ~1.5× damage) · **Rare** (tough roamer) · normal (everything else).
 
 ## Common creatures
+
+<a id="mob-stable_horse"></a>
+
+### Stable Horse
+
+<img src="../_mob-renders/stable_horse.png" width="150" align="right" alt="Stable Horse">
+
+| Stat | Value |
+|---|---|
+| Level | 1 |
+| Family | Beast |
+| Health | 42 HP |
+| Armor (physical mitigation) | 0 (~0% vs a same-level attacker) |
+| Melee damage | 0–0 per hit @ 2s swing (~0 DPS) |
+| Location | Thornpeak Heights · ~x:390, z:594 · ~x:404, z:598 · ~x:418, z:602 — [🗺️ show on map](#/map/390/594) |
+
+**Best way to kill:**
+
+- Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+**Loot:** _nothing_
 
 <a id="mob-ridge_stalker"></a>
 

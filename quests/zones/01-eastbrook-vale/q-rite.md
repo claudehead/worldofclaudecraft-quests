@@ -16,10 +16,10 @@
 ## How to complete
 
 - **Collect 4× Blessed Tallow**
-  - Drops from [**Deeprock Digger**](bestiary.md#mob-tunnel_rat) (45% chance) — Found in the open world at ~x:-82, z:-62 (9 mobs, radius 20)
+  - Drops from [**Deeprock Digger**](bestiary.md#mob-tunnel_rat) (45% chance) — Found in the open world at ~x:-82, z:-62 (8 mobs, radius 33)
   - _Tracker: Blessed Tallow_
 - **Collect 6× Ghostly Essence**
-  - Drops from [**Restless Bones**](bestiary.md#mob-restless_bones) (55% chance) — Found in the open world at ~x:80, z:78 (8 mobs, radius 18); Found in the open world at ~x:88, z:90 (2 mobs, radius 6)
+  - Drops from [**Restless Bones**](bestiary.md#mob-restless_bones) (55% chance) — Found in the open world at ~x:82, z:78 (6 mobs, radius 28.5); Found in the open world at ~x:88, z:90 (2 mobs, radius 6)
   - _Tracker: Ghostly Essence_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ to turn in.

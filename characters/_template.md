@@ -156,3 +156,4 @@ Tick a box when you turn the quest in. Work top-down — quests are grouped by t
 - [ ] [The Abandoned Crypt](../quests/zones/03-thornpeak-heights/q-nythraxis-sealed-crypt.md) _(chain)_ — Zone 3 — Thornpeak Heights
 - [ ] [The Bound Guardian](../quests/zones/03-thornpeak-heights/q-nythraxis-bound-guardian.md) 👥 _(chain)_ — Zone 3 — Thornpeak Heights
 - [ ] [Scourge's End](../quests/zones/03-thornpeak-heights/q-nythraxis-scourges-end.md) 👥 _(chain)_ — Zone 3 — Thornpeak Heights
+- [ ] [Riding Lessons](../quests/zones/03-thornpeak-heights/q-riding-lessons.md) — Zone 3 — Thornpeak Heights
