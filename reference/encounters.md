@@ -382,7 +382,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 17–18 · 374 HP · Undead**
 
-**Drops:** Ashbone War-Brand _(60%)_
+**Drops:** Bone Fragments _(40%)_, Ashbone War-Brand _(60%)_
 
 <br clear="all">
 
@@ -391,6 +391,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Dune Troll
 
 **Level 17–19 · 484 HP · Troll**
+
+**Drops:** Chipped Tusk _(40%)_
 
 <br clear="all">
 
@@ -476,7 +478,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 18–19 · 442 HP · Undead**
 
-**Drops:** Ashbone War-Brand _(60%)_
+**Drops:** Bone Fragments _(40%)_, Ashbone War-Brand _(60%)_
 
 <br clear="all">
 
@@ -764,6 +766,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 19–20 · 458 HP · Murloc**
 
+**Drops:** Slimy Mudfin Scale _(40%)_
+
 <br clear="all">
 
 <a id="mob-orchard_treant"></a>
@@ -771,6 +775,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Orchard Treant 🔶 Elite
 
 **Level 19–20 · 670 HP · Ogre**
+
+**Drops:** Tangled Weed _(40%)_
 
 <br clear="all">
 
@@ -804,6 +810,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 510 HP · Undead**
 
+**Drops:** Bone Fragments _(50%)_
+
 <br clear="all">
 
 <a id="mob-wildheart_ravager"></a>
@@ -820,7 +828,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 436 HP · Spider**
 
-**Drops:** Canopy Silk Hank _(60%)_
+**Drops:** Twitching Spider Leg _(40%)_, Canopy Silk Hank _(60%)_
 
 <br clear="all">
 
@@ -848,6 +856,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 462 HP · Humanoid**
 
+**Drops:** Linen Scrap _(30%)_
+
 <br clear="all">
 
 <a id="mob-deathstalker_voss"></a>
@@ -866,6 +876,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 412 HP · Kobold**
 
+**Drops:** Red Bandana _(50%)_, Linen Scrap _(30%)_
+
 <br clear="all">
 
 <a id="mob-drowned_deckhand"></a>
@@ -873,6 +885,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Drowned Deckhand
 
 **Level 20 · 438 HP · Undead**
+
+**Drops:** Bone Fragments _(50%)_
 
 <br clear="all">
 
@@ -923,6 +937,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Gravenbark Shambler
 
 **Level 20 · 610 HP · Ogre**
+
+**Drops:** Tangled Weed _(40%)_
 
 <br clear="all">
 
@@ -1026,6 +1042,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 830 HP · Undead**
 
+**Drops:** Bone Fragments _(100%)_
+
 <br clear="all">
 
 <a id="mob-drowsy_croaker"></a>
@@ -1050,6 +1068,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 720 HP · Murloc**
 
+**Drops:** Slimy Mudfin Scale _(100%)_
+
 <br clear="all">
 
 <a id="mob-pale_huntsman"></a>
@@ -1058,6 +1078,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 835 HP · Undead**
 
+**Drops:** Bone Fragments _(100%)_
+
 <br clear="all">
 
 <a id="mob-the_topiary_bull"></a>
@@ -1065,6 +1087,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### The Topiary Bull 🔶 Elite
 
 **Level 20 · 835 HP · Beast**
+
+**Drops:** Tangled Weed _(100%)_
 
 <br clear="all">
 
@@ -1083,6 +1107,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### The Wreck Warden 🔶 Elite
 
 **Level 20 · 835 HP · Undead**
+
+**Drops:** Bone Fragments _(100%)_
 
 <br clear="all">
 
@@ -1158,7 +1184,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 456 HP · Spider**
 
-**Drops:** Widowsilk Skein _(60%)_
+**Drops:** Twitching Spider Leg _(40%)_, Widowsilk Skein _(60%)_
 
 <br clear="all">
 
@@ -1175,6 +1201,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Wreckfield Thief
 
 **Level 20 · 412 HP · Kobold**
+
+**Drops:** Red Bandana _(50%)_, Linen Scrap _(30%)_
 
 <br clear="all">
 

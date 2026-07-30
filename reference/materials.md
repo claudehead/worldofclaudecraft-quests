@@ -159,13 +159,13 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-amber_hide"></a>Amber Hide | — | sells for 9c |
 | <a id="item-ashwood_log"></a>Ashwood Log | vendor (Tinker Gizzel, Quartermaster Bree) | sells for 15c |
 | <a id="item-bogiron_nugget"></a>Bogiron Nugget | [Mirefen Troll](../quests/zones/02-mirefen-marsh/bestiary.md#mob-fen_troll) 30% | sells for 12c |
-| <a id="item-bone_fragments"></a>Bone Fragments | [Captain Verlan](../quests/zones/01-eastbrook-vale/bestiary.md#mob-captain_verlan) 100%, Wraithbinder Maldrec 100%, Fallen Captain Aldren 100%, +10 more | sells for 7c |
+| <a id="item-bone_fragments"></a>Bone Fragments | [Captain Verlan](../quests/zones/01-eastbrook-vale/bestiary.md#mob-captain_verlan) 100%, Wraithbinder Maldrec 100%, Fallen Captain Aldren 100%, +17 more | sells for 7c |
 | <a id="item-stag_antler"></a>Branching Antler | — | sells for 8c |
 | <a id="item-briny_idol"></a>Briny Idol | [Choirmother Selthe](../quests/zones/04-the-drowned-temple/bestiary.md#mob-choirmother_selthe) 50%, [Drowned Votary](../quests/zones/04-the-drowned-temple/bestiary.md#mob-drowned_votary) 30%, Pale Choir Acolyte 30% | sells for 32c |
 | <a id="item-arcane_dust"></a>Chime Dust | — | sells for 6c |
 | <a id="item-arcane_essence"></a>Chime Essence | — | sells for 18c |
 | <a id="item-arcane_shard"></a>Chime Shard | — | sells for 55c |
-| <a id="item-chipped_tusk"></a>Chipped Tusk | [Grubjaw the Glutton](../quests/zones/02-mirefen-marsh/bestiary.md#mob-grubjaw) 100%, [Mirefen Troll](../quests/zones/02-mirefen-marsh/bestiary.md#mob-fen_troll) 40% | sells for 15c |
+| <a id="item-chipped_tusk"></a>Chipped Tusk | [Grubjaw the Glutton](../quests/zones/02-mirefen-marsh/bestiary.md#mob-grubjaw) 100%, [Mirefen Troll](../quests/zones/02-mirefen-marsh/bestiary.md#mob-fen_troll) 40%, Dune Troll 40% | sells for 15c |
 | <a id="item-cooking_salt"></a>Cooking Salt | vendor (Cook Marlow) | sells for 2c |
 | <a id="item-copper_ore"></a>Copper Ore | — | Quest: [Forge Work Order](../quests/zones/01-eastbrook-vale/q-prof-workorder-forge.md) |
 | <a id="item-cracked_fetish"></a>Cracked Fetish | [Drowned Dead](../quests/zones/02-mirefen-marsh/bestiary.md#mob-drowned_dead) 30% | sells for 14c |
@@ -187,7 +187,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-inert_storm_shard"></a>Inert Storm Shard | [Shardlord Kazzix](../quests/zones/03-thornpeak-heights/bestiary.md#mob-shardlord_kazzix) 100%, Thunzharr, the Waking Peak 100%, [Stormcrag Elemental](../quests/zones/03-thornpeak-heights/bestiary.md#mob-stormcrag_elemental) 40% | sells for 28c |
 | <a id="item-iron_ore"></a>Iron Ore | — | sells for 8c |
 | <a id="item-ironbark_log"></a>Ironbark Log | — | Quest: [Toolworks Work Order](../quests/zones/01-eastbrook-vale/q-prof-workorder-toolworks.md) |
-| <a id="item-linen_scrap"></a>Linen Scrap | [Mogger](../quests/zones/01-eastbrook-vale/bestiary.md#mob-mogger) 100%, [Hollow Acolyte](../quests/zones/01-eastbrook-vale/bestiary.md#mob-hollow_acolyte) 60%, [Tidebound Acolyte](../quests/zones/02-mirefen-marsh/bestiary.md#mob-tidebound_acolyte) 50%, +6 more | sells for 3c |
+| <a id="item-linen_scrap"></a>Linen Scrap | [Mogger](../quests/zones/01-eastbrook-vale/bestiary.md#mob-mogger) 100%, [Hollow Acolyte](../quests/zones/01-eastbrook-vale/bestiary.md#mob-hollow_acolyte) 60%, [Tidebound Acolyte](../quests/zones/02-mirefen-marsh/bestiary.md#mob-tidebound_acolyte) 50%, +9 more | sells for 3c |
 | <a id="item-moonpale_scale"></a>Moonpale Scale | [Sethrael the Palecoil](../quests/zones/04-the-drowned-temple/bestiary.md#mob-sethrael_palecoil) 100%, Glimmerscale Lurker 40%, Pearlguard Sentinel 40%, +1 more | sells for 26c |
 | <a id="item-ogre_toe_ring"></a>Ogre Toe Ring | [Thornpeak Crusher](../quests/zones/03-thornpeak-heights/bestiary.md#mob-ogre_crusher) 50%, [Thornpeak Ogre](../quests/zones/03-thornpeak-heights/bestiary.md#mob-thornpeak_ogre) 35% | sells for 25c |
 | <a id="item-old_cragmaws_pelt"></a>Old Cragmaw's Pelt | [Old Cragmaw](../quests/zones/03-thornpeak-heights/bestiary.md#mob-old_cragmaw) 100% | sells for 300c |
@@ -197,7 +197,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-pristine_hide"></a>Pristine Hide | — | sells for 25c |
 | <a id="item-pristine_silk"></a>Pristine Silk | — | sells for 25c |
 | <a id="item-pristine_venom_gland"></a>Pristine Venom Gland | — | sells for 30c |
-| <a id="item-bandit_bandana"></a>Red Bandana | [Gorrak the Ruthless](../quests/zones/01-eastbrook-vale/bestiary.md#mob-gorrak) 100%, [Vale Bandit](../quests/zones/01-eastbrook-vale/bestiary.md#mob-vale_bandit) 50% | sells for 6c |
+| <a id="item-bandit_bandana"></a>Red Bandana | [Gorrak the Ruthless](../quests/zones/01-eastbrook-vale/bestiary.md#mob-gorrak) 100%, [Vale Bandit](../quests/zones/01-eastbrook-vale/bestiary.md#mob-vale_bandit) 50%, Downs Bandit 50%, +1 more | sells for 6c |
 | <a id="item-resonant_hide"></a>Resonant Hide | — | sells for 40c |
 | <a id="item-resonant_links"></a>Resonant Links | — | sells for 40c |
 | <a id="item-resonant_steel"></a>Resonant Steel | — | sells for 40c |
@@ -206,7 +206,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-rough_hide"></a>Rough Hide | — | Quest: [Tannery Work Order](../quests/zones/02-mirefen-marsh/q-prof-workorder-tannery.md) |
 | <a id="item-silverleaf_herb"></a>Sheenleaf Herb | — | sells for 4c |
 | <a id="item-last_keep_signet"></a>Signet of the Last Keep | — | sells for 25c |
-| <a id="item-mudfin_scale"></a>Slimy Mudfin Scale | [Mirejaw the Ravenous](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mirejaw_the_ravenous) 100%, [Sloomtooth the Drowned](../quests/zones/02-mirefen-marsh/bestiary.md#mob-sloomtooth_the_drowned) 100%, [Mudfin Skulker](../quests/zones/01-eastbrook-vale/bestiary.md#mob-mudfin_murloc) 50%, +1 more | sells for 5c |
+| <a id="item-mudfin_scale"></a>Slimy Mudfin Scale | [Mirejaw the Ravenous](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mirejaw_the_ravenous) 100%, [Sloomtooth the Drowned](../quests/zones/02-mirefen-marsh/bestiary.md#mob-sloomtooth_the_drowned) 100%, The Meredark 100%, +3 more | sells for 5c |
 | <a id="item-smithing_flux"></a>Smithing Flux | vendor (Forgemistress Darva) | sells for 5c |
 | <a id="item-soft_down"></a>Soft Down Tuft | — | sells for 4c |
 | <a id="item-soggy_boot"></a>Soggy Boot | — | sells for 1c |
@@ -214,7 +214,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-spider_silk"></a>Spider Silk | — | Quest: [Loom Work Order](../quests/zones/01-eastbrook-vale/q-prof-workorder-loom.md) |
 | <a id="item-spool_of_thread"></a>Spool of Thread | vendor (Weaver Ottilie) | sells for 3c |
 | <a id="item-sunpetal_herb"></a>Sunpetal Herb | vendor (Tinker Gizzel, Quartermaster Bree) | sells for 40c |
-| <a id="item-tangled_weed"></a>Tangled Weed | [Bog Bloat](../quests/zones/02-mirefen-marsh/bestiary.md#mob-bog_bloat) 50% | sells for 1c |
+| <a id="item-tangled_weed"></a>Tangled Weed | The Topiary Bull 100%, [Bog Bloat](../quests/zones/02-mirefen-marsh/bestiary.md#mob-bog_bloat) 50%, Orchard Treant 40%, +1 more | sells for 1c |
 | <a id="item-tanning_agent"></a>Tanning Agent | vendor (Tanner Hesk) | sells for 4c |
-| <a id="item-spider_leg"></a>Twitching Spider Leg | [The Broodmother](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mirefen_broodmother) 100%, [Bonechill Widow](../quests/zones/01-eastbrook-vale/bestiary.md#mob-bonechill_widow) 70%, Glimmerscale Lurker 50%, +2 more | sells for 4c |
+| <a id="item-spider_leg"></a>Twitching Spider Leg | [The Broodmother](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mirefen_broodmother) 100%, [Bonechill Widow](../quests/zones/01-eastbrook-vale/bestiary.md#mob-bonechill_widow) 70%, Glimmerscale Lurker 50%, +4 more | sells for 4c |
 | <a id="item-venom_gland"></a>Venom Gland | — | sells for 6c |
