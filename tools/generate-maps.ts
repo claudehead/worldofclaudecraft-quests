@@ -1,8 +1,5 @@
 import { MOBS, ITEMS } from '../woc/src/sim/data.ts';
-import { ZONE1_NPCS, ZONE1_CAMPS, ZONE1_OBJECTS, ZONE1_ROADS, ZONE1_ZONE } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_OBJECTS, ZONE2_ROADS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_OBJECTS, ZONE3_ROADS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_NPCS, TEMPLE_CAMPS, TEMPLE_OBJECTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, zoneForDungeon, type GuideZone } from './zones.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import * as fs from 'node:fs';
 
@@ -12,39 +9,16 @@ const mobName = (id: string) => ALL_MOBS[id]?.name || id;
 const itemName = (id: string) => ITEMS[id]?.name || id;
 
 type Pt = { x: number; z: number };
-interface ZoneSpec {
-  dir: string; title: string;
-  npcs: any; camps: any[]; objects: any[]; roads?: Pt[][];
-  lakes?: { x: number; z: number; radius: number }[];
-  pois?: { x: number; z: number; label: string }[];
-  hub?: { x: number; z: number; radius: number; name: string };
-  zBand?: [number, number]; // to pick dungeon doors that belong here
-}
-
-const zones: ZoneSpec[] = [
-  { dir: '01-eastbrook-vale', title: 'Eastbrook Vale', npcs: ZONE1_NPCS, camps: ZONE1_CAMPS, objects: ZONE1_OBJECTS, roads: ZONE1_ROADS, lakes: ZONE1_ZONE.lakes, pois: ZONE1_ZONE.pois, hub: ZONE1_ZONE.hub, zBand: [-180, 180] },
-  { dir: '02-mirefen-marsh', title: 'Mirefen Marsh', npcs: ZONE2_NPCS, camps: ZONE2_CAMPS, objects: ZONE2_OBJECTS, roads: ZONE2_ROADS, lakes: ZONE2_ZONE.lakes, pois: ZONE2_ZONE.pois, hub: ZONE2_ZONE.hub, zBand: [180, 540] },
-  { dir: '03-thornpeak-heights', title: 'Thornpeak Heights', npcs: ZONE3_NPCS, camps: ZONE3_CAMPS, objects: ZONE3_OBJECTS, roads: ZONE3_ROADS, lakes: ZONE3_ZONE.lakes, pois: ZONE3_ZONE.pois, hub: ZONE3_ZONE.hub, zBand: [540, 900] },
-  { dir: '04-the-drowned-temple', title: 'The Drowned Temple', npcs: TEMPLE_NPCS, camps: TEMPLE_CAMPS, objects: TEMPLE_OBJECTS },
-];
-
-// Temple shares Thornpeak's z-band but is a distinct sub-area; give it its own
-// dungeon set and keep its markers out of the Thornpeak map.
-const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
+type ZoneSpec = GuideZone;
+const zones: ZoneSpec[] = GUIDE_ZONES;
 
 function esc(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 function dungeonsForZone(spec: ZoneSpec): { name: string; pos: Pt }[] {
-  const all = Object.entries(DUNGEON_DEFS);
-  if (spec.dir.startsWith('04')) {
-    return all.filter(([id]) => TEMPLE_DUNGEONS.has(id)).map(([, d]: any) => ({ name: d.name, pos: d.doorPos }));
-  }
-  if (!spec.zBand) return [];
-  const [lo, hi] = spec.zBand;
-  return all
-    .filter(([id, d]: any) => !TEMPLE_DUNGEONS.has(id) && d.doorPos.z >= lo && d.doorPos.z < hi)
+  return (Object.entries(DUNGEON_DEFS) as any[])
+    .filter(([id, d]) => zoneForDungeon(id, d.doorPos)?.key === spec.key)
     .map(([, d]: any) => ({ name: d.name, pos: d.doorPos }));
 }
 
@@ -130,7 +104,7 @@ function renderZoneMap(spec: ZoneSpec): string {
   }
 
   // compass + legend
-  s.push(`<text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">${esc(spec.title)} — N ↑</text>`);
+  s.push(`<text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">${esc(spec.shortName)} — N ↑</text>`);
   const legend = [
     ['#f0c419', 'NPC (quest giver / turn-in)'],
     ['#d9534f', 'Mob camp (×count)'],

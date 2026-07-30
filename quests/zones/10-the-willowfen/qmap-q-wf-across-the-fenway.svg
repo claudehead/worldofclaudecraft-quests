@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1541" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="1541" fill="#1f2a24"/>
+<circle cx="360.0" cy="448.0" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="328.0" cy="514.7" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="354.7" cy="584.0" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="424.0" cy="613.3" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="493.3" cy="584.0" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="520.0" cy="514.7" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="488.0" cy="448.0" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="221.3" cy="314.7" r="34.7" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="136.0" cy="362.7" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="205.3" cy="432.0" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="274.7" cy="378.7" r="24.0" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="610.7" cy="298.7" r="32.0" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="669.3" cy="346.7" r="24.0" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="578.7" cy="362.7" r="21.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="488.0" cy="816.0" r="34.7" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="578.7" cy="885.3" r="32.0" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="498.7" cy="928.0" r="29.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="248.0" cy="778.7" r="37.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="200.0" cy="826.7" r="26.7" fill="#2f6f8f" opacity="0.28"/>
+<path d="M392.0 245.3 L424.0 410.7 L424.0 517.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M424.0 416.0 L344.0 352.0 L274.7 341.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M424.0 416.0 L514.7 373.3 L552.0 314.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M424.0 410.7 L306.7 389.3 L269.3 517.3 L274.7 634.7 L285.3 730.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M424.0 410.7 L498.7 384.0 L568.0 448.0 L562.7 629.3 L504.0 768.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M285.3 730.7 L306.7 938.7 L328.0 1125.3 L333.3 1312.0 L322.7 1434.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M557.3 608.0 L642.7 666.7 L770.7 709.3 L893.3 725.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<circle cx="424.0" cy="517.3" r="53.3" fill="#caa15a" opacity="0.08" stroke="#caa15a" stroke-width="1" stroke-opacity="0.3"/>
+<circle cx="237.3" cy="272.0" r="4" fill="#3a4a42"/>
+<circle cx="626.7" cy="394.7" r="4" fill="#3a4a42"/>
+<circle cx="248.0" cy="725.3" r="4" fill="#3a4a42"/>
+<circle cx="328.0" cy="554.7" r="4" fill="#3a4a42"/>
+<circle cx="541.3" cy="565.3" r="4" fill="#3a4a42"/>
+<circle cx="525.3" cy="874.7" r="4" fill="#3a4a42"/>
+<circle cx="378.7" cy="122.7" r="4" fill="#3a4a42"/>
+<circle cx="426.7" cy="496.0" r="4" fill="#3a4a42"/>
+<circle cx="440.0" cy="522.7" r="4" fill="#3a4a42"/>
+<circle cx="280.0" cy="741.3" r="4" fill="#3a4a42"/>
+<text x="424.0" y="517.3" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Bridgemere</text>
+<text x="370.7" y="106.7" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Amberfen Steps</text>
+<text x="200.0" y="373.3" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Lilymoors</text>
+<text x="621.3" y="330.7" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Bogshine Pools</text>
+<text x="237.3" y="794.7" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Willowweep</text>
+<text x="530.7" y="874.7" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Drowsy Flats</text>
+<path d="M378.7 122.7 L426.7 496.0" fill="none" stroke="#e6bb6a" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.85"/>
+<g class="qstep" data-keys="giver" data-steps="1">
+<circle cx="378.7" cy="122.7" r="21" fill="#f0c419" opacity="0.18"/>
+<circle cx="378.7" cy="122.7" r="14" fill="#f0c419" stroke="#11160f" stroke-width="2"/>
+<text x="378.7" y="127.7" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">1</text>
+</g>
+<g class="qstep" data-keys="bridgewright_alden,turnin" data-steps="2,3">
+<circle cx="426.7" cy="496.0" r="21" fill="#5cb85c" opacity="0.18"/>
+<circle cx="426.7" cy="496.0" r="14" fill="#5cb85c" stroke="#11160f" stroke-width="2"/>
+<text x="426.7" y="501.0" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">2·3</text>
+</g>
+<rect x="10" y="10" width="360" height="112" rx="10" fill="#11160f" opacity="0.82"/>
+<text x="22" y="34" fill="#cfe3d6" font-size="14" font-weight="bold">Where to go — N ↑</text>
+<circle cx="30" cy="48" r="9" fill="#f0c419"/>
+<text x="30" y="51.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">1</text>
+<text x="46" y="52" fill="#e8e8ea" font-size="13.5">Start — Waykeeper Pell</text>
+<circle cx="30" cy="72" r="9" fill="#9b8cff"/>
+<text x="30" y="75.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">2</text>
+<text x="46" y="76" fill="#e8e8ea" font-size="13.5">Report to Bridgewright Alden</text>
+<circle cx="30" cy="96" r="9" fill="#5cb85c"/>
+<text x="30" y="99.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">3</text>
+<text x="46" y="100" fill="#e8e8ea" font-size="13.5">Turn in — Bridgewright Alden</text>
+</svg>

@@ -1,14 +1,8 @@
-import { QUESTS, MOBS, ITEMS, NPCS, CAMPS, GROUND_OBJECTS, ZONES } from '../woc/src/sim/data.ts';
+import { QUESTS, MOBS, ITEMS, NPCS, CAMPS, GROUND_OBJECTS } from '../woc/src/sim/data.ts';
 // FISHING_TABLES moved out of data.ts's re-exports (v0.31); it lives in content/items.ts.
 import { FISHING_TABLES } from '../woc/src/sim/content/items.ts';
-import { ZONE1_QUESTS, ZONE1_CAMPS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_QUESTS, ZONE2_CAMPS } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_QUESTS, ZONE3_CAMPS } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_QUESTS, TEMPLE_CAMPS } from '../woc/src/sim/content/temple.ts';
-import { ZONE1_ZONE } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
+import { GUIDE_ZONES, STARTER_HUB, zoneForDungeon, slug, type GuideZone } from './zones.ts';
 import { qualityDot, statLine } from './iteminfo.ts';
 import * as fs from 'node:fs';
 
@@ -25,44 +19,20 @@ for (const t of Object.values(FISHING_TABLES) as any[]) for (const e of t) if (e
 const POLE: any = Object.values(ITEMS).find((i: any) => i.use?.type === 'fishing');
 const POLE_VENDOR: any = POLE && Object.values(NPCS).find((n: any) => (n.vendorItems || []).includes(POLE.id));
 
-const zoneBuckets: { key: string; dir: string; title: string; quests: Record<string, Q>; levelRange: [number, number]; hub?: string }[] = [
-  { key: 'zone1', dir: '01-eastbrook-vale', title: 'Zone 1 — Eastbrook Vale', quests: ZONE1_QUESTS, levelRange: ZONE1_ZONE.levelRange, hub: ZONE1_ZONE.hub?.name },
-  { key: 'zone2', dir: '02-' + slug(ZONE2_ZONE.name), title: 'Zone 2 — ' + ZONE2_ZONE.name, quests: ZONE2_QUESTS, levelRange: ZONE2_ZONE.levelRange, hub: ZONE2_ZONE.hub?.name },
-  { key: 'zone3', dir: '03-' + slug(ZONE3_ZONE.name), title: 'Zone 3 — ' + ZONE3_ZONE.name, quests: ZONE3_QUESTS, levelRange: ZONE3_ZONE.levelRange, hub: ZONE3_ZONE.hub?.name },
-  { key: 'temple', dir: '04-the-drowned-temple', title: 'Zone 4 — The Drowned Temple (Endgame)', quests: TEMPLE_QUESTS, levelRange: templeRange(TEMPLE_QUESTS) },
-];
+const zoneBuckets = GUIDE_ZONES;
 
 // The exact set of mob ids that appear in each zone's bestiary.md (camps +
 // quest kill targets + dungeon spawns for the zone). A mob mention in a quest
 // is only linked when its id is in this set, so links never dangle.
-const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
-const ZONE_BAND: Record<string, [number, number] | null> = {
-  zone1: [-180, 180], zone2: [180, 540], zone3: [540, 900], temple: null,
-};
-const ZONE_CAMPS: Record<string, any[]> = {
-  zone1: ZONE1_CAMPS, zone2: ZONE2_CAMPS, zone3: ZONE3_CAMPS, temple: TEMPLE_CAMPS,
-};
-function bestiaryIdsFor(bucket: { key: string; quests: Record<string, Q> }): Set<string> {
+function bestiaryIdsFor(bucket: GuideZone): Set<string> {
   const ids = new Set<string>();
-  for (const c of ZONE_CAMPS[bucket.key] || []) ids.add(c.mobId);
+  for (const c of bucket.camps || []) ids.add(c.mobId);
   for (const q of Object.values(bucket.quests))
-    for (const o of q.objectives || []) if (o.type === 'kill' && o.targetMobId) ids.add(o.targetMobId);
-  const band = ZONE_BAND[bucket.key];
+    for (const o of (q as Q).objectives || []) if (o.type === 'kill' && o.targetMobId) ids.add(o.targetMobId);
   for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) {
-    const inZone = bucket.key === 'temple' ? TEMPLE_DUNGEONS.has(id)
-      : band && !TEMPLE_DUNGEONS.has(id) && d.doorPos.z >= band[0] && d.doorPos.z < band[1];
-    if (inZone) for (const s of d.spawns || []) ids.add(s.mobId);
+    if (zoneForDungeon(id, d.doorPos)?.key === bucket.key) for (const s of d.spawns || []) ids.add(s.mobId);
   }
   return ids;
-}
-
-function templeRange(quests: Record<string, Q>): [number, number] {
-  const lvls = Object.values(quests).map(q => q.minLevel ?? 15);
-  return [Math.min(...lvls), Math.max(...lvls)];
-}
-
-function slug(s: string): string {
-  return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
 function npcLabel(id?: string): string {
@@ -170,7 +140,7 @@ function objectiveHowTo(o: any, linkSet: Set<string>, zoneTitle: string): string
     }
     if (!ground.length && !drops.length) {
       if (FISHING_ITEMS.has(o.itemId) && POLE && POLE_VENDOR) {
-        lines.push(`  - 🎣 **Caught by fishing — not dropped.** First buy a **${POLE.name}** (~${POLE.buyValue}c) from **${POLE_VENDOR.name}** in ${ZONE1_ZONE.hub?.name || 'the starter town'} _(at ~x:${Math.round(POLE_VENDOR.pos.x)}, z:${Math.round(POLE_VENDOR.pos.z)})_, then equip it and **fish** in the ${zoneTitle.replace(/^Zone \d+ — /, '')} waters the quest describes (cast from the shoreline).`);
+        lines.push(`  - 🎣 **Caught by fishing — not dropped.** First buy a **${POLE.name}** (~${POLE.buyValue}c) from **${POLE_VENDOR.name}** in ${STARTER_HUB} _(at ~x:${Math.round(POLE_VENDOR.pos.x)}, z:${Math.round(POLE_VENDOR.pos.z)})_, then equip it and **fish** in the ${zoneTitle.replace(/^Zone \d+ — /, '')} waters the quest describes (cast from the shoreline).`);
       } else {
         lines.push(`  - _Granted by a prerequisite quest or special encounter_`);
       }
@@ -187,7 +157,7 @@ function objectiveHowTo(o: any, linkSet: Set<string>, zoneTitle: string): string
   return lines.join('\n');
 }
 
-function questMd(q: Q, zone: typeof zoneBuckets[number]): string {
+function questMd(q: Q, zone: GuideZone): string {
   const L: string[] = [];
   L.push(`# ${q.name}`);
   L.push('');
@@ -258,7 +228,7 @@ for (const zone of zoneBuckets) {
   const zlines: string[] = [];
   zlines.push(`# ${zone.title}`);
   zlines.push('');
-  zlines.push(`Level range: **${zone.levelRange[0]}–${zone.levelRange[1]}**${zone.hub ? ` · Hub: ${zone.hub}` : ''} · ${ordered.length} quests`);
+  zlines.push(`Level range: **${zone.levelRange[0]}–${zone.levelRange[1]}**${zone.hub?.name ? ` · Hub: ${zone.hub.name}` : ''} · ${ordered.length} quests`);
   zlines.push('');
   zlines.push(`![Map of ${zone.title}](map.svg)`);
   zlines.push('');

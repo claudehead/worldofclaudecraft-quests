@@ -3,10 +3,7 @@
 // foliage, and a character model — so the client can render a walkable in-game
 // scene with a hero walking the quest path.
 import { MOBS } from '../woc/src/sim/data.ts';
-import { ZONE1_NPCS, ZONE1_CAMPS, ZONE1_OBJECTS, ZONE1_ROADS, ZONE1_ZONE, ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_OBJECTS, ZONE2_ROADS, ZONE2_ZONE, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_OBJECTS, ZONE3_ROADS, ZONE3_ZONE, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_NPCS, TEMPLE_CAMPS, TEMPLE_OBJECTS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, slug } from './zones.ts';
 import * as mf from '../woc/src/render/characters/manifest.ts';
 import { terrainHeight } from '../woc/src/sim/world.ts';
 import * as fs from 'node:fs';
@@ -25,14 +22,12 @@ function foliageH(url: string, rnd: () => number): number {
 }
 
 const OUT = process.argv[2] || 'docs/quest3d.json';
-const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-const ZONES = [
-  { dir: '01-eastbrook-vale', biome: 0x3f5a33, npcs: ZONE1_NPCS, camps: ZONE1_CAMPS, objects: ZONE1_OBJECTS, roads: ZONE1_ROADS, lakes: (ZONE1_ZONE as any).lakes || [], pois: (ZONE1_ZONE as any).pois || [], hub: (ZONE1_ZONE as any).hub, graveyard: (ZONE1_ZONE as any).graveyard, quests: ZONE1_QUESTS, foliage: ['oak_1', 'oak_2', 'bush', 'bush_flowers', 'fern', 'mushroom'] },
-  { dir: '02-mirefen-marsh', biome: 0x35463a, npcs: ZONE2_NPCS, camps: ZONE2_CAMPS, objects: ZONE2_OBJECTS, roads: ZONE2_ROADS, lakes: (ZONE2_ZONE as any).lakes || [], pois: (ZONE2_ZONE as any).pois || [], hub: (ZONE2_ZONE as any).hub, graveyard: (ZONE2_ZONE as any).graveyard, quests: ZONE2_QUESTS, foliage: ['dead_1', 'dead_2', 'fern', 'mushroom', 'bush'] },
-  { dir: '03-thornpeak-heights', biome: 0x52483a, npcs: ZONE3_NPCS, camps: ZONE3_CAMPS, objects: ZONE3_OBJECTS, roads: ZONE3_ROADS, lakes: (ZONE3_ZONE as any).lakes || [], pois: (ZONE3_ZONE as any).pois || [], hub: (ZONE3_ZONE as any).hub, graveyard: (ZONE3_ZONE as any).graveyard, quests: ZONE3_QUESTS, foliage: ['dead_1', 'dead_3', 'bush', 'fern'] },
-  { dir: '04-the-drowned-temple', biome: 0x27424c, npcs: TEMPLE_NPCS, camps: TEMPLE_CAMPS, objects: TEMPLE_OBJECTS, roads: [], lakes: [], pois: [], hub: null, graveyard: null, quests: TEMPLE_QUESTS, foliage: ['fern', 'mushroom', 'dead_2'] },
-] as any[];
+const ZONES = GUIDE_ZONES.map((z) => ({
+  dir: z.dir, biome: z.visual.color, npcs: z.npcs, camps: z.camps, objects: z.objects,
+  roads: z.roads, lakes: z.lakes, pois: z.pois, hub: z.hub ?? null, graveyard: z.graveyard,
+  quests: z.quests, foliage: z.visual.foliage,
+})) as any[];
 
 const itemName = (id: string) => (MOBS as any)[id]?.name || id;
 function modelFor(kind: 'npc' | 'mob', id: string) {

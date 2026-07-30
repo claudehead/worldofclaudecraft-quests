@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 2039" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="2039" fill="#1f2a24"/>
+<circle cx="709.7" cy="503.2" r="45.2" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="225.8" cy="954.8" r="32.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="154.8" cy="864.5" r="25.8" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="561.3" cy="1477.4" r="38.7" fill="#2f6f8f" opacity="0.28"/>
+<path d="M580.6 129.0 L509.7 341.9 L458.1 509.7 L451.6 632.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M451.6 632.3 L567.7 574.2 L651.6 529.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M451.6 632.3 L329.0 735.5 L251.6 825.8" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M451.6 632.3 L574.2 767.7 L683.9 916.1 L754.8 993.5" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M451.6 632.3 L464.5 890.3 L477.4 1116.1 L483.9 1329.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M483.9 1329.0 L496.8 1535.5 L516.1 1729.0 L522.6 1909.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M741.9 1051.6 L871.0 1038.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M290.3 825.8 L129.0 935.5" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<circle cx="451.6" cy="632.3" r="58.1" fill="#caa15a" opacity="0.08" stroke="#caa15a" stroke-width="1" stroke-opacity="0.3"/>
+<circle cx="238.7" cy="780.6" r="4" fill="#3a4a42"/>
+<circle cx="612.9" cy="716.1" r="4" fill="#3a4a42"/>
+<circle cx="322.6" cy="961.3" r="4" fill="#3a4a42"/>
+<circle cx="871.0" cy="574.2" r="4" fill="#3a4a42"/>
+<circle cx="767.7" cy="1012.9" r="4" fill="#3a4a42"/>
+<circle cx="483.9" cy="1374.2" r="4" fill="#3a4a42"/>
+<circle cx="393.5" cy="193.5" r="4" fill="#3a4a42"/>
+<circle cx="445.2" cy="622.6" r="4" fill="#3a4a42"/>
+<circle cx="464.5" cy="641.9" r="4" fill="#3a4a42"/>
+<circle cx="748.4" cy="1045.2" r="4" fill="#3a4a42"/>
+<text x="451.6" y="632.3" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Moonrest</text>
+<text x="387.1" y="219.4" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Nightgate</text>
+<text x="709.7" y="503.2" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Moonwell</text>
+<text x="212.9" y="877.4" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Gloamfield</text>
+<text x="767.7" y="1012.9" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Standing Vigil</text>
+<text x="483.9" y="1374.2" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Sleepless Barrow</text>
+<path d="M748.4 1045.2 L483.9 1374.2" fill="none" stroke="#e6bb6a" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.85"/>
+<g class="qstep" data-keys="giver,turnin" data-steps="1,3">
+<circle cx="748.4" cy="1045.2" r="21" fill="#f0c419" opacity="0.18"/>
+<circle cx="748.4" cy="1045.2" r="14" fill="#f0c419" stroke="#11160f" stroke-width="2"/>
+<text x="748.4" y="1050.2" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">1·3</text>
+</g>
+<g class="qstep" data-keys="barrow_king" data-steps="2">
+<circle cx="483.9" cy="1374.2" r="21" fill="#d9534f" opacity="0.18"/>
+<circle cx="483.9" cy="1374.2" r="14" fill="#d9534f" stroke="#11160f" stroke-width="2"/>
+<text x="483.9" y="1379.2" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">2</text>
+</g>
+<rect x="10" y="10" width="360" height="112" rx="10" fill="#11160f" opacity="0.82"/>
+<text x="22" y="34" fill="#cfe3d6" font-size="14" font-weight="bold">Where to go — N ↑</text>
+<circle cx="30" cy="48" r="9" fill="#f0c419"/>
+<text x="30" y="51.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">1</text>
+<text x="46" y="52" fill="#e8e8ea" font-size="13.5">Start — Astronomer Cassian</text>
+<circle cx="30" cy="72" r="9" fill="#d9534f"/>
+<text x="30" y="75.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">2</text>
+<text x="46" y="76" fill="#e8e8ea" font-size="13.5">1× The Barrow King</text>
+<circle cx="30" cy="96" r="9" fill="#5cb85c"/>
+<text x="30" y="99.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">3</text>
+<text x="46" y="100" fill="#e8e8ea" font-size="13.5">Turn in — Astronomer Cassian</text>
+</svg>

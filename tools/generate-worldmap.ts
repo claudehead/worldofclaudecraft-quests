@@ -1,8 +1,5 @@
 import { MOBS } from '../woc/src/sim/data.ts';
-import { ZONE1_NPCS, ZONE1_CAMPS, ZONE1_ROADS, ZONE1_ZONE, ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_ROADS, ZONE2_ZONE, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_ROADS, ZONE3_ZONE, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_NPCS, TEMPLE_CAMPS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, slug } from './zones.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE } from '../woc/src/sim/content/delves/index.ts';
 import { OVERWORLD_GRAVEYARDS } from '../woc/src/sim/content/graveyards.ts';
@@ -12,15 +9,9 @@ import * as fs from 'node:fs';
 const OUT = process.argv[2] || '/tmp/gen/world-map.json';
 const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS };
 const DIR = bestiaryDirByMob();
-const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
 
-const zones = [
-  { dir: '01-eastbrook-vale', title: 'Eastbrook Vale', npcs: ZONE1_NPCS, camps: ZONE1_CAMPS, roads: ZONE1_ROADS, zone: ZONE1_ZONE, quests: ZONE1_QUESTS },
-  { dir: '02-' + slug(ZONE2_ZONE.name), title: ZONE2_ZONE.name, npcs: ZONE2_NPCS, camps: ZONE2_CAMPS, roads: ZONE2_ROADS, zone: ZONE2_ZONE, quests: ZONE2_QUESTS },
-  { dir: '03-' + slug(ZONE3_ZONE.name), title: ZONE3_ZONE.name, npcs: ZONE3_NPCS, camps: ZONE3_CAMPS, roads: ZONE3_ROADS, zone: ZONE3_ZONE, quests: ZONE3_QUESTS },
-  { dir: '04-the-drowned-temple', title: 'The Drowned Temple', npcs: TEMPLE_NPCS, camps: TEMPLE_CAMPS, roads: [], zone: null, quests: TEMPLE_QUESTS },
-];
+const zones = GUIDE_ZONES.map((z) => ({ dir: z.dir, title: z.shortName, npcs: z.npcs, camps: z.camps, roads: z.roads, zone: z.zone, quests: z.quests }));
 
 // questId -> quest page file
 const questFile: Record<string, string> = {};

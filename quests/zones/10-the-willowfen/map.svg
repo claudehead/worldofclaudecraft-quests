@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1541" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="1541" fill="#1f2a24"/>
+<line x1="50.7" y1="0" x2="50.7" y2="1541" stroke="#2c3a32" stroke-width="1"/>
+<line x1="184.0" y1="0" x2="184.0" y2="1541" stroke="#2c3a32" stroke-width="1"/>
+<line x1="317.3" y1="0" x2="317.3" y2="1541" stroke="#2c3a32" stroke-width="1"/>
+<line x1="450.7" y1="0" x2="450.7" y2="1541" stroke="#2c3a32" stroke-width="1"/>
+<line x1="584.0" y1="0" x2="584.0" y2="1541" stroke="#2c3a32" stroke-width="1"/>
+<line x1="717.3" y1="0" x2="717.3" y2="1541" stroke="#2c3a32" stroke-width="1"/>
+<line x1="850.7" y1="0" x2="850.7" y2="1541" stroke="#2c3a32" stroke-width="1"/>
+<line x1="984.0" y1="0" x2="984.0" y2="1541" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="85.3" x2="1000" y2="85.3" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="218.7" x2="1000" y2="218.7" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="352.0" x2="1000" y2="352.0" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="485.3" x2="1000" y2="485.3" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="618.7" x2="1000" y2="618.7" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="752.0" x2="1000" y2="752.0" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="885.3" x2="1000" y2="885.3" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1018.7" x2="1000" y2="1018.7" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1152.0" x2="1000" y2="1152.0" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1285.3" x2="1000" y2="1285.3" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1418.7" x2="1000" y2="1418.7" stroke="#2c3a32" stroke-width="1"/>
+<circle cx="360.0" cy="448.0" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="328.0" cy="514.7" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="354.7" cy="584.0" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="424.0" cy="613.3" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="493.3" cy="584.0" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="520.0" cy="514.7" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="488.0" cy="448.0" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="221.3" cy="314.7" r="34.7" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="136.0" cy="362.7" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="205.3" cy="432.0" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="274.7" cy="378.7" r="24.0" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="610.7" cy="298.7" r="32.0" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="669.3" cy="346.7" r="24.0" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="578.7" cy="362.7" r="21.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="488.0" cy="816.0" r="34.7" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="578.7" cy="885.3" r="32.0" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="498.7" cy="928.0" r="29.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="248.0" cy="778.7" r="37.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="200.0" cy="826.7" r="26.7" fill="#2f6f8f" opacity="0.55"/>
+<path d="M392.0 245.3 L424.0 410.7 L424.0 517.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M424.0 416.0 L344.0 352.0 L274.7 341.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M424.0 416.0 L514.7 373.3 L552.0 314.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M424.0 410.7 L306.7 389.3 L269.3 517.3 L274.7 634.7 L285.3 730.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M424.0 410.7 L498.7 384.0 L568.0 448.0 L562.7 629.3 L504.0 768.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M285.3 730.7 L306.7 938.7 L328.0 1125.3 L333.3 1312.0 L322.7 1434.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M557.3 608.0 L642.7 666.7 L770.7 709.3 L893.3 725.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<circle cx="424.0" cy="517.3" r="53.3" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
+<text x="424.0" y="517.3" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Bridgemere</text>
+<text x="370.7" y="106.7" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Amberfen Steps</text>
+<text x="200.0" y="373.3" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Lilymoors</text>
+<text x="621.3" y="330.7" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Bogshine Pools</text>
+<text x="237.3" y="794.7" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Willowweep</text>
+<text x="530.7" y="874.7" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Drowsy Flats</text>
+<circle cx="237.3" cy="272.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="237.3" y="264.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Bogtoad ×3</text>
+<circle cx="626.7" cy="394.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="626.7" y="386.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Bogtoad ×3</text>
+<circle cx="248.0" cy="725.3" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="248.0" y="717.3" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Lily Wisp ×4</text>
+<circle cx="328.0" cy="554.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="328.0" y="546.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Willow Sprite ×3</text>
+<circle cx="541.3" cy="565.3" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="541.3" y="557.3" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Willow Sprite ×2</text>
+<circle cx="525.3" cy="874.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="525.3" y="866.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">The Drowsy Croaker ×1</text>
+<rect x="452.0" y="465.3" width="8" height="8" transform="rotate(45 456.0 469.3)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="478.7" y="454.7" width="8" height="8" transform="rotate(45 482.7 458.7)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="388.0" y="444.0" width="8" height="8" transform="rotate(45 392.0 448.0)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="356.0" y="470.7" width="8" height="8" transform="rotate(45 360.0 474.7)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="456.0" y="479.3" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Cut Mooring Line</text>
+<rect x="516.0" y="508.0" width="8" height="8" transform="rotate(45 520.0 512.0)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="526.7" y="609.3" width="8" height="8" transform="rotate(45 530.7 613.3)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="510.7" y="689.3" width="8" height="8" transform="rotate(45 514.7 693.3)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="520.0" y="522.0" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sunken Toll-Chest</text>
+<circle cx="378.7" cy="122.7" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="378.7" y="114.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Waykeeper Pell</text>
+<circle cx="426.7" cy="496.0" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="426.7" y="488.0" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Bridgewright Alden</text>
+<circle cx="440.0" cy="522.7" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="440.0" y="514.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Netter Maris</text>
+<circle cx="280.0" cy="741.3" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="280.0" y="733.3" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Mother Sedge</text>
+<text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">The Willowfen — N ↑</text>
+<rect x="10" y="1423" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
+<rect x="18" y="1430" width="11" height="11" fill="#f0c419"/>
+<text x="36" y="1439" fill="#cfe3d6" font-size="12">NPC (quest giver / turn-in)</text>
+<rect x="18" y="1448" width="11" height="11" fill="#d9534f"/>
+<text x="36" y="1457" fill="#cfe3d6" font-size="12">Mob camp (×count)</text>
+<rect x="18" y="1466" width="11" height="11" fill="#9b59b6"/>
+<text x="36" y="1475" fill="#cfe3d6" font-size="12">Dungeon entrance</text>
+<rect x="18" y="1484" width="11" height="11" fill="#5cb85c"/>
+<text x="36" y="1493" fill="#cfe3d6" font-size="12">Quest pickup (ground)</text>
+<rect x="18" y="1502" width="11" height="11" fill="#2f6f8f"/>
+<text x="36" y="1511" fill="#cfe3d6" font-size="12">Water</text>
+</svg>

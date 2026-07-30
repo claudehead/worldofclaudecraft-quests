@@ -2,10 +2,7 @@
 // mob camps, roads, lakes, place names, foliage) so you can see a whole zone at
 // once. Same world shape as quest3d.json (minus the quest path/hero).
 import { MOBS } from '../woc/src/sim/data.ts';
-import { ZONE1_NPCS, ZONE1_CAMPS, ZONE1_ROADS, ZONE1_ZONE } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_ROADS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_ROADS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_NPCS, TEMPLE_CAMPS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES } from './zones.ts';
 import { OVERWORLD_GRAVEYARDS } from '../woc/src/sim/content/graveyards.ts';
 import * as mf from '../woc/src/render/characters/manifest.ts';
 import { terrainHeight } from '../woc/src/sim/world.ts';
@@ -28,12 +25,10 @@ function foliageH(url: string, rnd: () => number): number {
   if (/bush/.test(url)) return 1.3 + rnd() * 0.7; if (/fern/.test(url)) return 1 + rnd() * 0.5; if (/mushroom/.test(url)) return 0.5 + rnd() * 0.4; return 1.5;
 }
 
-const ZONES = [
-  { dir: '01-eastbrook-vale', Z: ZONE1_ZONE, npcs: ZONE1_NPCS, camps: ZONE1_CAMPS, roads: ZONE1_ROADS, biome: 0x3f5a33, foliage: ['oak_1', 'oak_2', 'bush', 'bush_flowers', 'fern', 'mushroom'] },
-  { dir: '02-mirefen-marsh', Z: ZONE2_ZONE, npcs: ZONE2_NPCS, camps: ZONE2_CAMPS, roads: ZONE2_ROADS, biome: 0x35463a, foliage: ['dead_1', 'dead_2', 'fern', 'mushroom', 'bush'] },
-  { dir: '03-thornpeak-heights', Z: ZONE3_ZONE, npcs: ZONE3_NPCS, camps: ZONE3_CAMPS, roads: ZONE3_ROADS, biome: 0x52483a, foliage: ['dead_1', 'dead_3', 'bush', 'fern'] },
-  { dir: '04-the-drowned-temple', Z: null, npcs: TEMPLE_NPCS, camps: TEMPLE_CAMPS, roads: [], biome: 0x27424c, foliage: ['fern', 'mushroom', 'dead_2'] },
-] as any[];
+const ZONES = GUIDE_ZONES.map((z) => ({
+  dir: z.dir, Z: z.zone ?? null, npcs: z.npcs, camps: z.camps, roads: z.roads,
+  biome: z.visual.color, foliage: z.visual.foliage,
+})) as any[];
 const ROCKS = ['models/props/rock_large_d.glb', 'models/props/rock_tall_a.glb', 'models/props/rock_tall_h.glb', 'models/resources/wood_log_a.glb'];
 
 const out: Record<string, any> = {};

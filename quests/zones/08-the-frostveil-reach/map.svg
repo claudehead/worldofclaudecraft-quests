@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1204" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="1204" fill="#1f2a24"/>
+<line x1="37.0" y1="0" x2="37.0" y2="1204" stroke="#2c3a32" stroke-width="1"/>
+<line x1="152.8" y1="0" x2="152.8" y2="1204" stroke="#2c3a32" stroke-width="1"/>
+<line x1="268.5" y1="0" x2="268.5" y2="1204" stroke="#2c3a32" stroke-width="1"/>
+<line x1="384.3" y1="0" x2="384.3" y2="1204" stroke="#2c3a32" stroke-width="1"/>
+<line x1="500.0" y1="0" x2="500.0" y2="1204" stroke="#2c3a32" stroke-width="1"/>
+<line x1="615.7" y1="0" x2="615.7" y2="1204" stroke="#2c3a32" stroke-width="1"/>
+<line x1="731.5" y1="0" x2="731.5" y2="1204" stroke="#2c3a32" stroke-width="1"/>
+<line x1="847.2" y1="0" x2="847.2" y2="1204" stroke="#2c3a32" stroke-width="1"/>
+<line x1="963.0" y1="0" x2="963.0" y2="1204" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="97.2" x2="1000" y2="97.2" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="213.0" x2="1000" y2="213.0" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="328.7" x2="1000" y2="328.7" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="444.4" x2="1000" y2="444.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="560.2" x2="1000" y2="560.2" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="675.9" x2="1000" y2="675.9" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="791.7" x2="1000" y2="791.7" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="907.4" x2="1000" y2="907.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1023.1" x2="1000" y2="1023.1" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1138.9" x2="1000" y2="1138.9" stroke="#2c3a32" stroke-width="1"/>
+<circle cx="638.9" cy="537.0" r="37.0" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="611.1" cy="564.8" r="20.8" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="291.7" cy="814.8" r="27.8" fill="#2f6f8f" opacity="0.55"/>
+<path d="M430.6 351.9 L523.1 444.4 L597.2 504.6" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M597.2 504.6 L564.8 588.0 L592.6 675.9 L569.4 768.5" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M430.6 351.9 L338.0 583.3 L319.4 782.4" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M569.4 768.5 L662.0 884.3 L708.3 976.9" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M569.4 768.5 L407.4 907.4 L222.2 1046.3 L92.6 1111.1" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M430.6 351.9 L546.3 472.2 L569.4 597.2 L685.2 662.0 L800.9 814.8 L777.8 1000.0 L828.7 1083.3 L907.4 1111.1" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M430.6 351.9 L476.9 259.3 L546.3 166.7 L601.9 92.6" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<circle cx="430.6" cy="351.9" r="50.9" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
+<text x="430.6" y="351.9" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Icemantle</text>
+<text x="476.9" y="201.4" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Snowline</text>
+<text x="638.9" y="537.0" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Glacier Tarn</text>
+<text x="569.4" y="768.5" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Aurora Steps</text>
+<text x="291.7" y="814.8" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Shiverfen</text>
+<text x="731.5" y="930.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Howling Terraces</text>
+<circle cx="546.3" cy="467.6" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="546.3" y="459.6" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Snowdrift Wolf ×3</text>
+<circle cx="361.1" cy="652.8" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="361.1" y="644.8" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Snowdrift Wolf ×3</text>
+<circle cx="569.4" cy="780.1" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="569.4" y="772.1" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ice Wisp ×4</text>
+<circle cx="652.8" cy="495.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="652.8" y="487.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Rime Elemental ×2</text>
+<circle cx="523.1" cy="907.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="523.1" y="899.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Rime Elemental ×2</text>
+<circle cx="305.6" cy="763.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="305.6" y="755.9" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Fen Sprite ×3</text>
+<circle cx="722.2" cy="944.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="722.2" y="936.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Frostmane Yeti ×1</text>
+<rect x="514.5" y="435.8" width="8" height="8" transform="rotate(45 518.5 439.8)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="551.6" y="470.5" width="8" height="8" transform="rotate(45 555.6 474.5)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="584.0" y="493.7" width="8" height="8" transform="rotate(45 588.0 497.7)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="518.5" y="449.8" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ember Cache</text>
+<rect x="283.0" y="787.7" width="8" height="8" transform="rotate(45 287.0 791.7)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="269.1" y="820.1" width="8" height="8" transform="rotate(45 273.1 824.1)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="310.8" y="834.0" width="8" height="8" transform="rotate(45 314.8 838.0)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="329.3" y="801.6" width="8" height="8" transform="rotate(45 333.3 805.6)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="287.0" y="801.7" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sprung Fen Trap</text>
+<circle cx="437.5" cy="344.9" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="437.5" y="336.9" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Warden Kaldra</text>
+<circle cx="407.4" cy="344.9" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="407.4" y="336.9" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Hearthkeeper Maeve</text>
+<circle cx="472.2" cy="217.6" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="472.2" y="209.6" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Scout Einna</text>
+<circle cx="574.1" cy="777.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="574.1" y="769.8" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Aurorist Veyla</text>
+<circle cx="310.2" cy="777.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="310.2" y="769.8" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Trapper Brosk</text>
+<text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">The Frostveil Reach — N ↑</text>
+<rect x="10" y="1086" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
+<rect x="18" y="1093" width="11" height="11" fill="#f0c419"/>
+<text x="36" y="1102" fill="#cfe3d6" font-size="12">NPC (quest giver / turn-in)</text>
+<rect x="18" y="1111" width="11" height="11" fill="#d9534f"/>
+<text x="36" y="1120" fill="#cfe3d6" font-size="12">Mob camp (×count)</text>
+<rect x="18" y="1129" width="11" height="11" fill="#9b59b6"/>
+<text x="36" y="1138" fill="#cfe3d6" font-size="12">Dungeon entrance</text>
+<rect x="18" y="1147" width="11" height="11" fill="#5cb85c"/>
+<text x="36" y="1156" fill="#cfe3d6" font-size="12">Quest pickup (ground)</text>
+<rect x="18" y="1165" width="11" height="11" fill="#2f6f8f"/>
+<text x="36" y="1174" fill="#cfe3d6" font-size="12">Water</text>
+</svg>

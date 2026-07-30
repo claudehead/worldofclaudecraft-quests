@@ -3,7 +3,7 @@
   "branch": "main",
   "counts": {
     "quests": 202,
-    "zones": 4,
+    "zones": 15,
     "classes": 9,
     "dungeons": 6,
     "delves": 2
@@ -846,6 +846,1011 @@
           "group": true,
           "chain": true,
           "file": "quests/zones/04-the-drowned-temple/q-drowned-moon.md"
+        }
+      ]
+    },
+    {
+      "key": "farshore_isle",
+      "dir": "05-the-farshore",
+      "title": "The Farshore",
+      "levelRange": [
+        3,
+        7
+      ],
+      "hub": "Gullhaven",
+      "biome": "vale",
+      "bestiary": "quests/zones/05-the-farshore/bestiary.md",
+      "map": "quests/zones/05-the-farshore/map.svg",
+      "quests": [
+        {
+          "id": "q_fs_bell_at_the_landing",
+          "name": "The Bell at the Landing",
+          "level": 2,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/05-the-farshore/q-fs-bell-at-the-landing.md"
+        },
+        {
+          "id": "q_fs_hold_the_riftfields",
+          "name": "Hold the Riftfields",
+          "level": 3,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/05-the-farshore/q-fs-hold-the-riftfields.md"
+        },
+        {
+          "id": "q_fs_steel_for_the_redoubt",
+          "name": "Steel for the Redoubt",
+          "level": 3,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/05-the-farshore/q-fs-steel-for-the-redoubt.md"
+        },
+        {
+          "id": "q_fs_the_three_bells",
+          "name": "The Three Bells",
+          "level": 3,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/05-the-farshore/q-fs-the-three-bells.md"
+        },
+        {
+          "id": "q_fs_song_before_the_break",
+          "name": "The Song Before the Break",
+          "level": 4,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/05-the-farshore/q-fs-song-before-the-break.md"
+        },
+        {
+          "id": "q_fs_moss_and_mending",
+          "name": "Moss and Mending",
+          "level": 4,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/05-the-farshore/q-fs-moss-and-mending.md"
+        },
+        {
+          "id": "q_fs_bram_come_home",
+          "name": "Bram Come Home",
+          "level": 5,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/05-the-farshore/q-fs-bram-come-home.md"
+        },
+        {
+          "id": "q_fs_stalkers_off_the_light",
+          "name": "Stalkers off the Light",
+          "level": 5,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/05-the-farshore/q-fs-stalkers-off-the-light.md"
+        },
+        {
+          "id": "q_fs_the_great_break",
+          "name": "The Great Break",
+          "level": 6,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/05-the-farshore/q-fs-the-great-break.md"
+        }
+      ]
+    },
+    {
+      "key": "veiled_hollow",
+      "dir": "06-the-veiled-hollow",
+      "title": "The Veiled Hollow",
+      "levelRange": [
+        15,
+        20
+      ],
+      "hub": "Eldergleam",
+      "biome": "dusk",
+      "bestiary": "quests/zones/06-the-veiled-hollow/bestiary.md",
+      "map": "quests/zones/06-the-veiled-hollow/map.svg",
+      "quests": [
+        {
+          "id": "q_veil_thinned",
+          "name": "The Thinned Veil",
+          "level": 14,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/06-the-veiled-hollow/q-veil-thinned.md"
+        },
+        {
+          "id": "q_gleaming_antlers",
+          "name": "Gleaming Antlers",
+          "level": 14,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/06-the-veiled-hollow/q-gleaming-antlers.md"
+        },
+        {
+          "id": "q_wisp_lights",
+          "name": "Lights of the Shallows",
+          "level": 14,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/06-the-veiled-hollow/q-wisp-lights.md"
+        },
+        {
+          "id": "q_calming_the_deep",
+          "name": "Calming the Deep",
+          "level": 15,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-calming-the-deep.md"
+        },
+        {
+          "id": "q_monument_tour",
+          "name": "What the Stones Remember",
+          "level": 15,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/06-the-veiled-hollow/q-monument-tour.md"
+        },
+        {
+          "id": "q_grove_menace",
+          "name": "Menace in the Glade",
+          "level": 15,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-grove-menace.md"
+        },
+        {
+          "id": "q_spore_hearts",
+          "name": "Hearts of the Ring",
+          "level": 16,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-spore-hearts.md"
+        },
+        {
+          "id": "q_shards_of_starfall",
+          "name": "Shards of Starfall",
+          "level": 16,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-shards-of-starfall.md"
+        },
+        {
+          "id": "q_hollow_the_huntsman",
+          "name": "The Warden of the Herds",
+          "level": 16,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/06-the-veiled-hollow/q-hollow-the-huntsman.md"
+        },
+        {
+          "id": "q_sunken_court",
+          "name": "The Sunken Court",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-sunken-court.md"
+        },
+        {
+          "id": "q_treant_accord",
+          "name": "The Treant Accord",
+          "level": 17,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/06-the-veiled-hollow/q-treant-accord.md"
+        },
+        {
+          "id": "q_spore_tide",
+          "name": "Against the Spore Tide",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-spore-tide.md"
+        },
+        {
+          "id": "q_hollow_old_marrowshell",
+          "name": "The Old Shell of the Shallows",
+          "level": 17,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-hollow-old-marrowshell.md"
+        },
+        {
+          "id": "q_waking_warden",
+          "name": "The Waking Warden",
+          "level": 18,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-waking-warden.md"
+        },
+        {
+          "id": "q_seal_restored",
+          "name": "The Seal Restored",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-seal-restored.md"
+        },
+        {
+          "id": "q_wardens_echoes",
+          "name": "Echoes of the Warden",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-wardens-echoes.md"
+        },
+        {
+          "id": "q_hollow_first_of_the_herd",
+          "name": "First of the Herd",
+          "level": 18,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/06-the-veiled-hollow/q-hollow-first-of-the-herd.md"
+        }
+      ]
+    },
+    {
+      "key": "drakelands",
+      "dir": "07-the-drakelands",
+      "title": "The Drakelands",
+      "levelRange": [
+        16,
+        20
+      ],
+      "hub": "Wyrmwatch",
+      "biome": "ember",
+      "bestiary": "quests/zones/07-the-drakelands/bestiary.md",
+      "map": "quests/zones/07-the-drakelands/map.svg",
+      "quests": [
+        {
+          "id": "q_dk_ash_on_the_wind",
+          "name": "Ash on the Wind",
+          "level": 16,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/07-the-drakelands/q-dk-ash-on-the-wind.md"
+        },
+        {
+          "id": "q_dk_trolls_on_the_road",
+          "name": "Trolls on the Road",
+          "level": 16,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/07-the-drakelands/q-dk-trolls-on-the-road.md"
+        },
+        {
+          "id": "q_dk_marrow_and_ash",
+          "name": "Marrow and Ash",
+          "level": 16,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/07-the-drakelands/q-dk-marrow-and-ash.md"
+        },
+        {
+          "id": "q_dk_scorched_stores",
+          "name": "Scorched Stores",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/07-the-drakelands/q-dk-scorched-stores.md"
+        },
+        {
+          "id": "q_dk_banners_over_the_dunes",
+          "name": "Banners over the Dunes",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/07-the-drakelands/q-dk-banners-over-the-dunes.md"
+        },
+        {
+          "id": "q_dk_watcher_at_the_wargate",
+          "name": "The Watcher at the Wargate",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/07-the-drakelands/q-dk-watcher-at-the-wargate.md"
+        },
+        {
+          "id": "q_dk_scales_of_the_maw",
+          "name": "Scales of the Maw",
+          "level": 19,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/07-the-drakelands/q-dk-scales-of-the-maw.md"
+        },
+        {
+          "id": "q_dk_matriarch_of_the_maw",
+          "name": "Matriarch of the Maw",
+          "level": 19,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/07-the-drakelands/q-dk-matriarch-of-the-maw.md"
+        }
+      ]
+    },
+    {
+      "key": "frostveil",
+      "dir": "08-the-frostveil-reach",
+      "title": "The Frostveil Reach",
+      "levelRange": [
+        17,
+        20
+      ],
+      "hub": "Icemantle",
+      "biome": "frost",
+      "bestiary": "quests/zones/08-the-frostveil-reach/bestiary.md",
+      "map": "quests/zones/08-the-frostveil-reach/map.svg",
+      "quests": [
+        {
+          "id": "q_fv_snowline_report",
+          "name": "Word from the Snowline",
+          "level": 16,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-snowline-report.md"
+        },
+        {
+          "id": "q_fv_wolves_at_the_door",
+          "name": "Wolves at the Door",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-wolves-at-the-door.md"
+        },
+        {
+          "id": "q_fv_winter_pelts",
+          "name": "Pelts for the Lodge",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-winter-pelts.md"
+        },
+        {
+          "id": "q_fv_ember_caches",
+          "name": "Embers on the Tarn Road",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-ember-caches.md"
+        },
+        {
+          "id": "q_fv_lights_over_steps",
+          "name": "Lights over the Steps",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-lights-over-steps.md"
+        },
+        {
+          "id": "q_fv_aurora_motes",
+          "name": "Motes of the Aurora",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-aurora-motes.md"
+        },
+        {
+          "id": "q_fv_rime_unbound",
+          "name": "Rime Unbound",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-rime-unbound.md"
+        },
+        {
+          "id": "q_fv_silent_trapline",
+          "name": "The Silent Trapline",
+          "level": 17,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-silent-trapline.md"
+        },
+        {
+          "id": "q_fv_sprung_traps",
+          "name": "Sprites in the Traps",
+          "level": 17,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-sprung-traps.md"
+        },
+        {
+          "id": "q_fv_seeing_wren_home",
+          "name": "Seeing Wren Home",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-seeing-wren-home.md"
+        },
+        {
+          "id": "q_fv_howl_above",
+          "name": "The Howl on the Terraces",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-howl-above.md"
+        },
+        {
+          "id": "q_fv_frostmane_tyrant",
+          "name": "The Frostmane Tyrant",
+          "level": 19,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/08-the-frostveil-reach/q-fv-frostmane-tyrant.md"
+        }
+      ]
+    },
+    {
+      "key": "amberfall",
+      "dir": "09-the-amberfall",
+      "title": "The Amberfall",
+      "levelRange": [
+        18,
+        20
+      ],
+      "hub": "Lanternmere",
+      "biome": "amber",
+      "bestiary": "quests/zones/09-the-amberfall/bestiary.md",
+      "map": "quests/zones/09-the-amberfall/map.svg",
+      "quests": [
+        {
+          "id": "q_af_goldmelt_road",
+          "name": "The Gold Road Down",
+          "level": 17,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/09-the-amberfall/q-af-goldmelt-road.md"
+        },
+        {
+          "id": "q_af_foxes_in_the_lamplight",
+          "name": "Foxes in the Lamplight",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/09-the-amberfall/q-af-foxes-in-the-lamplight.md"
+        },
+        {
+          "id": "q_af_orchard_call",
+          "name": "A Cart for the Orchard",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/09-the-amberfall/q-af-orchard-call.md"
+        },
+        {
+          "id": "q_af_sprites_and_spigots",
+          "name": "Sprites and Spigots",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/09-the-amberfall/q-af-sprites-and-spigots.md"
+        },
+        {
+          "id": "q_af_amber_from_the_herd",
+          "name": "Amber off the Herd",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/09-the-amberfall/q-af-amber-from-the-herd.md"
+        },
+        {
+          "id": "q_af_lanterns_on_the_water",
+          "name": "Lanterns on the Water",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/09-the-amberfall/q-af-lanterns-on-the-water.md"
+        },
+        {
+          "id": "q_af_what_took_the_moorings",
+          "name": "What Took the Moorings",
+          "level": 18,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/09-the-amberfall/q-af-what-took-the-moorings.md"
+        },
+        {
+          "id": "q_af_the_meredark",
+          "name": "The Meredark",
+          "level": 19,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/09-the-amberfall/q-af-the-meredark.md"
+        }
+      ]
+    },
+    {
+      "key": "willowfen",
+      "dir": "10-the-willowfen",
+      "title": "The Willowfen",
+      "levelRange": [
+        19,
+        20
+      ],
+      "hub": "Bridgemere",
+      "biome": "fen",
+      "bestiary": "quests/zones/10-the-willowfen/bestiary.md",
+      "map": "quests/zones/10-the-willowfen/map.svg",
+      "quests": [
+        {
+          "id": "q_wf_across_the_fenway",
+          "name": "Across the Fenway",
+          "level": 18,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/10-the-willowfen/q-wf-across-the-fenway.md"
+        },
+        {
+          "id": "q_wf_rope_chewers",
+          "name": "The Rope-Chewers",
+          "level": 19,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/10-the-willowfen/q-wf-rope-chewers.md"
+        },
+        {
+          "id": "q_wf_mind_the_moorings",
+          "name": "Mind the Moorings",
+          "level": 19,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/10-the-willowfen/q-wf-mind-the-moorings.md"
+        },
+        {
+          "id": "q_wf_eels_for_the_smokehouse",
+          "name": "Eels for the Smokehouse",
+          "level": 19,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/10-the-willowfen/q-wf-eels-for-the-smokehouse.md"
+        },
+        {
+          "id": "q_wf_toll_and_tangle",
+          "name": "Toll and Tangle",
+          "level": 19,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/10-the-willowfen/q-wf-toll-and-tangle.md"
+        },
+        {
+          "id": "q_wf_witch_of_willowweep",
+          "name": "The Witch of Willowweep",
+          "level": 19,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/10-the-willowfen/q-wf-witch-of-willowweep.md"
+        },
+        {
+          "id": "q_wf_wisplight_charms",
+          "name": "Wisplight Charms",
+          "level": 19,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/10-the-willowfen/q-wf-wisplight-charms.md"
+        },
+        {
+          "id": "q_wf_croakers_hush",
+          "name": "The Croaker's Hush",
+          "level": 20,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/10-the-willowfen/q-wf-croakers-hush.md"
+        }
+      ]
+    },
+    {
+      "key": "evergarden",
+      "dir": "11-the-evergarden",
+      "title": "The Evergarden",
+      "levelRange": [
+        20,
+        20
+      ],
+      "hub": "Hedgewick",
+      "biome": "garden",
+      "bestiary": "quests/zones/11-the-evergarden/bestiary.md",
+      "map": "quests/zones/11-the-evergarden/map.svg",
+      "quests": [
+        {
+          "id": "q_eg_gate_report",
+          "name": "Word Through the Gate",
+          "level": 19,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/11-the-evergarden/q-eg-gate-report.md"
+        },
+        {
+          "id": "q_eg_hungry_shapes",
+          "name": "Pruned into Hunger",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/11-the-evergarden/q-eg-hungry-shapes.md"
+        },
+        {
+          "id": "q_eg_stolen_shears",
+          "name": "The Stolen Shears",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/11-the-evergarden/q-eg-stolen-shears.md"
+        },
+        {
+          "id": "q_eg_gnomes_in_the_green",
+          "name": "The Groundskeepers Grudge",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/11-the-evergarden/q-eg-gnomes-in-the-green.md"
+        },
+        {
+          "id": "q_eg_who_trims_the_hedges",
+          "name": "Who Trims the Hedges",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/11-the-evergarden/q-eg-who-trims-the-hedges.md"
+        },
+        {
+          "id": "q_eg_bloom_clippings",
+          "name": "Clippings from the Living Green",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/11-the-evergarden/q-eg-bloom-clippings.md"
+        },
+        {
+          "id": "q_eg_four_statues",
+          "name": "The Four Quiet Sisters",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/11-the-evergarden/q-eg-four-statues.md"
+        },
+        {
+          "id": "q_eg_bull_of_the_court",
+          "name": "The Bull of the Fountain Court",
+          "level": 20,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/11-the-evergarden/q-eg-bull-of-the-court.md"
+        }
+      ]
+    },
+    {
+      "key": "galecrest",
+      "dir": "12-the-galecrest",
+      "title": "The Galecrest",
+      "levelRange": [
+        20,
+        20
+      ],
+      "hub": "Wickharbor",
+      "biome": "gale",
+      "bestiary": "quests/zones/12-the-galecrest/bestiary.md",
+      "map": "quests/zones/12-the-galecrest/map.svg",
+      "quests": [
+        {
+          "id": "q_gc_down_the_windway",
+          "name": "Down the Windway",
+          "level": 19,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/12-the-galecrest/q-gc-down-the-windway.md"
+        },
+        {
+          "id": "q_gc_wool_off_the_downs",
+          "name": "Wool off the Downs",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/12-the-galecrest/q-gc-wool-off-the-downs.md"
+        },
+        {
+          "id": "q_gc_scuttlers_in_the_pots",
+          "name": "Scuttlers in the Pots",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/12-the-galecrest/q-gc-scuttlers-in-the-pots.md"
+        },
+        {
+          "id": "q_gc_keeper_of_the_flame",
+          "name": "The Keeper of the Flame",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/12-the-galecrest/q-gc-keeper-of-the-flame.md"
+        },
+        {
+          "id": "q_gc_lanterns_on_the_shear",
+          "name": "Lanterns on the Shear",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/12-the-galecrest/q-gc-lanterns-on-the-shear.md"
+        },
+        {
+          "id": "q_gc_wind_against_the_wick",
+          "name": "Wind Against the Wick",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/12-the-galecrest/q-gc-wind-against-the-wick.md"
+        },
+        {
+          "id": "q_gc_the_far_shore",
+          "name": "The Far Shore",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/12-the-galecrest/q-gc-the-far-shore.md"
+        },
+        {
+          "id": "q_gc_dead_mens_cargo",
+          "name": "Dead Men's Cargo",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/12-the-galecrest/q-gc-dead-mens-cargo.md"
+        },
+        {
+          "id": "q_gc_the_wreck_warden",
+          "name": "The Wreck Warden",
+          "level": 20,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/12-the-galecrest/q-gc-the-wreck-warden.md"
+        }
+      ]
+    },
+    {
+      "key": "nightbloom",
+      "dir": "13-the-nightbloom",
+      "title": "The Nightbloom",
+      "levelRange": [
+        20,
+        20
+      ],
+      "hub": "Moonrest",
+      "biome": "night",
+      "bestiary": "quests/zones/13-the-nightbloom/bestiary.md",
+      "map": "quests/zones/13-the-nightbloom/map.svg",
+      "quests": [
+        {
+          "id": "q_nb_road_of_lanterns",
+          "name": "The Road of Lanterns",
+          "level": 19,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/13-the-nightbloom/q-nb-road-of-lanterns.md"
+        },
+        {
+          "id": "q_nb_striders_in_the_dark",
+          "name": "Striders in the Dark",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/13-the-nightbloom/q-nb-striders-in-the-dark.md"
+        },
+        {
+          "id": "q_nb_wool_by_moonlight",
+          "name": "Wool by Moonlight",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/13-the-nightbloom/q-nb-wool-by-moonlight.md"
+        },
+        {
+          "id": "q_nb_night_gardens",
+          "name": "The Night Gardens",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/13-the-nightbloom/q-nb-night-gardens.md"
+        },
+        {
+          "id": "q_nb_eyes_on_the_vigil",
+          "name": "Eyes on the Vigil",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/13-the-nightbloom/q-nb-eyes-on-the-vigil.md"
+        },
+        {
+          "id": "q_nb_charts_of_the_stones",
+          "name": "The Charts in the Stones",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/13-the-nightbloom/q-nb-charts-of-the-stones.md"
+        },
+        {
+          "id": "q_nb_restless_mounds",
+          "name": "The Restless Mounds",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/13-the-nightbloom/q-nb-restless-mounds.md"
+        },
+        {
+          "id": "q_nb_the_barrow_king",
+          "name": "The Barrow King Wakes",
+          "level": 20,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/13-the-nightbloom/q-nb-the-barrow-king.md"
+        }
+      ]
+    },
+    {
+      "key": "palmreach",
+      "dir": "14-the-palmreach",
+      "title": "The Palmreach",
+      "levelRange": [
+        20,
+        20
+      ],
+      "hub": "Drifthaven",
+      "biome": "jungle",
+      "bestiary": "quests/zones/14-the-palmreach/bestiary.md",
+      "map": "quests/zones/14-the-palmreach/map.svg",
+      "quests": [
+        {
+          "id": "q_pr_down_to_drifthaven",
+          "name": "Down to Drifthaven",
+          "level": 19,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/14-the-palmreach/q-pr-down-to-drifthaven.md"
+        },
+        {
+          "id": "q_pr_wreck_line_cargo",
+          "name": "The Wreck Line",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/14-the-palmreach/q-pr-wreck-line-cargo.md"
+        },
+        {
+          "id": "q_pr_scuttler_cull",
+          "name": "Shellbacked Thieves",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/14-the-palmreach/q-pr-scuttler-cull.md"
+        },
+        {
+          "id": "q_pr_the_lost_navigator",
+          "name": "The Lost Navigator",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/14-the-palmreach/q-pr-the-lost-navigator.md"
+        },
+        {
+          "id": "q_pr_boars_in_the_gardens",
+          "name": "Boars in the Gardens",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/14-the-palmreach/q-pr-boars-in-the-gardens.md"
+        },
+        {
+          "id": "q_pr_the_man_who_went_in",
+          "name": "The Man Who Went In",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/14-the-palmreach/q-pr-the-man-who-went-in.md"
+        },
+        {
+          "id": "q_pr_canopy_silk",
+          "name": "Silk from the Canopy",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/14-the-palmreach/q-pr-canopy-silk.md"
+        },
+        {
+          "id": "q_pr_what_the_drums_guard",
+          "name": "What the Drums Guard",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/14-the-palmreach/q-pr-what-the-drums-guard.md"
+        },
+        {
+          "id": "q_pr_idol_guardian",
+          "name": "The Idol Guardian",
+          "level": 20,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/14-the-palmreach/q-pr-idol-guardian.md"
+        }
+      ]
+    },
+    {
+      "key": "wraithwood",
+      "dir": "15-the-wraithwood",
+      "title": "The Wraithwood",
+      "levelRange": [
+        20,
+        20
+      ],
+      "hub": "Gallowmere",
+      "biome": "haunt",
+      "bestiary": "quests/zones/15-the-wraithwood/bestiary.md",
+      "map": "quests/zones/15-the-wraithwood/map.svg",
+      "quests": [
+        {
+          "id": "q_ww_bells_of_gallowmere",
+          "name": "The Bells of Gallowmere",
+          "level": 19,
+          "group": false,
+          "chain": false,
+          "file": "quests/zones/15-the-wraithwood/q-ww-bells-of-gallowmere.md"
+        },
+        {
+          "id": "q_ww_silk_in_the_eaves",
+          "name": "Silk in the Eaves",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/15-the-wraithwood/q-ww-silk-in-the-eaves.md"
+        },
+        {
+          "id": "q_ww_widows_skeins",
+          "name": "The Widow's Skeins",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/15-the-wraithwood/q-ww-widows-skeins.md"
+        },
+        {
+          "id": "q_ww_candles_at_the_bounds",
+          "name": "Candles at the Bounds",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/15-the-wraithwood/q-ww-candles-at-the-bounds.md"
+        },
+        {
+          "id": "q_ww_the_last_vicar",
+          "name": "The Last Vicar",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/15-the-wraithwood/q-ww-the-last-vicar.md"
+        },
+        {
+          "id": "q_ww_wraiths_of_the_tarn",
+          "name": "Wraiths of the Tarn",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/15-the-wraithwood/q-ww-wraiths-of-the-tarn.md"
+        },
+        {
+          "id": "q_ww_what_the_bark_holds",
+          "name": "What the Bark Holds",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/15-the-wraithwood/q-ww-what-the-bark-holds.md"
+        },
+        {
+          "id": "q_ww_walking_mosley_home",
+          "name": "Walking Mosley Home",
+          "level": 20,
+          "group": false,
+          "chain": true,
+          "file": "quests/zones/15-the-wraithwood/q-ww-walking-mosley-home.md"
+        },
+        {
+          "id": "q_ww_horn_of_the_huntsman",
+          "name": "The Horn of the Huntsman",
+          "level": 20,
+          "group": true,
+          "chain": true,
+          "file": "quests/zones/15-the-wraithwood/q-ww-horn-of-the-huntsman.md"
         }
       ]
     }

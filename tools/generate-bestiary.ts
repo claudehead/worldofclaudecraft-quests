@@ -1,9 +1,6 @@
 import { MOBS, ITEMS } from '../woc/src/sim/data.ts';
 import { armorReduction } from '../woc/src/sim/types.ts';
-import { ZONE1_CAMPS, ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_CAMPS, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_CAMPS, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_CAMPS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, zoneForDungeon, type GuideZone } from './zones.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULES, DROWNED_LITANY_DELVE, DROWNED_LITANY_MODULES, DELVE_MOBS } from '../woc/src/sim/content/delves/index.ts';
 import { qualityDot, statLine } from './iteminfo.ts';
@@ -24,21 +21,14 @@ for (const [dv, mods] of [[COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULE
   for (const b of (dv.bosses || [])) delveByMob[b] = { name: dv.name, file: `delves/${dv.id}.md` };
 }
 
-const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
-
-interface ZoneSpec { dir: string; title: string; camps: any[]; quests: any; zBand?: [number, number]; temple?: boolean; }
-const zones: ZoneSpec[] = [
-  { dir: '01-eastbrook-vale', title: 'Eastbrook Vale', camps: ZONE1_CAMPS, quests: ZONE1_QUESTS, zBand: [-180, 180] },
-  { dir: '02-mirefen-marsh', title: 'Mirefen Marsh', camps: ZONE2_CAMPS, quests: ZONE2_QUESTS, zBand: [180, 540] },
-  { dir: '03-thornpeak-heights', title: 'Thornpeak Heights', camps: ZONE3_CAMPS, quests: ZONE3_QUESTS, zBand: [540, 900] },
-  { dir: '04-the-drowned-temple', title: 'The Drowned Temple', camps: TEMPLE_CAMPS, quests: TEMPLE_QUESTS, temple: true },
-];
+type ZoneSpec = GuideZone;
+const zones: ZoneSpec[] = GUIDE_ZONES;
 
 const itemName = (id: string) => ITEMS[id]?.name || id;
 
 const QNAME: Record<string, string> = {};
-for (const rec of [ZONE1_QUESTS, ZONE2_QUESTS, ZONE3_QUESTS, TEMPLE_QUESTS])
-  for (const q of Object.values(rec) as any[]) QNAME[q.id] = q.name;
+for (const z of GUIDE_ZONES)
+  for (const q of Object.values(z.quests) as any[]) QNAME[q.id] = q.name;
 
 const SLOT_LABEL: Record<string, string> = {
   helmet: 'Head', shoulder: 'Shoulder', chest: 'Chest', gloves: 'Hands', waist: 'Waist',
@@ -303,9 +293,7 @@ function mobsForZone(spec: ZoneSpec): any[] {
     for (const o of q.objectives || []) if (o.type === 'kill' && o.targetMobId) ids.add(o.targetMobId);
   // dungeon spawns for this zone
   for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) {
-    const inZone = spec.temple ? TEMPLE_DUNGEONS.has(id)
-      : spec.zBand && !TEMPLE_DUNGEONS.has(id) && d.doorPos.z >= spec.zBand[0] && d.doorPos.z < spec.zBand[1];
-    if (inZone) for (const s of d.spawns || []) ids.add(s.mobId);
+    if (zoneForDungeon(id, d.doorPos)?.key === spec.key) for (const s of d.spawns || []) ids.add(s.mobId);
   }
   const mobs = [...ids]
     .map(id => ALL_MOBS[id])
@@ -319,9 +307,9 @@ for (const spec of zones) {
   const mobs = mobsForZone(spec);
   const spawnsByMob: Record<string, { x: number; z: number; count: number }[]> = {};
   for (const c of spec.camps) (spawnsByMob[c.mobId] ||= []).push({ x: c.center.x, z: c.center.z, count: c.count });
-  const sec = (m: any) => mobSection(m, spawnsByMob[m.id] || [], spec.title);
+  const sec = (m: any) => mobSection(m, spawnsByMob[m.id] || [], spec.shortName);
   const L: string[] = [];
-  L.push(`# Bestiary — ${spec.title}`);
+  L.push(`# Bestiary — ${spec.shortName}`);
   L.push('');
   L.push(`${mobs.length} creatures you'll fight in this zone. Health/armor/damage are shown across the mob's spawn level range (mobs roll a random level within it). Mitigation % is what a same-level attacker's physical hits lose to armor — spells ignore armor.`);
   L.push('');
@@ -336,7 +324,7 @@ for (const spec of zones) {
   if (bosses.length) { L.push(`## Bosses`); L.push(''); for (const m of bosses) L.push(sec(m)); }
   L.push(`---`);
   L.push('');
-  L.push(`[← Back to ${spec.title} quests](README.md) · [Zone map](map.svg)`);
+  L.push(`[← Back to ${spec.shortName} quests](README.md) · [Zone map](map.svg)`);
   L.push('');
   fs.writeFileSync(`${OUT}/zones/${spec.dir}/bestiary.md`, L.join('\n'));
   console.log(`bestiary: ${spec.dir} (${mobs.length} mobs)`);

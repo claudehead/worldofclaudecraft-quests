@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 933" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="933" fill="#1f2a24"/>
+<line x1="90.7" y1="0" x2="90.7" y2="933" stroke="#2c3a32" stroke-width="1"/>
+<line x1="220.2" y1="0" x2="220.2" y2="933" stroke="#2c3a32" stroke-width="1"/>
+<line x1="349.7" y1="0" x2="349.7" y2="933" stroke="#2c3a32" stroke-width="1"/>
+<line x1="479.3" y1="0" x2="479.3" y2="933" stroke="#2c3a32" stroke-width="1"/>
+<line x1="608.8" y1="0" x2="608.8" y2="933" stroke="#2c3a32" stroke-width="1"/>
+<line x1="738.3" y1="0" x2="738.3" y2="933" stroke="#2c3a32" stroke-width="1"/>
+<line x1="867.9" y1="0" x2="867.9" y2="933" stroke="#2c3a32" stroke-width="1"/>
+<line x1="997.4" y1="0" x2="997.4" y2="933" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="108.8" x2="1000" y2="108.8" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="238.3" x2="1000" y2="238.3" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="367.9" x2="1000" y2="367.9" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="497.4" x2="1000" y2="497.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="626.9" x2="1000" y2="626.9" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="756.5" x2="1000" y2="756.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="886.0" x2="1000" y2="886.0" stroke="#2c3a32" stroke-width="1"/>
+<circle cx="764.2" cy="199.5" r="57.0" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="722.8" cy="238.3" r="25.9" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="805.7" cy="165.8" r="23.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="673.6" cy="665.8" r="46.6" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="634.7" cy="699.5" r="23.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="717.6" cy="637.3" r="20.7" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="168.4" cy="510.4" r="31.1" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="440.4" cy="399.0" r="18.1" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="862.7" cy="559.6" r="33.7" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="847.2" cy="606.2" r="20.7" fill="#2f6f8f" opacity="0.55"/>
+<path d="M375.6 342.0 L393.8 337.0 L407.0 323.8 L411.9 305.7 L407.0 287.6 L393.8 274.4 L375.6 269.4 L357.5 274.4 L344.3 287.6 L339.4 305.7 L344.3 323.8 L357.5 337.0 L375.6 342.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M116.6 121.8 L155.4 186.5 L233.2 251.3 L342.0 295.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M362.7 339.4 L362.7 373.1 L323.8 510.4 L297.9 626.9" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M411.9 316.1 L432.6 316.1 L557.0 347.2 L686.5 399.0 L790.2 458.5" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M393.8 274.6 L401.6 264.2 L518.1 191.7 L660.6 173.6 L707.3 191.7 L738.3 196.9" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M318.7 639.9 L453.4 683.9 L577.7 678.8" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<circle cx="375.6" cy="316.1" r="77.7" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
+<text x="375.6" y="316.1" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Eldergleam</text>
+<text x="116.6" y="114.0" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Duskfall Cave</text>
+<text x="173.6" y="207.3" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Duskfall Overlook</text>
+<text x="557.0" y="121.8" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Elder Grove</text>
+<text x="764.2" y="199.5" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Starfall Basin</text>
+<text x="803.1" y="458.5" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Sunken Court</text>
+<text x="673.6" y="665.8" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Crystalline Shallows</text>
+<text x="297.9" y="639.9" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Gleaming Deep</text>
+<circle cx="676.2" cy="274.6" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="676.2" y="266.6" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Glimmerwisp ×4</text>
+<circle cx="634.7" cy="626.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="634.7" y="618.9" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Glimmerwisp ×4</text>
+<circle cx="805.7" cy="549.2" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="805.7" y="541.2" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Duskwisp ×4</text>
+<circle cx="401.6" cy="756.5" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="401.6" y="748.5" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Duskwisp ×4</text>
+<circle cx="510.4" cy="544.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="510.4" y="536.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Veiled Stag ×6</text>
+<circle cx="500.0" cy="559.6" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="500.0" y="551.6" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Veiled Doe ×3</text>
+<circle cx="525.9" cy="528.5" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="525.9" y="520.5" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Veiled Doe ×2</text>
+<circle cx="233.2" cy="704.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="233.2" y="696.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sporeling Gatherer ×5</text>
+<circle cx="414.5" cy="803.1" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="414.5" y="795.1" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Corrupted Sporeling ×6</text>
+<circle cx="323.8" cy="823.8" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="323.8" y="815.8" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Corrupted Sporeling ×5</text>
+<circle cx="544.0" cy="103.6" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="544.0" y="95.6" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Treant Elder ×3</text>
+<circle cx="803.1" cy="458.5" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="803.1" y="450.5" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ancient Guardian ×5</text>
+<circle cx="836.8" cy="419.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="836.8" y="411.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ancient Guardian ×3</text>
+<circle cx="803.1" cy="458.5" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="803.1" y="450.5" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">The Waking Warden ×1</text>
+<circle cx="103.6" cy="497.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="103.6" y="489.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">The Gleamstag ×1</text>
+<circle cx="746.1" cy="611.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="746.1" y="603.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Old Marrowshell ×1</text>
+<circle cx="536.3" cy="523.3" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="536.3" y="515.3" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Aurelhorn, First of the Herd ×1</text>
+<circle cx="233.2" cy="720.2" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="233.2" y="712.2" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Gleamfolk Pixie ×5</text>
+<rect x="799.1" y="454.5" width="8" height="8" transform="rotate(45 803.1 458.5)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="803.1" y="468.5" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">The Hollow Sealstone</text>
+<rect x="169.6" y="208.4" width="8" height="8" transform="rotate(45 173.6 212.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="173.6" y="222.4" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Weathered Monument</text>
+<rect x="765.4" y="483.0" width="8" height="8" transform="rotate(45 769.4 487.0)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="769.4" y="497.0" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sunken Monument</text>
+<rect x="889.8" y="825.0" width="8" height="8" transform="rotate(45 893.8 829.0)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="893.8" y="839.0" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Forgotten Monument</text>
+<circle cx="367.9" cy="279.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="367.9" y="271.8" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Keeper Saelwyn</text>
+<circle cx="427.5" cy="277.2" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="427.5" y="269.2" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Loremother Bryn</text>
+<circle cx="360.1" cy="318.7" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="360.1" y="310.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Provisioner Fenna</text>
+<circle cx="391.2" cy="318.7" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="391.2" y="310.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Wardsmith Orun</text>
+<circle cx="399.0" cy="292.7" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="399.0" y="284.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Archivist Tullo</text>
+<circle cx="525.9" cy="507.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="525.9" y="499.8" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Huntsman Deral</text>
+<text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">The Veiled Hollow — N ↑</text>
+<rect x="10" y="815" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
+<rect x="18" y="822" width="11" height="11" fill="#f0c419"/>
+<text x="36" y="831" fill="#cfe3d6" font-size="12">NPC (quest giver / turn-in)</text>
+<rect x="18" y="840" width="11" height="11" fill="#d9534f"/>
+<text x="36" y="849" fill="#cfe3d6" font-size="12">Mob camp (×count)</text>
+<rect x="18" y="858" width="11" height="11" fill="#9b59b6"/>
+<text x="36" y="867" fill="#cfe3d6" font-size="12">Dungeon entrance</text>
+<rect x="18" y="876" width="11" height="11" fill="#5cb85c"/>
+<text x="36" y="885" fill="#cfe3d6" font-size="12">Quest pickup (ground)</text>
+<rect x="18" y="894" width="11" height="11" fill="#2f6f8f"/>
+<text x="36" y="903" fill="#cfe3d6" font-size="12">Water</text>
+</svg>

@@ -1,10 +1,7 @@
 // Emits bestiary/bestiary.json — per-mob card data for the website's Bestiary
 // card view (mirrors gear/gear.json). Pure data from the game source.
 import { MOBS, ITEMS } from '../woc/src/sim/data.ts';
-import { ZONE1_CAMPS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_CAMPS } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_CAMPS } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_CAMPS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, zoneForDungeon } from './zones.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULES, DROWNED_LITANY_DELVE, DROWNED_LITANY_MODULES, DELVE_MOBS } from '../woc/src/sim/content/delves/index.ts';
 import * as fs from 'node:fs';
@@ -12,20 +9,14 @@ import * as fs from 'node:fs';
 const OUT = process.argv[2] || 'bestiary/bestiary.json';
 const ALL: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS, ...DELVE_MOBS };
 
-const ZONES = [
-  { dir: '01-eastbrook-vale', title: 'Eastbrook Vale', camps: ZONE1_CAMPS },
-  { dir: '02-mirefen-marsh', title: 'Mirefen Marsh', camps: ZONE2_CAMPS },
-  { dir: '03-thornpeak-heights', title: 'Thornpeak Heights', camps: ZONE3_CAMPS },
-  { dir: '04-the-drowned-temple', title: 'The Drowned Temple', camps: TEMPLE_CAMPS },
-];
-const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
+const ZONES = GUIDE_ZONES.map((z) => ({ dir: z.dir, title: z.shortName, camps: z.camps }));
 
 // mob -> first camp (zone + location)
 const campOf: Record<string, { zone: any; center: { x: number; z: number } }> = {};
 for (const z of ZONES) for (const c of (z.camps || []) as any[]) { if (c.mobId && !campOf[c.mobId]) campOf[c.mobId] = { zone: z, center: c.center }; }
 // mob -> dungeon/delve
 const dungeonOf: Record<string, { name: string; file: string; zoneDir: string }> = {};
-for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) for (const s of d.spawns || []) { const mid = s.mobId || s.template; if (mid && !dungeonOf[mid]) dungeonOf[mid] = { name: d.name, file: `dungeons/${id}.md`, zoneDir: TEMPLE_DUNGEONS.has(id) ? '04-the-drowned-temple' : '' }; }
+for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) for (const s of d.spawns || []) { const mid = s.mobId || s.template; if (mid && !dungeonOf[mid]) dungeonOf[mid] = { name: d.name, file: `dungeons/${id}.md`, zoneDir: zoneForDungeon(id, d.doorPos)?.dir || '' }; }
 const delveOf: Record<string, { name: string; file: string }> = {};
 for (const [dv, mods] of [[COLLAPSED_RELIQUARY_DELVE, COLLAPSED_RELIQUARY_MODULES], [DROWNED_LITANY_DELVE, DROWNED_LITANY_MODULES]] as any[]) {
   for (const key of [...(dv.modules || []), dv.finaleModuleId].filter(Boolean)) {

@@ -1,10 +1,7 @@
 import { ITEMS, MOBS, NPCS, QUESTS } from '../woc/src/sim/data.ts';
 import { DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { DELVE_MOBS, DELVE_SHOPS, COLLAPSED_RELIQUARY_DELVE } from '../woc/src/sim/content/delves/index.ts';
-import { ZONE1_QUESTS, ZONE1_ZONE } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_QUESTS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES } from './zones.ts';
 import { GUIDE_CLASSES } from '../woc/src/guide/content.generated.ts';
 import { canEquipItem } from '../woc/src/sim/equipment_rules.ts';
 import { quality, statLine, itemRatings } from './iteminfo.ts';
@@ -16,8 +13,8 @@ const DIR = bestiaryDirByMob();
 // the level you can realistically obtain an item: min across its sources
 // (dropping mob's level, the reward quest's level, the delve's min level).
 const questLevel: Record<string, number> = {};
-for (const [rec, low] of [[ZONE1_QUESTS, ZONE1_ZONE.levelRange[0]], [ZONE2_QUESTS, ZONE2_ZONE.levelRange[0]], [ZONE3_QUESTS, ZONE3_ZONE.levelRange[0]], [TEMPLE_QUESTS, 15]] as any[])
-  for (const q of Object.values(rec) as any[]) for (const it of Object.values(q.itemRewards || {})) questLevel[it as string] = Math.min(questLevel[it as string] ?? 99, q.minLevel ?? low);
+for (const z of GUIDE_ZONES)
+  for (const q of Object.values(z.quests) as any[]) for (const it of Object.values(q.itemRewards || {})) questLevel[it as string] = Math.min(questLevel[it as string] ?? 99, q.minLevel ?? z.levelRange[0]);
 const MAX_LEVEL = 20;
 
 const OUT = process.argv[2] || '/tmp/gen/bis.json';

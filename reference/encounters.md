@@ -140,16 +140,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-breach_wretch"></a>
-
-### Breach Wretch
-
-**Level 3–5 · 85 HP · Kobold**
-
-**Drops:** Break-Scarred Steel _(60%)_
-
-<br clear="all">
-
 <a id="mob-fisher_bram"></a>
 
 ### Fisher Bram
@@ -163,14 +153,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Mogger Lackey
 
 **Level 5–6 · 152 HP · Humanoid**
-
-<br clear="all">
-
-<a id="mob-void_stalker"></a>
-
-### Void Stalker
-
-**Level 5–6 · 148 HP · Beast**
 
 <br clear="all">
 
@@ -189,14 +171,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Raised Bonewalker
 
 **Level 7–8 · 76 HP · Undead**
-
-<br clear="all">
-
-<a id="mob-sundered_horror"></a>
-
-### The Sundered Horror 🔶 Elite
-
-**Level 7 · 296 HP · Ogre**
 
 <br clear="all">
 
@@ -266,75 +240,11 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-veiled_doe"></a>
-
-### Veiled Doe
-
-**Level 14–15 · 288 HP · Beast**
-
-<br clear="all">
-
-<a id="mob-duskwisp"></a>
-
-### Duskwisp
-
-**Level 15–16 · 356 HP · Elemental**
-
-**Drops:** Duskwisp Essence _(60%)_, Starfall Shard _(50%)_
-
-<br clear="all">
-
-<a id="mob-mushroom_pixie"></a>
-
-### Gleamfolk Pixie
-
-**Level 15–16 · 322 HP · Kobold**
-
-<br clear="all">
-
-<a id="mob-glimmerwisp"></a>
-
-### Glimmerwisp
-
-**Level 15–16 · 300 HP · Elemental**
-
-**Drops:** Wisp Mote _(60%)_
-
-<br clear="all">
-
 <a id="mob-ironvein_sapper"></a>
 
 ### Ironvein Sapper
 
 **Level 15–16 · 378 HP · Burrower**
-
-<br clear="all">
-
-<a id="mob-sporeling_gatherer"></a>
-
-### Sporeling Gatherer
-
-**Level 15 · 303 HP · Kobold**
-
-<br clear="all">
-
-<a id="mob-veiled_stag"></a>
-
-### Veiled Stag
-
-**Level 15–16 · 380 HP · Beast**
-
-**Drops:** Gleaming Antler _(55%)_
-
-<br clear="all">
-
-<a id="mob-corrupted_sporeling"></a>
-
-### Corrupted Sporeling
-
-**Level 16–17 · 417 HP · Kobold**
-
-**Drops:** Spore Heart _(65%)_
 
 <br clear="all">
 
@@ -376,54 +286,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-ashbone_raider"></a>
-
-### Ashbone Raider
-
-**Level 17–18 · 374 HP · Undead**
-
-**Drops:** Bone Fragments _(40%)_, Ashbone War-Brand _(60%)_
-
-<br clear="all">
-
-<a id="mob-dune_troll"></a>
-
-### Dune Troll
-
-**Level 17–19 · 484 HP · Troll**
-
-**Drops:** Chipped Tusk _(40%)_
-
-<br clear="all">
-
-<a id="mob-fen_sprite"></a>
-
-### Fen Sprite
-
-**Level 17–18 · 354 HP · Kobold**
-
-<br clear="all">
-
-<a id="mob-ice_wisp"></a>
-
-### Ice Wisp
-
-**Level 17–18 · 332 HP · Elemental**
-
-**Drops:** Aurora Mote _(65%)_
-
-<br clear="all">
-
-<a id="mob-old_marrowshell"></a>
-
-### Old Marrowshell 🔶 Elite
-
-**Level 17 · 1258 HP · Beast**
-
-**Drops:** Guardian Core _(100%)_, Duskfang Dirk _(35%)_
-
-<br clear="all">
-
 <a id="mob-pearlguard_sentinel"></a>
 
 ### Pearlguard Sentinel 🔶 Elite
@@ -434,61 +296,11 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-snowdrift_wolf"></a>
-
-### Snowdrift Wolf
-
-**Level 17–18 · 376 HP · Beast**
-
-**Drops:** Thick Winter Pelt _(60%)_
-
-<br clear="all">
-
-<a id="mob-gleamstag"></a>
-
-### The Gleamstag 🔶 Elite
-
-**Level 17 · 1150 HP · Beast**
-
-**Drops:** Gleamstag Charm _(100%)_
-
-<br clear="all">
-
-<a id="mob-ancient_guardian"></a>
-
-### Ancient Guardian 🔶 Elite
-
-**Level 18–19 · 697 HP · Elemental**
-
-**Drops:** Guardian Core _(40%)_
-
-<br clear="all">
-
 <a id="mob-apprentice_wren"></a>
 
 ### Apprentice Wren
 
 **Level 18 · 600 HP · Humanoid**
-
-<br clear="all">
-
-<a id="mob-ashbone_warcaller"></a>
-
-### Ashbone Warcaller
-
-**Level 18–19 · 442 HP · Undead**
-
-**Drops:** Bone Fragments _(40%)_, Ashbone War-Brand _(60%)_
-
-<br clear="all">
-
-<a id="mob-aurelhorn"></a>
-
-### Aurelhorn, First of the Herd 🔶 Elite
-
-**Level 18 · 1368 HP · Beast**
-
-**Drops:** Gleaming Antler _(100%)_, Veilsteel Blade _(35%)_
 
 <br clear="all">
 
@@ -531,32 +343,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 **Level 18–23 · 510 HP · Undead**
 
 **Drops:** Hoarfrost Edge _(2%)_, Rift Essence _(5%)_
-
-<br clear="all">
-
-<a id="mob-gilded_stag"></a>
-
-### Gilded Stag
-
-**Level 18–19 · 396 HP · Beast**
-
-**Drops:** Gilded Sap Clot _(60%)_
-
-<br clear="all">
-
-<a id="mob-gloam_fox"></a>
-
-### Gloam Fox
-
-**Level 18 · 332 HP · Beast**
-
-<br clear="all">
-
-<a id="mob-harvest_sprite"></a>
-
-### Harvest Sprite
-
-**Level 18–19 · 371 HP · Kobold**
 
 <br clear="all">
 
@@ -618,14 +404,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-rime_elemental"></a>
-
-### Rime Elemental
-
-**Level 18–19 · 442 HP · Elemental**
-
-<br clear="all">
-
 <a id="mob-rift_bonewalker"></a>
 
 ### Risen Bonewalker
@@ -684,16 +462,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-treant_elder"></a>
-
-### Treant Elder 🔶 Elite
-
-**Level 18 · 636 HP · Ogre**
-
-**Drops:** Elder Bark _(70%)_
-
-<br clear="all">
-
 <a id="mob-varkas_boneguard"></a>
 
 ### Varkas Boneguard
@@ -722,64 +490,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-bogtoad"></a>
-
-### Bogtoad
-
-**Level 19–20 · 456 HP · Murloc**
-
-**Drops:** Plump Fen Eel _(60%)_
-
-<br clear="all">
-
-<a id="mob-emberwing_drake"></a>
-
-### Emberwing Drake 🔶 Elite
-
-**Level 19–20 · 770 HP · Dragonkin**
-
-**Drops:** Emberwing Scale _(70%)_
-
-<br clear="all">
-
-<a id="mob-frostmane_yeti"></a>
-
-### Frostmane Yeti 🔶 Elite
-
-**Level 19–20 · 720 HP · Ogre**
-
-<br clear="all">
-
-<a id="mob-lily_wisp"></a>
-
-### Lily Wisp
-
-**Level 19 · 348 HP · Elemental**
-
-**Drops:** Wisplight Globe _(65%)_
-
-<br clear="all">
-
-<a id="mob-mere_lurker"></a>
-
-### Mere Lurker
-
-**Level 19–20 · 458 HP · Murloc**
-
-**Drops:** Slimy Mudfin Scale _(40%)_
-
-<br clear="all">
-
-<a id="mob-orchard_treant"></a>
-
-### Orchard Treant 🔶 Elite
-
-**Level 19–20 · 670 HP · Ogre**
-
-**Drops:** Tangled Weed _(40%)_
-
-<br clear="all">
-
 <a id="mob-thunzharr_stormling"></a>
 
 ### Roused Stormling
@@ -790,21 +500,17 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <a id="mob-terrace_howler"></a>
 
+<img src="../quests/zones/_mob-renders/terrace_howler.png" width="140" align="right" alt="Terrace Howler">
+
 ### Terrace Howler
 
 **Level 19–20 · 508 HP · Beast**
 
 <br clear="all">
 
-<a id="mob-willow_sprite"></a>
-
-### Willow Sprite
-
-**Level 19–20 · 410 HP · Kobold**
-
-<br clear="all">
-
 <a id="mob-barrow_wight"></a>
+
+<img src="../quests/zones/_mob-renders/barrow_wight.png" width="140" align="right" alt="Barrow Wight">
 
 ### Barrow Wight
 
@@ -822,17 +528,9 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-canopy_weaver"></a>
-
-### Canopy Weaver
-
-**Level 20 · 436 HP · Spider**
-
-**Drops:** Twitching Spider Leg _(40%)_, Canopy Silk Hank _(60%)_
-
-<br clear="all">
-
 <a id="mob-cindraleth_maw_matriarch"></a>
+
+<img src="../quests/zones/_mob-renders/cindraleth_maw_matriarch.png" width="140" align="right" alt="Cindraleth the Maw Matriarch">
 
 ### Cindraleth the Maw Matriarch 🔶 Elite
 
@@ -870,17 +568,9 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-downs_bandit"></a>
-
-### Downs Bandit
-
-**Level 20 · 412 HP · Kobold**
-
-**Drops:** Red Bandana _(50%)_, Linen Scrap _(30%)_
-
-<br clear="all">
-
 <a id="mob-drowned_deckhand"></a>
+
+<img src="../quests/zones/_mob-renders/drowned_deckhand.png" width="140" align="right" alt="Drowned Deckhand">
 
 ### Drowned Deckhand
 
@@ -910,17 +600,11 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <a id="mob-gale_wisp"></a>
 
+<img src="../quests/zones/_mob-renders/gale_wisp.png" width="140" align="right" alt="Gale Wisp">
+
 ### Gale Wisp
 
 **Level 20 · 412 HP · Elemental**
-
-<br clear="all">
-
-<a id="mob-gloam_strider"></a>
-
-### Gloam Strider
-
-**Level 20 · 458 HP · Beast**
 
 <br clear="all">
 
@@ -932,59 +616,11 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-gravenbark_shambler"></a>
-
-### Gravenbark Shambler
-
-**Level 20 · 610 HP · Ogre**
-
-**Drops:** Tangled Weed _(40%)_
-
-<br clear="all">
-
-<a id="mob-hedge_gnome"></a>
-
-### Hedge Gnome
-
-**Level 20 · 412 HP · Kobold**
-
-**Drops:** Stolen Hedgewick Shears _(60%)_
-
-<br clear="all">
-
-<a id="mob-moonfleece_grazer"></a>
-
-### Moonfleece Grazer
-
-**Level 20 · 460 HP · Beast**
-
-**Drops:** Moonfleece Tuft _(60%)_
-
-<br clear="all">
-
-<a id="mob-moor_ram"></a>
-
-### Moor Ram
-
-**Level 20 · 438 HP · Beast**
-
-**Drops:** Greasy Ram Wool _(65%)_
-
-<br clear="all">
-
 <a id="mob-castaway_navigator"></a>
 
 ### Navigator Suli
 
 **Level 20 · 640 HP · Humanoid**
-
-<br clear="all">
-
-<a id="mob-nightkin_stargazer"></a>
-
-### Nightkin Stargazer
-
-**Level 20 · 414 HP · Elemental**
 
 <br clear="all">
 
@@ -997,6 +633,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 <br clear="all">
 
 <a id="mob-shoal_scuttler"></a>
+
+<img src="../quests/zones/_mob-renders/shoal_scuttler.png" width="140" align="right" alt="Shoal Scuttler">
 
 ### Shoal Scuttler
 
@@ -1036,113 +674,15 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
-<a id="mob-barrow_king"></a>
-
-### The Barrow King 🔶 Elite
-
-**Level 20 · 830 HP · Undead**
-
-**Drops:** Bone Fragments _(100%)_
-
-<br clear="all">
-
-<a id="mob-drowsy_croaker"></a>
-
-### The Drowsy Croaker 🔶 Elite
-
-**Level 20 · 820 HP · Murloc**
-
-<br clear="all">
-
-<a id="mob-idol_guardian"></a>
-
-### The Idol Guardian 🔶 Elite
-
-**Level 20 · 830 HP · Elemental**
-
-<br clear="all">
-
 <a id="mob-the_meredark"></a>
+
+<img src="../quests/zones/_mob-renders/the_meredark.png" width="140" align="right" alt="The Meredark">
 
 ### The Meredark 🔶 Elite
 
 **Level 20 · 720 HP · Murloc**
 
 **Drops:** Slimy Mudfin Scale _(100%)_
-
-<br clear="all">
-
-<a id="mob-pale_huntsman"></a>
-
-### The Pale Huntsman 🔶 Elite
-
-**Level 20 · 835 HP · Undead**
-
-**Drops:** Bone Fragments _(100%)_
-
-<br clear="all">
-
-<a id="mob-the_topiary_bull"></a>
-
-### The Topiary Bull 🔶 Elite
-
-**Level 20 · 835 HP · Beast**
-
-**Drops:** Tangled Weed _(100%)_
-
-<br clear="all">
-
-<a id="mob-waking_warden"></a>
-
-### The Waking Warden 🔶 Elite
-
-**Level 20 · 1620 HP · Elemental**
-
-**Drops:** The Warden's Seal _(100%)_
-
-<br clear="all">
-
-<a id="mob-the_wreck_warden"></a>
-
-### The Wreck Warden 🔶 Elite
-
-**Level 20 · 835 HP · Undead**
-
-**Drops:** Bone Fragments _(100%)_
-
-<br clear="all">
-
-<a id="mob-thicket_boar"></a>
-
-### Thicket Boar
-
-**Level 20 · 462 HP · Beast**
-
-<br clear="all">
-
-<a id="mob-tide_scuttler"></a>
-
-### Tide Scuttler
-
-**Level 20 · 414 HP · Beast**
-
-<br clear="all">
-
-<a id="mob-topiary_stag"></a>
-
-### Topiary Stag
-
-**Level 20 · 416 HP · Beast**
-
-**Drops:** Pruned Bloom Clipping _(65%)_
-
-<br clear="all">
-
-<a id="mob-topiary_wolf"></a>
-
-### Topiary Wolf
-
-**Level 20 · 438 HP · Beast**
 
 <br clear="all">
 
@@ -1175,34 +715,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Vision of Royal Assassin Voss
 
 **Level 20 · 1 HP · Humanoid**
-
-<br clear="all">
-
-<a id="mob-widowsilk_spinner"></a>
-
-### Widowsilk Spinner
-
-**Level 20 · 456 HP · Spider**
-
-**Drops:** Twitching Spider Leg _(40%)_, Widowsilk Skein _(60%)_
-
-<br clear="all">
-
-<a id="mob-wood_wraith"></a>
-
-### Wood Wraith
-
-**Level 20 · 412 HP · Elemental**
-
-<br clear="all">
-
-<a id="mob-wreck_thief"></a>
-
-### Wreckfield Thief
-
-**Level 20 · 412 HP · Kobold**
-
-**Drops:** Red Bandana _(50%)_, Linen Scrap _(30%)_
 
 <br clear="all">
 

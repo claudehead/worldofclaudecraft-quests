@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 933" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="933" fill="#1f2a24"/>
+<circle cx="764.2" cy="199.5" r="57.0" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="722.8" cy="238.3" r="25.9" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="805.7" cy="165.8" r="23.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="673.6" cy="665.8" r="46.6" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="634.7" cy="699.5" r="23.3" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="717.6" cy="637.3" r="20.7" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="168.4" cy="510.4" r="31.1" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="440.4" cy="399.0" r="18.1" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="862.7" cy="559.6" r="33.7" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="847.2" cy="606.2" r="20.7" fill="#2f6f8f" opacity="0.28"/>
+<path d="M375.6 342.0 L393.8 337.0 L407.0 323.8 L411.9 305.7 L407.0 287.6 L393.8 274.4 L375.6 269.4 L357.5 274.4 L344.3 287.6 L339.4 305.7 L344.3 323.8 L357.5 337.0 L375.6 342.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M116.6 121.8 L155.4 186.5 L233.2 251.3 L342.0 295.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M362.7 339.4 L362.7 373.1 L323.8 510.4 L297.9 626.9" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M411.9 316.1 L432.6 316.1 L557.0 347.2 L686.5 399.0 L790.2 458.5" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M393.8 274.6 L401.6 264.2 L518.1 191.7 L660.6 173.6 L707.3 191.7 L738.3 196.9" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M318.7 639.9 L453.4 683.9 L577.7 678.8" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<circle cx="375.6" cy="316.1" r="77.7" fill="#caa15a" opacity="0.08" stroke="#caa15a" stroke-width="1" stroke-opacity="0.3"/>
+<circle cx="676.2" cy="274.6" r="4" fill="#3a4a42"/>
+<circle cx="634.7" cy="626.9" r="4" fill="#3a4a42"/>
+<circle cx="805.7" cy="549.2" r="4" fill="#3a4a42"/>
+<circle cx="401.6" cy="756.5" r="4" fill="#3a4a42"/>
+<circle cx="510.4" cy="544.0" r="4" fill="#3a4a42"/>
+<circle cx="500.0" cy="559.6" r="4" fill="#3a4a42"/>
+<circle cx="525.9" cy="528.5" r="4" fill="#3a4a42"/>
+<circle cx="233.2" cy="704.7" r="4" fill="#3a4a42"/>
+<circle cx="414.5" cy="803.1" r="4" fill="#3a4a42"/>
+<circle cx="323.8" cy="823.8" r="4" fill="#3a4a42"/>
+<circle cx="544.0" cy="103.6" r="4" fill="#3a4a42"/>
+<circle cx="803.1" cy="458.5" r="4" fill="#3a4a42"/>
+<circle cx="836.8" cy="419.7" r="4" fill="#3a4a42"/>
+<circle cx="803.1" cy="458.5" r="4" fill="#3a4a42"/>
+<circle cx="103.6" cy="497.4" r="4" fill="#3a4a42"/>
+<circle cx="746.1" cy="611.4" r="4" fill="#3a4a42"/>
+<circle cx="536.3" cy="523.3" r="4" fill="#3a4a42"/>
+<circle cx="233.2" cy="720.2" r="4" fill="#3a4a42"/>
+<circle cx="367.9" cy="279.8" r="4" fill="#3a4a42"/>
+<circle cx="427.5" cy="277.2" r="4" fill="#3a4a42"/>
+<circle cx="360.1" cy="318.7" r="4" fill="#3a4a42"/>
+<circle cx="391.2" cy="318.7" r="4" fill="#3a4a42"/>
+<circle cx="399.0" cy="292.7" r="4" fill="#3a4a42"/>
+<circle cx="525.9" cy="507.8" r="4" fill="#3a4a42"/>
+<text x="375.6" y="316.1" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Eldergleam</text>
+<text x="116.6" y="114.0" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Duskfall Cave</text>
+<text x="173.6" y="207.3" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Duskfall Overlook</text>
+<text x="557.0" y="121.8" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Elder Grove</text>
+<text x="764.2" y="199.5" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Starfall Basin</text>
+<text x="803.1" y="458.5" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Sunken Court</text>
+<text x="673.6" y="665.8" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Crystalline Shallows</text>
+<text x="297.9" y="639.9" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Gleaming Deep</text>
+<path d="M399.0 292.7 L819.9 439.1" fill="none" stroke="#e6bb6a" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.85"/>
+<g class="qstep" data-keys="giver,turnin" data-steps="1,3">
+<circle cx="399.0" cy="292.7" r="21" fill="#f0c419" opacity="0.18"/>
+<circle cx="399.0" cy="292.7" r="14" fill="#f0c419" stroke="#11160f" stroke-width="2"/>
+<text x="399.0" y="297.7" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">1·3</text>
+</g>
+<g class="qstep" data-keys="ancient_guardian" data-steps="2">
+<circle cx="819.9" cy="439.1" r="21" fill="#d9534f" opacity="0.18"/>
+<circle cx="819.9" cy="439.1" r="14" fill="#d9534f" stroke="#11160f" stroke-width="2"/>
+<text x="819.9" y="444.1" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">2</text>
+</g>
+<rect x="10" y="10" width="360" height="112" rx="10" fill="#11160f" opacity="0.82"/>
+<text x="22" y="34" fill="#cfe3d6" font-size="14" font-weight="bold">Where to go — N ↑</text>
+<circle cx="30" cy="48" r="9" fill="#f0c419"/>
+<text x="30" y="51.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">1</text>
+<text x="46" y="52" fill="#e8e8ea" font-size="13.5">Start — Archivist Tullo</text>
+<circle cx="30" cy="72" r="9" fill="#d9534f"/>
+<text x="30" y="75.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">2</text>
+<text x="46" y="76" fill="#e8e8ea" font-size="13.5">10× Ancient Guardian</text>
+<circle cx="30" cy="96" r="9" fill="#5cb85c"/>
+<text x="30" y="99.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">3</text>
+<text x="46" y="100" fill="#e8e8ea" font-size="13.5">Turn in — Archivist Tullo</text>
+</svg>

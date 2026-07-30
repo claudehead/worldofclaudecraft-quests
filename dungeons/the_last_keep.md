@@ -5,7 +5,7 @@
 | **Suggested players** | 1 |
 | **Enemy levels** | — |
 | **Entrance** | overworld portal ~x:414, z:2017 |
-| **Zone** | [thornpeak heights](../quests/zones/03-thornpeak-heights/README.md) |
+| **Zone** | [the drakelands](../quests/zones/07-the-drakelands/README.md) |
 
 > You step into the cold, silent halls of the Last Keep.
 

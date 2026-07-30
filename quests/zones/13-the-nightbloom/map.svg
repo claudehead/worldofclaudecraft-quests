@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 2039" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="2039" fill="#1f2a24"/>
+<line x1="32.3" y1="0" x2="32.3" y2="2039" stroke="#2c3a32" stroke-width="1"/>
+<line x1="193.5" y1="0" x2="193.5" y2="2039" stroke="#2c3a32" stroke-width="1"/>
+<line x1="354.8" y1="0" x2="354.8" y2="2039" stroke="#2c3a32" stroke-width="1"/>
+<line x1="516.1" y1="0" x2="516.1" y2="2039" stroke="#2c3a32" stroke-width="1"/>
+<line x1="677.4" y1="0" x2="677.4" y2="2039" stroke="#2c3a32" stroke-width="1"/>
+<line x1="838.7" y1="0" x2="838.7" y2="2039" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="83.9" x2="1000" y2="83.9" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="245.2" x2="1000" y2="245.2" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="406.5" x2="1000" y2="406.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="567.7" x2="1000" y2="567.7" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="729.0" x2="1000" y2="729.0" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="890.3" x2="1000" y2="890.3" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1051.6" x2="1000" y2="1051.6" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1212.9" x2="1000" y2="1212.9" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1374.2" x2="1000" y2="1374.2" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1535.5" x2="1000" y2="1535.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1696.8" x2="1000" y2="1696.8" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1858.1" x2="1000" y2="1858.1" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="2019.4" x2="1000" y2="2019.4" stroke="#2c3a32" stroke-width="1"/>
+<circle cx="709.7" cy="503.2" r="45.2" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="225.8" cy="954.8" r="32.3" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="154.8" cy="864.5" r="25.8" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="561.3" cy="1477.4" r="38.7" fill="#2f6f8f" opacity="0.55"/>
+<path d="M580.6 129.0 L509.7 341.9 L458.1 509.7 L451.6 632.3" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M451.6 632.3 L567.7 574.2 L651.6 529.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M451.6 632.3 L329.0 735.5 L251.6 825.8" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M451.6 632.3 L574.2 767.7 L683.9 916.1 L754.8 993.5" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M451.6 632.3 L464.5 890.3 L477.4 1116.1 L483.9 1329.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M483.9 1329.0 L496.8 1535.5 L516.1 1729.0 L522.6 1909.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M741.9 1051.6 L871.0 1038.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M290.3 825.8 L129.0 935.5" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<circle cx="451.6" cy="632.3" r="58.1" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
+<text x="451.6" y="632.3" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Moonrest</text>
+<text x="387.1" y="219.4" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Nightgate</text>
+<text x="709.7" y="503.2" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Moonwell</text>
+<text x="212.9" y="877.4" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Gloamfield</text>
+<text x="767.7" y="1012.9" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Standing Vigil</text>
+<text x="483.9" y="1374.2" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Sleepless Barrow</text>
+<circle cx="238.7" cy="780.6" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="238.7" y="772.6" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Moonfleece Grazer ×4</text>
+<circle cx="612.9" cy="716.1" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="612.9" y="708.1" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Moonfleece Grazer ×3</text>
+<circle cx="322.6" cy="961.3" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="322.6" y="953.3" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Gloam Strider ×3</text>
+<circle cx="871.0" cy="574.2" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="871.0" y="566.2" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Gloam Strider ×3</text>
+<circle cx="767.7" cy="1012.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="767.7" y="1004.9" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Nightkin Stargazer ×3</text>
+<circle cx="483.9" cy="1374.2" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="483.9" y="1366.2" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">The Barrow King ×1</text>
+<rect x="234.7" y="841.2" width="8" height="8" transform="rotate(45 238.7 845.2)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="196.0" y="892.8" width="8" height="8" transform="rotate(45 200.0 896.8)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="260.5" y="912.1" width="8" height="8" transform="rotate(45 264.5 916.1)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="170.2" y="815.4" width="8" height="8" transform="rotate(45 174.2 819.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="238.7" y="855.2" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Nightbloom Blossom</text>
+<rect x="796.0" y="996.0" width="8" height="8" transform="rotate(45 800.0 1000.0)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="731.5" y="1034.7" width="8" height="8" transform="rotate(45 735.5 1038.7)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="783.1" y="1041.2" width="8" height="8" transform="rotate(45 787.1 1045.2)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="800.0" y="1010.0" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Vigil Star Chart</text>
+<rect x="525.0" y="1408.9" width="8" height="8" transform="rotate(45 529.0 1412.9)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="421.8" y="1415.4" width="8" height="8" transform="rotate(45 425.8 1419.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="505.7" y="1447.6" width="8" height="8" transform="rotate(45 509.7 1451.6)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="454.1" y="1428.3" width="8" height="8" transform="rotate(45 458.1 1432.3)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="529.0" y="1422.9" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Scattered Grave Offering</text>
+<circle cx="393.5" cy="193.5" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="393.5" y="185.5" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Lamplighter Sorrel</text>
+<circle cx="445.2" cy="622.6" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="445.2" y="614.6" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Lira Dewsong</text>
+<circle cx="464.5" cy="641.9" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="464.5" y="633.9" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Weaver Amelle</text>
+<circle cx="748.4" cy="1045.2" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="748.4" y="1037.2" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Astronomer Cassian</text>
+<text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">The Nightbloom — N ↑</text>
+<rect x="10" y="1921" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
+<rect x="18" y="1928" width="11" height="11" fill="#f0c419"/>
+<text x="36" y="1937" fill="#cfe3d6" font-size="12">NPC (quest giver / turn-in)</text>
+<rect x="18" y="1946" width="11" height="11" fill="#d9534f"/>
+<text x="36" y="1955" fill="#cfe3d6" font-size="12">Mob camp (×count)</text>
+<rect x="18" y="1964" width="11" height="11" fill="#9b59b6"/>
+<text x="36" y="1973" fill="#cfe3d6" font-size="12">Dungeon entrance</text>
+<rect x="18" y="1982" width="11" height="11" fill="#5cb85c"/>
+<text x="36" y="1991" fill="#cfe3d6" font-size="12">Quest pickup (ground)</text>
+<rect x="18" y="2000" width="11" height="11" fill="#2f6f8f"/>
+<text x="36" y="2009" fill="#cfe3d6" font-size="12">Water</text>
+</svg>

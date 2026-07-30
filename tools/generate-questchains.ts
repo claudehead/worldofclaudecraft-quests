@@ -1,22 +1,13 @@
 // Emits docs/questchains.json — quest chains (linked by requiresQuest) as nested
 // trees grouped by zone, so players can follow a storyline start-to-finish.
-import { ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_QUESTS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, slug } from './zones.ts';
 import { NPCS } from '../woc/src/sim/data.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || 'docs/questchains.json';
-const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const giverName = (id: string) => (NPCS as any)[id]?.name || id;
 
-const ZONES: [any, string, string][] = [
-  [ZONE1_QUESTS, '01-eastbrook-vale', 'Eastbrook Vale'],
-  [ZONE2_QUESTS, '02-' + slug(ZONE2_ZONE.name), ZONE2_ZONE.name],
-  [ZONE3_QUESTS, '03-' + slug(ZONE3_ZONE.name), ZONE3_ZONE.name],
-  [TEMPLE_QUESTS, '04-the-drowned-temple', 'The Drowned Temple'],
-];
+const ZONES: [any, string, string][] = GUIDE_ZONES.map((z) => [z.quests, z.dir, z.shortName]);
 
 // global id -> node (chains can cross zones via requiresQuest)
 const node: Record<string, any> = {};

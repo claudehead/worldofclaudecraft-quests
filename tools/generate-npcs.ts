@@ -1,21 +1,12 @@
 import { ITEMS } from '../woc/src/sim/data.ts';
-import { ZONE1_NPCS, ZONE1_ZONE, ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_NPCS, ZONE2_ZONE, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_NPCS, ZONE3_ZONE, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_NPCS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, slug } from './zones.ts';
 import * as mf from '../woc/src/render/characters/manifest.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/npcs.json';
-const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const itemName = (id: string) => (ITEMS as any)[id]?.name || id;
 
-const zones = [
-  { dir: '01-eastbrook-vale', title: 'Eastbrook Vale', npcs: ZONE1_NPCS, quests: ZONE1_QUESTS },
-  { dir: '02-' + slug(ZONE2_ZONE.name), title: ZONE2_ZONE.name, npcs: ZONE2_NPCS, quests: ZONE2_QUESTS },
-  { dir: '03-' + slug(ZONE3_ZONE.name), title: ZONE3_ZONE.name, npcs: ZONE3_NPCS, quests: ZONE3_QUESTS },
-  { dir: '04-the-drowned-temple', title: 'The Drowned Temple', npcs: TEMPLE_NPCS, quests: TEMPLE_QUESTS },
-];
+const zones = GUIDE_ZONES.map((z) => ({ dir: z.dir, title: z.shortName, npcs: z.npcs, quests: z.quests }));
 const questInfo: Record<string, { name: string; file: string }> = {};
 for (const z of zones) for (const q of Object.values(z.quests) as any[]) questInfo[q.id] = { name: q.name, file: `quests/zones/${z.dir}/${slug(q.id)}.md` };
 

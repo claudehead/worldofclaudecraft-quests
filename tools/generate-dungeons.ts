@@ -1,17 +1,14 @@
 import { MOBS } from '../woc/src/sim/data.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
+import { zoneForDungeon, GUIDE_ZONES } from './zones.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/out-dungeons';
 const ALL: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS };
 
 // which zone bestiary holds a dungeon's mobs (for cross-links)
-const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
-function zoneDirForDungeon(id: string, doorZ: number): string {
-  if (TEMPLE_DUNGEONS.has(id)) return '04-the-drowned-temple';
-  if (doorZ < 180) return '01-eastbrook-vale';
-  if (doorZ < 540) return '02-mirefen-marsh';
-  return '03-thornpeak-heights';
+function zoneDirForDungeon(id: string, doorPos: { x: number; z: number }): string {
+  return zoneForDungeon(id, doorPos)?.dir || GUIDE_ZONES[0].dir;
 }
 
 function mobLink(id: string, label: string, zoneDir: string): string {
@@ -19,7 +16,7 @@ function mobLink(id: string, label: string, zoneDir: string): string {
 }
 
 function dungeonPage(id: string, d: any): string {
-  const zoneDir = zoneDirForDungeon(id, d.doorPos.z);
+  const zoneDir = zoneDirForDungeon(id, d.doorPos);
   const counts: Record<string, number> = {};
   for (const s of d.spawns || []) counts[s.mobId] = (counts[s.mobId] || 0) + 1;
   const mobs = Object.entries(counts)

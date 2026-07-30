@@ -1,23 +1,19 @@
 import { ITEMS, MOBS, NPCS, QUESTS } from '../woc/src/sim/data.ts';
 import { DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { DELVE_MOBS } from '../woc/src/sim/content/delves/index.ts';
-import { ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_QUESTS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, slug } from './zones.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/materials.md';
 const DIR = bestiaryDirByMob();
 const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS, ...DELVE_MOBS };
-const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const name = (id: string) => (ITEMS as any)[id]?.name || id;
 
 // quest id -> {name, file} for "used for" links
 const questInfo: Record<string, { name: string; file: string }> = {};
-for (const [rec, dir] of [[ZONE1_QUESTS, '01-eastbrook-vale'], [ZONE2_QUESTS, '02-' + slug(ZONE2_ZONE.name)], [ZONE3_QUESTS, '03-' + slug(ZONE3_ZONE.name)], [TEMPLE_QUESTS, '04-the-drowned-temple']] as any[])
-  for (const q of Object.values(rec) as any[]) questInfo[q.id] = { name: q.name, file: `quests/zones/${dir}/${slug(q.id)}.md` };
+for (const z of GUIDE_ZONES)
+  for (const q of Object.values(z.quests) as any[]) questInfo[q.id] = { name: q.name, file: `quests/zones/${z.dir}/${slug(q.id)}.md` };
 
 // item -> drop mobs (with chance), vendors, and the quests that need it
 const dropsBy: Record<string, { id: string; name: string; chance: number }[]> = {};

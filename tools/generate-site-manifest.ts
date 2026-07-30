@@ -1,23 +1,17 @@
 import { QUESTS } from '../woc/src/sim/data.ts';
-import { ZONE1_QUESTS, ZONE1_ZONE } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_QUESTS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES } from './zones.ts';
 import { GUIDE_CLASSES } from '../woc/src/guide/content.generated.ts';
 import { DUNGEON_DEFS } from '../woc/src/sim/content/dungeons.ts';
 import { COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE } from '../woc/src/sim/content/delves/index.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/manifest.json';
-const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const qslug = (id: string) => id.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-const buckets = [
-  { key: 'zone1', dir: '01-eastbrook-vale', title: 'Eastbrook Vale', quests: ZONE1_QUESTS, levelRange: ZONE1_ZONE.levelRange, hub: ZONE1_ZONE.hub?.name, biome: 'vale' },
-  { key: 'zone2', dir: '02-' + slug(ZONE2_ZONE.name), title: ZONE2_ZONE.name, quests: ZONE2_QUESTS, levelRange: ZONE2_ZONE.levelRange, hub: ZONE2_ZONE.hub?.name, biome: 'marsh' },
-  { key: 'zone3', dir: '03-' + slug(ZONE3_ZONE.name), title: ZONE3_ZONE.name, quests: ZONE3_QUESTS, levelRange: ZONE3_ZONE.levelRange, hub: ZONE3_ZONE.hub?.name, biome: 'peaks' },
-  { key: 'temple', dir: '04-the-drowned-temple', title: 'The Drowned Temple', quests: TEMPLE_QUESTS, levelRange: [15, 16], hub: undefined, biome: 'temple' },
-];
+const buckets = GUIDE_ZONES.map((z) => ({
+  key: z.key, dir: z.dir, title: z.shortName, quests: z.quests, levelRange: z.levelRange,
+  hub: z.hub?.name, biome: z.zone?.biome ?? 'temple',
+}));
 
 const zones = buckets.map(b => ({
   key: b.key, dir: b.dir, title: b.title, levelRange: b.levelRange, hub: b.hub ?? null, biome: b.biome,

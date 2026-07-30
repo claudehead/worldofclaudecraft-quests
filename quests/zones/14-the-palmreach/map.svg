@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1774" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="1774" fill="#1f2a24"/>
+<line x1="0.0" y1="0" x2="0.0" y2="1774" stroke="#2c3a32" stroke-width="1"/>
+<line x1="141.2" y1="0" x2="141.2" y2="1774" stroke="#2c3a32" stroke-width="1"/>
+<line x1="282.5" y1="0" x2="282.5" y2="1774" stroke="#2c3a32" stroke-width="1"/>
+<line x1="423.7" y1="0" x2="423.7" y2="1774" stroke="#2c3a32" stroke-width="1"/>
+<line x1="565.0" y1="0" x2="565.0" y2="1774" stroke="#2c3a32" stroke-width="1"/>
+<line x1="706.2" y1="0" x2="706.2" y2="1774" stroke="#2c3a32" stroke-width="1"/>
+<line x1="847.5" y1="0" x2="847.5" y2="1774" stroke="#2c3a32" stroke-width="1"/>
+<line x1="988.7" y1="0" x2="988.7" y2="1774" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="96.0" x2="1000" y2="96.0" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="237.3" x2="1000" y2="237.3" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="378.5" x2="1000" y2="378.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="519.8" x2="1000" y2="519.8" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="661.0" x2="1000" y2="661.0" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="802.3" x2="1000" y2="802.3" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="943.5" x2="1000" y2="943.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1084.7" x2="1000" y2="1084.7" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1226.0" x2="1000" y2="1226.0" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1367.2" x2="1000" y2="1367.2" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1508.5" x2="1000" y2="1508.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1649.7" x2="1000" y2="1649.7" stroke="#2c3a32" stroke-width="1"/>
+<circle cx="649.7" cy="802.3" r="42.4" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="339.0" cy="943.5" r="28.2" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="463.3" cy="1389.8" r="31.1" fill="#2f6f8f" opacity="0.55"/>
+<path d="M276.8 113.0 L282.5 242.9 L406.8 350.3 L565.0 435.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M565.0 435.0 L395.5 548.0 L226.0 604.5 L135.6 627.1" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M565.0 435.0 L491.5 661.0 L423.7 841.8" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M423.7 841.8 L344.6 1028.2 L293.8 1141.2" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M565.0 435.0 L632.8 632.8 L728.8 740.1 L740.1 994.4 L689.3 1146.9" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M689.3 1146.9 L638.4 1344.6 L576.3 1497.2 L514.1 1610.2 L480.2 1661.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M728.8 740.1 L813.6 587.6 L887.0 440.7" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<circle cx="565.0" cy="435.0" r="45.2" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
+<text x="565.0" y="435.0" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Drifthaven</text>
+<text x="226.0" y="186.4" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Tanglemouth</text>
+<text x="113.0" y="632.8" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Palmstrand</text>
+<text x="395.5" y="887.0" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Emerald Tangle</text>
+<text x="282.5" y="1169.5" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Vinefall</text>
+<text x="649.7" y="802.3" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Sapphire Lagoon</text>
+<text x="689.3" y="1197.7" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Sunken Idol</text>
+<circle cx="124.3" cy="598.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="124.3" y="590.9" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Tide Scuttler ×3</text>
+<circle cx="700.6" cy="491.5" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="700.6" y="483.5" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Tide Scuttler ×3</text>
+<circle cx="372.9" cy="774.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="372.9" y="766.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Thicket Boar ×3</text>
+<circle cx="254.2" cy="830.5" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="254.2" y="822.5" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Thicket Boar ×3</text>
+<circle cx="491.5" cy="1113.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="491.5" y="1105.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Canopy Weaver ×3</text>
+<circle cx="209.0" cy="1282.5" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="209.0" y="1274.5" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Canopy Weaver ×2</text>
+<circle cx="689.3" cy="1197.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="689.3" y="1189.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">The Idol Guardian ×1</text>
+<rect x="414.1" y="561.0" width="8" height="8" transform="rotate(45 418.1 565.0)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="289.8" y="589.2" width="8" height="8" transform="rotate(45 293.8 593.2)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="182.4" y="623.1" width="8" height="8" transform="rotate(45 186.4 627.1)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="418.1" y="575.0" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Pearlwake Cargo Crate</text>
+<rect x="719.2" y="1041.2" width="8" height="8" transform="rotate(45 723.2 1045.2)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="696.6" y="1097.7" width="8" height="8" transform="rotate(45 700.6 1101.7)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="657.0" y="1142.9" width="8" height="8" transform="rotate(45 661.0 1146.9)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="723.2" y="1055.2" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Refilled Offering Bowl</text>
+<circle cx="237.3" cy="158.2" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="237.3" y="150.2" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Strandwatcher Pell</text>
+<circle cx="576.3" cy="423.7" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="576.3" y="415.7" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Salvage-Boss Ryna</text>
+<circle cx="584.7" cy="406.8" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="584.7" y="398.8" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Pearl-Mother Isha</text>
+<circle cx="291.0" cy="1135.6" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="291.0" y="1127.6" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Okku</text>
+<text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">The Palmreach — N ↑</text>
+<rect x="10" y="1656" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
+<rect x="18" y="1663" width="11" height="11" fill="#f0c419"/>
+<text x="36" y="1672" fill="#cfe3d6" font-size="12">NPC (quest giver / turn-in)</text>
+<rect x="18" y="1681" width="11" height="11" fill="#d9534f"/>
+<text x="36" y="1690" fill="#cfe3d6" font-size="12">Mob camp (×count)</text>
+<rect x="18" y="1699" width="11" height="11" fill="#9b59b6"/>
+<text x="36" y="1708" fill="#cfe3d6" font-size="12">Dungeon entrance</text>
+<rect x="18" y="1717" width="11" height="11" fill="#5cb85c"/>
+<text x="36" y="1726" fill="#cfe3d6" font-size="12">Quest pickup (ground)</text>
+<rect x="18" y="1735" width="11" height="11" fill="#2f6f8f"/>
+<text x="36" y="1744" fill="#cfe3d6" font-size="12">Water</text>
+</svg>

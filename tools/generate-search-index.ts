@@ -3,10 +3,7 @@ import { ITEMS, MOBS, ABILITIES } from '../woc/src/sim/data.ts';
 import { FISHING_TABLES } from '../woc/src/sim/content/items.ts';
 import { POWERUPS } from '../woc/src/sim/content/augments.ts';
 import { WARLOCK_PET_MOBS } from '../woc/src/sim/content/warlock_pets.ts';
-import { ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_QUESTS, ZONE2_ZONE } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_QUESTS, ZONE3_ZONE } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, slug } from './zones.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import { COLLAPSED_RELIQUARY_DELVE, DROWNED_LITANY_DELVE } from '../woc/src/sim/content/delves/index.ts';
 import { GUIDE_CLASSES } from '../woc/src/guide/content.generated.ts';
@@ -14,19 +11,14 @@ import { bestiaryDirByMob } from './bestiary-index.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/search.json';
-const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const enc = encodeURIComponent;
 const docHash = (p: string, anchor?: string) => `#/doc/${enc(p)}${anchor ? '/' + enc(anchor) : ''}`;
 
 const out: any[] = [];
 
 // quests
-const zoneDirs: [any, string][] = [
-  [ZONE1_QUESTS, '01-eastbrook-vale'], [ZONE2_QUESTS, '02-' + slug(ZONE2_ZONE.name)],
-  [ZONE3_QUESTS, '03-' + slug(ZONE3_ZONE.name)], [TEMPLE_QUESTS, '04-the-drowned-temple'],
-];
-for (const [rec, dir] of zoneDirs) for (const q of Object.values(rec) as any[])
-  out.push({ t: 'Quest', n: q.name, k: `quests:${q.id}`, go: docHash(`quests/zones/${dir}/${slug(q.id)}.md`) });
+for (const z of GUIDE_ZONES) for (const q of Object.values(z.quests) as any[])
+  out.push({ t: 'Quest', n: q.name, k: `quests:${q.id}`, go: docHash(`quests/zones/${z.dir}/${slug(q.id)}.md`) });
 
 // mobs -> bestiary anchor
 const DIR = bestiaryDirByMob();

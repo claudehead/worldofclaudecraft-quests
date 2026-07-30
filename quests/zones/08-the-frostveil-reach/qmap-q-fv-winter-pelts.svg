@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1204" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="1204" fill="#1f2a24"/>
+<circle cx="638.9" cy="537.0" r="37.0" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="611.1" cy="564.8" r="20.8" fill="#2f6f8f" opacity="0.28"/>
+<circle cx="291.7" cy="814.8" r="27.8" fill="#2f6f8f" opacity="0.28"/>
+<path d="M430.6 351.9 L523.1 444.4 L597.2 504.6" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M597.2 504.6 L564.8 588.0 L592.6 675.9 L569.4 768.5" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M430.6 351.9 L338.0 583.3 L319.4 782.4" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M569.4 768.5 L662.0 884.3 L708.3 976.9" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M569.4 768.5 L407.4 907.4 L222.2 1046.3 L92.6 1111.1" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M430.6 351.9 L546.3 472.2 L569.4 597.2 L685.2 662.0 L800.9 814.8 L777.8 1000.0 L828.7 1083.3 L907.4 1111.1" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<path d="M430.6 351.9 L476.9 259.3 L546.3 166.7 L601.9 92.6" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.35"/>
+<circle cx="430.6" cy="351.9" r="50.9" fill="#caa15a" opacity="0.08" stroke="#caa15a" stroke-width="1" stroke-opacity="0.3"/>
+<circle cx="546.3" cy="467.6" r="4" fill="#3a4a42"/>
+<circle cx="361.1" cy="652.8" r="4" fill="#3a4a42"/>
+<circle cx="569.4" cy="780.1" r="4" fill="#3a4a42"/>
+<circle cx="652.8" cy="495.4" r="4" fill="#3a4a42"/>
+<circle cx="523.1" cy="907.4" r="4" fill="#3a4a42"/>
+<circle cx="305.6" cy="763.9" r="4" fill="#3a4a42"/>
+<circle cx="722.2" cy="944.4" r="4" fill="#3a4a42"/>
+<circle cx="437.5" cy="344.9" r="4" fill="#3a4a42"/>
+<circle cx="407.4" cy="344.9" r="4" fill="#3a4a42"/>
+<circle cx="472.2" cy="217.6" r="4" fill="#3a4a42"/>
+<circle cx="574.1" cy="777.8" r="4" fill="#3a4a42"/>
+<circle cx="310.2" cy="777.8" r="4" fill="#3a4a42"/>
+<text x="430.6" y="351.9" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Icemantle</text>
+<text x="476.9" y="201.4" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Snowline</text>
+<text x="638.9" y="537.0" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Glacier Tarn</text>
+<text x="569.4" y="768.5" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Aurora Steps</text>
+<text x="291.7" y="814.8" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Shiverfen</text>
+<text x="731.5" y="930.6" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Howling Terraces</text>
+<path d="M407.4 344.9 L453.7 560.2" fill="none" stroke="#e6bb6a" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.85"/>
+<g class="qstep" data-keys="giver,turnin" data-steps="1,3">
+<circle cx="407.4" cy="344.9" r="21" fill="#f0c419" opacity="0.18"/>
+<circle cx="407.4" cy="344.9" r="14" fill="#f0c419" stroke="#11160f" stroke-width="2"/>
+<text x="407.4" y="349.9" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">1·3</text>
+</g>
+<g class="qstep" data-keys="thick_winter_pelt" data-steps="2">
+<circle cx="453.7" cy="560.2" r="21" fill="#46b8da" opacity="0.18"/>
+<circle cx="453.7" cy="560.2" r="14" fill="#46b8da" stroke="#11160f" stroke-width="2"/>
+<text x="453.7" y="565.2" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">2</text>
+</g>
+<rect x="10" y="10" width="360" height="112" rx="10" fill="#11160f" opacity="0.82"/>
+<text x="22" y="34" fill="#cfe3d6" font-size="14" font-weight="bold">Where to go — N ↑</text>
+<circle cx="30" cy="48" r="9" fill="#f0c419"/>
+<text x="30" y="51.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">1</text>
+<text x="46" y="52" fill="#e8e8ea" font-size="13.5">Start — Hearthkeeper Maeve</text>
+<circle cx="30" cy="72" r="9" fill="#46b8da"/>
+<text x="30" y="75.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">2</text>
+<text x="46" y="76" fill="#e8e8ea" font-size="13.5">Thick Winter Pelt — from Snowdrift Wolf</text>
+<circle cx="30" cy="96" r="9" fill="#5cb85c"/>
+<text x="30" y="99.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">3</text>
+<text x="46" y="100" fill="#e8e8ea" font-size="13.5">Turn in — Hearthkeeper Maeve</text>
+</svg>

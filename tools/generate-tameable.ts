@@ -1,10 +1,11 @@
 import { MOBS, CAMPS } from '../woc/src/sim/data.ts';
 import { bestiaryDirByMob } from './bestiary-index.ts';
+import { GUIDE_ZONES } from './zones.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/tameable-beasts.md';
 const DIR = bestiaryDirByMob();
-const ZONE_TITLE: Record<string, string> = { '01-eastbrook-vale': 'Eastbrook Vale', '02-mirefen-marsh': 'Mirefen Marsh', '03-thornpeak-heights': 'Thornpeak Heights', '04-the-drowned-temple': 'The Drowned Temple' };
+const ZONE_TITLE: Record<string, string> = Object.fromEntries(GUIDE_ZONES.map((z) => [z.dir, z.shortName]));
 
 // main spawn coordinates per mob (largest camp), for the map link
 const camp: Record<string, { x: number; z: number }> = {};

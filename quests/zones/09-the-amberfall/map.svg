@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 2000" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1000" height="2000" fill="#1f2a24"/>
+<line x1="157.7" y1="0" x2="157.7" y2="2000" stroke="#2c3a32" stroke-width="1"/>
+<line x1="336.9" y1="0" x2="336.9" y2="2000" stroke="#2c3a32" stroke-width="1"/>
+<line x1="516.1" y1="0" x2="516.1" y2="2000" stroke="#2c3a32" stroke-width="1"/>
+<line x1="695.3" y1="0" x2="695.3" y2="2000" stroke="#2c3a32" stroke-width="1"/>
+<line x1="874.6" y1="0" x2="874.6" y2="2000" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="64.5" x2="1000" y2="64.5" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="243.7" x2="1000" y2="243.7" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="422.9" x2="1000" y2="422.9" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="602.2" x2="1000" y2="602.2" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="781.4" x2="1000" y2="781.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="960.6" x2="1000" y2="960.6" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1139.8" x2="1000" y2="1139.8" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1319.0" x2="1000" y2="1319.0" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1498.2" x2="1000" y2="1498.2" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1677.4" x2="1000" y2="1677.4" stroke="#2c3a32" stroke-width="1"/>
+<line x1="0" y1="1856.6" x2="1000" y2="1856.6" stroke="#2c3a32" stroke-width="1"/>
+<circle cx="480.3" cy="1254.5" r="93.2" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="580.6" cy="1304.7" r="50.2" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="372.8" cy="1297.5" r="46.6" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="179.2" cy="788.5" r="35.8" fill="#2f6f8f" opacity="0.55"/>
+<circle cx="824.4" cy="1663.1" r="32.3" fill="#2f6f8f" opacity="0.55"/>
+<path d="M516.1 143.4 L458.8 351.3 L430.1 888.9 L480.3 1039.4" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M437.3 960.6 L301.1 853.0 L222.2 759.9" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M523.3 960.6 L641.6 781.4 L731.2 638.0" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M430.1 1103.9 L272.4 1304.7 L229.4 1534.1" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M537.6 1111.1 L724.0 1340.5 L795.7 1591.4" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<path d="M430.1 1103.9 L322.6 1168.5 L293.9 1426.5 L394.3 1677.4 L408.6 1856.6" fill="none" stroke="#8a7a55" stroke-width="3" opacity="0.7"/>
+<circle cx="480.3" cy="1039.4" r="86.0" fill="#caa15a" opacity="0.18" stroke="#caa15a" stroke-width="1.5"/>
+<text x="480.3" y="1039.4" fill="#f0d89a" font-size="15" font-weight="bold" text-anchor="middle">Lanternmere</text>
+<text x="516.1" y="236.6" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Goldmelt</text>
+<text x="222.2" y="752.7" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Gilded Orchard</text>
+<text x="731.2" y="638.0" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Harvest Hollow</text>
+<text x="480.3" y="1254.5" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Great Mere</text>
+<text x="229.4" y="1534.1" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Cindermaple Rise</text>
+<text x="781.4" y="1605.7" fill="#eef4ee" font-size="12" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">The Leaning Monolith</text>
+<circle cx="695.3" cy="695.3" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="695.3" y="687.3" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Gilded Stag ×3</text>
+<circle cx="265.2" cy="853.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="265.2" y="845.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Gilded Stag ×2</text>
+<circle cx="587.8" cy="888.9" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="587.8" y="880.9" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Gloam Fox ×2</text>
+<circle cx="207.9" cy="724.0" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="207.9" y="716.0" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Harvest Sprite ×3</text>
+<circle cx="243.7" cy="1505.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="243.7" y="1497.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Orchard Treant ×2</text>
+<circle cx="652.3" cy="1347.7" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="652.3" y="1339.7" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Mere Lurker ×2</text>
+<circle cx="759.9" cy="1591.4" r="6" fill="#d9534f" stroke="#11160f" stroke-width="1"/>
+<text x="759.9" y="1583.4" fill="#f3b1ae" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Mere Lurker ×2</text>
+<rect x="246.9" y="777.4" width="8" height="8" transform="rotate(45 250.9 781.4)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="196.7" y="727.2" width="8" height="8" transform="rotate(45 200.7 731.2)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="153.7" y="827.5" width="8" height="8" transform="rotate(45 157.7 831.5)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="282.7" y="827.5" width="8" height="8" transform="rotate(45 286.7 831.5)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="250.9" y="791.4" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Sap-Tap Bucket</text>
+<rect x="555.1" y="1143.0" width="8" height="8" transform="rotate(45 559.1 1147.0)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="619.7" y="1221.8" width="8" height="8" transform="rotate(45 623.7 1225.8)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<rect x="691.3" y="1307.8" width="8" height="8" transform="rotate(45 695.3 1311.8)" fill="#5cb85c" stroke="#11160f" stroke-width="1"/>
+<text x="559.1" y="1157.0" fill="#a7e3a7" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ferry Lantern</text>
+<circle cx="487.5" cy="1032.3" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="487.5" y="1024.3" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Reeve Ottoline</text>
+<circle cx="512.5" cy="229.4" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="512.5" y="221.4" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Waywatcher Sorrel</text>
+<circle cx="494.6" cy="1132.6" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="494.6" y="1124.6" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Ferrymaster Caddow</text>
+<circle cx="236.6" cy="767.0" r="5.5" fill="#f0c419" stroke="#11160f" stroke-width="1"/>
+<text x="236.6" y="759.0" fill="#ffe9a3" font-size="11" text-anchor="middle" stroke="#11160f" stroke-width="0.6" paint-order="stroke">Orchardist Pomeline</text>
+<text x="18" y="26" fill="#cfe3d6" font-size="13" font-weight="bold">The Amberfall — N ↑</text>
+<rect x="10" y="1882" width="248" height="104" fill="#11160f" opacity="0.7" rx="4"/>
+<rect x="18" y="1889" width="11" height="11" fill="#f0c419"/>
+<text x="36" y="1898" fill="#cfe3d6" font-size="12">NPC (quest giver / turn-in)</text>
+<rect x="18" y="1907" width="11" height="11" fill="#d9534f"/>
+<text x="36" y="1916" fill="#cfe3d6" font-size="12">Mob camp (×count)</text>
+<rect x="18" y="1925" width="11" height="11" fill="#9b59b6"/>
+<text x="36" y="1934" fill="#cfe3d6" font-size="12">Dungeon entrance</text>
+<rect x="18" y="1943" width="11" height="11" fill="#5cb85c"/>
+<text x="36" y="1952" fill="#cfe3d6" font-size="12">Quest pickup (ground)</text>
+<rect x="18" y="1961" width="11" height="11" fill="#2f6f8f"/>
+<text x="36" y="1970" fill="#cfe3d6" font-size="12">Water</text>
+</svg>

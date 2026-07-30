@@ -1,29 +1,19 @@
 import { MOBS, ITEMS } from '../woc/src/sim/data.ts';
 // FISHING_TABLES moved out of data.ts's re-exports (v0.31); it lives in content/items.ts.
 import { FISHING_TABLES } from '../woc/src/sim/content/items.ts';
-import { ZONE1_NPCS, ZONE1_CAMPS, ZONE1_OBJECTS, ZONE1_ROADS, ZONE1_ZONE, ZONE1_QUESTS } from '../woc/src/sim/content/zone1.ts';
-import { ZONE2_NPCS, ZONE2_CAMPS, ZONE2_OBJECTS, ZONE2_ROADS, ZONE2_ZONE, ZONE2_QUESTS } from '../woc/src/sim/content/zone2.ts';
-import { ZONE3_NPCS, ZONE3_CAMPS, ZONE3_OBJECTS, ZONE3_ROADS, ZONE3_ZONE, ZONE3_QUESTS } from '../woc/src/sim/content/zone3.ts';
-import { TEMPLE_NPCS, TEMPLE_CAMPS, TEMPLE_OBJECTS, TEMPLE_QUESTS } from '../woc/src/sim/content/temple.ts';
+import { GUIDE_ZONES, zoneForDungeon, slug } from './zones.ts';
 import { DUNGEON_DEFS, DUNGEON_MOBS } from '../woc/src/sim/content/dungeons.ts';
 import * as fs from 'node:fs';
 
 const OUT = process.argv[2] || '/tmp/gen/out';
 const ALL_MOBS: Record<string, any> = { ...MOBS, ...DUNGEON_MOBS };
-const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const mobName = (id: string) => ALL_MOBS[id]?.name || id;
 const itemName = (id: string) => ITEMS[id]?.name || id;
 const esc = (s: string) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 type Pt = { x: number; z: number };
 
-const zones = [
-  { key: 'zone1', dir: '01-eastbrook-vale', npcs: ZONE1_NPCS, camps: ZONE1_CAMPS, objects: ZONE1_OBJECTS, roads: ZONE1_ROADS, zone: ZONE1_ZONE, quests: ZONE1_QUESTS, zBand: [-180, 180] as [number, number] },
-  { key: 'zone2', dir: '02-' + slug(ZONE2_ZONE.name), npcs: ZONE2_NPCS, camps: ZONE2_CAMPS, objects: ZONE2_OBJECTS, roads: ZONE2_ROADS, zone: ZONE2_ZONE, quests: ZONE2_QUESTS, zBand: [180, 540] as [number, number] },
-  { key: 'zone3', dir: '03-' + slug(ZONE3_ZONE.name), npcs: ZONE3_NPCS, camps: ZONE3_CAMPS, objects: ZONE3_OBJECTS, roads: ZONE3_ROADS, zone: ZONE3_ZONE, quests: ZONE3_QUESTS, zBand: [540, 900] as [number, number] },
-  { key: 'temple', dir: '04-the-drowned-temple', npcs: TEMPLE_NPCS, camps: TEMPLE_CAMPS, objects: TEMPLE_OBJECTS, roads: [], zone: null, quests: TEMPLE_QUESTS, zBand: null },
-];
-const TEMPLE_DUNGEONS = new Set(['nythraxis_crypt', 'nythraxis_boss_arena']);
+const zones = GUIDE_ZONES;
 const FISHING_ITEMS = new Set<string>(['the_codfather']);
 for (const t of Object.values(FISHING_TABLES) as any[]) for (const e of t) if (e.itemId) FISHING_ITEMS.add(e.itemId);
 
@@ -34,9 +24,8 @@ function centroid(pts: Pt[]): Pt | null {
 function campsForMob(camps: any[], mobId: string): Pt[] { return camps.filter(c => c.mobId === mobId).map(c => c.center); }
 function dungeonForMob(z: any, mobId: string): { name: string; pos: Pt } | null {
   for (const [id, d] of Object.entries(DUNGEON_DEFS) as any[]) {
-    if ((d.spawns || []).some((s: any) => s.mobId === mobId)) {
-      const inZone = z.zBand ? (!TEMPLE_DUNGEONS.has(id) && d.doorPos.z >= z.zBand[0] && d.doorPos.z < z.zBand[1]) : TEMPLE_DUNGEONS.has(id);
-      if (inZone || !z.zBand) return { name: d.name, pos: d.doorPos };
+    if ((d.spawns || []).some((s: any) => s.mobId === mobId) && zoneForDungeon(id, d.doorPos)?.key === z.key) {
+      return { name: d.name, pos: d.doorPos };
     }
   }
   return null;
