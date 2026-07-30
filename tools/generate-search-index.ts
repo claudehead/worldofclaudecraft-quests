@@ -77,6 +77,8 @@ for (const g of [
   ['Specializations — signature abilities', 'reference/specializations.md'],
   ['Honor & Warfare PvP', 'reference/warfare.md'],
   ['Dungeon Finder — role queue', 'reference/dungeon-finder.md'],
+  ['Rifts — the endgame race', 'reference/rifts.md'],
+  ['Mounts', 'reference/mounts.md'],
   ['Sneak peek (upcoming branches)', 'reference/sneak-peek.md'],
 ]) out.push({ t: 'Guide', n: g[0], go: docHash(g[1]) });
 

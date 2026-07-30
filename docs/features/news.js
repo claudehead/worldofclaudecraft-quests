@@ -6,12 +6,12 @@
   const { el, esc, registerView, app } = window.WOC;
 
   const GAME = [
-    ['🧗', 'The parkour physics engine', 'One deterministic character-physics engine — continuous swept collision, multi-pass sliding, depenetration and step-up — now runs in the offline sim, the server and the client alike, and the world is made physically honest so every drawn model collides exactly as drawn. A traversal ladder by obstacle height: stride, silent vault, a real ledge-climb pull-up for lips above your head, then wall.', '#/patches', 'Technical changelog'],
+    ['🌀', 'Rifts — the endgame race', 'Procedural dungeons behind natural portals that open across the new zones — one per zone, cycling hourly. Every portal is a shared race: many groups run their own instance of the same dungeon, but only the first to clear takes the full loot. Four ranks (C/B/A/S) climb from normal-dungeon rares to heroic epics, with S-rank carrying the two legendary chase rolls.', '#/doc/' + encodeURIComponent('reference/rifts.md'), 'Rifts guide'],
+    ['🗺️', 'A world that got much bigger', 'The map expands well beyond the original three zones — a wave of new level-15-to-20 regions (the Drakelands, Frostveil Reach, Amberfall, Nightbloom, Wraithwood, Palmreach, Evergarden, Galecrest, Farshore and more), every previously-unvoiced NPC across them now voiced, and a remastered new-zone soundtrack.', '#/map', 'Explore the map'],
+    ['🐎', 'Rideable mounts', 'Seven ground mounts, from the vendor-bought Valorsteed (+60% speed) up to two rift-only epics (+80%). Mounts are now usable reins items — hold the reins to own the mount; the old mount picker is retired. Uncommon mounts drop from heroic dungeons, rares from the raid, epics only from rifts.', '#/doc/' + encodeURIComponent('reference/mounts.md'), 'Mounts guide'],
+    ['🧗', 'The parkour physics engine', 'One deterministic character-physics engine — continuous swept collision, multi-pass sliding, depenetration and step-up — now runs in the offline sim, the server and the client alike, and the world is made physically honest so every drawn model collides exactly as drawn. A traversal ladder by obstacle height: stride, silent vault, a real ledge-climb pull-up, then wall.', '#/patches', 'Technical changelog'],
     ['🖼️', 'Painted item art', 'The legacy procedural item icons are replaced with hand-painted art across the whole catalog — hundreds of weapons, armor pieces and consumables get real illustrations, visible everywhere gear shows in the guide.', '#/gear', 'Browse gear'],
-    ['🔍', 'Auction House filters & Bags', 'The World Market\'s Auction House gains advanced gear filters — armor type (Cloth / Leather / Mail) and dominant primary stat (Str / Agi / Int, ties included) — plus a new Bags browse category sized from the catalog, so you can find exactly the piece you want.', '#/doc/' + encodeURIComponent('reference/world-market.md'), 'World Market'],
-    ['✨', 'Replace an enchant', 'You can now overwrite an enchant on a piece you already enchanted — behind an explicit confirmation that spells out what it keeps and flags the row that gets destroyed (the old enchant is consumed, no refund). Masterwork gear stays fully enchantable on top of its maker bonus.', '#/doc/' + encodeURIComponent('reference/professions.md'), 'Professions guide'],
-    ['🎯', 'Talents: the choice-row rework', 'The point-buy talent grid is gone. You now pick 1 of 3 specializations at level 5, then choose 1 of 3 options at each of six rows (levels 5/8/11/14/17/20). The guide\'s talent calculator and build planner are rebuilt to match.', '#/talents', 'Talent calculator'],
-    ['🔊', 'Real sound & stacked nameplates', 'Real recordings land across gathering, crafting and enchanting, and for eating, drinking and quaffing potions. Overlapping nameplates now stack into a tidy vertical column instead of overprinting.', '#/patches', 'Technical changelog'],
+    ['🗂️', 'Map, market & meters', 'An interactive continent overview for the world map, the Auction House gains armor-type and primary-stat gear filters plus a Bags category, and the combat-meter panels become movable, resizable and separable.', '#/map', 'World map'],
   ];
 
   const GUIDE = [
@@ -33,15 +33,15 @@
       <h1 class="reveal">What's New 🆕</h1>
       <p class="sub reveal">The latest from World of Claudecraft, and everything new in this guide.</p>
 
-      <h2 class="news-h reveal">🎮 Game — v0.31.0 <span class="news-tag">parkour · painted art · market · 833 commits</span></h2>
-      <p class="meta reveal">A deterministic parkour physics engine (swept collision, a standable world, ledge climb), hand-painted item art replacing the legacy icons, Auction House filters and a Bags market category, enchant replacement, and real recorded sound across the professions. Here's what made it into the guide:</p>
+      <h2 class="news-h reveal">🎮 Game — v0.32.1 <span class="news-tag">rifts · expansion zones · mounts · 868 commits</span></h2>
+      <p class="meta reveal">The big one: Rifts, a procedural endgame race for gear, mounts and legendaries; a wave of new expansion zones roughly doubling the world; rideable mounts; and, carried over from v0.31, the parkour physics engine and hand-painted item art. Here's what made it into the guide:</p>
       <div class="news-grid">${GAME.map(gCard).join('')}</div>
 
       <h2 class="news-h reveal">📚 The guide — new tools</h2>
       <p class="meta reveal">Beyond the reference, the guide now has new tools built on the real game data:</p>
       <div class="news-grid">${GUIDE.map(uCard).join('')}</div>
 
-      <p class="meta" style="margin-top:2rem">Catching up? <b>v0.28</b> rebuilt <a data-go="#/doc/reference%2Fprofessions.md">professions</a> (tier ladders, masterwork procs, Artisan Row) and reworked <a data-go="#/talents">talents</a> into choice rows; <b>v0.26</b> added the <a data-go="#/doc/reference%2Fdungeon-finder.md">Dungeon Finder</a>, tank defensive cooldowns and the Hit combat-rating; <b>v0.25</b> brought the <a data-go="#/doc/reference%2Fbook-of-deeds.md">Book of Deeds</a> and <a data-go="#/doc/reference%2Fheroic-nythraxis.md">Heroic Nythraxis</a>. Full history in the <a data-go="#/patches">patch notes</a>.</p>
+      <p class="meta" style="margin-top:2rem">Catching up? <b>v0.31</b> shipped the parkour physics engine and hand-painted item art; <b>v0.28</b> rebuilt <a data-go="#/doc/reference%2Fprofessions.md">professions</a> (tier ladders, masterwork procs, Artisan Row) and reworked <a data-go="#/talents">talents</a> into choice rows; <b>v0.26</b> added the <a data-go="#/doc/reference%2Fdungeon-finder.md">Dungeon Finder</a>. Full history in the <a data-go="#/patches">patch notes</a>.</p>
     </div></section>`));
   }
   registerView('news', view);

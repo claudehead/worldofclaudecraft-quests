@@ -5,18 +5,18 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   
-  <title>Claudecraft Top-Down RPG — World of Claudecraft</title>
-  <meta name="description" content="Play World of Claudecraft as a 2D top-down RPG — explore the real world map, fight creatures where they live, take quests and level up.">
-  <link rel="canonical" href="https://claudehead.com/world/">
+  <title>Rifts — the endgame race 🌀 — World of Claudecraft</title>
+  <meta name="description" content="v0.32 adds **Rifts**: procedurally-generated dungeons behind natural portals that open across the new expansion zones. Every portal is a **shared overworld race** — multiple groups can enter the same rift, but each runs its own private instance, and only the **first group to clear** takes the full r">
+  <link rel="canonical" href="https://claudehead.com/doc/reference/rifts/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="World of Claudecraft">
-  <meta property="og:title" content="Claudecraft Top-Down RPG — World of Claudecraft">
-  <meta property="og:description" content="Play World of Claudecraft as a 2D top-down RPG — explore the real world map, fight creatures where they live, take quests and level up.">
-  <meta property="og:url" content="https://claudehead.com/world/">
+  <meta property="og:title" content="Rifts — the endgame race 🌀 — World of Claudecraft">
+  <meta property="og:description" content="v0.32 adds **Rifts**: procedurally-generated dungeons behind natural portals that open across the new expansion zones. Every portal is a **shared overworld race** — multiple groups can enter the same rift, but each runs its own private instance, and only the **first group to clear** takes the full r">
+  <meta property="og:url" content="https://claudehead.com/doc/reference/rifts/">
   <meta property="og:image" content="https://claudehead.com/icon-512.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Claudecraft Top-Down RPG — World of Claudecraft">
-  <meta name="twitter:description" content="Play World of Claudecraft as a 2D top-down RPG — explore the real world map, fight creatures where they live, take quests and level up.">
+  <meta name="twitter:title" content="Rifts — the endgame race 🌀 — World of Claudecraft">
+  <meta name="twitter:description" content="v0.32 adds **Rifts**: procedurally-generated dungeons behind natural portals that open across the new expansion zones. Every portal is a **shared overworld race** — multiple groups can enter the same rift, but each runs its own private instance, and only the **first group to clear** takes the full r">
   <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
   <link rel="stylesheet" href="styles.css?v=117">
   <link rel="manifest" href="manifest.webmanifest">
@@ -167,7 +167,79 @@
       <a class="link navtheme" id="navtheme" title="Toggle theme">🌙 <span class="navctl-label">Theme</span></a>
     </div>
   </nav>
-  <main id="app"><section class="block"><div class="wrap"><span class="eyebrow">World of Claudecraft</span><h1>Claudecraft Top-Down RPG</h1><p class="sub">Play World of Claudecraft as a 2D top-down RPG — explore the real world map, fight creatures where they live, take quests and level up.</p><p class="meta">Loading the interactive guide… <a href="/">open the full guide</a>.</p></div></section></main>
+  <main id="app"><article class="doc"><div class="wrap"><h1>Rifts — the endgame race 🌀</h1>
+<p>v0.32 adds <strong>Rifts</strong>: procedurally-generated dungeons behind natural portals that open across the new expansion zones. Every portal is a <strong>shared overworld race</strong> — multiple groups can enter the same rift, but each runs its own private instance, and only the <strong>first group to clear</strong> takes the full reward. It&#39;s the level-20 endgame chase for gear, mounts, and the two legendaries.</p>
+<blockquote>
+<p>🌀 <strong>The basics:</strong> at level 20, step into an open <strong>C / B / A / S</strong> portal. Your group gets its own instance of a procedurally-built dungeon. Race every other group to the boss — <strong>win the first clear</strong> for the full loot, mounts and legendary rolls; lose it and you still finish, but keep only what dropped off the mobs.</p>
+</blockquote>
+<hr>
+<h2>Getting in</h2>
+<ul>
+<li><strong>Level 20 required</strong> — rifts are pure endgame (<code>RIFT_MIN_LEVEL</code> 20).</li>
+<li><strong>One portal per eligible zone, cycling hourly.</strong> Every expansion zone keeps a single open portal; when it expires (<strong>60-minute</strong> lifetime) that zone&#39;s next one opens a cycle later. Portals are deterministic — every client sees the same one.</li>
+<li><strong>Solo or party.</strong> A solo player or a full party each enter as their own <strong>instance</strong>; no rift geometry is sent over the wire, only a compact descriptor, so everyone races the identical dungeon.</li>
+</ul>
+<hr>
+<h2>The four ranks</h2>
+<p>A portal&#39;s <strong>rank</strong> sets its difficulty and its loot table:</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Base level</th>
+<th>Gear it pays out</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>C</strong></td>
+<td>20</td>
+<td>Normal five-man loot (ilvl 23 rares)</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>22</td>
+<td>Heroic five-man epics (ilvl 31)</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td>25</td>
+<td>Heroic five-man epics <strong>+ better mount odds</strong></td>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>28</td>
+<td>Heroic five-man epics <strong>+ the two legendary chase rolls</strong></td>
+</tr>
+</tbody></table>
+<p>Mob levels are capped at <strong>22</strong> even in S-rank — S is harder through tuning, not raw levels. <strong>A</strong> differs from <strong>B</strong> by its <strong>mount</strong> tier rather than its gear, and <strong>S</strong> is the only place the two <strong>legendary</strong> chase items can drop.</p>
+<hr>
+<h2>The race</h2>
+<p>This is the twist that makes rifts different from a dungeon:</p>
+<ul>
+<li><strong>One portal, many instances.</strong> Everyone who enters a portal gets a separate, isolated run of the same generated dungeon.</li>
+<li><strong>First clear wins.</strong> The first group to down the final boss claims the <strong>race rewards</strong> — the gear ladder, the sealed cache, and the first-clear extras.</li>
+<li><strong>Losers still finish, but empty-handed on completion.</strong> Every other instance keeps running and completes as the <strong>race loser</strong> when its own boss falls: you get an exit but <strong>no completion loot</strong> — only whatever dropped off the mobs along the way.</li>
+<li><strong>Instance binding.</strong> The moment your group lands its <strong>first mob kill</strong>, the instance is bound to its members (WoW-raid style). An untouched instance recycles when the party regroups, so a freshly-formed group always shares one clean run.</li>
+</ul>
+<p><strong>Speed matters.</strong> Because only the first clear pays out, a rift rewards knowing the route and pushing pace, not full-clearing every pull.</p>
+<hr>
+<h2>Rewards</h2>
+<ul>
+<li><strong>Gear</strong> — the rank&#39;s loot table (above), from normal-dungeon rares at C up to heroic epics at B/A/S.</li>
+<li><strong>Mounts</strong> — higher ranks improve your mount odds; the two <strong>epic</strong> mounts (Aether-Jouster Hover-Cycle, Thunderstrut the Grand Gobbler) are <strong>rift-only</strong>. See [[mounts]].</li>
+<li><strong>The legendary chase</strong> — <strong>S-rank only</strong> carries the two legendary rolls, the top prize of the whole system.</li>
+</ul>
+<hr>
+<h2>Tips</h2>
+<ul>
+<li><strong>Match the rank to your group.</strong> C is a gearing-up lap; push toward <strong>A/S</strong> once you&#39;re in heroic epics and want mounts or the legendaries.</li>
+<li><strong>Scout the open portals.</strong> With one per zone on an hourly cycle, there&#39;s usually a rank you want open somewhere — hop zones to find it.</li>
+<li><strong>Race, don&#39;t dawdle.</strong> Only the first clear pays completion loot. Learn the boss and cut the trash you can.</li>
+<li><strong>Bind deliberately.</strong> Your first mob kill locks the instance to your group — form up fully before you start if you want a clean shared run.</li>
+</ul>
+<hr>
+<p><em>See also: [[mounts]] for what rifts award, [[heroic-dungeons]] for the epic loot table rifts draw from, and [[heroic-nythraxis]] for the raid at the top of the PvE ladder.</em></p>
+</div></article></main>
   <footer>
     Rendered live from <a href="https://github.com/claudehead/worldofclaudecraft-quests" target="_blank" rel="noopener">claudehead/worldofclaudecraft-quests</a>.
     A fan-made guide — not affiliated with the upstream project.
@@ -250,7 +322,7 @@
       navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
     });
   </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Claudecraft Top-Down RPG","item":"https://claudehead.com/world/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Claudecraft Top-Down RPG — World of Claudecraft","description":"Play World of Claudecraft as a 2D top-down RPG — explore the real world map, fight creatures where they live, take quests and level up.","url":"https://claudehead.com/world/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://claudehead.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://claudehead.com/"},{"@type":"ListItem","position":3,"name":"Rifts — the endgame race 🌀","item":"https://claudehead.com/doc/reference/rifts/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Rifts — the endgame race 🌀 — World of Claudecraft","description":"v0.32 adds **Rifts**: procedurally-generated dungeons behind natural portals that open across the new expansion zones. Every portal is a **shared overworld race** — multiple groups can enter the same rift, but each runs its own private instance, and only the **first group to clear** takes the full reward. It's the level-20 endgame chase for gear, mounts, and the two legendaries.","url":"https://claudehead.com/doc/reference/rifts/","isPartOf":{"@type":"WebSite","name":"World of Claudecraft","url":"https://claudehead.com/"},"publisher":{"@type":"Organization","name":"World of Claudecraft","url":"https://claudehead.com/"}}</script>
 </body>
 </html>
