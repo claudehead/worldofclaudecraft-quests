@@ -86,8 +86,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <a id="mob-bound_guardian"></a>
 
-<img src="../quests/zones/_mob-renders/bound_guardian.png" width="140" align="right" alt="The Bound Guardian">
-
 ### The Bound Guardian 🟡 Boss
 
 **Level 20 · 1270 HP · Undead**
@@ -316,8 +314,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <a id="mob-choirmother_selthe"></a>
 
-<img src="../quests/zones/_mob-renders/choirmother_selthe.png" width="140" align="right" alt="Choirmother Selthe">
-
 ### Choirmother Selthe 🔶 Elite
 
 **Level 18 · 618 HP · Humanoid**
@@ -500,8 +496,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <a id="mob-terrace_howler"></a>
 
-<img src="../quests/zones/_mob-renders/terrace_howler.png" width="140" align="right" alt="Terrace Howler">
-
 ### Terrace Howler
 
 **Level 19–20 · 508 HP · Beast**
@@ -509,8 +503,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 <br clear="all">
 
 <a id="mob-barrow_wight"></a>
-
-<img src="../quests/zones/_mob-renders/barrow_wight.png" width="140" align="right" alt="Barrow Wight">
 
 ### Barrow Wight
 
@@ -569,8 +561,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 <br clear="all">
 
 <a id="mob-drowned_deckhand"></a>
-
-<img src="../quests/zones/_mob-renders/drowned_deckhand.png" width="140" align="right" alt="Drowned Deckhand">
 
 ### Drowned Deckhand
 
@@ -675,8 +665,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 <br clear="all">
 
 <a id="mob-the_meredark"></a>
-
-<img src="../quests/zones/_mob-renders/the_meredark.png" width="140" align="right" alt="The Meredark">
 
 ### The Meredark 🔶 Elite
 
