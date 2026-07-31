@@ -169,7 +169,7 @@
   </nav>
   <main id="app"><article class="doc"><div class="wrap"><h1>🔭 Sneak Peek — what&#39;s in the works</h1>
 <p>Unmerged branches and open pull requests on the <a href="https://github.com/levy-street/world-of-claudecraft">upstream game repo</a> — a look at what <em>might</em> be coming. <strong>Nothing here is in the game yet</strong>, and branches that have sat untouched for months may never land. Sorted by how recently each was updated.</p>
-<p><em>As of 2026-07-31 · 432 branches in flight.</em></p>
+<p><em>As of 2026-07-31 · 434 branches in flight.</em></p>
 <h2>🟢 Fresh — actively in progress (updated this week)</h2>
 <table>
 <thead>
@@ -187,7 +187,7 @@
 <td>—</td>
 </tr>
 <tr>
-<td>pr-2675: 17-holder-tier-dev-card.png</td>
+<td>pr-2692: 20-perf-overlay-ornament-mobile.png</td>
 <td>•</td>
 <td>today</td>
 <td>—</td>
@@ -271,6 +271,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>rift boss mechanics never stack, and boss fears spare the tank</td>
+<td>🔧 Fix</td>
+<td>today</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/2694">#2694</a></td>
+</tr>
+<tr>
 <td>merge: basemerge/armor-v02 (hunter bow cycle) into the integration branch</td>
 <td>•</td>
 <td>today</td>
@@ -289,19 +295,19 @@
 <td><a href="https://github.com/levy-street/world-of-claudecraft/pull/2650">#2650</a></td>
 </tr>
 <tr>
-<td>render retired completed reasons and settle the landing</td>
+<td>re-mint the Eastbrook provenance seals for the 0.32.2 version sync</td>
 <td>•</td>
 <td>today</td>
 <td>—</td>
 </tr>
 <tr>
-<td>release: v0.32.2 into main (rift cadence and floor-timer HUD, map party markers, escort and duel fixes)</td>
+<td>per-zone respawn tiers, the escort ambush leak, and harvest tags for coinless families</td>
 <td>•</td>
 <td>today</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/2692">#2692</a></td>
+<td>—</td>
 </tr>
 <tr>
-<td>give amb_forge its own audible-distance override</td>
+<td>hide the market tooltip on the Browse pager&#39;s row teardown</td>
 <td>•</td>
 <td>today</td>
 <td>—</td>
@@ -403,6 +409,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>render retired completed reasons and settle the landing</td>
+<td>•</td>
+<td>yesterday</td>
+<td>—</td>
+</tr>
+<tr>
 <td>Revert &quot;fix(professions): stop the Bombardier pair from defaulting into a zer…&quot;</td>
 <td>🔧 Fix</td>
 <td>yesterday</td>
@@ -499,12 +511,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>correct a comment the release merge falsified</td>
-<td>🔧 Fix</td>
-<td>3 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>pin the finger ordinal against the paperdoll&#39;s own order, add PR shots</td>
 <td>🔧 Fix</td>
 <td>3 days ago</td>
@@ -523,12 +529,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>remove third-party faction crest from the Orkadia war drum</td>
-<td>🔧 Fix</td>
-<td>3 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>make the master_loot coverage assertions decisive</td>
 <td>🔧 Fix</td>
 <td>3 days ago</td>
@@ -542,12 +542,6 @@
 </tr>
 <tr>
 <td>scope the hud bar-dep pin to the spellbook&#39;s own deps bag</td>
-<td>🔧 Fix</td>
-<td>3 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>mesh the terrain cells no zone rectangle owns</td>
 <td>🔧 Fix</td>
 <td>3 days ago</td>
 <td>—</td>
@@ -587,6 +581,12 @@
 <td>✨ Feature</td>
 <td>4 days ago</td>
 <td><a href="https://github.com/levy-street/world-of-claudecraft/pull/2510">#2510</a></td>
+</tr>
+<tr>
+<td>correct a comment the release merge falsified</td>
+<td>🔧 Fix</td>
+<td>4 days ago</td>
+<td>—</td>
 </tr>
 <tr>
 <td>finish the refusal sweep, and pin lootable to the arm that sets it</td>
@@ -649,6 +649,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>remove third-party faction crest from the Orkadia war drum</td>
+<td>🔧 Fix</td>
+<td>4 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>prove the scanned half of the allowance-key check, not just the cold one</td>
 <td>🔧 Fix</td>
 <td>4 days ago</td>
@@ -662,6 +668,12 @@
 </tr>
 <tr>
 <td>close the escapes a coverage audit found in the new pins</td>
+<td>🔧 Fix</td>
+<td>4 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>mesh the terrain cells no zone rectangle owns</td>
 <td>🔧 Fix</td>
 <td>4 days ago</td>
 <td>—</td>
@@ -787,12 +799,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>describe the new guards in invariant terms</td>
-<td>🔧 Fix</td>
-<td>6 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>repaint the crafting window when the bag changes</td>
 <td>🔧 Fix</td>
 <td>6 days ago</td>
@@ -813,6 +819,12 @@
 <tr>
 <td>close the PR 2357 review gaps on the tool-gate suites</td>
 <td>✨ Feature</td>
+<td>7 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>describe the new guards in invariant terms</td>
+<td>🔧 Fix</td>
 <td>7 days ago</td>
 <td>—</td>
 </tr>
@@ -906,12 +918,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>paint col-b micro-menu hover flyouts over col-a</td>
-<td>🔧 Fix</td>
-<td>8 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>land the whole-branch QA findings</td>
 <td>🔧 Fix</td>
 <td>8 days ago</td>
@@ -924,12 +930,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>guard main startup seam</td>
-<td>•</td>
-<td>8 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>i18n: fill the 39 rename-wave keys and re-sync the 34 stale rows plus 3 renamed deeds</td>
 <td>•</td>
 <td>8 days ago</td>
@@ -937,12 +937,6 @@
 </tr>
 <tr>
 <td>review round: cap covers summoned adds, tighter dead-entry match</td>
-<td>✨ Feature</td>
-<td>9 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Bladestorm whirls its full AoE and the caster bodily spins</td>
 <td>✨ Feature</td>
 <td>9 days ago</td>
 <td>—</td>
@@ -978,12 +972,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>pause streams under every duck and download nothing while muted</td>
-<td>✨ Feature</td>
-<td>9 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>bind resolver calls to read branches</td>
 <td>🔧 Fix</td>
 <td>9 days ago</td>
@@ -1008,6 +996,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>paint col-b micro-menu hover flyouts over col-a</td>
+<td>🔧 Fix</td>
+<td>9 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>refresh targeting parity label</td>
 <td>🔧 Fix</td>
 <td>9 days ago</td>
@@ -1022,6 +1016,12 @@
 <tr>
 <td>harden scope migration coverage</td>
 <td>🔧 Fix</td>
+<td>9 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>guard main startup seam</td>
+<td>•</td>
 <td>9 days ago</td>
 <td>—</td>
 </tr>
@@ -1057,6 +1057,18 @@
 </tr>
 <tr>
 <td>literal-pin the heroic tuning table and the B-rank softer add multiplier</td>
+<td>✨ Feature</td>
+<td>10 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Bladestorm whirls its full AoE and the caster bodily spins</td>
+<td>✨ Feature</td>
+<td>10 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>pause streams under every duck and download nothing while muted</td>
 <td>✨ Feature</td>
 <td>10 days ago</td>
 <td>—</td>
@@ -1134,12 +1146,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>harden in-game connection flows</td>
-<td>✨ Feature</td>
-<td>13 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>record the Phase 2 masterwork landing</td>
 <td>✨ Feature</td>
 <td>13 days ago</td>
@@ -1182,12 +1188,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>give the spellbook a11y stub the player the level gate reads</td>
-<td>🔧 Fix</td>
-<td>13 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>add cohort-safe day-one engagement gauges</td>
 <td>✨ Feature</td>
 <td>14 days ago</td>
@@ -1198,6 +1198,12 @@
 <td>✨ Feature</td>
 <td>14 days ago</td>
 <td><a href="https://github.com/levy-street/world-of-claudecraft/pull/2012">#2012</a> <em>(draft)</em></td>
+</tr>
+<tr>
+<td>harden in-game connection flows</td>
+<td>✨ Feature</td>
+<td>14 days ago</td>
+<td>—</td>
 </tr>
 <tr>
 <td>Molten Abyss, a level-20 five-player lore dungeon under Stormcrag</td>
@@ -1266,6 +1272,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>give the spellbook a11y stub the player the level gate reads</td>
+<td>🔧 Fix</td>
+<td>14 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>clear v0.27.0 release pending rows</td>
 <td>🔧 Fix</td>
 <td>14 days ago</td>
@@ -1316,12 +1328,6 @@
 <tr>
 <td>merge(release): land party/raid frame rework (#1864) onto release/v0.27.0</td>
 <td>✨ Feature</td>
-<td>15 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>compact the side rail on short viewports and harden crafting-launcher tests</td>
-<td>🔧 Fix</td>
 <td>15 days ago</td>
 <td>—</td>
 </tr>
@@ -1392,6 +1398,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>compact the side rail on short viewports and harden crafting-launcher tests</td>
+<td>🔧 Fix</td>
+<td>16 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>reland the camera follow release hold (mouselook release settle stutter)</td>
 <td>🔧 Fix</td>
 <td>16 days ago</td>
@@ -1417,12 +1429,6 @@
 </tr>
 <tr>
 <td>include prod_cpu ops scripts in docker build context</td>
-<td>🔧 Fix</td>
-<td>17 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>point donate links to Ko-fi</td>
 <td>🔧 Fix</td>
 <td>17 days ago</td>
 <td>—</td>
@@ -1482,6 +1488,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>point donate links to Ko-fi</td>
+<td>🔧 Fix</td>
+<td>18 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>bump version to 0.24.2</td>
 <td>🔧 Fix</td>
 <td>18 days ago</td>
@@ -1494,34 +1506,10 @@
 <td>—</td>
 </tr>
 <tr>
-<td>pin authored shield seat transforms</td>
-<td>🔧 Fix</td>
-<td>18 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>harden blank stealth bar migration</td>
-<td>🔧 Fix</td>
-<td>18 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>refresh v0.25.0 sync base</td>
-<td>🔧 Fix</td>
-<td>18 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>merge: integrate community PR #1830</td>
 <td>•</td>
 <td>18 days ago</td>
 <td>—</td>
-</tr>
-<tr>
-<td>restore #1736 interface overhaul for v0.25.0</td>
-<td>•</td>
-<td>18 days ago</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1815">#1815</a></td>
 </tr>
 <tr>
 <td>release: v0.24.0 PTR - Talents 2.0</td>
@@ -1530,19 +1518,25 @@
 <td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1744">#1744</a> <em>(draft)</em></td>
 </tr>
 <tr>
-<td>Revert &quot;fix(dungeons): allow eligible ghosts to reclaim raid loot&quot;</td>
+<td>reset saved unit-frame positions once for the v0.24.1 revert</td>
 <td>🔧 Fix</td>
-<td>18 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>add daily rewards participation bans</td>
-<td>✨ Feature</td>
 <td>19 days ago</td>
 <td>—</td>
 </tr>
 <tr>
-<td>reset saved unit-frame positions once for the v0.24.1 revert</td>
+<td>pin authored shield seat transforms</td>
+<td>🔧 Fix</td>
+<td>19 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>harden blank stealth bar migration</td>
+<td>🔧 Fix</td>
+<td>19 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>refresh v0.25.0 sync base</td>
 <td>🔧 Fix</td>
 <td>19 days ago</td>
 <td>—</td>
@@ -1554,10 +1548,10 @@
 <td>—</td>
 </tr>
 <tr>
-<td>restore the unbound-chord invariant the pet-keys merge vacated</td>
+<td>restore #1736 interface overhaul for v0.25.0</td>
 <td>•</td>
 <td>19 days ago</td>
-<td>—</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1815">#1815</a></td>
 </tr>
 <tr>
 <td>type README version surfaces</td>
@@ -1566,10 +1560,16 @@
 <td>—</td>
 </tr>
 <tr>
-<td>scale pass, 100 to 600+ dense CCU per realm (multi-core snapshot fanout)</td>
+<td>Revert &quot;fix(dungeons): allow eligible ghosts to reclaim raid loot&quot;</td>
+<td>🔧 Fix</td>
+<td>19 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>add daily rewards participation bans</td>
 <td>✨ Feature</td>
 <td>20 days ago</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1745">#1745</a></td>
+<td>—</td>
 </tr>
 <tr>
 <td>close review-round lockout bypasses (tapper, foreign clear, arena wing)</td>
@@ -1584,15 +1584,15 @@
 <td>—</td>
 </tr>
 <tr>
-<td>Revert &quot;feat(warrior): complete overhaul (offhand/dual-wield, block, parry, rage retune, new passives, spec at 5)&quot;</td>
-<td>✨ Feature</td>
+<td>restore the unbound-chord invariant the pet-keys merge vacated</td>
+<td>•</td>
 <td>20 days ago</td>
 <td>—</td>
 </tr>
 <tr>
-<td>Prediction fix</td>
-<td>🔧 Fix</td>
-<td>21 days ago</td>
+<td>Revert &quot;feat(warrior): complete overhaul (offhand/dual-wield, block, parry, rage retune, new passives, spec at 5)&quot;</td>
+<td>✨ Feature</td>
+<td>20 days ago</td>
 <td>—</td>
 </tr>
 <tr>
@@ -1602,10 +1602,10 @@
 <td>—</td>
 </tr>
 <tr>
-<td>extract the self-motion prediction gate into a pure module</td>
+<td>scale pass, 100 to 600+ dense CCU per realm (multi-core snapshot fanout)</td>
 <td>✨ Feature</td>
 <td>21 days ago</td>
-<td>—</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1745">#1745</a></td>
 </tr>
 <tr>
 <td>biome-format fct_lowtier_shot.mjs</td>
@@ -1614,31 +1614,7 @@
 <td>—</td>
 </tr>
 <tr>
-<td>you must possess the ball to kick, pass, or shoot it</td>
-<td>✨ Feature</td>
-<td>21 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>weapon VFX layer + inspector tuning and scene presets [WIP]</td>
-<td>✨ Feature</td>
-<td>21 days ago</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1644">#1644</a> <em>(draft)</em></td>
-</tr>
-<tr>
 <td>give package.json author an email so the Linux deb build can publish</td>
-<td>🔧 Fix</td>
-<td>21 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>equalize heroic dungeon difficulty at level 22</td>
-<td>🔧 Fix</td>
-<td>21 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>give the full-match bot sims CI-safe timeouts</td>
 <td>🔧 Fix</td>
 <td>21 days ago</td>
 <td>—</td>
@@ -1650,15 +1626,15 @@
 <td>—</td>
 </tr>
 <tr>
-<td>equalize heroic dungeon difficulty at level 22</td>
-<td>•</td>
+<td>merge: release/v0.24.0 into heroic loot repair</td>
+<td>✨ Feature</td>
 <td>21 days ago</td>
 <td>—</td>
 </tr>
 <tr>
-<td>merge: release/v0.24.0 into heroic loot repair</td>
-<td>✨ Feature</td>
-<td>21 days ago</td>
+<td>Prediction fix</td>
+<td>🔧 Fix</td>
+<td>22 days ago</td>
 <td>—</td>
 </tr>
 <tr>
@@ -1674,7 +1650,31 @@
 <td>—</td>
 </tr>
 <tr>
+<td>extract the self-motion prediction gate into a pure module</td>
+<td>✨ Feature</td>
+<td>22 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>you must possess the ball to kick, pass, or shoot it</td>
+<td>✨ Feature</td>
+<td>22 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>weapon VFX layer + inspector tuning and scene presets [WIP]</td>
+<td>✨ Feature</td>
+<td>22 days ago</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1644">#1644</a> <em>(draft)</em></td>
+</tr>
+<tr>
 <td>centered read-view chat with a resizable, in-front panel</td>
+<td>🔧 Fix</td>
+<td>22 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>equalize heroic dungeon difficulty at level 22</td>
 <td>🔧 Fix</td>
 <td>22 days ago</td>
 <td>—</td>
@@ -1687,6 +1687,12 @@
 </tr>
 <tr>
 <td>touch-friendly quest UI on the map and bar</td>
+<td>🔧 Fix</td>
+<td>22 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>give the full-match bot sims CI-safe timeouts</td>
 <td>🔧 Fix</td>
 <td>22 days ago</td>
 <td>—</td>
@@ -1706,6 +1712,12 @@
 <tr>
 <td>unstick the mobile-fixes integration branch gates</td>
 <td>🔧 Fix</td>
+<td>22 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>equalize heroic dungeon difficulty at level 22</td>
+<td>•</td>
 <td>22 days ago</td>
 <td>—</td>
 </tr>
@@ -1732,12 +1744,6 @@
 <td>✨ Feature</td>
 <td>23 days ago</td>
 <td>—</td>
-</tr>
-<tr>
-<td>the Mirror World — a level-20 endgame zone (Vale of Glass), forward-ported to v0.23.0</td>
-<td>✨ Feature</td>
-<td>23 days ago</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1514">#1514</a></td>
 </tr>
 <tr>
 <td>throttle the server tick rate on the snapshot head to ~2 Hz</td>
@@ -1804,6 +1810,12 @@
 <td>✨ Feature</td>
 <td>24 days ago</td>
 <td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1562">#1562</a> <em>(draft)</em></td>
+</tr>
+<tr>
+<td>the Mirror World — a level-20 endgame zone (Vale of Glass), forward-ported to v0.23.0</td>
+<td>✨ Feature</td>
+<td>24 days ago</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/1514">#1514</a></td>
 </tr>
 <tr>
 <td>style(i18n): wrap the long download.linuxHint overlay lines per biome</td>
@@ -1926,18 +1938,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>one online character per account</td>
-<td>✨ Feature</td>
-<td>26 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>keep the site menu bar on the character screens; card layout for wallet and developer sections</td>
-<td>🔧 Fix</td>
-<td>26 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>account bar no longer covers the roster on character select</td>
 <td>🔧 Fix</td>
 <td>26 days ago</td>
@@ -1956,31 +1956,7 @@
 <td>—</td>
 </tr>
 <tr>
-<td>de-IP the non-English locale overlays missed by the ip-pivot</td>
-<td>🔧 Fix</td>
-<td>26 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>mailbox coin inputs select on focus; repaint bags on send/collect</td>
-<td>🔧 Fix</td>
-<td>26 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>anchor mail indicator to bottom-right minimap rim so it never stacks on the raid-lockout badge</td>
-<td>🔧 Fix</td>
-<td>26 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>drop stray debug script committed by accident</td>
-<td>🔧 Fix</td>
-<td>26 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Edda Reedhand uses the druid player rig</td>
 <td>🔧 Fix</td>
 <td>26 days ago</td>
 <td>—</td>
@@ -2016,13 +1992,31 @@
 <td>—</td>
 </tr>
 <tr>
+<td>one online character per account</td>
+<td>✨ Feature</td>
+<td>27 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>prevent pets inheriting evade immunity</td>
 <td>🔧 Fix</td>
 <td>27 days ago</td>
 <td>—</td>
 </tr>
 <tr>
+<td>keep the site menu bar on the character screens; card layout for wallet and developer sections</td>
+<td>🔧 Fix</td>
+<td>27 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>copy editor.html and svelte.config.js into the image build</td>
+<td>🔧 Fix</td>
+<td>27 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>de-IP the non-English locale overlays missed by the ip-pivot</td>
 <td>🔧 Fix</td>
 <td>27 days ago</td>
 <td>—</td>
@@ -2046,7 +2040,25 @@
 <td>—</td>
 </tr>
 <tr>
+<td>mailbox coin inputs select on focus; repaint bags on send/collect</td>
+<td>🔧 Fix</td>
+<td>27 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>clear stale held-key state when menu suspends movement</td>
+<td>🔧 Fix</td>
+<td>27 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>drop stray debug script committed by accident</td>
+<td>🔧 Fix</td>
+<td>27 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Edda Reedhand uses the druid player rig</td>
 <td>🔧 Fix</td>
 <td>27 days ago</td>
 <td>—</td>
@@ -2070,37 +2082,13 @@
 <td>—</td>
 </tr>
 <tr>
-<td>lock in Vanguard as the battle theme, drop audition variants</td>
-<td>✨ Feature</td>
-<td>28 days ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>use a dedicated internal secret, no RESTART_COUNTDOWN_SECRET fallback</td>
 <td>✨ Feature</td>
 <td>28 days ago</td>
 <td>—</td>
 </tr>
 <tr>
-<td>tune the Atlantis night-sea lighting and Tidegate arrival</td>
-<td>✨ Feature</td>
-<td>28 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>auto-join the guild on OAuth link/login via guilds.join</td>
-<td>✨ Feature</td>
-<td>29 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>make the Discord menu a rebindable keybind (default U)</td>
-<td>✨ Feature</td>
-<td>29 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>add a Discord link/unlink entry to the touch More menu</td>
+<td>lock in Vanguard as the battle theme, drop audition variants</td>
 <td>✨ Feature</td>
 <td>29 days ago</td>
 <td>—</td>
@@ -2124,6 +2112,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>tune the Atlantis night-sea lighting and Tidegate arrival</td>
+<td>✨ Feature</td>
+<td>29 days ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>carry aura magnitude on the wire so buff/debuff tooltips show real values</td>
 <td>🔧 Fix</td>
 <td>29 days ago</td>
@@ -2131,18 +2125,6 @@
 </tr>
 <tr>
 <td>pass GitHub OAuth env through to the game service</td>
-<td>🔧 Fix</td>
-<td>29 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>match failed-avatar fallback to each surface&#39;s no-avatar state</td>
-<td>🔧 Fix</td>
-<td>29 days ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>match failed-avatar fallback to each surface&#39;s no-avatar state</td>
 <td>🔧 Fix</td>
 <td>29 days ago</td>
 <td>—</td>
@@ -2160,20 +2142,38 @@
 <td>—</td>
 </tr>
 <tr>
-<td>avoid compose env lint warnings</td>
-<td>•</td>
+<td>auto-join the guild on OAuth link/login via guilds.join</td>
+<td>✨ Feature</td>
 <td>30 days ago</td>
 <td>—</td>
 </tr>
 <tr>
-<td>include Discord bot build script in Docker context</td>
-<td>⚙️ Chore</td>
+<td>make the Discord menu a rebindable keybind (default U)</td>
+<td>✨ Feature</td>
+<td>30 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>add a Discord link/unlink entry to the touch More menu</td>
+<td>✨ Feature</td>
 <td>30 days ago</td>
 <td>—</td>
 </tr>
 <tr>
 <td>format fbx to glb converter</td>
 <td>✨ Feature</td>
+<td>30 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>match failed-avatar fallback to each surface&#39;s no-avatar state</td>
+<td>🔧 Fix</td>
+<td>30 days ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>match failed-avatar fallback to each surface&#39;s no-avatar state</td>
+<td>🔧 Fix</td>
 <td>30 days ago</td>
 <td>—</td>
 </tr>
@@ -2213,8 +2213,14 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>satisfy changed-file biome</td>
-<td>✨ Feature</td>
+<td>avoid compose env lint warnings</td>
+<td>•</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>include Discord bot build script in Docker context</td>
+<td>⚙️ Chore</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
@@ -2237,13 +2243,13 @@
 <td>—</td>
 </tr>
 <tr>
-<td>Revert &quot;feat(content): rogue Stealth and Vanish move at 50% speed (#997)&quot;</td>
+<td>align cross-platform-sync M16 wording with the other i18n docs</td>
 <td>✨ Feature</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
 <tr>
-<td>align cross-platform-sync M16 wording with the other i18n docs</td>
+<td>satisfy changed-file biome</td>
 <td>✨ Feature</td>
 <td>~1 month ago</td>
 <td>—</td>
@@ -2257,6 +2263,12 @@
 <tr>
 <td>set vcs.defaultBranch so the local pre-push gate resolves a base</td>
 <td>🛠 Refactor</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Revert &quot;feat(content): rogue Stealth and Vanish move at 50% speed (#997)&quot;</td>
+<td>✨ Feature</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
@@ -2375,12 +2387,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>image-based ability icons for all 9 classes</td>
-<td>✨ Feature</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>include guide html in docker build</td>
 <td>🔧 Fix</td>
 <td>~1 month ago</td>
@@ -2407,6 +2413,12 @@
 <tr>
 <td>include docker build inputs</td>
 <td>🔧 Fix</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>image-based ability icons for all 9 classes</td>
+<td>✨ Feature</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
@@ -2447,44 +2459,8 @@
 <td>—</td>
 </tr>
 <tr>
-<td>tune fast rare drops and market mech plates</td>
-<td>🔧 Fix</td>
-<td>~1 month ago</td>
-<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/756">#756</a> <em>(draft)</em></td>
-</tr>
-<tr>
-<td>retire Aldric fallen star quest</td>
-<td>🔧 Fix</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>record the pure-core + thin-consumer extraction pattern</td>
-<td>🔧 Fix</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>refine Wallet Standard UX and i18n</td>
 <td>🔧 Fix</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>align market catalog locale shape</td>
-<td>🔧 Fix</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>apply final dot ticks</td>
-<td>•</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>prevent fleeing mobs from evade-resetting</td>
-<td>•</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
@@ -2497,12 +2473,6 @@
 <tr>
 <td>restore skin preload contract wording</td>
 <td>✨ Feature</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>stabilize prediction under jitter</td>
-<td>⚡ Perf</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
@@ -2531,6 +2501,12 @@
 <td>—</td>
 </tr>
 <tr>
+<td>tune fast rare drops and market mech plates</td>
+<td>🔧 Fix</td>
+<td>~1 month ago</td>
+<td><a href="https://github.com/levy-street/world-of-claudecraft/pull/756">#756</a> <em>(draft)</em></td>
+</tr>
+<tr>
 <td>revert(arena): remove 2v2 fiesta from v0.10</td>
 <td>🔧 Fix</td>
 <td>~1 month ago</td>
@@ -2539,6 +2515,36 @@
 <tr>
 <td>ci: restore release gate</td>
 <td>🔧 Fix</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>retire Aldric fallen star quest</td>
+<td>🔧 Fix</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>record the pure-core + thin-consumer extraction pattern</td>
+<td>🔧 Fix</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>align market catalog locale shape</td>
+<td>🔧 Fix</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>apply final dot ticks</td>
+<td>•</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>prevent fleeing mobs from evade-resetting</td>
+<td>•</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
@@ -2579,14 +2585,14 @@
 <td>—</td>
 </tr>
 <tr>
-<td>NPC voice-over from ElevenLabs-generated voices</td>
-<td>✨ Feature</td>
+<td>polish attunement questline</td>
+<td>•</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
 <tr>
-<td>polish attunement questline</td>
-<td>•</td>
+<td>stabilize prediction under jitter</td>
+<td>⚡ Perf</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
@@ -2603,18 +2609,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>separate ranked bracket standings</td>
-<td>•</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>correct it_IT chatFilter.hardHint gender agreement</td>
-<td>✨ Feature</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>localize stray &quot;Wyrm&quot; in CJK/Cyrillic quests and copy polish</td>
 <td>✨ Feature</td>
 <td>~1 month ago</td>
@@ -2622,6 +2616,12 @@
 </tr>
 <tr>
 <td>KayKit asset expansion — dungeon/resource/tools bits, skeleton enemies, weapon icons</td>
+<td>✨ Feature</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>NPC voice-over from ElevenLabs-generated voices</td>
 <td>✨ Feature</td>
 <td>~1 month ago</td>
 <td>—</td>
@@ -2675,25 +2675,25 @@
 <td>—</td>
 </tr>
 <tr>
-<td>remove i18n-scaling planning scaffolding</td>
-<td>🛠 Refactor</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
-<td>keep space as gameplay input</td>
-<td>🔧 Fix</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>Revert &quot;feat(items): Inventory 2.0 — 4 equipment slots + 11 items&quot;</td>
 <td>✨ Feature</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
 <tr>
+<td>separate ranked bracket standings</td>
+<td>•</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
 <td>complete arena deaths and targeting</td>
+<td>✨ Feature</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>correct it_IT chatFilter.hardHint gender agreement</td>
 <td>✨ Feature</td>
 <td>~1 month ago</td>
 <td>—</td>
@@ -2724,6 +2724,18 @@
 </tr>
 <tr>
 <td>reverse Ghost Wolf backpedal animation</td>
+<td>🔧 Fix</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>remove i18n-scaling planning scaffolding</td>
+<td>🛠 Refactor</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>keep space as gameplay input</td>
 <td>🔧 Fix</td>
 <td>~1 month ago</td>
 <td>—</td>
@@ -2771,12 +2783,6 @@
 <td>—</td>
 </tr>
 <tr>
-<td>make healing threat party agnostic</td>
-<td>✨ Feature</td>
-<td>~1 month ago</td>
-<td>—</td>
-</tr>
-<tr>
 <td>Add ad blocker performance tip</td>
 <td>•</td>
 <td>~1 month ago</td>
@@ -2785,6 +2791,12 @@
 <tr>
 <td>Rate limit chat and add ignore action</td>
 <td>•</td>
+<td>~1 month ago</td>
+<td>—</td>
+</tr>
+<tr>
+<td>make healing threat party agnostic</td>
+<td>✨ Feature</td>
 <td>~1 month ago</td>
 <td>—</td>
 </tr>
