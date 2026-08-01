@@ -105,7 +105,7 @@
 
 **Loot:**
 
-- Coins: 450 copper (always drops)
+- Coins: 100 copper (always drops)
 
 ---
 

@@ -66,7 +66,7 @@
 | Stat | Value |
 |---|---|
 | Level | 15–16 |
-| Family | Kobold |
+| Family | burrower |
 | Health | 288–305 HP |
 | Armor (physical mitigation) | 140–150 (~8% vs a same-level attacker) |
 | Melee damage | 29–48 per hit @ 2.2s swing (~17–18 DPS) |
@@ -78,7 +78,7 @@
 
 **Loot:**
 
-- Coins: 70 copper (always drops)
+- Coins: 80 copper (always drops)
 
 <a id="mob-glimmerwisp"></a>
 
@@ -101,7 +101,7 @@
 
 **Loot:**
 
-- Coins: 70 copper (always drops)
+- Coins: 75 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -116,7 +116,7 @@
 | Stat | Value |
 |---|---|
 | Level | 15 |
-| Family | Kobold |
+| Family | burrower |
 | Health | 286 HP |
 | Armor (physical mitigation) | 140 (~8% vs a same-level attacker) |
 | Melee damage | 29–45 per hit @ 2.2s swing (~17 DPS) |
@@ -128,7 +128,7 @@
 
 **Loot:**
 
-- Coins: 65 copper (always drops)
+- Coins: 75 copper (always drops)
 
 <a id="mob-veiled_stag"></a>
 
@@ -166,7 +166,7 @@
 | Stat | Value |
 |---|---|
 | Level | 16–17 |
-| Family | Kobold |
+| Family | burrower |
 | Health | 375–396 HP |
 | Armor (physical mitigation) | 225–240 (~11–12% vs a same-level attacker) |
 | Melee damage | 44–72 per hit @ 2s swing (~28–30 DPS) |
@@ -272,7 +272,7 @@
 
 **Loot:**
 
-- Coins: 170 copper (always drops)
+- Coins: 95 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -334,7 +334,7 @@
 
 **Loot:**
 
-- Coins: 150 copper (always drops)
+- Coins: 90 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|

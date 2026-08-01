@@ -27,7 +27,7 @@
 
 **Loot:**
 
-- Coins: 110 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -42,7 +42,7 @@
 | Stat | Value |
 |---|---|
 | Level | 20 |
-| Family | Beast |
+| Family | reptile |
 | Health | 438 HP |
 | Armor (physical mitigation) | 228 (~10% vs a same-level attacker) |
 | Melee damage | 46–72 per hit @ 1.8s swing (~33 DPS) |
@@ -104,7 +104,7 @@
 
 **Loot:**
 
-- Coins: 110 copper (always drops)
+- Coins: 100 copper (always drops)
 
 ## Elites
 
@@ -131,7 +131,7 @@
 
 **Loot:**
 
-- Coins: 450 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|

@@ -142,6 +142,18 @@
       "desc": "Interrupts spellcasting, preventing any spell in that school from being cast for 4 sec. Generates 10 rage when it stops a cast."
     },
     {
+      "id": "berserker_rage",
+      "name": "Seething Fury",
+      "learnLevel": 10,
+      "cost": 0,
+      "cooldown": 30,
+      "range": 0,
+      "castTime": 0,
+      "school": "physical",
+      "requiresTarget": false,
+      "desc": "Enter a berserker rage, generating 20 rage. (Warrior talent)"
+    },
+    {
       "id": "execute",
       "name": "Early Grave",
       "learnLevel": 12,
@@ -498,6 +510,7 @@
     "thunder_clap",
     "bloodrage",
     "raised_guard",
+    "berserker_rage",
     "furious_mending",
     "iron_resolve",
     "faultline",

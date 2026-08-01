@@ -27,7 +27,7 @@
 
 **Loot:**
 
-- Coins: 80 copper (always drops)
+- Coins: 90 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -114,7 +114,7 @@
 
 **Loot:**
 
-- Coins: 200 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -143,7 +143,7 @@
 
 **Loot:**
 
-- Coins: 450 copper (always drops)
+- Coins: 100 copper (always drops)
 
 ---
 

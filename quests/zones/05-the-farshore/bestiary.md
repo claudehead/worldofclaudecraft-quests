@@ -15,7 +15,7 @@
 | Stat | Value |
 |---|---|
 | Level | 3–5 |
-| Family | Kobold |
+| Family | burrower |
 | Health | 52–74 HP |
 | Armor (physical mitigation) | 14–28 (~2–3% vs a same-level attacker) |
 | Melee damage | 7–15 per hit @ 1.8s swing (~5–7 DPS) |
@@ -27,7 +27,7 @@
 
 **Loot:**
 
-- Coins: 18 copper (always drops)
+- Coins: 20 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -54,7 +54,7 @@
 
 **Loot:**
 
-- Coins: 15 copper (always drops)
+- Coins: 20 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -108,7 +108,7 @@
 
 **Loot:**
 
-- Coins: 150 copper (always drops)
+- Coins: 35 copper (always drops)
 
 ---
 

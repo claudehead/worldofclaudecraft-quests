@@ -165,7 +165,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-arcane_dust"></a>Chime Dust | — | sells for 6c |
 | <a id="item-arcane_essence"></a>Chime Essence | — | sells for 18c |
 | <a id="item-arcane_shard"></a>Chime Shard | — | sells for 55c |
-| <a id="item-chipped_tusk"></a>Chipped Tusk | [Grubjaw the Glutton](../quests/zones/02-mirefen-marsh/bestiary.md#mob-grubjaw) 100%, [Mirefen Troll](../quests/zones/02-mirefen-marsh/bestiary.md#mob-fen_troll) 40%, [Dune Troll](../quests/zones/07-the-drakelands/bestiary.md#mob-dune_troll) 40% | sells for 15c |
+| <a id="item-chipped_tusk"></a>Chipped Tusk | [Grubjaw the Glutton](../quests/zones/02-mirefen-marsh/bestiary.md#mob-grubjaw) 100%, Fanglord Beastmaster 100%, Sunbone Hexcaller 45%, +4 more | sells for 15c |
 | <a id="item-cooking_salt"></a>Cooking Salt | vendor (Cook Marlow) | sells for 2c |
 | <a id="item-copper_ore"></a>Copper Ore | — | Quest: [Forge Work Order](../quests/zones/01-eastbrook-vale/q-prof-workorder-forge.md) |
 | <a id="item-cracked_fetish"></a>Cracked Fetish | [Drowned Dead](../quests/zones/02-mirefen-marsh/bestiary.md#mob-drowned_dead) 30% | sells for 14c |

@@ -27,8 +27,6 @@
 
 **Loot:**
 
-- Coins: 95 copper (always drops)
-
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/gilded_sap_clot.png" width="22" alt="">  Gilded Sap Clot | Quest item | 60% | quest item — only drops while on _Amber off the Herd_ |
@@ -65,7 +63,7 @@
 | Stat | Value |
 |---|---|
 | Level | 18–19 |
-| Family | Kobold |
+| Family | burrower |
 | Health | 337–354 HP |
 | Armor (physical mitigation) | 187–198 (~9% vs a same-level attacker) |
 | Melee damage | 37–60 per hit @ 1.9s swing (~25–26 DPS) |
@@ -88,7 +86,7 @@
 | Stat | Value |
 |---|---|
 | Level | 19–20 |
-| Family | Murloc |
+| Family | mudfin |
 | Health | 418–438 HP |
 | Armor (physical mitigation) | 234–247 (~10–11% vs a same-level attacker) |
 | Melee damage | 44–72 per hit @ 2s swing (~28–30 DPS) |
@@ -100,7 +98,7 @@
 
 **Loot:**
 
-- Coins: 105 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -131,7 +129,7 @@
 
 **Loot:**
 
-- Coins: 200 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -146,7 +144,7 @@
 | Stat | Value |
 |---|---|
 | Level | 20 |
-| Family | Murloc |
+| Family | mudfin |
 | Health | 1587 HP |
 | Armor (physical mitigation) | 304 (~13% vs a same-level attacker) |
 | Melee damage | 82–128 per hit @ 2.4s swing (~44 DPS) |
@@ -160,7 +158,7 @@
 
 **Loot:**
 
-- Coins: 450 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|

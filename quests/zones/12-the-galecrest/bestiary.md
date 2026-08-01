@@ -15,7 +15,7 @@
 | Stat | Value |
 |---|---|
 | Level | 20 |
-| Family | Kobold |
+| Family | burrower |
 | Health | 394 HP |
 | Armor (physical mitigation) | 190 (~8% vs a same-level attacker) |
 | Melee damage | 42–66 per hit @ 1.8s swing (~30 DPS) |
@@ -27,7 +27,7 @@
 
 **Loot:**
 
-- Coins: 110 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -55,7 +55,7 @@
 
 **Loot:**
 
-- Coins: 110 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -155,7 +155,7 @@
 
 **Loot:**
 
-- Coins: 105 copper (always drops)
+- Coins: 100 copper (always drops)
 
 <a id="mob-wreck_thief"></a>
 
@@ -166,7 +166,7 @@
 | Stat | Value |
 |---|---|
 | Level | 20 |
-| Family | Kobold |
+| Family | burrower |
 | Health | 394 HP |
 | Armor (physical mitigation) | 190 (~8% vs a same-level attacker) |
 | Melee damage | 42–66 per hit @ 1.8s swing (~30 DPS) |
@@ -178,7 +178,7 @@
 
 **Loot:**
 
-- Coins: 110 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -210,7 +210,7 @@
 
 **Loot:**
 
-- Coins: 450 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|

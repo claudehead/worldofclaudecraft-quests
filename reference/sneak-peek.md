@@ -2,355 +2,361 @@
 
 Unmerged branches and open pull requests on the [upstream game repo](https://github.com/levy-street/world-of-claudecraft) — a look at what *might* be coming. **Nothing here is in the game yet**, and branches that have sat untouched for months may never land. Sorted by how recently each was updated.
 
-_As of 2026-07-31 · 434 branches in flight._
+_As of 2026-08-01 · 440 branches in flight._
 
 ## 🟢 Fresh — actively in progress (updated this week)
 
 | What | Type | Last update | PR |
 |---|---|---|---|
-| merge: fix/armor-material-render (hunter bow cycle) into basemerge/armor-v02 | • | today | — |
-| pr-2698: 02-hud-mobile.png | • | today | — |
-| purge dead PR screenshot pollution (~876 MB) | ⚙️ Chore | today | [#2676](https://github.com/levy-street/world-of-claudecraft/pull/2676) |
-| close the last verified findings from the fix-round review | ✨ Feature | today | — |
-| cut renderer cost across all five graphics presets | ⚡ Perf | today | [#2675](https://github.com/levy-street/world-of-claudecraft/pull/2675) |
-| v02 bodies, level-20 armor sets, 20% larger players | 🔧 Fix | today | [#2593](https://github.com/levy-street/world-of-claudecraft/pull/2593) _(draft)_ |
-| degrade the Armory display model while its skin streams | 🔧 Fix | today | — |
-| re-mint the Eastbrook provenance seals for the 0.32.4 version sync | 🔧 Fix | today | — |
-| pin unguarded Hud entry ids across index and play | 🔧 Fix | today | — |
-| merge: basemerge/armor-v02 (hunter bow cycle) into the integration branch | • | today | — |
-| update OSSBrain changes for v0.33.0 | • | today | [#2650](https://github.com/levy-street/world-of-claudecraft/pull/2650) |
-| re-mint the Eastbrook provenance seals for the 0.32.2 version sync | • | today | — |
-| re-mint the Eastbrook provenance seals for the 0.32.3 version sync | • | today | — |
-| merge: main (v0.32.4) into release/v0.33.0 | • | today | — |
-| refresh the Android Gradle wrapper, iOS SwiftPM pins, and build number | ⚙️ Chore | yesterday | — |
-| spec-driven per-ability spell VFX, integrated onto v0.31.0 | ✨ Feature | yesterday | [#2468](https://github.com/levy-street/world-of-claudecraft/pull/2468) |
-| source the OTA layout probe from the shared world-auth seam | ✨ Feature | yesterday | — |
-| WIP: druid v0.29 spec engines, themed rows, and the teaching layer (stacked on #2218 + #2328) | ✨ Feature | yesterday | [#2568](https://github.com/levy-street/world-of-claudecraft/pull/2568) _(draft)_ |
-| Graphics overhaul: AAA lighting, terrain relief, universal PBR surface detail | ✨ Feature | yesterday | [#2594](https://github.com/levy-street/world-of-claudecraft/pull/2594) |
-| show each player's guild beside their name on both high-score boards | ✨ Feature | yesterday | [#2656](https://github.com/levy-street/world-of-claudecraft/pull/2656) |
-| sync every version surface to 0.32.1 | ✨ Feature | yesterday | — |
-| WIP: rogue v0.29 spec engines, themed rows, and the teaching layer (stacked on #2218) | ✨ Feature | yesterday | [#2328](https://github.com/levy-street/world-of-claudecraft/pull/2328) _(draft)_ |
-| scale normal Wildheart Basin to the Sanctum calibration and punish early boss pulls | ✨ Feature | yesterday | — |
-| hard leash tether, and Grix the Tunnelking cannot be kited | 🔧 Fix | yesterday | — |
-| finish the other three escort quests | 🔧 Fix | yesterday | — |
-| close entry memory recovery gaps | 🔧 Fix | yesterday | — |
-| let reins be placed on the action bar like any other usable item | 🔧 Fix | yesterday | — |
-| stop shipping every hashed media asset twice in native bundles | 🔧 Fix | yesterday | — |
-| re-hunt the hunted-seed suites the realm loot fill's stream shift broke | 🔧 Fix | yesterday | — |
-| correct the Last Keep terrace stair facing and clipping | 🔧 Fix | yesterday | — |
-| loot tables for the v0.32.0 realm world mobs | 🔧 Fix | yesterday | — |
-| re-pin the empowerNext proc sentinel to 6 (Fault Line retired by the Wolfstep re-theme) | • | yesterday | — |
-| Revert "fix(professions): stop the Bombardier pair from defaulting into a zer…" | • | yesterday | — |
-| render retired completed reasons and settle the landing | • | yesterday | — |
-| Revert "fix(professions): stop the Bombardier pair from defaulting into a zer…" | 🔧 Fix | yesterday | — |
-| wrap the Japanese ownedMountPrompt line to satisfy the formatter | ✨ Feature | 2 days ago | — |
-| voice every unvoiced NPC across the expansion zones | ✨ Feature | 2 days ago | — |
-| make takeActionBarLayoutRestore one-shot in the offline Sim | 🔧 Fix | 2 days ago | — |
-| never tier-gate the self buff/debuff bar cadence | 🔧 Fix | 2 days ago | — |
-| localize pt_BR quest copy | • | 2 days ago | — |
-| make the profiler's online crowd harness work again | • | 2 days ago | — |
-| assets: beacon open ring after shot for PR 2579 | • | 3 days ago | — |
-| review follow-ups on the zone-feature cull and streaming | ✨ Feature | 3 days ago | — |
-| keeper bram stands on the beacon balcony, not the roof cap | 🔧 Fix | 3 days ago | — |
-| re-mint the goldens after the eastbrook camp respacing | 🔧 Fix | 3 days ago | — |
-| unwedge the jungle-pool viewing platform | 🔧 Fix | 3 days ago | — |
-| pin the finger ordinal against the paperdoll's own order, add PR shots | 🔧 Fix | 3 days ago | — |
-| address PR 2563 review: clear the jitter band, tighten the end seam | 🔧 Fix | 3 days ago | — |
-| kill the last vacuous focus case and pin the seam's contracts | 🔧 Fix | 3 days ago | — |
-| walkable exit ramp for the glacier tarn pit | 🔧 Fix | 3 days ago | — |
-| Revert "fix(galecrest): open the ground ring around the beacon, collision matches the drawn stair" | 🔧 Fix | 3 days ago | — |
-| stop characters sinking into the keep's east and west faces | 🔧 Fix | 3 days ago | — |
-| stop deck railings crossing walkway junctions | 🔧 Fix | 3 days ago | — |
-| move okku fully clear of the banyan trunk | 🔧 Fix | 3 days ago | — |
-| make the master_loot coverage assertions decisive | 🔧 Fix | 3 days ago | — |
-| add a master-loot scenario so the draw-order gate sees it | 🔧 Fix | 3 days ago | — |
-| self-heal zero-weight animation latches that T-pose characters | 🔧 Fix | 3 days ago | — |
-| scope the hud bar-dep pin to the spellbook's own deps bag | 🔧 Fix | 3 days ago | — |
-| close the coverage gaps the review panel found in the Town Focus focus suite | 🔧 Fix | 3 days ago | — |
-| format the three Town Focus counts through the active locale | 🔧 Fix | 3 days ago | — |
-| merge: feature/ability-vfx-integration (main catch-up) into integration/rifts-ability-vfx | ✨ Feature | 3 days ago | — |
-| armor forge, generated armor sets + Armory picker [WIP] | ✨ Feature | 4 days ago | [#1941](https://github.com/levy-street/world-of-claudecraft/pull/1941) _(draft)_ |
-| far-vista terrain, see the whole world from anywhere | ✨ Feature | 4 days ago | [#2510](https://github.com/levy-street/world-of-claudecraft/pull/2510) |
-| Restore the Orkadia dungeon (parked for later, not for immediate merge) | ✨ Feature | 4 days ago | [#2543](https://github.com/levy-street/world-of-claudecraft/pull/2543) |
-| drop the fork's AnySim/AnyEntity casts in the mage regen block | ✨ Feature | 4 days ago | — |
-| correct a comment the release merge falsified | 🔧 Fix | 4 days ago | — |
-| finish the refusal sweep, and pin lootable to the arm that sets it | 🔧 Fix | 4 days ago | — |
-| make the corpse-harvest refusal and gate pins decisive, per review | 🔧 Fix | 4 days ago | — |
-| say where a subdirectory hard-fails, in the file authors read | 🔧 Fix | 4 days ago | — |
-| say why setParentNodes is off and what a partial parse costs | 🔧 Fix | 4 days ago | — |
-| close the 22 mutations the coverage audit found surviving | 🔧 Fix | 4 days ago | — |
-| pin the map painter's canvas state against its own draw order | 🔧 Fix | 4 days ago | — |
-| collapse a repeated pid in a master-loot assignment | 🔧 Fix | 4 days ago | — |
-| remove third-party faction crest from the Orkadia war drum | 🔧 Fix | 4 days ago | — |
-| prove the scanned half of the allowance-key check, not just the cold one | 🔧 Fix | 4 days ago | — |
-| close the review gaps in the grant-scan pins | 🔧 Fix | 4 days ago | — |
-| close the escapes a coverage audit found in the new pins | 🔧 Fix | 4 days ago | — |
-| mesh the terrain cells no zone rectangle owns | 🔧 Fix | 4 days ago | — |
-| filter the stepped component in stepTownFocus too | 🔧 Fix | 4 days ago | — |
-| correct two overclaims in the new pin comments | 🔧 Fix | 4 days ago | — |
-| pull the latest Ravenrift head (17bfcaee4) into the integration branch | • | 4 days ago | — |
-| merge: fold the newer ossbrain-release/v0.31.0 tip into the base merge | • | 4 days ago | — |
-| style: sort the dungeonAt import alongside the other data.ts imports | • | 4 days ago | — |
-| stop naming a specific active release branch | 📄 Docs | 5 days ago | — |
-| switch the subtype menu's wording on the core discriminator | ✨ Feature | 5 days ago | — |
-| ClaudeCraft Plugin Store: reviewed community client-side mods | ✨ Feature | 5 days ago | [#2300](https://github.com/levy-street/world-of-claudecraft/pull/2300) |
-| pin the corpse-harvest lines through the real HUD | 🔧 Fix | 5 days ago | — |
-| test each preserved trait the way its own render sink tests it | 🔧 Fix | 5 days ago | — |
-| give the market shot's filler listings their own id band | 🔧 Fix | 5 days ago | — |
-| plan listing ids over only the rows the load can replay | 🔧 Fix | 5 days ago | — |
-| close the mutation-proven gaps in the grant-line pins | 🔧 Fix | 5 days ago | — |
-| make the profiler's online crowd harness work again | 🔧 Fix | 5 days ago | — |
-| re-mint the Eastbrook provenance seals for the 0.30.0 version sync | • | 5 days ago | — |
-| i18n: fill every pending row and close the silent English passthrough | ⚙️ Chore | 6 days ago | — |
-| distill the image-to-GLB pipeline into a shared skill | ✨ Feature | 6 days ago | — |
-| record the review ratifications and refresh stale comments | ✨ Feature | 6 days ago | — |
-| re-pin the Eastbrook polish provenance after the renderer change | ✨ Feature | 6 days ago | — |
-| close the review gaps in the footer-only repaint pins | 🔧 Fix | 6 days ago | — |
-| converge the bag money row on a money-only change | 🔧 Fix | 6 days ago | — |
-| repaint the bag money footer only when the Claudium balance moved | 🔧 Fix | 6 days ago | — |
-| repaint the crafting window when the bag changes | 🔧 Fix | 6 days ago | — |
-| conservation gate reuses the measured 120s runs (CI shard timeout) | 🔧 Fix | 6 days ago | — |
-| bench the 3-man composition and inferno counterplay in the Sanctum Monte Carlo | 🔧 Fix | 6 days ago | — |
-| raise normal Sanctum boss floors to the family scaling rule | 🔧 Fix | 6 days ago | — |
-| pass the party roster to the corpse-over-node defer check | • | 6 days ago | — |
-| In-game ability VFX: gallery fidelity, calibration, audio, and full class-by-class playtest | ✨ Feature | 7 days ago | [#2351](https://github.com/levy-street/world-of-claudecraft/pull/2351) |
-| close the PR 2357 review gaps on the tool-gate suites | ✨ Feature | 7 days ago | — |
-| describe the new guards in invariant terms | 🔧 Fix | 7 days ago | — |
-| let disenchant consume an enchanted-only copy | 🔧 Fix | 7 days ago | — |
-| close the review gaps on the display-heal coverage | 🔧 Fix | 7 days ago | — |
-| pin the non-pending aria arm of the trainer Learn button | 🔧 Fix | 7 days ago | — |
-| biome format pass on the hand-filled locale overlays | 🔧 Fix | 7 days ago | — |
-| healers-vs-heroics rebalance wave | • | 7 days ago | — |
+| pr-2650: 15-renown-board-mobile.png | • | today | — |
+| record merge commit for #2731 on main | ⚙️ Chore | today | [#2733](https://github.com/levy-street/world-of-claudecraft/pull/2733) |
+| re-pin Eastbrook polish metadata seal after path scrub | ⚙️ Chore | today | — |
+| respect the overhaul's pinned post-chain and prepareDraw contract | ✨ Feature | today | — |
+| address the PR 2709 review round | ✨ Feature | today | — |
+| cut hot-path CPU, geometry, and upload cost | ⚡ Perf | today | [#2675](https://github.com/levy-street/world-of-claudecraft/pull/2675) |
+| merge: release/v0.33.0 (ability VFX integration) into the compile-storm fix | 🔧 Fix | today | — |
+| give es_ES a Castilian evade wording that diverges from the es base | 🔧 Fix | today | — |
+| re-mint all six provenance seals after the 0.33.0 version sync | 🔧 Fix | today | — |
+| merge: sync pushed OSSBrain release into ossbrain-release/v0.33.0 | • | today | — |
+| i18n: fill all 1317 pending locale rows for the v0.33.0 release gate | • | today | — |
+| merge: release/v0.33.0 (Wildheart Basin) into the graphics overhaul | • | today | — |
+| merge: fix/armor-material-render (hunter bow cycle) into basemerge/armor-v02 | • | yesterday | — |
+| close the last verified findings from the fix-round review | ✨ Feature | yesterday | — |
+| v02 bodies, level-20 armor sets, 20% larger players | 🔧 Fix | yesterday | [#2593](https://github.com/levy-street/world-of-claudecraft/pull/2593) _(draft)_ |
+| degrade the Armory display model while its skin streams | 🔧 Fix | yesterday | — |
+| re-mint the Eastbrook provenance seals for the 0.32.4 version sync | 🔧 Fix | yesterday | — |
+| pin unguarded Hud entry ids across index and play | 🔧 Fix | yesterday | — |
+| merge: basemerge/armor-v02 (hunter bow cycle) into the integration branch | • | yesterday | — |
+| re-mint the Eastbrook provenance seals for the 0.32.2 version sync | • | yesterday | — |
+| re-mint the Eastbrook provenance seals for the 0.32.3 version sync | • | yesterday | — |
+| refresh the Android Gradle wrapper, iOS SwiftPM pins, and build number | ⚙️ Chore | 2 days ago | — |
+| source the OTA layout probe from the shared world-auth seam | ✨ Feature | 2 days ago | — |
+| WIP: druid v0.29 spec engines, themed rows, and the teaching layer (stacked on #2218 + #2328) | ✨ Feature | 2 days ago | [#2568](https://github.com/levy-street/world-of-claudecraft/pull/2568) _(draft)_ |
+| Graphics overhaul: AAA lighting, terrain relief, universal PBR surface detail | ✨ Feature | 2 days ago | [#2594](https://github.com/levy-street/world-of-claudecraft/pull/2594) |
+| show each player's guild beside their name on both high-score boards | ✨ Feature | 2 days ago | — |
+| sync every version surface to 0.32.1 | ✨ Feature | 2 days ago | — |
+| WIP: rogue v0.29 spec engines, themed rows, and the teaching layer (stacked on #2218) | ✨ Feature | 2 days ago | [#2328](https://github.com/levy-street/world-of-claudecraft/pull/2328) _(draft)_ |
+| scale normal Wildheart Basin to the Sanctum calibration and punish early boss pulls | ✨ Feature | 2 days ago | — |
+| hard leash tether, and Grix the Tunnelking cannot be kited | 🔧 Fix | 2 days ago | — |
+| finish the other three escort quests | 🔧 Fix | 2 days ago | — |
+| close entry memory recovery gaps | 🔧 Fix | 2 days ago | — |
+| let reins be placed on the action bar like any other usable item | 🔧 Fix | 2 days ago | — |
+| stop shipping every hashed media asset twice in native bundles | 🔧 Fix | 2 days ago | — |
+| re-hunt the hunted-seed suites the realm loot fill's stream shift broke | 🔧 Fix | 2 days ago | — |
+| correct the Last Keep terrace stair facing and clipping | 🔧 Fix | 2 days ago | — |
+| loot tables for the v0.32.0 realm world mobs | 🔧 Fix | 2 days ago | — |
+| re-pin the empowerNext proc sentinel to 6 (Fault Line retired by the Wolfstep re-theme) | • | 2 days ago | — |
+| Revert "fix(professions): stop the Bombardier pair from defaulting into a zer…" | • | 2 days ago | — |
+| render retired completed reasons and settle the landing | • | 2 days ago | — |
+| Revert "fix(professions): stop the Bombardier pair from defaulting into a zer…" | 🔧 Fix | 2 days ago | — |
+| wrap the Japanese ownedMountPrompt line to satisfy the formatter | ✨ Feature | 3 days ago | — |
+| voice every unvoiced NPC across the expansion zones | ✨ Feature | 3 days ago | — |
+| make takeActionBarLayoutRestore one-shot in the offline Sim | 🔧 Fix | 3 days ago | — |
+| never tier-gate the self buff/debuff bar cadence | 🔧 Fix | 3 days ago | — |
+| localize pt_BR quest copy | • | 3 days ago | — |
+| make the profiler's online crowd harness work again | • | 3 days ago | — |
+| assets: beacon open ring after shot for PR 2579 | • | 4 days ago | — |
+| review follow-ups on the zone-feature cull and streaming | ✨ Feature | 4 days ago | — |
+| keeper bram stands on the beacon balcony, not the roof cap | 🔧 Fix | 4 days ago | — |
+| re-mint the goldens after the eastbrook camp respacing | 🔧 Fix | 4 days ago | — |
+| unwedge the jungle-pool viewing platform | 🔧 Fix | 4 days ago | — |
+| pin the finger ordinal against the paperdoll's own order, add PR shots | 🔧 Fix | 4 days ago | — |
+| address PR 2563 review: clear the jitter band, tighten the end seam | 🔧 Fix | 4 days ago | — |
+| kill the last vacuous focus case and pin the seam's contracts | 🔧 Fix | 4 days ago | — |
+| walkable exit ramp for the glacier tarn pit | 🔧 Fix | 4 days ago | — |
+| Revert "fix(galecrest): open the ground ring around the beacon, collision matches the drawn stair" | 🔧 Fix | 4 days ago | — |
+| stop characters sinking into the keep's east and west faces | 🔧 Fix | 4 days ago | — |
+| stop deck railings crossing walkway junctions | 🔧 Fix | 4 days ago | — |
+| move okku fully clear of the banyan trunk | 🔧 Fix | 4 days ago | — |
+| make the master_loot coverage assertions decisive | 🔧 Fix | 4 days ago | — |
+| add a master-loot scenario so the draw-order gate sees it | 🔧 Fix | 4 days ago | — |
+| self-heal zero-weight animation latches that T-pose characters | 🔧 Fix | 4 days ago | — |
+| scope the hud bar-dep pin to the spellbook's own deps bag | 🔧 Fix | 4 days ago | — |
+| close the coverage gaps the review panel found in the Town Focus focus suite | 🔧 Fix | 4 days ago | — |
+| format the three Town Focus counts through the active locale | 🔧 Fix | 4 days ago | — |
+| merge: feature/ability-vfx-integration (main catch-up) into integration/rifts-ability-vfx | ✨ Feature | 4 days ago | — |
+| armor forge, generated armor sets + Armory picker [WIP] | ✨ Feature | 5 days ago | [#1941](https://github.com/levy-street/world-of-claudecraft/pull/1941) _(draft)_ |
+| far-vista terrain, see the whole world from anywhere | ✨ Feature | 5 days ago | [#2510](https://github.com/levy-street/world-of-claudecraft/pull/2510) |
+| Restore the Orkadia dungeon (parked for later, not for immediate merge) | ✨ Feature | 5 days ago | [#2543](https://github.com/levy-street/world-of-claudecraft/pull/2543) |
+| drop the fork's AnySim/AnyEntity casts in the mage regen block | ✨ Feature | 5 days ago | — |
+| correct a comment the release merge falsified | 🔧 Fix | 5 days ago | — |
+| finish the refusal sweep, and pin lootable to the arm that sets it | 🔧 Fix | 5 days ago | — |
+| make the corpse-harvest refusal and gate pins decisive, per review | 🔧 Fix | 5 days ago | — |
+| say where a subdirectory hard-fails, in the file authors read | 🔧 Fix | 5 days ago | — |
+| say why setParentNodes is off and what a partial parse costs | 🔧 Fix | 5 days ago | — |
+| close the 22 mutations the coverage audit found surviving | 🔧 Fix | 5 days ago | — |
+| pin the map painter's canvas state against its own draw order | 🔧 Fix | 5 days ago | — |
+| collapse a repeated pid in a master-loot assignment | 🔧 Fix | 5 days ago | — |
+| remove third-party faction crest from the Orkadia war drum | 🔧 Fix | 5 days ago | — |
+| prove the scanned half of the allowance-key check, not just the cold one | 🔧 Fix | 5 days ago | — |
+| close the review gaps in the grant-scan pins | 🔧 Fix | 5 days ago | — |
+| close the escapes a coverage audit found in the new pins | 🔧 Fix | 5 days ago | — |
+| mesh the terrain cells no zone rectangle owns | 🔧 Fix | 5 days ago | — |
+| filter the stepped component in stepTownFocus too | 🔧 Fix | 5 days ago | — |
+| correct two overclaims in the new pin comments | 🔧 Fix | 5 days ago | — |
+| pull the latest Ravenrift head (17bfcaee4) into the integration branch | • | 5 days ago | — |
+| merge: fold the newer ossbrain-release/v0.31.0 tip into the base merge | • | 5 days ago | — |
+| style: sort the dungeonAt import alongside the other data.ts imports | • | 5 days ago | — |
+| stop naming a specific active release branch | 📄 Docs | 6 days ago | — |
+| switch the subtype menu's wording on the core discriminator | ✨ Feature | 6 days ago | — |
+| ClaudeCraft Plugin Store: reviewed community client-side mods | ✨ Feature | 6 days ago | [#2300](https://github.com/levy-street/world-of-claudecraft/pull/2300) |
+| pin the corpse-harvest lines through the real HUD | 🔧 Fix | 6 days ago | — |
+| test each preserved trait the way its own render sink tests it | 🔧 Fix | 6 days ago | — |
+| give the market shot's filler listings their own id band | 🔧 Fix | 6 days ago | — |
+| plan listing ids over only the rows the load can replay | 🔧 Fix | 6 days ago | — |
+| close the mutation-proven gaps in the grant-line pins | 🔧 Fix | 6 days ago | — |
+| make the profiler's online crowd harness work again | 🔧 Fix | 6 days ago | — |
+| re-mint the Eastbrook provenance seals for the 0.30.0 version sync | • | 6 days ago | — |
+| i18n: fill every pending row and close the silent English passthrough | ⚙️ Chore | 7 days ago | — |
+| distill the image-to-GLB pipeline into a shared skill | ✨ Feature | 7 days ago | — |
+| record the review ratifications and refresh stale comments | ✨ Feature | 7 days ago | — |
+| re-pin the Eastbrook polish provenance after the renderer change | ✨ Feature | 7 days ago | — |
+| close the review gaps in the footer-only repaint pins | 🔧 Fix | 7 days ago | — |
+| converge the bag money row on a money-only change | 🔧 Fix | 7 days ago | — |
+| repaint the bag money footer only when the Claudium balance moved | 🔧 Fix | 7 days ago | — |
+| repaint the crafting window when the bag changes | 🔧 Fix | 7 days ago | — |
+| conservation gate reuses the measured 120s runs (CI shard timeout) | 🔧 Fix | 7 days ago | — |
+| bench the 3-man composition and inferno counterplay in the Sanctum Monte Carlo | 🔧 Fix | 7 days ago | — |
+| raise normal Sanctum boss floors to the family scaling rule | 🔧 Fix | 7 days ago | — |
+| pass the party roster to the corpse-over-node defer check | • | 7 days ago | — |
 
 ## 🟡 Recent — within the last month
 
 | What | Type | Last update | PR |
 |---|---|---|---|
-| add administrative availability toggle | ✨ Feature | 8 days ago | — |
-| harden the art set per its PR review | ✨ Feature | 8 days ago | — |
-| rename the mob charge display name to Onrush | 🔧 Fix | 8 days ago | — |
-| land the whole-branch QA findings | 🔧 Fix | 8 days ago | — |
-| i18n: fill the 39 rename-wave keys and re-sync the 34 stale rows plus 3 renamed deeds | • | 8 days ago | — |
-| camera PR evidence, chase framing vs vista sweep | ✨ Feature | 9 days ago | — |
-| spec-driven per-ability spell VFX, the gallery ported in-game | ✨ Feature | 9 days ago | [#2284](https://github.com/levy-street/world-of-claudecraft/pull/2284) |
-| in-game ability VFX vertical slice — shaman kit behind a beta toggle | ✨ Feature | 9 days ago | — |
-| character rework | ✨ Feature | 9 days ago | [#2281](https://github.com/levy-street/world-of-claudecraft/pull/2281) |
-| parkour movement, jumpable and standable props | ✨ Feature | 9 days ago | [#2304](https://github.com/levy-street/world-of-claudecraft/pull/2304) |
-| pin the tier letterId literal for every wave-one pair | ✨ Feature | 9 days ago | — |
-| merge: release/v0.29.0 into feature/remastered-music-v0290 | ✨ Feature | 9 days ago | — |
-| target-acquire flourish and camera focus lean | ✨ Feature | 9 days ago | [#2306](https://github.com/levy-street/world-of-claudecraft/pull/2306) |
-| bind resolver calls to read branches | 🔧 Fix | 9 days ago | — |
-| reduce native renderer memory residency | 🔧 Fix | 9 days ago | — |
-| address review on the licence reconciliation | 🔧 Fix | 9 days ago | — |
-| mark mistcaller fang as dagger-class | 🔧 Fix | 9 days ago | — |
-| paint col-b micro-menu hover flyouts over col-a | 🔧 Fix | 9 days ago | — |
-| refresh targeting parity label | 🔧 Fix | 9 days ago | — |
-| harden scope migration coverage | 🔧 Fix | 9 days ago | — |
-| move the xp bar below the action bars, pinned to the screen bottom | 🔧 Fix | 9 days ago | — |
-| guard main startup seam | • | 9 days ago | — |
-| gate the riding lesson quest on the purchased riding skill | ✨ Feature | 10 days ago | — |
-| mirror lethal death zones to the online client | ✨ Feature | 10 days ago | — |
-| review round: cap covers summoned adds, tighter dead-entry match | ✨ Feature | 10 days ago | — |
-| heroic five-man blue reins drop at the decided 0.1%, not 0.6% | ✨ Feature | 10 days ago | — |
-| literal-pin the heroic tuning table and the B-rank softer add multiplier | ✨ Feature | 10 days ago | — |
-| Bladestorm whirls its full AoE and the caster bodily spins | ✨ Feature | 10 days ago | — |
-| flow the news panel below the character screen on mobile | ✨ Feature | 10 days ago | — |
-| tighten mobile armory card copy padding | ✨ Feature | 10 days ago | — |
-| pause streams under every duck and download nothing while muted | ✨ Feature | 10 days ago | — |
-| measured clearance radii for every objective kind and runtime placement pins | 🔧 Fix | 10 days ago | — |
-| derive dungeon wall visuals from collider geometry | 🔧 Fix | 10 days ago | — |
-| Revert "feat(music): stream the remastered mp3 soundtrack in place of runtime synthesis (#2251)" | ✨ Feature | 10 days ago | — |
+| In-game ability VFX: gallery fidelity, calibration, audio, and full class-by-class playtest | ✨ Feature | 8 days ago | [#2351](https://github.com/levy-street/world-of-claudecraft/pull/2351) |
+| close the PR 2357 review gaps on the tool-gate suites | ✨ Feature | 8 days ago | — |
+| describe the new guards in invariant terms | 🔧 Fix | 8 days ago | — |
+| let disenchant consume an enchanted-only copy | 🔧 Fix | 8 days ago | — |
+| close the review gaps on the display-heal coverage | 🔧 Fix | 8 days ago | — |
+| pin the non-pending aria arm of the trainer Learn button | 🔧 Fix | 8 days ago | — |
+| biome format pass on the hand-filled locale overlays | 🔧 Fix | 8 days ago | — |
+| healers-vs-heroics rebalance wave | • | 8 days ago | — |
+| add administrative availability toggle | ✨ Feature | 9 days ago | — |
+| harden the art set per its PR review | ✨ Feature | 9 days ago | — |
+| rename the mob charge display name to Onrush | 🔧 Fix | 9 days ago | — |
+| land the whole-branch QA findings | 🔧 Fix | 9 days ago | — |
+| i18n: fill the 39 rename-wave keys and re-sync the 34 stale rows plus 3 renamed deeds | • | 9 days ago | — |
+| camera PR evidence, chase framing vs vista sweep | ✨ Feature | 10 days ago | — |
+| spec-driven per-ability spell VFX, the gallery ported in-game | ✨ Feature | 10 days ago | [#2284](https://github.com/levy-street/world-of-claudecraft/pull/2284) |
+| in-game ability VFX vertical slice — shaman kit behind a beta toggle | ✨ Feature | 10 days ago | — |
+| character rework | ✨ Feature | 10 days ago | [#2281](https://github.com/levy-street/world-of-claudecraft/pull/2281) |
+| parkour movement, jumpable and standable props | ✨ Feature | 10 days ago | [#2304](https://github.com/levy-street/world-of-claudecraft/pull/2304) |
+| pin the tier letterId literal for every wave-one pair | ✨ Feature | 10 days ago | — |
+| merge: release/v0.29.0 into feature/remastered-music-v0290 | ✨ Feature | 10 days ago | — |
+| target-acquire flourish and camera focus lean | ✨ Feature | 10 days ago | [#2306](https://github.com/levy-street/world-of-claudecraft/pull/2306) |
+| bind resolver calls to read branches | 🔧 Fix | 10 days ago | — |
+| reduce native renderer memory residency | 🔧 Fix | 10 days ago | — |
+| address review on the licence reconciliation | 🔧 Fix | 10 days ago | — |
+| mark mistcaller fang as dagger-class | 🔧 Fix | 10 days ago | — |
+| paint col-b micro-menu hover flyouts over col-a | 🔧 Fix | 10 days ago | — |
+| refresh targeting parity label | 🔧 Fix | 10 days ago | — |
+| harden scope migration coverage | 🔧 Fix | 10 days ago | — |
+| move the xp bar below the action bars, pinned to the screen bottom | 🔧 Fix | 10 days ago | — |
+| guard main startup seam | • | 10 days ago | — |
 | apply the adversarial consistency-pass findings | 📄 Docs | 11 days ago | — |
-| pin the aligned Vale Cup fan-out shape on a due pass | ⚡ Perf | 11 days ago | — |
-| before/after for the consumable icon fallback | 🔧 Fix | 11 days ago | — |
-| Revert "feat(bot): auto-rotate the Discord server invite before it expires (#2185)" | ✨ Feature | 11 days ago | — |
-| cover party projection cache isolation | 🔧 Fix | 12 days ago | — |
-| revert three.js to 0.165 | 🔧 Fix | 12 days ago | — |
-| handle empty timer wire objects | 🔧 Fix | 12 days ago | — |
-| real recordings for the UI cue pack, fix cooldown enforcement bug | • | 12 days ago | — |
-| production-density prewarm cap, prewarm policy core, and banner review fixes | • | 12 days ago | — |
-| record the Phase 2 masterwork landing | ✨ Feature | 13 days ago | — |
-| merge: release/v0.27.0 (6155ad207) into feature/v027-talents2-warrior | ✨ Feature | 13 days ago | — |
-| character-render centerpiece and launcher polish for the Welcome Screen | ✨ Feature | 13 days ago | — |
-| shrink Abandoned Crypt mound collider to match its visible pile | 🔧 Fix | 13 days ago | — |
-| record the Phase 2 QA pass | 🔧 Fix | 13 days ago | — |
-| clear the preload cooldown on fetch resolution | 🔧 Fix | 13 days ago | — |
-| make scripted boss control unbreakable | 🔧 Fix | 13 days ago | — |
-| Wildfang Rally never stacks with itself, and no group buff can | 🔧 Fix | 13 days ago | — |
-| add cohort-safe day-one engagement gauges | ✨ Feature | 14 days ago | — |
-| harden in-game connection flows | ✨ Feature | 14 days ago | — |
-| rideable ground + flying mounts | ✨ Feature | 14 days ago | [#1786](https://github.com/levy-street/world-of-claudecraft/pull/1786) |
-| Phase 1 amends the maintainer-owned PR 2039 branch directly | ✨ Feature | 14 days ago | — |
-| restore three overlay rows the strip pass swallowed | ✨ Feature | 14 days ago | — |
-| reflect the TypeScript 7 native toolchain in CLAUDE.md and CONTRIBUTING.md | ✨ Feature | 14 days ago | — |
-| capture the wiki dungeons reset-instances section | 📄 Docs | 14 days ago | — |
-| heal permanently stranded deeds on world join | 🔧 Fix | 14 days ago | — |
-| close the coverage gaps the audit found in the GPU suites | 🔧 Fix | 14 days ago | — |
-| bound and isolate funnel refreshes | 🔧 Fix | 14 days ago | — |
-| record the Phase 1 QA outcome and drift notes | 🔧 Fix | 14 days ago | — |
-| give the spellbook a11y stub the player the level gate reads | 🔧 Fix | 14 days ago | — |
-| clear v0.27.0 release pending rows | 🔧 Fix | 14 days ago | — |
-| dungeon-layout editor mode (+ Troy's newer editor, Rifts, Scorching Wastes) | ✨ Feature | 15 days ago | [#2012](https://github.com/levy-street/world-of-claudecraft/pull/2012) _(draft)_ |
-| Molten Abyss, a level-20 five-player lore dungeon under Stormcrag | ✨ Feature | 15 days ago | [#1794](https://github.com/levy-street/world-of-claudecraft/pull/1794) |
-| guarded PTR reset tooling and hardened PTR bootstrap | ✨ Feature | 15 days ago | — |
-| merge(release): land party/raid frame rework (#1864) onto release/v0.27.0 | ✨ Feature | 15 days ago | — |
-| pin the GPU-helper pathSev regex flags | 🔧 Fix | 15 days ago | — |
-| remove the level-20 account boost from the port source | 🔧 Fix | 15 days ago | — |
-| update the item-link draft stub for the stickyTarget rename | 🔧 Fix | 15 days ago | — |
-| pin every resume-marker lifecycle site literally | 🔧 Fix | 15 days ago | — |
-| format inherited release files | 🔧 Fix | 15 days ago | — |
-| synchronize v0.27.0 gates | 🔧 Fix | 15 days ago | — |
-| remove the classic warrior so one warrior remains | 🔧 Fix | 15 days ago | — |
-| Revert "Merge pull request #1864 from Blaine1705/feature/unit-frames-rework" | ✨ Feature | 15 days ago | — |
-| ci(desktop): add the signed Windows publish job | ⚙️ Chore | 16 days ago | — |
-| stamp the final QA-head run, the second resync merge, and the delve-suite lint heal | ✨ Feature | 16 days ago | — |
+| gate the riding lesson quest on the purchased riding skill | ✨ Feature | 11 days ago | — |
+| mirror lethal death zones to the online client | ✨ Feature | 11 days ago | — |
+| review round: cap covers summoned adds, tighter dead-entry match | ✨ Feature | 11 days ago | — |
+| heroic five-man blue reins drop at the decided 0.1%, not 0.6% | ✨ Feature | 11 days ago | — |
+| literal-pin the heroic tuning table and the B-rank softer add multiplier | ✨ Feature | 11 days ago | — |
+| Bladestorm whirls its full AoE and the caster bodily spins | ✨ Feature | 11 days ago | — |
+| flow the news panel below the character screen on mobile | ✨ Feature | 11 days ago | — |
+| tighten mobile armory card copy padding | ✨ Feature | 11 days ago | — |
+| pause streams under every duck and download nothing while muted | ✨ Feature | 11 days ago | — |
+| measured clearance radii for every objective kind and runtime placement pins | 🔧 Fix | 11 days ago | — |
+| derive dungeon wall visuals from collider geometry | 🔧 Fix | 11 days ago | — |
+| Revert "feat(music): stream the remastered mp3 soundtrack in place of runtime synthesis (#2251)" | ✨ Feature | 11 days ago | — |
+| pin the aligned Vale Cup fan-out shape on a due pass | ⚡ Perf | 12 days ago | — |
+| before/after for the consumable icon fallback | 🔧 Fix | 12 days ago | — |
+| Revert "feat(bot): auto-rotate the Discord server invite before it expires (#2185)" | ✨ Feature | 12 days ago | — |
+| cover party projection cache isolation | 🔧 Fix | 13 days ago | — |
+| revert three.js to 0.165 | 🔧 Fix | 13 days ago | — |
+| handle empty timer wire objects | 🔧 Fix | 13 days ago | — |
+| real recordings for the UI cue pack, fix cooldown enforcement bug | • | 13 days ago | — |
+| production-density prewarm cap, prewarm policy core, and banner review fixes | • | 13 days ago | — |
+| record the Phase 2 masterwork landing | ✨ Feature | 14 days ago | — |
+| merge: release/v0.27.0 (6155ad207) into feature/v027-talents2-warrior | ✨ Feature | 14 days ago | — |
+| character-render centerpiece and launcher polish for the Welcome Screen | ✨ Feature | 14 days ago | — |
+| shrink Abandoned Crypt mound collider to match its visible pile | 🔧 Fix | 14 days ago | — |
+| record the Phase 2 QA pass | 🔧 Fix | 14 days ago | — |
+| clear the preload cooldown on fetch resolution | 🔧 Fix | 14 days ago | — |
+| make scripted boss control unbreakable | 🔧 Fix | 14 days ago | — |
+| Wildfang Rally never stacks with itself, and no group buff can | 🔧 Fix | 14 days ago | — |
+| add cohort-safe day-one engagement gauges | ✨ Feature | 15 days ago | — |
+| harden in-game connection flows | ✨ Feature | 15 days ago | — |
+| rideable ground + flying mounts | ✨ Feature | 15 days ago | [#1786](https://github.com/levy-street/world-of-claudecraft/pull/1786) |
+| Phase 1 amends the maintainer-owned PR 2039 branch directly | ✨ Feature | 15 days ago | — |
+| restore three overlay rows the strip pass swallowed | ✨ Feature | 15 days ago | — |
+| reflect the TypeScript 7 native toolchain in CLAUDE.md and CONTRIBUTING.md | ✨ Feature | 15 days ago | — |
+| capture the wiki dungeons reset-instances section | 📄 Docs | 15 days ago | — |
+| heal permanently stranded deeds on world join | 🔧 Fix | 15 days ago | — |
+| close the coverage gaps the audit found in the GPU suites | 🔧 Fix | 15 days ago | — |
+| bound and isolate funnel refreshes | 🔧 Fix | 15 days ago | — |
+| record the Phase 1 QA outcome and drift notes | 🔧 Fix | 15 days ago | — |
+| give the spellbook a11y stub the player the level gate reads | 🔧 Fix | 15 days ago | — |
+| clear v0.27.0 release pending rows | 🔧 Fix | 15 days ago | — |
 | record the Phase 4 QA PASS verdict and lock the shard design | ⚙️ Chore | 16 days ago | — |
 | tighten DESIGN.md into a forward-looking standard (token usage rules, performance principle, icon quality bar) | ✨ Feature | 16 days ago | — |
-| merge: release/v0.26.0 into feature/enable-windows-client-download (0.26.0 URLs, windowsCta locale fill, i18n regen) | ✨ Feature | 16 days ago | — |
-| record the Phase 2 QA verdict, fixes, deviations, and deferrals | ✨ Feature | 16 days ago | — |
-| restore the aggregation spies in a finally and note the unref loss | ✨ Feature | 16 days ago | — |
-| document all desktop platforms | ✨ Feature | 16 days ago | — |
-| separate specialization role labels | ✨ Feature | 16 days ago | — |
-| compact the side rail on short viewports and harden crafting-launcher tests | 🔧 Fix | 16 days ago | — |
-| spawn npm and electron-builder through the shell on Windows | 🔧 Fix | 16 days ago | — |
-| point the community invite at the official vanity URL | ✨ Feature | 17 days ago | — |
-| show own nameplate by default | ✨ Feature | 17 days ago | — |
-| pin the pendingNodeCooldowns readyAt boundary against isNodeHarvestableBy | 🔧 Fix | 17 days ago | — |
-| reland the camera follow release hold (mouselook release settle stutter) | 🔧 Fix | 17 days ago | [#1917](https://github.com/levy-street/world-of-claudecraft/pull/1917) |
-| strengthen retired heroic item regressions | 🔧 Fix | 17 days ago | — |
-| merge: feature/claude-docs-refresh into feature/achievements (docs and tooling refresh) | ✨ Feature | 18 days ago | — |
+| dungeon-layout editor mode (+ Troy's newer editor, Rifts, Scorching Wastes) | ✨ Feature | 16 days ago | [#2012](https://github.com/levy-street/world-of-claudecraft/pull/2012) _(draft)_ |
+| Molten Abyss, a level-20 five-player lore dungeon under Stormcrag | ✨ Feature | 16 days ago | [#1794](https://github.com/levy-street/world-of-claudecraft/pull/1794) |
+| guarded PTR reset tooling and hardened PTR bootstrap | ✨ Feature | 16 days ago | — |
+| merge(release): land party/raid frame rework (#1864) onto release/v0.27.0 | ✨ Feature | 16 days ago | — |
+| pin the GPU-helper pathSev regex flags | 🔧 Fix | 16 days ago | — |
+| remove the level-20 account boost from the port source | 🔧 Fix | 16 days ago | — |
+| update the item-link draft stub for the stickyTarget rename | 🔧 Fix | 16 days ago | — |
+| pin every resume-marker lifecycle site literally | 🔧 Fix | 16 days ago | — |
+| format inherited release files | 🔧 Fix | 16 days ago | — |
+| synchronize v0.27.0 gates | 🔧 Fix | 16 days ago | — |
+| remove the classic warrior so one warrior remains | 🔧 Fix | 16 days ago | — |
+| Revert "Merge pull request #1864 from Blaine1705/feature/unit-frames-rework" | ✨ Feature | 16 days ago | — |
+| ci(desktop): add the signed Windows publish job | ⚙️ Chore | 17 days ago | — |
+| stamp the final QA-head run, the second resync merge, and the delve-suite lint heal | ✨ Feature | 17 days ago | — |
+| merge: release/v0.26.0 into feature/enable-windows-client-download (0.26.0 URLs, windowsCta locale fill, i18n regen) | ✨ Feature | 17 days ago | — |
+| record the Phase 2 QA verdict, fixes, deviations, and deferrals | ✨ Feature | 17 days ago | — |
+| restore the aggregation spies in a finally and note the unref loss | ✨ Feature | 17 days ago | — |
+| document all desktop platforms | ✨ Feature | 17 days ago | — |
+| separate specialization role labels | ✨ Feature | 17 days ago | — |
+| compact the side rail on short viewports and harden crafting-launcher tests | 🔧 Fix | 17 days ago | — |
+| spawn npm and electron-builder through the shell on Windows | 🔧 Fix | 17 days ago | — |
 | Monte Carlo combat balance simulator for PvP and PvE | ✨ Feature | 18 days ago | [#1859](https://github.com/levy-street/world-of-claudecraft/pull/1859) |
-| The Gauntlet survival event, Phase 1 (framework + venue + Sentinel's Crossing), incl. Hodric's Castle #1562 | ✨ Feature | 18 days ago | [#1581](https://github.com/levy-street/world-of-claudecraft/pull/1581) |
-| make /play online-only with Discord login, TOS links, and the hero backdrop | ✨ Feature | 18 days ago | — |
-| unstale bags rightClickDestroy overlays, drop unused param | 🔧 Fix | 18 days ago | — |
-| include prod_cpu ops scripts in docker build context | 🔧 Fix | 18 days ago | — |
-| point donate links to Ko-fi | 🔧 Fix | 18 days ago | — |
-| ignore concurrent SFX fixture | 🔧 Fix | 18 days ago | — |
-| avoid HUD seam timeout | 🔧 Fix | 18 days ago | — |
-| merge: integrate community PR #1830 | • | 18 days ago | — |
-| release: v0.24.0 PTR - Talents 2.0 | • | 18 days ago | [#1744](https://github.com/levy-street/world-of-claudecraft/pull/1744) _(draft)_ |
-| clear v0.25.0 CI blockers | • | 18 days ago | — |
-| style(assets): biome format for the latest inspector grip and vfx rows | ✨ Feature | 19 days ago | — |
-| hover cosmetics, animated back attachments that float the wearer | ✨ Feature | 19 days ago | [#1819](https://github.com/levy-street/world-of-claudecraft/pull/1819) _(draft)_ |
-| refresh status after release rebase | ✨ Feature | 19 days ago | — |
-| reset saved unit-frame positions once for the v0.24.1 revert | 🔧 Fix | 19 days ago | — |
-| bump version to 0.24.2 | 🔧 Fix | 19 days ago | — |
-| pin authored shield seat transforms | 🔧 Fix | 19 days ago | — |
-| harden blank stealth bar migration | 🔧 Fix | 19 days ago | — |
-| refresh v0.25.0 sync base | 🔧 Fix | 19 days ago | — |
-| preserve release integrations after rebase | • | 19 days ago | — |
-| restore #1736 interface overhaul for v0.25.0 | • | 19 days ago | [#1815](https://github.com/levy-street/world-of-claudecraft/pull/1815) |
-| type README version surfaces | • | 19 days ago | — |
-| Revert "fix(dungeons): allow eligible ghosts to reclaim raid loot" | 🔧 Fix | 19 days ago | — |
-| add daily rewards participation bans | ✨ Feature | 20 days ago | — |
-| close review-round lockout bypasses (tapper, foreign clear, arena wing) | 🔧 Fix | 20 days ago | — |
-| repair ready-check release overlays | • | 20 days ago | — |
-| restore the unbound-chord invariant the pet-keys merge vacated | • | 20 days ago | — |
-| Revert "feat(warrior): complete overhaul (offhand/dual-wield, block, parry, rage retune, new passives, spec at 5)" | ✨ Feature | 20 days ago | — |
-| bound Git fixture timeout | • | 21 days ago | — |
-| scale pass, 100 to 600+ dense CCU per realm (multi-core snapshot fanout) | ✨ Feature | 21 days ago | [#1745](https://github.com/levy-street/world-of-claudecraft/pull/1745) |
-| biome-format fct_lowtier_shot.mjs | ✨ Feature | 21 days ago | — |
-| merge: release/v0.24.0 into heroic loot repair | ✨ Feature | 21 days ago | — |
-| Prediction fix | 🔧 Fix | 22 days ago | — |
-| expose game-state metrics on /metrics | ✨ Feature | 22 days ago | — |
-| extract the self-motion prediction gate into a pure module | ✨ Feature | 22 days ago | — |
-| you must possess the ball to kick, pass, or shoot it | ✨ Feature | 22 days ago | — |
-| weapon VFX layer + inspector tuning and scene presets [WIP] | ✨ Feature | 22 days ago | [#1644](https://github.com/levy-street/world-of-claudecraft/pull/1644) _(draft)_ |
-| centered read-view chat with a resizable, in-front panel | 🔧 Fix | 22 days ago | — |
-| give package.json author an email so the Linux deb build can publish | 🔧 Fix | 22 days ago | — |
-| equalize heroic dungeon difficulty at level 22 | 🔧 Fix | 22 days ago | — |
-| reposition loot and target tooltips | 🔧 Fix | 22 days ago | — |
-| touch-friendly quest UI on the map and bar | 🔧 Fix | 22 days ago | — |
-| give the full-match bot sims CI-safe timeouts | 🔧 Fix | 22 days ago | — |
-| db: preload pg_stat_statements for query monitoring | • | 22 days ago | — |
-| pass METRICS_TOKEN through to the game container | • | 22 days ago | — |
-| add professions audit screenshots | • | 22 days ago | — |
-| unstick the mobile-fixes integration branch gates | 🔧 Fix | 22 days ago | — |
-| equalize heroic dungeon difficulty at level 22 | • | 22 days ago | — |
-| revert pg_stat_statements preload from postgres | • | 22 days ago | — |
-| restore the buffer reset and comment breaks lost to a merge line join | ✨ Feature | 23 days ago | — |
-| throttle the server tick rate on the snapshot head to ~2 Hz | ⚡ Perf | 23 days ago | — |
-| control the two build-drift inputs behind the v0.22 CPU incident | 🔧 Fix | 23 days ago | [#1619](https://github.com/levy-street/world-of-claudecraft/pull/1619) |
-| drop orphaned loading.reconnecting from 12 locale overlays | ⚡ Perf | 23 days ago | — |
-| rejoin the Claudium asset row to the credits table | • | 23 days ago | — |
-| i18n: fill serverTick (Server Tick Rate) across all release locales | • | 23 days ago | — |
-| add in-game checkout launcher | ✨ Feature | 24 days ago | — |
-| drop the orphaned Quaternius wolf.glb model | ✨ Feature | 24 days ago | — |
-| fast-forward the empty-instance reset instead of 6000-tick loops | ✨ Feature | 24 days ago | — |
-| Hodric's Castle, a 3-round elimination minigame (WIP) | ✨ Feature | 24 days ago | [#1562](https://github.com/levy-street/world-of-claudecraft/pull/1562) _(draft)_ |
-| the Mirror World — a level-20 endgame zone (Vale of Glass), forward-ported to v0.23.0 | ✨ Feature | 24 days ago | [#1514](https://github.com/levy-street/world-of-claudecraft/pull/1514) |
-| ci: cap vitest fork parallelism + raise testTimeout to de-flake gates | 🔧 Fix | 24 days ago | — |
-| ci: cap vitest fork parallelism + raise testTimeout to de-flake gates | 🔧 Fix | 24 days ago | [#1561](https://github.com/levy-street/world-of-claudecraft/pull/1561) |
-| clear the whole cast state on death, not just castingAbility | 🔧 Fix | 24 days ago | — |
-| harden update-track guards per review | 🔧 Fix | 24 days ago | — |
-| ci(pr-ai): split the /review command so anyone can use it safely | 🔧 Fix | 24 days ago | [#1585](https://github.com/levy-street/world-of-claudecraft/pull/1585) |
-| stop percent mods from rounding away ratio-valued aura buffs | 🔧 Fix | 24 days ago | [#1607](https://github.com/levy-street/world-of-claudecraft/pull/1607) |
-| merge: resync with release/v0.23.0 | 🛠 Refactor | 24 days ago | — |
-| add in-game X account linking | • | 25 days ago | [#1508](https://github.com/levy-street/world-of-claudecraft/pull/1508) _(draft)_ |
-| prepare v0.22.0 for main | • | 25 days ago | — |
-| localize the 18 custom ground-pickup deny/enough lines in all 20 locales | ✨ Feature | 25 days ago | — |
-| AI asset generation pipeline (Tripo + gpt-image-2) [WIP] | ✨ Feature | 25 days ago | [#1405](https://github.com/levy-street/world-of-claudecraft/pull/1405) _(draft)_ |
-| resume after black-holed drops (pong liveness + bounded conflict retry) | ✨ Feature | 25 days ago | — |
-| drop the onCycleHotbarPage callback leftover from the excised base paging | ✨ Feature | 25 days ago | — |
-| style(i18n): wrap the long download.linuxHint overlay lines per biome | ✨ Feature | 25 days ago | — |
-| disable linux launcher download | 🔧 Fix | 25 days ago | — |
-| Timed casts resolve against the cast-start target | 🔧 Fix | 25 days ago | [#1515](https://github.com/levy-street/world-of-claudecraft/pull/1515) |
-| point launcher download at v0.22.0 | • | 25 days ago | — |
-| point donate buttons to Ko-fi | ⚙️ Chore | 26 days ago | [#1457](https://github.com/levy-street/world-of-claudecraft/pull/1457) |
-| the Gravemarch, a 5v5 lane battleground with spectate (WIP) | ✨ Feature | 26 days ago | [#1456](https://github.com/levy-street/world-of-claudecraft/pull/1456) _(draft)_ |
-| merge(release): refresh desktop launcher branch | ✨ Feature | 26 days ago | — |
-| localize desktop download labels | ✨ Feature | 26 days ago | — |
-| satisfy Biome after release rebase | ✨ Feature | 26 days ago | — |
-| stack transitive nameplate overlap chains, not just direct pairs | ✨ Feature | 26 days ago | — |
-| fill release locale pending keys | • | 26 days ago | — |
-| housekeeping section for deep game-config overrides (reland of #1340) | ✨ Feature | 27 days ago | [#1399](https://github.com/levy-street/world-of-claudecraft/pull/1399) |
-| merge: release/v0.20.0 tip (craft skill, global invite) into feature/ip-pivot; regen artifacts | ✨ Feature | 27 days ago | — |
+| point the community invite at the official vanity URL | ✨ Feature | 18 days ago | — |
+| show own nameplate by default | ✨ Feature | 18 days ago | — |
+| pin the pendingNodeCooldowns readyAt boundary against isNodeHarvestableBy | 🔧 Fix | 18 days ago | — |
+| reland the camera follow release hold (mouselook release settle stutter) | 🔧 Fix | 18 days ago | [#1917](https://github.com/levy-street/world-of-claudecraft/pull/1917) |
+| strengthen retired heroic item regressions | 🔧 Fix | 18 days ago | — |
+| merge: feature/claude-docs-refresh into feature/achievements (docs and tooling refresh) | ✨ Feature | 19 days ago | — |
+| The Gauntlet survival event, Phase 1 (framework + venue + Sentinel's Crossing), incl. Hodric's Castle #1562 | ✨ Feature | 19 days ago | [#1581](https://github.com/levy-street/world-of-claudecraft/pull/1581) |
+| make /play online-only with Discord login, TOS links, and the hero backdrop | ✨ Feature | 19 days ago | — |
+| unstale bags rightClickDestroy overlays, drop unused param | 🔧 Fix | 19 days ago | — |
+| include prod_cpu ops scripts in docker build context | 🔧 Fix | 19 days ago | — |
+| point donate links to Ko-fi | 🔧 Fix | 19 days ago | — |
+| ignore concurrent SFX fixture | 🔧 Fix | 19 days ago | — |
+| avoid HUD seam timeout | 🔧 Fix | 19 days ago | — |
+| merge: integrate community PR #1830 | • | 19 days ago | — |
+| release: v0.24.0 PTR - Talents 2.0 | • | 19 days ago | [#1744](https://github.com/levy-street/world-of-claudecraft/pull/1744) _(draft)_ |
+| clear v0.25.0 CI blockers | • | 19 days ago | — |
+| style(assets): biome format for the latest inspector grip and vfx rows | ✨ Feature | 20 days ago | — |
+| hover cosmetics, animated back attachments that float the wearer | ✨ Feature | 20 days ago | [#1819](https://github.com/levy-street/world-of-claudecraft/pull/1819) _(draft)_ |
+| refresh status after release rebase | ✨ Feature | 20 days ago | — |
+| reset saved unit-frame positions once for the v0.24.1 revert | 🔧 Fix | 20 days ago | — |
+| bump version to 0.24.2 | 🔧 Fix | 20 days ago | — |
+| pin authored shield seat transforms | 🔧 Fix | 20 days ago | — |
+| harden blank stealth bar migration | 🔧 Fix | 20 days ago | — |
+| refresh v0.25.0 sync base | 🔧 Fix | 20 days ago | — |
+| preserve release integrations after rebase | • | 20 days ago | — |
+| restore #1736 interface overhaul for v0.25.0 | • | 20 days ago | [#1815](https://github.com/levy-street/world-of-claudecraft/pull/1815) |
+| type README version surfaces | • | 20 days ago | — |
+| Revert "fix(dungeons): allow eligible ghosts to reclaim raid loot" | 🔧 Fix | 20 days ago | — |
+| add daily rewards participation bans | ✨ Feature | 21 days ago | — |
+| close review-round lockout bypasses (tapper, foreign clear, arena wing) | 🔧 Fix | 21 days ago | — |
+| repair ready-check release overlays | • | 21 days ago | — |
+| restore the unbound-chord invariant the pet-keys merge vacated | • | 21 days ago | — |
+| Revert "feat(warrior): complete overhaul (offhand/dual-wield, block, parry, rage retune, new passives, spec at 5)" | ✨ Feature | 21 days ago | — |
+| bound Git fixture timeout | • | 22 days ago | — |
+| scale pass, 100 to 600+ dense CCU per realm (multi-core snapshot fanout) | ✨ Feature | 22 days ago | [#1745](https://github.com/levy-street/world-of-claudecraft/pull/1745) |
+| biome-format fct_lowtier_shot.mjs | ✨ Feature | 22 days ago | — |
+| merge: release/v0.24.0 into heroic loot repair | ✨ Feature | 22 days ago | — |
+| Prediction fix | 🔧 Fix | 23 days ago | — |
+| expose game-state metrics on /metrics | ✨ Feature | 23 days ago | — |
+| extract the self-motion prediction gate into a pure module | ✨ Feature | 23 days ago | — |
+| you must possess the ball to kick, pass, or shoot it | ✨ Feature | 23 days ago | — |
+| weapon VFX layer + inspector tuning and scene presets [WIP] | ✨ Feature | 23 days ago | [#1644](https://github.com/levy-street/world-of-claudecraft/pull/1644) _(draft)_ |
+| centered read-view chat with a resizable, in-front panel | 🔧 Fix | 23 days ago | — |
+| give package.json author an email so the Linux deb build can publish | 🔧 Fix | 23 days ago | — |
+| equalize heroic dungeon difficulty at level 22 | 🔧 Fix | 23 days ago | — |
+| reposition loot and target tooltips | 🔧 Fix | 23 days ago | — |
+| touch-friendly quest UI on the map and bar | 🔧 Fix | 23 days ago | — |
+| give the full-match bot sims CI-safe timeouts | 🔧 Fix | 23 days ago | — |
+| db: preload pg_stat_statements for query monitoring | • | 23 days ago | — |
+| pass METRICS_TOKEN through to the game container | • | 23 days ago | — |
+| add professions audit screenshots | • | 23 days ago | — |
+| unstick the mobile-fixes integration branch gates | 🔧 Fix | 23 days ago | — |
+| equalize heroic dungeon difficulty at level 22 | • | 23 days ago | — |
+| revert pg_stat_statements preload from postgres | • | 23 days ago | — |
+| restore the buffer reset and comment breaks lost to a merge line join | ✨ Feature | 24 days ago | — |
+| throttle the server tick rate on the snapshot head to ~2 Hz | ⚡ Perf | 24 days ago | — |
+| control the two build-drift inputs behind the v0.22 CPU incident | 🔧 Fix | 24 days ago | [#1619](https://github.com/levy-street/world-of-claudecraft/pull/1619) |
+| drop orphaned loading.reconnecting from 12 locale overlays | ⚡ Perf | 24 days ago | — |
+| rejoin the Claudium asset row to the credits table | • | 24 days ago | — |
+| i18n: fill serverTick (Server Tick Rate) across all release locales | • | 24 days ago | — |
+| add in-game checkout launcher | ✨ Feature | 25 days ago | — |
+| drop the orphaned Quaternius wolf.glb model | ✨ Feature | 25 days ago | — |
+| fast-forward the empty-instance reset instead of 6000-tick loops | ✨ Feature | 25 days ago | — |
+| Hodric's Castle, a 3-round elimination minigame (WIP) | ✨ Feature | 25 days ago | [#1562](https://github.com/levy-street/world-of-claudecraft/pull/1562) _(draft)_ |
+| the Mirror World — a level-20 endgame zone (Vale of Glass), forward-ported to v0.23.0 | ✨ Feature | 25 days ago | [#1514](https://github.com/levy-street/world-of-claudecraft/pull/1514) |
+| ci: cap vitest fork parallelism + raise testTimeout to de-flake gates | 🔧 Fix | 25 days ago | — |
+| ci: cap vitest fork parallelism + raise testTimeout to de-flake gates | 🔧 Fix | 25 days ago | [#1561](https://github.com/levy-street/world-of-claudecraft/pull/1561) |
+| clear the whole cast state on death, not just castingAbility | 🔧 Fix | 25 days ago | — |
+| harden update-track guards per review | 🔧 Fix | 25 days ago | — |
+| ci(pr-ai): split the /review command so anyone can use it safely | 🔧 Fix | 25 days ago | [#1585](https://github.com/levy-street/world-of-claudecraft/pull/1585) |
+| stop percent mods from rounding away ratio-valued aura buffs | 🔧 Fix | 25 days ago | [#1607](https://github.com/levy-street/world-of-claudecraft/pull/1607) |
+| merge: resync with release/v0.23.0 | 🛠 Refactor | 25 days ago | — |
+| add in-game X account linking | • | 26 days ago | [#1508](https://github.com/levy-street/world-of-claudecraft/pull/1508) _(draft)_ |
+| prepare v0.22.0 for main | • | 26 days ago | — |
+| localize the 18 custom ground-pickup deny/enough lines in all 20 locales | ✨ Feature | 26 days ago | — |
+| AI asset generation pipeline (Tripo + gpt-image-2) [WIP] | ✨ Feature | 26 days ago | [#1405](https://github.com/levy-street/world-of-claudecraft/pull/1405) _(draft)_ |
+| resume after black-holed drops (pong liveness + bounded conflict retry) | ✨ Feature | 26 days ago | — |
+| drop the onCycleHotbarPage callback leftover from the excised base paging | ✨ Feature | 26 days ago | — |
+| style(i18n): wrap the long download.linuxHint overlay lines per biome | ✨ Feature | 26 days ago | — |
+| disable linux launcher download | 🔧 Fix | 26 days ago | — |
+| Timed casts resolve against the cast-start target | 🔧 Fix | 26 days ago | [#1515](https://github.com/levy-street/world-of-claudecraft/pull/1515) |
+| point launcher download at v0.22.0 | • | 26 days ago | — |
+| point donate buttons to Ko-fi | ⚙️ Chore | 27 days ago | [#1457](https://github.com/levy-street/world-of-claudecraft/pull/1457) |
+| the Gravemarch, a 5v5 lane battleground with spectate (WIP) | ✨ Feature | 27 days ago | [#1456](https://github.com/levy-street/world-of-claudecraft/pull/1456) _(draft)_ |
+| merge(release): refresh desktop launcher branch | ✨ Feature | 27 days ago | — |
+| localize desktop download labels | ✨ Feature | 27 days ago | — |
+| satisfy Biome after release rebase | ✨ Feature | 27 days ago | — |
+| stack transitive nameplate overlap chains, not just direct pairs | ✨ Feature | 27 days ago | — |
 | update inspect_command test to match colon HP separator | ✨ Feature | 27 days ago | — |
-| one online character per account | ✨ Feature | 27 days ago | — |
-| prevent pets inheriting evade immunity | 🔧 Fix | 27 days ago | — |
-| keep the site menu bar on the character screens; card layout for wallet and developer sections | 🔧 Fix | 27 days ago | — |
-| account bar no longer covers the roster on character select | 🔧 Fix | 27 days ago | — |
-| copy editor.html and svelte.config.js into the image build | 🔧 Fix | 27 days ago | — |
-| recover stranded Drowned Reliquary loot on interact | 🔧 Fix | 27 days ago | — |
-| keep the held emote wheel open when its own suspension begins | 🔧 Fix | 27 days ago | — |
-| de-IP the non-English locale overlays missed by the ip-pivot | 🔧 Fix | 27 days ago | — |
-| lock cast and channel targets at cast start | 🔧 Fix | 27 days ago | — |
-| mailbox coin inputs select on focus; repaint bags on send/collect | 🔧 Fix | 27 days ago | — |
-| clear stale held-key state when menu suspends movement | 🔧 Fix | 27 days ago | — |
-| anchor mail indicator to bottom-right minimap rim so it never stacks on the raid-lockout badge | 🔧 Fix | 27 days ago | — |
-| drop stray debug script committed by accident | 🔧 Fix | 27 days ago | — |
-| Edda Reedhand uses the druid player rig | 🔧 Fix | 27 days ago | — |
-| telegraph the Reedbound Acolyte's vial so the throw animation leads the release | 🔧 Fix | 27 days ago | — |
-| translate daily rewards chest toggle | 🔧 Fix | 27 days ago | — |
-| the world boss rises at realm boot | 🔧 Fix | 27 days ago | — |
-| fork PRs skip the screenshot comment entirely (read-only token) | • | 27 days ago | — |
-| tooling(ci): use Codex for the AI PR reviewer on main (review + comment commands) | • | 27 days ago | — |
-| default Show My Nameplate off per the issue #1235 and PR contract | ✨ Feature | 28 days ago | — |
-| refresh dialect auth email labels | 🔧 Fix | 28 days ago | — |
-| resolve release i18n gate drift | 🔧 Fix | 28 days ago | — |
-| lock in Vanguard as the battle theme, drop audition variants | ✨ Feature | 29 days ago | — |
-| use a dedicated internal secret, no RESTART_COUNTDOWN_SECRET fallback | ✨ Feature | 29 days ago | — |
-| extract isSoftwareRenderer for the GPU diagnostic | ⚡ Perf | 29 days ago | — |
-| build(desktop): regenerate package-lock with npm 10 to match CI | ✨ Feature | 29 days ago | — |
-| tune the Atlantis night-sea lighting and Tidegate arrival | ✨ Feature | 29 days ago | — |
-| auto-join the guild on OAuth link/login via guilds.join | ✨ Feature | 30 days ago | — |
-| make the Discord menu a rebindable keybind (default U) | ✨ Feature | 30 days ago | — |
-| add a Discord link/unlink entry to the touch More menu | ✨ Feature | 30 days ago | — |
-| format fbx to glb converter | ✨ Feature | 30 days ago | — |
-| instance corpse-run death loop, no Spirit Healer inside instances | ✨ Feature | 30 days ago | — |
-| carry aura magnitude on the wire so buff/debuff tooltips show real values | 🔧 Fix | 30 days ago | — |
-| pass GitHub OAuth env through to the game service | 🔧 Fix | 30 days ago | — |
-| match failed-avatar fallback to each surface's no-avatar state | 🔧 Fix | 30 days ago | — |
-| match failed-avatar fallback to each surface's no-avatar state | 🔧 Fix | 30 days ago | — |
-| pass DISCORD_BOT_TOKEN to the game service for auto-join | 🔧 Fix | 30 days ago | — |
-| style(ui): drop stray em dash from a hud.ts comment | 🔧 Fix | 30 days ago | — |
-| skip .claude/worktrees copies in the release malware scan | 🔧 Fix | 30 days ago | — |
-| fill v0.17.0 release locales and widen scanner-determinism timeout | • | 30 days ago | — |
+| fill release locale pending keys | • | 27 days ago | — |
+| housekeeping section for deep game-config overrides (reland of #1340) | ✨ Feature | 28 days ago | [#1399](https://github.com/levy-street/world-of-claudecraft/pull/1399) |
+| merge: release/v0.20.0 tip (craft skill, global invite) into feature/ip-pivot; regen artifacts | ✨ Feature | 28 days ago | — |
+| one online character per account | ✨ Feature | 28 days ago | — |
+| prevent pets inheriting evade immunity | 🔧 Fix | 28 days ago | — |
+| keep the site menu bar on the character screens; card layout for wallet and developer sections | 🔧 Fix | 28 days ago | — |
+| account bar no longer covers the roster on character select | 🔧 Fix | 28 days ago | — |
+| copy editor.html and svelte.config.js into the image build | 🔧 Fix | 28 days ago | — |
+| recover stranded Drowned Reliquary loot on interact | 🔧 Fix | 28 days ago | — |
+| keep the held emote wheel open when its own suspension begins | 🔧 Fix | 28 days ago | — |
+| de-IP the non-English locale overlays missed by the ip-pivot | 🔧 Fix | 28 days ago | — |
+| lock cast and channel targets at cast start | 🔧 Fix | 28 days ago | — |
+| mailbox coin inputs select on focus; repaint bags on send/collect | 🔧 Fix | 28 days ago | — |
+| clear stale held-key state when menu suspends movement | 🔧 Fix | 28 days ago | — |
+| anchor mail indicator to bottom-right minimap rim so it never stacks on the raid-lockout badge | 🔧 Fix | 28 days ago | — |
+| drop stray debug script committed by accident | 🔧 Fix | 28 days ago | — |
+| Edda Reedhand uses the druid player rig | 🔧 Fix | 28 days ago | — |
+| telegraph the Reedbound Acolyte's vial so the throw animation leads the release | 🔧 Fix | 28 days ago | — |
+| translate daily rewards chest toggle | 🔧 Fix | 28 days ago | — |
+| the world boss rises at realm boot | 🔧 Fix | 28 days ago | — |
+| fork PRs skip the screenshot comment entirely (read-only token) | • | 28 days ago | — |
+| tooling(ci): use Codex for the AI PR reviewer on main (review + comment commands) | • | 28 days ago | — |
+| default Show My Nameplate off per the issue #1235 and PR contract | ✨ Feature | 29 days ago | — |
+| refresh dialect auth email labels | 🔧 Fix | 29 days ago | — |
+| resolve release i18n gate drift | 🔧 Fix | 29 days ago | — |
+| lock in Vanguard as the battle theme, drop audition variants | ✨ Feature | 30 days ago | — |
+| use a dedicated internal secret, no RESTART_COUNTDOWN_SECRET fallback | ✨ Feature | 30 days ago | — |
+| extract isSoftwareRenderer for the GPU diagnostic | ⚡ Perf | 30 days ago | — |
+| build(desktop): regenerate package-lock with npm 10 to match CI | ✨ Feature | 30 days ago | — |
+| tune the Atlantis night-sea lighting and Tidegate arrival | ✨ Feature | 30 days ago | — |
 
 ## 🟠 Slowing down — 1–3 months old
 
 | What | Type | Last update | PR |
 |---|---|---|---|
+| auto-join the guild on OAuth link/login via guilds.join | ✨ Feature | ~1 month ago | — |
+| make the Discord menu a rebindable keybind (default U) | ✨ Feature | ~1 month ago | — |
+| add a Discord link/unlink entry to the touch More menu | ✨ Feature | ~1 month ago | — |
+| format fbx to glb converter | ✨ Feature | ~1 month ago | — |
+| instance corpse-run death loop, no Spirit Healer inside instances | ✨ Feature | ~1 month ago | — |
+| carry aura magnitude on the wire so buff/debuff tooltips show real values | 🔧 Fix | ~1 month ago | — |
+| pass GitHub OAuth env through to the game service | 🔧 Fix | ~1 month ago | — |
+| match failed-avatar fallback to each surface's no-avatar state | 🔧 Fix | ~1 month ago | — |
+| match failed-avatar fallback to each surface's no-avatar state | 🔧 Fix | ~1 month ago | — |
+| pass DISCORD_BOT_TOKEN to the game service for auto-join | 🔧 Fix | ~1 month ago | — |
+| style(ui): drop stray em dash from a hud.ts comment | 🔧 Fix | ~1 month ago | — |
+| skip .claude/worktrees copies in the release malware scan | 🔧 Fix | ~1 month ago | — |
+| fill v0.17.0 release locales and widen scanner-determinism timeout | • | ~1 month ago | — |
 | allow Discord bot to boot without dotenv file | • | ~1 month ago | — |
 | avoid compose env lint warnings | • | ~1 month ago | — |
 | include Discord bot build script in Docker context | ⚙️ Chore | ~1 month ago | — |

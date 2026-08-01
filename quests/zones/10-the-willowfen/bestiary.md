@@ -15,7 +15,7 @@
 | Stat | Value |
 |---|---|
 | Level | 19–20 |
-| Family | Murloc |
+| Family | mudfin |
 | Health | 416–436 HP |
 | Armor (physical mitigation) | 216–228 (~10% vs a same-level attacker) |
 | Melee damage | 42–68 per hit @ 2s swing (~27–28 DPS) |
@@ -69,7 +69,7 @@
 | Stat | Value |
 |---|---|
 | Level | 19–20 |
-| Family | Kobold |
+| Family | burrower |
 | Health | 374–392 HP |
 | Armor (physical mitigation) | 198–209 (~9% vs a same-level attacker) |
 | Melee damage | 40–65 per hit @ 1.9s swing (~27–28 DPS) |
@@ -94,7 +94,7 @@
 | Stat | Value |
 |---|---|
 | Level | 20 |
-| Family | Murloc |
+| Family | mudfin |
 | Health | 1808 HP |
 | Armor (physical mitigation) | 323 (~13% vs a same-level attacker) |
 | Melee damage | 88–137 per hit @ 2.4s swing (~47 DPS) |
@@ -108,7 +108,7 @@
 
 **Loot:**
 
-- Coins: 450 copper (always drops)
+- Coins: 100 copper (always drops)
 
 ---
 

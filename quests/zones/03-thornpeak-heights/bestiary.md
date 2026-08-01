@@ -392,7 +392,7 @@
 
 **Loot:**
 
-- Coins: 200 copper (always drops)
+- Coins: 85 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|

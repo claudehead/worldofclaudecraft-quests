@@ -88,6 +88,7 @@ Most stutter is the browser, not the game. In order:
 | Toggle Nameplates | `V` |
 | Talents | `N` |
 | Damage Meters | `Shift+KeyH` |
+| Target Buffs and Debuffs | `Shift+KeyJ` |
 | Friends & Guild | `O` |
 | Arena (Ashen Coliseum) | `G` |
 | Dungeon Finder | `Shift+KeyI` |

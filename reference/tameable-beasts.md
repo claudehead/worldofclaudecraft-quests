@@ -29,7 +29,6 @@ A Hunter can **tame any beast** in the world to fight as a pet — as long as it
 | [Gloam Fox](../quests/zones/09-the-amberfall/bestiary.md#mob-gloam_fox) | 18 | The Amberfall | [🗺️ map](#/map/-330/2030) |
 | [Terrace Howler](../quests/zones/08-the-frostveil-reach/bestiary.md#mob-terrace_howler) | 19–20 | The Frostveil Reach | [🗺️ map](#/map/112/1800) |
 | [Moonfleece Grazer](../quests/zones/13-the-nightbloom/bestiary.md#mob-moonfleece_grazer) | 20 | The Nightbloom | [🗺️ map](#/map/-436/1466) |
-| [Gloam Strider](../quests/zones/13-the-nightbloom/bestiary.md#mob-gloam_strider) | 20 | The Nightbloom | [🗺️ map](#/map/-410/1522) |
 | [Tide Scuttler](../quests/zones/14-the-palmreach/bestiary.md#mob-tide_scuttler) | 20 | The Palmreach | [🗺️ map](#/map/-456/878) |
 | [Thicket Boar](../quests/zones/14-the-palmreach/bestiary.md#mob-thicket_boar) | 20 | The Palmreach | [🗺️ map](#/map/-368/940) |
 | [Topiary Stag](../quests/zones/11-the-evergarden/bestiary.md#mob-topiary_stag) | 20 | The Evergarden | [🗺️ map](#/map/364/898) |

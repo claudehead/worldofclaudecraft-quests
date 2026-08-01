@@ -27,7 +27,7 @@
 
 **Loot:**
 
-- Coins: 115 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -82,7 +82,7 @@
 
 **Loot:**
 
-- Coins: 110 copper (always drops)
+- Coins: 100 copper (always drops)
 
 ## Elites
 
@@ -109,7 +109,7 @@
 
 **Loot:**
 
-- Coins: 450 copper (always drops)
+- Coins: 100 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|

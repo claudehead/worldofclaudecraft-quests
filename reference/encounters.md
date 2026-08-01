@@ -110,7 +110,7 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 1550 HP · Troll**
 
-**Drops:** Bone Fragments _(80%)_, Wildheart Tuskblade _(6%)_, Hexwood Staff of the Basin _(6%)_, Fangknife of Zulgar _(6%)_
+**Drops:** Bone Fragments _(80%)_, Bloodmane Warleggings _(34%)_, Vineclaw Stalking Breeches _(33%)_, Sunbone Ritual Sarong _(33%)_, Wildheart Tuskblade _(6%)_, Hexwood Staff of the Basin _(6%)_
 
 <br clear="all">
 
@@ -518,6 +518,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 628 HP · Troll**
 
+**Drops:** Chipped Tusk _(40%)_
+
 <br clear="all">
 
 <a id="mob-cindraleth_maw_matriarch"></a>
@@ -585,6 +587,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Fanglord Beastmaster 🔶 Elite
 
 **Level 20 · 870 HP · Troll**
+
+**Drops:** Chipped Tusk _(100%)_, Fanglord's Beastspear _(12%)_
 
 <br clear="all">
 
@@ -662,13 +666,17 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 **Level 20 · 480 HP · Troll**
 
+**Drops:** Chipped Tusk _(45%)_
+
 <br clear="all">
 
 <a id="mob-the_meredark"></a>
 
+<img src="../quests/zones/_mob-renders/the_meredark.png" width="140" align="right" alt="The Meredark">
+
 ### The Meredark 🔶 Elite
 
-**Level 20 · 720 HP · Murloc**
+**Level 20 · 720 HP · Mudfin**
 
 **Drops:** Slimy Mudfin Scale _(100%)_
 
@@ -679,6 +687,8 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 ### Vineclaw Stalker 🔶 Elite
 
 **Level 20 · 502 HP · Troll**
+
+**Drops:** Chipped Tusk _(35%)_
 
 <br clear="all">
 

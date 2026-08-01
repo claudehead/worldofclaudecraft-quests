@@ -15,7 +15,7 @@
 | Stat | Value |
 |---|---|
 | Level | 17–18 |
-| Family | Kobold |
+| Family | burrower |
 | Health | 320–337 HP |
 | Armor (physical mitigation) | 176–187 (~9% vs a same-level attacker) |
 | Melee damage | 34–56 per hit @ 1.9s swing (~23–24 DPS) |
@@ -27,7 +27,7 @@
 
 **Loot:**
 
-- Coins: 80 copper (always drops)
+- Coins: 90 copper (always drops)
 
 <a id="mob-ice_wisp"></a>
 
@@ -50,7 +50,7 @@
 
 **Loot:**
 
-- Coins: 80 copper (always drops)
+- Coins: 90 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
@@ -154,7 +154,7 @@
 
 **Loot:**
 
-- Coins: 420 copper (always drops)
+- Coins: 100 copper (always drops)
 
 ---
 
