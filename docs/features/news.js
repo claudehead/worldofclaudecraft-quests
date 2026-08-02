@@ -6,7 +6,7 @@
   const { el, esc, registerView, app } = window.WOC;
 
   const GAME = [
-    ['🌀', 'Rifts — the endgame race', 'Procedural dungeons behind natural portals that open across the new zones — one per zone, cycling hourly. Every portal is a shared race: many groups run their own instance of the same dungeon, but only the first to clear takes the full loot. Four ranks (C/B/A/S) climb from normal-dungeon rares to heroic epics, with S-rank carrying the two legendary chase rolls.', '#/doc/' + encodeURIComponent('reference/rifts.md'), 'Rifts guide'],
+    ['🌀', 'Rifts — the endgame race', 'Procedural dungeons behind natural portals that open across the new zones — one per zone, cycling hourly. Every portal is a shared race: many groups run their own instance of the same dungeon, but only the first to clear takes the full loot. Four ranks (C/B/A/S) climb from normal-dungeon rares to heroic epics, with S-rank carrying the two legendary chase rolls. The HUD now shows live floor progress and a closing-timer.', '#/doc/' + encodeURIComponent('reference/rifts.md'), 'Rifts guide'],
     ['🗺️', 'A world that got much bigger', 'The map expands well beyond the original three zones — a wave of new level-15-to-20 regions (the Drakelands, Frostveil Reach, Amberfall, Nightbloom, Wraithwood, Palmreach, Evergarden, Galecrest, Farshore and more), every previously-unvoiced NPC across them now voiced, and a remastered new-zone soundtrack.', '#/map', 'Explore the map'],
     ['🐎', 'Rideable mounts', 'Seven ground mounts, from the vendor-bought Valorsteed (+60% speed) up to two rift-only epics (+80%). Mounts are now usable reins items — hold the reins to own the mount; the old mount picker is retired. Uncommon mounts drop from heroic dungeons, rares from the raid, epics only from rifts.', '#/doc/' + encodeURIComponent('reference/mounts.md'), 'Mounts guide'],
     ['🧗', 'The parkour physics engine', 'One deterministic character-physics engine — continuous swept collision, multi-pass sliding, depenetration and step-up — now runs in the offline sim, the server and the client alike, and the world is made physically honest so every drawn model collides exactly as drawn. A traversal ladder by obstacle height: stride, silent vault, a real ledge-climb pull-up, then wall.', '#/patches', 'Technical changelog'],
@@ -33,7 +33,7 @@
       <h1 class="reveal">What's New 🆕</h1>
       <p class="sub reveal">The latest from World of Claudecraft, and everything new in this guide.</p>
 
-      <h2 class="news-h reveal">🎮 Game — v0.32.1 <span class="news-tag">rifts · expansion zones · mounts · 868 commits</span></h2>
+      <h2 class="news-h reveal">🎮 Game — v0.32.4 <span class="news-tag">rifts · expansion zones · mounts</span></h2>
       <p class="meta reveal">The big one: Rifts, a procedural endgame race for gear, mounts and legendaries; a wave of new expansion zones roughly doubling the world; rideable mounts; and, carried over from v0.31, the parkour physics engine and hand-painted item art. Here's what made it into the guide:</p>
       <div class="news-grid">${GAME.map(gCard).join('')}</div>
 
