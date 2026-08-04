@@ -5,25 +5,25 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ (zone range 6–13) |
-| **Quest giver** | **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ |
-| **Turn in to** | **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ |
+| **Quest giver** | **Herbalist Yara**, Herbalist _(at ~x:14, z:294)_ |
+| **Turn in to** | **Herbalist Yara**, Herbalist _(at ~x:14, z:294)_ |
 | **Requires** | Silk and Venom (`q_widows`) |
 
 ## Story
 
-> You have seen the webs — now ask yourself what spins cables thick as a man's wrist. The wardens call her the Broodmother, and her clutch hangs over Widow Thicket like a second canopy. Burn through 8 more widows and put the old mother down before that clutch opens.
+> You have seen the webs, now ask yourself what spins cables thick as a man's wrist. The wardens call her the Broodmother, and her clutch hangs over Widow Thicket like a second canopy. Smash 8 of her eggs and put the old mother down before the rest can hatch. Mind the clutch, some eggs will not go quietly.
 
 ## How to complete
 
-- **Kill 8× [Mirefen Widow](bestiary.md#mob-mire_widow)** (level 8–10)
+- **Kill 8× [Broodmother Egg](bestiary.md#mob-spider_egg)** (level 10–10)
   - Found in the open world at ~x:70, z:300 (7 mobs, radius 20)
   - Found in the open world at ~x:95, z:340 (6 mobs, radius 16)
-  - _Tracker: Mirefen Widow slain_
+  - _Tracker: Broodmother eggs destroyed_
 - **Kill 1× [The Broodmother](bestiary.md#mob-mirefen_broodmother)** (level 10–10, **Boss**)
   - Found in the open world at ~x:98, z:348 (1 mob, radius 3)
   - _Tracker: The Broodmother slain_
 
-Then return to **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ to turn in.
+Then return to **Herbalist Yara**, Herbalist _(at ~x:14, z:294)_ to turn in.
 
 ## Rewards
 

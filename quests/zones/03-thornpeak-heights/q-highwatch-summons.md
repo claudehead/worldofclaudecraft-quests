@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Recommended level** | 12+ |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
 | **Turn in to** | **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ |
 
 ## Story

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ (zone range 6–13) |
-| **Quest giver** | **Tanner Hesk**, Master of the Tannery _(at ~x:-11, z:316)_ |
-| **Turn in to** | **Tanner Hesk**, Master of the Tannery _(at ~x:-11, z:316)_ |
+| **Quest giver** | **Tanner Hesk**, Master of the Tannery _(at ~x:3, z:316)_ |
+| **Turn in to** | **Tanner Hesk**, Master of the Tannery _(at ~x:3, z:316)_ |
 
 ## Story
 
@@ -18,7 +18,7 @@
   - _Granted by a prerequisite quest or special encounter_
   - _Tracker: Rough Hide delivered_
 
-Then return to **Tanner Hesk**, Master of the Tannery _(at ~x:-11, z:316)_ to turn in.
+Then return to **Tanner Hesk**, Master of the Tannery _(at ~x:3, z:316)_ to turn in.
 
 ## Rewards
 

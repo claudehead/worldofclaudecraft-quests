@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 8+ |
-| **Quest giver** | **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ |
-| **Turn in to** | **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ |
+| **Quest giver** | **Herbalist Yara**, Herbalist _(at ~x:14, z:294)_ |
+| **Turn in to** | **Herbalist Yara**, Herbalist _(at ~x:14, z:294)_ |
 
 ## Story
 
@@ -22,7 +22,7 @@
   - Drops from [**Mirefen Widow**](bestiary.md#mob-mire_widow) (65% chance) — Found in the open world at ~x:70, z:300 (7 mobs, radius 20); Found in the open world at ~x:95, z:340 (6 mobs, radius 16)
   - _Tracker: Widow Venom Sac_
 
-Then return to **Herbalist Yara**, Herbalist _(at ~x:10, z:295)_ to turn in.
+Then return to **Herbalist Yara**, Herbalist _(at ~x:14, z:294)_ to turn in.
 
 ## Rewards
 

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ (zone range 6–13) |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
 | **Requires** | The Deepfen Stirs (`q_deepfen`) |
 
 ## Story
@@ -19,7 +19,7 @@
   - Drops from [**Deepfen Snapper**](bestiary.md#mob-deepfen_murloc) (50% chance) — Found in the open world at ~x:-82, z:273 (8 mobs, radius 15); Found in the open world at ~x:-120, z:350 (6 mobs, radius 13)
   - _Tracker: Waterlogged Idol_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ to turn in.
 
 ## Rewards
 

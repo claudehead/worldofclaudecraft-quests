@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 12+ |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
 | **Requires** | The Deacon of the Mire (`q_deacon`) |
 
 ## Story
@@ -19,7 +19,7 @@
   - Pick up from the ground (sparkle objects) at: ~x:43, z:512 · ~x:48, z:517
   - _Tracker: Bastion Ward Stone_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ to turn in.
 
 ## Rewards
 

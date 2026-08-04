@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 11+ |
-| **Quest giver** | **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ |
-| **Turn in to** | **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ |
+| **Quest giver** | **Scout Maren**, Marshal's Scout _(at ~x:-13, z:320)_ |
+| **Turn in to** | **Scout Maren**, Marshal's Scout _(at ~x:-13, z:320)_ |
 
 ## Story
 
@@ -19,7 +19,7 @@
   - Found in the open world at ~x:-25, z:490 (6 mobs, radius 16)
   - _Tracker: Gravecaller Cultist slain_
 
-Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.
+Then return to **Scout Maren**, Marshal's Scout _(at ~x:-13, z:320)_ to turn in.
 
 ## Rewards
 

@@ -1,6 +1,6 @@
 # Bestiary — Mirefen Marsh
 
-19 creatures you'll fight in this zone. Health/armor/damage are shown across the mob's spawn level range (mobs roll a random level within it). Mitigation % is what a same-level attacker's physical hits lose to armor — spells ignore armor.
+21 creatures you'll fight in this zone. Health/armor/damage are shown across the mob's spawn level range (mobs roll a random level within it). Mitigation % is what a same-level attacker's physical hits lose to armor — spells ignore armor.
 
 > Threat tiers: **Boss** (dungeon, group it) · **Elite** (~2.3× HP, ~1.5× damage) · **Rare** (tough roamer) · normal (everything else).
 
@@ -148,6 +148,27 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 50% | sells for 7c |
 | <img src="../_loot-icons/cracked_fetish.png" width="22" alt=""> ⚫ Cracked Fetish | Junk | 30% | sells for 14c |
+
+<a id="mob-spider_egg"></a>
+
+### Broodmother Egg
+
+<img src="../_mob-renders/spider_egg.png" width="150" align="right" alt="Broodmother Egg">
+
+| Stat | Value |
+|---|---|
+| Level | 10 |
+| Family | Spider |
+| Health | 100 HP |
+| Armor (physical mitigation) | 0 (~0% vs a same-level attacker) |
+| Melee damage | 0–0 per hit @ 2s swing (~0 DPS) |
+| Location | Mirefen Marsh · ~x:70, z:300 · ~x:95, z:340 — [🗺️ show on map](#/map/70/300) |
+
+**Best way to kill:**
+
+- Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+**Loot:** _nothing_
 
 <a id="mob-gravecaller_cultist"></a>
 
@@ -448,6 +469,37 @@
 | <img src="../_loot-icons/nhalias_dirgeblade.png" width="22" alt=""> 🔵 Nhalia's Dirgeblade | Weapon — Main hand · 10–16 dmg @ 1.7s (~8 DPS), +6 Agi, +3 Sta | 25% | exclusive set † |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
+
+<a id="mob-drowned_warlord"></a>
+
+### The Drowned Warlord — _Elite_
+
+<img src="../_mob-renders/drowned_warlord.png" width="150" align="right" alt="The Drowned Warlord">
+
+| Stat | Value |
+|---|---|
+| Level | 12 |
+| Family | Undead |
+| Health | 695 HP |
+| Armor (physical mitigation) | 176 (~11% vs a same-level attacker) |
+| Melee damage | 44–68 per hit @ 2.2s swing (~25 DPS) |
+| Respawn | ~3 min |
+| Location | Mirefen Marsh · ~x:98, z:432 — [🗺️ show on map](#/map/98/432) |
+
+**Best way to kill:**
+
+- **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
+- **Drowning Grasp:** Heals from the damage it deals — out-DPS its self-healing.
+- **Bog Rot:** Disease DoT — cleanse disease or heal through.
+
+**Loot:**
+
+- Coins: 120 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 100% | sells for 7c |
+| <img src="../_loot-icons/cracked_fetish.png" width="22" alt=""> ⚫ Cracked Fetish | Junk | 60% | sells for 14c |
 
 <a id="mob-tidebound_acolyte"></a>
 

@@ -11,14 +11,13 @@
 
 ## Story
 
-> The revenants are forming ranks, <your name> — true ranks, shield-lines and columns, drilling with no drummer. They are being mustered for the Sanctum gate. Break fourteen more before that march begins, and Highwatch will owe you its best steel.
+> The revenants are forming ranks, <your name>, true ranks, shield-lines and columns, drilling with no drummer. Break their vanguard and bring me ten of their bones, so the smiths can read how they were bound. Do it before the march begins, and Highwatch will owe you its best steel.
 
 ## How to complete
 
-- **Kill 14× [Boneclad Revenant](bestiary.md#mob-boneclad_revenant)** (level 18–19)
-  - Found in the open world at ~x:-40, z:830 (8 mobs, radius 20)
-  - Found in the open world at ~x:-40, z:838 (6 mobs, radius 16)
-  - _Tracker: Boneclad Revenant slain_
+- **Collect 10× Vanguard Bone**
+  - Drops from [**Boneclad Revenant**](bestiary.md#mob-boneclad_revenant) (70% chance) — Found in the open world at ~x:-40, z:830 (8 mobs, radius 20); Found in the open world at ~x:-40, z:838 (6 mobs, radius 16)
+  - _Tracker: Vanguard Bone recovered_
 
 Then return to **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ to turn in.
 

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 10+ |
-| **Quest giver** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ |
-| **Turn in to** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ |
+| **Quest giver** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ |
+| **Turn in to** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ |
 
 ## Story
 
@@ -19,7 +19,7 @@
   - Found in the open world at ~x:-105, z:455 (6 mobs, radius 18)
   - _Tracker: Mirefen Troll slain_
 
-Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to turn in.
+Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ to turn in.
 
 ## Rewards
 

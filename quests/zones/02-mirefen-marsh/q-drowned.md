@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 9+ |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
 
 ## Story
 
@@ -19,7 +19,7 @@
   - Found in the open world at ~x:115, z:450 (6 mobs, radius 16)
   - _Tracker: Drowned Dead laid to rest_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ to turn in.
 
 ## Rewards
 

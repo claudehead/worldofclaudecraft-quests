@@ -40,5 +40,5 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 3 | [Trouble at the Lake](q-murlocs.md) | Fisherman Brandt | kill |
 | 3 | [Stolen Supplies](q-supplies.md) | Trader Wilkes | collect |
 | 4 | [Rats in the Mine](q-mine.md) | Foreman Odell | kill |
-| 5 | [The Restless Dead](q-bones.md) | Brother Aldric | kill |
+| 5 | [The Restless Dead](q-bones.md) | Brother Aldric | collect |
 | 6 | [Mogger Must Fall](q-mogger.md) 👥 | Marshal Redbrook | kill |

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ (zone range 6–13) |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
 | **Requires** | Robes in the Reeds (`q_cult_camp`) |
 
 ## Story
@@ -23,7 +23,7 @@
   - Drops from [**Gravecaller Mender**](bestiary.md#mob-gravecaller_mender) (40% chance) — Found in the open world at ~x:18, z:472 (2 mobs, radius 8)
   - _Tracker: Gravecaller Cipher_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ to turn in.
 
 ## Rewards
 

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ (zone range 6–13) |
-| **Quest giver** | **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ |
-| **Turn in to** | **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ |
+| **Quest giver** | **Scout Maren**, Marshal's Scout _(at ~x:-13, z:320)_ |
+| **Turn in to** | **Scout Maren**, Marshal's Scout _(at ~x:-13, z:320)_ |
 | **Requires** | Mounds of the Mirefen (`q_trolls`) |
 
 ## Story
@@ -19,7 +19,7 @@
   - Drops from [**Mirefen Troll**](bestiary.md#mob-fen_troll) (60% chance) — Found in the open world at ~x:-80, z:420 (7 mobs, radius 22); Found in the open world at ~x:-105, z:455 (6 mobs, radius 18)
   - _Tracker: Mirefen Troll Fetish_
 
-Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.
+Then return to **Scout Maren**, Marshal's Scout _(at ~x:-13, z:320)_ to turn in.
 
 ## Rewards
 

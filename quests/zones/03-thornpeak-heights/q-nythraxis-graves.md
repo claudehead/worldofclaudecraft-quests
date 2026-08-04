@@ -11,7 +11,7 @@
 
 ## Story
 
-> I have seen these marks before, on three old graves around the northern battlefield. Captain Aldren lies on the eastern rise, High Priest Malric near the central broken road, and Royal Assassin Voss by the western cliff. Touch each grave and listen, <your name>. The dead may remember what the living forgot.
+> I have seen these marks before, on three old graves around the northern battlefield. Captain Aldren lies on the western rise, High Priest Malric further south along the western edge, and Royal Assassin Voss by the eastern cliff. Touch each grave and listen, <your name>. The dead may remember what the living forgot.
 
 ## How to complete
 

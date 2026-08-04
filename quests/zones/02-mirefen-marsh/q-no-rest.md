@@ -5,22 +5,21 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ (zone range 6–13) |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
 | **Requires** | Censers from the Deep (`q_drowned_censers`) |
 
 ## Story
 
-> The rite on those censers binds the drowned to rise wherever the marsh touches them — and the marsh touches everything. There will be no rest in these reeds until the dead outnumber the living. We cannot unmake the rite yet, but we can empty it of soldiers. Lay 14 more of the Drowned Dead to rest.
+> The rite on those censers binds the drowned to rise, and now it has raised one strong enough to lead them. The wardens call him the Drowned Warlord, and while he holds the Drowned Chapel the dead keep their ranks. Break him, <your name>, and the rest will scatter back into the mire.
 
 ## How to complete
 
-- **Kill 14× [Drowned Dead](bestiary.md#mob-drowned_dead)** (level 9–11)
-  - Found in the open world at ~x:90, z:420 (8 mobs, radius 20)
-  - Found in the open world at ~x:115, z:450 (6 mobs, radius 16)
-  - _Tracker: Drowned Dead laid to rest_
+- **Kill 1× [The Drowned Warlord](bestiary.md#mob-drowned_warlord)** (level 12–12, **Elite**)
+  - Found in the open world at ~x:98, z:432 (1 mob, radius 3)
+  - _Tracker: The Drowned Warlord slain_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ to turn in.
 
 ## Rewards
 
@@ -33,7 +32,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to tur
 
 ## On completion
 
-> You give the dead more mercy than their masters ever did. Take this — you have more than earned it.
+> You give the dead more mercy than their masters ever did. Take this, you have more than earned it.
 
 ## Where to go
 

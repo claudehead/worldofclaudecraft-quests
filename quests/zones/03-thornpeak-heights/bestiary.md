@@ -1,6 +1,6 @@
 # Bestiary — Thornpeak Heights
 
-24 creatures you'll fight in this zone. Health/armor/damage are shown across the mob's spawn level range (mobs roll a random level within it). Mitigation % is what a same-level attacker's physical hits lose to armor — spells ignore armor.
+26 creatures you'll fight in this zone. Health/armor/damage are shown across the mob's spawn level range (mobs roll a random level within it). Mitigation % is what a same-level attacker's physical hits lose to armor — spells ignore armor.
 
 > Threat tiers: **Boss** (dungeon, group it) · **Elite** (~2.3× HP, ~1.5× damage) · **Rare** (tough roamer) · normal (everything else).
 
@@ -172,8 +172,8 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
-| <img src="../_loot-icons/wyrmcult_orders.png" width="22" alt="">  Wyrmcult Orders | Quest item | 50% | quest item — only drops while on _Orders from Below_ |
 | <img src="../_loot-icons/frayed_prayer_beads.png" width="22" alt=""> ⚫ Frayed Prayer Beads | Junk | 35% | sells for 30c |
+| <img src="../_loot-icons/wyrmcult_orders.png" width="22" alt="">  Wyrmcult Orders | Quest item | 10% | quest item — only drops while on _Orders from Below_ |
 | <img src="../_loot-icons/shardsong_mantle.png" width="22" alt=""> 🔵 Shardsong Mantle | Cloth armor — Shoulder · 32 armor, +5 Int, +4 Spi | 4% |  |
 
 <a id="mob-boneclad_revenant"></a>
@@ -202,6 +202,7 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/runed_bone_shard.png" width="22" alt="">  Runed Bone Shard | Quest item | 70% | quest item — only drops while on _Unrest in the Bonefields_ |
+| <img src="../_loot-icons/vanguard_bone.png" width="22" alt="">  Vanguard Bone | Quest item | 70% | quest item — only drops while on _Bones of the Vanguard_ |
 | <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 60% | sells for 7c |
 | <img src="../_loot-icons/thornpeak_wildwraps.png" width="22" alt=""> 🔵 Thornpeak Wildwraps | Leather armor — Legs · 60 armor, +7 Int, +4 Spi | 4% |  |
 | <img src="../_loot-icons/necromancers_legwraps.png" width="22" alt=""> 🟣 Mournweave Legwraps | Cloth armor — Legs · 86 armor, +13 Int, +7 Spi | 0% |  |
@@ -399,6 +400,35 @@
 | <img src="../_loot-icons/ogre_toe_ring.png" width="22" alt=""> ⚫ Ogre Toe Ring | Junk | 50% | sells for 25c |
 | <img src="../_loot-icons/revenantstep_treads.png" width="22" alt=""> 🔵 Revenantstep Treads | Leather armor — Feet · 62 armor, +4 Agi, +3 Sta | 6% |  |
 
+<a id="mob-brakka_wallbreaker"></a>
+
+### Brakka the Wallbreaker — _Elite_
+
+<img src="../_mob-renders/brakka_wallbreaker.png" width="150" align="right" alt="Brakka the Wallbreaker">
+
+| Stat | Value |
+|---|---|
+| Level | 17 |
+| Family | Ogre |
+| Health | 1141 HP |
+| Armor (physical mitigation) | 384 (~17% vs a same-level attacker) |
+| Melee damage | 73–114 per hit @ 2.5s swing (~37 DPS) |
+| Respawn | ~3 min |
+| Location | Thornpeak Heights · ~x:-78, z:716 — [🗺️ show on map](#/map/-78/716) |
+
+**Best way to kill:**
+
+- **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
+- **Wallbreaker Smash:** Concusses (brief stun/daze) on hit — avoid multi-pulls.
+
+**Loot:**
+
+- Coins: 300 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| <img src="../_loot-icons/ogre_toe_ring.png" width="22" alt=""> ⚫ Ogre Toe Ring | Junk | 100% | sells for 25c |
+
 <a id="mob-brutok_skullsmasher"></a>
 
 ### Brutok Skullsmasher — _Elite · Rare_
@@ -544,6 +574,37 @@
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 
+<a id="mob-threnos_first_voice"></a>
+
+### Threnos the First Voice — _Elite_
+
+<img src="../_mob-renders/threnos_first_voice.png" width="150" align="right" alt="Threnos the First Voice">
+
+| Stat | Value |
+|---|---|
+| Level | 19 |
+| Family | Humanoid |
+| Health | 1196 HP |
+| Armor (physical mitigation) | 324 (~14% vs a same-level attacker) |
+| Melee damage | 77–121 per hit @ 2s swing (~50 DPS) |
+| Respawn | ~3 min |
+| Location | Thornpeak Heights · ~x:44, z:848 — [🗺️ show on map](#/map/44/848) |
+
+**Best way to kill:**
+
+- **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
+- **Wyrmward Sigil:** Locks out a spell school — swap schools or finish it fast.
+- **The Waking Voice:** Weakens you — keep the fight short.
+
+**Loot:**
+
+- Coins: 300 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| <img src="../_loot-icons/frayed_prayer_beads.png" width="22" alt=""> ⚫ Frayed Prayer Beads | Junk | 100% | sells for 30c |
+| <img src="../_loot-icons/shardsong_mantle.png" width="22" alt=""> 🔵 Shardsong Mantle | Cloth armor — Shoulder · 32 armor, +5 Int, +4 Spi | 6% |  |
+
 <a id="mob-voskar_emberwing"></a>
 
 ### Voskar the Emberwing — _Elite · Rare_
@@ -687,7 +748,7 @@
 | Health | 1564 HP |
 | Armor (physical mitigation) | 448 (~20% vs a same-level attacker) |
 | Melee damage | 66–104 per hit @ 2.6s swing (~33 DPS) |
-| Respawn | ~25s |
+| Respawn | ~3 min |
 | Location | Thornpeak Heights · ~x:-132, z:748 — [🗺️ show on map](#/map/-132/748) |
 
 **Best way to kill:**
@@ -698,7 +759,7 @@
 
 **Loot:**
 
-- Coins: 2000 copper (always drops)
+- Coins: 650 copper (always drops)
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|

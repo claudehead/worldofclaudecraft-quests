@@ -12,7 +12,7 @@
 
 ## Story
 
-> The mountain folk put a name to the prints my scout found: Old Cragmaw, a scar-pelted tyrant of a cat that has outlived three generations of its own pack. It is the reason the stalkers flood my road, <your name>. Its den sits on the western ridge above the road south. Bring a friend, and put the old devil down.
+> The mountain folk put a name to the prints my scout found: Old Cragmaw, a scar-pelted tyrant of a cat that has outlived three generations of its own pack. It is the reason the stalkers flood my road, <your name>. Its den sits on the eastern ridge above the road south. Bring a friend, and put the old devil down.
 
 ## How to complete
 

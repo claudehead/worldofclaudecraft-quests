@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 12+ |
-| **Quest giver** | **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ |
-| **Turn in to** | **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ |
+| **Quest giver** | **Scout Maren**, Marshal's Scout _(at ~x:-13, z:320)_ |
+| **Turn in to** | **Scout Maren**, Marshal's Scout _(at ~x:-13, z:320)_ |
 | **Requires** | The Sunken Bastion (`q_bastion_door`) |
 | **Group quest** | 👥 Suggested players: 5 |
 
@@ -20,7 +20,7 @@
   - Inside dungeon [**The Sunken Bastion**](../../../dungeons/sunken_bastion.md) (entrance portal ~x:45, z:515)
   - _Tracker: Knight-Commander Olen laid to rest_
 
-Then return to **Scout Maren**, Marshal's Scout _(at ~x:6, z:312)_ to turn in.
+Then return to **Scout Maren**, Marshal's Scout _(at ~x:-13, z:320)_ to turn in.
 
 ## Rewards
 

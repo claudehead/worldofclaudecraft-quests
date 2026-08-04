@@ -6,7 +6,7 @@
 |---|---|
 | **Recommended level** | 6+ |
 | **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ |
-| **Turn in to** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ |
+| **Turn in to** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ |
 
 ## Story
 
@@ -15,10 +15,10 @@
 ## How to complete
 
 - **Collect 1× Fenbridge Muster Order**
-  - Pick up from the ground (sparkle objects) at: ~x:1, z:294 · ~x:-2, z:297
+  - Pick up from the ground (sparkle objects) at: ~x:-4, z:275 · ~x:4, z:275
   - _Tracker: Fenbridge Muster Order_
 
-Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to turn in.
+Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ to turn in.
 
 ## Rewards
 

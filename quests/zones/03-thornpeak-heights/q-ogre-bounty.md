@@ -11,14 +11,13 @@
 
 ## Story
 
-> Maren's totems tell me all I need to know: the clans are bought, and my wall is their first errand. I will not wait for them to muster. Fourteen more Thornpeak Ogres, <your name> — and I will pay bounty on every one.
+> Maren's totems name the hand that bought the clans: an ogre they call Brakka the Wallbreaker, and he is mustering the rest against my gate. Cut off the head and the clans scatter. Bring me Brakka, <your name>, and Highwatch will pay a captain's bounty.
 
 ## How to complete
 
-- **Kill 14× [Thornpeak Ogre](bestiary.md#mob-thornpeak_ogre)** (level 15–16)
-  - Found in the open world at ~x:-90, z:700 (7 mobs, radius 22)
-  - Found in the open world at ~x:-60, z:730 (6 mobs, radius 18)
-  - _Tracker: Thornpeak Ogre slain_
+- **Kill 1× [Brakka the Wallbreaker](bestiary.md#mob-brakka_wallbreaker)** (level 17–17, **Elite**)
+  - Found in the open world at ~x:-78, z:716 (1 mob, radius 3)
+  - _Tracker: Brakka the Wallbreaker slain_
 
 Then return to **Captain Thessaly**, Highwatch Captain _(at ~x:4, z:664)_ to turn in.
 

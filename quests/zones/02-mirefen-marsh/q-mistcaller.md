@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 12+ |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
 | **Requires** | The Sunken Bastion (`q_bastion_door`) |
 | **Group quest** | 👥 Suggested players: 5 |
 
@@ -20,7 +20,7 @@
   - Inside dungeon [**The Sunken Bastion**](../../../dungeons/sunken_bastion.md) (entrance portal ~x:45, z:515)
   - _Tracker: Vael the Fogbinder slain_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ to turn in.
 
 ## Rewards
 

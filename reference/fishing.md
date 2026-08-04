@@ -8,31 +8,31 @@ Buy a **Simple Fishing Pole** from the Provisioner in the first village (about 2
 
 | Catch | Chance | Restores |
 |---|---:|---|
-| Raw Mirror Trout | 45% | 61 HP |
-| Raw River Perch | 30% | 45 HP |
+| Raw Mirror Trout | 46% | — |
+| Raw River Perch | 31% | — |
 | Tangled Weed | 12% | — |
 | _nothing (the one that got away)_ | 10% | — |
-| Sunglint Koi ⭐ | 3% | 117 HP |
+| Sunglint Koi ⭐ | 1% | — |
 
 ## Mirefen Marsh
 
 | Catch | Chance | Restores |
 |---|---:|---|
-| Raw Marsh Pike | 40% | 90 HP |
-| Raw Bog Eel | 30% | 90 HP |
-| _nothing (the one that got away)_ | 10% | — |
-| Tangled Weed | 9% | — |
-| Soggy Boot | 8% | — |
-| Sunglint Koi ⭐ | 3% | 117 HP |
+| _nothing (the one that got away)_ | 35% | — |
+| Raw Marsh Pike | 22% | — |
+| Raw Bog Eel | 17% | — |
+| Tangled Weed | 13% | — |
+| Soggy Boot | 12% | — |
+| Sunglint Koi ⭐ | 1% | — |
 
 ## Thornpeak Heights
 
 | Catch | Chance | Restores |
 |---|---:|---|
-| Raw Frostgill Trout | 40% | 117 HP |
-| Raw Slatefin Carp | 30% | 117 HP |
-| Tangled Weed | 14% | — |
-| _nothing (the one that got away)_ | 12% | — |
-| Sunglint Koi ⭐ | 4% | 117 HP |
+| _nothing (the one that got away)_ | 55% | — |
+| Tangled Weed | 28% | — |
+| Raw Frostgill Trout | 9% | — |
+| Raw Slatefin Carp | 7% | — |
+| Sunglint Koi ⭐ | 1% | — |
 
 _Catch rates are the water's roll weights, normalised to a percentage. ⭐ marks the rare catch._

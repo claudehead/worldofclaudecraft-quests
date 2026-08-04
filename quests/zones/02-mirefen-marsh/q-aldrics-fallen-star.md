@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 5+ |
-| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
-| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ |
+| **Quest giver** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
+| **Turn in to** | **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ |
 | **Status** | Retired (finishable only if already accepted) |
 
 ## Story
@@ -19,7 +19,7 @@
   - Pick up from the ground (sparkle objects) at: ~x:152, z:294
   - _Tracker: Unknown Alien Weaponry_
 
-Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-8, z:296)_ to turn in.
+Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-15, z:296)_ to turn in.
 
 ## Rewards
 

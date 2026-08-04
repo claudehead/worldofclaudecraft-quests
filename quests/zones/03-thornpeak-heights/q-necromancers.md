@@ -11,14 +11,11 @@
 
 ## Story
 
-> The orders speak of a "ring of phylacteries" — soul-vessels, <your name>, set about the Sanctum to feed it. The cult's necromancers carry them like holy relics. Kill eight necromancers and bring me three phylacteries unbroken. I must know what souls they hold.
+> The orders speak of a "ring of phylacteries", soul-vessels, <your name>, set about the Sanctum to feed it. The cult's necromancers carry them like holy relics. Take five phylacteries from them, unbroken, and bring them to me. I must know what souls they hold.
 
 ## How to complete
 
-- **Kill 8× [Wyrmcult Necromancer](bestiary.md#mob-wyrmcult_necromancer)** (level 18–19)
-  - Found in the open world at ~x:40, z:855 (5 mobs, radius 14)
-  - _Tracker: Wyrmcult Necromancer slain_
-- **Collect 3× Ritual Phylactery**
+- **Collect 5× Ritual Phylactery**
   - Drops from [**Wyrmcult Necromancer**](bestiary.md#mob-wyrmcult_necromancer) (55% chance) — Found in the open world at ~x:40, z:855 (5 mobs, radius 14)
   - _Tracker: Ritual Phylactery_
 
@@ -43,4 +40,4 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 
 **[🧭 Open this route in 3D →](#/questroute/q_necromancers)**
 
-_Numbered route: ① start → objectives → 4 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

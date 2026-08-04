@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ (zone range 6–13) |
-| **Quest giver** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ |
-| **Turn in to** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ |
+| **Quest giver** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ |
+| **Turn in to** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ |
 | **Requires** | Stopping the Summoning (`q_summoners`) |
 
 ## Story
@@ -19,7 +19,7 @@
   - Found in the open world at ~x:0, z:510 (1 mob, radius 2)
   - _Tracker: Deacon Voss slain_
 
-Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to turn in.
+Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ to turn in.
 
 ## Rewards
 

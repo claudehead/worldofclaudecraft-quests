@@ -11,7 +11,7 @@
 
 ## Story
 
-> The visions point to the abandoned crypt in the western cliff. There is an old legend that the crypt housed a king. Perhaps Thornpeak sealed him below after Malric's ritual twisted him into something deathless. Enter the crypt and see what remains inside.
+> The visions point to the abandoned crypt in the eastern cliff. There is an old legend that the crypt housed a king. Perhaps Thornpeak sealed him below after Malric's ritual twisted him into something deathless. Enter the crypt and see what remains inside.
 
 ## How to complete
 

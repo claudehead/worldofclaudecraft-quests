@@ -65,6 +65,14 @@ Spend **Marks** (earned from clears) at the delve vendor:
 | <img src="_delve-icons/litany_helm.png" width="22" alt=""> 🟢 Reliquant's Drowned Cowl | Cloth armor · 32 armor, +3 Int, +2 Spi | 24 Marks | Unlocks after 3 clears |
 | <img src="_delve-icons/sister_nhalia_choir_plate.png" width="22" alt=""> 🔵 Sister Nhalia's Choir-Forged Plate | Mail armor · 150 armor, +5 Str, +4 Sta | 56 Marks | Unlocks after a Heroic clear |
 | <img src="_delve-icons/drowned_choir_fang.png" width="22" alt=""> 🔵 Drowned Choir-Fang | Weapon · 20–32 dmg @ 1.7s (~15 DPS), +4 Agi, +3 Sta | 56 Marks | Unlocks after a Heroic clear |
+| <img src="_delve-icons/thorium_mining_pick.png" width="22" alt=""> 🔵 Osmium Mining Pick | tool | 24 Marks | Unlocks after 3 clears |
+| <img src="_delve-icons/ashwood_axe.png" width="22" alt=""> 🔵 Ashwood Axe | tool | 24 Marks | Unlocks after 3 clears |
+| <img src="_delve-icons/goldleaf_sickle.png" width="22" alt=""> 🔵 Goldleaf Sickle | tool | 24 Marks | Unlocks after 3 clears |
+| <img src="_delve-icons/stormreel_fishing_rod.png" width="22" alt=""> 🔵 Stormreel Fishing Rod | tool | 24 Marks | Unlocks after 3 clears |
+| <img src="_delve-icons/arcanite_mining_pick.png" width="22" alt=""> 🟣 Glyphsteel Mining Pick | tool | 56 Marks | Unlocks after a Heroic clear |
+| <img src="_delve-icons/elderwood_axe.png" width="22" alt=""> 🟣 Highpine Axe | tool | 56 Marks | Unlocks after a Heroic clear |
+| <img src="_delve-icons/sunpetal_sickle.png" width="22" alt=""> 🟣 Sunpetal Sickle | tool | 56 Marks | Unlocks after a Heroic clear |
+| <img src="_delve-icons/tidewrought_fishing_rod.png" width="22" alt=""> 🟣 Tidewrought Fishing Rod | tool | 56 Marks | Unlocks after a Heroic clear |
 
 ## The finale — the Drowned Reliquary Rite
 

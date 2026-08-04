@@ -10,7 +10,7 @@
 
 ## Story
 
-> Back at my loom after all. I hold no grudge, <your name>, but the thread remembers a hand that let it go, and the cost of taking it up again is measured out longer each time. Cull the webwood spiders crowding the western woods, and the labor will settle your hands before they touch good silk again.
+> Back at my loom after all. I hold no grudge, <your name>, but the thread remembers a hand that let it go, and the cost of taking it up again is measured out longer each time. Cull the webwood spiders crowding the eastern woods, and the labor will settle your hands before they touch good silk again.
 
 ## How to complete
 

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ (zone range 6–13) |
-| **Quest giver** | **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ |
-| **Turn in to** | **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ |
+| **Quest giver** | **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ |
+| **Turn in to** | **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ |
 
 ## Story
 
@@ -18,7 +18,7 @@
   - Drops from [**Mire Prowler**](bestiary.md#mob-mire_prowler) (60% chance) — Found in the open world at ~x:-40, z:230 (7 mobs, radius 22); Found in the open world at ~x:35, z:225 (6 mobs, radius 20)
   - _Tracker: Mire Prowler Pelt_
 
-Then return to **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ to turn in.
+Then return to **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ to turn in.
 
 ## Rewards
 

@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 7+ |
-| **Quest giver** | **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ |
-| **Turn in to** | **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ |
+| **Quest giver** | **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ |
+| **Turn in to** | **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ |
 
 ## Story
 
@@ -18,7 +18,7 @@
   - Pick up from the ground (sparkle objects) at: ~x:1, z:192 · ~x:-3, z:206 · ~x:-6, z:221 · ~x:-8, z:237 · ~x:-7, z:252 · ~x:-3, z:268 · ~x:2, z:283
   - _Tracker: Lost Caravan Goods_
 
-Then return to **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ to turn in.
+Then return to **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ to turn in.
 
 ## Rewards
 

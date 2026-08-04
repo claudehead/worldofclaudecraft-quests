@@ -12,7 +12,7 @@
 
 ## Story
 
-> Mogger has split carts, flattened fences, and killed enough livestock to empty half the Vale. Do not face him alone. Take two strong companions into the eastern meadow and put the brute down for good.
+> Mogger has split carts, flattened fences, and killed enough livestock to empty half the Vale. Do not face him alone. Take two strong companions into the western meadow and put the brute down for good.
 
 ## How to complete
 

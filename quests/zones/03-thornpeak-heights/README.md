@@ -21,8 +21,8 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 13 | [The Captain's Bounty](q-ogre-bounty.md) | Captain Thessaly | kill |
 | 13 | [Warlord Drogmar](q-drogmar.md) 👥 | Captain Thessaly | kill |
 | 13 | [Cores of the Storm](q-shard-cores.md) | Loremaster Caddis | collect |
-| 13 | [Orders from Below](q-cult-orders.md) | Brother Aldric | kill/collect |
-| 13 | [Bones of the Vanguard](q-revenant-vanguard.md) | Captain Thessaly | kill |
+| 13 | [Orders from Below](q-cult-orders.md) | Brother Aldric | collect |
+| 13 | [Bones of the Vanguard](q-revenant-vanguard.md) | Captain Thessaly | collect |
 | 13 | [Breaking the Seal](q-breaking-the-seal.md) | Brother Aldric | collect |
 | 13 | [The Voice Below](q-voice-below.md) | Brother Aldric | kill |
 | 13 | [The Sanctum Gate](q-sanctum-gate.md) | Brother Aldric | collect |
@@ -33,7 +33,7 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 16 | [The Mountain Wakes](q-elementals.md) | Loremaster Caddis | kill |
 | 17 | [The Shardlord](q-kazzix.md) | Loremaster Caddis | collect |
 | 17 | [Chants on the Wind](q-zealots.md) | Brother Aldric | kill |
-| 18 | [The Phylactery Ring](q-necromancers.md) | Brother Aldric | kill/collect |
+| 18 | [The Phylactery Ring](q-necromancers.md) | Brother Aldric | collect |
 | 18 | [The Revenant Fields](q-revenants.md) | Captain Thessaly | kill |
 | 18 | [Sigils of the Wyrm](q-wyrm-sigils.md) | Brother Aldric | collect |
 | 18 | [The Bound Guardian](q-korgath.md) 👥 | Scout Maren | kill |

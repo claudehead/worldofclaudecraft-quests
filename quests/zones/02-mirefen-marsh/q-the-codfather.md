@@ -5,12 +5,12 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ |
-| **Quest giver** | **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ |
-| **Turn in to** | **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ |
+| **Quest giver** | **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ |
+| **Turn in to** | **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ |
 
 ## Story
 
-> The Codfather isn't just a fish, <your name>, he's a cold-blooded killer. Old-timers swear he eats Mire Prowlers for breakfast, and even the Mirefen Widows won't spin their webs near the Deepfen Shallows out of sheer terror. He rules those waters. Grab a fishing pole, drag that old devil out of his waters, and I will admit you have joined the family.
+> The Codfather isn't just a fish, <your name>, he's a cold-blooded killer. Old-timers swear he eats Mire Prowlers for breakfast, and even the Mirefen Widows won't spin their webs near the Deepfen Shallows out of sheer terror. He rules those waters, and marsh water takes an Ironreel Fishing Rod, no less; my counter sells them. Get one in hand, drag that old devil out of his waters, and I will admit you have joined the family.
 
 ## How to complete
 
@@ -18,7 +18,7 @@
   - 🎣 **Caught by fishing — not dropped.** First buy a **Simple Fishing Pole** (~20c) from **Fisherman Brandt** in Eastbrook _(at ~x:-22, z:4)_, then equip it and **fish** in the Mirefen Marsh waters the quest describes (cast from the shoreline).
   - _Tracker: The Codfather_
 
-Then return to **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ to turn in.
+Then return to **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ to turn in.
 
 ## Rewards
 

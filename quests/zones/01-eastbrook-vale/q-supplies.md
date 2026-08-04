@@ -10,7 +10,7 @@
 
 ## Story
 
-> Those bandits hit my last wagon and made off with four crates of goods — tools, salt, good Eastbrook linen. The crates are stacked around their camp in the southeast hills. Steal them back for me, would you?
+> Those bandits hit my last wagon and made off with four crates of goods: tools, salt, good Eastbrook linen. The crates are stacked around their camp in the southwest hills. Steal them back for me, would you?
 
 ## How to complete
 

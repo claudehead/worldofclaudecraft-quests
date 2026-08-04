@@ -10,7 +10,7 @@
 
 ## Story
 
-> Well, look who is back at my pot. No hard feelings, <your name>, a kitchen always has room, but you know the tab runs longer every time you walk out on it. Go thin the wild boars in the east meadow, because honest sweat is the first ingredient, and it will remind your hands of the work.
+> Well, look who is back at my pot. No hard feelings, <your name>, a kitchen always has room, but you know the tab runs longer every time you walk out on it. Go thin the wild boars in the west meadow, because honest sweat is the first ingredient, and it will remind your hands of the work.
 
 ## How to complete
 

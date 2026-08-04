@@ -11,15 +11,13 @@
 
 ## Story
 
-> Last night the whole cult camp knelt at once, <your name> — every zealot, every necromancer, all facing the Sanctum. Korzul speaks to them in their sleep now; Vael heard the same voice in the fen, and Morthen before him. Cut the congregation down — ten zealots, six necromancers — before that voice has hands enough to pull the gate open itself.
+> Last night the whole cult camp knelt at once, <your name>, every zealot and necromancer facing the Sanctum, and one throat led the chant. They call him Threnos, the First Voice, and Korzul speaks through his mouth. Vael heard the same voice in the fen, and Morthen before him. Silence Threnos and cut down the six necromancers who keep his choir, before that voice has hands enough to pull the gate open itself.
 
 ## How to complete
 
-- **Kill 10× [Wyrmcult Zealot](bestiary.md#mob-wyrmcult_zealot)** (level 17–19)
-  - Found in the open world at ~x:55, z:820 (8 mobs, radius 20)
-  - Found in the open world at ~x:34, z:845 (6 mobs, radius 16)
-  - Found in the open world at ~x:80, z:845 (2 mobs, radius 7)
-  - _Tracker: Wyrmcult Zealot slain_
+- **Kill 1× [Threnos the First Voice](bestiary.md#mob-threnos_first_voice)** (level 19–19, **Elite**)
+  - Found in the open world at ~x:44, z:848 (1 mob, radius 3)
+  - _Tracker: Threnos the First Voice silenced_
 - **Kill 6× [Wyrmcult Necromancer](bestiary.md#mob-wyrmcult_necromancer)** (level 18–19)
   - Found in the open world at ~x:40, z:855 (5 mobs, radius 14)
   - _Tracker: Wyrmcult Necromancer slain_
@@ -37,7 +35,7 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 
 ## On completion
 
-> The kneeling has stopped. We have not silenced the voice, $N — only thinned its choir. It must be enough.
+> Threnos is silent, and the kneeling has stopped, $N. We have not ended the voice below, only taken from it the mouth that carried it. It must be enough.
 
 ## Leads to
 

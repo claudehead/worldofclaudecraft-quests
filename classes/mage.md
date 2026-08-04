@@ -49,7 +49,7 @@
 | Temporal Mend | 5 _(ranks: 12, 18)_ | 45 | 2s | — | 30 | Arcane | Draws an ally a moment forward in time, mending X health as the body settles into its healthier future self. (Chronomancy signature) |
 | Aetherburst | 7 | 60 | Instant | — | Melee | Arcane | A burst of Arcane energy hits all nearby enemies for X Arcane damage. |
 | Bewitch | 7 _(ranks: 18)_ | 50 | 1.5s | — | 30 | Arcane | Transforms the enemy into a toad for up to X sec. The toad wanders and heals rapidly. Any damage breaks the effect. Beasts and humanoids only. |
-| Collective Reversal | 8 | 250 | 7s | — | Melee | Arcane | Rewinds every fallen member of your group or raid, returning them to life at their body with 30% health and mana. Cannot be cast in combat. (Chronomancy) |
+| Collective Reversal | 8 | 250 | 7s | 5 min | Melee | Arcane | Rewinds every fallen member of your group or raid, returning them to life at their body with 30% health and mana. Cannot be cast in combat. (Chronomancy) |
 | Greater Invisibility | 8 | 60 | Instant | 2 min | Melee | Arcane | Vanish for 20 sec and remove 2 damage-over-time effects. When the invisibility ends, take 90% less damage for 2 sec. (Mage talent) |
 | Spellsteal | 8 | 40 | Instant | 12s | 30 | Arcane | Steals a beneficial magic effect from an enemy, transferring it to yourself. |
 | Temporal Echo | 8 _(ranks: 12, 18)_ | 40 | Instant | — | 30 | Arcane | Marks an ally with an echo of a healthier moment, mending X health at once. For X sec, part of the Arcane damage you deal is drawn back through the echo to heal them. |

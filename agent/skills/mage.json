@@ -494,7 +494,7 @@
       "name": "Collective Reversal",
       "learnLevel": 8,
       "cost": 250,
-      "cooldown": 0,
+      "cooldown": 300,
       "range": 0,
       "castTime": 7,
       "school": "arcane",

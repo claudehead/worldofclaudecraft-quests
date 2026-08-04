@@ -11,18 +11,13 @@
 
 ## Story
 
-> The zealots move with purpose now — watches set, supplies counted, like soldiers before a siege. Cultists who organize are cultists taking orders, <your name>. Kill eight more and bring me four sets of their written orders. I would know the hand that commands them.
+> The zealots move with purpose now, watches set and supplies counted, like soldiers before a siege. Cultists who organize are cultists taking orders, <your name>. One of them is carrying written orders from below. Find the zealot who has them and bring the orders to me: I would know the hand that commands them.
 
 ## How to complete
 
-- **Kill 8× [Wyrmcult Zealot](bestiary.md#mob-wyrmcult_zealot)** (level 17–19)
-  - Found in the open world at ~x:55, z:820 (8 mobs, radius 20)
-  - Found in the open world at ~x:34, z:845 (6 mobs, radius 16)
-  - Found in the open world at ~x:80, z:845 (2 mobs, radius 7)
-  - _Tracker: Wyrmcult Zealot slain_
-- **Collect 4× Wyrmcult Orders**
-  - Drops from [**Wyrmcult Zealot**](bestiary.md#mob-wyrmcult_zealot) (50% chance) — Found in the open world at ~x:55, z:820 (8 mobs, radius 20); Found in the open world at ~x:34, z:845 (6 mobs, radius 16); Found in the open world at ~x:80, z:845 (2 mobs, radius 7)
-  - _Tracker: Wyrmcult Orders_
+- **Collect 1× Wyrmcult Orders**
+  - Drops from [**Wyrmcult Zealot**](bestiary.md#mob-wyrmcult_zealot) (10% chance) — Found in the open world at ~x:55, z:820 (8 mobs, radius 20); Found in the open world at ~x:34, z:845 (6 mobs, radius 16); Found in the open world at ~x:80, z:845 (2 mobs, radius 7)
+  - _Tracker: Orders from Below_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to turn in.
 
@@ -45,4 +40,4 @@ Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-10, z:656)_ to tu
 
 **[🧭 Open this route in 3D →](#/questroute/q_cult_orders)**
 
-_Numbered route: ① start → objectives → 4 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._
+_Numbered route: ① start → objectives → 3 turn in. Faint dots are the rest of the zone for context — see the [full zone map](README.md). Mob names above link to the [bestiary](bestiary.md)._

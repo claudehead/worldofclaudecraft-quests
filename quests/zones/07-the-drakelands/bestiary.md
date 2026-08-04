@@ -91,35 +91,6 @@
 
 ## Elites
 
-<a id="mob-emberwing_drake"></a>
-
-### Emberwing Drake — _Elite_
-
-<img src="../_mob-renders/emberwing_drake.png" width="150" align="right" alt="Emberwing Drake">
-
-| Stat | Value |
-|---|---|
-| Level | 19–20 |
-| Family | Dragonkin |
-| Health | 1624–1697 HP |
-| Armor (physical mitigation) | 288–304 (~13% vs a same-level attacker) |
-| Melee damage | 84–137 per hit @ 2.2s swing (~49–51 DPS) |
-| Respawn | ~25s |
-| Location | The Drakelands · ~x:419, z:2266 · ~x:302, z:2258 — [🗺️ show on map](#/map/419/2266) |
-
-**Best way to kill:**
-
-- **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
-- Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
-
-**Loot:**
-
-- Coins: 100 copper (always drops)
-
-| Item | Type | Drop chance | Notes |
-|---|---|---:|---|
-| <img src="../_loot-icons/emberwing_scale.png" width="22" alt="">  Emberwing Scale | Quest item | 70% | quest item — only drops while on _Scales of the Maw_ |
-
 <a id="mob-cindraleth_maw_matriarch"></a>
 
 ### Cindraleth the Maw Matriarch — _Elite_
@@ -144,6 +115,35 @@
 **Loot:**
 
 - Coins: 100 copper (always drops)
+
+<a id="mob-drakemaw_broodlord"></a>
+
+### Drakemaw Broodlord — _Elite · Rare_
+
+<img src="../_mob-renders/drakemaw_broodlord.png" width="150" align="right" alt="Drakemaw Broodlord">
+
+| Stat | Value |
+|---|---|
+| Level | 20 |
+| Family | Dragonkin |
+| Health | 1831 HP |
+| Armor (physical mitigation) | 323 (~13% vs a same-level attacker) |
+| Melee damage | 89–139 per hit @ 2.4s swing (~48 DPS) |
+| Respawn | ~2 min (rare spawn) |
+| Location | The Drakelands · ~x:419, z:2266 · ~x:288, z:2278 — [🗺️ show on map](#/map/419/2266) |
+
+**Best way to kill:**
+
+- **Elite** — ~2.3× the health and ~1.5× the damage of a normal mob; bring a group or out-level it.
+- Straightforward melee attacker — tank it, heal as needed, and burn it down. No special tricks.
+
+**Loot:**
+
+- Coins: 100 copper (always drops)
+
+| Item | Type | Drop chance | Notes |
+|---|---|---:|---|
+| <img src="../_loot-icons/emberwing_scale.png" width="22" alt="">  Emberwing Scale | Quest item | 90% | quest item — only drops while on _Scales of the Maw_ |
 
 ---
 

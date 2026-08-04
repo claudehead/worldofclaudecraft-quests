@@ -16,7 +16,7 @@ _Gold = NPCs · red = mob camps (×count) · purple = dungeon entrances · green
 | 6 | [Pelts for the Causeway](q-prowler-pelts.md) | Provisioner Hale | collect |
 | 6 | [The Codfather](q-the-codfather.md) | Provisioner Hale | collect |
 | 6 | [Idols of the Deep](q-idols.md) | Brother Aldric | collect |
-| 6 | [Back to the Shallows](q-deepfen-purge.md) | Warden Fenwick | kill |
+| 6 | [Back to the Shallows](q-deepfen-purge.md) | Warden Fenwick | interact |
 | 6 | [The Broodmother](q-broodmother.md) | Herbalist Yara | kill |
 | 6 | [Censers from the Deep](q-drowned-censers.md) | Brother Aldric | collect |
 | 6 | [No Rest in the Reeds](q-no-rest.md) | Brother Aldric | kill |

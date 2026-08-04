@@ -239,6 +239,7 @@
 
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
+| <img src="../_loot-icons/restless_skull.png" width="22" alt="">  Restless Skull | Quest item | 100% | quest item — only drops while on _The Restless Dead_ |
 | <img src="../_loot-icons/bone_fragments.png" width="22" alt=""> ⚪ Bone Fragments | Junk | 60% | sells for 7c |
 | <img src="../_loot-icons/ghostly_essence.png" width="22" alt="">  Ghostly Essence | Quest item | 55% | quest item — only drops while on _The Binding Rite_ |
 

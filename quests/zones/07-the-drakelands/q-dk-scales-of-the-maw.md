@@ -17,7 +17,9 @@
 ## How to complete
 
 - **Collect 3× Emberwing Scale**
-  - Drops from [**Emberwing Drake**](bestiary.md#mob-emberwing_drake) (70% chance) — Found in the open world at ~x:419, z:2266 (1 mob, radius 8); Found in the open world at ~x:302, z:2258 (1 mob, radius 8); Found in the open world at ~x:322, z:2252 (1 mob, radius 8)
+  - Drops from **Emberwing Drake** (70% chance)
+  - Drops from **Dragonkin Broodguard** (50% chance) — Found in the open world at ~x:378, z:2242 (3 mobs, radius 9); Found in the open world at ~x:392, z:2296 (3 mobs, radius 9); Found in the open world at ~x:352, z:2282 (2 mobs, radius 8); Found in the open world at ~x:418, z:2338 (2 mobs, radius 8); Found in the open world at ~x:302, z:2302 (3 mobs, radius 9); Found in the open world at ~x:268, z:2252 (2 mobs, radius 8); Found in the open world at ~x:438, z:2384 (2 mobs, radius 8)
+  - Drops from [**Drakemaw Broodlord**](bestiary.md#mob-drakemaw_broodlord) (90% chance) — Found in the open world at ~x:419, z:2266 (1 mob, radius 8); Found in the open world at ~x:288, z:2278 (1 mob, radius 8); Found in the open world at ~x:352, z:2352 (1 mob, radius 8); Found in the open world at ~x:458, z:2302 (1 mob, radius 8)
   - _Tracker: Emberwing Scale_
 
 Then return to **Scout Yerrin**, Far-Dune Watcher _(at ~x:494, z:2100)_ to turn in.

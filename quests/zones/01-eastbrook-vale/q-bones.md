@@ -10,14 +10,13 @@
 
 ## Story
 
-> The old ruin on the northwest hill was a chapel once, and its yard a resting place. Something has stirred the dead from their sleep. Grant them peace, <your name> — return 8 Restless Bones to the earth.
+> The old ruin on the northwest hill was a chapel once, and its yard a resting place. Something has stirred the dead from their sleep. Put them down and bring me a skull from each you lay to rest, <your name>, eight in all, so I may speak the rites over them and grant the peace they were denied.
 
 ## How to complete
 
-- **Kill 8× [Restless Bones](bestiary.md#mob-restless_bones)** (level 5–7)
-  - Found in the open world at ~x:82, z:78 (6 mobs, radius 28.5)
-  - Found in the open world at ~x:88, z:90 (2 mobs, radius 6)
-  - _Tracker: Restless Bones laid to rest_
+- **Collect 8× Restless Skull**
+  - Drops from [**Restless Bones**](bestiary.md#mob-restless_bones) (100% chance) — Found in the open world at ~x:82, z:78 (6 mobs, radius 28.5); Found in the open world at ~x:88, z:90 (2 mobs, radius 6)
+  - _Tracker: Restless Skulls recovered_
 
 Then return to **Brother Aldric**, Priest of the Vale _(at ~x:-17, z:-1)_ to turn in.
 

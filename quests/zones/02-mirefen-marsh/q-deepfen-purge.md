@@ -5,22 +5,21 @@
 | | |
 |---|---|
 | **Recommended level** | 6+ (zone range 6–13) |
-| **Quest giver** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ |
-| **Turn in to** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ |
+| **Quest giver** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ |
+| **Turn in to** | **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ |
 | **Requires** | Idols of the Deep (`q_idols`) |
 
 ## Story
 
-> Aldric says those idols are cult-make — which means the mudfins are hauling the marsh's old evil up one armful at a time. I will not have it washing onto my causeway. Go back to the shallows and break the dredging for good: 14 more snappers.
+> Aldric says those idols are cult-make, which means the mudfins are hauling the marsh's old evil up one armful at a time, and it all funnels through their reed-huts on the shallows. I will not have it washing onto my causeway. Take this firebottle, get right up against each hut, and burn the lot. Five should break their dredging for good.
 
 ## How to complete
 
-- **Kill 14× [Deepfen Snapper](bestiary.md#mob-deepfen_murloc)** (level 8–9)
-  - Found in the open world at ~x:-82, z:273 (8 mobs, radius 15)
-  - Found in the open world at ~x:-120, z:350 (6 mobs, radius 13)
-  - _Tracker: Deepfen Snapper slain_
+- **Interact 5× with Mudfin Hut**
+  - Locations: ~x:-78, z:269 · ~x:-83, z:266 · ~x:-74, z:275 · ~x:-117, z:346 · ~x:-123, z:354
+  - _Tracker: Mudfin huts burned_
 
-Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:3, z:304)_ to turn in.
+Then return to **Warden Fenwick**, Warden of Fenbridge _(at ~x:5, z:286)_ to turn in.
 
 ## Rewards
 

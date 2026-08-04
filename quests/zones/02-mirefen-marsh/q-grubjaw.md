@@ -5,8 +5,8 @@
 | | |
 |---|---|
 | **Recommended level** | 11+ |
-| **Quest giver** | **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ |
-| **Turn in to** | **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ |
+| **Quest giver** | **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ |
+| **Turn in to** | **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ |
 
 ## Story
 
@@ -18,7 +18,7 @@
   - Drops from [**Grubjaw the Glutton**](bestiary.md#mob-grubjaw) (100% chance) — Found in the open world at ~x:-120, z:480 (1 mob, radius 8)
   - _Tracker: Grubjaw's Tusk_
 
-Then return to **Provisioner Hale**, Provisioner _(at ~x:-4, z:308)_ to turn in.
+Then return to **Provisioner Hale**, Provisioner _(at ~x:-12, z:315)_ to turn in.
 
 ## Rewards
 

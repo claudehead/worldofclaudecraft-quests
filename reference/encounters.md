@@ -198,6 +198,14 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
+<a id="mob-widow_hatchling"></a>
+
+### Widow Hatchling
+
+**Level 9 · 50 HP · Spider**
+
+<br clear="all">
+
 <a id="mob-drowned_thrall"></a>
 
 ### Drowned Thrall
@@ -486,6 +494,34 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <br clear="all">
 
+<a id="mob-dragonkin_broodguard"></a>
+
+### Dragonkin Broodguard
+
+**Level 19–20 · 460 HP · Dragonkin**
+
+**Drops:** Emberwing Scale _(50%)_
+
+<br clear="all">
+
+<a id="mob-dragonkin_whelp"></a>
+
+### Dragonkin Whelp
+
+**Level 19–20 · 46 HP · Dragonkin**
+
+<br clear="all">
+
+<a id="mob-emberwing_drake"></a>
+
+### Emberwing Drake 🔶 Elite
+
+**Level 19–20 · 770 HP · Dragonkin**
+
+**Drops:** Emberwing Scale _(70%)_
+
+<br clear="all">
+
 <a id="mob-thunzharr_stormling"></a>
 
 ### Roused Stormling
@@ -524,8 +560,6 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 
 <a id="mob-cindraleth_maw_matriarch"></a>
 
-<img src="../quests/zones/_mob-renders/cindraleth_maw_matriarch.png" width="140" align="right" alt="Cindraleth the Maw Matriarch">
-
 ### Cindraleth the Maw Matriarch 🔶 Elite
 
 **Level 20 · 890 HP · Dragonkin**
@@ -559,6 +593,14 @@ Creatures from scripted fights, raids, and roaming/world spawns that don't belon
 **Level 20 · 1890 HP · Undead**
 
 **Drops:** Ancient Diary _(100%)_, Bone Fragments _(100%)_
+
+<br clear="all">
+
+<a id="mob-dragonkin_egg"></a>
+
+### Dragonkin Egg
+
+**Level 20 · 1 HP · Dragonkin**
 
 <br clear="all">
 

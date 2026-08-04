@@ -16,6 +16,7 @@
 <circle cx="438.9" cy="1029.8" r="4" fill="#3a4a42"/>
 <circle cx="141.1" cy="1159.9" r="4" fill="#3a4a42"/>
 <circle cx="188.1" cy="1206.9" r="4" fill="#3a4a42"/>
+<circle cx="159.9" cy="1185.0" r="4" fill="#3a4a42"/>
 <circle cx="86.2" cy="1222.6" r="4" fill="#3a4a42"/>
 <circle cx="75.2" cy="1235.1" r="4" fill="#3a4a42"/>
 <circle cx="211.6" cy="1266.5" r="4" fill="#3a4a42"/>
@@ -25,6 +26,7 @@
 <circle cx="368.3" cy="1348.0" r="4" fill="#3a4a42"/>
 <circle cx="335.4" cy="1387.1" r="4" fill="#3a4a42"/>
 <circle cx="344.8" cy="1402.8" r="4" fill="#3a4a42"/>
+<circle cx="351.1" cy="1391.8" r="4" fill="#3a4a42"/>
 <circle cx="219.4" cy="1363.6" r="4" fill="#3a4a42"/>
 <circle cx="219.4" cy="1376.2" r="4" fill="#3a4a42"/>
 <circle cx="228.8" cy="1382.4" r="4" fill="#3a4a42"/>
@@ -56,16 +58,16 @@
 <text x="368.3" y="1348.0" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Wyrmcult Tents</text>
 <text x="219.4" y="1363.6" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Revenant Fields</text>
 <text x="282.1" y="1442.0" fill="#eef4ee" font-size="11" font-style="italic" text-anchor="middle" stroke="#10160f" stroke-width="0.8" paint-order="stroke">Gravewyrm Sanctum</text>
-<path d="M288.4 1103.4 L164.6 1183.4" fill="none" stroke="#e6bb6a" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.85"/>
+<path d="M288.4 1103.4 L159.9 1185.0" fill="none" stroke="#e6bb6a" stroke-width="2.5" stroke-dasharray="7 6" opacity="0.85"/>
 <g class="qstep" data-keys="giver,turnin" data-steps="1,3">
 <circle cx="288.4" cy="1103.4" r="21" fill="#f0c419" opacity="0.18"/>
 <circle cx="288.4" cy="1103.4" r="14" fill="#f0c419" stroke="#11160f" stroke-width="2"/>
 <text x="288.4" y="1108.4" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">1·3</text>
 </g>
-<g class="qstep" data-keys="thornpeak_ogre" data-steps="2">
-<circle cx="164.6" cy="1183.4" r="21" fill="#d9534f" opacity="0.18"/>
-<circle cx="164.6" cy="1183.4" r="14" fill="#d9534f" stroke="#11160f" stroke-width="2"/>
-<text x="164.6" y="1188.4" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">2</text>
+<g class="qstep" data-keys="brakka_wallbreaker" data-steps="2">
+<circle cx="159.9" cy="1185.0" r="21" fill="#d9534f" opacity="0.18"/>
+<circle cx="159.9" cy="1185.0" r="14" fill="#d9534f" stroke="#11160f" stroke-width="2"/>
+<text x="159.9" y="1190.0" fill="#11160f" font-size="15" font-weight="bold" text-anchor="middle">2</text>
 </g>
 <rect x="10" y="10" width="360" height="112" rx="10" fill="#11160f" opacity="0.82"/>
 <text x="22" y="34" fill="#cfe3d6" font-size="14" font-weight="bold">Where to go — N ↑</text>
@@ -74,7 +76,7 @@
 <text x="46" y="52" fill="#e8e8ea" font-size="13.5">Start — Captain Thessaly</text>
 <circle cx="30" cy="72" r="9" fill="#d9534f"/>
 <text x="30" y="75.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">2</text>
-<text x="46" y="76" fill="#e8e8ea" font-size="13.5">14× Thornpeak Ogre</text>
+<text x="46" y="76" fill="#e8e8ea" font-size="13.5">1× Brakka the Wallbreaker</text>
 <circle cx="30" cy="96" r="9" fill="#5cb85c"/>
 <text x="30" y="99.5" fill="#11160f" font-size="11" font-weight="bold" text-anchor="middle">3</text>
 <text x="46" y="100" fill="#e8e8ea" font-size="13.5">Turn in — Captain Thessaly</text>
