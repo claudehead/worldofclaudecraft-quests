@@ -63,6 +63,7 @@ Most stutter is the browser, not the game. In order:
 | Strafe Left | `Q` |
 | Strafe Right | `E` |
 | Jump | `Space` |
+| Swim Down | `ControlLeft` |
 | Toggle Autorun | `R` |
 
 ### Targeting
@@ -73,6 +74,7 @@ Most stutter is the browser, not the game. In order:
 | Target Nearest Friendly | `H` |
 | Cycle Friendly Target | `J` |
 | Interact / Loot | `F` |
+| Battleground Flag Action | `Shift+KeyF` |
 | Attack Move | `A` |
 
 ### Interface
@@ -90,7 +92,7 @@ Most stutter is the browser, not the game. In order:
 | Damage Meters | `Shift+KeyH` |
 | Target Buffs and Debuffs | `Shift+KeyJ` |
 | Friends & Guild | `O` |
-| Arena (Ashen Coliseum) | `G` |
+| PvP (Thornhollow Fields and Arenas) | `G` |
 | Dungeon Finder | `Shift+KeyI` |
 | Vale Cup | `Y` |
 | Mount / Dismount | `Backquote` |
@@ -112,6 +114,7 @@ Most stutter is the browser, not the game. In order:
 | Pet: Taunt | `Ctrl+Digit3` |
 | Pet: Defensive | `Ctrl+Digit4` |
 | Pet: Aggressive | `Ctrl+Digit5` |
+| Pet: Mark | `Ctrl+Digit6` |
 
 ### Action Bar
 

@@ -283,6 +283,7 @@
 | <img src="../_loot-icons/moggers_shiv.png" width="22" alt=""> 🔵 Mogger's Shiv | Weapon — Main hand · 6–11 dmg @ 1.7s (~5 DPS), +4 Agi, +2 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/cryptstalker_jerkin.png" width="22" alt=""> 🔵 Gravestalker Jerkin | Leather armor — Chest · 65 armor, +4 Agi, +2 Sta | 25% | exclusive set † |
 | <img src="../_loot-icons/valefire_lantern.png" width="22" alt=""> 🟢 Valefire Lantern | held_offhand · +1 Int, +1 Spi | 20% |  |
+| <img src="../_loot-icons/moggers_hide_quiver.png" width="22" alt=""> 🟢 Mogger's Hide Quiver | held_offhand · +1 Agi, +1 Sta | 20% |  |
 
 † The exclusive set is rolled once — at most one of these items drops per kill.
 

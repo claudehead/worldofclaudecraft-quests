@@ -457,7 +457,7 @@
       "id": "arcane_surge",
       "name": "Aether Surge",
       "learnLevel": 5,
-      "cost": 16,
+      "cost": 14,
       "cooldown": 0,
       "range": 30,
       "castTime": 2,

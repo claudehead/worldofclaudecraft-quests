@@ -10,13 +10,13 @@
 
 ## Story
 
-> Back at my loom after all. I hold no grudge, <your name>, but the thread remembers a hand that let it go, and the cost of taking it up again is measured out longer each time. Cull the webwood spiders crowding the eastern woods, and the labor will settle your hands before they touch good silk again.
+> Back at my loom after all. I hold no grudge, <your name>, but the thread remembers a hand that let it go, and the cost of taking it up again is measured out longer each time. Cull the Sableweb Lurkers crowding the eastern woods, and the labor will settle your hands before they touch good silk again.
 
 ## How to complete
 
 - **Kill 5× [Sableweb Lurker](bestiary.md#mob-webwood_spider)** (level 2–4)
   - Found in the open world at ~x:-68, z:2 (6 mobs, radius 28.5)
-  - _Tracker: Webwood Spider culled_
+  - _Tracker: Sableweb Lurker culled_
 
 Then return to **Weaver Ottilie**, Master of the Loom _(at ~x:-4, z:-18)_ to turn in.
 

@@ -180,6 +180,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-cracked_ogre_tusk"></a>Cracked Ogre Tusk | [Brutok Skullsmasher](../quests/zones/03-thornpeak-heights/bestiary.md#mob-brutok_skullsmasher) 100% | sells for 42c |
 | <a id="item-wolf_fang"></a>Cracked Wolf Fang | [Old Greyjaw](../quests/zones/01-eastbrook-vale/bestiary.md#mob-old_greyjaw) 100%, [Forest Wolf](../quests/zones/01-eastbrook-vale/bestiary.md#mob-forest_wolf) 45% | sells for 4c |
 | <a id="item-cracked_wyrm_scale"></a>Cracked Wyrm Scale | [Sanctum Scaleguard](../quests/zones/03-thornpeak-heights/bestiary.md#mob-sanctum_drakonid) 50% | sells for 35c |
+| <a id="item-curved_tusk"></a>Curved Tusk | — | sells for 5c |
 | <a id="item-deepfen_pearl"></a>Deepfen Pearl | [Vael the Fogbinder](../quests/zones/02-mirefen-marsh/bestiary.md#mob-vael_the_mistcaller) 100% | sells for 600c |
 | <a id="item-emberwing_cinderscale"></a>Emberwing Cinderscale | [Voskar the Emberwing](../quests/zones/03-thornpeak-heights/bestiary.md#mob-voskar_emberwing) 100% | sells for 320c |
 | <a id="item-fine_ashwood_log"></a>Fine Ashwood Log | — | sells for 30c |
@@ -211,6 +212,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-thorium_ore"></a>Osmium Ore | — | sells for 15c |
 | <a id="item-pale_pearl"></a>Pale Pearl | Pearlguard Sentinel 60%, [Sethrael the Palecoil](../quests/zones/04-the-drowned-temple/bestiary.md#mob-sethrael_palecoil) 50%, [Glimmermere Wader](../quests/zones/04-the-drowned-temple/bestiary.md#mob-glimmermere_wader) 40%, +1 more | sells for 30c |
 | <a id="item-prime_cut"></a>Prime Cut | — | sells for 20c |
+| <a id="item-pristine_claw"></a>Pristine Claw | — | sells for 25c |
 | <a id="item-pristine_hide"></a>Pristine Hide | — | sells for 25c |
 | <a id="item-pristine_silk"></a>Pristine Silk | — | sells for 25c |
 | <a id="item-pristine_venom_gland"></a>Pristine Venom Gland | — | sells for 30c |
@@ -227,6 +229,7 @@ _Grey/white drops — mostly vendor fodder, a few used by quests._
 | <a id="item-resonant_thread"></a>Resonant Thread | — | sells for 40c |
 | <a id="item-resonant_timber"></a>Resonant Timber | — | sells for 40c |
 | <a id="item-rough_hide"></a>Rough Hide | — | Quest: [Tannery Work Order](../quests/zones/02-mirefen-marsh/q-prof-workorder-tannery.md) |
+| <a id="item-sharp_claw"></a>Sharp Claw | — | sells for 5c |
 | <a id="item-silverleaf_herb"></a>Sheenleaf Herb | — | sells for 4c |
 | <a id="item-last_keep_signet"></a>Signet of the Last Keep | — | sells for 25c |
 | <a id="item-mudfin_scale"></a>Slimy Mudfin Scale | [Mirejaw the Ravenous](../quests/zones/02-mirefen-marsh/bestiary.md#mob-mirejaw_the_ravenous) 100%, [Sloomtooth the Drowned](../quests/zones/02-mirefen-marsh/bestiary.md#mob-sloomtooth_the_drowned) 100%, [The Meredark](../quests/zones/09-the-amberfall/bestiary.md#mob-the_meredark) 100%, +3 more | sells for 5c |

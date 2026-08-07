@@ -10,13 +10,13 @@
 
 ## Story
 
-> You came BACK, ha, they always come back, the loud stuff has a pull, yes? No sulking from me, <your name>, but the ledger, oh the ledger, it grows every time you skip out, more each return, that is only fair. Go clear the tunnel rats out of the dig for me, sweat first, sparks later, that is the rule I just made up.
+> You came BACK, ha, they always come back, the loud stuff has a pull, yes? No sulking from me, <your name>, but the ledger, oh the ledger, it grows every time you skip out, more each return, that is only fair. Go clear the Deeprock Diggers out of the dig for me, sweat first, sparks later, that is the rule I just made up.
 
 ## How to complete
 
 - **Kill 5× [Deeprock Digger](bestiary.md#mob-tunnel_rat)** (level 4–6)
   - Found in the open world at ~x:-82, z:-62 (8 mobs, radius 33)
-  - _Tracker: Tunnel Rat exterminated_
+  - _Tracker: Deeprock Digger exterminated_
 
 Then return to **Tinker Gizzel**, Master of the Toolworks _(at ~x:7, z:-14)_ to turn in.
 

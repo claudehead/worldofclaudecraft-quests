@@ -35,6 +35,6 @@ A Hunter can **tame any beast** in the world to fight as a pet — as long as it
 | [Topiary Wolf](../quests/zones/11-the-evergarden/bestiary.md#mob-topiary_wolf) | 20 | The Evergarden | [🗺️ map](#/map/294/906) |
 | [The Topiary Bull](../quests/zones/11-the-evergarden/bestiary.md#mob-the_topiary_bull) | 20 | The Evergarden | [🗺️ map](#/map/360/1016) |
 | [Moor Ram](../quests/zones/12-the-galecrest/bestiary.md#mob-moor_ram) | 20 | The Galecrest | [🗺️ map](#/map/292/312) |
-| [Shoal Scuttler](../quests/zones/12-the-galecrest/bestiary.md#mob-shoal_scuttler) | 20 | The Galecrest |  |
+| [Shoal Scuttler](../quests/zones/12-the-galecrest/bestiary.md#mob-shoal_scuttler) | 20 | The Galecrest | [🗺️ map](#/map/410/400) |
 
 _⭐ marks a rare spawn — a one-of-a-kind tame. A beast must be at or below your level to tame it._

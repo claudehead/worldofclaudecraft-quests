@@ -16,7 +16,8 @@
 ## How to complete
 
 - **Kill 10× [Shoal Scuttler](bestiary.md#mob-shoal_scuttler)** (level 20–20)
-  - _Spawns as part of a scripted encounter_
+  - Found in the open world at ~x:410, z:400 (5 mobs, radius 9)
+  - Found in the open world at ~x:440, z:460 (5 mobs, radius 8)
   - _Tracker: Shoal Scuttler slain_
 
 Then return to **Harbormaster Odile**, Harbormaster of Wickharbor _(at ~x:424, z:364)_ to turn in.

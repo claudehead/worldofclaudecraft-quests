@@ -33,7 +33,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/mire_prowler_pelt.png" width="22" alt="">  Mire Prowler Pelt | Quest item | 60% | quest item — only drops while on _Pelts for the Causeway_ |
 | <img src="../_loot-icons/soggy_moccasin.png" width="22" alt=""> ⚫ Soggy Moccasin | Junk | 30% | sells for 9c |
-| <img src="../_loot-icons/lesser_healing_potion.png" width="22" alt=""> ⚪ Lesser Healing Potion | Potion · restores 150 HP | 8% |  |
+| <img src="../_loot-icons/lesser_healing_potion.png" width="22" alt=""> ⚪ Lesser Healing Potion | Potion · restores 190 HP | 8% |  |
 
 <a id="mob-deepfen_murloc"></a>
 

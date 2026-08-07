@@ -26,7 +26,7 @@
 | Rimelance | 4 _(ranks: 8, 14, 20)_ | 25 | 1.5s | — | 30 | Frost | Launches a bolt of frost, causing X Frost damage and slowing movement by 40%. |
 | Waterbind | 4 _(ranks: 8, 12, 16)_ | 40 | 3s | — | Melee | Arcane | Conjures 2 bottles of water, restoring mana when drunk. Higher ranks conjure purer water. |
 | Aether Darts | 5 _(ranks: 14, 20)_ | 50 | Instant | — | 30 | Arcane | Launches Aether Darts at the enemy, causing X Arcane damage each second for 3 sec. |
-| Aether Surge | 5 | 16 | 2s | — | 30 | Arcane | Draws a surge of raw aether through the enemy for X damage. Each cast leaves an Arcane Charge that raises your next Aether Surge's damage and cast speed (5% faster each) but sharply raises its mana cost, stacking up to 4; Aether Darts spends the charges. Each cast can also arm Aether Rush, making your next Aether Surge free and twice as fast to cast. |
+| Aether Surge | 5 | 14 | 2s | — | 30 | Arcane | Draws a surge of raw aether through the enemy for X damage. Each cast leaves an Arcane Charge that raises your next Aether Surge's damage and cast speed (5% faster each) but sharply raises its mana cost, stacking up to 4; Aether Darts spends the charges. Each cast can also arm Aether Rush, making your next Aether Surge free and twice as fast to cast. |
 | Aether Surge | 5 | — | Instant | 1.5 min | Melee | Arcane | Increases spell damage by 20% and spell haste by 10% for 10 sec. (Arcane signature) |
 | Aetherwell | 5 | — | Instant | 2 min | Melee | Arcane | Channel for 6 sec: each second restores 100 mana and builds 8 spell power, stacking while you channel and lasting 15 sec. (Mage talent) |
 | Blazing Barrier | 5 _(ranks: 12, 18)_ | 45 | Instant | 30s | Melee | Fire | Wreathe yourself in flame, absorbing X damage for 60 sec. (Fire) |

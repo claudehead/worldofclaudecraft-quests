@@ -16,7 +16,8 @@
 ## How to complete
 
 - **Kill 8× [Gale Wisp](bestiary.md#mob-gale_wisp)** (level 20–20)
-  - _Spawns as part of a scripted encounter_
+  - Found in the open world at ~x:330, z:565 (4 mobs, radius 9)
+  - Found in the open world at ~x:355, z:585 (4 mobs, radius 8)
   - _Tracker: Gale Wisp scattered_
 
 Then return to **Keeper Bram**, Keeper of the Old Beacon _(at ~x:503, z:309)_ to turn in.

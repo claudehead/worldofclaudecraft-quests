@@ -16,7 +16,7 @@
 ## How to complete
 
 - **Interact 4× with Scorched Supply Crate**
-  - Locations: ~x:372, z:1968 · ~x:360, z:2014 · ~x:348, z:2046 · ~x:332, z:2094
+  - Locations: ~x:372, z:1968 · ~x:355, z:2013 · ~x:348, z:2046 · ~x:332, z:2094
   - _Tracker: Scorched supply crate recovered_
 
 Then return to **Quartermaster Sela**, Keeper of the Garrison Stores _(at ~x:398, z:1908)_ to turn in.

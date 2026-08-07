@@ -83,7 +83,7 @@
 |---|---|---:|---|
 | <img src="../_loot-icons/glowing_wax.png" width="22" alt="">  Glowing Wax | Quest item | 50% | quest item — only drops while on _Strange Wax_ |
 | <img src="../_loot-icons/tallow_candle.png" width="22" alt=""> ⚫ Greasy Tallow Lump | Junk | 40% | sells for 5c |
-| <img src="../_loot-icons/healing_potion.png" width="22" alt=""> ⚪ Healing Potion | Potion · restores 280 HP | 8% |  |
+| <img src="../_loot-icons/healing_potion.png" width="22" alt=""> ⚪ Healing Potion | Potion · restores 320 HP | 8% |  |
 | <img src="../_loot-icons/peaksong_helm.png" width="22" alt=""> 🔵 Peaksong Helm | Mail armor — Head · 78 armor, +5 Int, +4 Spi | 4% |  |
 | <img src="../_loot-icons/moonbark_vestments.png" width="22" alt=""> 🔵 Moonbark Vestments | Leather armor — Chest · 100 armor, +6 Int, +4 Spi | 4% |  |
 | <img src="../_loot-icons/deathlord_sabatons.png" width="22" alt=""> 🟣 Barrowlord Sabatons | Mail armor — Feet · 205 armor, +7 Str, +8 Sta | 0% |  |
@@ -326,6 +326,7 @@
 | <img src="../_loot-icons/cragmaw_prowlboots.png" width="22" alt=""> 🔵 Cragmaw Prowlboots | Leather armor — Feet · 58 armor, +5 Agi, +3 Sta | 30% |  |
 | <img src="../_loot-icons/cragmaw_huntcord.png" width="22" alt=""> 🔵 Cragmaw's Huntcord | Leather armor — Waist · 44 armor, +5 Agi, +3 Sta | 25% |  |
 | <img src="../_loot-icons/cragward_pauldrons.png" width="22" alt=""> 🟢 Cragward Pauldrons | Mail armor — Shoulder · 56 armor, +2 Int, +2 Spi | 25% |  |
+| <img src="../_loot-icons/cragmaw_huntquiver.png" width="22" alt=""> 🔵 Cragmaw Huntquiver | held_offhand · +4 Agi, +3 Sta | 25% |  |
 | <img src="../_loot-icons/cragthorn_greatstaff.png" width="22" alt=""> 🔵 Cragthorn Greatstaff | Weapon — Main hand · 40–55 dmg @ 3.5s (~14 DPS), +5 Str, +4 Agi, +4 Sta | 20% |  |
 
 <a id="mob-ironvein_foreman"></a>
@@ -812,6 +813,7 @@
 | <img src="../_loot-icons/wildgrowth_leggings.png" width="22" alt=""> 🟣 Wildgrowth Leggings | Leather armor — Legs · 112 armor, +2 Sta, +9 Int, +5 Spi | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/grovewardens_grips.png" width="22" alt=""> 🟣 Grovewarden's Grips | Leather armor — Hands · 88 armor, +8 Int, +5 Spi | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/verdant_walkers.png" width="22" alt=""> 🟣 Verdant Walkers | Leather armor — Feet · 82 armor, +7 Int, +5 Spi | 5% | exclusive set 2 † |
+| <img src="../_loot-icons/gravewyrm_bone_quiver.png" width="22" alt=""> 🔵 Gravewyrm Bone Quiver | held_offhand · +6 Agi, +4 Sta | 5% | exclusive set 2 † |
 | <img src="../_loot-icons/deathlords_dread_visage.png" width="22" alt=""> 🟣 Barrowlord Dread Visage | Mail armor — Head · 245 armor, +7 Str, +8 Sta | 4% | exclusive set 2 † |
 | <img src="../_loot-icons/necromancers_soulspire_mantle.png" width="22" alt=""> 🟣 Mournweave Soulspire Mantle | Cloth armor — Shoulder · 70 armor, +9 Int, +5 Spi | 4% | exclusive set 2 † |
 | <img src="../_loot-icons/wyrmshadow_talongrips.png" width="22" alt=""> 🟣 Nightfang Talongrips | Leather armor — Hands · 110 armor, +9 Agi, +4 Sta | 4% | exclusive set 2 † |
@@ -847,7 +849,6 @@
 | Item | Type | Drop chance | Notes |
 |---|---|---:|---|
 | <img src="../_loot-icons/maul_of_the_scourged_wilds.png" width="22" alt=""> 🟣 Maul of the Scourged Wilds | Weapon — Main hand · 56–75 dmg @ 3.7s (~18 DPS), +10 Str, +8 Agi, +8 Sta, +20 Hit rating | 25% | exclusive set 5 † |
-| <img src="../_loot-icons/wraithfire_orb.png" width="22" alt=""> 🟣 Wraithfire Orb | held_offhand · +3 Sta, +7 Int, +5 Spi, +20 Crit rating | 16% | exclusive set 3 † |
 | <img src="../_loot-icons/direfang_greatblade.png" width="22" alt=""> 🟣 Direfang Greatblade | Weapon — Main hand · 40–66 dmg @ 3s (~18 DPS), +14 Agi, +12 Sta, +20 Hit rating | 16% | exclusive set 4 † |
 | <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 14% | exclusive set 1 † |
 | <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta, +20 Hit rating | 14% | exclusive set 1 † |
@@ -861,12 +862,8 @@
 | <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 14% | exclusive set 2 † |
 | <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta, +20 Hit rating | 14% | exclusive set 2 † |
 | <img src="../_loot-icons/stormcallers_spaulders.png" width="22" alt=""> 🟣 Galecall Spaulders | Mail armor — Shoulder · 190 armor, +7 Sta, +8 Int, +20 Crit rating | 14% | exclusive set 2 † |
-| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 14% | exclusive set 3 † |
-| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta, +20 Hit rating | 14% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Wraithfire Cowl | Cloth armor — Head · 105 armor, +6 Sta, +11 Int, +20 Hit rating | 14% | exclusive set 3 † |
-| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Galecall Crown | Mail armor — Head · 225 armor, +7 Sta, +10 Int, +20 Crit rating | 14% | exclusive set 3 † |
-| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta, +20 Hit rating | 14% | exclusive set 3 † |
-| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int, +20 Hit rating | 14% | exclusive set 3 † |
+| <img src="../_loot-icons/wraithfire_orb.png" width="22" alt=""> 🟣 Wraithfire Orb | held_offhand · +3 Sta, +7 Int, +5 Spi, +20 Crit rating | 14% | exclusive set 3 † |
+| <img src="../_loot-icons/direfang_quiver.png" width="22" alt=""> 🟣 Direfang Quiver | held_offhand · +9 Agi, +6 Sta, +20 Hit rating | 14% | exclusive set 3 † |
 | <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int, +20 Hit rating | 14% | exclusive set 4 † |
 | <img src="../_loot-icons/crownforged_warspaulders.png" width="22" alt=""> 🟣 Bonewrought Warspaulders | Mail armor — Shoulder · 260 armor, +7 Str, +8 Sta, +20 Hit rating | 14% | exclusive set 4 † |
 | <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta, +20 Hit rating | 14% | exclusive set 4 † |
@@ -875,6 +872,12 @@
 | <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta, +20 Hit rating | 14% | exclusive set 4 † |
 | <img src="../_loot-icons/bonewrought_greatsword.png" width="22" alt=""> 🟣 Bonewrought Greatsword | Weapon — Main hand · 45–75 dmg @ 3.4s (~18 DPS), +14 Str, +12 Sta, +20 Hit rating | 13% | exclusive set 1 † |
 | <img src="../_loot-icons/bonewrought_bulwark.png" width="22" alt=""> 🟣 Bonewrought Bulwark | Mail armor — offhand · 680 armor, +5 Str, +10 Sta, +20 Hit rating | 13% | exclusive set 2 † |
+| <img src="../_loot-icons/crownforged_dreadhelm.png" width="22" alt=""> 🟣 Bonewrought Dreadhelm | Mail armor — Head · 310 armor, +8 Str, +9 Sta, +20 Hit rating | 12% | exclusive set 3 † |
+| <img src="../_loot-icons/nighttalon_crown.png" width="22" alt=""> 🟣 Direfang Crown | Leather armor — Head · 190 armor, +10 Agi, +7 Sta, +20 Hit rating | 12% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_cowl.png" width="22" alt=""> 🟣 Wraithfire Cowl | Cloth armor — Head · 105 armor, +6 Sta, +11 Int, +20 Hit rating | 12% | exclusive set 3 † |
+| <img src="../_loot-icons/stormcallers_crown.png" width="22" alt=""> 🟣 Galecall Crown | Mail armor — Head · 225 armor, +7 Sta, +10 Int, +20 Crit rating | 12% | exclusive set 3 † |
+| <img src="../_loot-icons/nighttalon_shoulderguards.png" width="22" alt=""> 🟣 Direfang Shoulderguards | Leather armor — Shoulder · 165 armor, +9 Agi, +6 Sta, +20 Hit rating | 12% | exclusive set 3 † |
+| <img src="../_loot-icons/soulflame_mantle.png" width="22" alt=""> 🟣 Wraithfire Mantle | Cloth armor — Shoulder · 92 armor, +6 Sta, +9 Int, +20 Hit rating | 12% | exclusive set 3 † |
 | <img src="../_loot-icons/deathless_heartwood.png" width="22" alt=""> 🟠 Heartwood of the Deathless Crown | Weapon — Main hand · 42–68 dmg @ 3.2s (~17 DPS), +13 Sta, +14 Int, +17 Spi | 3% | exclusive set 1 † |
 | <img src="../_loot-icons/kingsbane_last_oath.png" width="22" alt=""> 🟠 Thronebane, Last Oath of Thornpeak | Weapon — Main hand · 46–74 dmg @ 2.8s (~21 DPS), +15 Str, +15 Agi, +14 Sta | 3% | exclusive set 2 † |
 
